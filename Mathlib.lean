@@ -3603,6 +3603,7 @@ import Mathlib.FieldTheory.SeparableDegree
 import Mathlib.FieldTheory.SplittingField.Construction
 import Mathlib.FieldTheory.SplittingField.IsSplittingField
 import Mathlib.FieldTheory.Tower
+import Mathlib.Foo
 import Mathlib.Geometry.Convex.Cone.Basic
 import Mathlib.Geometry.Convex.Cone.Pointed
 import Mathlib.Geometry.Euclidean.Altitude
