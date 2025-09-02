@@ -11,8 +11,8 @@ env:
 jobs:
   grind-regressions:
     name: Build
-    runs-on: pr
-    if: github.repository == 'leanprover-community/mathlib4-nightly-testing'
+    runs-on: ubuntu-latest
+    if: github.repository == 'Vierkantor/mathlib4'
     steps:
     - name: cleanup
       run: |
@@ -28,7 +28,7 @@ jobs:
 
     - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       with:
-        ref: nightly-testing-green
+        ref: nightly-regression-report-testing
 
     - name: Configure Lean
       uses: leanprover/lean-action@f807b338d95de7813c5c50d018f1c23c9b93b4ec # 2025-04-24
@@ -71,8 +71,27 @@ jobs:
         (lake build || true) | tee "${lean_outfile}"
 
         # Skip the lines about build progress.
-        filtered_out=$((grep -v '^✔' "${lean_outfile}" | grep -v '^trace: ') || true)
+        filtered_out=$(grep -v '^✔' "${lean_outfile}" | grep -v '^trace: ') 
         echo "$(wc -l <<<"${filtered_out}") lines of output"
+
+        # Categorize the output.
+        error_lines=$(grep '^error: ' <<<"${filtered_out}")
+        error_descriptions=$(sed 's/^error: [^:]*:[0-9]*:[0-9]*: //' <<<"${error_lines}")
+        warning_lines=$(grep '^warning: ' <<<"${filtered_out}")
+        warning_descriptions=$(sed 's/^warning: [^:]*:[0-9]*:[0-9]*: //' <<<"${warning_lines}")
+        # Panics are reported as an info message.
+        # They should be very prominent when debugging, so treat them differently.
+        panic_lines=$(grep '^info: .*PANIC at ' <<<"${filtered_out}")
+        panic_descriptions=$(sed 's/^info: [^:]*:[0-9]*:[0-9]*: //' <<<"${panic_lines}")
+        info_lines=$(grep '^info: ' <<<"${filtered_out}" | grep -v 'PANIC at ')
+        info_descriptions=$(sed 's/^info: [^:]*:[0-9]*:[0-9]*: //' <<<"${info_lines}")
+
+        # Some additional postprocessing for specific forms of messages.
+        # Remove the extra arguments to linarith, to count them correctly.
+        warning_descriptions=$(sed "s/'linarith only/'linarith/" <<<"${warning_descriptions}")
+        warning_descriptions=$(sed "s/'linarith \[.*\]'/'linarith'/" <<<"${warning_descriptions}")
+        # Deal with line wrapping ending the argument list to `linarith` too early.
+        warning_descriptions=$(sed "s/'linarith \[[^]]*$/'linarith' succeeded. Counterexample:/" <<<"${warning_descriptions}")
 
         delimiter=$(cat /proc/sys/kernel/random/uuid)
         echo "zulip-message<<${delimiter}" >> "$GITHUB_OUTPUT"
@@ -165,7 +184,7 @@ jobs:
       uses: zulip/github-actions-zulip/send-message@e4c8f27c732ba9bd98ac6be0583096dea82feea5 # v1.0.2
       with:
         api-key: ${{ secrets.ZULIP_API_KEY }}
-        email: 'github-mathlib4-bot@leanprover.zulipchat.com'
+        email: 'vierkantor-test-bot@leanprover.zulipchat.com'
         organization-url: 'https://leanprover.zulipchat.com'
         to: 'mathlib-fro-work'
         type: 'stream'
