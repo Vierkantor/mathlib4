@@ -74,25 +74,6 @@ jobs:
         filtered_out=$(grep -v '^✔' "${lean_outfile}" | grep -v '^trace: ') 
         echo "$(wc -l <<<"${filtered_out}") lines of output"
 
-        # Categorize the output.
-        error_lines=$(grep '^error: ' <<<"${filtered_out}")
-        error_descriptions=$(sed 's/^error: [^:]*:[0-9]*:[0-9]*: //' <<<"${error_lines}")
-        warning_lines=$(grep '^warning: ' <<<"${filtered_out}")
-        warning_descriptions=$(sed 's/^warning: [^:]*:[0-9]*:[0-9]*: //' <<<"${warning_lines}")
-        # Panics are reported as an info message.
-        # They should be very prominent when debugging, so treat them differently.
-        panic_lines=$(grep '^info: .*PANIC at ' <<<"${filtered_out}")
-        panic_descriptions=$(sed 's/^info: [^:]*:[0-9]*:[0-9]*: //' <<<"${panic_lines}")
-        info_lines=$(grep '^info: ' <<<"${filtered_out}" | grep -v 'PANIC at ')
-        info_descriptions=$(sed 's/^info: [^:]*:[0-9]*:[0-9]*: //' <<<"${info_lines}")
-
-        # Some additional postprocessing for specific forms of messages.
-        # Remove the extra arguments to linarith, to count them correctly.
-        warning_descriptions=$(sed "s/'linarith only/'linarith/" <<<"${warning_descriptions}")
-        warning_descriptions=$(sed "s/'linarith \[.*\]'/'linarith'/" <<<"${warning_descriptions}")
-        # Deal with line wrapping ending the argument list to `linarith` too early.
-        warning_descriptions=$(sed "s/'linarith \[[^]]*$/'linarith' succeeded. Counterexample:/" <<<"${warning_descriptions}")
-
         delimiter=$(cat /proc/sys/kernel/random/uuid)
         echo "zulip-message<<${delimiter}" >> "$GITHUB_OUTPUT"
         echo "Mathlib's [nightly-testing branch](https://github.com/leanprover-community/mathlib4-nightly-testing/tree/nightly-testing) ([${{ github.sha }}](https://github.com/${{ github.repository }}/commit/${{ github.sha }})) regression run [completed](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})." | tee -a "$GITHUB_OUTPUT"
