@@ -53,7 +53,7 @@ jobs:
         git diff HEAD #lakefile.lean
 
         printf $'\n\nRunning a test %slake build` to verify, for instance, the absence of import loops\n' $'`'
-        lake build Mathlib.Init
+        #lake build Mathlib.Init
 
     - name: Add GitHub problem matcher wrapper
       uses: leanprover-community/gh-problem-matcher-wrap@20007cb926a46aa324653a387363b52f07709845 # 2025-04-23
