@@ -18,10 +18,15 @@ open Lean Mathlib
 /--
 Define a pass that tries replacing a specific tactic with `grind`.
 
+`tacticName` is a human-readable name for the tactic, for example "linarith".
+This can be used to group messages together, so that `ring`, `ring_nf`, `ring1`, ...
+all produce the same message.
+
 `tacticKind` is the `SyntaxNodeKind` for the tactic's main parser,
 for example `Mathlib.Tactic.linarith`.
 -/
-def grindReplacementWith (tacticKind : SyntaxNodeKind) : TacticAnalysis.Config := .ofComplex {
+def grindReplacementWith (tacticName : String) (tacticKind : SyntaxNodeKind) :
+    TacticAnalysis.Config := .ofComplex {
   out := (List MVarId × MessageData)
   ctx := Syntax
   trigger _ stx := if stx.getKind == tacticKind
@@ -38,7 +43,9 @@ def grindReplacementWith (tacticKind : SyntaxNodeKind) : TacticAnalysis.Config :
       return ([goal], m!"{"\n".intercalate imports}\n\ntheorem {sig} := by\n  fail_if_success grind\n  {stx}")
   tell stx _old new :=
     if new.1.1 != [] then
-      m!"'grind' failed where '{stx}' succeeded. Counterexample:\n{new.1.2}"
+      m!"`grind` failed where `{tacticName}` succeeded.\n" ++
+      m!"Original tactic:{indentD stx}\n" ++
+      m!"Counterexample:{indentD new.1.2}"
     /-
     else
       if old.2 * 2 < new.2 then
@@ -52,7 +59,7 @@ register_option linter.tacticAnalysis.linarithToGrind : Bool := {
 }
 @[tacticAnalysis linter.tacticAnalysis.linarithToGrind,
   inherit_doc linter.tacticAnalysis.linarithToGrind]
-def linarithToGrind := grindReplacementWith `Mathlib.Tactic.linarith
+def linarithToGrind := grindReplacementWith "linarith" `Mathlib.Tactic.linarith
 
 /-- Debug `grind` by identifying places where it does not yet supersede `omega`. -/
 register_option linter.tacticAnalysis.omegaToGrind : Bool := {
@@ -60,7 +67,7 @@ register_option linter.tacticAnalysis.omegaToGrind : Bool := {
 }
 @[tacticAnalysis linter.tacticAnalysis.omegaToGrind,
   inherit_doc linter.tacticAnalysis.omegaToGrind]
-def omegaToGrind := grindReplacementWith `Lean.Parser.Tactic.ring
+def omegaToGrind := grindReplacementWith "omega" `Lean.Parser.Tactic.ring
 
 /-- Debug `grind` by identifying places where it does not yet supersede `ring`. -/
 register_option linter.tacticAnalysis.ringToGrind : Bool := {
@@ -68,7 +75,7 @@ register_option linter.tacticAnalysis.ringToGrind : Bool := {
 }
 @[tacticAnalysis linter.tacticAnalysis.ringToGrind,
   inherit_doc linter.tacticAnalysis.ringToGrind]
-def ringToGrind := grindReplacementWith `Mathlib.Tactic.RingNF.ring
+def ringToGrind := grindReplacementWith "ring" `Mathlib.Tactic.RingNF.ring
 
 /-- Suggest merging two adjacent `rw` tactics if that also solves the goal. -/
 register_option linter.tacticAnalysis.rwMerge : Bool := {
