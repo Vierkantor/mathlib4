@@ -46,7 +46,7 @@ Here are some general guidelines:
 A linter verifies that every file in Mathlib imports `Mathlib.Init`
 (perhaps indirectly) --- except for the imports in this file, of course.
 
-## Linters
+# Linters
 
 All syntax linters defined in Mathlib which are active by default are imported here.
 Syntax linters need to be imported to take effect, hence we would like them to be imported

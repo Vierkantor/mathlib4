@@ -12,7 +12,8 @@ public meta import Lean.Compiler.IR.CompilerM
 public import Lean.Elab.Command
 public import Mathlib.Lean.ContextInfo
 
-/-! # Tactic analysis framework
+/-!
+# Tactic analysis framework
 
 In this file we define a framework for analyzing sequences of tactics.
 This can be used for linting (for instance: report when two `rw` calls can be merged into one),

@@ -69,7 +69,7 @@ instance : ToMessageData Parameter where
 /--
 Given a (full, resolvable) declaration name `foo` and an array of parameters
 `#[p₁, p₂, ..., pₙ]`, constructs the message:
-```null
+```
 `{foo}` has the hypothes(is/es):
   • {p₁}
   • {p₂}
@@ -133,7 +133,7 @@ fun _ thm unusedParams => do
     <extra caption>"
 ```
 which logs
-```null
+```
 `{foo}` has the hypothes(is/es):
   • {p₁}
   • {p₂}

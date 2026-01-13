@@ -34,11 +34,11 @@ def collectTryThisSuggestions (trees : PersistentArray InfoTree) :
     Array Suggestion :=
   go.run #[] |>.2
 where
-  /-- Visits all trees. -/
+  /- Visits all trees. -/
   go : StateM (Array Suggestion) Unit := do
     for tree in trees do
       tree.visitM' (postNode := visitNode)
-  /-- Visits a node in a tree. -/
+  /- Visits a node in a tree. -/
   @[nolint unusedArguments]
   visitNode (_ctx : ContextInfo) (i : Info) (_children : PersistentArray InfoTree) :
       StateM (Array Suggestion) Unit := do
@@ -64,7 +64,7 @@ partial def findSomeM? {m : Type → Type} [Monad m] {α}
     (t : InfoTree) (ctx? : Option ContextInfo := none) : m (Option α) :=
   go ctx? t
 where
-  /-- Accumulates contexts and visits nodes if `ctx?` is not `none`. -/
+  /- Accumulates contexts and visits nodes if `ctx?` is not `none`. -/
   go ctx?
   | context ctx t => go (ctx.mergeIntoOuter? ctx?) t
   | node i ts => do

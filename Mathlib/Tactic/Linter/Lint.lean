@@ -60,7 +60,7 @@ end Batteries.Tactic.Lint
 namespace Mathlib.Linter
 
 /-!
-### `dupNamespace` linter
+## `dupNamespace` linter
 
 The `dupNamespace` linter produces a warning when a declaration contains the same namespace
 at least twice consecutively.

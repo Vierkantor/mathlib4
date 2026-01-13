@@ -30,7 +30,7 @@ instance (X Y : TopCat.{u}) : CoeFun (X ⟶ Y) fun _ => X → Y where
 Despite the `in`, this makes `HasForget.instFunLike` a global instance.
 
 This seems to apply to all attributes. For example:
-```lean
+```lean +warning
 theorem what : False := sorry
 
 attribute [simp] what in
@@ -50,7 +50,8 @@ example {x y : Nat} : x = y := by ext
 Therefore, we lint against this pattern on all instances.
 
 For *removing* attributes, the `in` works as expected.
-```lean
+(FIXME (Bug in Verso): this code block does not throw errors as a standalone file?)
+```lean +error
 /--
 error: failed to synthesize
   Add Nat
@@ -67,7 +68,10 @@ attribute [-instance] instAddNat in
 @[simp]
 theorem what : False := sorry
 
-/-- error: simp made no progress -/
+#guard_msgs in
+example : False := by simp
+
+/-- error: `simp` made no progress -/
 #guard_msgs in
 attribute [-simp] what in
 example : False := by simp

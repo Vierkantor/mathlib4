@@ -40,17 +40,17 @@ is possibly unpredictable: if later modifications adds a `simp`-lemma or some in
 `simp` changes, the output of `simp` may change as well.
 Such a tactic is `flexible`. Other examples are `split`, `abel`, `norm_cast`,...
 Let's go back to the graph picture above.
-* ✅️ [`rigid` --> `flexible`]
+* ✅️ \[`rigid` --> `flexible`\]
   A sequence `rw [lemma]; simp` is unlikely to break, since `rw [lemma]` produces the same output
   unless some *really major* change happens!
-* ❌️ [`flexible` --> `rigid`]
+* ❌️ \[`flexible` --> `rigid`\]
   A sequence `simp; rw [lemma]` is instead more likely to break, since the goal after `simp` is
   subject to change by even a small, likely, modification of the `simp` set.
-* ✅️ [`flexible` --> `flexible`]
+* ✅️ \[`flexible` --> `flexible`\]
   A sequence `simp; linarith` is also quite stable, since if `linarith` was able to close the
   goal with a "weaker" `simp`, it will likely still be able to close the goal with a `simp`
   that takes one further step.
-* ✅️ [`flexible` --> `stopper`]
+* ✅️ \[`flexible` --> `stopper`\]
   Finally, a sequence `simp; ring_nf` is stable and, moreover, the output of `ring_nf` is a
   "normal form", which means that it is likely to produce an unchanged result, even if the initial
   input is different from the proof in its initial form.
@@ -434,7 +434,7 @@ structure StainData where
   /-- Goals before the flexible tactic -/
   goals : List MVarId
 
-/-- Generate a "simp only [...]" suggestion for a simp/simpAll tactic.
+/-- Generate a `simp only [...]` suggestion for a simp/simpAll tactic.
 Returns `none` if the tactic is not simp/simpAll or if suggestion generation fails. -/
 def generateSimpSuggestion (stainData : StainData) (stainStx : Syntax) :
     CoreM (Option Syntax) := do

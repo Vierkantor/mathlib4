@@ -27,11 +27,11 @@ The `whitespace` linter emits a warning if
 * or the "hypotheses segment" of a declaration does not coincide with its pretty-printed version.
 
 In practice, this makes sure that the spacing in a typical declaration looks like
-```lean
+```lean +error
 example (a : Nat) {R : Type} [Add R] : <not linted part>
 ```
 as opposed to
-```lean
+```lean +error
 example (a: Nat) {R:Type}  [Add  R] : <not linted part>
 ```
 -/
@@ -40,7 +40,7 @@ public register_option linter.style.whitespace : Bool := {
   descr := "enable the whitespace linter"
 }
 
-/-- Deprecated in favour of `linter.style.whitespace -/
+/-- Deprecated in favour of `linter.style.whitespace` -/
 @[deprecated linter.style.whitespace (since := "2026-01-07")]
 public register_option linter.style.commandStart : Bool := {
   defValue := false

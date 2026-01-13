@@ -453,6 +453,7 @@ def Mathlib.TacticAnalysis.tryAtEachStepFromStrings
     let tac : TSyntax `tactic := ⟨mkNode ``Lean.Parser.Tactic.tacticSeq1Indented #[tacSeq]⟩
     (tryAtEachStepCore (fun _ _ => pure tac) label).run seq
 
+-- FIXME (Verso): removed `bash` from code block type, because that isn't defined yet
 /-- Run a custom tactic at each proof step, configured via environment variables.
 
 Reads from environment variables:
@@ -462,12 +463,12 @@ Reads from environment variables:
 If `TRY_AT_EACH_STEP_TACTIC` is missing, this linter does nothing.
 
 To enable, add to the `mathlibOnlyLinters` array in `lakefile.lean`:
-```lean
+```lean +error
 ⟨`linter.tacticAnalysis.tryAtEachStepFromEnv, true⟩,
 ```
 
 Then run with the environment variable:
-```bash
+```
 TRY_AT_EACH_STEP_TACTIC="grind +suggestions" lake build Mathlib
 ```
 

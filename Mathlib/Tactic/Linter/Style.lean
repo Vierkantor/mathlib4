@@ -14,7 +14,7 @@ public import Lean.Parser.Command
 public import Mathlib.Tactic.DeclarationNames
 
 /-!
-## Style linters
+# Style linters
 
 This file contain linters about stylistic aspects: these are only about coding style,
 but do not affect correctness nor global coherence of mathlib.
@@ -168,7 +168,7 @@ initialize addLinter missingEndLinter
 end Style.missingEnd
 
 /-!
-### The `cdot` linter
+## The `cdot` linter
 
 The `cdot` linter is a syntax-linter that flags uses of the "cdot" `·` that are achieved
 by typing a character different from `·`.

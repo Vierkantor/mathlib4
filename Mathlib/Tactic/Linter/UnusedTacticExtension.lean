@@ -79,7 +79,7 @@ even if these tactics do not modify goals, there will be no warning emitted.
 Note: for this to work, these identifiers should be the `SyntaxNodeKind` of each tactic.
 
 For instance, you can allow the `done` and `skip` tactics using
-```lean
+```lean +error
 #allow_unused_tactic Lean.Parser.Tactic.done Lean.Parser.Tactic.skip
 ```
 
@@ -108,7 +108,7 @@ at the head of the tactic syntax tree.
 
 The input syntax needs to parse, though it can be *extremely* elided.
 For instance, to see the `SyntaxNodeKind` of the `refine` tactic, you could use
-```lean
+```lean +error
 #show_kind refine _
 ```
 The trailing underscore `_` makes the syntax valid, since `refine` expects something else.

@@ -56,7 +56,7 @@ with the value of `f n`. -/
 For example, ``from_components [`foo, `bar]`` becomes ``` `foo.bar```.
 It is the inverse of `Name.components` on list of names that have single components. -/
 def fromComponents : List Name → Name := go .anonymous where
-  /-- Auxiliary for `Name.fromComponents` -/
+  /- Auxiliary for `Name.fromComponents` -/
   go : Name → List Name → Name
   | n, []        => n
   | n, s :: rest => go (s.updatePrefix n) rest
@@ -219,7 +219,7 @@ it does a syntactic check that the expression does not depend on `yₙ`. -/
 def isConstantApplication (e : Expr) :=
   e.isApp && aux e.getAppNumArgs'.pred e.getAppFn' e.getAppNumArgs'
 where
-  /-- `aux depth e n` checks whether the body of the `n`-th lambda of `e` has loose bvar
+  /- `aux depth e n` checks whether the body of the `n`-th lambda of `e` has loose bvar
     `depth - 1`. -/
   aux (depth : Nat) : Expr → Nat → Bool
     | .lam _ _ b _, n + 1  => aux depth b n
@@ -267,7 +267,7 @@ partial def getUnusedForallInstanceBinderIdxsWhere (p : Expr → Bool) (e : Expr
     Array Nat :=
   go e 0 #[]
 where
-  /-- Inspects `body`, and if it is a `.forallE` of an instance with type `type` such that `p type`
+  /- Inspects `body`, and if it is a `.forallE` of an instance with type `type` such that `p type`
   is `true` and the remainder of the type does not depend on it, pushes the `current` index onto
   the accumulated array. -/
   go (body : Expr) (current : Nat) (acc : Array Nat) : Array Nat :=
@@ -491,10 +491,10 @@ partial def forallNot_of_notExists (ex hNotEx : Expr) : MetaM (Expr × Expr) := 
   let .app (.app (.const ``Exists [lvl]) A) p := ex | failure
   go lvl A p hNotEx
 where
-  /-- Given `(hNotEx : Not (@Exists.{lvl} A p))`,
-      return a `forall x, Not (p x)` and a proof for it.
+  /- Given `(hNotEx : Not (@Exists.{lvl} A p))`,
+  return a `forall x, Not (p x)` and a proof for it.
 
-      This function handles nested existentials. -/
+  This function handles nested existentials. -/
   go (lvl : Level) (A p hNotEx : Expr) : MetaM (Expr × Expr) := do
     let xn ← mkFreshUserName `x
     withLocalDeclD xn A fun x => do

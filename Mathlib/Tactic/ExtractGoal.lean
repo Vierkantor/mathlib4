@@ -19,7 +19,7 @@ public import Mathlib.Tactic.MinImports
 Useful for testing tactics or creating
 [minimal working examples](https://leanprover-community.github.io/mwe.html).
 
-```lean
+```lean +error
 example (i j k : Nat) (h₀ : i ≤ j) (h₁ : j ≤ k) : i ≤ k := by
   extract_goal
 
@@ -31,7 +31,7 @@ theorem extracted_1 (i j k : Nat) (h₀ : i ≤ j) (h₁ : j ≤ k) : i ≤ k :=
 * TODO: Add tactic code actions?
 * Output may produce lines with more than 100 characters
 
-### Caveat
+## Caveat
 
 Tl;dr: sometimes, using `set_option [your pp option] in extract_goal` may work where `extract_goal`
 does not.
@@ -41,7 +41,7 @@ For this reason, the extracted goal may not be equivalent to the given goal.
 However, the tactic responds to pretty printing options.
 For example, calling `set_option pp.all true in extract_goal` in the examples below actually works.
 
-```lean
+```lean +error +warning
 -- `theorem int_eq_nat` is the output of the `extract_goal` from the example below
 -- the type ascription is removed and the `↑` is replaced by `Int.ofNat`:
 -- Lean infers the correct (false) statement
@@ -54,7 +54,7 @@ example {z : Int} : ∃ n : Nat, ↑n = z := by
 
 However, importing `Batteries.Classes.Cast`, makes `extract_goal` produce a different theorem
 
-```lean
+```lean +error
 import Batteries.Classes.Cast
 
 -- `theorem extracted_1` is the output of the `extract_goal` from the example below
@@ -76,7 +76,7 @@ z: Int
 ```
 
 Similarly, the extracted goal may fail to type-check:
-```lean
+```lean +error
 example (a : α) : ∃ f : α → α, f a = a := by
   extract_goal
   exact ⟨id, rfl⟩
@@ -85,7 +85,7 @@ theorem extracted_1.{u_1} {α : Sort u_1} (a : α) : ∃ f, f a = a := sorry
 -- `f` is uninterpreted: `⊢ ∃ f, sorryAx α true = a`
 ```
 and also
-```lean
+```lean +error
 import Mathlib.Algebra.Polynomial.Basic
 
 --  The `extract_goal` below produces this statement:

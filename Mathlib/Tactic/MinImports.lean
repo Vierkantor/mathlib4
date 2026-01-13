@@ -14,7 +14,8 @@ public meta import ImportGraph.RequiredModules
 public meta import Mathlib.Tactic.Linter.Header  -- shake: keep
 public import Lean.Elab.DeclModifiers
 
-/-! # `#min_imports in` a command to find minimal imports
+/-!
+# `#min_imports in` a command to find minimal imports
 
 `#min_imports in stx` scans the syntax `stx` to find a collection of minimal imports that should be
 sufficient for `stx` to make sense.
@@ -27,7 +28,7 @@ Unlike the related `#find_home`, this command takes into account notation and ta
 
 Parsing of `attribute`s is hard and the command makes minimal effort to support them.
 Here is an example where the command fails to notice a dependency:
-```lean
+```lean +error
 import Mathlib.Data.Sym.Sym2.Init -- the actual minimal import
 import Aesop.Frontend.Attribute   -- the import that `#min_imports in` suggests
 
@@ -240,7 +241,7 @@ def getIrredundantImports (env : Environment) (importNames : NameSet) : NameSet 
 
 /-- `minImpsCore stx id` is the internal function to elaborate the `#min_imports in` command.
 It collects the irredundant imports to parse and elaborate `stx` and logs
-```lean
+```lean +error
 import A
 import B
 ...
