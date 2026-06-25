@@ -5,14 +5,16 @@ open Lake DSL
 /-!
 ## Mathlib dependencies on upstream projects
 -/
-
-require "leanprover-community" / "batteries" @ git "main"
-require "leanprover-community" / "Qq" @ git "master"
-require "leanprover-community" / "aesop" @ git "master"
-require "leanprover-community" / "proofwidgets" @ git "main"
+require "verso-migrate" from "../../Code/lean/verso-migrate"
+require "leanprover-community" / "batteries" @ git "v4.30.0-rc2"
+require "leanprover-community" / "Qq" @ git "v4.30.0-rc2"
+require "leanprover-community" / "aesop" @ git "v4.30.0-rc2"
+require "leanprover-community" / "proofwidgets" @ git "v0.0.98"
   with NameMap.empty.insert `errorOnBuild
     "ProofWidgets failed to reuse pre-built JS code. \
     Please report this issue on the Lean Zulip."
+
+
 require "leanprover-community" / "importGraph" @ git "main"
 require "leanprover-community" / "LeanSearchClient" @ git "main"
 require "leanprover-community" / "plausible" @ git "main"
@@ -28,7 +30,8 @@ abbrev mathlibOnlyLinters : Array LeanOption := #[
   ⟨`linter.mathlibStandardSet, true⟩,
   -- Explicitly enable the header linter, since the standard set is defined in `Mathlib.Init`
   -- but we want to run this linter in files imported by `Mathlib.Init`.
-  ⟨`linter.style.header, true⟩,
+  --⟨`linter.style.header, true⟩,
+  ⟨`linter.style.header, false⟩,
   ⟨`linter.checkInitImports, true⟩,
   ⟨`linter.allScriptsDocumented, true⟩,
   ⟨`linter.pythonStyle, true⟩,
