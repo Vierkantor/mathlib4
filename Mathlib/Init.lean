@@ -39,6 +39,9 @@ public import ImportGraph.Tools
 public import Mathlib.Tactic.Linter.Lint
 -- This import makes the `#min_imports in` command available globally.
 public import Mathlib.Tactic.MinImports
+-- This import makes the migration docstring roles (`{url}`, `{library_note}`, `{cite}`, and the
+-- `code` code block) available in every docstring. It only depends on `Lean` and `Batteries`.
+public import Mathlib.Migration
 
 /-!
 This is the root file in Mathlib: it is imported by virtually *all* Mathlib files.
