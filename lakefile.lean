@@ -5,7 +5,7 @@ open Lake DSL
 /-!
 ## Mathlib dependencies on upstream projects
 -/
-require "verso-migrate" from "../../Code/lean/verso-migrate"
+require "verso-migrate" from git "git@github.com:david-christiansen/verso-migrate.git" @ "main"
 require "leanprover-community" / "batteries" @ git "v4.30.0-rc2"
 require "leanprover-community" / "Qq" @ git "v4.30.0-rc2"
 require "leanprover-community" / "aesop" @ git "v4.30.0-rc2"
@@ -137,6 +137,14 @@ lean_exe «check_title_labels» where
 /-- `lake exe nightly-testing-checklist` reports nightly-testing branch status. -/
 lean_exe «nightly-testing-checklist» where
   srcDir := "scripts"
+
+/-- `lake exe migrate-docstrings PATH…` migrates Mathlib docstrings to Verso syntax in place,
+inserting the `{url}`, `{cite}`, and `{library_note}` roles and the `code` code block.
+Pass `--dry-run` to preview the result without writing. -/
+lean_exe «migrate-docstrings» where
+  root := `MigrateDocstrings
+  srcDir := "scripts"
+  supportInterpreter := true
 
 lean_exe mathlib_test_executable where
   root := `MathlibTest.MathlibTestExecutable

@@ -92,7 +92,8 @@ def url (xs : TSyntaxArray `inline) : DocM (Inline ElabInline) := do
 A reference to a library note.
 
 The code literal contains the note's label, as in `` {library_note}`partially-applied ext lemmas` ``.
-The label is checked against the library notes in scope.
+A warning is reported when no library note with this label is in scope, so that references to notes
+defined later are allowed.
 -/
 @[doc_role]
 def «library_note» (xs : TSyntaxArray `inline) : DocM (Inline ElabInline) := do
@@ -100,7 +101,7 @@ def «library_note» (xs : TSyntaxArray `inline) : DocM (Inline ElabInline) := d
   let label := s.getString
   let labels := Mathlib.Migration.libraryNoteLabels (← getEnv)
   unless labels.contains label do
-    throwErrorAt s m!"No library note with label `{label}`."
+    logWarningAt s m!"No library note with label `{label}`."
   return .code label
 
 /--

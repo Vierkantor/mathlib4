@@ -23,8 +23,8 @@ set_option doc.verso true in
 /-- See {library_note}`migration role test`. -/
 def libraryNoteTest : Nat := 0
 
--- The `{library_note}` role rejects an unknown label.
-/-- error: No library note with label `does not exist`. -/
+-- The `{library_note}` role warns on an unknown label, allowing forward references.
+/-- warning: No library note with label `does not exist`. -/
 #guard_msgs in
 set_option doc.verso true in
 /-- See {library_note}`does not exist`. -/
