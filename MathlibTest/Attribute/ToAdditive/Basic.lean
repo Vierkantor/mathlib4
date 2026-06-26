@@ -957,3 +957,19 @@ attribute [to_additive existing] MulClass MulClass.mk.congr_simp
 #guard_msgs in
 @[to_additive]
 axiom MulAxiom {α} : Mul α
+
+namespace VersoDocs
+
+/-! Testing translation of Verso docstrings -/
+
+set_option doc.verso true
+
+variable {G : Type*} [CommGroup G]
+
+/-- The foo of {lean}`AddCommGroup` -/
+@[to_additive bar /-- The bar of {lean}`AddCommGroup` -/]
+lemma foo (g h : G) : g * h = h * g := mul_comm g h
+/-- info: VersoDocs.bar.{u_1} {G : Type u_1} [AddCommGroup G] (g h : G) : g + h = h + g -/
+#guard_msgs in #check bar
+
+end VersoDocs
