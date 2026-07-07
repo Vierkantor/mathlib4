@@ -662,7 +662,6 @@ elab (name := notation3) doc:(docComment)? attrs?:(Parser.Term.attributes)? attr
           | .app _ arity => ``(withOverApp $(quote arity) $bodyCore)
           | _            => pure bodyCore
         elabCommand <| ← `(
-          /-- Pretty printer defined by `notation3` command. -/
           @[$attrKind delab $(mkIdent key.key)]
           $vis:visibility aux_def delab_app $(mkIdent fullName) : Delab :=
             whenPPOption getPPNotation <| whenNotPPOption getPPExplicit <| $body)
