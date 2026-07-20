@@ -6,10 +6,12 @@ open Lake DSL
 ## Mathlib dependencies on upstream projects
 -/
 require "verso-migrate" from git "git@github.com:david-christiansen/verso-migrate.git" @ "main"
-require "leanprover-community" / "batteries" @ git "v4.30.0-rc2"
-require "leanprover-community" / "Qq" @ git "v4.30.0-rc2"
-require "leanprover-community" / "aesop" @ git "v4.30.0-rc2"
-require "leanprover-community" / "proofwidgets" @ git "v0.0.98"
+
+require "leanprover-community" / "batteries" @ git "main"
+require "leanprover-community" / "Qq" @ git "master"
+
+require "leanprover-community" / "aesop" @ git "master"
+require "leanprover-community" / "proofwidgets" @ git "main"
   with NameMap.empty.insert `errorOnBuild
     "ProofWidgets failed to reuse pre-built JS code. \
     Please report this issue on the Lean Zulip."
@@ -53,6 +55,12 @@ package mathlib where
   testDriver := "MathlibTest"
   lintDriver := "batteries/runLinter"
   lintDriverArgs := #["Mathlib"]
+  -- A version of Mathlib only supports the toolchain it is built with.
+  fixedToolchain := true
+  -- Mathlib oleans are built on Linux CI and used across platforms.
+  platformIndependent := true
+  -- Mathlib currently expects artifacts to be in the build directory.
+  restoreAllArtifacts := true
   -- These are additional settings which do not affect the lake hash,
   -- so they can be enabled in CI and disabled locally or vice versa.
   -- Warning: Do not put any options here that actually change the olean files,

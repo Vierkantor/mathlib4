@@ -121,7 +121,7 @@ def cite (key : StrLit) (xs : TSyntaxArray `inline) : DocM (Inline ElabInline) :
     unless Mathlib.Migration.bibContainsKey bib k do
       logWarningAt key m!"No bibliography entry `{k}` in `docs/references.bib`."
   return .other
-    { name := ``Mathlib.Migration.Citation, val := .mk (Mathlib.Migration.Citation.mk k) }
+    (.custom (.mk (Mathlib.Migration.Citation.mk k)))
     rendered
 
 /--
@@ -133,8 +133,7 @@ The language is recorded for later use; the listing itself is rendered verbatim.
 @[doc_code_block]
 def code (language : Ident) (content : StrLit) : DocM (Block ElabInline ElabBlock) := do
   return .other
-    { name := ``Mathlib.Migration.CodeWithLanguage,
-      val := .mk (Mathlib.Migration.CodeWithLanguage.mk language.getId.toString) }
+    (.custom (.mk (Mathlib.Migration.CodeWithLanguage.mk language.getId.toString)))
     #[.code content.getString]
 
 end
