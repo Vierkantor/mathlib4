@@ -98,7 +98,7 @@ theorem of_symm_apply (f : Matrix m n α) (i j) : of.symm f i j = f i j :=
 
 /-- Construct a matrix from an array in row-major ordering. -/
 def ofArray {m n : ℕ} (A : Array R) (hA : A.size = m * n) : Matrix (Fin m) (Fin n) R :=
-  fun i j => A[Fin.mkDivMod i j]
+  Matrix.of fun i j => A[Fin.mkDivMod i j]
 
 @[simp]
 theorem ofArray_apply {m n : ℕ} (A : Array R) (hA : A.size = m * n) (i : Fin m) (j : Fin n) :
@@ -117,6 +117,37 @@ lemma ofArray_eq_of_getD [Zero R] {m n : ℕ} (A : Array R) (hA : A.size = m * n
   ext i j
   have : n * i.val + j.val < m * n := (Fin.mkDivMod i j).isLt
   simp [ofArray, hA, this]
+
+/-- Construct a matrix from nested arrays.
+
+This is used as a reflection target over `ofArray` since arrays behave like linked lists in the
+kernel: they are slow to index. In other words, `ofArrays A i j` should be faster than
+`ofArray A' i j`.
+-/
+def ofArrays {m n : ℕ} (A : Array (Array R))
+    (hAm : A.size = m) (hAn : ∀ i : Fin m, A[i].size = n) : Matrix (Fin m) (Fin n) R :=
+  Matrix.of fun i j =>
+    have : A[i].size = n := hAn i
+    A[i][j]
+
+@[simp]
+theorem ofArrays_apply {m n : ℕ} (A : Array (Array R))
+    (hAm : A.size = m) (hAn : ∀ i : Fin m, A[i].size = n)
+    (i : Fin m) (j : Fin n) :
+    ofArrays A hAm hAn i j = A[i][j]'(by grind) := rfl
+
+/-- The matrix constructed from the row-major array of `A`'s entries is `A`. -/
+@[simp]
+theorem ofArrays_ofFn {m n : ℕ} (A : Matrix (Fin m) (Fin n) R) :
+    ofArrays (.ofFn fun i => .ofFn fun j => A i j) Array.size_ofFn (by simp) = A := by
+  ext; simp
+
+lemma ofArrays_eq_of_getD [Zero R] {m n : ℕ} (A : Array (Array R))
+    (hAm : A.size = m) (hAn : ∀ i : Fin m, A[i].size = n) :
+    ofArrays A hAm hAn = .of fun i j ↦ (A.getD i #[]).getD j 0 := by
+  ext i j
+  have hj : j < A[(i : ℕ)].size := j.2.trans_eq (hAn i).symm
+  simp [ofArrays, hAm, getElem?_pos A[(i : ℕ)] (j : ℕ) hj]
 
 /-- `M.map f` is the matrix obtained by applying `f` to each entry of the matrix `M`.
 
