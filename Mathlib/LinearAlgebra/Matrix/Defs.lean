@@ -118,36 +118,30 @@ lemma ofArray_eq_of_getD [Zero R] {m n : ℕ} (A : Array R) (hA : A.size = m * n
   have : n * i.val + j.val < m * n := (Fin.mkDivMod i j).isLt
   simp [ofArray, hA, this]
 
-/-- Construct a matrix from nested arrays.
+/-- Construct a matrix from nested fixed-size arrays.
 
 This is used as a reflection target over `ofArray` since arrays behave like linked lists in the
-kernel: they are slow to index. In other words, `ofArrays A i j` should be faster than
+kernel: they are slow to index. In other words, `ofVectors A i j` should be faster than
 `ofArray A' i j`.
 -/
-def ofArrays {m n : ℕ} (A : Array (Array R))
-    (hAm : A.size = m) (hAn : ∀ i : Fin m, A[i].size = n) : Matrix (Fin m) (Fin n) R :=
-  Matrix.of fun i j =>
-    have : A[i].size = n := hAn i
-    A[i][j]
+def ofVectors {m n : ℕ} (A : Vector (Vector R n) m) : Matrix (Fin m) (Fin n) R :=
+  Matrix.of fun i j => A[i][j]
 
 @[simp]
-theorem ofArrays_apply {m n : ℕ} (A : Array (Array R))
-    (hAm : A.size = m) (hAn : ∀ i : Fin m, A[i].size = n)
+theorem ofVectors_apply {m n : ℕ} (A : Vector (Vector R n) m)
     (i : Fin m) (j : Fin n) :
-    ofArrays A hAm hAn i j = A[i][j]'(by grind) := rfl
+    ofVectors A i j = A[i][j] := rfl
 
 /-- The matrix constructed from the row-major array of `A`'s entries is `A`. -/
 @[simp]
-theorem ofArrays_ofFn {m n : ℕ} (A : Matrix (Fin m) (Fin n) R) :
-    ofArrays (.ofFn fun i => .ofFn fun j => A i j) Array.size_ofFn (by simp) = A := by
+theorem ofVectors_ofFn {m n : ℕ} (A : Matrix (Fin m) (Fin n) R) :
+    ofVectors (.ofFn fun i => .ofFn fun j => A i j) = A := by
   ext; simp
 
-lemma ofArrays_eq_of_getD [Zero R] {m n : ℕ} (A : Array (Array R))
-    (hAm : A.size = m) (hAn : ∀ i : Fin m, A[i].size = n) :
-    ofArrays A hAm hAn = .of fun i j ↦ (A.getD i #[]).getD j 0 := by
+lemma ofVectors_eq_of_getD [Zero R] {m n : ℕ} (A : Vector (Vector R n) m) :
+    ofVectors A = .of fun i j ↦ (A.getD i 0).getD j 0 := by
   ext i j
-  have hj : j < A[(i : ℕ)].size := j.2.trans_eq (hAn i).symm
-  simp [ofArrays, hAm, getElem?_pos A[(i : ℕ)] (j : ℕ) hj]
+  simp [ofVectors, Vector.getD]
 
 /-- `M.map f` is the matrix obtained by applying `f` to each entry of the matrix `M`.
 

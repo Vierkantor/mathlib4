@@ -12,7 +12,7 @@ public meta import Qq
 /-!
 # Matrix notation
 This file defines `!![a, b; c, d]` notation for finite matrices. Matrix literals are represented
-by nested `Array`s and constructed using `Matrix.ofArrays`.
+by nested `Vector`s, i.e. `Array`s of fixed size, and constructed using `Matrix.ofVectors`.
 The notation also supports empty matrices: `!![,,,] : Matrix (Fin 0) (Fin 3) α` and
 `!![;;;] : Matrix (Fin 3) (Fin 0) α`.
 -/
@@ -36,18 +36,31 @@ private meta def mkArrayLiteralQ {u : Level} {α : Q(Type u)} (elems : Array Q($
     elems.foldr (init := q(List.nil)) fun e acc => q(List.cons $e $acc)
   q(List.toArray $elemsList)
 
+/-- Construct a quoted vector literal from quoted elements.
+
+If `n ≠ elems.length`, then the literal will fail to typecheck.
+-/
+private meta def mkVectorLiteralQ {u : Level} {n : ℕ} {α : Q(Type u)} (elems : Array Q($α)) :
+    Q(Vector $α $n) :=
+  let elemsArray := mkArrayLiteralQ elems
+  mkApp4 (mkConst ``Vector.mk [u]) α (mkNatLit n) elemsArray <|
+    mkApp2 (mkConst ``Eq.refl [1]) (mkConst ``Nat []) (mkNatLit n)
+
 /-- `Matrix.mkLiteralQ !![a, b; c, d]` produces the term `q(!![$a, $b; $c, $d])`. -/
 meta def mkLiteralQ {u : Level} {α : Q(Type u)} {m n : Nat}
     (elems : Matrix (Fin m) (Fin n) Q($α)) : Q(Matrix (Fin $m) (Fin $n) $α) :=
   let elems : Array (Array Q($α)) := (List.finRange m).toArray.map fun i =>
     (List.finRange n).toArray.map fun j => elems i j
-  have elemsArray : Q(Array (Array $α)) := mkArrayLiteralQ (elems.map mkArrayLiteralQ)
-  have hAm : Q(Array.size $elemsArray = $m) :=
-    mkApp2 (mkConst ``Eq.refl [Level.succ Level.zero]) (mkConst ``Nat) (mkNatLit m)
-  have hAn : Q(∀ i : Fin $m, Array.size $elemsArray[i] = $n) :=
-    .lam `j (binderInfo := .default) q(Fin $m) <| 
-      mkApp2 (mkConst ``Eq.refl [Level.succ Level.zero]) (mkConst ``Nat) (mkNatLit n)
-  q(Matrix.ofArrays $elemsArray $hAm $hAn)
+  have elemsArray := mkVectorLiteralQ (elems.map mkVectorLiteralQ)
+  q(Matrix.ofVectors $elemsArray)
+
+/-- High priority reflection instance for `Fin`-indexed matrices, to use `ofVectors` rather than
+repeated `Fin.vecCons`. -/
+protected meta instance (priority := high) toExprFin [ToLevel.{u}] {m n : ℕ} [Lean.ToExpr α] :
+    Lean.ToExpr (Matrix (Fin m) (Fin n) α) :=
+  have eα : Q(Type $(toLevel.{u})) := toTypeExpr α
+  { toTypeExpr := q(Matrix (Fin $m) (Fin $n) $eα)
+    toExpr := fun M => mkLiteralQ (α := eα) <| M.map toExpr }
 
 /-- Matrices can be reflected whenever their entries can. We insert a `Matrix.of` to prevent
 immediate decay to a function. -/
@@ -80,7 +93,7 @@ This notation implements some special cases:
 * `!![;;]`, with `m` `;`s, is a term of type `Matrix (Fin m) (Fin 0) α`
 * `!![]` is the 0×0 matrix
 Under the hood, `!![a, b, c; d, e, f]` is syntax for
-`Matrix.ofArrays #[#[a, b, c], #[d, e, f]] rfl (fun _ => rfl)`.
+`Matrix.ofVectors #[#[a, b, c], #[d, e, f]] rfl (fun _ => rfl)`.
 -/
 syntax (name := matrixNotation)
   "!![" ppRealGroup(sepBy1(ppGroup(term,+,?), ";", "; ", allowTrailingSep)) "]" : term
@@ -100,13 +113,13 @@ macro_rules
         Macro.throwErrorAt (mkNullNode row) s!"\
           Rows must be of equal length; this row has {row.size} items, \
           the previous rows have {n}"
-    let elems ← rows.mapM fun (row : Array _) => `(#[$row,*])
-    `(@Matrix.ofArrays _ $(quote m) $(quote n) #[$elems,*] rfl (fun _ => rfl))
+    let elems ← rows.mapM fun (row : Array _) => `(#v[$row,*])
+    `(@Matrix.ofVectors _ $(quote m) $(quote n) #v[$elems,*])
   | `(!![$[;%$semicolons]*]) => do
-    let emptyVecs ← semicolons.mapM fun _ => `(#[])
-    `(@Matrix.ofArrays _ $(quote semicolons.size) 0 #[$emptyVecs,*] rfl (fun _ => rfl))
+    let emptyVecs ← semicolons.mapM fun _ => `(#v[])
+    `(@Matrix.ofVectors _ $(quote semicolons.size) 0 #v[$emptyVecs,*])
   | `(!![$[,%$commas]*]) =>
-    `(@Matrix.ofArrays _ 0 $(quote commas.size) #[] rfl finZeroElim)
+    `(@Matrix.ofVectors _ 0 $(quote commas.size) #v[])
 
 /-- Delaborate entries supplied in row-major ordering into the `!![]` notation. -/
 private meta def delabArrayMatrixNotation (m n : Nat) (elems : Array (Array Term)) :
@@ -126,16 +139,23 @@ private meta def delabArrayMatrixNotation (m n : Nat) (elems : Array (Array Term
       (List.finRange n).toArray.map fun j => elems[i]![j]!
     `(!![$[$[$rows],*];*])
 
+/-- Delaborate the elements of a vector literal separately, calling `elem` on each. -/
+meta def delabVectorLiteral {α} (elem : DelabM α) : DelabM (Array α) := do
+  match_expr ← getExpr with
+  | Vector.mk _ _ _ _ => withNaryArg 2 <| delabArrayLiteral elem
+  | _ => failure
+
 /-- Delaborator for the `!![]` notation. -/
-@[app_delab Matrix.ofArrays]
+@[app_delab Matrix.ofVectors]
 meta def delabMatrixNotation : Delab := whenNotPPOption getPPExplicit <|
   whenPPOption getPPNotation <|
-  withOverApp 5 do
+  withOverApp 4 do
+    logInfo s!"beep {← getExpr}"
     let (_, args) := (← getExpr).getAppFnArgs
-    let #[_, em, en, _, _] := args | failure
+    let #[_, em, en, _] := args | failure
     let some m ← withNatValue em (pure ∘ some) | failure
     let some n ← withNatValue en (pure ∘ some) | failure
-    let rows ← delabArrayLiteral (delabArrayLiteral delab)
+    let rows ← withNaryArg 3 <| delabVectorLiteral (delabVectorLiteral delab)
     delabArrayMatrixNotation m n rows
 
 end Parser
