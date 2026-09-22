@@ -28,7 +28,7 @@ assert_not_exists MonoidWithZero
 
 open Function (Injective Surjective)
 
-variable {G M N A α : Type*}
+variable {G M A α : Type*}
 
 /-! ### Tautological actions -/
 
@@ -190,6 +190,7 @@ lemma MulAction.coe_toPermHom :
     ⇑(MulAction.toPermHom G α) = MulAction.toPerm :=
   rfl
 
+@[to_additive]
 lemma MulAction.toPerm_one :
     (MulAction.toPerm (1 : G)) = (1 : Equiv.Perm α) := by
   aesop
@@ -201,16 +202,12 @@ variable (G α) [AddGroup G] [AddAction G α]
 
 /-- Given an action of an additive group `G` on a set `α`, each `g : G` defines a permutation of
 `α`. -/
-@[simps!]
+@[simps! apply]
 def AddAction.toPermHom : G →+ Additive (Equiv.Perm α) := (MulAction.toPermHom ..).toAdditiveRight
 
 lemma AddAction.coe_toPermHom :
     ⇑(AddAction.toPermHom G α) = AddAction.toPerm :=
   rfl
-
-theorem AddAction.toPerm_zero :
-    (AddAction.toPerm (0 : G)) = (1 : Equiv.Perm α) := by
-  aesop
 
 end AddGroup
 
