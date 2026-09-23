@@ -8,7 +8,11 @@ module
 public import Mathlib.Algebra.GroupWithZero.Submonoid.Pointwise
 public import Mathlib.Algebra.Ring.Subsemiring.Basic
 
-/-! # Pointwise instances on `Subsemiring`s
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Pointwise instances on `Subsemiring`s
 
 This file provides the action `Subsemiring.PointwiseMulAction` which matches the action of
 `MulActionSet`.

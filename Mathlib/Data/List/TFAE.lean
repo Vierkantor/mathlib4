@@ -8,6 +8,9 @@ module
 public import Batteries.Tactic.Alias
 public import Mathlib.Init
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The Following Are Equivalent
 
@@ -60,6 +63,8 @@ theorem TFAE.out {l} (h : TFAE l) (i j : Nat) {a b}
     a ↔ b :=
   h _ (List.mem_of_getElem? h₁) _ (List.mem_of_getElem? h₂)
 
+
+set_option doc.verso false
 /-- If `P₁ x ↔ ... ↔ Pₙ x` for all `x`, then `(∀ x, P₁ x) ↔ ... ↔ (∀ x, Pₙ x)`.
 Note: in concrete cases, Lean has trouble finding the list `[P₁, ..., Pₙ]` from the list
 `[(∀ x, P₁ x), ..., (∀ x, Pₙ x)]`, but simply providing a list of underscores with the right
@@ -79,6 +84,10 @@ theorem forall_tfae {α : Type*} (l : List (α → Prop)) (H : ∀ a : α, (l.ma
   exact forall_congr' fun a ↦ H a (p₁ a) (mem_map_of_mem hp₁)
     (p₂ a) (mem_map_of_mem hp₂)
 
+
+set_option doc.verso true
+
+set_option doc.verso false
 /-- If `P₁ x ↔ ... ↔ Pₙ x` for all `x`, then `(∃ x, P₁ x) ↔ ... ↔ (∃ x, Pₙ x)`.
 Note: in concrete cases, Lean has trouble finding the list `[P₁, ..., Pₙ]` from the list
 `[(∃ x, P₁ x), ..., (∃ x, Pₙ x)]`, but simply providing a list of underscores with the right
@@ -98,6 +107,8 @@ theorem exists_tfae {α : Type*} (l : List (α → Prop)) (H : ∀ a : α, (l.ma
   exact exists_congr fun a ↦ H a (p₁ a) (mem_map_of_mem hp₁)
     (p₂ a) (mem_map_of_mem hp₂)
 
+
+set_option doc.verso true
 theorem tfae_not_iff : TFAE (l.map Not) ↔ TFAE l := by
   classical
   simp only [TFAE, mem_map, forall_exists_index, and_imp, forall_apply_eq_imp_iff₂,

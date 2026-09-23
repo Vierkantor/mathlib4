@@ -11,8 +11,10 @@ public import Mathlib.Order.Defs.LinearOrder
 public meta import Mathlib.Tactic.ToAdditive
 public meta import Mathlib.Tactic.ToDual
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # `move_add` a tactic for moving summands in expressions
 
 The tactic `move_add` rearranges summands in expressions.
@@ -24,40 +26,39 @@ A term preceded by `←` gets moved to the left, while a term without `←` gets
 
   In this case, the effect of `move_add []` is equivalent to `simp only [← add_assoc]`:
   essentially the tactic removes all visible parentheses.
-
 * Singleton input: `move_add [a]` and `move_add [← a]`
 
   If `⊢ b + a + c` is (a summand in) the goal, then
+
   * `move_add [← a]` changes the goal to `a + b + c` (effectively, `a` moved to the left).
   * `move_add [a]` changes the goal to `b + c + a` (effectively, `a` moved to the right);
 
-  The tactic reorders *all* sub-expressions of the target at the same time.
+  The tactic reorders _all_ sub-expressions of the target at the same time.
   For instance, if `⊢ 0 < if b + a < b + a + c then a + b else b + a` is the goal, then
+
   * `move_add [a]` changes the goal to `0 < if b + a < b + c + a then b + a else b + a`
     (`a` moved to the right in three sums);
   * `move_add [← a]` changes the goal to `0 < if a + b < a + b + c then a + b else a + b`
     (`a` again moved to the left in three sums).
-
 * Longer inputs: `move_add [..., a, ..., ← b, ...]`
 
   If the list contains more than one term, the tactic effectively tries to move each term preceded
   by `←` to the left, each term not preceded by `←` to the right
-  *maintaining the relative order in the call*.
+  _maintaining the relative order in the call_.
   Thus, applying `move_add [a, b, c, ← d, ← e]` returns summands of the form
   `d + e + [...] + a + b + c`, i.e. `d` and `e` have the same relative position in the input list
   and in the final rearrangement (and similarly for `a, b, c`).
   In particular, `move_add [a, b]` likely has the same effect as
   `move_add [a]; move_add [b]`: first, we move `a` to the right, then we move `b` also to the
-  right, *after* `a`.
+  right, _after_ `a`.
   However, if the terms matched by `a` and `b` do not overlap, then `move_add [← a, ← b]`
   has the same effect as `move_add [b]; move_add [a]`:
-  first, we move `b` to the left, then we move `a` also to the left, *before* `b`.
+  first, we move `b` to the left, then we move `a` also to the left, _before_ `b`.
   The behaviour in the situation where `a` and `b` overlap is unspecified: `move_add`
   will descend into subexpressions, but the order in which they are visited depends
   on which rearrangements have already happened.
   Also note, though, that `move_add [a, b]` may differ from `move_add [a]; move_add [b]`,
   for instance when `a` and `b` are `DefEq`.
-
 * Unification of inputs and repetitions: `move_add [_, ← _, a * _]`
 
   The matching of the user inputs with the atoms of the summands in the target expression
@@ -69,6 +70,7 @@ A term preceded by `←` gets moved to the left, while a term without `←` gets
   Thus, if again the target contains `2 * 3 + 4 * (5 + 6) + 4 * 7 + 10 * 10`, then
   `move_add [_, ← _, 4 * _]`
   matches
+
   * the first input (`_`) with `2 * 3`;
   * the second input (`_`) with `4 * (5 + 6)`;
   * the third input (`4 * _`) with `4 * 7`.
@@ -127,13 +129,14 @@ section reorder
 variable {α : Type*} [BEq α]
 
 /-!
-## Reordering the variables
+# Reordering the variables
 
 This section produces the permutations of the variables for `move_add`.
 
 The user controls the final order by passing a list of terms to the tactic.
 Each term can be preceded by `←` or not.
 In the final ordering,
+
 * terms preceded by `←` appear first,
 * terms not preceded by `←` appear last,
 * all remaining terms remain in their current relative order.
@@ -175,18 +178,21 @@ def weight (L : List (α × Bool)) (a : α) : ℤ :=
     | some (_, b) => if b then - l + (L.idxOf (a, b) : ℤ) else (L.idxOf (a, b) + 1 : ℤ)
     | none => 0
 
-/-- `reorderUsing toReorder instructions` produces a reordering of `toReorder : List α`,
+/--
+`reorderUsing toReorder instructions` produces a reordering of `toReorder : List α`,
 following the requirements imposed by `instructions : List (α × Bool)`.
 
 These are the requirements:
+
 * elements of `toReorder` that appear with `true` in `instructions` appear at the
-  *beginning* of the reordered list, in the order in which they appear in `instructions`;
+  _beginning_ of the reordered list, in the order in which they appear in `instructions`;
 * similarly, elements of `toReorder` that appear with `false` in `instructions` appear at the
-  *end* of the reordered list, in the order in which they appear in `instructions`;
+  _end_ of the reordered list, in the order in which they appear in `instructions`;
 * finally, elements of `toReorder` that do not appear in `instructions` appear "in the middle"
   with the order that they had in `toReorder`.
 
 For example,
+
 * `reorderUsing [0, 1, 2] [(0, false)] = [1, 2, 0]`,
 * `reorderUsing [0, 1, 2] [(1, true)] = [1, 0, 2]`,
 * `reorderUsing [0, 1, 2] [(1, true), (0, false)] = [1, 2, 0]`.
@@ -267,7 +273,9 @@ partial def getOps (sum : Expr) : MetaM (Array ((Array Expr) × Expr)) := do
   let rest ← rest.mapM getOps
   return rest.foldl Array.append first
 
-/-- `rankSums op tgt instructions` takes as input
+/--
+`rankSums op tgt instructions` takes as input
+
 * the name `op` of a binary operation,
 * an `Expr`ession `tgt`,
 * a list `instructions` of pair `(expression, Boolean)`.
@@ -278,7 +286,7 @@ it rearranges the operands of such subexpressions following the order implied by
 (as in `reorderUsing`),
 it returns the list of pairs of expressions `(old_sum, new_sum)`, for which `old_sum ≠ new_sum`
 sorted by decreasing value of `Lean.Expr.size`.
-In particular, a subexpression of an `old_sum` can only appear *after* its over-expression.
+In particular, a subexpression of an `old_sum` can only appear _after_ its over-expression.
 -/
 def rankSums (tgt : Expr) (instructions : List (Expr × Bool)) : MetaM (List (Expr × Expr)) := do
   let sums ← getOps op (← instantiateMVars tgt)
@@ -303,6 +311,8 @@ def permuteExpr (tgt : Expr) (instructions : List (Expr × Bool)) : MetaM Expr :
     permTgt := permTgt.replace (if · == old then new else none)
   return permTgt
 
+
+set_option doc.verso false
 /-- `pairUp L R` takes two lists `L R : List Expr` as inputs.
 It scans the elements of `L`, looking for a corresponding `DefEq` `Expr`ession in `R`.
 If it finds one such element `d`, then it sets the element `d : R` aside, removing it from `R`, and
@@ -335,6 +345,8 @@ def pairUp : List (Expr × Bool × Syntax) → List Expr →
                   return ((d, m.2.1)::found, unfound)
   | _, _ => return ([], [])
 
+
+set_option doc.verso true
 /-- `moveOperSimpCtx` is the `Simp.Context` for the reordering internal to `move_oper`.
 To support a new binary operation, extend the list in this definition, so that it contains
 enough lemmas to allow `simp` to close a generic permutation goal for the new binary operation.

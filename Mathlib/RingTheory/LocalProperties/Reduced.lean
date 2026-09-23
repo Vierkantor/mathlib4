@@ -8,6 +8,9 @@ module
 public import Mathlib.RingTheory.LocalProperties.Basic
 public import Mathlib.RingTheory.Nilpotent.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `IsReduced` is a local property
 
@@ -19,7 +22,6 @@ Let `R` be a commutative ring, `M` be a submonoid of `R`.
 
 * `isReduced_localizationPreserves` :  `M⁻¹R` is reduced if `R` is reduced.
 * `isReduced_ofLocalizationMaximal` : `R` is reduced if `Rₘ` is reduced for all maximal ideal `m`.
-
 -/
 
 public section

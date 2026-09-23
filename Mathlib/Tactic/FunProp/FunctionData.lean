@@ -10,8 +10,11 @@ public meta import Mathlib.Tactic.FunProp.Mor
 public import Mathlib.Tactic.FunProp.Mor
 public import Mathlib.Tactic.FunProp.ToBatteries
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
-## `funProp` data structure holding information about a function
+# `funProp` data structure holding information about a function
 
 `FunctionData` holds data about function in the form `fun x ↦ f x₁ ... xₙ`.
 -/

@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Monoidal.Closed.Braided
 public import Mathlib.CategoryTheory.Monoidal.Limits.HasLimits
 public import Mathlib.CategoryTheory.Monoidal.PushoutProduct
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Monoidal structure on the arrow category of a cartesian closed category.
 
@@ -18,7 +21,6 @@ given by the tensor product on `C`).
 
 If `C` also has pullbacks, then `Arrow C` has a monoidal closed structure given by the pullback-hom
 (the Leibniz construction given by the internal hom on `C`).
-
 -/
 
 public section

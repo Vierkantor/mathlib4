@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.Normed.Operator.Bilinear
 public import Mathlib.Analysis.Normed.Operator.NNNorm
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Operators on complete normed spaces
 

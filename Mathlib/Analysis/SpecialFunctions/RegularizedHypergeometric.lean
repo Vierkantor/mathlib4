@@ -8,17 +8,21 @@ module
 public import Mathlib.Analysis.SpecialFunctions.OrdinaryHypergeometric
 public import Mathlib.Analysis.SpecialFunctions.Gamma.Beta
 
-/-! # Generalized hypergeometric function
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Generalized hypergeometric function
 
 In this file we define the generalized hypergeometric function as well as the Gaussian
 hypergeometric function.
 
 The hypergeometric function is a function with parameters `a : Fin p → ℂ` and `b : Fin q → ℂ`.
 
-Note that in this file, we use the *regularized* version of the hypergeometric function, that is
+Note that in this file, we use the _regularized_ version of the hypergeometric function, that is
 the coefficients are divides by `∏ i, Gamma (b i)`, giving in the case of the Gaussian
 hypergeometric function the series representation
-$$\sum_j \frac{(a)^n (b)^n}{\Gamma(c + n) n!} z^ n,$$
+$$`\sum_j \frac{(a)^n (b)^n}{\Gamma(c + n) n!} z^ n,`
 where `(a)^n` denotes the rising Pochhammer symbol.
 
 This definition is valid for all values of `c`, whereas the usual hypergeometric function has a
@@ -28,18 +32,22 @@ function (`p = 0` and `q = 1`).
 To recover the usual hypergeometric function, simply multiply by `∏ i, Gamma (b i)`.
 
 ## Definitions
+
 For the general case we have
+
 * `Complex.regularizedHGFunCoeff`: the coefficients
 * `Complex.regularizedHGFunSeries`: the formal multilinear series
 * `Complex.regularizedHGFun`: the function
 
 For the Gaussian case (`p = 2` and `q = 1`), we define
+
 * `Complex.regularizedGaussHGFunSeries`: the formal multilinear series
 * `Complex.regularizedGaussHGFun`: the function
 
 ## Results
 
 Convergence:
+
 * `radius_regularizedHGFunSeries_eq_top_of_finite`: in the case that the series reduces to a
   polynomial, the radius of convergence is infinite.
 * `radius_regularizedHGFunSeries_eq_top`: if `p < q + 1`, then the series has infinite convergence
@@ -48,7 +56,6 @@ Convergence:
   `1`.
 * `Complex.radius_regularizedGaussHGFunSeries_eq_one`: the Gaussian hypergeometric series has
   convergence radius `1`.
-
 -/
 
 @[expose] public noncomputable section

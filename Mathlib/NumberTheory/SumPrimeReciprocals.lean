@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Order.Group.Indicator
 public import Mathlib.Analysis.PSeries
 public import Mathlib.NumberTheory.SmoothNumbers
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The sum of the reciprocals of the primes diverges
 
@@ -21,7 +24,7 @@ converges if and only if `r < -1`; see `Nat.Primes.summable_rpow`.
 
 ## References
 
-See the sixth proof for the infinity of primes in Chapter 1 of [aigner1999proofs].
+See the sixth proof for the infinity of primes in Chapter 1 of \[aigner1999proofs\].
 The proof is due to Erdős.
 -/
 

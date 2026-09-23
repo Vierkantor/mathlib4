@@ -9,22 +9,28 @@ public import Mathlib.Tactic.Ring.Common
 public meta import Mathlib.Algebra.Order.Ring.Unbundled.Rat -- for the `Ord Rat` instance
 public meta import Mathlib.Tactic.Ring.Common
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `ring` tactic
 
 A tactic for solving equations in commutative (semi)rings,
 where the exponents can also contain variables.
-Based on <http://www.cs.ru.nl/~freek/courses/tt-2014/read/10.1.1.61.3041.pdf> .
+Based on [
+http://www.cs.ru.nl/~freek/courses/tt-2014/read/10.1.1.61.3041.pdf](http://www.cs.ru.nl/~freek/courses/tt-2014/read/10.1.1.61.3041.pdf)
+.
 
 More precisely, expressions of the following form are supported:
-- constants (non-negative integers)
-- variables
-- coefficients (any rational number, embedded into the (semi)ring)
-- addition of expressions
-- multiplication of expressions (`a * b`)
-- scalar multiplication of expressions (`n • a`; the multiplier must have type `ℕ` or `ℤ`)
-- exponentiation of expressions (the exponent must have type `ℕ`)
-- subtraction and negation of expressions (if the base is a full ring)
+
+* constants (non-negative integers)
+* variables
+* coefficients (any rational number, embedded into the (semi)ring)
+* addition of expressions
+* multiplication of expressions (`a * b`)
+* scalar multiplication of expressions (`n • a`; the multiplier must have type `ℕ` or `ℤ`)
+* exponentiation of expressions (the exponent must have type `ℕ`)
+* subtraction and negation of expressions (if the base is a full ring)
 
 The extension to exponents means that something like `2 * 2^n * b = b * 2^(n+1)` can be proved,
 even though it is not strictly speaking an equation in the language of commutative rings.
@@ -175,7 +181,9 @@ section
 
 variable {R : Type*} [CommSemiring R] {n : ℕ} {a₁ a₂ a₃ : ℕ} {b₁ b₂ b₃ : R}
 
-/-! ### Scalar multiplication by `ℕ` -/
+/-!
+# Scalar multiplication by `ℕ`
+-/
 
 theorem natCast_nat (n) : ((Nat.rawCast n : ℕ) : R) = Nat.rawCast n := by simp
 
@@ -241,7 +249,9 @@ partial def ExSum.evalNatCast {a : Q(ℕ)} (va : ExSum sβ a) : AtomM (Result (E
 
 end
 
-/-! ### Scalar multiplication by `ℤ` -/
+/-!
+# Scalar multiplication by `ℤ`
+-/
 
 theorem natCast_int {R} [CommRing R] (n) : ((Nat.rawCast n : ℤ) : R) = Nat.rawCast n := by simp
 
@@ -586,7 +596,7 @@ where
       return q(of_eq $pa $pb)
 
 /--
-`ring1` solves the goal when it is an equality in *commutative* (semi)rings,
+`ring1` solves the goal when it is an equality in _commutative_ (semi)rings,
 allowing variables in the exponent.
 
 This version of `ring` fails if the target is not an equality.

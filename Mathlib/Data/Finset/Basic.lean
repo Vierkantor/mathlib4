@@ -17,6 +17,9 @@ public import Mathlib.Order.Directed
 public import Mathlib.Order.Interval.Set.Defs
 public import Mathlib.Data.Set.SymmDiff
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Basic lemmas on finite sets
 
@@ -41,7 +44,6 @@ For an explanation of `Finset` design decisions, please see `Mathlib/Data/Finset
 ## Tags
 
 finite sets, finset
-
 -/
 
 @[expose] public section
@@ -61,13 +63,17 @@ namespace Finset
 -- TODO: these should be global attributes, but this will require fixing other files
 attribute [local trans] Subset.trans Superset.trans
 
-/-! ### Lattice structure -/
+/-!
+# Lattice structure
+-/
 
 section Lattice
 
 variable [DecidableEq α] {s t u : Finset α} {a b : α}
 
-/-! #### union -/
+/-!
+# union
+-/
 
 @[simp]
 theorem disjUnion_eq_union (s t h) : @disjUnion α s t h = s ∪ t := by grind
@@ -80,7 +86,9 @@ theorem disjoint_union_left : Disjoint (s ∪ t) u ↔ Disjoint s u ∧ Disjoint
 theorem disjoint_union_right : Disjoint s (t ∪ u) ↔ Disjoint s t ∧ Disjoint s u := by
   simp only [disjoint_right, mem_union, or_imp, forall_and]
 
-/-! #### inter -/
+/-!
+# inter
+-/
 
 theorem not_disjoint_iff_nonempty_inter : ¬Disjoint s t ↔ (s ∩ t).Nonempty :=
   not_disjoint_iff.trans <| by simp [Finset.Nonempty]
@@ -106,7 +114,9 @@ end Lattice
 instance isDirected_le : IsDirectedOrder (Finset α) := by classical infer_instance
 instance isDirected_subset : IsDirected (Finset α) (· ⊆ ·) := isDirected_le
 
-/-! ### erase -/
+/-!
+# erase
+-/
 
 section Erase
 
@@ -188,7 +198,9 @@ lemma Nontrivial.exists_cons_eq {s : Finset α} (hs : s.Nontrivial) :
   have : b ∈ s.erase a := mem_erase.2 ⟨hab.symm, hb⟩
   refine ⟨(s.erase a).erase b, a, ?_, b, ?_, ?_, ?_⟩ <;> simp [insert_erase ha, *]
 
-/-! ### sdiff -/
+/-!
+# sdiff
+-/
 
 
 section Sdiff
@@ -278,7 +290,9 @@ theorem disjoint_sdiff_inter (s t : Finset α) : Disjoint (s \ t) (s ∩ t) :=
 
 end Sdiff
 
-/-! ### attach -/
+/-!
+# attach
+-/
 
 @[simp]
 theorem attach_empty : (∅ : Finset α).attach = ∅ :=
@@ -295,7 +309,9 @@ protected alias ⟨_, Nonempty.attach⟩ := attach_nonempty_iff
 theorem attach_eq_empty_iff {s : Finset α} : s.attach = ∅ ↔ s = ∅ := by
   simp [eq_empty_iff_forall_notMem]
 
-/-! ### filter -/
+/-!
+# filter
+-/
 
 section Filter
 variable (p q : α → Prop) [DecidablePred p] [DecidablePred q] {s t : Finset α}
@@ -432,7 +448,9 @@ end
 
 end Filter
 
-/-! ### range -/
+/-!
+# range
+-/
 
 
 section Range
@@ -454,7 +472,9 @@ end Range
 
 end Finset
 
-/-! ### dedup on list and multiset -/
+/-!
+# dedup on list and multiset
+-/
 
 namespace Multiset
 
@@ -539,7 +559,9 @@ theorem Nonempty.not_empty_toList {s : Finset α} (hs : s.Nonempty) : ¬s.toList
 
 end ToList
 
-/-! ### choose -/
+/-!
+# choose
+-/
 
 
 section Choose

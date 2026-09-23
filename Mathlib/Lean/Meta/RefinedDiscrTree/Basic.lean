@@ -7,10 +7,14 @@ module
 
 public import Mathlib.Init
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Basic Definitions for `RefinedDiscrTree`
 
 We define
+
 * `Key`, the discrimination tree key
 * `LazyEntry`, the partial, lazy computation of a sequence of `Key`s
 * `Trie`, a node of the discrimination tree, which is indexed with `Key`s

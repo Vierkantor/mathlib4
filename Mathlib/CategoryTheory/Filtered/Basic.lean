@@ -8,11 +8,15 @@ module
 public import Mathlib.CategoryTheory.Limits.Shapes.FiniteLimits
 public import Mathlib.Data.Fin.VecNotation
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Filtered categories
 
 A category is filtered if every finite diagram admits a cocone.
 We give a simple characterisation of this condition as
+
 1. for every pair of objects there exists another object "to the right",
 2. for every pair of parallel morphisms there exists a morphism to the right so the compositions
    are equal, and
@@ -31,6 +35,7 @@ Filtered categories are nice because colimits indexed by filtered categories ten
 easier to describe than general colimits (and more often preserved by functors).
 
 In this file we show that any functor from a finite category to a filtered category admits a cocone:
+
 * `cocone_nonempty [FinCategory J] [IsFiltered C] (F : J ⥤ C) : Nonempty (Cocone F)`
 
 More generally,
@@ -51,13 +56,13 @@ All of the above API, except for the `bowtie` and the `tulip`, is also provided 
 categories.
 
 ## See also
+
 In `Mathlib/CategoryTheory/Limits/FilteredColimitCommutesFiniteLimit.lean` we show that filtered
 colimits commute with finite limits.
 
 There is another characterization of filtered categories, namely that whenever `F : J ⥤ C` is a
 functor from a finite category, there is `X : C` such that `Nonempty (limit (F.op ⋙ yoneda.obj X))`.
 This is shown in `Mathlib/CategoryTheory/Limits/Filtered.lean`.
-
 -/
 
 @[expose] public section

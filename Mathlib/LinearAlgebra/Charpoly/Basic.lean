@@ -8,8 +8,10 @@ module
 public import Mathlib.FieldTheory.Minpoly.Field
 public import Mathlib.LinearAlgebra.Determinant
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Characteristic polynomial
 
 We define the characteristic polynomial of `f : M →ₗ[R] M`, where `M` is a finite and
@@ -19,7 +21,6 @@ in any basis is in `LinearAlgebra/Charpoly/ToMatrix`.
 ## Main definition
 
 * `LinearMap.charpoly f` : the characteristic polynomial of `f : M →ₗ[R] M`.
-
 -/
 
 @[expose] public section

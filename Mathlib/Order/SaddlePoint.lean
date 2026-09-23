@@ -9,18 +9,19 @@ public import Mathlib.Order.ConditionallyCompleteLattice.Basic
 public import Mathlib.Tactic.Common
 public import Mathlib.Tactic.SetLike
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Saddle points of a map
 
 * `IsSaddlePointOn`.
   Let `f : E × F → β` be a map, where `β` is preordered.
-  A pair `(a,b)` in `E × F` is a *saddle point* of `f` on `X × Y`
+  A pair `(a,b)` in `E × F` is a _saddle point_ of `f` on `X × Y`
   if `f a y ≤ f x b` for all `x ∈ X` and all `y` in `Y`.
-
 * `isSaddlePointOn_iff`: if `β` is a complete linear order,
   then `(a, b) ∈ X × Y` is a saddle point on `X × Y` iff
   `⨆ y ∈ Y, f a y = ⨅ x ∈ X, f x b = f a b`.
-
 -/
 
 @[expose] public section

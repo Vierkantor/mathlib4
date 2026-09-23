@@ -7,14 +7,17 @@ module
 
 public import Mathlib.CategoryTheory.MorphismProperty.Limits
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Relatively representable morphisms
 
 In this file we define and develop basic results about relatively representable morphisms.
 
 Classically, a morphism `f : F ⟶ G` of presheaves is said to be representable if for any morphism
 `g : yoneda.obj X ⟶ G`, there exists a pullback square of the following form
+
 ```
   yoneda.obj Y --yoneda.map snd--> yoneda.obj X
       |                                |
@@ -35,6 +38,7 @@ Throughout this file, `F : C ⥤ D` is a functor between categories `C` and `D`.
 * `Functor.relativelyRepresentable`: A morphism `f : X ⟶ Y` in `D` is said to be relatively
   representable with respect to `F`, if for any `g : F.obj a ⟶ Y`, there exists a pullback square
   of the following form
+
   ```
   F.obj b --F.map snd--> F.obj a
       |                     |
@@ -43,7 +47,6 @@ Throughout this file, `F : C ⥤ D` is a functor between categories `C` and `D`.
       v                     v
       X ------- f --------> Y
   ```
-
 * `MorphismProperty.relative`: Given a morphism property `P` in `C`, a morphism `f : X ⟶ Y` in `D`
   satisfies `P.relative F` if it is relatively representable and for any `g : F.obj a ⟶ Y`, the
   property `P` holds for any represented pullback of `f` by `g`.
@@ -51,6 +54,7 @@ Throughout this file, `F : C ⥤ D` is a functor between categories `C` and `D`.
 ## API
 
 Given `hf : relativelyRepresentable f`, with `f : X ⟶ Y` and `g : F.obj a ⟶ Y`, we provide:
+
 * `hf.pullback g` which is the object in `C` such that `F.obj (hf.pullback g)` is a
   pullback of `f` and `g`.
 * `hf.snd g` is the morphism `hf.pullback g ⟶ F.obj a`
@@ -76,7 +80,6 @@ as possible is phrased internally to `C`.
 * `relativelyRepresentable.isStableUnderBaseChange`: Being relatively representable is stable under
   base change.
 * `relativelyRepresentable.of_isIso`: Isomorphisms are relatively representable.
-
 -/
 
 @[expose] public section
@@ -345,11 +348,14 @@ lemma relative.property_snd {f : X ⟶ Y} (hf : P.relative F f) {a : C} (g : F.o
   hf.property g _ _ (hf.rep.isPullback g)
 
 set_option backward.defeqAttrib.useBackward true in
-/-- Given a morphism property `P` which respects isomorphisms, then to show that a morphism
+/--
+Given a morphism property `P` which respects isomorphisms, then to show that a morphism
 `f : X ⟶ Y` satisfies `P.relative` it suffices to show that:
+
 * The morphism is representable.
-* For any morphism `g : F.obj a ⟶ G`, the property `P` holds for *some* represented pullback
-  of `f` by `g`. -/
+* For any morphism `g : F.obj a ⟶ G`, the property `P` holds for _some_ represented pullback
+  of `f` by `g`.
+-/
 lemma relative.of_exists [F.Faithful] [F.Full] [P.RespectsIso] {f : X ⟶ Y}
     (h₀ : ∀ ⦃a : C⦄ (g : F.obj a ⟶ Y), ∃ (b : C) (fst : F.obj b ⟶ X) (snd : b ⟶ a)
       (_ : IsPullback fst (F.map snd) f g), P snd) : P.relative F f := by

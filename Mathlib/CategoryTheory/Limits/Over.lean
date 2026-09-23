@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Limits.Comma
 public import Mathlib.CategoryTheory.Limits.ConeCategory
 public import Mathlib.CategoryTheory.Limits.Shapes.FiniteProducts
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Limits and colimits in the over and under categories
 

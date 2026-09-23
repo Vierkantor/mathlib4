@@ -10,6 +10,9 @@ public import Mathlib.RingTheory.LocalRing.Module
 public import Mathlib.RingTheory.Smooth.Basic
 public import Mathlib.RingTheory.TensorProduct.Free
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Formally smooth local algebras
 -/

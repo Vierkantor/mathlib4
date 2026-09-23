@@ -11,6 +11,9 @@ public import Mathlib.Topology.Algebra.OpenSubgroup
 public import Mathlib.Topology.Algebra.Ring.Real
 public import Mathlib.Topology.Metrizable.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Multiples of a real number form a discrete subgroup of `ℝ`
 

@@ -10,6 +10,9 @@ public import Mathlib.FieldTheory.PrimitiveElement
 public import Mathlib.FieldTheory.SeparableClosure
 public import Mathlib.GroupTheory.GroupAction.FixingSubgroup
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Galois Extensions
 
@@ -17,27 +20,26 @@ In this file we define Galois extensions as extensions which are both separable 
 
 ## Main definitions
 
-- `IsGalois F E` where `E` is an extension of `F`
-- `fixedField H` where `H : Subgroup Gal(E/F)`
-- `fixingSubgroup K` where `K : IntermediateField F E`
-- `intermediateFieldEquivSubgroup` where `E/F` is finite dimensional and Galois
+* `IsGalois F E` where `E` is an extension of `F`
+* `fixedField H` where `H : Subgroup Gal(E/F)`
+* `fixingSubgroup K` where `K : IntermediateField F E`
+* `intermediateFieldEquivSubgroup` where `E/F` is finite dimensional and Galois
 
 ## Main results
 
-- `IntermediateField.fixingSubgroup_fixedField` : If `E/F` is finite dimensional (but not
+* `IntermediateField.fixingSubgroup_fixedField` : If `E/F` is finite dimensional (but not
   necessarily Galois) then `fixingSubgroup (fixedField H) = H`
-- `IsGalois.fixedField_fixingSubgroup`: If `E/F` is finite dimensional and Galois
+* `IsGalois.fixedField_fixingSubgroup`: If `E/F` is finite dimensional and Galois
   then `fixedField (fixingSubgroup K) = K`
 
 Together, these two results prove the Galois correspondence.
 
-- `IsGalois.tfae` : Equivalent characterizations of a Galois extension of finite degree
+* `IsGalois.tfae` : Equivalent characterizations of a Galois extension of finite degree
 
 ## Additional results
 
-- Instances for `Algebra.IsQuadraticExtension`: a quadratic extension is Galois (if separable)
+* Instances for `Algebra.IsQuadraticExtension`: a quadratic extension is Galois (if separable)
   with cyclic and thus abelian Galois group.
-
 -/
 
 @[expose] public section
@@ -88,8 +90,10 @@ theorem splits [IsGalois F E] (x : E) : ((minpoly F x).map (algebraMap F E)).Spl
 
 variable (E)
 
-/-- Let $E$ be a field. Let $G$ be a finite group acting on $E$.
-Then the extension $E / E^G$ is Galois. -/
+/--
+Let $`E` be a field. Let $`G` be a finite group acting on $`E`.
+Then the extension $`E / E^G` is Galois.
+-/
 @[stacks 09I3 "first part"]
 instance of_fixed_field (G : Type*) [Group G] [Finite G] [MulSemiringAction G E] :
     IsGalois (FixedPoints.subfield G E) E :=
@@ -103,8 +107,10 @@ theorem IntermediateField.AdjoinSimple.card_aut_eq_finrank [FiniteDimensional F 
   rw [← IntermediateField.card_algHom_adjoin_integral F hα h_sep h_splits]
   exact Nat.card_congr (algEquivEquivAlgHom F F⟮α⟯)
 
-/-- Let $E / F$ be a finite extension of fields. If $E$ is Galois over $F$, then
-$|\text{Aut}(E/F)| = [E : F]$. -/
+/--
+Let $`E / F` be a finite extension of fields. If $`E` is Galois over $`F`, then
+$`|\text{Aut}(E/F)| = [E : F]`.
+-/
 @[stacks 09I1 "'only if' part"]
 theorem card_aut_eq_finrank [FiniteDimensional F E] [IsGalois F E] :
     Nat.card Gal(E/F) = finrank F E := by
@@ -146,8 +152,10 @@ section IsGaloisTower
 variable (F K E : Type*) [Field F] [Field K] [Field E] {E' : Type*} [Field E'] [Algebra F E']
 variable [Algebra F K] [Algebra F E] [Algebra K E] [IsScalarTower F K E]
 
-/-- Let $E / K / F$ be a tower of field extensions.
-If $E$ is Galois over $F$, then $E$ is Galois over $K$. -/
+/--
+Let $`E / K / F` be a tower of field extensions.
+If $`E` is Galois over $`F`, then $`E` is Galois over $`K`.
+-/
 @[stacks 09I2]
 theorem IsGalois.tower_top_of_isGalois [IsGalois F E] : IsGalois K E :=
   { to_isSeparable := Algebra.isSeparable_tower_top_of_isSeparable F K E
@@ -484,8 +492,10 @@ theorem of_fixedField_eq_bot [FiniteDimensional F E]
   rw [← isGalois_iff_isGalois_bot, ← h]
   exact IsGalois.of_fixed_field E (⊤ : Subgroup Gal(E/F))
 
-/-- Let $E / F$ be a finite extension of fields. If $|\text{Aut}(E/F)| = [E : F]$, then
-$E$ is Galois over $F$. -/
+/--
+Let $`E / F` be a finite extension of fields. If $`|\text{Aut}(E/F)| = [E : F]`, then
+$`E` is Galois over $`F`.
+-/
 @[stacks 09I1 "'if' part"]
 theorem of_card_aut_eq_finrank [FiniteDimensional F E]
     (h : Nat.card Gal(E/F) = finrank F E) : IsGalois F E := by
@@ -577,8 +587,10 @@ section normalClosure
 variable (k K F : Type*) [Field k] [Field K] [Field F] [Algebra k K] [Algebra k F] [Algebra K F]
   [IsScalarTower k K F] [IsGalois k F]
 
-/-- Let $F / K / k$ be a tower of field extensions. If $F$ is Galois over $k$,
-then the normal closure of $K$ over $k$ in $F$ is Galois over $k$. -/
+/--
+Let $`F / K / k` be a tower of field extensions. If $`F` is Galois over $`k`,
+then the normal closure of $`K` over $`k` in $`F` is Galois over $`k`.
+-/
 @[stacks 0EXM]
 instance IsGalois.normalClosure : IsGalois k (normalClosure k K F) where
   to_isSeparable := Algebra.isSeparable_tower_bot_of_isSeparable k _ F

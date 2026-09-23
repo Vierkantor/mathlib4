@@ -12,6 +12,9 @@ public import Mathlib.MeasureTheory.Group.Integral
 public import Mathlib.MeasureTheory.Group.Prod
 public import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Convolution of functions
 
@@ -67,6 +70,7 @@ This generality has several advantages
 ## Notation
 
 The following notations are localized in the scope `Convolution`:
+
 * `f ⋆[L, μ] g` for the convolution. Note: you have to use parentheses to apply the convolution
   to an argument: `(f ⋆[L, μ] g) x`.
 * `f ⋆[L] g := f ⋆[L, volume] g`
@@ -78,7 +82,7 @@ The following notations are localized in the scope `Convolution`:
   one of the maps is in `ℒ^p` and the other in `ℒ^q` with `1 / p + 1 / q = 1`.
   This might require a generalization of `MeasureTheory.MemLp.smul` where `smul` is generalized
   to a continuous bilinear map.
-  (see e.g. [Fremlin, *Measure Theory* (volume 2)][fremlin_vol2], 255K)
+  (see e.g. \[Fremlin, _Measure Theory_ (volume 2)\]\[fremlin\_vol2\], 255K)
 * Prove properties about the convolution if both functions are rapidly decreasing.
 * Use `@[to_additive]` everywhere (this likely requires changes in `to_additive`)
 -/

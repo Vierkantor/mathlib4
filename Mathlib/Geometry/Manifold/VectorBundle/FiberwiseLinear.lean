@@ -7,7 +7,11 @@ module
 
 public import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 
-/-! # The groupoid of `C^n`, fiberwise-linear maps
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# The groupoid of `C^n`, fiberwise-linear maps
 
 This file contains preliminaries for the definition of a `C^n` vector bundle: an associated
 `StructureGroupoid`, the groupoid of `contMDiffFiberwiseLinear` functions.
@@ -21,7 +25,9 @@ open Set TopologicalSpace
 
 open scoped Manifold Topology ContDiff
 
-/-! ### The groupoid of `C^n`, fiberwise-linear maps -/
+/-!
+# The groupoid of `C^n`, fiberwise-linear maps
+-/
 
 
 variable {𝕜 B F : Type*} [TopologicalSpace B]

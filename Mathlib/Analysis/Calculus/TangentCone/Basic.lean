@@ -9,6 +9,9 @@ public import Mathlib.Analysis.Calculus.TangentCone.Defs
 public import Mathlib.Topology.Algebra.Group.Basic
 public import Mathlib.LinearAlgebra.Span.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Basic properties of tangent cones and sets with unique differentiability property
 
@@ -212,9 +215,10 @@ end TVS
 section UniqueDiff
 
 /-!
-### Properties of `UniqueDiffWithinAt` and `UniqueDiffOn`
+# Properties of `UniqueDiffWithinAt` and `UniqueDiffOn`
 
-This section is devoted to properties of the predicates `UniqueDiffWithinAt` and `UniqueDiffOn`. -/
+This section is devoted to properties of the predicates `UniqueDiffWithinAt` and `UniqueDiffOn`.
+-/
 
 section Semiring
 variable [Semiring 𝕜] [AddCommGroup E] [Module 𝕜 E] [TopologicalSpace E]

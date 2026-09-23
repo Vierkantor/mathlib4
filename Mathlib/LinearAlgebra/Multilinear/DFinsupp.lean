@@ -9,6 +9,9 @@ public import Mathlib.Data.Fintype.Quotient
 public import Mathlib.LinearAlgebra.DFinsupp
 public import Mathlib.LinearAlgebra.Multilinear.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Interactions between finitely-supported functions and multilinear maps
 
@@ -22,14 +25,12 @@ public import Mathlib.LinearAlgebra.Multilinear.Basic
 
   This is useful because all the intermediate results are bundled:
 
-  - `MultilinearMap.dfinsuppFamily f x` is a `DFinsupp` supported by families of indices `p`.
-  - `MultilinearMap.dfinsuppFamily f` is a `MultilinearMap` operating on finitely-supported
+  * `MultilinearMap.dfinsuppFamily f x` is a `DFinsupp` supported by families of indices `p`.
+  * `MultilinearMap.dfinsuppFamily f` is a `MultilinearMap` operating on finitely-supported
     functions `x`.
-  - `MultilinearMap.dfinsuppFamilyₗ` is a `LinearMap`, linear in the family of multilinear maps `f`.
-
+  * `MultilinearMap.dfinsuppFamilyₗ` is a `LinearMap`, linear in the family of multilinear maps `f`.
 * `freeDFinsuppEquiv` is an equivalence of multilinear maps over free modules with finitely
   supported maps.
-
 -/
 
 @[expose] public section

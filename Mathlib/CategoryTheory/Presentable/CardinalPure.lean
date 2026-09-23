@@ -8,6 +8,9 @@ module
 public import Mathlib.CategoryTheory.MorphismProperty.Limits
 public import Mathlib.CategoryTheory.Presentable.Dense
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Pure subobjects
 
@@ -19,8 +22,9 @@ morphisms are monomorphisms, and that a `κ`-accessible functor
 `F : C ⥤ D` preserves `κ`-pure morphisms.
 
 ## References
-* [Adámek, J. and Rosický, J., *Locally presentable and accessible categories*][Adamek_Rosicky_1994]
 
+* ‍\[Adámek, J. and Rosický, J., _Locally presentable and accessible
+  categories_\]\[Adamek\_Rosicky\_1994\]
 -/
 
 public section
@@ -96,8 +100,10 @@ lemma IsCardinalAccessibleCategory.mono_iff [IsCardinalAccessibleCategory C κ]
       (by cat_disch)⟩⟩
 
 set_option backward.defeqAttrib.useBackward true in
-/-- In a `κ`-accessible category, `κ`-pure morphisms are monomorphisms.
-(This is proposition 2.29 in [Adamek_Rosicky_1994].) -/
+/--
+In a `κ`-accessible category, `κ`-pure morphisms are monomorphisms.
+(This is proposition 2.29 in \[Adamek\_Rosicky\_1994\].)
+-/
 lemma IsCardinalPure.mono [IsCardinalAccessibleCategory C κ]
     {X Y : C} (f : X ⟶ Y) [IsCardinalPure κ f] :
     Mono f := by
@@ -127,8 +133,10 @@ lemma isCardinalPure_le_monomorphisms [IsCardinalAccessibleCategory C κ] :
   fun _ _ f _ ↦ IsCardinalPure.mono κ f
 
 set_option backward.defeqAttrib.useBackward true in
-/-- `κ`-pure morphisms are stable under `κ`-filtered colimits.
-(This is proposition 2.30 (i) in [Adamek_Rosicky_1994].) -/
+/--
+`κ`-pure morphisms are stable under `κ`-filtered colimits.
+(This is proposition 2.30 (i) in \[Adamek\_Rosicky\_1994\].)
+-/
 instance (J : Type*) [Category* J] [EssentiallySmall.{w} J] [IsCardinalFiltered J κ] :
     (isCardinalPure C κ).IsStableUnderColimitsOfShape J := by
   have := isFiltered_of_isCardinalFiltered J κ
@@ -141,10 +149,12 @@ instance (J : Type*) [Category* J] [EssentiallySmall.{w} J] [IsCardinalFiltered 
   obtain ⟨ρ, _⟩ := IsCardinalPure.exists_of_commSq κ sq'
   exact ⟨ρ ≫ c₁.ι.app j', by cat_disch⟩
 
-/-- If `F : C ⥤ D` is a `κ`-accessible functor (with `C` a `κ`-accessible category),
+/--
+If `F : C ⥤ D` is a `κ`-accessible functor (with `C` a `κ`-accessible category),
 then `F` maps `κ`-pure morphisms to `κ`-morphisms.
-(This is proposition 2.38 in [Adamek_Rosicky_1994], without the unnecessary
-assumption that `F` preserves `κ`-presentable objects.) -/
+(This is proposition 2.38 in \[Adamek\_Rosicky\_1994\], without the unnecessary
+assumption that `F` preserves `κ`-presentable objects.)
+-/
 instance IsCardinalPure.map
     [IsCardinalAccessibleCategory C κ] [F.IsCardinalAccessible κ]
     {X Y : C} (f : X ⟶ Y) [IsCardinalPure κ f] :

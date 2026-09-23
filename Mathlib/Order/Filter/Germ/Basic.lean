@@ -12,6 +12,9 @@ public import Mathlib.Data.Int.Cast.Pi
 public import Mathlib.Data.Nat.Cast.Basic
 public import Mathlib.Order.Filter.Tendsto
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Germ of a function at a filter
 

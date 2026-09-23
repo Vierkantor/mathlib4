@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Group.Subgroup.Ker
 public import Mathlib.Algebra.Group.Submonoid.Membership
 public import Mathlib.GroupTheory.Congruence.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Coproduct (free product) of two monoids or groups
 
@@ -45,20 +48,14 @@ In other sections, we only list multiplicative definitions.
 ### Monoid homomorphisms
 
 * `Monoid.Coprod.mk`: the projection `FreeMonoid (M ⊕ N) →* M ∗ N`.
-
 * `Monoid.Coprod.inl`, `Monoid.Coprod.inr`: canonical embeddings `M →* M ∗ N` and `N →* M ∗ N`.
-
 * `Monoid.Coprod.lift`: construct a monoid homomorphism `M ∗ N →* P`
   from homomorphisms `M →* P` and `N →* P`; see also `Monoid.Coprod.liftEquiv`.
-
 * `Monoid.Coprod.clift`: a constructor for homomorphisms `M ∗ N →* P`
   that allows the user to control the computational behavior.
-
 * `Monoid.Coprod.map`: combine two homomorphisms `f : M →* N` and `g : M' →* N'`
   into `M ∗ M' →* N ∗ N'`.
-
 * `Monoid.Coprod.swap`: the natural homomorphism `M ∗ N →* N ∗ M`.
-
 * `Monoid.Coprod.fst`, `Monoid.Coprod.snd`, and `Monoid.Coprod.toProd`:
   natural projections `M ∗ N →* M`, `M ∗ N →* N`, and `M ∗ N →* M × N`.
 
@@ -97,21 +94,21 @@ def Monoid.Coprod M N := Monoid.CoprodI (fun b : Bool => cond b M N)
 
 There are several reasons to build an API from scratch.
 
-- API about `Con` makes it easy to define the required type and prove the universal property,
+* API about `Con` makes it easy to define the required type and prove the universal property,
   so there is little overhead compared to transferring API from `Monoid.CoprodI`.
-- If `M` and `N` live in different universes, then the definition has to add `ULift`s;
+* If `M` and `N` live in different universes, then the definition has to add `ULift`s;
   this makes it harder to transfer API and definitions.
-- As of now, we have no way
+* As of now, we have no way
   to automatically build an instance of `(k : Fin 2) → Monoid (![M, N] k)`
   from `[Monoid M]` and `[Monoid N]`,
   not even speaking about more advanced typeclass assumptions that involve both `M` and `N`.
-- Using a list of `M ⊕ N` instead of, e.g., a list of `Σ k : Fin 2, ![M, N] k`
+* Using a list of `M ⊕ N` instead of, e.g., a list of `Σ k : Fin 2, ![M, N] k`
   as the underlying type makes it possible to write computationally effective code
   (though this point is not tested yet).
 
 ## TODO
 
-- Prove `Monoid.CoprodI (f : Fin 2 → Type*) ≃* f 0 ∗ f 1` and
+* Prove `Monoid.CoprodI (f : Fin 2 → Type*) ≃* f 0 ∗ f 1` and
   `Monoid.CoprodI (f : Bool → Type*) ≃* f false ∗ f true`.
 
 ## Tags

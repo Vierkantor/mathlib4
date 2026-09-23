@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Category.ModuleCat.Sheaf.PullbackContinuous
 public import Mathlib.CategoryTheory.Limits.Preserves.Shapes.Products
 public import Mathlib.CategoryTheory.Limits.Final.Type
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Pullbacks of free sheaves of modules
 

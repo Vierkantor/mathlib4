@@ -10,6 +10,9 @@ public import Mathlib.Logic.Relation
 public import Mathlib.Logic.Function.Basic
 public import Mathlib.Tactic.ToDual
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Shapes of homological complexes
 

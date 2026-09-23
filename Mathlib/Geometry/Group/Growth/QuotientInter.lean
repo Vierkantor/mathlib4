@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Order.BigOperators.Group.Finset
 public import Mathlib.GroupTheory.QuotientGroup.Defs
 public import Mathlib.Algebra.Group.Pointwise.Finset.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Growth in the quotient and intersection with a subgroup
 

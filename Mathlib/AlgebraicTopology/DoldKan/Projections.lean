@@ -8,8 +8,10 @@ module
 public import Mathlib.AlgebraicTopology.DoldKan.Faces
 public import Mathlib.CategoryTheory.Idempotents.Basic
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Construction of projections for the Dold-Kan correspondence
 
 In this file, we construct endomorphisms `P q : K[X] ⟶ K[X]` for all
@@ -26,7 +28,6 @@ By passing to the limit, these endomorphisms `P q` shall be used in `PInfty.lean
 in order to define `PInfty : K[X] ⟶ K[X]`.
 
 (See `Equivalence.lean` for the general strategy of proof of the Dold-Kan equivalence.)
-
 -/
 
 @[expose] public section

@@ -14,6 +14,9 @@ public import Mathlib.Algebra.Group.Subsemigroup.Operations
 public import Mathlib.GroupTheory.FreeGroup.Basic
 public import Mathlib.GroupTheory.QuotientGroup.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Finitely generated monoids and groups
 
@@ -41,7 +44,6 @@ the more general `IsMulFG`.
 
 Previously the subobject predicates `Submonoid.FG` and `Subgroup.FG` were used to define the more
 general `Monoid.FG` and `Group.FG`, but the new `IsMulFG` defines the general predicate directly.
-
 -/
 
 @[expose] public section
@@ -381,7 +383,9 @@ end Subgroup
 
 end
 
-/-! ### Monoids and submonoids -/
+/-!
+# Monoids and submonoids
+-/
 
 
 open scoped Pointwise
@@ -597,7 +601,9 @@ instance Monoid.closure_finite_fg (s : Set M) [Finite s] : Monoid.FG (Submonoid.
   haveI := Fintype.ofFinite s
   s.coe_toFinset ▸ Monoid.closure_finset_fg s.toFinset
 
-/-! ### Groups and subgroups -/
+/-!
+# Groups and subgroups
+-/
 
 
 variable {G H : Type*} [Group G] [AddGroup H]

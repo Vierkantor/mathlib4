@@ -11,6 +11,10 @@ public import Mathlib.Data.Finset.Prod
 public import Mathlib.Data.SetLike.Basic
 public import Mathlib.Order.UpperLower.Basic
 
+set_option doc.verso true
+set_option doc.verso.module false
+set_option doc.verso.suggestions false
+
 /-!
 # Young diagrams
 

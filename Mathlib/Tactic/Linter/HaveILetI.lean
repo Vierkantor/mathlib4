@@ -11,6 +11,9 @@ public meta import Lean.Meta.Hint
 public import Mathlib.Tactic.Linter.Header  -- shake: keep
 public import Lean.Meta.TryThis
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The `haveI`/`letI` linter
 
@@ -29,6 +32,7 @@ This linter flags every use of the `haveI` or `letI` tactic whose main goal is a
 proposition.
 
 TODO:
+
 * also lint the term-mode `haveI`/`letI`
 -/
 

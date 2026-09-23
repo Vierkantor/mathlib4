@@ -14,8 +14,11 @@ public import Mathlib.Lean.Meta.RefinedDiscrTree.Lookup
 public import Mathlib.Tactic.FunProp.Decl
 public import Mathlib.Tactic.FunProp.Types
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
-## `fun_prop` environment extensions storing theorems for `fun_prop`
+# `fun_prop` environment extensions storing theorems for `fun_prop`
 -/
 
 public meta section

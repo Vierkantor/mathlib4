@@ -9,6 +9,9 @@ public import Mathlib.Algebra.GroupWithZero.Hom
 public import Mathlib.Algebra.Order.Group.Abs
 public import Mathlib.Algebra.Ring.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Algebraic order homomorphism classes
 
@@ -17,6 +20,7 @@ This file defines hom classes for common properties at the intersection of order
 ## Typeclasses
 
 Basic typeclasses
+
 * `NonnegHomClass`: Homs are nonnegative: `∀ f a, 0 ≤ f a`
 * `SubadditiveHomClass`: Homs are subadditive: `∀ f a b, f (a + b) ≤ f a + f b`
 * `SubmultiplicativeHomClass`: Homs are submultiplicative: `∀ f a b, f (a * b) ≤ f a * f b`
@@ -24,6 +28,7 @@ Basic typeclasses
 * `NonarchimedeanHomClass`: `∀ a b, f (a + b) ≤ max (f a) (f b)`
 
 Group norms
+
 * `AddGroupSeminormClass`: Homs are nonnegative, subadditive, even and preserve zero.
 * `GroupSeminormClass`: Homs are nonnegative, respect `f (a * b) ≤ f a + f b`, `f a⁻¹ = f a` and
   preserve zero.
@@ -31,6 +36,7 @@ Group norms
 * `GroupNormClass`: Homs are seminorms such that `f x = 0 → x = 1` for all `x`.
 
 Ring norms
+
 * `RingSeminormClass`: Homs are submultiplicative group norms.
 * `RingNormClass`: Homs are ring seminorms that are also additive group norms.
 * `MulRingSeminormClass`: Homs are ring seminorms that are multiplicative.
@@ -75,7 +81,9 @@ There are two workarounds:
 
 variable {F α β : Type*}
 
-/-! ### Basics -/
+/-!
+# Basics
+-/
 
 /-- `NonnegHomClass F α β` states that `F` is a type of nonnegative morphisms. -/
 class NonnegHomClass (F : Type*) (α β : outParam Type*) [Zero β] [LE β] [FunLike F α β] : Prop where
@@ -148,7 +156,9 @@ theorem le_map_div_add_map_div [Group α] [Add β] [LE β] [MulLEAddHomClass F �
     (f : F) (a b c : α) : f (a / c) ≤ f (a / b) + f (b / c) := by
     simpa only [div_mul_div_cancel] using map_mul_le_add f (a / b) (b / c)
 
-/-! ### Group (semi)norms -/
+/-!
+# Group (semi)norms
+-/
 
 
 /-- `AddGroupSeminormClass F α` states that `F` is a type of `β`-valued seminorms on the additive
@@ -273,7 +283,9 @@ theorem map_pos_of_ne_one [Group α] [AddCommMonoid β] [LinearOrder β] [IsOrde
     {x : α} (hx : x ≠ 1) : 0 < f x :=
   (apply_nonneg _ _).lt_of_ne <| ((map_ne_zero_iff_ne_one _).2 hx).symm
 
-/-! ### Ring (semi)norms -/
+/-!
+# Ring (semi)norms
+-/
 
 
 /-- `RingSeminormClass F α` states that `F` is a type of `β`-valued seminorms on the ring `α`.

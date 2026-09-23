@@ -7,12 +7,14 @@ module
 
 public import Mathlib.Probability.Kernel.Composition.MeasureComp
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lemmas relating different ways to compose measures and kernels
 
 This file contains lemmas about the composition of measures and kernels that do not fit in any of
 the other files in this directory, because they involve several types of compositions/products.
-
 -/
 
 public section

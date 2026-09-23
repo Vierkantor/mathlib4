@@ -9,6 +9,9 @@ public import Mathlib.RingTheory.Ideal.IdempotentFG
 public import Mathlib.RingTheory.Unramified.Basic
 public import Mathlib.RingTheory.Flat.Stability
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Various results about unramified algebras
 
@@ -17,19 +20,19 @@ of formally unramified algebras which are essentially of finite type.
 
 ## Main results
 
-- `Algebra.FormallyUnramified.iff_exists_tensorProduct`:
+* `Algebra.FormallyUnramified.iff_exists_tensorProduct`:
   A finite-type `R`-algebra `S` is (formally) unramified iff
   there exists a `t : S ⊗[R] S` satisfying
+
   1. `t` annihilates every `1 ⊗ s - s ⊗ 1`.
   2. the image of `t` is `1` under the map `S ⊗[R] S → S`.
-- `Algebra.FormallyUnramified.finite_of_free`: An unramified free algebra is finitely generated.
-- `Algebra.FormallyUnramified.flat_of_restrictScalars`:
+* `Algebra.FormallyUnramified.finite_of_free`: An unramified free algebra is finitely generated.
+* `Algebra.FormallyUnramified.flat_of_restrictScalars`:
   If `S` is an unramified `R`-algebra, then `R`-flat implies `S`-flat.
 
 ## References
 
-- [B. Iversen, *Generic Local Structure of the Morphisms in Commutative Algebra*][iversen]
-
+* ‍\[B. Iversen, _Generic Local Structure of the Morphisms in Commutative Algebra_\]\[iversen\]
 -/
 
 @[expose] public section
@@ -43,8 +46,9 @@ variable (M : Type*) [AddCommGroup M] [Module R M] [Module S M] [IsScalarTower R
 namespace Algebra.FormallyUnramified
 
 /--
-Proposition I.2.3 + I.2.6 of [iversen]
+Proposition I.2.3 + I.2.6 of \[iversen\]
 A finite-type `R`-algebra `S` is (formally) unramified iff there exists a `t : S ⊗[R] S` satisfying
+
 1. `t` annihilates every `1 ⊗ s - s ⊗ 1`.
 2. the image of `t` is `1` under the map `S ⊗[R] S → S`.
 -/
@@ -231,9 +235,10 @@ lemma finite_of_free [Module.Free R S] : Module.Finite R S := by
   use j, hj, i, hi
 
 /--
-Proposition I.2.3 of [iversen]
+Proposition I.2.3 of \[iversen\]
 If `S` is an unramified `R`-algebra, and `M` is an `S`-module, then the map
-`S ⊗[R] M →ₗ[S] M` taking `(b, m) ↦ b • m` admits an `S`-linear section. -/
+`S ⊗[R] M →ₗ[S] M` taking `(b, m) ↦ b • m` admits an `S`-linear section.
+-/
 noncomputable
 def sec :
     M →ₗ[S] S ⊗[R] M where

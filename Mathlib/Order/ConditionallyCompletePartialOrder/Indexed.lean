@@ -8,12 +8,14 @@ module
 public import Mathlib.Order.ConditionallyCompletePartialOrder.Basic
 public import Mathlib.Order.GaloisConnection.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Indexed sup / inf in conditionally complete lattices
 
 This file proves lemmas about `iSup` and `iInf` for functions valued in a conditionally complete
 partial order, as opposed to a conditionally complete lattice.
-
 -/
 
 public section

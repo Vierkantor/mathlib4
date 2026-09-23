@@ -9,6 +9,9 @@ public import Mathlib.LinearAlgebra.RootSystem.Chain
 public import Mathlib.LinearAlgebra.RootSystem.Finite.Lemmas
 public import Mathlib.LinearAlgebra.RootSystem.IsValuedIn
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Bases for root pairings / systems
 
@@ -17,9 +20,9 @@ This file contains a theory of bases for root pairings / systems.
 ## Implementation details
 
 For reduced root pairings `RootSystem.Base` is equivalent to the usual definition appearing in the
-informal literature (e.g., it follows from [serre1965](Ch. V, §8, Proposition 7) that
-`RootSystem.Base` is equivalent to both [serre1965](Ch. V, §8, Definition 5) and
-[bourbaki1968](Ch. VI, §1.5) for reduced pairings). However for non-reduced root pairings, it is
+informal literature (e.g., it follows from \[serre1965\](Ch. V, §8, Proposition 7) that
+`RootSystem.Base` is equivalent to both \[serre1965\](Ch. V, §8, Definition 5) and
+‍\[bourbaki1968\](Ch. VI, §1.5) for reduced pairings). However for non-reduced root pairings, it is
 more restrictive because it includes axioms on coroots as well as on roots. For example by
 `RootPairing.Base.eq_one_or_neg_one_of_mem_support_of_smul_mem` it is clear that the 1-dimensional
 root system `{-2, -1, 0, 1, 2} ⊆ ℝ` has no base in the sense of `RootSystem.Base`.
@@ -33,6 +36,7 @@ For infinite root systems, `RootSystem.Base` is usually not the right notion: li
 is too strong.
 
 ## Main definitions / results:
+
 * `RootSystem.Base`: a base of a root pairing.
 * `RootSystem.Base.IsPos`: the predicate that a (co)root is positive relative to a base.
 * `RootSystem.Base.induction_add`: an induction principle for predicates on (co)roots which
@@ -44,7 +48,6 @@ is too strong.
 
 * Develop a theory of base / separation / positive roots for infinite systems which specialises to
   the concept here for finite systems.
-
 -/
 
 @[expose] public section

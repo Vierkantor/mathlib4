@@ -10,6 +10,9 @@ public import Mathlib.Data.Matrix.Block
 public import Mathlib.LinearAlgebra.Matrix.Notation
 public import Mathlib.LinearAlgebra.Matrix.RowCol
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Trace of a matrix
 
@@ -21,7 +24,6 @@ See also `LinearAlgebra.Trace` for the trace of an endomorphism.
 ## Tags
 
 matrix, trace, diagonal
-
 -/
 
 @[expose] public section
@@ -207,7 +209,8 @@ section Fin
 
 variable [AddCommMonoid R]
 
-/-! ### Special cases for `Fin n` for low values of `n`
+/-!
+# Special cases for `Fin n` for low values of `n`
 -/
 
 @[simp]

@@ -12,6 +12,9 @@ public import Mathlib.Analysis.Normed.Ring.Units
 public import Mathlib.Tactic.CrossRefAttribute
 public import Mathlib.Topology.Algebra.Module.ContinuousLinearMap.Invertible
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Bounded linear maps
 
@@ -535,7 +538,7 @@ open Set
 open scoped Topology
 
 /-!
-### The set of continuous linear equivalences between two Banach spaces is open
+# The set of continuous linear equivalences between two Banach spaces is open
 
 In this section we establish that the set of continuous linear equivalences between two Banach
 spaces is an open subset of the space of linear maps between them.

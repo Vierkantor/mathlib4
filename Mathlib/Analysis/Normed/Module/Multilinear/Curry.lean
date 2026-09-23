@@ -9,6 +9,9 @@ public import Mathlib.Analysis.Normed.Module.Multilinear.Basic
 public import Mathlib.LinearAlgebra.Multilinear.Curry
 public import Mathlib.Analysis.Normed.Operator.NormedSpace
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Currying and uncurrying continuous multilinear maps
 
@@ -40,7 +43,7 @@ noncomputable section
 open Finset ContinuousMultilinearMap Fin Function
 
 /-!
-### Type variables
+# Type variables
 
 We use the following type variables in this file:
 
@@ -92,7 +95,9 @@ theorem ContinuousMultilinearMap.norm_map_snoc_le (f : ContinuousMultilinearMap 
     ‖f (snoc m x)‖ ≤ (‖f‖ * ∏ i, ‖m i‖) * ‖x‖ := by
   simpa [prod_univ_castSucc, mul_assoc] using f.le_opNorm (snoc m x)
 
-/-! #### Left currying -/
+/-!
+# Left currying
+-/
 
 
 /-- Given a continuous linear map `f` from `E 0` to continuous multilinear maps on `n` variables,
@@ -186,7 +191,9 @@ theorem ContinuousLinearMap.uncurryLeft_norm
     ‖f.uncurryLeft‖ = ‖f‖ :=
   (continuousMultilinearCurryLeftEquiv 𝕜 Ei G).symm.norm_map f
 
-/-! #### Right currying -/
+/-!
+# Right currying
+-/
 
 
 /-- Given a continuous linear map `f` from continuous multilinear maps on `n` variables to
@@ -327,7 +334,7 @@ theorem ContinuousMultilinearMap.uncurryRight_norm
   (continuousMultilinearCurryRightEquiv 𝕜 Ei G).symm.norm_map f
 
 /-!
-### Currying a variable in the middle
+# Currying a variable in the middle
 -/
 
 /-- Given a continuous linear map from `M p` to the space of continuous multilinear maps
@@ -397,13 +404,14 @@ theorem ContinuousLinearMap.norm_uncurryMid (p : Fin (n + 1))
   (ContinuousMultilinearMap.curryMidEquiv 𝕜 Ei G p).symm.norm_map f
 
 /-!
-#### Currying with `0` variables
+# Currying with `0` variables
 
 The space of multilinear maps with `0` variables is trivial: such a multilinear map is just an
 arbitrary constant (note that multilinear maps in `0` variables need not map `0` to `0`!).
 Therefore, the space of continuous multilinear maps on `(Fin 0) → G` with values in `E₂` is
 isomorphic (and even isometric) to `E₂`. As this is the zeroth step in the construction of iterated
-derivatives, we register this isomorphism. -/
+derivatives, we register this isomorphism.
+-/
 
 
 section
@@ -500,7 +508,9 @@ theorem continuousMultilinearCurryFin0_symm_apply_apply (x : G') (v : Fin 0 → 
 
 end
 
-/-! #### With 1 variable -/
+/-!
+# With 1 variable
+-/
 
 
 variable (𝕜 G G')

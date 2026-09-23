@@ -9,6 +9,9 @@ public import Mathlib.Analysis.Normed.Module.FiniteDimension
 public import Mathlib.Analysis.PSeries
 public import Mathlib.LinearAlgebra.Complex.FiniteDimensional
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Convergence of `p`-series (complex case)
 

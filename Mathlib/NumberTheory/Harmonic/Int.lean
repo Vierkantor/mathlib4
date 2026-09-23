@@ -9,6 +9,9 @@ public import Mathlib.NumberTheory.Harmonic.Defs
 public import Mathlib.NumberTheory.Padics.PadicNumbers
 public import Mathlib.Tactic.Positivity
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 
 The nth Harmonic number is not an integer. We formalize the proof using

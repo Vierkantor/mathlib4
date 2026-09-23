@@ -11,15 +11,20 @@ public import Mathlib.GroupTheory.SpecificGroups.Dihedral
 public import Mathlib.Tactic.FieldSimp
 public import Mathlib.Tactic.Qify
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Commuting Probability
 
 This file introduces the commuting probability of finite groups.
 
 ## Main definitions
+
 * `commProb`: The commuting probability of a finite type with a multiplication operation.
 
 ## TODO
+
 * Neumann's theorem.
 -/
 

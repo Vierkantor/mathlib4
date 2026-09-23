@@ -7,7 +7,11 @@ module
 
 public import Mathlib.Lean.Meta.CongrTheorems
 
-/-! # `congr(...)` congruence quotations
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# `congr(...)` congruence quotations
 
 This module defines a term elaborator for generating congruence lemmas
 from patterns written using quotation syntax.
@@ -81,7 +85,8 @@ For debugging, you can set `set_option trace.Elab.congr true`.
 -/
 syntax (name := termCongr) "congr(" withoutForbidden(ppDedentIfGrouped(term)) ")" : term
 
-/-! ### Congruence holes
+/-!
+# Congruence holes
 
 This section sets up the way congruence holes are elaborated for `congr(...)` quotations.
 The basic problem is that if we have `$h` with `h : x = y`, we need to elaborate it once
@@ -203,7 +208,9 @@ def elaboratePattern (t : Term) (expectedType? : Option Expr) (forLhs : Bool) :
     let t' ← processAntiquot t (fun h => if forLhs then `(cHole% lhs $h) else `(cHole% rhs $h))
     Term.elabTermEnsuringType t' expectedType?
 
-/-! ### Congruence generation -/
+/-!
+# Congruence generation
+-/
 
 /-- Ensures the expected type is an equality. Returns the equality.
 The returned expression satisfies `Lean.Expr.eq?`. -/
@@ -567,7 +574,7 @@ partial def mkCongrOfAux (depth : Nat) (mvarCounterSaved : Nat) (lhs rhs : Expr)
 
 /--
 Generate congruence for applications `lhs` and `rhs`.
-Key detail: functions might be *overapplied* due to the values of their arguments.
+Key detail: functions might be _overapplied_ due to the values of their arguments.
 For example, `id id 2` is overapplied.
 To handle these, we need to segment the applications into their natural arities,
 since `mkHCongrWithArity'` does not know how to generate congruence lemmas for the overapplied case.
@@ -698,7 +705,9 @@ partial def mkCongrOf (depth : Nat) (mvarCounterSaved : Nat) (lhs rhs : Expr) :
     MetaM CongrResult :=
   mkCongrOfAux depth mvarCounterSaved lhs rhs |>.run
 
-/-! ### Elaborating congruence quotations -/
+/-!
+# Elaborating congruence quotations
+-/
 
 @[term_elab termCongr, inherit_doc termCongr]
 def elabTermCongr : Term.TermElab := fun stx expectedType? => do

@@ -8,12 +8,14 @@ module
 public import Mathlib.CategoryTheory.CatCommSq
 public import Mathlib.CategoryTheory.GuitartExact.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Vertical composition of Guitart exact squares
 
 In this file, we show that the vertical composition of Guitart exact squares
 is Guitart exact.
-
 -/
 
 set_option backward.defeqAttrib.useBackward true

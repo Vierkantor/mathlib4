@@ -11,7 +11,11 @@ public import Mathlib.Tactic.Widget.SelectInsertParamsClass
 public import ProofWidgets.Component.MakeEditLink
 public import ProofWidgets.Data.Html
 
-/-! # Selection panel utilities
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Selection panel utilities
 
 The main declaration is `mkSelectionPanelRPC` which helps creating rpc methods for widgets
 generating tactic calls based on selected sub-expressions in the main goal.

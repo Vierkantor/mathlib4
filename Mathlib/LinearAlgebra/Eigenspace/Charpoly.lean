@@ -11,6 +11,9 @@ public import Mathlib.LinearAlgebra.Eigenspace.Basic
 public import Mathlib.LinearAlgebra.Trace
 import Mathlib.LinearAlgebra.Matrix.Charpoly.Eigs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Eigenvalues are the roots of the characteristic polynomial.
 

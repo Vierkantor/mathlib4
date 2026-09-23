@@ -9,10 +9,13 @@ public import Mathlib.Algebra.Ring.Parity
 public import Mathlib.Algebra.Ring.Int.Defs
 public import Mathlib.Algebra.Group.Int.Even
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Basic parity lemmas for the ring `ℤ`
 
-See note [foundational algebra order theory].
+See note \[foundational algebra order theory\].
 -/
 
 public section
@@ -21,7 +24,9 @@ assert_not_exists DenselyOrdered Set.Subsingleton
 
 namespace Int
 
-/-! #### Parity -/
+/-!
+# Parity
+-/
 
 variable {m n : ℤ}
 

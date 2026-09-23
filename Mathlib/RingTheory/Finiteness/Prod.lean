@@ -8,9 +8,11 @@ module
 public import Mathlib.LinearAlgebra.Prod
 public import Mathlib.RingTheory.Finiteness.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Finitely generated product (sub)modules
-
 -/
 
 public section

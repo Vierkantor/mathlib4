@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Category.Grp.EpiMono
 public import Mathlib.GroupTheory.ResiduallyFinite
 public import Mathlib.Topology.Algebra.Category.ProfiniteGrp.Limits
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Profinite completion of groups
 

@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Analysis.InnerProductSpace.Basic
 public import Mathlib.Analysis.Normed.Group.AddTorsor
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Normed affine spaces over an inner product space
 -/

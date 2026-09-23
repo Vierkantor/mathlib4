@@ -9,6 +9,9 @@ public import Mathlib.LinearAlgebra.CliffordAlgebra.Conjugation
 public import Mathlib.LinearAlgebra.CliffordAlgebra.Even
 public import Mathlib.LinearAlgebra.QuadraticForm.Prod
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Isomorphisms with the even subalgebra of a Clifford algebra
 
@@ -18,13 +21,12 @@ This file provides some notable isomorphisms regarding the even subalgebra, `Cli
 
 * `CliffordAlgebra.equivEven`: Every Clifford algebra is isomorphic as an algebra to the even
   subalgebra of a Clifford algebra with one more dimension.
-  * `CliffordAlgebra.EquivEven.Q'`: The quadratic form used by this "one-up" algebra.
-  * `CliffordAlgebra.toEven`: The simp-normal form of the forward direction of this isomorphism.
-  * `CliffordAlgebra.ofEven`: The simp-normal form of the reverse direction of this isomorphism.
-
+* `CliffordAlgebra.EquivEven.Q'`: The quadratic form used by this "one-up" algebra.
+* `CliffordAlgebra.toEven`: The simp-normal form of the forward direction of this isomorphism.
+* `CliffordAlgebra.ofEven`: The simp-normal form of the reverse direction of this isomorphism.
 * `CliffordAlgebra.evenEquivEvenNeg`: Every even subalgebra is isomorphic to the even subalgebra
   of the Clifford algebra with negated quadratic form.
-  * `CliffordAlgebra.evenToNeg`: The simp-normal form of each direction of this isomorphism.
+* `CliffordAlgebra.evenToNeg`: The simp-normal form of each direction of this isomorphism.
 
 ## Main results
 
@@ -41,7 +43,9 @@ namespace CliffordAlgebra
 variable {R M : Type*} [CommRing R] [AddCommGroup M] [Module R M]
 variable (Q : QuadraticForm R M)
 
-/-! ### Constructions needed for `CliffordAlgebra.equivEven` -/
+/-!
+# Constructions needed for `CliffordAlgebra.equivEven`
+-/
 
 
 namespace EquivEven
@@ -218,7 +222,9 @@ theorem coe_toEven_reverse_involute (x : CliffordAlgebra Q) :
   | mul x y hx hy => simp only [map_mul, Subalgebra.coe_mul, reverse.map_mul, hx, hy]
   | add x y hx hy => simp only [map_add, Subalgebra.coe_add, hx, hy]
 
-/-! ### Constructions needed for `CliffordAlgebra.evenEquivEvenNeg` -/
+/-!
+# Constructions needed for `CliffordAlgebra.evenEquivEvenNeg`
+-/
 
 /-- One direction of `CliffordAlgebra.evenEquivEvenNeg` -/
 def evenToNeg (Q' : QuadraticForm R M) (h : Q' = -Q) :

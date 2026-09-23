@@ -16,6 +16,9 @@ public import Lean.Elab.AuxDef
 public import Mathlib.Lean.Elab.Term
 public import Mathlib.Tactic.ScopedNS
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The notation3 macro, simulating Lean 3's notation.
 -/
@@ -31,7 +34,9 @@ open Batteries.ExtendedBinder
 
 initialize registerTraceClass `notation3
 
-/-! ### Syntaxes supporting `notation3` -/
+/-!
+# Syntaxes supporting `notation3`
+-/
 
 /--
 Expands binders into nested combinators.
@@ -94,7 +99,8 @@ syntax identOptScoped :=
 -- so that the space in the literals themselves stands out
 syntax notation3Item := strLit <|> bindersItem <|> identOptScoped <|> foldAction
 
-/-! ### Expression matching
+/-!
+# Expression matching
 
 A more complicated part of `notation3` is the delaborator generator.
 While `notation` relies on generating app unexpanders, we instead generate a
@@ -464,7 +470,9 @@ partial def mkFoldrMatcher (lit x y : Name) (scopedTerm init : Term) (boundNames
   -- N.B. by swapping `x` and `y` we can just use the foldl matcher
   return (keys ++ keys', ← ``(matchFoldl $(quote lit) $(quote y) $(quote x) $smatcher $sinit))
 
-/-! ### The `notation3` command -/
+/-!
+# The `notation3` command
+-/
 
 /-- Used when processing different kinds of variables when building the
 final delaborator. -/

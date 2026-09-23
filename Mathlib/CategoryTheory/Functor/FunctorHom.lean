@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Monoidal.FunctorCategory
 public import Mathlib.CategoryTheory.Monoidal.Types.Basic
 public import Mathlib.CategoryTheory.Enriched.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Internal hom in functor categories
 
@@ -18,7 +21,6 @@ that the functor category `C ⥤ D` is enriched over `C ⥤ Type max v' v u`. Th
 for showing that `C ⥤ Type max w v u` is monoidal closed.
 
 See `Mathlib/CategoryTheory/Closed/FunctorToTypes.lean`.
-
 -/
 
 @[expose] public section

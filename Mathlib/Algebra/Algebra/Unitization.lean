@@ -15,6 +15,9 @@ public import Mathlib.Tactic.Abel
 public import Mathlib.Algebra.GroupWithZero.Action.TransferInstance
 public import Mathlib.Algebra.Module.TransferInstance
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Unitization of a non-unital algebra
 
@@ -25,7 +28,7 @@ a type synonym for `R × A` on which we place a different multiplicative structu
 `(r₁, a₁) * (r₂, a₂) = (r₁ * r₂, r₁ • a₂ + r₂ • a₁ + a₁ * a₂)` where the multiplicative identity
 is `(1, 0)`.
 
-Note, when `A` is a *unital* `R`-algebra, then `Unitization R A` constructs a new multiplicative
+Note, when `A` is a _unital_ `R`-algebra, then `Unitization R A` constructs a new multiplicative
 identity different from the old one, and so in general `Unitization R A` and `A` will not be
 isomorphic even in the unital case. This approach actually has nice functorial properties.
 
@@ -34,7 +37,7 @@ of which is a proper ideal (TODO), and when `R` is a field this ideal is maximal
 this ideal is always an essential ideal (it has nontrivial intersection with every other nontrivial
 ideal).
 
-Every non-unital algebra homomorphism from `A` into a *unital* `R`-algebra `B` has a unique
+Every non-unital algebra homomorphism from `A` into a _unital_ `R`-algebra `B` has a unique
 extension to a (unital) algebra homomorphism from `Unitization R A` to `B`.
 
 ## Main definitions
@@ -179,9 +182,11 @@ instance instNontrivialRight {𝕜 A} [Nonempty 𝕜] [Nontrivial A] :
 
 end Basic
 
-/-! ### Structures inherited from `Prod`
+/-!
+# Structures inherited from `Prod`
 
-Additive operators and scalar multiplication operate elementwise. -/
+Additive operators and scalar multiplication operate elementwise.
+-/
 
 
 section Additive
@@ -432,7 +437,9 @@ def sndHom : Unitization R A →ₗ[S] A where
 
 end Additive
 
-/-! ### Multiplicative structure -/
+/-!
+# Multiplicative structure
+-/
 
 
 section Mul
@@ -577,7 +584,9 @@ def inlRingHom [Semiring R] [NonUnitalSemiring A] [Module R A] : R →+* Unitiza
 
 end Mul
 
-/-! ### Star structure -/
+/-!
+# Star structure
+-/
 
 
 section Star
@@ -624,7 +633,9 @@ instance instStarRing [CommSemiring R] [StarRing R] [NonUnitalNonAssocSemiring A
 
 end Star
 
-/-! ### Algebra structure -/
+/-!
+# Algebra structure
+-/
 
 
 section Algebra
@@ -724,7 +735,9 @@ lemma algHom_ext'' {F : Type*}
     (h : ∀ a : A, φ a = ψ a) : φ = ψ :=
   algHom_ext h (fun r => by simp only [AlgHomClass.commutes])
 
-/-- See note [partially-applied ext lemmas] -/
+/--
+See note \[partially-applied ext lemmas\]
+-/
 @[ext 1100]
 theorem algHom_ext' {φ ψ : Unitization R A →ₐ[R] C}
     (h :
@@ -792,7 +805,9 @@ variable {R A C : Type*} [CommSemiring R] [StarRing R] [NonUnitalSemiring A] [St
 variable [Module R A] [SMulCommClass R A A] [IsScalarTower R A A]
 variable [Semiring C] [Algebra R C] [StarRing C]
 
-/-- See note [partially-applied ext lemmas] -/
+/--
+See note \[partially-applied ext lemmas\]
+-/
 @[ext]
 theorem starAlgHom_ext {φ ψ : Unitization R A →⋆ₐ[R] C}
     (h : φ.toNonUnitalStarAlgHom.comp (Unitization.inrNonUnitalStarAlgHom R A) =

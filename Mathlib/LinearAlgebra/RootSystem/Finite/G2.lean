@@ -9,6 +9,9 @@ public import Mathlib.LinearAlgebra.RootSystem.Base
 public import Mathlib.LinearAlgebra.RootSystem.Chain
 public import Mathlib.LinearAlgebra.RootSystem.Finite.Lemmas
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Properties of the `𝔤₂` root system.
 
@@ -21,6 +24,7 @@ corollary of the fact that no node can have degree greater than three) and moreo
 stronger assumptions on the coefficients than here.
 
 ## Main results:
+
 * `RootPairing.EmbeddedG2`: a data-bearing typeclass which distinguishes a pair of roots whose
   pairing is `-3` (equivalently, with a distinguished choice of base). This is a sufficient
   condition for the span of this pair of roots to be a `𝔤₂` root system.
@@ -38,10 +42,11 @@ stronger assumptions on the coefficients than here.
 * `RootPairing.EmbeddedG2.card_index_eq_twelve`: the `𝔤₂` root pairing has twelve roots.
 
 ## TODO
+
 Once sufficient API for `RootPairing.Base` has been developed:
+
 * Add `def EmbeddedG2.toBase [P.EmbeddedG2] : P.Base` with `support := {long P, short P}`
 * Given `P` satisfying `[P.IsG2]`, distinct elements of a base must pair to `-3` (in one order).
-
 -/
 
 @[expose] public section
@@ -147,6 +152,8 @@ lemma chainBotCoeff_add_chainTopCoeff_le_two [P.IsNotG2] :
   have := IsNotG2.pairingIn_mem_zero_one_two (P := P) (P.chainTopIdx i j) i
   aesop
 
+
+set_option doc.verso false
 /-- For a reduced, crystallographic, irreducible root pairing other than `𝔤₂`, if the sum of two
 roots is a root, they cannot make an acute angle.
 
@@ -167,6 +174,8 @@ lemma pairingIn_le_zero_of_root_add_mem [P.IsNotG2] (h : P.root i + P.root j ∈
   rw [← P.chainBotCoeff_sub_chainTopCoeff aux₁]
   lia
 
+
+set_option doc.verso true
 lemma zero_le_pairingIn_of_root_sub_mem [P.IsNotG2] (h : P.root i - P.root j ∈ range P.root) :
     0 ≤ P.pairingIn ℤ i j := by
   replace h : P.root i + P.root (P.reflectionPerm j j) ∈ range P.root := by simpa [← sub_eq_add_neg]

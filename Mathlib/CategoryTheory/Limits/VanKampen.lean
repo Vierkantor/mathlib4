@@ -11,21 +11,24 @@ public import Mathlib.CategoryTheory.Limits.Shapes.Pullback.Equifibered
 public import Mathlib.CategoryTheory.Limits.Shapes.StrictInitial
 public import Mathlib.CategoryTheory.Limits.Constructions.FiniteProductsOfBinaryProducts
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Universal colimits and van Kampen colimits
 
 ## Main definitions
-- `CategoryTheory.IsUniversalColimit`: A (colimit) cocone over a diagram `F : J ⥤ C` is universal
+
+* `CategoryTheory.IsUniversalColimit`: A (colimit) cocone over a diagram `F : J ⥤ C` is universal
   if it is stable under pullbacks.
-- `CategoryTheory.IsVanKampenColimit`: A (colimit) cocone over a diagram `F : J ⥤ C` is van
+* `CategoryTheory.IsVanKampenColimit`: A (colimit) cocone over a diagram `F : J ⥤ C` is van
   Kampen if for every cocone `c'` over the pullback of the diagram `F' : J ⥤ C'`,
   `c'` is colimiting iff `c'` is the pullback of `c`.
 
 ## References
-- https://ncatlab.org/nlab/show/van+Kampen+colimit
-- [Stephen Lack and Paweł Sobociński, Adhesive Categories][adhesive2004]
 
+* https://ncatlab.org/nlab/show/van+Kampen+colimit
+* ‍\[Stephen Lack and Paweł Sobociński, Adhesive Categories\]\[adhesive2004\]
 -/
 
 @[expose] public section

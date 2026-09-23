@@ -11,6 +11,9 @@ public import Mathlib.RepresentationTheory.Homological.GroupCohomology.LongExact
 public import Mathlib.RepresentationTheory.Homological.GroupHomology.LongExactSequence
 
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Tate Cohomology
 
@@ -22,18 +25,13 @@ cochain complex using the norm map.
 
 * `Rep.tateNorm`: the map induced by the norm map from the zeroth term of the inhomogeneous chain
   complex to the zeroth term of the inhomogeneous cochain complex.
-
 * `tateComplex`: the Tate complex defined by connecting the inhomogeneous chain complex and
   cochain complex using the Tate norm.
-
 * `tateComplexFunctor`: the functor taking a representation of `G` to its Tate complex.
-
 * `tateCohomologyFunctor`: the functor taking a representation of `G` to its `n`-th Tate
   cohomology group.
-
 * `isoGroupCohomology`: the isomorphism between the `n`-th Tate cohomology and
   `n`-th group cohomology for `n : ℕ` non-zero.
-
 * `isoGroupHomology`: the isomorphism between the `-n-1`-th Tate cohomology and `n`-th group
   homology for `n : ℕ` non-zero.
 

@@ -10,6 +10,9 @@ public import Mathlib.RingTheory.MvPowerSeries.Basic
 public import Mathlib.RingTheory.MvPowerSeries.NoZeroDivisors
 public import Mathlib.RingTheory.LocalRing.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Formal (multivariate) power series - Inverses
 
@@ -33,8 +36,7 @@ Instances are defined:
 * Formal power series over a local ring form a local ring.
 * The morphism `MvPowerSeries.map σ f : MvPowerSeries σ A →* MvPowerSeries σ B`
   induced by a local morphism `f : A →+* B` (`IsLocalHom f`)
-  of commutative rings is a *local* morphism.
-
+  of commutative rings is a _local_ morphism.
 -/
 
 @[expose] public section

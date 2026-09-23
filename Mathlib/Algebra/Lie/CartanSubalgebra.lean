@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Lie.Nilpotent
 public import Mathlib.Algebra.Lie.Normalizer
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cartan subalgebras
 
@@ -16,9 +19,9 @@ The standard example is the set of diagonal matrices in the Lie algebra of matri
 
 ## Main definitions
 
-  * `LieSubmodule.IsUcsLimit`
-  * `LieSubalgebra.IsCartanSubalgebra`
-  * `LieSubalgebra.isCartanSubalgebra_iff_isUcsLimit`
+* `LieSubmodule.IsUcsLimit`
+* `LieSubalgebra.IsCartanSubalgebra`
+* `LieSubalgebra.isCartanSubalgebra_iff_isUcsLimit`
 
 ## Tags
 

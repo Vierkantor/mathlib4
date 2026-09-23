@@ -16,6 +16,10 @@ public import ProofWidgets.Component.Panel.Basic
 public import ProofWidgets.Component.PenroseDiagram
 public import ProofWidgets.Presentation.Expr
 
+set_option doc.verso true
+set_option doc.verso.module false
+set_option doc.verso.suggestions false
+
 /-!
 # String Diagram Widget
 

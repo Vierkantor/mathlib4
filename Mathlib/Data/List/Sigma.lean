@@ -11,6 +11,9 @@ public import Mathlib.Data.List.Lookmap
 public import Mathlib.Data.Sigma.Basic
 public import Mathlib.Data.Nat.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Utilities for lists of sigmas
 
@@ -21,14 +24,14 @@ If `α : Type*` and `β : α → Type*`, then we regard `s : Sigma β` as having
 
 ## Main Definitions
 
-- `List.keys` extracts the list of keys.
-- `List.NodupKeys` determines if the store has duplicate keys.
-- `List.lookup`/`lookup_all` accesses the value(s) of a particular key.
-- `List.kreplace` replaces the first value with a given key by a given value.
-- `List.kerase` removes a value.
-- `List.kinsert` inserts a value.
-- `List.kunion` computes the union of two stores.
-- `List.kextract` returns a value with a given key and the rest of the values.
+* `List.keys` extracts the list of keys.
+* `List.NodupKeys` determines if the store has duplicate keys.
+* `List.lookup`/`lookup_all` accesses the value(s) of a particular key.
+* `List.kreplace` replaces the first value with a given key by a given value.
+* `List.kerase` removes a value.
+* `List.kinsert` inserts a value.
+* `List.kunion` computes the union of two stores.
+* `List.kextract` returns a value with a given key and the rest of the values.
 -/
 
 @[expose] public section
@@ -39,7 +42,9 @@ namespace List
 
 variable {α : Type u} {α' : Type u'} {β : α → Type v} {β' : α' → Type v'} {l l₁ l₂ : List (Sigma β)}
 
-/-! ### `keys` -/
+/-!
+# `keys`
+-/
 
 
 /-- List of keys from a list of key-value pairs -/
@@ -76,7 +81,9 @@ theorem notMem_keys {a} {l : List (Sigma β)} : a ∉ l.keys ↔ ∀ b : β a, S
 theorem ne_key {a} {l : List (Sigma β)} : a ∉ l.keys ↔ ∀ s : Sigma β, s ∈ l → a ≠ s.1 := by
   grind
 
-/-! ### `NodupKeys` -/
+/-!
+# `NodupKeys`
+-/
 
 
 /-- Determines whether the store uses a key several times. -/
@@ -147,7 +154,9 @@ theorem mem_ext {l₀ l₁ : List (Sigma β)} (nd₀ : l₀.Nodup) (nd₁ : l₁
 
 variable [DecidableEq α] [DecidableEq α']
 
-/-! ### `dlookup` -/
+/-!
+# `dlookup`
+-/
 
 /-- `dlookup a l` is the first value in `l` corresponding to the key `a`,
   or `none` if no such element exists. -/
@@ -273,7 +282,9 @@ theorem sublist_dlookup {l₁ l₂ : List (Sigma β)} {a : α} {b : β a}
     (nd₂ : l₂.NodupKeys) (s : l₁ <+ l₂) (mem : b ∈ l₁.dlookup a) : b ∈ l₂.dlookup a := by
   grind [Option.mem_def, => perm_dlookup, → Sublist.exists_perm_append]
 
-/-! ### `lookupAll` -/
+/-!
+# `lookupAll`
+-/
 
 
 /-- `lookup_all a l` is the list of all values in `l` corresponding to the key `a`. -/
@@ -352,7 +363,9 @@ theorem perm_lookupAll (a : α) {l₁ l₂ : List (Sigma β)} (nd₁ : l₁.Nodu
   have nd₂ := (perm_nodupKeys p).mp nd₁
   simp [lookupAll_eq_dlookup, nd₁, nd₂, perm_dlookup a nd₁ p]
 
-/-! ### `kreplace` -/
+/-!
+# `kreplace`
+-/
 
 
 /-- Replaces the first value with key `a` by `b`. -/
@@ -394,7 +407,9 @@ theorem Perm.kreplace {a : α} {b : β a} {l₁ l₂ : List (Sigma β)} (nd : l�
     split_ifs at h₁ h₂ with h_2 h_1 <;> cases h₁ <;> cases h₂
     exact (h (h_2.symm.trans h_1)).elim
 
-/-! ### `kerase` -/
+/-!
+# `kerase`
+-/
 
 
 /-- Remove the first pair with the key `a`. -/
@@ -552,7 +567,9 @@ theorem sizeOf_kerase [SizeOf (Sigma β)] (x : α)
   | nil => simp
   | cons y ys => by_cases x = y.1 <;> simp [*]
 
-/-! ### `kinsert` -/
+/-!
+# `kinsert`
+-/
 
 
 /-- Insert the pair `⟨a, b⟩` and erase the first pair with the key `a`. -/
@@ -581,7 +598,9 @@ theorem dlookup_kinsert {a} {b : β a} (l : List (Sigma β)) :
 theorem dlookup_kinsert_ne {a a'} {b' : β a'} {l : List (Sigma β)} (h : a ≠ a') :
     dlookup a (kinsert a' b' l) = dlookup a l := by simp [h]
 
-/-! ### `kextract` -/
+/-!
+# `kextract`
+-/
 
 
 /-- Finds the first entry with a given key `a` and returns its value (as an `Option` because there
@@ -604,7 +623,9 @@ theorem kextract_eq_dlookup_kerase (a : α) :
       simp [kerase]
     · simp [Ne.symm h, kextract_eq_dlookup_kerase a l, kerase]
 
-/-! ### `dedupKeys` -/
+/-!
+# `dedupKeys`
+-/
 
 
 /-- Remove entries with duplicate keys from `l : List (Sigma β)`. -/
@@ -657,7 +678,9 @@ theorem sizeOf_dedupKeys [SizeOf (Sigma β)]
     simp only [dedupKeys_cons, kinsert_def, Sigma.eta]
     exact sizeOf_cons_le_sizeOf_cons x (le_trans (sizeOf_kerase x.fst xs.dedupKeys) h)
 
-/-! ### `kunion` -/
+/-!
+# `kunion`
+-/
 
 
 /-- `kunion l₁ l₂` is the append to l₁ of l₂ after, for each key in l₁, the

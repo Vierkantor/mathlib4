@@ -8,11 +8,13 @@ module
 public import Mathlib.CategoryTheory.Limits.Opposites
 public import Mathlib.CategoryTheory.Limits.Shapes.FiniteProducts
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Products and coproducts in `C` and `Cᵒᵖ`
 
 We construct products and coproducts in the opposite categories.
-
 -/
 
 @[expose] public section

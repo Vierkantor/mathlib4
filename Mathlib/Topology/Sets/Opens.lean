@@ -12,6 +12,9 @@ public import Mathlib.Topology.ContinuousMap.Basic
 public import Mathlib.Order.CompactlyGenerated.Basic
 public import Mathlib.Order.Copy
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Open sets
 
@@ -23,18 +26,18 @@ We define the subtype of open sets in a topological space.
 
 ### Bundled open sets
 
-- `TopologicalSpace.Opens α` is the type of open subsets of a topological space `α`.
-- `TopologicalSpace.Opens.IsBasis` is a predicate saying that a set of `Opens`s form a topological
+* `TopologicalSpace.Opens α` is the type of open subsets of a topological space `α`.
+* `TopologicalSpace.Opens.IsBasis` is a predicate saying that a set of `Opens`s form a topological
   basis.
-- `TopologicalSpace.Opens.comap`: preimage of an open set under a continuous map as a `FrameHom`.
-- `Homeomorph.opensCongr`: order-preserving equivalence between open sets in the domain and the
+* `TopologicalSpace.Opens.comap`: preimage of an open set under a continuous map as a `FrameHom`.
+* `Homeomorph.opensCongr`: order-preserving equivalence between open sets in the domain and the
   codomain of a homeomorphism.
 
 ### Bundled open neighborhoods
 
-- `TopologicalSpace.OpenNhdsOf x` is the type of open subsets of a topological space `α` containing
+* `TopologicalSpace.OpenNhdsOf x` is the type of open subsets of a topological space `α` containing
   `x : α`.
-- `TopologicalSpace.OpenNhdsOf.comap f x U` is the preimage of open neighborhood `U` of `f x` under
+* `TopologicalSpace.OpenNhdsOf.comap f x U` is the preimage of open neighborhood `U` of `f x` under
   `f : C(α, β)`.
 
 ## Main results
@@ -44,8 +47,8 @@ We define order structures on both `Opens α` (`CompleteLattice`, `Frame`) and `
 
 ## TODO
 
-- Rename `TopologicalSpace.Opens` to `Open`?
-- Port the `auto_cases` tactic version (as a plugin if the ported `auto_cases` will allow plugins).
+* Rename `TopologicalSpace.Opens` to `Open`?
+* Port the `auto_cases` tactic version (as a plugin if the ported `auto_cases` will allow plugins).
 -/
 
 @[expose] public section
@@ -117,7 +120,9 @@ protected theorem isOpen (U : Opens α) : IsOpen (U : Set α) :=
 
 @[simp] theorem mk_coe (U : Opens α) : mk (↑U) U.isOpen = U := rfl
 
-/-- See Note [custom simps projection]. -/
+/--
+See Note \[custom simps projection\].
+-/
 def Simps.coe (U : Opens α) : Set α := U
 
 initialize_simps_projections Opens (carrier → coe, as_prefix coe)

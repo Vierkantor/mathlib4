@@ -10,6 +10,9 @@ public import Mathlib.Analysis.Complex.CauchyIntegral
 public import Mathlib.MeasureTheory.Integral.Pi
 public import Mathlib.Analysis.Fourier.FourierTransform
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Fourier transform of the Gaussian
 
@@ -23,13 +26,12 @@ We prove that the Fourier transform of the Gaussian function is another Gaussian
 
 We also give versions of these formulas in finite-dimensional inner product spaces, see
 `integral_cexp_neg_mul_sq_norm_add` and `fourierIntegral_gaussian_innerProductSpace`.
-
 -/
 
 @[expose] public section
 
 /-!
-## Fourier integral of Gaussian functions
+# Fourier integral of Gaussian functions
 -/
 
 open Real Set MeasureTheory Filter intervalIntegral

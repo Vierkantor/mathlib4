@@ -11,8 +11,10 @@ public import Mathlib.CategoryTheory.Limits.Constructions.Filtered
 public import Mathlib.CategoryTheory.Limits.Preserves.FunctorCategory
 public import Mathlib.CategoryTheory.Limits.Shapes.Countable
 public import Mathlib.Logic.Equiv.List
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Grothendieck Axioms
 
 This file defines some of the Grothendieck Axioms for abelian categories, and proves
@@ -20,15 +22,15 @@ basic facts about them.
 
 ## Definitions
 
-- `HasExactColimitsOfShape J C` -- colimits of shape `J` in `C` are exact.
-- The dual of the above definitions, called `HasExactLimitsOfShape`.
-- `AB4` -- coproducts are exact (this is formulated in terms of `HasExactColimitsOfShape`).
-- `AB5` -- filtered colimits are exact (this is formulated in terms of `HasExactColimitsOfShape`).
+* `HasExactColimitsOfShape J C` -- colimits of shape `J` in `C` are exact.
+* The dual of the above definitions, called `HasExactLimitsOfShape`.
+* `AB4` -- coproducts are exact (this is formulated in terms of `HasExactColimitsOfShape`).
+* `AB5` -- filtered colimits are exact (this is formulated in terms of `HasExactColimitsOfShape`).
 
 ## Theorems
 
-- The implication from `AB5` to `AB4` is established in `AB4.ofAB5`.
-- That `HasExactColimitsOfShape J C` is invariant under equivalences in both parameters is shown
+* The implication from `AB5` to `AB4` is established in `AB4.ofAB5`.
+* That `HasExactColimitsOfShape J C` is invariant under equivalences in both parameters is shown
   in `HasExactColimitsOfShape.of_domain_equivalence` and
   `HasExactColimitsOfShape.of_codomain_equivalence`.
 
@@ -45,8 +47,8 @@ individual axioms. An `AB4` category is an _abelian_ category satisfying `AB4`, 
 `AB5`.
 
 ## References
-* [Stacks: Grothendieck's AB conditions](https://stacks.math.columbia.edu/tag/079A)
 
+* [Stacks: Grothendieck's AB conditions](https://stacks.math.columbia.edu/tag/079A)
 -/
 
 public section

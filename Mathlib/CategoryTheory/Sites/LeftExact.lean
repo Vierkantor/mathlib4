@@ -10,6 +10,9 @@ public import Mathlib.CategoryTheory.Limits.FilteredColimitCommutesFiniteLimit
 public import Mathlib.CategoryTheory.Adhesive.Basic
 public import Mathlib.CategoryTheory.Sites.ConcreteSheafification
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Left exactness of sheafification
 

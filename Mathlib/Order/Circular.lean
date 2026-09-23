@@ -8,6 +8,9 @@ module
 public import Mathlib.Order.Lattice
 public import Mathlib.Tactic.Order
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Circular order hierarchy
 
@@ -16,17 +19,17 @@ This file defines circular preorders, circular partial orders and circular order
 ## Hierarchy
 
 * A ternary "betweenness" relation `btw : α → α → α → Prop` forms a `CircularOrder` if it is
-  - reflexive: `btw a a a`
-  - cyclic: `btw a b c → btw b c a`
-  - antisymmetric: `btw a b c → btw c b a → a = b ∨ b = c ∨ c = a`
-  - total: `btw a b c ∨ btw c b a`
+
+  * reflexive: `btw a a a`
+  * cyclic: `btw a b c → btw b c a`
+  * antisymmetric: `btw a b c → btw c b a → a = b ∨ b = c ∨ c = a`
+  * total: `btw a b c ∨ btw c b a`
 
   along with a strict betweenness relation `sbtw : α → α → α → Prop` which respects
   `sbtw a b c ↔ btw a b c ∧ ¬ btw c b a`, analogously to how `<` and `≤` are related, and is
-  - transitive: `sbtw a b c → sbtw b d c → sbtw a d c`.
 
+  * transitive: `sbtw a b c → sbtw b d c → sbtw a d c`.
 * A `CircularPartialOrder` drops totality.
-
 * A `CircularPreorder` further drops antisymmetry.
 
 The intuition is that a circular order is a circle and `btw a b c` means that going around
@@ -56,6 +59,7 @@ Some concrete circular orders one encounters in the wild are `ZMod n` for `0 < n
 
 There's an unsolved diamond on `OrderDual α` here. The instances `LE α → Btw αᵒᵈ` and
 `LT α → SBtw αᵒᵈ` can each be inferred in two ways:
+
 * `LE α` → `Btw α` → `Btw αᵒᵈ` vs
   `LE α` → `LE αᵒᵈ` → `Btw αᵒᵈ`
 * `LT α` → `SBtw α` → `SBtw αᵒᵈ` vs
@@ -83,8 +87,8 @@ and the circular order of months. Is `α →c β` a good notation?
 
 ## References
 
-* https://en.wikipedia.org/wiki/Cyclic_order
-* https://en.wikipedia.org/wiki/Partial_cyclic_order
+* https://en.wikipedia.org/wiki/Cyclic\_order
+* https://en.wikipedia.org/wiki/Partial\_cyclic\_order
 
 ## Tags
 
@@ -153,7 +157,9 @@ class CircularOrder (α : Type*) extends CircularPartialOrder α where
 
 export CircularOrder (btw_total)
 
-/-! ### Circular preorders -/
+/-!
+# Circular preorders
+-/
 
 
 section CircularPreorder
@@ -241,7 +247,9 @@ theorem sbtw_irrefl (a : α) : ¬sbtw a a a :=
 
 end CircularPreorder
 
-/-! ### Circular partial orders -/
+/-!
+# Circular partial orders
+-/
 
 
 section CircularPartialOrder
@@ -255,7 +263,9 @@ theorem Btw.btw.antisymm {a b c : α} (h : btw a b c) : btw c b a → a = b ∨ 
 
 end CircularPartialOrder
 
-/-! ### Circular orders -/
+/-!
+# Circular orders
+-/
 
 
 section CircularOrder
@@ -289,7 +299,9 @@ theorem btw_iff_not_sbtw {a b c : α} : btw a b c ↔ ¬sbtw c b a :=
 
 end CircularOrder
 
-/-! ### Circular intervals -/
+/-!
+# Circular intervals
+-/
 
 
 namespace Set
@@ -338,16 +350,22 @@ end CircularOrder
 
 end Set
 
-/-! ### Circularizing instances -/
+/-!
+# Circularizing instances
+-/
 
 
-/-- The betweenness relation obtained from "looping around" `≤`.
-See note [reducible non-instances]. -/
+/--
+The betweenness relation obtained from "looping around" `≤`.
+See note \[reducible non-instances\].
+-/
 abbrev LE.toBtw (α : Type*) [LE α] : Btw α where
   btw a b c := a ≤ b ∧ b ≤ c ∨ b ≤ c ∧ c ≤ a ∨ c ≤ a ∧ a ≤ b
 
-/-- The strict betweenness relation obtained from "looping around" `<`.
-See note [reducible non-instances]. -/
+/--
+The strict betweenness relation obtained from "looping around" `<`.
+See note \[reducible non-instances\].
+-/
 abbrev LT.toSBtw (α : Type*) [LT α] : SBtw α where
   sbtw a b c := a < b ∧ b < c ∨ b < c ∧ c < a ∨ c < a ∧ a < b
 
@@ -366,8 +384,10 @@ lemma sbtw_iff [LT α] : sbtw a b c ↔ a < b ∧ b < c ∨ b < c ∧ c < a ∨ 
 
 end
 
-/-- The circular preorder obtained from "looping around" a preorder.
-See note [reducible non-instances]. -/
+/--
+The circular preorder obtained from "looping around" a preorder.
+See note \[reducible non-instances\].
+-/
 abbrev Preorder.toCircularPreorder (α : Type*) [Preorder α] : CircularPreorder α where
   btw a b c := a ≤ b ∧ b ≤ c ∨ b ≤ c ∧ c ≤ a ∨ c ≤ a ∧ a ≤ b
   sbtw a b c := a < b ∧ b < c ∨ b < c ∧ c < a ∨ c < a ∧ a < b
@@ -383,8 +403,10 @@ abbrev Preorder.toCircularPreorder (α : Type*) [Preorder α] : CircularPreorder
     simp_rw [lt_iff_le_not_ge]
     grind
 
-/-- The circular partial order obtained from "looping around" a partial order.
-See note [reducible non-instances]. -/
+/--
+The circular partial order obtained from "looping around" a partial order.
+See note \[reducible non-instances\].
+-/
 abbrev PartialOrder.toCircularPartialOrder (α : Type*) [PartialOrder α] : CircularPartialOrder α :=
   { Preorder.toCircularPreorder α with
     btw_antisymm := fun {a b c} => by
@@ -399,8 +421,10 @@ abbrev PartialOrder.toCircularPartialOrder (α : Type*) [PartialOrder α] : Circ
       · exact Or.inl (hab.antisymm hba)
       · exact Or.inr (Or.inr <| hca.antisymm hac) }
 
-/-- The circular order obtained from "looping around" a linear order.
-See note [reducible non-instances]. -/
+/--
+The circular order obtained from "looping around" a linear order.
+See note \[reducible non-instances\].
+-/
 abbrev LinearOrder.toCircularOrder (α : Type*) [LinearOrder α] : CircularOrder α :=
   { PartialOrder.toCircularPartialOrder α with
     btw_total := fun a b c => by
@@ -415,7 +439,9 @@ abbrev LinearOrder.toCircularOrder (α : Type*) [LinearOrder α] : CircularOrder
       · exact Or.inr (Or.inl ⟨hcb, hba⟩)
       · exact Or.inr (Or.inr <| Or.inl ⟨hba, hac⟩) }
 
-/-! ### Dual constructions -/
+/-!
+# Dual constructions
+-/
 
 
 namespace OrderDual

@@ -9,6 +9,9 @@ public import Mathlib.LinearAlgebra.Dimension.Localization
 public import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
 public import Mathlib.LinearAlgebra.FreeModule.PID
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lattices
 
@@ -25,17 +28,17 @@ of `GL 2 K`.
 
 ## Main definitions
 
-- `Submodule.IsLattice`: An `R`-submodule `M` of `V` is a lattice, if it is finitely generated
+* `Submodule.IsLattice`: An `R`-submodule `M` of `V` is a lattice, if it is finitely generated
   and its `A`-span is `V`.
 
 ## Main properties
 
 Let `R` be a PID and `A = K` its field of fractions.
 
-- `Submodule.IsLattice.free`: Every lattice in `V` is `R`-free.
-- `Basis.extendOfIsLattice`: Any `R`-basis of a lattice `M` in `V` defines a `K`-basis of `V`.
-- `Submodule.IsLattice.rank`: The `R`-rank of a lattice in `V` is equal to the `K`-rank of `V`.
-- `Submodule.IsLattice.inf`: The intersection of two lattices is a lattice.
+* `Submodule.IsLattice.free`: Every lattice in `V` is `R`-free.
+* `Basis.extendOfIsLattice`: Any `R`-basis of a lattice `M` in `V` defines a `K`-basis of `V`.
+* `Submodule.IsLattice.rank`: The `R`-rank of a lattice in `V` is equal to the `K`-rank of `V`.
+* `Submodule.IsLattice.inf`: The intersection of two lattices is a lattice.
 
 ## Note
 

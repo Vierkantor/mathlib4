@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.Convex.Combination
 public import Mathlib.Analysis.Convex.Extreme
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Convex independence
 
@@ -29,7 +32,7 @@ convex independence.
 
 ## References
 
-* https://en.wikipedia.org/wiki/Convex_position
+* https://en.wikipedia.org/wiki/Convex\_position
 
 ## TODO
 
@@ -190,7 +193,9 @@ theorem convexIndependent_iff_finset {p : ι → E} :
   rwa [t.image_preimage p hp.injOn, filter_true_of_mem]
   exact fun y hy => s.image_subset_range p (ht <| mem_coe.2 hy)
 
-/-! ### Extreme points -/
+/-!
+# Extreme points
+-/
 
 
 theorem Convex.convexIndependent_extremePoints (hs : Convex 𝕜 s) :

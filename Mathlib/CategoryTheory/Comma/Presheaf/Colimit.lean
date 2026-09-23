@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Comma.Presheaf.Basic
 public import Mathlib.CategoryTheory.Limits.Preserves.Yoneda
 public import Mathlib.CategoryTheory.Limits.Over
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Relative Yoneda preserves certain colimits
 

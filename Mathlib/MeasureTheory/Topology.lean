@@ -8,6 +8,9 @@ module
 public import Mathlib.MeasureTheory.Measure.Typeclasses.NullSingletonClass
 public import Mathlib.Topology.DiscreteSubset
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Theorems combining measure theory and topology
 

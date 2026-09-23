@@ -10,6 +10,9 @@ public import Mathlib.Analysis.Calculus.FDeriv.Prod
 public import Mathlib.Analysis.Calculus.Monotone
 public import Mathlib.Topology.EMetricSpace.VariationOnFromTo
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Almost everywhere differentiability of functions with locally bounded variation
 
@@ -28,7 +31,6 @@ are also differentiable almost everywhere.
 * `LipschitzOnWith.ae_differentiableWithinAt` is the same result for Lipschitz functions.
 
 We also give several variations around these results.
-
 -/
 
 public section

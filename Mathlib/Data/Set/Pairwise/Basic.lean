@@ -9,6 +9,9 @@ public import Mathlib.Data.Set.Function
 public import Mathlib.Logic.Pairwise
 public import Mathlib.Logic.Relation
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Relations holding pairwise
 
@@ -360,7 +363,9 @@ theorem PairwiseDisjoint.eq_of_le (hs : s.PairwiseDisjoint f) {i j : ι} (hi : i
 
 end SemilatticeInfBot
 
-/-! ### Pairwise disjoint set of sets -/
+/-!
+# Pairwise disjoint set of sets
+-/
 
 variable {s : Set ι} {t : Set ι'}
 

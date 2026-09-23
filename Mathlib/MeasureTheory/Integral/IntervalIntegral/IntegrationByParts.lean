@@ -9,10 +9,14 @@ public import Mathlib.MeasureTheory.Function.JacobianOneDim
 public import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 public import Mathlib.Tactic.CrossRefAttribute
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Integration by parts and by substitution
 
 We derive additional integration techniques from FTC-2:
+
 * `intervalIntegral.integral_mul_deriv_eq_deriv_mul` - integration by parts
 * `intervalIntegral.integral_comp_mul_deriv''` - integration by substitution
 
@@ -223,7 +227,7 @@ end SMul
 end Parts
 
 /-!
-### Integration by substitution / Change of variables
+# Integration by substitution / Change of variables
 -/
 
 section SMul

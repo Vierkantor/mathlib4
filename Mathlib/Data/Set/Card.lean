@@ -8,6 +8,9 @@ module
 public import Mathlib.SetTheory.Cardinal.Finite
 public import Mathlib.Data.Set.Finite.Powerset
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Noncomputable Set Cardinality
 
@@ -32,7 +35,7 @@ tactic so that finiteness goals are discharged automatically in `Set.ncard` theo
 ## Main Definitions
 
 * `Set.encard s` is the cardinality of the set `s` as an extended natural number, with value `⊤` if
-    `s` is infinite.
+  `s` is infinite.
 * `Set.ncard s` is the cardinality of the set `s` as a natural number, provided `s` is Finite.
   If `s` is Infinite, then `Set.ncard s = 0`.
 * `toFinite_tac` is a tactic that tries to synthesize a `Set.Finite s` argument with
@@ -1243,7 +1246,9 @@ lemma _root_.Finset.exists_not_mem_of_card_lt_enatCard {s : Finset α} (hs : s.c
   contrapose! hs
   simp [← Set.encard_coe_eq_coe_finsetCard, Set.eq_univ_of_forall (α := α) (s := s) hs]
 
-/-! ### Explicit description of a set from its cardinality -/
+/-!
+# Explicit description of a set from its cardinality
+-/
 
 @[simp] theorem ncard_eq_one : s.ncard = 1 ↔ ∃ a, s = {a} := by
   refine ⟨fun h ↦ ?_, by rintro ⟨a, rfl⟩; rw [ncard_singleton]⟩

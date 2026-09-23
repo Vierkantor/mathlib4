@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Ring.Defs
 public import Mathlib.Algebra.Group.Ext
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Extensionality lemmas for rings and similar structures
 
@@ -26,6 +29,7 @@ Since `Mathlib/Algebra/Group/Ext.lean` proved several injectivity lemmas, we do 
 sometimes we don't need them to prove extensionality.
 
 ## Tags
+
 semiring, ring, extensionality
 -/
 
@@ -40,7 +44,9 @@ universe u
 
 variable {R : Type u}
 
-/-! ### Distrib -/
+/-!
+# Distrib
+-/
 namespace Distrib
 
 @[ext] theorem ext ⦃inst₁ inst₂ : Distrib R⦄
@@ -55,7 +61,9 @@ namespace Distrib
 
 end Distrib
 
-/-! ### NonUnitalNonAssocSemiring -/
+/-!
+# NonUnitalNonAssocSemiring
+-/
 namespace NonUnitalNonAssocSemiring
 
 @[ext] theorem ext ⦃inst₁ inst₂ : NonUnitalNonAssocSemiring R⦄
@@ -76,7 +84,9 @@ theorem toDistrib_injective : Function.Injective (@toDistrib R) := by
 
 end NonUnitalNonAssocSemiring
 
-/-! ### NonUnitalSemiring -/
+/-!
+# NonUnitalSemiring
+-/
 namespace NonUnitalSemiring
 
 theorem toNonUnitalNonAssocSemiring_injective :
@@ -92,7 +102,8 @@ theorem toNonUnitalNonAssocSemiring_injective :
 
 end NonUnitalSemiring
 
-/-! ### NonAssocSemiring and its ancestors
+/-!
+# NonAssocSemiring and its ancestors
 
 This section also includes results for `AddMonoidWithOne`, `AddCommMonoidWithOne`, etc.
 as these are considered implementation detail of the ring classes.
@@ -160,7 +171,9 @@ theorem toNonUnitalNonAssocSemiring_injective :
 
 end NonAssocSemiring
 
-/-! ### NonUnitalNonAssocRing -/
+/-!
+# NonUnitalNonAssocRing
+-/
 namespace NonUnitalNonAssocRing
 
 @[ext] theorem ext ⦃inst₁ inst₂ : NonUnitalNonAssocRing R⦄
@@ -181,7 +194,9 @@ theorem toNonUnitalNonAssocSemiring_injective :
 
 end NonUnitalNonAssocRing
 
-/-! ### NonUnitalRing -/
+/-!
+# NonUnitalRing
+-/
 namespace NonUnitalRing
 
 @[ext] theorem ext ⦃inst₁ inst₂ : NonUnitalRing R⦄
@@ -211,11 +226,13 @@ alias toNonUnitalNonAssocring_injective := toNonUnitalNonAssocRing_injective
 
 end NonUnitalRing
 
-/-! ### NonAssocRing and its ancestors
+/-!
+# NonAssocRing and its ancestors
 
 This section also includes results for `AddGroupWithOne`, `AddCommGroupWithOne`, etc.
 as these are considered implementation detail of the ring classes.
-TODO consider relocating these lemmas. -/
+TODO consider relocating these lemmas.
+-/
 @[ext] theorem AddGroupWithOne.ext ⦃inst₁ inst₂ : AddGroupWithOne R⦄
     (h_add : local_hAdd[R, inst₁] = local_hAdd[R, inst₂])
     (h_one : (letI := inst₁; One.one : R) = (letI := inst₂; One.one)) :
@@ -278,7 +295,9 @@ alias toNonUnitalNonAssocring_injective := toNonUnitalNonAssocRing_injective
 
 end NonAssocRing
 
-/-! ### Semiring -/
+/-!
+# Semiring
+-/
 namespace Semiring
 
 @[ext] theorem ext ⦃inst₁ inst₂ : Semiring R⦄
@@ -314,7 +333,9 @@ theorem toNonAssocSemiring_injective :
 
 end Semiring
 
-/-! ### Ring -/
+/-!
+# Ring
+-/
 namespace Ring
 
 @[ext] theorem ext ⦃inst₁ inst₂ : Ring R⦄
@@ -358,7 +379,9 @@ theorem toSemiring_injective :
 
 end Ring
 
-/-! ### NonUnitalNonAssocCommSemiring -/
+/-!
+# NonUnitalNonAssocCommSemiring
+-/
 namespace NonUnitalNonAssocCommSemiring
 
 theorem toNonUnitalNonAssocSemiring_injective :
@@ -374,7 +397,9 @@ theorem toNonUnitalNonAssocSemiring_injective :
 
 end NonUnitalNonAssocCommSemiring
 
-/-! ### NonUnitalCommSemiring -/
+/-!
+# NonUnitalCommSemiring
+-/
 namespace NonUnitalCommSemiring
 
 theorem toNonUnitalSemiring_injective :
@@ -392,7 +417,9 @@ end NonUnitalCommSemiring
 
 -- At present, there is no `NonAssocCommSemiring` in Mathlib.
 
-/-! ### NonUnitalNonAssocCommRing -/
+/-!
+# NonUnitalNonAssocCommRing
+-/
 namespace NonUnitalNonAssocCommRing
 
 theorem toNonUnitalNonAssocRing_injective :
@@ -408,7 +435,9 @@ theorem toNonUnitalNonAssocRing_injective :
 
 end NonUnitalNonAssocCommRing
 
-/-! ### NonUnitalCommRing -/
+/-!
+# NonUnitalCommRing
+-/
 namespace NonUnitalCommRing
 
 theorem toNonUnitalRing_injective :
@@ -426,7 +455,9 @@ end NonUnitalCommRing
 
 -- At present, there is no `NonAssocCommRing` in Mathlib.
 
-/-! ### CommSemiring -/
+/-!
+# CommSemiring
+-/
 namespace CommSemiring
 
 theorem toSemiring_injective :
@@ -442,7 +473,9 @@ theorem toSemiring_injective :
 
 end CommSemiring
 
-/-! ### CommRing -/
+/-!
+# CommRing
+-/
 namespace CommRing
 
 theorem toRing_injective : Function.Injective (@toRing R) := by

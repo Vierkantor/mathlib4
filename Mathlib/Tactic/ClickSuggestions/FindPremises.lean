@@ -14,15 +14,19 @@ public meta import Mathlib.Lean.Meta.RefinedDiscrTree
 public import Mathlib.Lean.FoldEnvironment
 public import Mathlib.Lean.Meta.RefinedDiscrTree
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Generating a shortlist of candidate lemmas for suggestions
 
 ## Discrimination tree lookup
 
 This file defines how to build and match with the discrimination trees, for premises that are
-- imported
-- from the current module
-- local hypotheses
+
+* imported
+* from the current module
+* local hypotheses
 
 ## Performance note
 
@@ -30,9 +34,9 @@ When importing all of mathlib, building the discrimination trees takes on the or
 seconds. This is because of two distinct performance bottlenecks:
 
 1. Looping through the environment, and computing all of the discrimination tree entries is
-  expensive, and is done in parallel to speed it up.
+   expensive, and is done in parallel to speed it up.
 2. Building the final discrimination tree by inserting all of the computed entries is less
-  expensive, but it cannot be done in parallel, because a single datastructure is being built.
+   expensive, but it cannot be done in parallel, because a single datastructure is being built.
 
 These two bottlenecks cost about the same amount of time. Luckily, we can already start doing (2)
 as soon as any of the parallel tasks from (1) have finished. So, we build the discrimination tree

@@ -11,6 +11,9 @@ public import Mathlib.RingTheory.Ideal.Quotient.Defs
 public import Mathlib.Algebra.Module.Submodule.RestrictScalars
 public import Mathlib.Algebra.Group.Action.Pointwise.Set.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # modular equivalence for submodule
 -/

@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Ring.GeomSum
 public import Mathlib.RingTheory.Ideal.Quotient.Defs
 public import Mathlib.RingTheory.Ideal.Span
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Basic results in number theory
 

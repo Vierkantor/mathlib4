@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Module.Pi
 public import Mathlib.Algebra.Order.Monoid.Canonical.Defs
 public import Mathlib.Order.Filter.Germ.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Ordered monoid instances on the space of germs of a function at a filter
 

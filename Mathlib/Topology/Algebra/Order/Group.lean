@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Order.Group.Basic
 public import Mathlib.Topology.Algebra.Group.Defs
 public import Mathlib.Topology.Order.LeftRightNhds
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Topology on a linear ordered commutative group
 

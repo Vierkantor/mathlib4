@@ -12,7 +12,11 @@ public meta import Lean.Compiler.IR.CompilerM
 public import Lean.Elab.Command
 public import Mathlib.Lean.ContextInfo
 
-/-! # Tactic analysis framework
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Tactic analysis framework
 
 In this file we define a framework for analyzing sequences of tactics.
 This can be used for linting (for instance: report when two `rw` calls can be merged into one),
@@ -289,12 +293,12 @@ initialize addLinter tacticAnalysis
 section ComplexConfig
 
 /-!
-### Work in progress: `Config` building blocks
+# Work in progress: `Config` building blocks
 
 In this section we define `ComplexConfig` which is supposed to make it easier to build standard
 analysis rounds.
 
-**Work in progress** note: This interface does not feel intuitive yet and might be redesigned.
+*Work in progress* note: This interface does not feel intuitive yet and might be redesigned.
 Please do not rely on it being stable!
 -/
 

@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Homology.ShortComplex.ExactFunctor
 public import Mathlib.CategoryTheory.Abelian.SerreClass.MorphismProperty
 public import Mathlib.CategoryTheory.Localization.CalculusOfFractions.Preadditive
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Localization with respect to a Serre class
 
@@ -19,7 +22,6 @@ in the abelian category `C`, then `D` is an abelian category.
 
 We also show that a functor `G : D ⥤ E` to an abelian category is exact iff
 the composition `L ⋙ G` is.
-
 -/
 
 @[expose] public section

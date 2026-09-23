@@ -8,6 +8,9 @@ module
 public import Mathlib.MeasureTheory.Measure.Map
 public import Mathlib.MeasureTheory.Measure.Sum
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Absolute Continuity of Measures
 
@@ -29,7 +32,6 @@ It is equivalent to an inequality of the almost everywhere filters of the measur
 
 * `μ ≪ ν`: `MeasureTheory.Measure.AbsolutelyContinuous μ ν`. That is: `μ` is absolutely continuous
   with respect to `ν`
-
 -/
 
 @[expose] public section

@@ -9,14 +9,18 @@ public import Mathlib.Topology.Algebra.InfiniteSum.Defs
 public import Mathlib.Topology.Algebra.UniformConvergence
 public import Mathlib.Order.Filter.AtTopBot.Finset
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Infinite sum and products that converge uniformly
 
 ## Main definitions
-- `HasProdUniformlyOn f g s` : `∏ i, f i b` converges uniformly on `s` to `g`.
-- `HasProdLocallyUniformlyOn f g s` : `∏ i, f i b` converges locally uniformly on `s` to `g`.
-- `HasProdUniformly f g` : `∏ i, f i b` converges uniformly to `g`.
-- `HasProdLocallyUniformly f g` : `∏ i, f i b` converges locally uniformly to `g`.
+
+* `HasProdUniformlyOn f g s` : `∏ i, f i b` converges uniformly on `s` to `g`.
+* `HasProdLocallyUniformlyOn f g s` : `∏ i, f i b` converges locally uniformly on `s` to `g`.
+* `HasProdUniformly f g` : `∏ i, f i b` converges uniformly to `g`.
+* `HasProdLocallyUniformly f g` : `∏ i, f i b` converges locally uniformly to `g`.
 -/
 
 @[expose] public section
@@ -31,7 +35,7 @@ variable {α β ι : Type*} [CommMonoid α] {f : ι → β → α} {g : β → �
   {x : β} {s : Set β} {I : Finset ι} [UniformSpace α]
 
 /-!
-## Uniform convergence of sums and products
+# Uniform convergence of sums and products
 -/
 
 section UniformlyOn
@@ -131,7 +135,7 @@ end UniformlyOn
 
 section LocallyUniformlyOn
 /-!
-## Locally uniform convergence of sums and products
+# Locally uniform convergence of sums and products
 -/
 
 variable [TopologicalSpace β]
@@ -380,7 +384,7 @@ end Uniformly
 
 section LocallyUniformly
 /-!
-## Locally uniform convergence of sums and products
+# Locally uniform convergence of sums and products
 -/
 
 variable [TopologicalSpace β]

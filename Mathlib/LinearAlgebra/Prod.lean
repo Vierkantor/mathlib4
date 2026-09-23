@@ -9,31 +9,39 @@ public import Mathlib.Algebra.Algebra.Prod
 public import Mathlib.Algebra.Group.Graph
 public import Mathlib.LinearAlgebra.Span.Basic
 
-/-! ### Products of modules
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Products of modules
 
 This file defines constructors for linear maps whose domains or codomains are products.
 
 It contains theorems relating these to each other, as well as to `Submodule.prod`, `Submodule.map`,
 `Submodule.comap`, `LinearMap.range`, and `LinearMap.ker`.
 
-## Main definitions
+# Main definitions
 
-- products in the domain:
-  - `LinearMap.fst`
-  - `LinearMap.snd`
-  - `LinearMap.coprod`
-  - `LinearMap.prod_ext`
-- products in the codomain:
-  - `LinearMap.inl`
-  - `LinearMap.inr`
-  - `LinearMap.prod`
-- products in both domain and codomain:
-  - `LinearMap.prodMap`
-  - `LinearEquiv.prodMap`
-  - `LinearEquiv.skewProd`
-- product with the trivial module:
-  - `LinearEquiv.prodUnique`
-  - `LinearEquiv.uniqueProd`
+* products in the domain:
+
+  * `LinearMap.fst`
+  * `LinearMap.snd`
+  * `LinearMap.coprod`
+  * `LinearMap.prod_ext`
+* products in the codomain:
+
+  * `LinearMap.inl`
+  * `LinearMap.inr`
+  * `LinearMap.prod`
+* products in both domain and codomain:
+
+  * `LinearMap.prodMap`
+  * `LinearEquiv.prodMap`
+  * `LinearEquiv.skewProd`
+* product with the trivial module:
+
+  * `LinearEquiv.prodUnique`
+  * `LinearEquiv.uniqueProd`
 -/
 
 @[expose] public section
@@ -113,10 +121,12 @@ theorem prod_comp (f : M₂ →ₗ[R] M₃) (g : M₂ →ₗ[R] M₄)
     (h : M →ₗ[R] M₂) : (f.prod g).comp h = (f.comp h).prod (g.comp h) :=
   rfl
 
-/-- Taking the product of two maps with the same domain is equivalent to taking the product of
+/--
+Taking the product of two maps with the same domain is equivalent to taking the product of
 their codomains.
 
-See note [bundled maps over different rings] for why separate `R` and `S` semirings are used. -/
+See note \[bundled maps over different rings\] for why separate `R` and `S` semirings are used.
+-/
 @[simps]
 def prodEquiv [Module S M₂] [Module S M₃] [SMulCommClass R S M₂] [SMulCommClass R S M₃] :
     ((M →ₗ[R] M₂) × (M →ₗ[R] M₃)) ≃ₗ[S] M →ₗ[R] M₂ × M₃ where
@@ -249,10 +259,12 @@ theorem coprod_comp_inl_inr (f : M × M₂ →ₗ[R] M₃) :
     (f.comp (inl R M M₂)).coprod (f.comp (inr R M M₂)) = f := by
   rw [← comp_coprod, coprod_inl_inr, comp_id]
 
-/-- Taking the product of two maps with the same codomain is equivalent to taking the product of
+/--
+Taking the product of two maps with the same codomain is equivalent to taking the product of
 their domains.
 
-See note [bundled maps over different rings] for why separate `R` and `S` semirings are used. -/
+See note \[bundled maps over different rings\] for why separate `R` and `S` semirings are used.
+-/
 @[simps]
 def coprodEquiv [Module S M₃] [SMulCommClass R S M₃] :
     ((M →ₗ[R] M₃) × (M₂ →ₗ[R] M₃)) ≃ₗ[S] M × M₂ →ₗ[R] M₃ where
@@ -276,7 +288,8 @@ theorem prod_ext_iff {f g : M × M₂ →ₗ[R] M₃} :
 Split equality of linear maps from a product into linear maps over each component, to allow `ext`
 to apply lemmas specific to `M →ₗ M₃` and `M₂ →ₗ M₃`.
 
-See note [partially-applied ext lemmas]. -/
+See note \[partially-applied ext lemmas\].
+-/
 @[ext 1100]
 theorem prod_ext {f g : M × M₂ →ₗ[R] M₃} (hl : f.comp (inl _ _ _) = g.comp (inl _ _ _))
     (hr : f.comp (inr _ _ _) = g.comp (inr _ _ _)) : f = g :=

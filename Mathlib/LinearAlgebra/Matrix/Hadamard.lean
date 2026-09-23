@@ -8,6 +8,9 @@ module
 public import Mathlib.LinearAlgebra.Matrix.Trace
 public import Mathlib.Data.Matrix.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Hadamard product of matrices
 
@@ -16,7 +19,7 @@ and contains basic properties about them.
 
 ## Main definition
 
-- `Matrix.hadamard`: defines the Hadamard product,
+* `Matrix.hadamard`: defines the Hadamard product,
   which is the pointwise product of two matrices of the same size.
 
 ## Notation
@@ -25,7 +28,8 @@ and contains basic properties about them.
 
 ## References
 
-* <https://en.wikipedia.org/wiki/hadamard_product_(matrices)>
+* [
+  https://en.wikipedia.org/wiki/hadamard\_product\_(matrices)](https://en.wikipedia.org/wiki/hadamard_product_(matrices))
 
 ## Tags
 

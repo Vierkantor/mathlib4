@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Limits.Shapes.Equalizers
 public import Mathlib.CategoryTheory.Limits.Shapes.Products
 public import Mathlib.Topology.Sheaves.SheafCondition.PairwiseIntersections
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The sheaf condition in terms of an equalizer of products
 

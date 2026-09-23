@@ -12,6 +12,9 @@ public import Mathlib.Geometry.Manifold.MFDeriv.SpecificFunctions
 public import Mathlib.NumberTheory.ModularForms.BoundedAtCusp
 public import Mathlib.NumberTheory.ModularForms.SlashInvariantForms
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Modular forms
 

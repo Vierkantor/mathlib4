@@ -13,6 +13,9 @@ public meta import Mathlib.Tactic.ToAdditive
 public meta import Mathlib.Util.Qq
 public import Mathlib.Util.Qq
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Simproc for intervals of natural numbers
 -/
@@ -264,7 +267,9 @@ simproc_decl Iio_ofNat (Iio _) := .ofQ fun u α e ↦ do
 attribute [nolint unusedHavesSuffices]
   Iio_ofNat Ico_ofNat_ofNat Ioc_ofNat_ofNat Ioo_ofNat_ofNat
 
-/-! ### `ℕ` -/
+/-!
+# `ℕ`
+-/
 
 example : Icc 1 0 = ∅ := by simp only [Icc_ofNat_ofNat]
 example : Icc 1 1 = {1} := by simp only [Icc_ofNat_ofNat]
@@ -290,7 +295,9 @@ example : Iio 0 = ∅ := by simp only [Iio_ofNat]
 example : Iio 1 = {0} := by simp only [Iio_ofNat]
 example : Iio 2 = {0, 1} := by simp only [Iio_ofNat]
 
-/-! ### `ℤ` -/
+/-!
+# `ℤ`
+-/
 
 example : Icc (1 : ℤ) 0 = ∅ := by simp only [Icc_ofNat_ofNat]
 example : Icc (1 : ℤ) 1 = {1} := by simp only [Icc_ofNat_ofNat]

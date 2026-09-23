@@ -15,6 +15,9 @@ public import Mathlib.Analysis.Normed.Module.MultipliableUniformlyOn
 public import Mathlib.NumberTheory.ModularForms.EisensteinSeries.Summable
 public import Mathlib.Topology.Algebra.InfiniteSum.TsumUniformlyOn
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cotangent
 

@@ -10,6 +10,9 @@ public import Mathlib.Topology.Algebra.WithZeroTopology
 public import Mathlib.Topology.Algebra.UniformField
 public import Mathlib.Algebra.NoZeroSMulDivisors.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Valued fields and their completions
 
@@ -20,10 +23,10 @@ valuation.basic).
 We already know from valuation.topology that one can build a topology on `K` which
 makes it a topological ring.
 
-The first goal is to show `K` is a topological *field*, i.e. inversion is continuous
+The first goal is to show `K` is a topological _field_, i.e. inversion is continuous
 at every non-zero element.
 
-The next goal is to prove `K` is a *completable* topological field. This gives us
+The next goal is to prove `K` is a _completable_ topological field. This gives us
 a completion `hat K` which is a topological field. We also prove that `K` is automatically
 separated, so the map from `K` to `hat K` is injective.
 
@@ -86,8 +89,10 @@ end InversionEstimate
 
 open MonoidWithZeroHom MonoidWithZeroHom.ValueGroup₀ Valued
 
-/-- The topology coming from a valuation on a division ring makes it a topological division ring
-[BouAC, VI.5.1 middle of Proposition 1] -/
+/--
+The topology coming from a valuation on a division ring makes it a topological division ring
+‍\[BouAC, VI.5.1 middle of Proposition 1\]
+-/
 instance (priority := 100) Valued.isTopologicalDivisionRing [Valued K Γ₀] :
     IsTopologicalDivisionRing K :=
   { (by infer_instance : IsTopologicalRing K) with
@@ -417,9 +422,12 @@ theorem closure_coe_completion_v_mul_v_lt {r s : K} (hr : r ≠ 0) (hs : s ≠ 0
   convert! closure_coe_completion_v_lt (γ := .mk0 _ hrs) using 3
   all_goals simp [← lt_div_iff₀, zero_lt_iff, hr]
 
-/-- The zero-preserving monoid homomorphism from the `ValueGroup₀` of the valuation on `K` to
-that of the extension to its completion. TODO: Split out the definition of `(restrict₀_surjective
-(hv.v : K →*₀ Γ₀) x).choose` and prove a spec lemma of it. Remove tactic `set` in the proof. -/
+/--
+The zero-preserving monoid homomorphism from the `ValueGroup₀` of the valuation on `K` to
+that of the extension to its completion. TODO: Split out the definition of
+`(restrict₀_surjective (hv.v : K →*₀ Γ₀) x).choose` and prove a spec lemma of it. Remove tactic
+`set` in the proof.
+-/
 noncomputable def valueGroup₀_hom_extensionValuation :
     hv.v.ValueGroup₀ →*₀ hv.extensionValuation.ValueGroup₀ where
   toFun x := hv.extensionValuation.restrict (restrict₀_surjective (hv.v : K →*₀ Γ₀) x).choose

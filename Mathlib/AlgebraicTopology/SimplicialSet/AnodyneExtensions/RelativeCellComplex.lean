@@ -12,6 +12,9 @@ public import Mathlib.AlgebraicTopology.SimplicialSet.SubcomplexEvaluation
 public import Mathlib.CategoryTheory.MorphismProperty.FunctorCategory
 public import Mathlib.CategoryTheory.Types.Monomorphisms
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The relative cell complex attached to a rank function for a pairing
 
@@ -21,8 +24,8 @@ be a rank function. We show that the inclusion `A.ι` is a relative
 cell complex with basic cells given by horn inclusions.
 
 ## References
-* [Sean Moss, *Another approach to the Kan-Quillen model structure*][moss-2020]
 
+* ‍\[Sean Moss, _Another approach to the Kan-Quillen model structure_\]\[moss-2020\]
 -/
 
 @[expose] public section

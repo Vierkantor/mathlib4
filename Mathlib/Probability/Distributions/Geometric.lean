@@ -10,7 +10,11 @@ public import Mathlib.Probability.ProbabilityMassFunction.Basic
 
 import Mathlib.MeasureTheory.Integral.Bochner.SumMeasure
 
-/-! # Geometric distributions
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Geometric distributions
 
 We define the geometric distributions over natural numbers. For `0 < p ≤ 1`, `geometricMeasure p`
 is the measure which to `{n}` associates `(1 - p) ^ n * p`.

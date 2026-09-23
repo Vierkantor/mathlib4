@@ -10,7 +10,11 @@ public import Mathlib.Algebra.Order.Group.Action
 public import Mathlib.Algebra.Module.Submodule.Map
 public import Mathlib.Algebra.Module.Submodule.RestrictScalars
 
-/-! # Pointwise instances on `Submodule`s
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Pointwise instances on `Submodule`s
 
 This file provides:
 
@@ -24,6 +28,7 @@ and the actions
 which matches the action of `Set.mulActionSet`.
 
 This file also provides:
+
 * `Submodule.pointwiseSetSMulSubmodule`: for `R`-module `M`, a `s : Set R` can act on
   `N : Submodule R M` by defining `s • N` to be the smallest submodule containing all `a • n`
   where `a ∈ s` and `n ∈ N`.
@@ -279,29 +284,32 @@ scoped[Pointwise] attribute [instance] Submodule.pointwiseMulActionWithZero
 end
 
 /-!
-### Sets acting on Submodules
+# Sets acting on Submodules
 
 Let `R` be a (semi)ring and `M` an `R`-module. Let `S` be a monoid which acts on `M` distributively,
 then subsets of `S` can act on submodules of `M`.
 For subset `s ⊆ S` and submodule `N ≤ M`, we define `s • N` to be the smallest submodule containing
 all `r • n` where `r ∈ s` and `n ∈ N`.
 
-#### Results
+## Results
+
 For arbitrary monoids `S` acting distributively on `M`, there is an induction principle for `s • N`:
 To prove `P` holds for all `s • N`, it is enough
 to prove:
-- for all `r ∈ s` and `n ∈ N`, `P (r • n)`;
-- for all `r` and `m ∈ s • N`, `P (r • n)`;
-- for all `m₁, m₂`, `P m₁` and `P m₂` implies `P (m₁ + m₂)`;
-- `P 0`.
+
+* for all `r ∈ s` and `n ∈ N`, `P (r • n)`;
+* for all `r` and `m ∈ s • N`, `P (r • n)`;
+* for all `m₁, m₂`, `P m₁` and `P m₂` implies `P (m₁ + m₂)`;
+* `P 0`.
 
 To invoke this induction principle, use `induction x, hx using Submodule.set_smul_inductionOn` where
 `x : M` and `hx : x ∈ s • N`
 
-#### Notes
-- If we assume the addition on subsets of `R` is the `⊔` and subtraction `⊓` i.e. use `SetSemiring`,
+## Notes
+
+* If we assume the addition on subsets of `R` is the `⊔` and subtraction `⊓` i.e. use `SetSemiring`,
   then this action actually gives a module structure on submodules of `M` over subsets of `R`.
-- If we generalize so that `r • N` makes sense for all `r : S`, then `Submodule.singleton_set_smul`
+* If we generalize so that `r • N` makes sense for all `r : S`, then `Submodule.singleton_set_smul`
   and `Submodule.singleton_set_smul` can be generalized as well.
 -/
 

@@ -8,13 +8,16 @@ module
 public import Mathlib.GroupTheory.Finiteness
 public import Mathlib.GroupTheory.FreeGroup.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Group generators as data
 
 ## Main definitions
 
 * `Group.Generators G ι`: The generators of a group are given by a generating family indexed by `ι`
-and an assignment `val : ι → G` such that `Subgroup.closure (Set.range val) = ⊤`.
+  and an assignment `val : ι → G` such that `Subgroup.closure (Set.range val) = ⊤`.
 
 ## Main results
 
@@ -31,7 +34,7 @@ and an assignment `val : ι → G` such that `Subgroup.closure (Set.range val) =
 
 ## References
 
-* [D. F. Holt, S. Rees, C. E. Röver, *Groups, Languages and Automata*][HoltReesRover2017], §1
+* ‍\[D. F. Holt, S. Rees, C. E. Röver, _Groups, Languages and Automata_\]\[HoltReesRover2017\], §1
 
 ## Tags
 

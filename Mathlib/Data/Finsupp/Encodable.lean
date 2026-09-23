@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Data.Finsupp.ToDFinsupp
 public import Mathlib.Data.DFinsupp.Encodable
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `Encodable` and `Countable` instances for `α →₀ β`
 

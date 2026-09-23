@@ -10,13 +10,16 @@ public import Mathlib.AlgebraicGeometry.Geometrically.Integral
 public import Mathlib.AlgebraicGeometry.ZariskisMainTheorem
 public import Mathlib.CategoryTheory.Monoidal.Cartesian.Grp
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Abelian varieties
 
 ## Main results
-- `AlgebraicGeometry.isCommMonObj_of_isProper_of_geometricallyIntegral`:
-  A proper geometrically integral group scheme over a field is commutative.
 
+* `AlgebraicGeometry.isCommMonObj_of_isProper_of_geometricallyIntegral`:
+  A proper geometrically integral group scheme over a field is commutative.
 -/
 
 public section

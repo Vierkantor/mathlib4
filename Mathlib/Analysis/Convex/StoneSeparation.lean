@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.Convex.Combination
 public import Mathlib.Analysis.Convex.Join
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Stone's separation theorem
 

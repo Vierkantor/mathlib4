@@ -14,6 +14,9 @@ import Mathlib.RingTheory.Finiteness.Basic
 import Mathlib.RingTheory.Finiteness.Prod
 import Mathlib.Tactic.Module
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Homogenization of an affine space
 
@@ -36,9 +39,9 @@ Note that the homogenization is isomorphic to `V × R`, where `V` is the vector 
 
 ## References
 
-* [J. Gallier, *Geometric Methods and Applications for Computer Science and
-  Engineering*][Gallier2011GeometricMethods]
-* [X. Gràcia, R. Martín, *Vector Hulls of Affine Spaces and Affine Bundles*][Gracia2008]
+* ‍\[J. Gallier, _Geometric Methods and Applications for Computer Science and
+  Engineering_\]\[Gallier2011GeometricMethods\]
+* ‍\[X. Gràcia, R. Martín, _Vector Hulls of Affine Spaces and Affine Bundles_\]\[Gracia2008\]
 -/
 
 public noncomputable section

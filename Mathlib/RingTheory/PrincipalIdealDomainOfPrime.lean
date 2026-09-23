@@ -8,12 +8,15 @@ module
 public import Mathlib.RingTheory.Ideal.Oka
 public import Mathlib.RingTheory.PrincipalIdealDomain
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Principal ideal domains and prime ideals
 
 ## Main results
 
-- `IsPrincipalIdealRing.of_prime`: a ring where all prime ideals are principal is a principal ideal
+* `IsPrincipalIdealRing.of_prime`: a ring where all prime ideals are principal is a principal ideal
   ring.
 -/
 

@@ -13,6 +13,9 @@ public import Mathlib.CategoryTheory.Sites.LocallyBijective
 public import Mathlib.CategoryTheory.Sites.Sheafification
 public import Mathlib.CategoryTheory.Functor.ReflectsIso.Balanced
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The sheafification functor for presheaves of modules
 
@@ -22,7 +25,6 @@ for a locally bijective morphism `α : R₀ ⟶ R.val` where `R₀` is a preshea
 and `R` a sheaf of rings.
 In particular, if `α` is the identity of `R.val`, we obtain the
 sheafification functor `PresheafOfModules R.val ⥤ SheafOfModules R`.
-
 -/
 
 @[expose] public section

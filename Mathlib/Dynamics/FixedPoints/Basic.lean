@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Group.End
 public import Mathlib.Data.Set.Function
 public import Mathlib.Dynamics.FixedPoints.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Fixed points of a self-map
 

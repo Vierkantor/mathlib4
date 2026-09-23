@@ -16,6 +16,9 @@ public import Mathlib.RingTheory.Nilpotent.Basic
 public import Mathlib.RingTheory.TensorProduct.Maps
 public import Mathlib.Tactic.FieldSimp
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Exponential map on algebras
 
@@ -34,7 +37,7 @@ over a characteristic zero field.
 
 ## Main definitions
 
-  * `IsNilpotent.exp`
+* `IsNilpotent.exp`
 
 ## Tags
 

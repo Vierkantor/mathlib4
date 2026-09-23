@@ -8,9 +8,11 @@ module
 public import Mathlib.CategoryTheory.Presentable.Basic
 public import Mathlib.CategoryTheory.ObjectProperty.Retract
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Presentable objects are stable under retracts
-
 -/
 
 public section

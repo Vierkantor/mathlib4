@@ -9,6 +9,9 @@ public import Mathlib.Data.Num.Basic
 public import Mathlib.Data.Ordering.Basic
 public import Mathlib.Data.Tree.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Binary tree get operation
 
@@ -17,7 +20,8 @@ These definitions were moved from the main file to avoid a dependency on `Num`.
 
 ## References
 
-<https://leanprover-community.github.io/archive/stream/113488-general/topic/tactic.20question.html#170999997>
+[
+https://leanprover-community.github.io/archive/stream/113488-general/topic/tactic.20question.html#170999997](https://leanprover-community.github.io/archive/stream/113488-general/topic/tactic.20question.html#170999997)
 -/
 
 @[expose] public section

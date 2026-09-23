@@ -7,20 +7,24 @@ module
 
 public import Mathlib.Topology.Algebra.ConstMulAction
 public import Mathlib.Topology.Maps.Proper.Basic
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Actions by proper maps
 
 In this file we define `ProperConstSMul M X` to be a mixin `Prop`-value class
 stating that `(c • ·)` is a proper map for all `c`.
 
-Note that this is **not** the same as a proper action (not yet in `Mathlib`)
+Note that this is *not* the same as a proper action (not yet in `Mathlib`)
 which requires `(c, x) ↦ (c • x, x)` to be a proper map.
 
 We also provide 4 instances:
-- for a continuous action on a compact Hausdorff space,
-- and for a continuous group action on a general space;
-- for the action on `X × Y`;
-- for the action on `∀ i, X i`.
+
+* for a continuous action on a compact Hausdorff space,
+* and for a continuous group action on a general space;
+* for the action on `X × Y`;
+* for the action on `∀ i, X i`.
 -/
 
 public section

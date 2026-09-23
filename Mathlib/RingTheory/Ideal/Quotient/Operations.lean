@@ -10,17 +10,20 @@ public import Mathlib.Algebra.Ring.Fin
 public import Mathlib.LinearAlgebra.Quotient.Basic
 public import Mathlib.RingTheory.Ideal.Quotient.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # More operations on modules and ideals related to quotients
 
 ## Main results:
 
-- `RingHom.quotientKerEquivRange` : the **first isomorphism theorem** for commutative rings.
-- `RingHom.quotientKerEquivRangeS` : the **first isomorphism theorem**
+* `RingHom.quotientKerEquivRange` : the *first isomorphism theorem* for commutative rings.
+* `RingHom.quotientKerEquivRangeS` : the *first isomorphism theorem*
   for a morphism from a commutative ring to a semiring.
-- `AlgHom.quotientKerEquivRange` : the **first isomorphism theorem**
+* `AlgHom.quotientKerEquivRange` : the *first isomorphism theorem*
   for a morphism of algebras (over a commutative semiring)
-- `Ideal.quotientInfRingEquivPiQuotient`: the **Chinese Remainder Theorem**, version for coprime
+* `Ideal.quotientInfRingEquivPiQuotient`: the *Chinese Remainder Theorem*, version for coprime
   ideals (see also `ZMod.prodEquivPi` in `Data.ZMod.Quotient` for elementary versions about
   `ZMod`).
 -/

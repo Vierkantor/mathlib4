@@ -11,6 +11,9 @@ public import Mathlib.Topology.Algebra.Support
 public import Mathlib.Topology.MetricSpace.Basic
 import Mathlib.Tactic.Basify.Attr
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # (Semi)normed groups: basic theory
 
@@ -1062,7 +1065,9 @@ alias ⟨_, HasCompactSupport.norm⟩ := hasCompactSupport_norm_iff
 
 end NormedAddGroup
 
-/-! ### `positivity` extensions -/
+/-!
+# `positivity` extensions
+-/
 
 namespace Mathlib.Meta.Positivity
 

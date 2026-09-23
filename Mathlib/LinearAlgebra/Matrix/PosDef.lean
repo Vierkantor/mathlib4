@@ -15,7 +15,11 @@ public import Mathlib.LinearAlgebra.Matrix.Hermitian
 public import Mathlib.LinearAlgebra.Matrix.Vec
 public import Mathlib.LinearAlgebra.QuadraticForm.Basic
 
-/-! # Positive Definite Matrices
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Positive Definite Matrices
 
 This file defines positive (semi)definite matrices and connects the notion to positive definiteness
 of quadratic forms.
@@ -54,7 +58,7 @@ variable [Ring R] [PartialOrder R] [StarRing R]
 variable [CommRing R'] [PartialOrder R'] [StarRing R']
 
 /-!
-## Positive semidefinite matrices
+# Positive semidefinite matrices
 -/
 
 /-- A matrix `M : Matrix n n R` is positive semidefinite if it is Hermitian and `xᴴ * M * x` is
@@ -156,7 +160,7 @@ theorem posSemidef_sum {ι : Type*} [AddLeftMono R]
     Finset.sum_nonneg fun _ hi => (h _ hi).2 _]
 
 /-!
-## Positive definite matrices
+# Positive definite matrices
 -/
 
 /-- A matrix `M : Matrix n n R` is positive definite if it is Hermitian
@@ -290,7 +294,7 @@ lemma diag_pos [Nontrivial R] {A : Matrix n n R} (hA : A.PosDef) {i : n} : 0 < A
 end PosDef
 
 /-!
-## Finite positive semidefinite matrices
+# Finite positive semidefinite matrices
 -/
 
 variable [Fintype n] [Fintype m]
@@ -450,7 +454,7 @@ theorem posSemidef_vecMulVec_star_self [StarOrderedRing R] (a : n → R) :
   simp [vecMulVec_eq Unit, ← conjTranspose_replicateRow, posSemidef_conjTranspose_mul_self]
 
 /-!
-## Finite Positive definite matrices
+# Finite Positive definite matrices
 -/
 
 theorem posDef_iff_dotProduct_mulVec {M : Matrix n n R} :

@@ -9,9 +9,11 @@ public import Mathlib.Algebra.Group.Commute.Units
 public import Mathlib.Algebra.Group.Invertible.Defs
 public import Mathlib.Algebra.Group.Hom.Defs
 public import Mathlib.Logic.Equiv.Defs
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Theorems about invertible elements
-
 -/
 
 @[expose] public section

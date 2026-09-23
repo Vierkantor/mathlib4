@@ -8,6 +8,9 @@ module
 public import Mathlib.Init
 public meta import Lean.Meta.DiscrTree
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Discrimination-tree-indexed environment extensions
 
@@ -28,7 +31,6 @@ Investigate the possibility of using this API for other tactics in Mathlib with 
 indexed environment extensions such as `norm_num` and `positivity`. This should perhaps be
 part of a wider investigation into whether more API from the environment extensions of various
 Mathlib tactics could be unified.
-
 -/
 
 public meta section

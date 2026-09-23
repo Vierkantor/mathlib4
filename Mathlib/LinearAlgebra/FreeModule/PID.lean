@@ -9,7 +9,11 @@ public import Mathlib.LinearAlgebra.Dimension.StrongRankCondition
 public import Mathlib.LinearAlgebra.FreeModule.Basic
 public import Mathlib.LinearAlgebra.Matrix.ToLin
 
-/-! # Free modules over PID
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Free modules over PID
 
 A free `R`-module `M` is a module with a basis over `R`,
 equivalently it is an `R`-module linearly equivalent to `ι →₀ R` for some `ι`.
@@ -27,15 +31,13 @@ it would be equal to `finrank R M` if `R` is a field and `M` is a vector space.
 In this section, `M` is a free and finitely generated `R`-module, and
 `N` is a submodule of `M`.
 
-- `Submodule.inductionOnRank`: if `P` holds for `⊥ : Submodule R M` and if
+* `Submodule.inductionOnRank`: if `P` holds for `⊥ : Submodule R M` and if
   `P N` follows from `P N'` for all `N'` that are of lower rank, then `P` holds
   on all submodules
-
-- `Submodule.exists_basis_of_pid`: if `R` is a PID, then `N : Submodule R M` is
+* `Submodule.exists_basis_of_pid`: if `R` is a PID, then `N : Submodule R M` is
   free and finitely generated. This is the first part of the structure theorem
   for modules.
-
-- `Submodule.smithNormalForm`: if `R` is a PID, then `M` has a basis
+* `Submodule.smithNormalForm`: if `R` is a PID, then `M` has a basis
   `bM` and `N` has a basis `bN` such that `bN i = a i • bM i`.
   Equivalently, a linear map `f : M →ₗ M` with `range f = N` can be written as
   a matrix in Smith normal form, a diagonal matrix with the coefficients `a i`
@@ -44,7 +46,6 @@ In this section, `M` is a free and finitely generated `R`-module, and
 ## Tags
 
 free module, finitely generated module, rank, structure theorem
-
 -/
 
 @[expose] public section

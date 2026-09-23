@@ -15,6 +15,9 @@ public import Mathlib.CategoryTheory.Limits.Creates
 public import Mathlib.Data.Fintype.Prod
 public import Mathlib.Data.Fintype.Sigma
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Constructing limits from products and equalizers.
 

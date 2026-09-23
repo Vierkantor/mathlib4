@@ -9,6 +9,9 @@ public import Mathlib.LinearAlgebra.AffineSpace.AffineMap
 public import Mathlib.LinearAlgebra.AffineSpace.Midpoint
 public import Mathlib.Topology.Algebra.Group.Torsor
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Topological properties of affine spaces and maps
 

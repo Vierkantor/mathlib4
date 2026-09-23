@@ -9,6 +9,9 @@ public import Mathlib.Data.List.Nodup
 public import Mathlib.Data.List.Infix
 public import Mathlib.Data.Quot
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # List rotation
 

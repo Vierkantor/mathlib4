@@ -14,6 +14,9 @@ public import Mathlib.GroupTheory.Submonoid.Centralizer
 public import Mathlib.RingTheory.NonUnitalSubsemiring.Basic
 public import Mathlib.Algebra.Module.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Bundled subsemirings
 
@@ -155,7 +158,9 @@ namespace RingHom
 
 variable (g : S →+* T) (f : R →+* S)
 
-/-- The range of a ring homomorphism is a subsemiring. See Note [range copy pattern]. -/
+/--
+The range of a ring homomorphism is a subsemiring. See Note \[range copy pattern\].
+-/
 @[simps! coe toSubmonoid]
 def rangeS : Subsemiring S :=
   ((⊤ : Subsemiring R).map f).copy (Set.range f) Set.image_univ.symm
@@ -911,7 +916,8 @@ theorem subsemiringMap_symm_apply_coe (e : R ≃+* S) (s : Subsemiring R) (x : s
 
 end RingEquiv
 
-/-! ### Actions by `Subsemiring`s
+/-!
+# Actions by `Subsemiring`s
 
 These are just copies of the definitions about `Submonoid` starting from `Submonoid.mulAction`.
 The only new result is `Subsemiring.module`.

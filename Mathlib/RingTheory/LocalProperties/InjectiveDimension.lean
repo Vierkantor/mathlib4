@@ -14,10 +14,11 @@ public import Mathlib.CategoryTheory.Abelian.Injective.Dimension
 public import Mathlib.CategoryTheory.Preadditive.Injective.Preserves
 public import Mathlib.RingTheory.LocalProperties.Injective
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
-
 # Relation of Injective Dimension with Localizations
-
 -/
 
 public section

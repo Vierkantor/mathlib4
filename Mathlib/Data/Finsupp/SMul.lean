@@ -13,13 +13,15 @@ public import Mathlib.Data.Finsupp.Basic
 public import Mathlib.Data.Finsupp.SMulWithZero
 public import Mathlib.GroupTheory.GroupAction.Hom
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Declarations about scalar multiplication on `Finsupp`
 
 ## Implementation notes
 
 This file is a `noncomputable theory` and uses classical logic throughout.
-
 -/
 
 @[expose] public section
@@ -105,7 +107,7 @@ section
 
 /-!
 Throughout this section, some `Monoid` and `Semiring` arguments are specified with `{}` instead of
-`[]`. See note [implicit instance arguments].
+`[]`. See note \[implicit instance arguments\].
 -/
 
 theorem _root_.IsSMulRegular.finsupp [Zero M] [SMulZeroClass R M] {k : R}
@@ -210,7 +212,9 @@ theorem distribMulActionHom_ext {f g : (α →₀ M) →+[R] N}
     (h : ∀ (a : α) (m : M), f (single a m) = g (single a m)) : f = g :=
   DistribMulActionHom.toAddMonoidHom_injective <| addHom_ext h
 
-/-- See note [partially-applied ext lemmas]. -/
+/--
+See note \[partially-applied ext lemmas\].
+-/
 @[ext]
 theorem distribMulActionHom_ext' {f g : (α →₀ M) →+[R] N}
     (h : ∀ a : α, f.comp (DistribMulActionHom.single a) = g.comp (DistribMulActionHom.single a)) :

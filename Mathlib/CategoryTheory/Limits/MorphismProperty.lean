@@ -8,9 +8,11 @@ module
 public import Mathlib.CategoryTheory.Limits.Constructions.Over.Basic
 public import Mathlib.CategoryTheory.MorphismProperty.OverAdjunction
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # (Co)limits in subcategories of comma categories defined by morphism properties
-
 -/
 
 @[expose] public section

@@ -11,8 +11,11 @@ public import Mathlib.Algebra.Order.Ring.Cast
 public import Mathlib.Tactic.HaveI
 public import Mathlib.Tactic.NormNum.Core
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
-## `positivity` core functionality
+# `positivity` core functionality
 
 This file sets up the `positivity` tactic and the `@[positivity]` attribute,
 which allow for plugging in new positivity functionality around a positivity-based driver.
@@ -25,6 +28,8 @@ public meta section
 open Lean
 open Lean.Meta Qq Lean.Elab Term
 
+
+set_option doc.verso false
 /-- A definition of type `PositivityExt` tagged `@[positivity t]` extends the `positivity` tactic.
 The term (with underscores) `t` indicates which expressions this extension accepts.
 An extension will be given an expression `e : α`, together with hypotheses
@@ -50,6 +55,8 @@ Example:
 -/
 syntax (name := positivity) "positivity " term,+ : attr
 
+
+set_option doc.verso true
 lemma ne_of_ne_of_eq' {α : Sort*} {a c b : α} (hab : (a : α) ≠ c) (hbc : a = b) : b ≠ c := hbc ▸ hab
 
 namespace Mathlib.Meta.Positivity

@@ -14,6 +14,9 @@ public import Mathlib.MeasureTheory.Integral.Bochner.Set
 public import Mathlib.MeasureTheory.Measure.Haar.InnerProductSpace
 public import Mathlib.MeasureTheory.Measure.Haar.OfBasis
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The Fourier transform
 
@@ -22,6 +25,7 @@ We set up the Fourier transform for complex-valued functions on finite-dimension
 ## Design choices
 
 In namespace `VectorFourier`, we define the Fourier integral in the following context:
+
 * `𝕜` is a commutative ring.
 * `V` and `W` are `𝕜`-modules.
 * `e` is a unitary additive character of `𝕜`, i.e. an `AddChar 𝕜 Circle`.
@@ -66,7 +70,9 @@ open MeasureTheory Filter
 
 open scoped Topology
 
-/-! ## Fourier theory for functions on general vector spaces -/
+/-!
+# Fourier theory for functions on general vector spaces
+-/
 
 namespace VectorFourier
 
@@ -325,7 +331,9 @@ theorem fourierIntegral_continuousMultilinearMap_apply
 end VectorFourier
 
 
-/-! ## Fourier theory for functions on `𝕜` -/
+/-!
+# Fourier theory for functions on `𝕜`
+-/
 
 
 namespace Fourier

@@ -9,6 +9,9 @@ public import Mathlib.Topology.UrysohnsLemma
 public import Mathlib.MeasureTheory.Function.LpSpace.ContinuousFunctions
 public import Mathlib.MeasureTheory.Integral.Bochner.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Approximation in Lᵖ by continuous functions
 

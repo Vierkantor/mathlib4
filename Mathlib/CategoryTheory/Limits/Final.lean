@@ -16,6 +16,9 @@ public import Mathlib.CategoryTheory.Limits.Yoneda
 public import Mathlib.CategoryTheory.PUnit
 public import Mathlib.CategoryTheory.Grothendieck
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Final and initial functors
 
@@ -29,6 +32,7 @@ We show that right adjoints are examples of final functors, while
 left adjoints are examples of initial functors.
 
 For final functors, we prove that the following three statements are equivalent:
+
 1. `F : C ⥤ D` is final.
 2. Every functor `G : D ⥤ E` has a colimit if and only if `F ⋙ G` does,
    and these colimits are isomorphic via `colimit.pre G F`.
@@ -51,18 +55,22 @@ In the end of the file, we characterize the finality of some important induced f
 Grothendieck construction (`Grothendieck.pre` and `Grothendieck.map`).
 
 ## Naming
+
 There is some discrepancy in the literature about naming; some say 'cofinal' instead of 'final'.
-The explanation for this is that the 'co' prefix here is *not* the usual category-theoretic one
+The explanation for this is that the 'co' prefix here is _not_ the usual category-theoretic one
 indicating duality, but rather indicating the sense of "along with".
 
 ## See also
+
 In `CategoryTheory.Filtered.Final` we give additional equivalent conditions in the case that
 `C` is filtered.
 
 ## Future work
+
 Dualise condition 3 above and the implications 2 ⇒ 3 and 3 ⇒ 1 to initial functors.
 
 ## References
+
 * https://stacks.math.columbia.edu/tag/09WN
 * https://ncatlab.org/nlab/show/final+functor
 * Borceux, Handbook of Categorical Algebra I, Section 2.11.
@@ -193,13 +201,14 @@ def lift (d : D) : C :=
 def homToLift (d : D) : d ⟶ F.obj (lift F d) :=
   (Classical.arbitrary (StructuredArrow d F)).hom
 
-/-- We provide an induction principle for reasoning about `lift` and `homToLift`.
+/--
+We provide an induction principle for reasoning about `lift` and `homToLift`.
 We want to perform some construction (usually just a proof) about
 the particular choices `lift F d` and `homToLift F d`,
 it suffices to perform that construction for some other pair of choices
 (denoted `X₀ : C` and `k₀ : d ⟶ F.obj X₀` below),
 and to show how to transport such a construction
-*both* directions along a morphism between such choices.
+_both_ directions along a morphism between such choices.
 -/
 def induction {d : D} (Z : ∀ (X : C) (_ : d ⟶ F.obj X), Sort*)
     (h₁ :
@@ -546,13 +555,14 @@ def homToLift (d : D) : F.obj (lift F d) ⟶ d :=
   (Classical.arbitrary (CostructuredArrow F d)).hom
 
 set_option backward.defeqAttrib.useBackward true in
-/-- We provide an induction principle for reasoning about `lift` and `homToLift`.
+/--
+We provide an induction principle for reasoning about `lift` and `homToLift`.
 We want to perform some construction (usually just a proof) about
 the particular choices `lift F d` and `homToLift F d`,
 it suffices to perform that construction for some other pair of choices
 (denoted `X₀ : C` and `k₀ : F.obj X₀ ⟶ d` below),
 and to show how to transport such a construction
-*both* directions along a morphism between such choices.
+_both_ directions along a morphism between such choices.
 -/
 def induction {d : D} (Z : ∀ (X : C) (_ : F.obj X ⟶ d), Sort*)
     (h₁ :

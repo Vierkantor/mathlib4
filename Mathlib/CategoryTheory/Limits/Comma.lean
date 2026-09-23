@@ -13,6 +13,9 @@ public import Mathlib.CategoryTheory.Limits.Unit
 public import Mathlib.CategoryTheory.Limits.Preserves.Finite
 public import Mathlib.CategoryTheory.Limits.Preserves.Creates.Finite
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Limits and colimits in comma categories
 

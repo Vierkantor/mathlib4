@@ -11,8 +11,11 @@ public import Mathlib.FieldTheory.Perfect
 public import Mathlib.RingTheory.WittVector.Basic
 public import Mathlib.RingTheory.WittVector.IsPoly
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
-## The Frobenius operator
+# The Frobenius operator
 
 If `R` has characteristic `p`, then there is a ring endomorphism `frobenius R p`
 that raises `r : R` to the power `p`.
@@ -29,7 +32,7 @@ We therefore have to define the polynomials by hand, and check that they have th
 In case `R` has characteristic `p`, we show in `frobenius_eq_map_frobenius`
 that `WittVector.frobeniusFun` is equal to `WittVector.map (frobenius R p)`.
 
-### Main definitions and results
+## Main definitions and results
 
 * `frobeniusPoly`: the polynomials that describe the coefficients of `frobeniusFun`;
 * `frobeniusFun`: the Frobenius endomorphism on Witt vectors;
@@ -40,11 +43,10 @@ that `WittVector.frobeniusFun` is equal to `WittVector.map (frobenius R p)`.
 TODO: Show that `WittVector.frobeniusFun` is a ring homomorphism,
 and bundle it into `WittVector.frobenius`.
 
-## References
+# References
 
-* [Hazewinkel, *Witt Vectors*][Haze09]
-
-* [Commelin and Lewis, *Formalizing the Ring of Witt Vectors*][CL21]
+* ‍\[Hazewinkel, _Witt Vectors_\]\[Haze09\]
+* ‍\[Commelin and Lewis, _Formalizing the Ring of Witt Vectors_\]\[CL21\]
 -/
 
 @[expose] public section

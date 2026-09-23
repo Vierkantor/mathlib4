@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Group.Action.Pi
 public import Mathlib.Algebra.Group.End
 public import Mathlib.Algebra.Group.Pointwise.Set.Scalar
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Torsors of group actions
 

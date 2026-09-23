@@ -10,6 +10,9 @@ public import Mathlib.RingTheory.LocalRing.MaximalIdeal.Basic
 public import Mathlib.RingTheory.Nakayama
 public import Mathlib.RingTheory.Regular.IsSMulRegular
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Regular sequences and weakly regular sequences
 

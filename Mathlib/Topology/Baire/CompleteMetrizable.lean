@@ -9,6 +9,9 @@ public import Mathlib.Analysis.SpecificLimits.Basic
 public import Mathlib.Tactic.Finiteness
 public import Mathlib.Topology.Metrizable.CompletelyMetrizable
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # First Baire theorem
 

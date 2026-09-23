@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Module.Presentation.Basic
 public import Mathlib.Algebra.DirectSum.Module
 public import Mathlib.Data.Finsupp.ToDFinsupp
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Presentation of a direct sum
 
@@ -16,7 +19,6 @@ If `M : ι → Type _` is a family of `A`-modules, then the data of a presentati
 of each `M i`, we obtain a presentation of the module `⨁ i, M i`.
 In particular, from a presentation of an `A`-module `M`, we get
 a presentation of `ι →₀ M`.
-
 -/
 
 @[expose] public section

@@ -10,16 +10,17 @@ public import Mathlib.Data.Nat.Prime.Factorial
 public import Mathlib.GroupTheory.Index
 public import Mathlib.Order.Atoms
 
-/-! # Subgroups of small index are normal
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Subgroups of small index are normal
 
 * `Subgroup.normal_of_index_eq_smallest_prime_factor`: in a finite group `G`,
   a subgroup of index equal to the smallest prime factor of `Nat.card G` is normal.
-
 * `Subgroup.normal_of_index_two`: in a group `G`, a subgroup of index 2 is normal
   (This does not require `G` to be finite.)
-
 * `Subgroup.isCoatom_of_index_prime`: a subgroup of prime index is maximal.
-
 -/
 
 public section

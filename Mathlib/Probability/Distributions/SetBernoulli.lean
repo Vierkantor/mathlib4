@@ -11,6 +11,9 @@ public import Mathlib.Probability.HasLaw
 
 import Mathlib.MeasureTheory.MeasurableSpace.NCard
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Product of bernoulli distributions on a set
 
@@ -160,7 +163,9 @@ lemma setBernoulli_empty : setBer((∅ : Set ι), p) = dirac ∅ := by
 
 end Countable
 
-/-! ### Bernoulli random variables -/
+/-!
+# Bernoulli random variables
+-/
 
 variable (X u p P) in
 /-- A random variable `X : Ω → Set ι` is `p`-bernoulli on a set `u : Set ι` if its distribution is

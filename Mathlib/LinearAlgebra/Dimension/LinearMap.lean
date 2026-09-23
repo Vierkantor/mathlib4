@@ -10,11 +10,15 @@ public import Mathlib.LinearAlgebra.Dimension.FreeAndStrongRankCondition
 public import Mathlib.LinearAlgebra.Basis.VectorSpace
 public import Mathlib.LinearAlgebra.Dimension.RankNullity
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The rank of a linear map
 
 ## Main Definition
--  `LinearMap.rank`: The rank of a linear map.
+
+* `LinearMap.rank`: The rank of a linear map.
 -/
 
 public section

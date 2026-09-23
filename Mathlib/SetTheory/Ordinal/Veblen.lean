@@ -7,6 +7,9 @@ module
 
 public import Mathlib.SetTheory.Cardinal.Ordinal
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Veblen hierarchy
 
@@ -25,16 +28,16 @@ and the gamma function `Γ_ o` enumerating the fixed points of `veblen · 0`.
 
 The following notation is scoped to the `Ordinal` namespace.
 
-- `ε_ o` is notation for `veblen 1 o`. `ε₀` is notation for `ε_ 0`.
-- `Γ_ o` is notation for `gamma o`. `Γ₀` is notation for `Γ_ 0`.
+* `ε_ o` is notation for `veblen 1 o`. `ε₀` is notation for `ε_ 0`.
+* `Γ_ o` is notation for `gamma o`. `Γ₀` is notation for `Γ_ 0`.
 
 ## TODO
 
-- Prove that the ordinals principal under `veblen` are the gamma ordinals (and 0).
+* Prove that the ordinals principal under `veblen` are the gamma ordinals (and 0).
 
 ## References
 
-* [Larry W. Miller, Normal functions and constructive ordinal notations][Miller_1976]
+* ‍\[Larry W. Miller, Normal functions and constructive ordinal notations\]\[Miller\_1976\]
 -/
 
 @[expose] public section
@@ -49,7 +52,9 @@ namespace Ordinal
 
 variable {f : Ordinal.{u} → Ordinal.{u}} {o o₁ o₂ a b x : Ordinal.{u}}
 
-/-! ### Veblen function with a given starting function -/
+/-!
+# Veblen function with a given starting function
+-/
 
 section veblenWith
 
@@ -264,7 +269,9 @@ theorem veblenWith_eq_veblenWith_iff :
 
 end veblenWith
 
-/-! ### Veblen function -/
+/-!
+# Veblen function
+-/
 
 section veblen
 
@@ -410,7 +417,9 @@ theorem veblen_eq_veblen_iff :
 
 end veblen
 
-/-! ### Inverse Veblen function -/
+/-!
+# Inverse Veblen function
+-/
 
 /-- For any given `x`, there exists a unique pair `(o, a)` such that `ω ^ x = veblen o a` and
 `a < ω ^ x`. `invVeblen₁ x` and `invVeblen₂ x` return the first and second entries of this pair,
@@ -523,7 +532,9 @@ theorem veblen_eq_opow_iff (h : a < veblen o a) :
       simp [invVeblen₁_veblen h, invVeblen₂_veblen ho.ne' h]
   · convert! ← veblen_invVeblen₁_invVeblen₂ x
 
-/-! ### Epsilon function -/
+/-!
+# Epsilon function
+-/
 
 /-- The epsilon function enumerates the fixed points of `ω ^ ⬝`.
 This is an abbreviation for `veblen 1`. -/
@@ -595,7 +606,9 @@ theorem invVeblen₁_epsilon (h : o < ε_ o) : invVeblen₁ (ε_ o) = 1 :=
 theorem invVeblen₂_epsilon (h : o < ε_ o) : invVeblen₂ (ε_ o) = o :=
   invVeblen₂_veblen one_ne_zero h
 
-/-! ### Gamma function -/
+/-!
+# Gamma function
+-/
 
 /-- The gamma function enumerates the fixed points of `veblen · 0`.
 

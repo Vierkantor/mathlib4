@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Field.Basic
 public import Mathlib.Algebra.Ring.Subring.Defs
 public import Mathlib.Algebra.Order.Ring.Unbundled.Rat
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Subfields
 
@@ -42,6 +45,7 @@ Lattice inclusion (e.g. `≤` and `⊓`) is used rather than set notation (`⊆`
 `∈` is defined as membership of a subfield's underlying set.
 
 ## Tags
+
 subfield, subfields
 -/
 
@@ -325,7 +329,9 @@ theorem toSubring_subtype_eq_subtype (S : Subfield K) :
     S.toSubring.subtype = S.subtype :=
   rfl
 
-/-! ### Partial order -/
+/-!
+# Partial order
+-/
 
 
 theorem mem_toSubmonoid {s : Subfield K} {x : K} : x ∈ s.toSubmonoid ↔ x ∈ s :=

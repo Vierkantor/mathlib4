@@ -11,6 +11,9 @@ public import Mathlib.Data.ZMod.Basic
 public import Mathlib.RingTheory.Nilpotent.Lemmas
 public import Mathlib.RingTheory.PrincipalIdealDomain
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Ring-theoretic facts about `ZMod n`
 

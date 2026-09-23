@@ -9,7 +9,12 @@ public import Mathlib.Algebra.Star.Basic
 public import Mathlib.Algebra.Star.Pointwise
 public import Mathlib.Algebra.Group.Center
 
-/-! # `Set.center`, `Set.centralizer` and the `star` operation -/
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# `Set.center`, `Set.centralizer` and the `star` operation
+-/
 
 public section
 

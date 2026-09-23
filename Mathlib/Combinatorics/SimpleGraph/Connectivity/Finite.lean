@@ -10,15 +10,19 @@ public import Mathlib.Combinatorics.SimpleGraph.Connectivity.Connected
 public import Mathlib.Combinatorics.SimpleGraph.Walk.Counting
 public import Mathlib.Data.Set.Card
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Counting walks of a given length
 
 ## Main definitions
-- `walkLengthTwoEquivCommonNeighbors`: bijective correspondence between walks of length two
-from `u` to `v` and common neighbours of `u` and `v`. Note that `u` and `v` may be the same.
-- `finsetWalkLength`: the `Finset` of length-`n` walks from `u` to `v`.
-This is used to give `{p : G.walk u v | p.length = n}` a `Fintype` instance, and it
-can also be useful as a recursive description of this set when `V` is finite.
+
+* `walkLengthTwoEquivCommonNeighbors`: bijective correspondence between walks of length two
+  from `u` to `v` and common neighbours of `u` and `v`. Note that `u` and `v` may be the same.
+* `finsetWalkLength`: the `Finset` of length-`n` walks from `u` to `v`.
+  This is used to give `{p : G.walk u v | p.length = n}` a `Fintype` instance, and it
+  can also be useful as a recursive description of this set when `V` is finite.
 
 TODO: should this be extended further?
 -/

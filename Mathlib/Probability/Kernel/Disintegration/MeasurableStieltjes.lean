@@ -10,6 +10,9 @@ public import Mathlib.MeasureTheory.Measure.Stieltjes
 public import Mathlib.Analysis.Normed.Order.Lattice
 public import Mathlib.MeasureTheory.Function.StronglyMeasurable.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Measurable parametric Stieltjes functions
 
@@ -40,7 +43,6 @@ Finally, we define `stieltjesOfMeasurableRat`, composition of `toRatCDF` and
 
 * `stieltjesOfMeasurableRat`: turn a measurable function `f : α → ℚ → ℝ` into a measurable
   function `α → StieltjesFunction ℝ`.
-
 -/
 
 @[expose] public section

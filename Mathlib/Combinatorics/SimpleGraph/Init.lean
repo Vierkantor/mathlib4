@@ -8,6 +8,9 @@ module
 public import Mathlib.Init
 public import Aesop
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # SimpleGraph Rule Set
 

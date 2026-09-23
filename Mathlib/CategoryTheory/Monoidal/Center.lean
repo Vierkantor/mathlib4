@@ -8,6 +8,9 @@ module
 public import Mathlib.CategoryTheory.Monoidal.Braided.Basic
 public import Mathlib.CategoryTheory.Functor.ReflectsIso.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Half braidings and the Drinfeld center of a monoidal category
 
@@ -22,6 +25,7 @@ Verifying the various axioms directly requires tedious rewriting.
 Using the `slice` tactic may make the proofs marginally more readable.
 
 More exciting, however, would be to make possible one of the following options:
+
 1. Integration with homotopy.io / globular to give "picture proofs".
 2. The monoidal coherence theorem, so we can ignore associators
    (after which most of these proofs are trivial).

@@ -8,6 +8,9 @@ module
 public import Mathlib.CategoryTheory.Comma.Final
 public import Mathlib.CategoryTheory.Presentable.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Morphisms between (co)filtered (co)limits
 

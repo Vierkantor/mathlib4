@@ -8,12 +8,14 @@ module
 public import Mathlib.CategoryTheory.MorphismProperty.Limits
 public import Mathlib.CategoryTheory.Limits.Types.Pullbacks
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Stability properties of epimorphisms in `Type`
 
 In this file, we show that in the category `Type u`, epimorphisms
 are stable under base change.
-
 -/
 
 public section

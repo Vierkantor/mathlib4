@@ -8,6 +8,11 @@ module
 public import Mathlib.Init
 public import Aesop.Frontend
 
-/-! # Finiteness tactic attribute -/
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Finiteness tactic attribute
+-/
 
 declare_aesop_rule_sets [finiteness]

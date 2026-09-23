@@ -16,11 +16,15 @@ public import Mathlib.LinearAlgebra.FiniteSpan
 public import Mathlib.RingTheory.Polynomial.Chebyshev
 public import Mathlib.Tactic.Module
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Reflections in linear algebra
 
 Given an element `x` in a module `M` together with a linear form `f` on `M` such that `f x = 2`, the
 map `y ↦ y - (f y) • x` is an involutive endomorphism of `M`, such that:
+
 1. the kernel of `f` is fixed,
 2. the point `x` maps to `-x`.
 
@@ -36,8 +40,8 @@ is characterised by properties 1 and 2 above, and is a linear isometry.
 * `Module.reflection`: the definition of the map `y ↦ y - (f y) • x`. This requires the assumption
   that `f x = 2` but by way of compensation it produces a linear equivalence rather than a mere
   linear map.
-* `Module.reflection_mul_reflection_pow_apply`: a formula for $(r_1 r_2)^m z$, where $r_1$ and
-  $r_2$ are reflections and $z \in M$. It involves the Chebyshev polynomials and holds over any
+* `Module.reflection_mul_reflection_pow_apply`: a formula for $`(r_1 r_2)^m z`, where $`r_1` and
+  $`r_2` are reflections and $`z \in M`. It involves the Chebyshev polynomials and holds over any
   commutative ring. This is used to define reflection representations of Coxeter groups.
 * `Module.Dual.eq_of_preReflection_mapsTo`: a uniqueness result about reflections that preserve
   finite spanning sets. It is useful in the theory of root data / systems.
@@ -48,7 +52,6 @@ Related definitions of reflection exist elsewhere in the library. These more spe
 definitions, which require an ambient `InnerProductSpace` structure, are `reflection` (of type
 `LinearIsometryEquiv`) and `EuclideanGeometry.reflection` (of type `AffineIsometryEquiv`). We
 should connect (or unify) these definitions with `Module.reflection` defined here.
-
 -/
 
 @[expose] public section
@@ -153,33 +156,38 @@ lemma _root_.Submodule.mem_invtSubmodule_reflection_iff [IsDomain R] [NeZero (2 
   · have hy' : f y = 0 := by simpa using h' hy
     simpa [reflection_apply, hy']
 
-/-! ### Powers of the product of two reflections
+/-!
+# Powers of the product of two reflections
 
-Let $M$ be a module over a commutative ring $R$. Let $x, y \in M$ and $f, g \in M^*$ with
-$f(x) = g(y) = 2$. The corresponding reflections $r_1, r_2 \colon M \to M$ (`Module.reflection`) are
-given by $r_1z = z - f(z) x$ and $r_2 z = z - g(z) y$. These are linear automorphisms of $M$.
+Let $`M` be a module over a commutative ring $`R`. Let $`x, y \in M` and $`f, g \in M^*` with
+$`f(x) = g(y) = 2`. The corresponding reflections $`r_1, r_2 \colon M \to M` (`Module.reflection`)
+are
+given by $`r_1z = z - f(z) x` and $`r_2 z = z - g(z) y`. These are linear automorphisms of $`M`.
 
 To define reflection representations of a Coxeter group, it is important to be able to compute the
-order of the composition $r_1 r_2$.
+order of the composition $`r_1 r_2`.
 
-Note that if $M$ is a real inner product space and $r_1$ and $r_2$ are both orthogonal
-reflections (i.e. $f(z) = 2 \langle x, z \rangle / \langle x, x \rangle$ and
-$g(z) = 2 \langle y, z\rangle / \langle y, y\rangle$ for all $z \in M$),
-then $r_1 r_2$ is a rotation by the angle
-$$\cos^{-1}\left(\frac{f(y) g(x) - 2}{2}\right)$$
-and one may determine the order of $r_1 r_2$ accordingly.
+Note that if $`M` is a real inner product space and $`r_1` and $`r_2` are both orthogonal
+reflections (i.e. $`f(z) = 2 \langle x, z \rangle / \langle x, x \rangle` and
+$`g(z) = 2 \langle y, z\rangle / \langle y, y\rangle` for all $`z \in M`),
+then $`r_1 r_2` is a rotation by the angle
+$$`\cos^{-1}\left(\frac{f(y) g(x) - 2}{2}\right)`
+and one may determine the order of $`r_1 r_2` accordingly.
 
-However, if $M$ does not have an inner product, and even if $R$ is not $\mathbb{R}$, then we may
+However, if $`M` does not have an inner product, and even if $`R` is not $`\mathbb{R}`, then we may
 instead use the formulas in this section. These formulas all involve evaluating Chebyshev
-$S$-polynomials (`Polynomial.Chebyshev.S`) at $t = f(y) g(x) - 2$, and they hold over any
-commutative ring. -/
+$`S`-polynomials (`Polynomial.Chebyshev.S`) at $`t = f(y) g(x) - 2`, and they hold over any
+commutative ring.
+-/
 section
 
 open Int Polynomial.Chebyshev
 
 variable {x y : M} {f g : Dual R M} (hf : f x = 2) (hg : g y = 2)
 
-/-- A formula for $(r_1 r_2)^m z$, where $m$ is a natural number and $z \in M$. -/
+/--
+A formula for $`(r_1 r_2)^m z`, where $`m` is a natural number and $`z \in M`.
+-/
 lemma reflection_mul_reflection_pow_apply (m : ℕ) (z : M)
     (t : R := f y * g x - 2) (ht : t = f y * g x - 2 := by rfl) :
     ((reflection hf * reflection hg) ^ m) z =
@@ -228,7 +236,9 @@ lemma reflection_mul_reflection_pow_apply (m : ℕ) (z : M)
       subst ht
       obtain rfl | rfl : e = 0 ∨ e = 1 := he <;> ring_nf
 
-/-- A formula for $(r_1 r_2)^m$, where $m$ is a natural number. -/
+/--
+A formula for $`(r_1 r_2)^m`, where $`m` is a natural number.
+-/
 lemma reflection_mul_reflection_pow (m : ℕ)
     (t : R := f y * g x - 2) (ht : t = f y * g x - 2 := by rfl) :
     ((reflection hf * reflection hg) ^ m).toLinearMap =
@@ -240,7 +250,9 @@ lemma reflection_mul_reflection_pow (m : ℕ)
   ext z
   simpa using reflection_mul_reflection_pow_apply hf hg m z t ht
 
-/-- A formula for $(r_1 r_2)^m z$, where $m$ is an integer and $z \in M$. -/
+/--
+A formula for $`(r_1 r_2)^m z`, where $`m` is an integer and $`z \in M`.
+-/
 lemma reflection_mul_reflection_zpow_apply (m : ℤ) (z : M)
     (t : R := f y * g x - 2) (ht : t = f y * g x - 2 := by rfl) :
     ((reflection hf * reflection hg) ^ m) z =
@@ -260,7 +272,9 @@ lemma reflection_mul_reflection_zpow_apply (m : ℤ) (z : M)
     simp only [S_neg_sub_two, Polynomial.eval_neg]
     ring_nf
 
-/-- A formula for $(r_1 r_2)^m$, where $m$ is an integer. -/
+/--
+A formula for $`(r_1 r_2)^m`, where $`m` is an integer.
+-/
 lemma reflection_mul_reflection_zpow (m : ℤ)
     (t : R := f y * g x - 2) (ht : t = f y * g x - 2 := by rfl) :
     ((reflection hf * reflection hg) ^ m).toLinearMap =
@@ -272,8 +286,10 @@ lemma reflection_mul_reflection_zpow (m : ℤ)
   ext z
   simpa using reflection_mul_reflection_zpow_apply hf hg m z t ht
 
-/-- A formula for $(r_1 r_2)^m x$, where $m$ is an integer. This is the special case of
-`Module.reflection_mul_reflection_zpow_apply` with $z = x$. -/
+/--
+A formula for $`(r_1 r_2)^m x`, where $`m` is an integer. This is the special case of
+`Module.reflection_mul_reflection_zpow_apply` with $`z = x`.
+-/
 lemma reflection_mul_reflection_zpow_apply_self (m : ℤ)
     (t : R := f y * g x - 2) (ht : t = f y * g x - 2 := by rfl) :
     ((reflection hf * reflection hg) ^ m) x =
@@ -305,15 +321,19 @@ lemma reflection_mul_reflection_zpow_apply_self (m : ℤ)
     · linear_combination (norm := ring_nf) -S_eval_t_sub_two (-m)
     · linear_combination (norm := ring_nf) g x * S_eval_t_sub_two (-m)
 
-/-- A formula for $(r_1 r_2)^m x$, where $m$ is a natural number. This is the special case of
-`Module.reflection_mul_reflection_pow_apply` with $z = x$. -/
+/--
+A formula for $`(r_1 r_2)^m x`, where $`m` is a natural number. This is the special case of
+`Module.reflection_mul_reflection_pow_apply` with $`z = x`.
+-/
 lemma reflection_mul_reflection_pow_apply_self (m : ℕ)
     (t : R := f y * g x - 2) (ht : t = f y * g x - 2 := by rfl) :
     ((reflection hf * reflection hg) ^ m) x =
       ((S R m).eval t + (S R (m - 1)).eval t) • x + ((S R (m - 1)).eval t * -g x) • y :=
   mod_cast reflection_mul_reflection_zpow_apply_self hf hg m t ht
 
-/-- A formula for $r_2 (r_1 r_2)^m x$, where $m$ is an integer. -/
+/--
+A formula for $`r_2 (r_1 r_2)^m x`, where $`m` is an integer.
+-/
 lemma reflection_mul_reflection_mul_reflection_zpow_apply_self (m : ℤ)
     (t : R := f y * g x - 2) (ht : t = f y * g x - 2 := by rfl) :
     (reflection hg * (reflection hf * reflection hg) ^ m) x =
@@ -324,7 +344,9 @@ lemma reflection_mul_reflection_mul_reflection_zpow_apply_self (m : ℤ)
   -- Equate coefficients of `x` and `y`.
   module
 
-/-- A formula for $r_2 (r_1 r_2)^m x$, where $m$ is a natural number. -/
+/--
+A formula for $`r_2 (r_1 r_2)^m x`, where $`m` is a natural number.
+-/
 lemma reflection_mul_reflection_mul_reflection_pow_apply_self (m : ℕ)
     (t : R := f y * g x - 2) (ht : t = f y * g x - 2 := by rfl) :
     (reflection hg * (reflection hf * reflection hg) ^ m) x =
@@ -333,7 +355,9 @@ lemma reflection_mul_reflection_mul_reflection_pow_apply_self (m : ℕ)
 
 end
 
-/-! ### Lemmas used to prove uniqueness results for root data -/
+/-!
+# Lemmas used to prove uniqueness results for root data
+-/
 
 /-- See also `Module.Dual.eq_of_preReflection_mapsTo'` for a variant of this lemma which
 applies when `Φ` does not span.

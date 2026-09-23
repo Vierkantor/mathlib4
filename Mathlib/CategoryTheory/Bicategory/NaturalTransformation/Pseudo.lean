@@ -8,8 +8,10 @@ module
 public import Mathlib.CategoryTheory.Bicategory.Functor.Pseudofunctor
 public import Mathlib.CategoryTheory.Bicategory.NaturalTransformation.Oplax
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Strong transformations of pseudofunctors
 
 There are three types of transformations between pseudofunctors, depending on the direction
@@ -31,8 +33,8 @@ strong transformations. To access this instance, run `open scoped Pseudofunctor.
 See `Pseudofunctor.StrongTrans.categoryStruct`.
 
 ## References
-* [Niles Johnson, Donald Yau, *2-Dimensional Categories*](https://arxiv.org/abs/2002.06055)
 
+* [Niles Johnson, Donald Yau, _2-Dimensional Categories_](https://arxiv.org/abs/2002.06055)
 -/
 
 @[expose] public section

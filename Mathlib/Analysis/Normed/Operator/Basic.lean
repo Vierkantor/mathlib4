@@ -13,6 +13,9 @@ public import Mathlib.Analysis.Normed.Operator.LinearIsometry
 public import Mathlib.Analysis.Normed.Operator.ContinuousLinearMap
 public import Mathlib.Tactic.SuppressCompilation
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Operator norm on the space of continuous linear maps
 
@@ -28,9 +31,9 @@ Note that most of statements that apply to semilinear maps only hold when the ri
 is isometric, as expressed by the typeclass `[RingHomIsometric σ]`.
 
 ## Main Results
+
 * `ball_subset_range_iff_surjective` (and its variants) shows that a semi-linear map between normed
   spaces is surjective if and only if it contains a ball.
-
 -/
 
 @[expose] public section

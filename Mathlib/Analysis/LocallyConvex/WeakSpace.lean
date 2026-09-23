@@ -10,7 +10,11 @@ public import Mathlib.Analysis.LocallyConvex.SeparatingDual
 public import Mathlib.LinearAlgebra.Dual.Defs
 public import Mathlib.Topology.Algebra.Module.Spaces.WeakDual
 
-/-! # Closures of convex sets in locally convex spaces
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Closures of convex sets in locally convex spaces
 
 This file contains the standard result that if `E` is a vector space with two locally convex
 topologies, then the closure of a convex set is the same in either topology, provided they have the

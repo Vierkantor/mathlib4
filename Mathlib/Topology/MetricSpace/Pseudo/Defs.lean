@@ -13,6 +13,9 @@ public import Mathlib.Topology.EMetricSpace.Defs
 public import Mathlib.Topology.UniformSpace.Basic
 import Mathlib.Tactic.Basify.Attr
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Pseudo-metric spaces
 
@@ -123,7 +126,8 @@ private theorem dist_nonneg' {α} {x y : α} (dist : α → α → ℝ)
 
 set_option backward.privateInPublic true in
 set_option backward.privateInPublic.warn false in
-/-- A pseudometric space is a type endowed with a `ℝ`-valued distance `dist` satisfying
+/--
+A pseudometric space is a type endowed with a `ℝ`-valued distance `dist` satisfying
 reflexivity `dist x x = 0`, commutativity `dist x y = dist y x`, and the triangle inequality
 `dist x z ≤ dist x y + dist y z`.
 
@@ -138,7 +142,8 @@ We make the uniformity/topology part of the data instead of deriving it from the
 ensures that we do not get a diamond when doing
 `[PseudoMetricSpace α] [PseudoMetricSpace β] : TopologicalSpace (α × β)`:
 The product metric and product topology agree, but not definitionally so.
-See Note [forgetful inheritance]. -/
+See Note \[forgetful inheritance\].
+-/
 class PseudoMetricSpace (α : Type u) : Type u extends Dist α where
   dist_self : ∀ x : α, dist x x = 0
   dist_comm : ∀ x y : α, dist x y = dist y x
@@ -1017,10 +1022,11 @@ theorem Metric.closedEBall_coe {x : α} {ε : ℝ≥0} :
 theorem Metric.eball_top (x : α) : eball x ⊤ = univ :=
   eq_univ_of_forall fun _ => edist_lt_top _ _
 
-/-- Build a new pseudometric space from an old one where the bundled uniform structure is provably
+/--
+Build a new pseudometric space from an old one where the bundled uniform structure is provably
 (but typically non-definitionaly) equal to some given uniform structure.
-See Note [forgetful inheritance].
-See Note [reducible non-instances].
+See Note \[forgetful inheritance\].
+See Note \[reducible non-instances\].
 -/
 abbrev PseudoMetricSpace.replaceUniformity {α} [U : UniformSpace α] (m : PseudoMetricSpace α)
     (H : 𝓤[U] = 𝓤[PseudoEMetricSpace.toUniformSpace]) : PseudoMetricSpace α :=
@@ -1039,10 +1045,11 @@ example {α} [U : UniformSpace α] (m : PseudoMetricSpace α)
     (PseudoMetricSpace.replaceUniformity m H).toBornology = m.toBornology := by
   with_reducible_and_instances rfl
 
-/-- Build a new pseudometric space from an old one where the bundled topological structure is
+/--
+Build a new pseudometric space from an old one where the bundled topological structure is
 provably (but typically non-definitionaly) equal to some given topological structure.
-See Note [forgetful inheritance].
-See Note [reducible non-instances].
+See Note \[forgetful inheritance\].
+See Note \[reducible non-instances\].
 -/
 abbrev PseudoMetricSpace.replaceTopology {γ} [U : TopologicalSpace γ] (m : PseudoMetricSpace γ)
     (H : U = m.toUniformSpace.toTopologicalSpace) : PseudoMetricSpace γ :=
@@ -1053,11 +1060,13 @@ theorem PseudoMetricSpace.replaceTopology_eq {γ} [U : TopologicalSpace γ] (m :
   ext
   rfl
 
-/-- One gets a pseudometric space from an emetric space if the edistance
+/--
+One gets a pseudometric space from an emetric space if the edistance
 is everywhere finite, by pushing the edistance to reals. We set it up so that the edist and the
 uniformity are defeq in the pseudometric space and the pseudoemetric space. In this definition, the
 distance is given separately, to be able to prescribe some expression which is not defeq to the
-push-forward of the edistance to reals. See note [reducible non-instances]. -/
+push-forward of the edistance to reals. See note \[reducible non-instances\].
+-/
 abbrev PseudoEMetricSpace.toPseudoMetricSpaceOfDist {X : Type*} [e : PseudoEMetricSpace X]
     (dist : X → X → ℝ) (dist_nonneg : ∀ x y, 0 ≤ dist x y)
     (h : ∀ x y, edist x y = .ofReal (dist x y)) : PseudoMetricSpace X where
@@ -1082,10 +1091,11 @@ abbrev PseudoEMetricSpace.toPseudoMetricSpace {α : Type u} [PseudoEMetricSpace 
     (h : ∀ x y : α, edist x y ≠ ⊤) : PseudoMetricSpace α :=
   PseudoEMetricSpace.toPseudoMetricSpaceOfDist (ENNReal.toReal <| edist · ·) (by simp) (by simp [h])
 
-/-- Build a new pseudometric space from an old one where the bundled bornology structure is provably
+/--
+Build a new pseudometric space from an old one where the bundled bornology structure is provably
 (but typically non-definitionaly) equal to some given bornology structure.
-See Note [forgetful inheritance].
-See Note [reducible non-instances].
+See Note \[forgetful inheritance\].
+See Note \[reducible non-instances\].
 -/
 abbrev PseudoMetricSpace.replaceBornology {α} [B : Bornology α] (m : PseudoMetricSpace α)
     (H : ∀ s, @IsBounded _ B s ↔ @IsBounded _ PseudoMetricSpace.toBornology s) :

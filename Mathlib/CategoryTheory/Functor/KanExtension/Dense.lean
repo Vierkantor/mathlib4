@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Functor.KanExtension.DenseAt
 public import Mathlib.CategoryTheory.Limits.Presheaf
 public import Mathlib.CategoryTheory.Generator.StrongGenerator
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Dense functors
 
@@ -27,7 +30,6 @@ generator (see `Functor.isStrongGenerator_of_isDense`).
 ## References
 
 * https://ncatlab.org/nlab/show/dense+subcategory
-
 -/
 
 @[expose] public section

@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Category.Cat
 public meta import Mathlib.Util.AddRelatedDecl
 public meta import Mathlib.Tactic.ToAdditive
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The `to_app` attribute
 

@@ -10,11 +10,14 @@ public import Mathlib.Algebra.Category.ModuleCat.ChangeOfRings
 public import Mathlib.CategoryTheory.Limits.Preserves.Limits
 public import Mathlib.CategoryTheory.Limits.FunctorCategory.Basic
 
-/-! # Limits in categories of presheaves of modules
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Limits in categories of presheaves of modules
 
 In this file, it is shown that under suitable assumptions,
 limits exist in the category `PresheafOfModules R`.
-
 -/
 
 @[expose] public section

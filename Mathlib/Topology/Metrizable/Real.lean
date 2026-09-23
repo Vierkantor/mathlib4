@@ -10,6 +10,9 @@ public import Mathlib.Topology.Metrizable.Basic
 public import Mathlib.Topology.Order.MonotoneContinuity
 public import Mathlib.Topology.Order.Real
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `ENNReal` is metrizable
 

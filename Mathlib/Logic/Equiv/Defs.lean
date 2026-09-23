@@ -12,6 +12,9 @@ public import Mathlib.Data.Subtype
 public import Mathlib.Tactic.Simps
 
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Equivalence between types
 
@@ -19,7 +22,6 @@ In this file we define two types:
 
 * `Equiv α β` a.k.a. `α ≃ β`: a bijective map `α → β` bundled with its inverse map; we use this (and
   not equality!) to express that various `Type`s or `Sort`s are equivalent.
-
 * `Equiv.Perm α`: the group of permutations `α ≃ α`. More lemmas about `Equiv.Perm` can be found in
   `Mathlib/GroupTheory/Perm/`.
 
@@ -27,26 +29,25 @@ Then we define
 
 * canonical isomorphisms between various types: e.g.,
 
-  - `Equiv.refl α` is the identity map interpreted as `α ≃ α`;
+* `Equiv.refl α` is the identity map interpreted as `α ≃ α`;
 
 * operations on equivalences: e.g.,
 
-  - `Equiv.symm e : β ≃ α` is the inverse of `e : α ≃ β`;
-
-  - `Equiv.trans e₁ e₂ : α ≃ γ` is the composition of `e₁ : α ≃ β` and `e₂ : β ≃ γ` (note the order
-    of the arguments!);
+* `Equiv.symm e : β ≃ α` is the inverse of `e : α ≃ β`;
+* `Equiv.trans e₁ e₂ : α ≃ γ` is the composition of `e₁ : α ≃ β` and `e₂ : β ≃ γ` (note the order
+  of the arguments!);
 
 * definitions that transfer some instances along an equivalence. By convention, we transfer
   instances from right to left.
 
-  - `Equiv.inhabited` takes `e : α ≃ β` and `[Inhabited β]` and returns `Inhabited α`;
-  - `Equiv.unique` takes `e : α ≃ β` and `[Unique β]` and returns `Unique α`;
-  - `Equiv.decidableEq` takes `e : α ≃ β` and `[DecidableEq β]` and returns `DecidableEq α`.
+* `Equiv.inhabited` takes `e : α ≃ β` and `[Inhabited β]` and returns `Inhabited α`;
+* `Equiv.unique` takes `e : α ≃ β` and `[Unique β]` and returns `Unique α`;
+* `Equiv.decidableEq` takes `e : α ≃ β` and `[DecidableEq β]` and returns `DecidableEq α`.
 
-  More definitions of this kind can be found in other files.
-  E.g., `Mathlib/Algebra/Group/TransferInstance.lean` does it for `Group`,
-  `Mathlib/Algebra/Module/TransferInstance.lean` does it for `Module`, and similar files exist for
-  other algebraic type classes.
+More definitions of this kind can be found in other files.
+E.g., `Mathlib/Algebra/Group/TransferInstance.lean` does it for `Group`,
+`Mathlib/Algebra/Module/TransferInstance.lean` does it for `Module`, and similar files exist for
+other algebraic type classes.
 
 Many more such isomorphisms and operations are defined in `Mathlib/Logic/Equiv/Basic.lean`.
 
@@ -145,7 +146,9 @@ instance inhabited' : Inhabited (α ≃ α) := ⟨Equiv.refl α⟩
 @[symm, implicit_reducible]
 protected def symm (e : α ≃ β) : β ≃ α := ⟨e.invFun, e.toFun, e.right_inv, e.left_inv⟩
 
-/-- See Note [custom simps projection] -/
+/--
+See Note \[custom simps projection\]
+-/
 def Simps.symm_apply (e : α ≃ β) : β → α := e.symm
 
 initialize_simps_projections Equiv (toFun → apply, invFun → symm_apply)

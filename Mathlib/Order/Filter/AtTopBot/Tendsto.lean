@@ -8,6 +8,9 @@ module
 public import Mathlib.Order.Filter.AtTopBot.Disjoint
 public import Mathlib.Order.Filter.Tendsto
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Limits of `Filter.atTop` and `Filter.atBot`
 
@@ -78,7 +81,7 @@ end Filter
 namespace Filter
 
 /-!
-### Sequences
+# Sequences
 -/
 
 theorem _root_.StrictMono.tendsto_atTop {φ : ℕ → ℕ} (h : StrictMono φ) : Tendsto φ atTop atTop :=
@@ -160,11 +163,15 @@ theorem tendsto_atTop_atTop_of_monotone' [Preorder ι] [LinearOrder α] {u : ι 
   rcases not_bddAbove_iff.1 H b with ⟨_, ⟨N, rfl⟩, hN⟩
   exact ⟨N, le_of_lt hN⟩
 
-/-- If a monotone function `u : ι → α` tends to `atTop` along *some* non-trivial filter `l`, then
-it tends to `atTop` along `atTop`. -/
+/--
+If a monotone function `u : ι → α` tends to `atTop` along _some_ non-trivial filter `l`, then
+it tends to `atTop` along `atTop`.
+-/
 @[to_dual
-/-- If a monotone function `u : ι → α` tends to `atBot` along *some* non-trivial filter `l`, then
-it tends to `atBot` along `atBot`. -/]
+/--
+If a monotone function `u : ι → α` tends to `atBot` along _some_ non-trivial filter `l`, then
+it tends to `atBot` along `atBot`.
+-/]
 theorem tendsto_atTop_of_monotone_of_filter [Preorder ι] [Preorder α] {l : Filter ι} {u : ι → α}
     (h : Monotone u) [NeBot l] (hu : Tendsto u l atTop) : Tendsto u atTop atTop :=
   h.tendsto_atTop_atTop fun b => (hu.eventually (mem_atTop b)).exists

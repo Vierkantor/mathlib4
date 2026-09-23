@@ -12,8 +12,10 @@ public import Mathlib.AlgebraicGeometry.Morphisms.QuasiFinite
 public import Mathlib.AlgebraicGeometry.Normalization
 public import Mathlib.RingTheory.Etale.QuasiFinite
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Zariski's Main Theorem
 
 In this file we prove Grothendieck's reformulation of Zariski's main theorem, namely if
@@ -21,14 +23,14 @@ In this file we prove Grothendieck's reformulation of Zariski's main theorem, na
 `f` to the relative normalization `X'` of `Y` in `X` is an open immersion.
 
 We then have the following corollaries
-- `Scheme.Hom.isOpen_quasiFiniteAt` : If `f` is separated and of finite type, then the quasi-finite
+
+* `Scheme.Hom.isOpen_quasiFiniteAt` : If `f` is separated and of finite type, then the quasi-finite
   locus of `f` is open.
-- If `f` is itself quasi-finite, then the map `f.toNormalization : X ⟶ X'` is an open immersion.
+* If `f` is itself quasi-finite, then the map `f.toNormalization : X ⟶ X'` is an open immersion.
   This can be accessed via `inferInstance`.
-- `IsFinite.of_isProper_of_locallyQuasiFinite`:
+* `IsFinite.of_isProper_of_locallyQuasiFinite`:
   If `f` is proper and quasi-finite, then the map `f.toNormalization : X ⟶ X'` is an isomorphism,
   which implies that `f` itself is finite.
-
 -/
 
 open CategoryTheory Limits

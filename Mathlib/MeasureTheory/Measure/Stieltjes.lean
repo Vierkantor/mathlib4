@@ -9,6 +9,9 @@ public import Mathlib.MeasureTheory.Constructions.BorelSpace.Order
 public import Mathlib.MeasureTheory.Measure.Typeclasses.Probability
 public import Mathlib.Topology.Order.LeftRightLim
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Stieltjes measures on the real line
 
@@ -34,6 +37,7 @@ We define Stieltjes functions over any conditionally complete dense linear order
 to cover the cases of `ℝ≥0` and `[0, T]` in addition to the classical case of `ℝ`. This creates
 a few issues, mostly with the management of bottom and top elements. To handle these, we need
 two technical definitions:
+
 * `Iotop a b` is the interval `Ioo a b` if `b` is not top, and `Ioc a b` if `b` is top.
 * `botSet` is the empty set if there is no bot element, and `{x}` if `x` is bot.
 
@@ -106,7 +110,9 @@ end Prerequisites
 
 variable (R : Type*) [LinearOrder R] [TopologicalSpace R]
 
-/-! ### Basic properties of Stieltjes functions -/
+/-!
+# Basic properties of Stieltjes functions
+-/
 
 /-- Bundled monotone right-continuous real functions, used to construct Stieltjes measures. -/
 structure StieltjesFunction where
@@ -259,7 +265,9 @@ theorem countable_leftLim_ne [OrderTopology R] (f : StieltjesFunction R) :
   apply hx
   exact (Monotone.continuousWithinAt_Iio_iff_leftLim_eq f.mono).1 h'x.continuousWithinAt
 
-/-! ### The outer measure associated to a Stieltjes function -/
+/-!
+# The outer measure associated to a Stieltjes function
+-/
 
 
 open scoped Classical in
@@ -511,7 +519,9 @@ theorem borel_le_measurable [SecondCountableTopology R] :
   refine MeasurableSpace.generateFrom_le ?_
   simp +contextual [f.measurableSet_Ioi]
 
-/-! ### The measure associated to a Stieltjes function -/
+/-!
+# The measure associated to a Stieltjes function
+-/
 
 variable [MeasurableSpace R] [BorelSpace R] [SecondCountableTopology R] [DenselyOrdered R]
 

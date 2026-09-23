@@ -9,6 +9,9 @@ public import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 public import Mathlib.Topology.Algebra.Order.Floor
 public import Mathlib.Topology.MetricSpace.Contracting
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Picard-Lindelöf (Cauchy-Lipschitz) Theorem
 
@@ -28,7 +31,7 @@ In other words, there exists a local flow `α : E → ℝ → E` defined on `clo
 
 The proof relies on demonstrating the existence of a solution `α` to the following integral
 equation:
-$$\alpha(t) = x_0 + \int_{t_0}^t f(\tau, \alpha(\tau))\,\mathrm{d}\tau.$$
+$$`\alpha(t) = x_0 + \int_{t_0}^t f(\tau, \alpha(\tau))\,\mathrm{d}\tau.`
 This is done via the contraction mapping theorem, applied to the space of Lipschitz continuous
 functions from a closed interval to a Banach space. The needed contraction map is constructed by
 repeated applications of the right-hand side of this equation.
@@ -61,7 +64,6 @@ The public-facing existence theorems stated using the integral curve API are in
 
 differential equation, dynamical system, initial value problem, Picard-Lindelöf theorem,
 Cauchy-Lipschitz theorem
-
 -/
 
 @[expose] public section
@@ -69,7 +71,9 @@ Cauchy-Lipschitz theorem
 open Function intervalIntegral MeasureTheory Metric Set
 open scoped Nat NNReal Topology
 
-/-! ## Assumptions of the Picard-Lindelöf theorem-/
+/-!
+# Assumptions of the Picard-Lindelöf theorem
+-/
 
 /-- Prop structure holding the assumptions of the Picard-Lindelöf theorem.
 `IsPicardLindelof f t₀ x₀ a r L K`, where `t₀ ∈ Icc tmin tmax`, means that the time-dependent vector
@@ -89,7 +93,8 @@ structure IsPicardLindelof {E : Type*} [NormedAddCommGroup E]
 
 namespace ODE
 
-/-! ## Integral equation
+/-!
+# Integral equation
 
 For any time-dependent vector field `f : ℝ → E → E`, we define an integral equation that is
 equivalent to the initial value problem defined by `f`.
@@ -110,8 +115,10 @@ lemma picard_apply {x₀ : E} {t : ℝ} : picard f t₀ x₀ α t = x₀ + ∫ �
 
 lemma picard_apply₀ {x₀ : E} : picard f t₀ x₀ α t₀ = x₀ := by simp
 
-/-- Given a $C^n$ time-dependent vector field `f` and a $C^n$ curve `α`, the composition `f t (α t)`
-is $C^n$ in `t`. -/
+/--
+Given a $`C^n` time-dependent vector field `f` and a $`C^n` curve `α`, the composition `f t (α t)`
+is $`C^n` in `t`.
+-/
 lemma contDiffOn_comp {n : WithTop ℕ∞}
     (hf : ContDiffOn ℝ n (uncurry f) (s ×ˢ u))
     (hα : ContDiffOn ℝ n α s) (hmem : ∀ t ∈ s, α t ∈ u) :
@@ -127,7 +134,8 @@ lemma continuousOn_comp
 
 end
 
-/-! ## Space of Lipschitz functions on a closed interval
+/-!
+# Space of Lipschitz functions on a closed interval
 
 We define the space of Lipschitz continuous functions from a closed interval. This will be shown to
 be a complete metric space on which `picard` is a contracting map, leading to a fixed point that
@@ -250,7 +258,9 @@ lemma compProj_mem_closedBall
 
 end
 
-/-! ## Contracting map on the space of Lipschitz functions -/
+/-!
+# Contracting map on the space of Lipschitz functions
+-/
 
 section
 
@@ -359,8 +369,10 @@ lemma dist_iterate_next_apply_le (hf : IsPicardLindelof f t₀ x₀ a r L K)
           abs_pow, abs_pow, abs_dist, NNReal.abs_eq, abs_abs, mul_div, div_div, ← abs_mul,
           ← Nat.cast_succ, ← Nat.cast_mul, ← Nat.factorial_succ, Nat.abs_cast, ← mul_pow]
 
-/-- The `n`-th iterate of `next` is Lipschitz continuous with respect to `FunSpace`, with constant
-$(K \max(t_{\mathrm{max}}, t_{\mathrm{min}})^n / n!$. -/
+/--
+The `n`-th iterate of `next` is Lipschitz continuous with respect to `FunSpace`, with constant
+$`(K \max(t_{\mathrm{max}}, t_{\mathrm{min}})^n / n!`.
+-/
 lemma dist_iterate_next_iterate_next_le (hf : IsPicardLindelof f t₀ x₀ a r L K)
     (hx : x ∈ closedBall x₀ r) (α β : FunSpace t₀ x₀ r L) (n : ℕ) :
     dist ((next hf hx)^[n] α) ((next hf hx)^[n] β) ≤
@@ -395,7 +407,8 @@ lemma exists_isFixedPt_next [CompleteSpace E] (hf : IsPicardLindelof f t₀ x₀
   let ⟨_, _, h⟩ := exists_contractingWith_iterate_next hf
   ⟨_, h x hx |>.isFixedPt_fixedPoint_iterate⟩
 
-/-! ## Lipschitz continuity of the solution with respect to the initial condition
+/-!
+# Lipschitz continuity of the solution with respect to the initial condition
 
 The proof relies on the fact that the repeated application of `next` to any curve `α` converges to
 the fixed point of `next`, so it suffices to bound the distance between `α` and `next^[n] α`. Since
@@ -471,7 +484,9 @@ end
 
 end FunSpace
 
-/-! ## Properties of the integral equation -/
+/-!
+# Properties of the integral equation
+-/
 
 section
 
@@ -511,8 +526,10 @@ lemma picard_eq_of_hasDerivAt {t : ℝ}
   apply HasDerivAt.hasDerivWithinAt
   exact hα t' (Ioo_subset_Icc_self ht') |>.hasDerivAt <| Icc_mem_nhds ht'.1 ht'.2
 
-/-- If the time-dependent vector field `f` is $C^n$ and the curve `α` is continuous, then
-`picard f t₀ x₀ α` is also $C^n$. This version works for `n : ℕ`. -/
+/--
+If the time-dependent vector field `f` is $`C^n` and the curve `α` is continuous, then
+`picard f t₀ x₀ α` is also $`C^n`. This version works for `n : ℕ`.
+-/
 lemma contDiffOn_nat_picard_Icc
     (ht₀ : t₀ ∈ Icc tmin tmax) {n : ℕ}
     (hf : ContDiffOn ℝ n (uncurry f) ((Icc tmin tmax) ×ˢ u))
@@ -539,10 +556,12 @@ lemma contDiffOn_nat_picard_Icc
     rw [eq_of_mem_singleton ht]
     exact contDiffWithinAt_singleton
 
-/-- If the time-dependent vector field `f` is $C^n$ and the curve `α` is continuous, then
-`picard f t₀ x₀ α` is also $C^n$. This version works for `n : ℕ∞`.
+/--
+If the time-dependent vector field `f` is $`C^n` and the curve `α` is continuous, then
+`picard f t₀ x₀ α` is also $`C^n`. This version works for `n : ℕ∞`.
 
-TODO: Extend to the analytic `n = ⊤` case. -/
+TODO: Extend to the analytic `n = ⊤` case.
+-/
 lemma contDiffOn_enat_picard_Icc
     (ht₀ : t₀ ∈ Icc tmin tmax) {n : ℕ∞}
     (hf : ContDiffOn ℝ n (uncurry f) ((Icc tmin tmax) ×ˢ u))
@@ -556,7 +575,9 @@ lemma contDiffOn_enat_picard_Icc
     exact fun k ↦ contDiffOn_nat_picard_Icc ht₀ (hf k) hα hmem x₀ heqon
   | coe n => exact contDiffOn_nat_picard_Icc ht₀ hf hα hmem x₀ heqon
 
-/-- Solutions to ODEs defined by $C^n$ vector fields are also $C^n$. -/
+/--
+Solutions to ODEs defined by $`C^n` vector fields are also $`C^n`.
+-/
 theorem contDiffOn_enat_Icc_of_hasDerivWithinAt {n : ℕ∞}
     (hf : ContDiffOn ℝ n (uncurry f) ((Icc tmin tmax) ×ˢ u))
     (hα : ∀ t ∈ Icc tmin tmax, HasDerivWithinAt α (f t (α t)) (Icc tmin tmax) t)
@@ -591,7 +612,9 @@ end ODE
 
 namespace IsPicardLindelof
 
-/-! ## Properties of `IsPicardLindelof` -/
+/-!
+# Properties of `IsPicardLindelof`
+-/
 
 section
 
@@ -707,7 +730,9 @@ lemma of_contDiffAt_one [NormedSpace ℝ E]
 
 end
 
-/-! ## Existence of solutions to ODEs -/
+/-!
+# Existence of solutions to ODEs
+-/
 
 open ODE
 

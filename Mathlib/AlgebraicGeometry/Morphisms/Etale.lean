@@ -11,8 +11,10 @@ public import Mathlib.CategoryTheory.MorphismProperty.Comma
 public import Mathlib.RingTheory.Smooth.StandardSmoothCotangent
 public import Mathlib.CategoryTheory.Limits.MorphismProperty
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Étale morphisms
 
 A morphism of schemes `f : X ⟶ Y` is étale if for each affine `U ⊆ Y`
@@ -20,9 +22,8 @@ and `V ⊆ f ⁻¹' U`, the induced map `Γ(Y, U) ⟶ Γ(X, V)` is étale.
 
 ## Main results
 
-- `AlgebraicGeometry.Etale.iff_smoothOfRelativeDimension_zero`: Etale is equivalent to
+* `AlgebraicGeometry.Etale.iff_smoothOfRelativeDimension_zero`: Etale is equivalent to
   smooth of relative dimension `0`.
-
 -/
 
 @[expose] public section

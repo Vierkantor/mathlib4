@@ -10,6 +10,9 @@ public import Mathlib.Analysis.Calculus.Deriv.Comp
 public import Mathlib.Analysis.Calculus.FDeriv.Add
 public import Mathlib.Analysis.Calculus.FDeriv.Mul
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Slope of a differentiable function
 

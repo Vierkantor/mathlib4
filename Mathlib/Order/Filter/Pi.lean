@@ -9,6 +9,9 @@ public import Mathlib.Data.Set.Piecewise
 public import Mathlib.Order.Filter.Tendsto
 public import Mathlib.Order.Filter.Bases.Finite
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # (Co)product of a family of filters
 
@@ -18,7 +21,6 @@ In this file we prove some basic properties of two filters on `Π i, α i`.
   `∀ i, Filter.Tendsto (Function.eval i) (Filter.pi f) (f i)`. It is defined as
   `Π i, Filter.comap (Function.eval i) (f i)`. This is a generalization of binary products to
   indexed products.
-
 * `Filter.coprodᵢ (f : Π i, Filter (α i))`: a generalization of `Filter.coprod`; it is the supremum
   of `comap (eval i) (f i)`.
 -/
@@ -259,7 +261,9 @@ theorem pi_comap {β : ι → Type*} {f : ∀ i, α i → β i} {l : ∀ i, Filt
 
 end Pi
 
-/-! ### `n`-ary coproducts of filters -/
+/-!
+# `n`-ary coproducts of filters
+-/
 
 section CoprodCat
 

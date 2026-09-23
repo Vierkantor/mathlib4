@@ -10,6 +10,9 @@ public meta import Lean.Elab.Binders
 public meta import Lean.Elab.Tactic.ElabTerm
 public meta import Lean.Meta.Tactic.Generalize
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Backwards compatibility shim for `generalize`.
 

@@ -9,6 +9,9 @@ module
 public import Mathlib.Geometry.Manifold.ChartedSpace
 public import Mathlib.Topology.Covering.Quotient
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Quotients of manifolds
 
@@ -25,6 +28,7 @@ This file contains results about quotients of manifolds by group actions.
 * if `G` acts smoothly, the projection map is smooth
 
 ## tags
+
 smooth manifold, smooth action, quotient manifold
 -/
 
@@ -39,7 +43,7 @@ variable {M : Type*} [TopologicalSpace M]
   {H : Type*} [TopologicalSpace H] [ChartedSpace H M]
 
 /-!
-## Charted space structure on quotient by a group
+# Charted space structure on quotient by a group
 -/
 
 /-- The induced charted space structure on the quotient of a charted space by a free, properly

@@ -13,6 +13,9 @@ public import Mathlib.GroupTheory.OrderOfElement
 public import Mathlib.GroupTheory.SpecificGroups.Cyclic
 public import Mathlib.Order.Interval.Finset.DenselyOrdered
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Archimedean groups are either discrete or densely ordered
 

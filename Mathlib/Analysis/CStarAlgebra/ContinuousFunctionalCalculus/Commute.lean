@@ -7,7 +7,11 @@ module
 
 public import Mathlib.Analysis.CStarAlgebra.ContinuousFunctionalCalculus.Instances
 
-/-! # Commuting with applications of the continuous functional calculus
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Commuting with applications of the continuous functional calculus
 
 This file shows that if an element `b` commutes with both `a` and `star a`, then it commutes
 with `cfc f a` (or `cfcₙ f a`). In the case where `a` is selfadjoint, we may reduce the hypotheses.
@@ -25,7 +29,6 @@ The proof of `Commute.cfcHom` and `Commute.cfcₙHom` could be made simpler by a
 facts about double commutants, but doing so would require extra type class assumptions so that we
 can talk about topological star algebras. Instead, we avoid this to minimize the work Lean must do
 to call these lemmas, and give a straightforward proof by induction.
-
 -/
 
 public section

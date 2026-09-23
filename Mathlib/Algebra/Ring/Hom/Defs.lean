@@ -9,6 +9,9 @@ public import Mathlib.Algebra.GroupWithZero.Hom
 public import Mathlib.Algebra.Ring.Defs
 public import Mathlib.Algebra.Ring.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Homomorphisms of semirings and rings
 
@@ -31,7 +34,6 @@ groups, we use the same structure `RingHom a β`, a.k.a. `α →+* β`, for both
 
 * There's a coercion from bundled homs to fun, and the canonical notation is to
   use the bundled hom as a function via this coercion.
-
 * There is no `SemiringHom` -- the idea is that `RingHom` is used.
   The constructor for a `RingHom` between semirings needs a proof of `map_zero`,
   `map_one` and `map_add` as well as `map_mul`; a separate constructor
@@ -366,7 +368,7 @@ section coe
 
 /-!
 Throughout this section, some `Semiring` arguments are specified with `{}` instead of `[]`.
-See note [implicit instance arguments].
+See note \[implicit instance arguments\].
 -/
 
 variable {_ : NonAssocSemiring α} {_ : NonAssocSemiring β}

@@ -9,6 +9,9 @@ public import Mathlib.LinearAlgebra.BilinearForm.TensorProduct
 public import Mathlib.LinearAlgebra.QuadraticForm.Basic
 public import Mathlib.Tactic.LinearCombination
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The quadratic form on a tensor product
 
@@ -16,7 +19,6 @@ public import Mathlib.Tactic.LinearCombination
 
 * `QuadraticForm.tensorDistrib (Q₁ ⊗ₜ Q₂)`: the quadratic form on `M₁ ⊗ M₂` constructed by applying
   `Q₁` on `M₁` and `Q₂` on `M₂`. This construction is not available in characteristic two.
-
 -/
 
 @[expose] public section

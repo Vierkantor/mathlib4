@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.Calculus.Deriv.Inv
 public import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # L'Hôpital's rule for 0/0 indeterminate forms
 
@@ -41,7 +44,7 @@ open scoped Filter Topology Pointwise
 variable {a b : ℝ} {l : Filter ℝ} {f f' g g' : ℝ → ℝ}
 
 /-!
-## Interval-based versions
+# Interval-based versions
 
 We start by proving statements where all conditions (derivability, `g' ≠ 0`) have
 to be satisfied on an explicitly-provided interval.
@@ -240,7 +243,7 @@ theorem lhopital_zero_atBot_on_Iio (hdf : DifferentiableOn ℝ f (Iio a))
 end deriv
 
 /-!
-## Generic versions
+# Generic versions
 
 The following statements no longer any explicit interval, as they only require
 conditions holding eventually.

@@ -11,6 +11,9 @@ public import Mathlib.Topology.CompactOpen
 public import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 public import Mathlib.Topology.Order.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Trivializations
 
@@ -20,7 +23,6 @@ public import Mathlib.Topology.Order.Basic
 
 * `Bundle.Trivialization F p` : structure extending open partial homeomorphisms, defining a local
   trivialization of a topological space `Z` with projection `p` and fiber `F`.
-
 * `Bundle.Pretrivialization F proj` : trivialization as a partial equivalence, mainly used when the
   topology on the total space has not yet been defined.
 
@@ -39,7 +41,7 @@ extended another structure `topological_fiber_bundle.trivialization` by a linear
 of PR https://github.com/leanprover-community/mathlib3/pull/17359, we have changed this to a single
 structure `Bundle.Trivialization`, together with a mixin class `Bundle.Trivialization.IsLinear`.
 
-This permits all the *data* of a vector bundle to be held at the level of fiber bundles, so that the
+This permits all the _data_ of a vector bundle to be held at the level of fiber bundles, so that the
 same trivializations can underlie an object's structure as (say) a vector bundle over `ℂ` and as a
 vector bundle over `ℝ`, as well as its structure simply as a fiber bundle.
 
@@ -409,10 +411,14 @@ instance : CoeFun (Trivialization F proj) fun _ => Z → B × F := ⟨toFun'⟩
 instance : Coe (Trivialization F proj) (Pretrivialization F proj) :=
   ⟨toPretrivialization⟩
 
-/-- See Note [custom simps projection] -/
+/--
+See Note \[custom simps projection\]
+-/
 def Simps.apply (proj : Z → B) (e : Trivialization F proj) : Z → B × F := e
 
-/-- See Note [custom simps projection] -/
+/--
+See Note \[custom simps projection\]
+-/
 noncomputable def Simps.symm_apply (proj : Z → B) (e : Trivialization F proj) : B × F → Z :=
   e.toOpenPartialHomeomorph.symm
 

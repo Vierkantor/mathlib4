@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Algebra.Category.ModuleCat.Presheaf.ChangeOfRings
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Pushforward of presheaves of modules
 
@@ -18,7 +21,6 @@ on presheaves of modules.
 In case we have a morphism of presheaves of rings `S ⟶ F.op ⋙ R`, we also construct
 a functor `pushforward : PresheafOfModules.{v} R ⥤ PresheafOfModules.{v} S`, and
 we show that they interact with the composition of morphisms similarly as pseudofunctors.
-
 -/
 
 @[expose] public section
@@ -163,8 +165,7 @@ After https://github.com/leanprover/lean4/pull/14624:
 We had to use the `instanceSearchTypes` backward compatibility flag to make an instance search
 succeed. Concretely, the following instance cannot be synthesized, writing `P Z` for
 `(ModuleCat.restrictScalars (RingCat.Hom.hom (φ.app Z))).obj (((pushforward₀ F R).obj M).obj Z)`:
-`DFunLike (↑(P X) →ₗ[↑(S.obj X)] ↑((ModuleCat.restrictScalars (RingCat.Hom.hom (φ.app X))).obj
-  (((pushforward₀ F R).obj N).obj X))) _ _`
+`DFunLike (↑(P X) →ₗ[↑(S.obj X)] ↑((ModuleCat.restrictScalars (RingCat.Hom.hom (φ.app X))).obj (((pushforward₀ F R).obj N).obj X))) _ _`
 It is needed to elaborate the `DFunLike.coe` in the statement below.
 
 This is the same failure as for `pushforward_obj_map_apply'` above, again while applying

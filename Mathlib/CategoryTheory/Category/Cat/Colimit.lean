@@ -9,6 +9,9 @@ public import Mathlib.AlgebraicTopology.SimplicialSet.NerveAdjunction
 public import Mathlib.CategoryTheory.Monad.Limits
 
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The category of small categories has all small colimits.
 

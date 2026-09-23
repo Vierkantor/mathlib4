@@ -12,6 +12,9 @@ public import Mathlib.RingTheory.LocalRing.ResidueField.Separable
 public import Mathlib.RingTheory.QuasiFinite.Basic
 public import Mathlib.RingTheory.Unramified.LocalRing
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Ramification index
 
@@ -29,7 +32,6 @@ an `Sq`-module.
 * `ramificationIdx'_eq_ramificationIdx`: The ramification index agrees with the usual definition in
   the case of Dedekind domains.
 * `ramificationIdx_tower`: Ramification index is multiplicative in towers.
-
 -/
 
 @[expose] public section

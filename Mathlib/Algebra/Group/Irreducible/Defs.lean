@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Group.Units.Defs
 public import Mathlib.Basic.Logic.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Irreducible elements in a monoid
 

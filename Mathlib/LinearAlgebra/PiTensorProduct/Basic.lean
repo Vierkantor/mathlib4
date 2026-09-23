@@ -9,6 +9,9 @@ public import Mathlib.LinearAlgebra.Multilinear.TensorProduct
 public import Mathlib.Tactic.AdaptationNote
 public import Mathlib.LinearAlgebra.Multilinear.Curry
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Tensor product of an indexed family of modules over commutative semirings
 

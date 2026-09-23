@@ -8,9 +8,11 @@ module
 public import Mathlib.Analysis.Calculus.ContDiff.Operations
 public import Mathlib.Analysis.Normed.Module.FiniteDimension
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Higher differentiability in finite dimensions.
-
 -/
 
 public section
@@ -26,7 +28,9 @@ variable {𝕜 : Type*} [NontriviallyNormedField 𝕜]
   {F : Type uF} [NormedAddCommGroup F] [NormedSpace 𝕜 F]
   {n : WithTop ℕ∞} {f : D → E} {s : Set D}
 
-/-! ### Finite-dimensional results -/
+/-!
+# Finite-dimensional results
+-/
 
 section FiniteDimensional
 

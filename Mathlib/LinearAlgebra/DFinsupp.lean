@@ -11,6 +11,9 @@ public import Mathlib.Data.Finsupp.ToDFinsupp
 public import Mathlib.LinearAlgebra.Finsupp.SumProd
 public import Mathlib.LinearAlgebra.LinearIndependent.Lemmas
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Properties of the module `Π₀ i, M i`
 
@@ -20,11 +23,8 @@ is defined in `Mathlib/Data/DFinsupp/Module.lean`.
 In this file we define `LinearMap` versions of various maps:
 
 * `DFinsupp.lsingle a : M →ₗ[R] Π₀ i, M i`: `DFinsupp.single a` as a linear map;
-
 * `DFinsupp.lmk s : (Π i : (↑s : Set ι), M i) →ₗ[R] Π₀ i, M i`: `DFinsupp.mk` as a linear map;
-
 * `DFinsupp.lapply i : (Π₀ i, M i) →ₗ[R] M`: the map `fun f ↦ f i` as a linear map;
-
 * `DFinsupp.lsum`: `DFinsupp.sum` or `DFinsupp.liftAddHom` as a `LinearMap`.
 
 ## Implementation notes
@@ -67,11 +67,13 @@ def lsingle (i) : M i →ₗ[R] Π₀ i, M i :=
 theorem lhom_ext ⦃φ ψ : (Π₀ i, M i) →ₗ[R] N⦄ (h : ∀ i x, φ (single i x) = ψ (single i x)) : φ = ψ :=
   LinearMap.toAddMonoidHom_injective <| addHom_ext h
 
-/-- Two `R`-linear maps from `Π₀ i, M i` which agree on each `single i x` agree everywhere.
+/--
+Two `R`-linear maps from `Π₀ i, M i` which agree on each `single i x` agree everywhere.
 
-See note [partially-applied ext lemmas].
+See note \[partially-applied ext lemmas\].
 After applying this lemma, if `M = R` then it suffices to verify
-`φ (single a 1) = ψ (single a 1)`. -/
+`φ (single a 1) = ψ (single a 1)`.
+-/
 @[ext 1100]
 theorem lhom_ext' ⦃φ ψ : (Π₀ i, M i) →ₗ[R] N⦄ (h : ∀ i, φ.comp (lsingle i) = ψ.comp (lsingle i)) :
     φ = ψ :=
@@ -149,9 +151,11 @@ def linearEquivFunOnFintype [Fintype ι] : (Π₀ i, M i) ≃ₗ[R] (Π i, M i) 
   map_smul' _ _ := by ext; rfl
 
 set_option backward.isDefEq.respectTransparency false in
-/-- The `DFinsupp` version of `Finsupp.lsum`.
+/--
+The `DFinsupp` version of `Finsupp.lsum`.
 
-See note [bundled maps over different rings] for why separate `R` and `S` semirings are used. -/
+See note \[bundled maps over different rings\] for why separate `R` and `S` semirings are used.
+-/
 @[simps]
 def lsum [Semiring S] [Module S N] [SMulCommClass R S N] :
     (∀ i, M i →ₗ[R] N) ≃ₗ[S] (Π₀ i, M i) →ₗ[R] N where
@@ -200,7 +204,8 @@ theorem iSup_range_lsingle : ⨆ i, LinearMap.range (lsingle (R := R) (M := M) i
 
 end Lsum
 
-/-! ### Bundled versions of `DFinsupp.mapRange`
+/-!
+# Bundled versions of `DFinsupp.mapRange`
 
 The names should match the equivalent bundled `Finsupp.mapRange` definitions.
 -/

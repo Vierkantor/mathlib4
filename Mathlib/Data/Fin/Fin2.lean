@@ -10,6 +10,9 @@ public import Mathlib.Data.Fintype.Defs
 public import Mathlib.Data.Nat.Notation
 public import Mathlib.Logic.Function.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Inductive type variant of `Fin`
 

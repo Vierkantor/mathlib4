@@ -12,6 +12,9 @@ public import Mathlib.Analysis.Normed.Operator.NormedSpace
 public import Mathlib.Analysis.Normed.Group.InfiniteSum
 public import Mathlib.Analysis.Normed.Group.AddTorsor
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Banach open mapping theorem
 
@@ -75,7 +78,9 @@ noncomputable instance [RingHomInvPair σ' σ] (f : E ≃SL[σ] F) :
     Inhabited (ContinuousLinearMap.NonlinearRightInverse (f : E →SL[σ] F)) :=
   ⟨f.toNonlinearRightInverse⟩
 
-/-! ### Proof of the Banach open mapping theorem -/
+/-!
+# Proof of the Banach open mapping theorem
+-/
 
 
 variable [CompleteSpace F]
@@ -260,7 +265,9 @@ theorem _root_.AffineMap.isOpenMap {F : Type*} [NormedAddCommGroup F] [NormedSpa
     ContinuousLinearMap.isOpenMap { f.linear with cont := AffineMap.continuous_linear_iff.mpr hf }
       (f.linear_surjective_iff.mpr surj)
 
-/-! ### Applications of the Banach open mapping theorem -/
+/-!
+# Applications of the Banach open mapping theorem
+-/
 
 section
 include σ'

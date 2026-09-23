@@ -7,6 +7,9 @@ module
 
 public import Mathlib.CategoryTheory.Limits.Shapes.WidePullbacks
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Locally directed gluing
 

@@ -10,6 +10,9 @@ public import Mathlib.Basic.ENNReal.Action
 public import Mathlib.Topology.Algebra.UniformMulAction
 public import Mathlib.Topology.MetricSpace.Algebra
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lemmas for `IsBoundedSMul` over normed additive groups
 

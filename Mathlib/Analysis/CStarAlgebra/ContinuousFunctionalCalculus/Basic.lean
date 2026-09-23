@@ -11,7 +11,11 @@ public import Mathlib.Analysis.CStarAlgebra.GelfandDuality
 public import Mathlib.Analysis.CStarAlgebra.Unitization
 public import Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.PosPart.Basic
 
-/-! # Continuous functional calculus
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Continuous functional calculus
 
 In this file we construct the `continuousFunctionalCalculus` for a normal element `a` of a
 (unital) C⋆-algebra over `ℂ`. This is a star algebra equivalence
@@ -49,7 +53,6 @@ relevant instances on C⋆-algebra can be found in the `Instances` file.
   elements in a unital C⋆-algebra over `ℂ`.
 * `CStarAlgebra.instNonnegSpectrumClass`: In a unital C⋆-algebra over `ℂ` which is also a
   `StarOrderedRing`, the spectrum of a nonnegative element is nonnegative.
-
 -/
 
 @[expose] public section
@@ -128,7 +131,7 @@ theorem continuousFunctionalCalculus_map_id [CStarAlgebra A] (a : A) [IsStarNorm
   (gelfandStarTransform (elemental ℂ a)).symm_apply_apply _
 
 /-!
-### Continuous functional calculus for normal elements
+# Continuous functional calculus for normal elements
 -/
 
 local notation "σₙ" => quasispectrum
@@ -220,7 +223,7 @@ end NonUnital
 end Normal
 
 /-!
-### The spectrum of a nonnegative element is nonnegative
+# The spectrum of a nonnegative element is nonnegative
 -/
 
 section SpectrumRestricts

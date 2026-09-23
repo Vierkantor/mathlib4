@@ -9,6 +9,9 @@ public import Mathlib.Basic.ENNReal.Action
 public import Mathlib.MeasureTheory.MeasurableSpace.Constructions
 public import Mathlib.MeasureTheory.OuterMeasure.Caratheodory
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Induced Outer Measure
 
@@ -24,7 +27,6 @@ at the end.
 ## Tags
 
 outer measure
-
 -/
 
 @[expose] public section

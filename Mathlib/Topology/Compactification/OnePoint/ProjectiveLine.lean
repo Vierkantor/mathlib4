@@ -11,6 +11,9 @@ public import Mathlib.LinearAlgebra.Matrix.GeneralLinearGroup.FinTwo
 public import Mathlib.LinearAlgebra.Projectivization.Action
 public import Mathlib.Topology.Compactification.OnePoint.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # One-point compactification and projectivization
 
@@ -19,7 +22,6 @@ We construct a set-theoretic equivalence between
 
 TODO: Add the extension of this equivalence to a homeomorphism in the case `K = ℝ`,
 where `OnePoint ℝ` gets the topology of one-point compactification.
-
 
 ## Main definitions and results
 

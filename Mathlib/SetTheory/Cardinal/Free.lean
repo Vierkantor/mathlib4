@@ -15,6 +15,9 @@ public import Mathlib.SetTheory.Cardinal.Arithmetic
 public import Mathlib.SetTheory.Cardinal.Finsupp
 public import Mathlib.Algebra.MonoidAlgebra.Cardinal
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cardinalities of free constructions
 

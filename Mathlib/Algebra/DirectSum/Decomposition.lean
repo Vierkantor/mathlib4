@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.DirectSum.Module
 public import Mathlib.Algebra.Module.Submodule.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Decompositions of additive monoids, groups, and modules into direct sums
 
@@ -16,7 +19,6 @@ public import Mathlib.Algebra.Module.Submodule.Basic
 * `DirectSum.Decomposition ℳ`: A typeclass to provide a constructive decomposition from
   an additive monoid `M` into a family of additive submonoids `ℳ`
 * `DirectSum.decompose ℳ`: The canonical equivalence provided by the above typeclass
-
 
 ## Main statements
 

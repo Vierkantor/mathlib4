@@ -12,8 +12,10 @@ public import Mathlib.Geometry.Convex.ConvexSpace.Module
 public import Mathlib.Algebra.BigOperators.Fin
 public import Mathlib.Algebra.Order.Algebra
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Convex spaces with compatible metric structure
 
 A convex space has a compatible metric structure if `dist(∑ tᵢ xᵢ, ∑ tᵢ yᵢ) ≤ ∑ tᵢ dist(xᵢ, yᵢ)`.
@@ -25,18 +27,18 @@ that has little to do with this definition.
 
 ## Main results
 
-- `Convexity.IsConvexDist`: The (`Prop`-valued) class of convex spaces with
+* `Convexity.IsConvexDist`: The (`Prop`-valued) class of convex spaces with
   compatible metric structure.
-- `Convexity.continuous_convexCombPair`: Binary convex combination is continuous.
-- `Convexity.IsConvexDist.of_convex`:
+* `Convexity.continuous_convexCombPair`: Binary convex combination is continuous.
+* `Convexity.IsConvexDist.of_convex`:
   Convex subspaces of normed spaces are convex metric spaces.
 
 ## TODO
 
-- Equip `StdSimplex` with a topology and show the analogous continuity result for n-ary
+* Equip `StdSimplex` with a topology and show the analogous continuity result for n-ary
   convex combinations.
-- Tidy up the imports with `Mathlib.Geometric.Convex.ConvexSpace.AffineSpace`.
-- Define convex functions with domain a convex space, and redefine `IsConvexDist` as saying that
+* Tidy up the imports with `Mathlib.Geometric.Convex.ConvexSpace.AffineSpace`.
+* Define convex functions with domain a convex space, and redefine `IsConvexDist` as saying that
   `dist : X × X → ℝ` is convex.
 -/
 

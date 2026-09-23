@@ -7,8 +7,10 @@ module
 
 public import Mathlib.Topology.Compactness.CompactlyGeneratedSpace
 public import Mathlib.CategoryTheory.Elementwise
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Compactly generated topological spaces
 
 This file defines the category of compactly generated topological spaces. These are spaces `X` such

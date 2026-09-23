@@ -11,6 +11,9 @@ public import Mathlib.RingTheory.Ideal.Maps
 public import Mathlib.RingTheory.Nilpotent.Defs
 public import Mathlib.RingTheory.Radical.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Nilpotent elements
 

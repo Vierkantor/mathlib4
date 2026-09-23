@@ -9,8 +9,10 @@ public import Mathlib.Algebra.Module.LinearMap.End
 public import Mathlib.Algebra.Module.Submodule.Defs
 public import Mathlib.Algebra.BigOperators.Group.Finset.Defs
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Linear maps involving submodules of a module
 
 In this file we define a number of linear maps involving submodules of a module.

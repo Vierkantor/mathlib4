@@ -10,6 +10,9 @@ public import Mathlib.LinearAlgebra.AffineSpace.Independent
 public import Mathlib.LinearAlgebra.AffineSpace.Pointwise
 public import Mathlib.LinearAlgebra.Basis.SMul
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Affine bases and barycentric coordinates
 
@@ -42,7 +45,6 @@ barycentric coordinate of `q : P` is `1 - fᵢ (q -ᵥ p i)`.
 ## TODO
 
 * Construct the affine equivalence between `P` and `finsuppAffineCoords ι k`.
-
 -/
 
 @[expose] public section

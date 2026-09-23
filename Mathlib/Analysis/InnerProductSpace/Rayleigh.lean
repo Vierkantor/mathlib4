@@ -11,6 +11,9 @@ public import Mathlib.Analysis.Normed.Algebra.Spectrum
 public import Mathlib.Analysis.Calculus.LagrangeMultipliers
 public import Mathlib.LinearAlgebra.Eigenspace.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The Rayleigh quotient
 
@@ -33,7 +36,6 @@ finite-dimensional and nontrivial, then `T` has some (nonzero) eigenvectors with
 A slightly more elaborate corollary is that if `E` is complete and `T` is a compact operator, then
 `T` has some (nonzero) eigenvector with eigenvalue either `⨆ x, ⟪T x, x⟫ / ‖x‖ ^ 2` or
 `⨅ x, ⟪T x, x⟫ / ‖x‖ ^ 2` (not necessarily both).
-
 -/
 
 public section
@@ -51,8 +53,10 @@ namespace ContinuousLinearMap
 
 variable (T : E →L[𝕜] E)
 
-/-- The *Rayleigh quotient* of a continuous linear map `T` (over `ℝ` or `ℂ`) at a vector `x` is
-the quantity `re ⟪T x, x⟫ / ‖x‖ ^ 2`. -/
+/--
+The _Rayleigh quotient_ of a continuous linear map `T` (over `ℝ` or `ℂ`) at a vector `x` is
+the quantity `re ⟪T x, x⟫ / ‖x‖ ^ 2`.
+-/
 noncomputable abbrev rayleighQuotient (x : E) := T.reApplyInnerSelf x / ‖(x : E)‖ ^ 2
 
 theorem rayleigh_smul (x : E) {c : 𝕜} (hc : c ≠ 0) :

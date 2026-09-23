@@ -10,6 +10,9 @@ public import Mathlib.Algebra.GroupWithZero.Pi
 public import Mathlib.Algebra.Ring.CompTypeclasses
 public import Mathlib.Algebra.Ring.Hom.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Pi instances for ring
 

@@ -10,6 +10,9 @@ public import Mathlib.Topology.Compactness.SigmaCompact
 public import Mathlib.Topology.Irreducible
 public import Mathlib.Topology.Separation.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # T₂ and T₂.₅ spaces.
 
@@ -63,9 +66,8 @@ If the space is also compact:
 
 ## References
 
-* <https://en.wikipedia.org/wiki/Separation_axiom>
-* [Willard's *General Topology*][zbMATH02107988]
-
+* [https://en.wikipedia.org/wiki/Separation\_axiom](https://en.wikipedia.org/wiki/Separation_axiom)
+* ‍\[Willard's _General Topology_\]\[zbMATH02107988\]
 -/
 
 @[expose] public section
@@ -269,7 +271,7 @@ section limUnder
 variable [T2Space X] {f : Filter X}
 
 /-!
-### Properties of `lim` and `limUnder`
+# Properties of `lim` and `limUnder`
 
 In this section we use explicit `Nonempty X` instances for `lim` and `limUnder`. This way the lemmas
 are useful without a `Nonempty X` instance.
@@ -327,7 +329,7 @@ theorem limUnder_nhdsWithin_id {x : X} {s : Set X} (h : x ∈ closure s) :
 end limUnder
 
 /-!
-### `T2Space` constructions
+# `T2Space` constructions
 
 We use two lemmas to prove that various standard constructions generate Hausdorff spaces from
 Hausdorff spaces:
@@ -336,7 +338,6 @@ Hausdorff spaces:
   provided that there exists a continuous map `f : X → Y` with a Hausdorff codomain such that
   `f x ≠ f y`. We use this lemma to prove that topological spaces defined using `induced` are
   Hausdorff spaces.
-
 * `separated_by_isOpenEmbedding` says that for an open embedding `f : X → Y` of a Hausdorff space
   `X`, the images of two distinct points `x y : X`, `x ≠ y` can be separated by open neighborhoods.
   We use this lemma to prove that topological spaces defined using `coinduced` are Hausdorff spaces.

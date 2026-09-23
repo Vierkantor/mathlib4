@@ -9,8 +9,10 @@ public import Mathlib.LinearAlgebra.Dimension.StrongRankCondition
 public import Mathlib.LinearAlgebra.FreeModule.Finite.Basic
 
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Quadratic Algebra
 
 In this file we define the quadratic algebra `QuadraticAlgebra R a b` over a commutative ring `R`,
@@ -19,21 +21,22 @@ and define some algebraic structures on it.
 ## Main definitions
 
 * `QuadraticAlgebra R a b`:
-  [Bourbaki, *Algebra I*][bourbaki1989] with coefficients `a`, `b` in `R`.
+  ‍\[Bourbaki, _Algebra I_\]\[bourbaki1989\] with coefficients `a`, `b` in `R`.
 
 ## Tags
 
 Quadratic algebra, quadratic extension
-
 -/
 
 @[expose] public section
 
 universe u
 
-/-- Quadratic algebra over a type with fixed coefficient where $i^2 = a + bi$, implemented as
+/--
+Quadratic algebra over a type with fixed coefficient where $`i^2 = a + bi`, implemented as
 a structure with two fields, `re` and `im`. When `R` is a commutative ring, this is isomorphic to
-`R[X]/(X^2-b*X-a)`. -/
+`R[X]/(X^2-b*X-a)`.
+-/
 @[ext]
 structure QuadraticAlgebra (R : Type u) (a b : R) : Type u where
   /-- Real part of an element in quadratic algebra -/

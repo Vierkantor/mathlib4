@@ -8,6 +8,9 @@ module
 public import Mathlib.Order.Closure
 public import Mathlib.Order.Hom.CompleteLattice
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Nucleus
 
@@ -18,6 +21,7 @@ Sublocales of a locale generalize the concept of subspaces in topology to the po
 A nucleus is an endomorphism of a frame which corresponds to a sublocale.
 
 ## References
+
 https://ncatlab.org/nlab/show/sublocale
 https://ncatlab.org/nlab/show/nucleus
 -/
@@ -58,7 +62,9 @@ instance : FunLike (Nucleus X) X X where
   coe x := x.toFun
   coe_injective f g h := by obtain ⟨⟨_, _⟩, _⟩ := f; congr!
 
-/-- See Note [custom simps projection] -/
+/--
+See Note \[custom simps projection\]
+-/
 def Simps.apply (n : Nucleus X) : X → X := n
 
 @[simp] lemma toFun_eq_coe (n : Nucleus X) : n.toFun = n := rfl

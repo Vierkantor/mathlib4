@@ -8,7 +8,11 @@ module
 public import Mathlib.MeasureTheory.Constructions.BorelSpace.Basic
 public import Mathlib.MeasureTheory.Constructions.Cylinders
 
-/-! # Cylinders with closed compact bases
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Cylinders with closed compact bases
 
 We define the set of all cylinders with closed compact bases. Those sets play a role in the
 proof of Kolmogorov's extension theorem.
@@ -22,7 +26,6 @@ proof of Kolmogorov's extension theorem.
 * `mem_measurableCylinders_of_mem_closedCompactCylinders`: in a topological space with second
   countable topology and measurable open sets, a set in `closedCompactCylinders X` is a measurable
   cylinder.
-
 -/
 
 @[expose] public section

@@ -16,10 +16,13 @@ public import Mathlib.RingTheory.PowerBasis
 public import Mathlib.RingTheory.PrincipalIdealDomain
 public import Mathlib.RingTheory.Polynomial.Quotient
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Adjoining roots of polynomials
 
-This file defines the commutative ring `AdjoinRoot f`, the ring R[X]/(f) obtained from a
+This file defines the commutative ring `AdjoinRoot f`, the ring R\[X\]/(f) obtained from a
 commutative ring `R` and a polynomial `f : R[X]`. If furthermore `R` is a field and `f` is
 irreducible, the field structure on `AdjoinRoot f` is constructed.
 
@@ -31,21 +34,15 @@ including `AdjoinRoot f = R[X]/(f)` itself.
 
 The main definitions are in the `AdjoinRoot` namespace.
 
-*  `mk f : R[X] →+* AdjoinRoot f`, the natural ring homomorphism.
-
-*  `of f : R →+* AdjoinRoot f`, the natural ring homomorphism.
-
-* `root f : AdjoinRoot f`, the image of X in R[X]/(f).
-
+* `mk f : R[X] →+* AdjoinRoot f`, the natural ring homomorphism.
+* `of f : R →+* AdjoinRoot f`, the natural ring homomorphism.
+* `root f : AdjoinRoot f`, the image of X in R\[X\]/(f).
 * `lift (i : R →+* S) (x : S) (h : f.eval₂ i x = 0) : (AdjoinRoot f) →+* S`, the ring
-  homomorphism from R[X]/(f) to S extending `i : R →+* S` and sending `X` to `x`.
-
+  homomorphism from R\[X\]/(f) to S extending `i : R →+* S` and sending `X` to `x`.
 * `lift_hom (x : S) (hfx : aeval x f = 0) : AdjoinRoot f →ₐ[R] S`, the algebra
-  homomorphism from R[X]/(f) to S extending `algebraMap R S` and sending `X` to `x`
-
+  homomorphism from R\[X\]/(f) to S extending `algebraMap R S` and sending `X` to `x`
 * `equiv : (AdjoinRoot f →ₐ[F] E) ≃ {x // x ∈ f.aroots E}` a
   bijection between algebra homomorphisms from `AdjoinRoot` and roots of `f` in `S`
-
 -/
 
 @[expose] public section

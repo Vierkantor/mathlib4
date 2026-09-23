@@ -15,6 +15,9 @@ public import Mathlib.Topology.Homotopy.Affine
 
 import Mathlib.Analysis.Calculus.AddTorsor.AffineMap
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Poincaré lemma for 1-forms
 

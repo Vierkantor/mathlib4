@@ -10,31 +10,33 @@ public import Mathlib.LinearAlgebra.Isomorphisms
 public import Mathlib.RingTheory.Spectrum.Prime.FreeLocus
 public import Mathlib.RingTheory.TensorProduct.Finite
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Grassmannians
 
 ## Main definitions
 
-- `Module.Grassmannian`: `G(k, M; R)` is the `k`ᵗʰ Grassmannian of the `R`-module `M`. It is defined
-  to be the set of submodules of `M` whose **quotient** is locally free of rank `k`. Note that there
+* `Module.Grassmannian`: `G(k, M; R)` is the `k`ᵗʰ Grassmannian of the `R`-module `M`. It is defined
+  to be the set of submodules of `M` whose *quotient* is locally free of rank `k`. Note that there
   is another convention in literature where the `k`ᵗʰ Grassmannian would instead be `k`-dimensional
   subspaces of a given vector space over a field. See implementation notes below.
-
-- `Module.Grassmannian.functor`: The Grassmannian functor that sends an `R`-algebra `A` to the set
+* `Module.Grassmannian.functor`: The Grassmannian functor that sends an `R`-algebra `A` to the set
   `G(k, A ⊗[R] M; A)`.
 
 ## Implementation notes
 
 In the literature, two conventions exist:
 
-1. The `k`ᵗʰ Grassmannian parametrises `k`-dimensional **subspaces** of a given finite-dimensional
+1. The `k`ᵗʰ Grassmannian parametrises `k`-dimensional *subspaces* of a given finite-dimensional
    vector space over a field.
-2. The `k`ᵗʰ Grassmannian parametrises **quotients** that are locally free of rank `k`, of a given
+2. The `k`ᵗʰ Grassmannian parametrises *quotients* that are locally free of rank `k`, of a given
    module over a ring.
 
 For the purposes of Algebraic Geometry, the first definition here cannot be generalised to obtain
 a scheme to represent the functor, which is why the second definition is the one chosen by
-[Grothendieck, EGA I.9.7.3][grothendieck-1971] (Springer edition only), and in EGA V.11
+‍\[Grothendieck, EGA I.9.7.3\]\[grothendieck-1971\] (Springer edition only), and in EGA V.11
 (unpublished).
 
 The first definition in the stated generality (i.e. over a field `F`, and finite-dimensional vector
@@ -44,13 +46,14 @@ quotients of `V*`, the dual of `V`. In symbols, this means that the first defini
 to `G(n - k, V; F)` and also to `G(k, V →ₗ[F] F; F)`, where `n` is the dimension of `V`.
 
 ## TODO
-- Define and recover the subspace-definition (i.e. the first definition above).
-- Define `chart x` indexed by `x : Fin k → M` as a subtype consisting of those
+
+* Define and recover the subspace-definition (i.e. the first definition above).
+* Define `chart x` indexed by `x : Fin k → M` as a subtype consisting of those
   `N ∈ G(k, A ⊗[R] M; A)` such that the composition `R^k → M → M⧸N` is an isomorphism.
-- Define `chartFunctor x` to turn `chart x` into a subfunctor of `Module.Grassmannian.functor`. This
+* Define `chartFunctor x` to turn `chart x` into a subfunctor of `Module.Grassmannian.functor`. This
   will correspond to an affine open chart in the Grassmannian.
-- Grassmannians for schemes and quasi-coherent sheaf of modules.
-- Representability of `Module.Grassmannian.functor R M k`.
+* Grassmannians for schemes and quasi-coherent sheaf of modules.
+* Representability of `Module.Grassmannian.functor R M k`.
 -/
 
 public section
@@ -117,9 +120,11 @@ end BaseChangeMkQ
 
 variable {B} (f : A →ₐ[R] B)
 
-/-- The map on Grassmannians induced by base change along an algebra map `A → B`.
+/--
+The map on Grassmannians induced by base change along an algebra map `A → B`.
 Given a submodule `N` of `A ⊗[R] M`, the image is the kernel of the composition
-B ⊗[R] M ≃ B ⊗[A] (A ⊗[R] M) → B ⊗[A] ((A ⊗[R] M) ⧸ N)`. -/
+B ⊗\[R\] M ≃ B ⊗\[A\] (A ⊗\[R\] M) → B ⊗\[A\] ((A ⊗\[R\] M) ⧸ N)\`.
+-/
 def map (N : G(k, (A ⊗[R] M); A)) : G(k, (B ⊗[R] M); B) :=
   letI : Algebra A B := f.toAlgebra
   letI : IsScalarTower R A B := IsScalarTower.of_algebraMap_eq' <| IsScalarTower.algebraMap_eq R A B

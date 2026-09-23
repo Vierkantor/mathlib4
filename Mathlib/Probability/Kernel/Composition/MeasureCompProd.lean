@@ -9,6 +9,9 @@ public import Mathlib.MeasureTheory.Measure.Decomposition.Lebesgue
 public import Mathlib.MeasureTheory.Measure.Prod
 public import Mathlib.Probability.Kernel.Composition.CompProd
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Composition-Product of a measure and a kernel
 

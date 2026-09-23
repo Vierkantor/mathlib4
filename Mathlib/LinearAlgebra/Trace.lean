@@ -14,6 +14,9 @@ public import Mathlib.RingTheory.TensorProduct.Free
 import Mathlib.LinearAlgebra.GeneralLinearGroup.AlgEquiv
 import Mathlib.RingTheory.SimpleRing.Matrix
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Trace of a linear map
 
@@ -387,8 +390,10 @@ end
 
 end LinearMap
 
-/-- If `S` is an `R-algebra that is free of rank `1` over `R`, the map `R →+* S` is an
-isomorphism. -/
+/--
+If `S` is an `R-algebra that is free of rank  `1`over`R`, the map  `R →+\* S\` is an
+isomorphism.
+-/
 lemma Module.Free.bijective_algebraMap_of_finrank_eq_one {R S : Type*} [CommRing R] [Ring S]
     [Algebra R S] [Nontrivial R] [Free R S] (h : finrank R S = 1) :
     Function.Bijective (algebraMap R S) := by

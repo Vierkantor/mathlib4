@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.Finset.Card
 public import Mathlib.Data.Finset.Lattice.Fold
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Maximum and minimum of finite sets
 -/
@@ -22,7 +25,9 @@ variable {α β ι : Type*}
 
 namespace Finset
 
-/-! ### max and min of finite sets -/
+/-!
+# max and min of finite sets
+-/
 
 section MaxMin
 

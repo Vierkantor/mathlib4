@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Monoidal.Types.Coyoneda
 public import Mathlib.CategoryTheory.Monoidal.Center
 public import Mathlib.Tactic.ApplyFun
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Enriched categories
 
@@ -31,8 +34,8 @@ We verify that when `V = Type v`, all these notions reduce to the usual ones.
 
 ## References
 
-* [Kim Morrison, David Penneys, _Monoidal Categories Enriched in Braided Monoidal Categories_]
-  [morrison-penney-enriched]
+* ‍\[Kim Morrison, David Penneys, _Monoidal Categories Enriched in Braided Monoidal Categories_\]
+  ‍\[morrison-penney-enriched\]
 -/
 
 @[expose] public section

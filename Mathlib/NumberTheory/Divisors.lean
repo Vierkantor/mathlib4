@@ -16,6 +16,9 @@ public import Mathlib.Data.Nat.PrimeFin
 public import Mathlib.Data.Nat.SuccPred
 public import Mathlib.Order.Interval.Finset.Nat
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Divisor Finsets
 
@@ -23,7 +26,9 @@ This file defines sets of divisors of a natural number. This is particularly use
 for defining Dirichlet convolution.
 
 ## Main Definitions
+
 Let `n : ℕ`. All of the following definitions are in the `Nat` namespace:
+
 * `divisors n` is the `Finset` of natural numbers that divide `n`.
 * `properDivisors n` is the `Finset` of natural numbers that divide `n`, other than `n`.
 * `divisorsAntidiagonal n` is the `Finset` of pairs `(x,y)` such that `x * y = n`.
@@ -36,8 +41,8 @@ Therefore we adopt the convention that `Nat.divisors 0`, `Nat.properDivisors 0`,
 `Nat.divisorsAntidiagonal 0` and `Int.divisorsAntidiag 0` are all `∅`.
 
 ## Tags
-divisors, perfect numbers
 
+divisors, perfect numbers
 -/
 
 @[expose] public section

@@ -11,6 +11,9 @@ public import Mathlib.Tactic.TFAE
 public import Mathlib.Topology.Order.Monotone
 public import Mathlib.Topology.Order.SuccPred
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Topology of ordinals
 

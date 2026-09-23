@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Order.Nonneg.Module
 public import Mathlib.Topology.Algebra.ConstMulAction
 public import Mathlib.Topology.Algebra.MulAction
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Continuous nonnegative scalar multiplication
 -/

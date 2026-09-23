@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Data.ZMod.QuotientGroup
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cyclic groups
 

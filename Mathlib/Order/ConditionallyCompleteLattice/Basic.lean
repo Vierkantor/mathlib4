@@ -9,6 +9,9 @@ public import Mathlib.Data.Set.Lattice.Indexed
 public import Mathlib.Order.ConditionallyCompleteLattice.Defs
 public import Mathlib.Order.ConditionallyCompletePartialOrder.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Theory of conditionally complete lattices
 
@@ -485,7 +488,7 @@ theorem Monotone.map_csInf {β : Type*} [ConditionallyCompleteLattice β] {f : �
 end ConditionallyCompleteLinearOrder
 
 /-!
-### Lemmas about a conditionally complete linear order with bottom element
+# Lemmas about a conditionally complete linear order with bottom element
 
 In this case we have `Sup ∅ = ⊥`, so we can drop some `Nonempty`/`Set.Nonempty` assumptions.
 -/
@@ -758,7 +761,7 @@ theorem AntitoneOn.sInf_image_Icc [Preorder α] [ConditionallyCompleteLattice β
   exact h'.dual_left.sInf_image_Icc (α := αᵒᵈ) hab
 
 /-!
-### Supremum/infimum of `Set.image2`
+# Supremum/infimum of `Set.image2`
 
 A collection of lemmas showing what happens to the suprema/infima of `s` and `t` when mapped under
 a binary function whose partial evaluations are lower/upper adjoints of Galois connections.
@@ -802,7 +805,7 @@ end
 section WithTopBot
 
 /-!
-### Complete lattice structure on `WithTop (WithBot α)`
+# Complete lattice structure on `WithTop (WithBot α)`
 
 If `α` is a `ConditionallyCompleteLattice`, then we show that `WithTop α` and `WithBot α`
 also inherit the structure of conditionally complete lattices. Furthermore, we show

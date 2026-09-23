@@ -11,6 +11,9 @@ public import Mathlib.GroupTheory.Perm.Cycle.Basic
 public import Mathlib.GroupTheory.NoncommPiCoprod
 public import Mathlib.Tactic.Group
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cycle factors of a permutation
 
@@ -30,7 +33,7 @@ variable {α β : Type*}
 namespace Equiv.Perm
 
 /-!
-### `cycleOf`
+# `cycleOf`
 -/
 
 section CycleOf
@@ -347,7 +350,7 @@ end CycleOf
 
 
 /-!
-### `cycleFactors`
+# `cycleFactors`
 -/
 
 section cycleFactors

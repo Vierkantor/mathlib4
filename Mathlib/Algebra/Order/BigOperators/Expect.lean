@@ -14,6 +14,9 @@ public import Mathlib.Tactic.GCongr
 
 import Mathlib.Algebra.Module.Torsion.Field
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Order properties of the average over a finset
 -/

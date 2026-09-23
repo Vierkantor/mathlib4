@@ -12,6 +12,9 @@ public import Mathlib.LinearAlgebra.Eigenspace.Minpoly
 public import Mathlib.LinearAlgebra.FreeModule.StrongRankCondition
 public import Mathlib.RingTheory.Artinian.Module
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Results on the eigenvalue 0
 
@@ -29,7 +32,6 @@ such as being nilpotent, having determinant equal to 0, having a non-trivial ker
 * `LinearMap.finrank_maxGenEigenspace`:
   the dimension of the maximal generalized eigenspace of an endomorphism
   is the trailing degree of its characteristic polynomial
-
 -/
 
 public section

@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.Calculus.ContDiff.Operations
 public import Mathlib.Analysis.Normed.Module.FiniteDimension
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Infinitely smooth "bump" functions
 
@@ -16,8 +19,8 @@ that is equal to `1` on a ball of smaller radius.
 
 These functions have many uses in real analysis. E.g.,
 
-- they can be used to construct a smooth partition of unity which is a very useful tool;
-- they can be used to approximate a continuous function by infinitely smooth functions.
+* they can be used to construct a smooth partition of unity which is a very useful tool;
+* they can be used to approximate a continuous function by infinitely smooth functions.
 
 There are two classes of spaces where bump functions are guaranteed to exist:
 inner product spaces and finite-dimensional spaces.
@@ -29,18 +32,18 @@ We also define a structure `ContDiffBump` that holds the center and radii of the
 An element `f : ContDiffBump c` can be coerced to a function which is an infinitely smooth function
 such that
 
-- `f` is equal to `1` in `Metric.closedBall c f.rIn`;
-- `support f = Metric.ball c f.rOut`;
-- `0 ≤ f x ≤ 1` for all `x`.
+* `f` is equal to `1` in `Metric.closedBall c f.rIn`;
+* `support f = Metric.ball c f.rOut`;
+* `0 ≤ f x ≤ 1` for all `x`.
 
 ## Main Definitions
 
-- `ContDiffBump (c : E)`: a structure holding data needed to construct
+* `ContDiffBump (c : E)`: a structure holding data needed to construct
   an infinitely smooth bump function.
-- `ContDiffBumpBase (E : Type*)`: a family of infinitely smooth bump functions
+* `ContDiffBumpBase (E : Type*)`: a family of infinitely smooth bump functions
   that can be used to construct coercion of a `ContDiffBump (c : E)`
   to a function.
-- `HasContDiffBump (E : Type*)`: a typeclass saying that `E` has a `ContDiffBumpBase`.
+* `HasContDiffBump (E : Type*)`: a typeclass saying that `E` has a `ContDiffBumpBase`.
   Two instances of this typeclass (for inner product spaces and for finite-dimensional spaces)
   are provided elsewhere.
 

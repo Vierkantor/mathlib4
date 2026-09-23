@@ -10,6 +10,9 @@ public import Mathlib.Data.Finset.Lattice.Union
 public import Mathlib.Data.Multiset.Powerset
 public import Mathlib.Data.Set.Pairwise.Lattice
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The powerset of a finset
 -/
@@ -23,7 +26,9 @@ open Function Multiset
 
 variable {α : Type*} {s t : Finset α}
 
-/-! ### powerset -/
+/-!
+# powerset
+-/
 
 
 section Powerset

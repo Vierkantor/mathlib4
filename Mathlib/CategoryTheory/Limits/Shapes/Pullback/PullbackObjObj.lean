@@ -8,6 +8,9 @@ module
 public import Mathlib.CategoryTheory.Limits.Shapes.Pullback.IsPullback.Basic
 public import Mathlib.CategoryTheory.Adjunction.Parametrized
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Leibniz Constructions
 
@@ -39,7 +42,7 @@ a parameterized adjunction `F.leibnizAdjunction G adj₂ : F.leibnizPushout ⊣�
 
 ## References
 
-* [Emily Riehl, Dominic Verity, *Elements of ∞-Category Theory*, Definition C.2.8][RV22]
+* ‍\[Emily Riehl, Dominic Verity, _Elements of ∞-Category Theory_, Definition C.2.8\]\[RV22\]
 * https://ncatlab.org/nlab/show/pushout-product
 * https://ncatlab.org/nlab/show/pullback-power
 

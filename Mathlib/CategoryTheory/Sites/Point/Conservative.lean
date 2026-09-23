@@ -11,6 +11,9 @@ public import Mathlib.CategoryTheory.Abelian.GrothendieckAxioms.Types
 public import Mathlib.CategoryTheory.Functor.ReflectsIso.Jointly
 public import Mathlib.CategoryTheory.Types.Epimorphisms
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Conservative families of points
 
@@ -27,7 +30,6 @@ and they are also jointly faithful.
 We provide a constructor `ObjectProperty.IsConservativeFamilyOfPoints.mk'`
 which allows to verify that a family of points is conservative
 using a condition involving covering sieves (SGA 4 IV 6.5 (a)).
-
 -/
 
 public section

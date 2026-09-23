@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.Set.Monotone
 public import Mathlib.Order.ConditionallyCompleteLattice.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Extension of a monotone function from a set to the whole space
 

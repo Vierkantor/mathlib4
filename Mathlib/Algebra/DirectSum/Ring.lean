@@ -9,6 +9,9 @@ public import Mathlib.Algebra.GradedMonoid
 public import Mathlib.Algebra.DirectSum.Basic
 public import Mathlib.Algebra.Ring.Associator
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Additively-graded multiplicative structures on `⨁ i, A i`
 
@@ -87,7 +90,9 @@ namespace DirectSum
 
 open DirectSum
 
-/-! ### Typeclasses -/
+/-!
+# Typeclasses
+-/
 
 
 section Defs
@@ -152,7 +157,9 @@ theorem of_eq_of_gradedMonoid_eq {A : ι → Type*} [∀ i : ι, AddCommMonoid (
 
 variable (A : ι → Type*)
 
-/-! ### Instances for `⨁ i, A i` -/
+/-!
+# Instances for `⨁ i, A i`
+-/
 
 
 section One
@@ -355,7 +362,8 @@ instance commRing : CommRing (⨁ i, A i) where
 
 end CommRing
 
-/-! ### Instances for `A 0`
+/-!
+# Instances for `A 0`
 
 The various `G*` instances are enough to promote the `AddCommMonoid (A 0)` structure to various
 types of multiplicative structure.
@@ -364,7 +372,6 @@ Implementation detail: Note that these instances on `A 0` have very general disc
 tree keys (e.g. `DirectSum.instRingOfNat` has discrimination tree key `Ring _` and often
 sends typeclass inference on a wild goose chase with any goal of the form `Ring (F X)`),
 so we scope these instances to the `DirectSum` namespace.
-
 -/
 
 
@@ -517,10 +524,12 @@ section ToSemiring
 variable {R : Type*} [∀ i, AddCommMonoid (A i)] [AddMonoid ι] [GSemiring A] [Semiring R]
 variable {A}
 
-/-- If two ring homomorphisms from `⨁ i, A i` are equal on each `of A i y`,
+/--
+If two ring homomorphisms from `⨁ i, A i` are equal on each `of A i y`,
 then they are equal.
 
-See note [partially-applied ext lemmas]. -/
+See note \[partially-applied ext lemmas\].
+-/
 @[ext]
 theorem ringHom_ext' ⦃F G : (⨁ i, A i) →+* R⦄
     (h : ∀ i, (↑F : _ →+ R).comp (of A i) = (↑G : _ →+ R).comp (of A i)) : F = G :=
@@ -600,7 +609,9 @@ end ToSemiring
 
 end DirectSum
 
-/-! ### Concrete instances -/
+/-!
+# Concrete instances
+-/
 
 
 section Uniform

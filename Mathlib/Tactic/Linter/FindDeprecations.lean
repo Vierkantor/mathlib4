@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Init
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The `#clear_deprecations` command
 
@@ -149,8 +152,9 @@ def deprecatedHashMap (oldDate newDate : String) :
 `removeRanges file rgs` removes from the string `file` the substrings whose ranges are in the array
 `rgs`.
 
-*Notes*.
-* The command makes the assumption that `rgs` is *sorted*.
+_Notes_.
+
+* The command makes the assumption that `rgs` is _sorted_.
 * The command removes all consecutive whitespace following the end of each range.
 -/
 public -- for use in unit tests, but perhaps useful more broadly
@@ -171,7 +175,7 @@ def removeRanges (file : String) (rgs : Array Lean.Syntax.Range) : String := Id.
 `removeDeprecations fname rgs` reads the content of `fname` and removes from it the substrings
 whose ranges are in the array `rgs`.
 
-The command makes the assumption that `rgs` is *sorted*.
+The command makes the assumption that `rgs` is _sorted_.
 -/
 def removeDeprecations (fname : String) (rgs : Array Lean.Syntax.Range) : IO String :=
   return removeRanges (← IO.FS.readFile fname) rgs
@@ -203,11 +207,12 @@ The `declName` is mostly for printing information, but is not used essentially b
 It returns the pair `(temp file name, file without the commands that generated the declarations)`.
 
 In the course of doing so, the function creates a temporary file from `fname`, by
+
 * adding the import `Mathlib.Tactic.Linter.CommandRanges` and
 * setting the `linter.commandRanges` option to `true`.
 
 It parses the temporary file, capturing the output and uses the command ranges to remove the
-ranges of the *commands* that generated the passed declaration ranges.
+ranges of the _commands_ that generated the passed declaration ranges.
 -/
 def rewriteOneFile (fname : String) (rgs : Array (Name × Lean.Syntax.Range)) :
     CommandElabM (String × String) := do

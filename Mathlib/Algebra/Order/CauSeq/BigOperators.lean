@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Order.CauSeq.Basic
 public import Mathlib.Algebra.Order.Archimedean.Defs
 public import Mathlib.Data.Rat.Floor
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cauchy sequences and big operators
 

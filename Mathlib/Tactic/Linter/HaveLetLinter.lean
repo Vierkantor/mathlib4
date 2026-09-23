@@ -9,17 +9,22 @@ public import Mathlib.Init
 public meta import Lean.Elab.Command
 public meta import Lean.Elab.InfoTree.Util
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The `have` vs `let` linter
 
 The `have` vs `let` linter flags uses of `have` to introduce a hypothesis whose Type is not `Prop`.
 
 The option for this linter is a natural number, but really there are only 3 settings:
+
 * `0` -- inactive;
 * `1` -- active only on noisy declarations;
 * `2` or more -- always active.
 
 TODO:
+
 * Also lint `let` vs `have`.
 * `haveI` may need to change to `let/letI`?
 * `replace`, `classical!`, `classical`, `tauto` internally use `have`:

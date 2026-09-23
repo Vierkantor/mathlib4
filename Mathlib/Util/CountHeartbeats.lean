@@ -9,16 +9,21 @@ public import Mathlib.Init
 public meta import Lean.Util.Heartbeats
 public meta import Lean.Meta.Tactic.TryThis
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Counting heartbeats
 
 Defines a command wrapper that prints the number of heartbeats used in the enclosed command.
 
 For example
+
 ```
 #count_heartbeats in
 theorem foo : 42 = 6 * 7 := rfl
 ```
+
 will produce an info message containing a number around 51.
 If this number is above the current `maxHeartbeats`, we also print a `Try this:` suggestion.
 -/
@@ -114,7 +119,7 @@ def roundDownIf (n : Nat) (approx : Bool) : String :=
 set_option linter.style.maxHeartbeats false in
 /--
 `#count_heartbeats in cmd` counts the heartbeats used in the enclosed command `cmd`.
-Use `#count_heartbeats` to count the heartbeats in *all* the following declarations.
+Use `#count_heartbeats` to count the heartbeats in _all_ the following declarations.
 
 This is most useful for setting sufficient but reasonable limits via `set_option maxHeartbeats`
 for long-running declarations.
@@ -229,7 +234,7 @@ end CountHeartbeats
 end Mathlib
 
 /-!
-## The "countHeartbeats" linter
+# The "countHeartbeats" linter
 
 The "countHeartbeats" linter counts the heartbeats of every declaration.
 -/

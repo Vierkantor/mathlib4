@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.Finset.Image
 public import Mathlib.Data.Set.SymmDiff
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Symmetric difference of finite sets
 
@@ -16,7 +19,6 @@ This file concerns the symmetric difference operator `s Δ t` on finite sets.
 ## Tags
 
 finite sets, finset
-
 -/
 
 public section
@@ -33,7 +35,9 @@ variable {α : Type*} {β : Type*}
 
 namespace Finset
 
-/-! ### Symmetric difference -/
+/-!
+# Symmetric difference
+-/
 
 section SymmDiff
 

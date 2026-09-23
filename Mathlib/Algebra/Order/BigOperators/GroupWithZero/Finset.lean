@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Order.GroupWithZero.Basic
 public import Mathlib.Tactic.NormNum.Inv
 public import Mathlib.Tactic.NormNum.Pow
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Big operators on a finset in groups with zero involving order
 

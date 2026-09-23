@@ -13,6 +13,9 @@ public import Mathlib.Tactic.Bound.Init
 public import Mathlib.Tactic.ContinuousFunctionalCalculus
 public import Mathlib.Tactic.SetLike
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Parsing matrix literals
 
@@ -27,7 +30,7 @@ of this file can be gone.
 
 ## Main definitions
 
-- `matchMatrixLit?`: match a closed matrix literal.
+* `matchMatrixLit?`: match a closed matrix literal.
 -/
 
 public meta section

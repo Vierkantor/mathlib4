@@ -9,7 +9,11 @@ public import Mathlib.RingTheory.MvPowerSeries.Evaluation
 public import Mathlib.RingTheory.PowerSeries.PiTopology
 public import Mathlib.Algebra.MvPolynomial.Equiv
 
-/-! # Evaluation of power series
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Evaluation of power series
 
 Power series in one indeterminate are the particular case of multivariate power series,
 for the `Unit` type of indeterminates.
@@ -41,7 +45,6 @@ the following lemmas furnish the properties of evaluation:
 * `PowerSeries.eval₂_eq_tsum`: the evaluation is given by the sum of its monomials, evaluated.
 
 We refer to the documentation of `MvPowerSeries.eval₂` for more details.
-
 -/
 
 @[expose] public section
@@ -93,7 +96,9 @@ theorem HasEval.mul_right [IsLinearTopology S S]
   simp only [hasEval_iff] at hx ⊢
   exact hx.mul_right _
 
-/-- [Bourbaki, *Algebra*, chap. 4, §4, n°3, Prop. 4 (i) (a & b)][bourbaki1981]. -/
+/--
+‍\[Bourbaki, _Algebra_, chap. 4, §4, n°3, Prop. 4 (i) (a & b)\]\[bourbaki1981\].
+-/
 theorem HasEval.map (hφ : Continuous φ) {a : R} (ha : HasEval a) :
     HasEval (φ a) := by
   simp only [hasEval_iff] at ha ⊢

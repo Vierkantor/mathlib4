@@ -9,26 +9,29 @@ public import Mathlib.Topology.Algebra.Module.ContinuousLinearMap.Idempotent
 public import Mathlib.Topology.Algebra.Module.ContinuousLinearMap.Quotient
 public import Mathlib.Topology.Algebra.Module.Equiv
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Topological complements of submodules
 
 Let `M` be a topological `R`-module. Two submodules `p, q` of `M` are said to be
-*topological complements* (`Submodule.IsTopCompl`) if they are algebraic complements and the
+_topological complements_ (`Submodule.IsTopCompl`) if they are algebraic complements and the
 algebraic isomorphism `M ≃ p × q` is a homeomorphism.
 
 Not all submodules of `M` admit such a topological complements (even if they admit algebraic
-complements). In the literature, such a submodule is called *topologically complemented*
-or *direct*. One may also find the terminology *closed complemented* because,
+complements). In the literature, such a submodule is called _topologically complemented_
+or _direct_. One may also find the terminology _closed complemented_ because,
 in a Banach space, a closed algebraic complement is automatically a topological complement.
 This is the terminology we use for now (`Submodule.ClosedComplemented`), but we should eventually
 change to something less misleading.
 
 ## Main definitions
 
-* `Submodule.IsTopCompl`: we say that two submodules are *topological complements* if they are
+* `Submodule.IsTopCompl`: we say that two submodules are _topological complements_ if they are
   algebraic complements and the projection on `p` along `q` is continuous. This is equivalent
   to the definition given above.
-* `Submodule.ClosedComplemented`: we say that a submodule is (topologically) *complemented* if
+* `Submodule.ClosedComplemented`: we say that a submodule is (topologically) _complemented_ if
   there exists a continuous projection `M →ₗ[R] p`.
 * `Submodule.projectionOntoL`: if `h : IsTopCompl p q`, `p.projectionOntoL q h` is the
   continuous linear projection `M →L[R] p` along `q`. This is the continuous version of
@@ -61,7 +64,6 @@ map `M ≃ p × q`.
 Because the condition is symmetric, a lot of lemmas could have a left and a right variation.
 In general we only include the left version, the right one being accessible through
 `Submodule.IsTopCompl.symm`.
-
 -/
 
 @[expose] public section
@@ -76,14 +78,18 @@ variable {R : Type*} [Ring R] {M N : Type*} [TopologicalSpace M] [TopologicalSpa
 
 open ContinuousLinearMap
 
-/-- Two submodules `p` and `q` are *topological complements* if they are algebraic complements and
-the projection on `p` along `q` is continuous. -/
+/--
+Two submodules `p` and `q` are _topological complements_ if they are algebraic complements and
+the projection on `p` along `q` is continuous.
+-/
 @[pp_nodot]
 structure IsTopCompl (p q : Submodule R M) : Prop where
   isCompl : IsCompl p q
   continuous_projection : Continuous (p.projection q isCompl)
 
-/-- A submodule `p` is called *complemented* if there exists a continuous projection `M →ₗ[R] p`. -/
+/--
+A submodule `p` is called _complemented_ if there exists a continuous projection `M →ₗ[R] p`.
+-/
 def ClosedComplemented (p : Submodule R M) : Prop :=
   ∃ f : M →L[R] p, ∀ x : p, f x = x
 

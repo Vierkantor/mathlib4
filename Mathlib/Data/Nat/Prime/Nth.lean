@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.Nat.Prime.Defs
 public import Mathlib.Data.Nat.Nth
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The Nth primes
 -/

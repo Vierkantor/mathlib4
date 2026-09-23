@@ -8,6 +8,9 @@ module
 public import Mathlib.Topology.Algebra.SeparationQuotient.Basic
 public import Mathlib.RingTheory.Finiteness.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Separation quotient is a finite module
 

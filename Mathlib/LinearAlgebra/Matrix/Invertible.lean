@@ -8,7 +8,11 @@ module
 public import Mathlib.LinearAlgebra.Matrix.ConjTranspose
 public import Mathlib.Tactic.Abel
 
-/-! # Extra lemmas about invertible matrices
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Extra lemmas about invertible matrices
 
 A few of the `Invertible` lemmas generalize to multiplication of rectangular matrices.
 

@@ -13,12 +13,16 @@ public import Mathlib.Data.Fintype.BigOperators
 public import Mathlib.Data.Matrix.Diagonal
 public import Mathlib.Algebra.Order.BigOperators.Group.Finset
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Matrix multiplication
 
 This file defines vector and matrix multiplication
 
 ## Main definitions
+
 * `dotProduct`: the dot product between two vectors
 * `Matrix.mul`: multiplication of two matrices
 * `Matrix.mulVec`: multiplication of a matrix with a vector

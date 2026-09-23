@@ -10,6 +10,9 @@ public import Mathlib.Topology.Category.Profinite.Nobeling.Span
 public import Mathlib.Topology.Category.Profinite.Nobeling.Successor
 public import Mathlib.Topology.Category.Profinite.Nobeling.ZeroLimit
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Nöbeling's theorem
 
@@ -23,7 +26,7 @@ This file proves Nöbeling's theorem. For the overall proof outline see
 
 ## References
 
-- [scholze2019condensed], Theorem 5.4.
+* ‍\[scholze2019condensed\], Theorem 5.4.
 -/
 
 @[expose] public section
@@ -40,7 +43,7 @@ variable {I : Type u} (C : Set (I → Bool)) [LinearOrder I] [WellFoundedLT I]
 
 section Induction
 /-!
-## The induction
+# The induction
 
 Here we put together the results of the sections `Zero`, `Limit` and `Successor` to prove the
 predicate `P I o` holds for all ordinals `o`, and conclude with the main result:

@@ -10,6 +10,9 @@ public import Mathlib.Data.Sigma.Basic
 public import Mathlib.Logic.Equiv.Prod
 public import Mathlib.Tactic.Coe
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Equivalence between sum types
 
@@ -17,10 +20,9 @@ In this file we continue the work on equivalences begun in `Mathlib/Logic/Equiv/
 
 * canonical isomorphisms between various types: e.g.,
 
-  - `Equiv.sumEquivSigmaBool` is the canonical equivalence between the sum of two types `α ⊕ β`
+  * `Equiv.sumEquivSigmaBool` is the canonical equivalence between the sum of two types `α ⊕ β`
     and the sigma-type `Σ b, bif b then β else α`;
-
-  - `Equiv.prodSumDistrib : α × (β ⊕ γ) ≃ (α × β) ⊕ (α × γ)` shows that type product and type sum
+  * `Equiv.prodSumDistrib : α × (β ⊕ γ) ≃ (α × β) ⊕ (α × γ)` shows that type product and type sum
     satisfy the distributive law up to a canonical equivalence;
 
 More definitions of this kind can be found in other files.

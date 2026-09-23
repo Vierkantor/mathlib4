@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Order.Group.Nat
 public import Mathlib.Algebra.Order.Ring.Canonical
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Distance function on ℕ
 

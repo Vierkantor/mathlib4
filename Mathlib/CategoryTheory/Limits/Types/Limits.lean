@@ -8,11 +8,13 @@ module
 public import Mathlib.Basic.UnivLE
 public import Mathlib.CategoryTheory.Limits.HasLimits
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Limits in the category of types.
 
 We show that the category of types has all limits, by providing the usual concrete models.
-
 -/
 
 @[expose] public section

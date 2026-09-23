@@ -7,8 +7,10 @@ module
 
 public import Mathlib.MeasureTheory.VectorMeasure.Operations
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Relations between vector measures
 
 This file defines absolute continuity and mutual singularity for vector measures and proves their

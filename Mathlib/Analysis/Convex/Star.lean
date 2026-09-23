@@ -12,6 +12,9 @@ public import Mathlib.Analysis.Convex.Segment
 public import Mathlib.Tactic.GCongr
 public import Mathlib.Tactic.Module
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Star-convex sets
 
@@ -30,7 +33,7 @@ Note that this has nothing to do with star rings, `Star` and co.
 
 ## Implementation notes
 
-Instead of saying that a set is star-convex, we say a set is star-convex *at a point*. This has the
+Instead of saying that a set is star-convex, we say a set is star-convex _at a point_. This has the
 advantage of allowing us to talk about convexity as being "everywhere star-convexity" and of making
 the union of star-convex sets be star-convex.
 
@@ -415,7 +418,7 @@ end AddCommGroup
 end LinearOrderedField
 
 /-!
-#### Star-convex sets in an ordered space
+# Star-convex sets in an ordered space
 
 Relates `starConvex` and `Set.ordConnected`.
 -/

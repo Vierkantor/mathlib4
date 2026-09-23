@@ -12,6 +12,9 @@ public import Mathlib.Tactic.Basic
 public import Plausible.Gen
 public import Plausible.Testable
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 This module contains `Plausible.Testable` and `Plausible.PrintableProb` instances for mathlib types.
 -/

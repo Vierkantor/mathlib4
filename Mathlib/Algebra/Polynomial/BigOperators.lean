@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Algebra.Defs
 public import Mathlib.Algebra.Polynomial.Monic
 public import Mathlib.LinearAlgebra.LinearIndependent.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lemmas for the interaction between polynomials and `∑` and `∏`.
 
@@ -16,14 +19,14 @@ Recall that `∑` and `∏` are notation for `Finset.sum` and `Finset.prod` resp
 
 ## Main results
 
-- `Polynomial.natDegree_prod_of_monic` : the degree of a product of monic polynomials is the
+* `Polynomial.natDegree_prod_of_monic` : the degree of a product of monic polynomials is the
   product of degrees. We prove this only for `[CommSemiring R]`,
   but it ought to be true for `[Semiring R]` and `List.prod`.
-- `Polynomial.natDegree_prod` : for polynomials over an integral domain,
+* `Polynomial.natDegree_prod` : for polynomials over an integral domain,
   the degree of the product is the sum of degrees.
-- `Polynomial.leadingCoeff_prod` : for polynomials over an integral domain,
+* `Polynomial.leadingCoeff_prod` : for polynomials over an integral domain,
   the leading coefficient is the product of leading coefficients.
-- `Polynomial.prod_X_sub_C_coeff_card_pred` carries most of the content for computing
+* `Polynomial.prod_X_sub_C_coeff_card_pred` carries most of the content for computing
   the second coefficient of the characteristic polynomial.
 -/
 

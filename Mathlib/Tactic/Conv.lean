@@ -9,6 +9,9 @@ public import Mathlib.Init
 public meta import Lean.Elab.Tactic.Conv.Basic
 public meta import Lean.Elab.Command
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 Additional `conv` tactics.
 -/
@@ -52,6 +55,8 @@ macro_rules
 
 macro "run_conv" e:doSeq : conv => `(conv| tactic' => run_tac $e)
 
+
+set_option doc.verso false
 /--
 `conv in pat => cs` runs the `conv` tactic sequence `cs`
 on the first subexpression matching the pattern `pat` in the target.
@@ -68,6 +73,8 @@ conv in (occs := *) x + y => rw [add_comm]
 macro "conv" " in " occs?:(occs)? p:term " => " code:convSeq : conv =>
   `(conv| conv => pattern $[$occs?]? $p; ($code:convSeq))
 
+
+set_option doc.verso true
 /--
 * `discharge => tac` is a conv tactic which rewrites target `p` to `True` if `tac` is a tactic
   which proves the goal `⊢ p`.

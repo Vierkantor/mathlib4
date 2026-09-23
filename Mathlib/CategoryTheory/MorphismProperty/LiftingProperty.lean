@@ -10,6 +10,9 @@ public import Mathlib.CategoryTheory.MorphismProperty.Retract
 public import Mathlib.CategoryTheory.LiftingProperties.Limits
 public import Mathlib.Order.GaloisConnection.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Left and right lifting properties
 
@@ -17,7 +20,6 @@ Given a morphism property `T`, we define the left and right lifting property wit
 
 We show that the left lifting property is stable under retracts, cobase change, coproducts,
 and composition, with dual statements for the right lifting property.
-
 -/
 
 @[expose] public section

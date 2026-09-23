@@ -9,6 +9,9 @@ public import Mathlib.Order.DirSupClosed
 public import Mathlib.Order.ScottContinuity
 public import Mathlib.Topology.Order.UpperLowerSetTopology
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Scott topology
 
@@ -16,21 +19,21 @@ This file introduces the Scott topology on a preorder.
 
 ## Main definitions
 
-- `Topology.scottHausdorff`: the Scott-Hausdorff topology is the topology whose closed sets are
+* `Topology.scottHausdorff`: the Scott-Hausdorff topology is the topology whose closed sets are
   `DirSupClosed`, i.e. closed under directed suprema.
-- `Topology.scott` - the Scott topology is defined as the join of the topology of upper sets and the
+* `Topology.scott` - the Scott topology is defined as the join of the topology of upper sets and the
   Scott-Hausdorff topology (the topological space where a set `u` is open if, when the least upper
   bound of a directed set `d` lies in `u` then there is a tail of `d` which is a subset of `u`).
 
 ## Main statements
 
-- `Topology.IsScott.isUpperSet_of_isOpen`: Scott open sets are upper.
-- `Topology.IsScott.isLowerSet_of_isClosed`: Scott closed sets are lower.
-- `Topology.IsScott.monotone_of_continuous`: Functions continuous w.r.t. the Scott topology are
+* `Topology.IsScott.isUpperSet_of_isOpen`: Scott open sets are upper.
+* `Topology.IsScott.isLowerSet_of_isClosed`: Scott closed sets are lower.
+* `Topology.IsScott.monotone_of_continuous`: Functions continuous w.r.t. the Scott topology are
   monotone.
-- `Topology.IsScott.scottContinuousOn_iff_continuous` - a function is Scott continuous (preserves
+* `Topology.IsScott.scottContinuousOn_iff_continuous` - a function is Scott continuous (preserves
   least upper bounds of directed sets) if and only if it is continuous w.r.t. the Scott topology.
-- `Topology.IsScott.instT0Space` - the Scott topology on a partial order is T₀.
+* `Topology.IsScott.instT0Space` - the Scott topology on a partial order is T₀.
 
 ## Implementation notes
 
@@ -47,13 +50,13 @@ are monotone and preserve limits of countable chains (`OmegaCompletePartialOrder
 A Scott continuous function between `OmegaCompletePartialOrder`s is always
 `OmegaCompletePartialOrder.Continuous'` (`OmegaCompletePartialOrder.ScottContinuous.continuous'`).
 The converse is true in some special cases, but not in general
-([Domain Theory, 2.2.4][abramsky_gabbay_maibaum_1994]).
+(\[Domain Theory, 2.2.4\]\[abramsky\_gabbay\_maibaum\_1994\]).
 
 ## References
 
-* [Abramsky and Jung, *Domain Theory*][abramsky_gabbay_maibaum_1994]
-* [Gierz et al, *A Compendium of Continuous Lattices*][GierzEtAl1980]
-* [Karner, *Continuous monoids and semirings*][Karner2004]
+* ‍\[Abramsky and Jung, _Domain Theory_\]\[abramsky\_gabbay\_maibaum\_1994\]
+* ‍\[Gierz et al, _A Compendium of Continuous Lattices_\]\[GierzEtAl1980\]
+* ‍\[Karner, _Continuous monoids and semirings_\]\[Karner2004\]
 
 ## Tags
 
@@ -68,7 +71,9 @@ variable {α β : Type*}
 
 namespace Topology
 
-/-! ### Scott-Hausdorff topology -/
+/-!
+# Scott-Hausdorff topology
+-/
 
 /-- The Scott-Hausdorff topology.
 
@@ -153,7 +158,9 @@ theorem isClosed_iff_dirSupClosed : IsClosed s ↔ DirSupClosed s := by
 end univ
 end IsScottHausdorff
 
-/-! ### Scott topology -/
+/-!
+# Scott topology
+-/
 
 section Scott
 section Preorder

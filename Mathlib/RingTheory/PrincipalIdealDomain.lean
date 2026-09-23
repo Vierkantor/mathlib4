@@ -12,6 +12,9 @@ public import Mathlib.RingTheory.Ideal.Prod
 public import Mathlib.RingTheory.Ideal.Nonunits
 public import Mathlib.RingTheory.Noetherian.UniqueFactorizationDomain
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Principal ideal rings, principal ideal domains, and Bézout rings
 
@@ -26,16 +29,15 @@ Note that for principal ideal domains, one should use
 `[IsDomain R] [IsPrincipalIdealRing R]`. There is no explicit definition of a PID.
 Theorems about PID's are in the `PrincipalIdealRing` namespace.
 
-- `IsBezout`: the predicate saying that every finitely generated left ideal is principal.
-- `generator`: a generator of a principal ideal (or more generally submodule)
-- `to_uniqueFactorizationMonoid`: a PID is a unique factorization domain
+* `IsBezout`: the predicate saying that every finitely generated left ideal is principal.
+* `generator`: a generator of a principal ideal (or more generally submodule)
+* `to_uniqueFactorizationMonoid`: a PID is a unique factorization domain
 
 ## Main results
 
-- `Ideal.IsPrime.to_maximal_ideal`: a non-zero prime ideal in a PID is maximal.
-- `EuclideanDomain.instIsPrincipalIdealRing`: a Euclidean domain is a PID.
-- `IsBezout.nonemptyGCDMonoid`: Every Bézout domain is a GCD domain.
-
+* `Ideal.IsPrime.to_maximal_ideal`: a non-zero prime ideal in a PID is maximal.
+* `EuclideanDomain.instIsPrincipalIdealRing`: a Euclidean domain is a PID.
+* `IsBezout.nonemptyGCDMonoid`: Every Bézout domain is a GCD domain.
 -/
 
 @[expose] public section

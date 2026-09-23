@@ -12,6 +12,9 @@ public import Mathlib.Algebra.Order.Module.PositiveLinearMap
 public import Mathlib.Analysis.SpecialFunctions.Bernstein
 public import Mathlib.LinearAlgebra.Matrix.PosDef
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Positive operators
 
@@ -29,13 +32,13 @@ of requiring self adjointness in the definition.
 
 * `ContinuousLinearMap.IsPositive.conj_adjoint` : if `T : E →L[𝕜] E` is positive,
   then for any `S : E →L[𝕜] F`, `S ∘L T ∘L S†` is also positive.
-* `ContinuousLinearMap.isPositive_iff_complex` : in a ***complex*** Hilbert space,
+* `ContinuousLinearMap.isPositive_iff_complex` : in a _*complex*_ Hilbert space,
   checking that `⟪T x, x⟫` is a nonnegative real number for all `x` suffices to prove that
   `T` is positive.
 
 ## References
 
-* [Bourbaki, *Topological Vector Spaces*][bourbaki1987]
+* ‍\[Bourbaki, _Topological Vector Spaces_\]\[bourbaki1987\]
 
 ## Tags
 

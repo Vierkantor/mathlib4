@@ -10,6 +10,9 @@ public import Mathlib.Algebra.GroupWithZero.Action.Units
 public import Mathlib.Algebra.Group.Units.Opposite
 public import Mathlib.Algebra.Module.Opposite
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Multiplication on the left/right as additive automorphisms
 

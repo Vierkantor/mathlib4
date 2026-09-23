@@ -13,7 +13,11 @@ public import Lean.Message
 
 -- This file is imported by the Header linter, hence has no mathlib imports.
 
-/-! # The `directoryDependency` linter
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# The `directoryDependency` linter
 
 The `directoryDependency` linter detects imports between directories that are supposed to be
 independent. By specifying that one directory does not import from another, we can improve the
@@ -295,13 +299,15 @@ def mathlibRoots : List Name := [`Mathlib, `MathlibTest, `Archive, `Counterexamp
 /-- Cache for `forbiddenImportDirs`: the configuration file is read at most once per process. -/
 initialize forbiddenImportDirsCache : IO.Ref (Option NamePrefixRel) ← IO.mkRef none
 
-/-- `forbiddenImportDirs` relates module prefixes, specifying that modules with the first prefix
+/--
+`forbiddenImportDirs` relates module prefixes, specifying that modules with the first prefix
 should not import modules with the second prefix (except if specifically allowed in
 `overrideAllowedImportDirs`).
 
 For example, `scripts/forbiddenDirs.json` contains the entry
-`"Mathlib.Algebra.Notation": ["Mathlib.Algebra"]` and ``(`Mathlib.Algebra.Notation,
-`Mathlib.Algebra.Notation)`` is in `overrideAllowedImportDirs` because modules in
+`"Mathlib.Algebra.Notation": ["Mathlib.Algebra"]` and
+``(`Mathlib.Algebra.Notation, `Mathlib.Algebra.Notation)`` is in `overrideAllowedImportDirs` because
+modules in
 `Mathlib/Algebra/Notation.lean` cannot import modules in `Mathlib.Algebra` that are
 outside `Mathlib/Algebra/Notation.lean`.
 

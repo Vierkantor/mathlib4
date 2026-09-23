@@ -14,6 +14,9 @@ public import Mathlib.Data.List.Basic
 public import Mathlib.InformationTheory.Coding.UniquelyDecodable
 import Mathlib.Analysis.SpecificLimits.Normed
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Kraft-McMillan Inequality
 

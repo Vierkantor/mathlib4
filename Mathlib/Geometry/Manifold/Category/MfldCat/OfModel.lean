@@ -8,6 +8,9 @@ module
 public import Mathlib.Geometry.Manifold.Diffeomorph
 public import Mathlib.Topology.Category.TopCat.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The category of `C^n` manifolds modeled on `I`
 
@@ -15,6 +18,7 @@ This file defines the bundled category `ModelWithCorners.MfldCat.{u} I n` of `C^
 on a fixed `I : ModelWithCorners 𝕜 E H`, along with the forgetful functor to `TopCat`.
 
 ## Future work
+
 * Show that `ModelWithCorners.MfldCat I n` has coproducts given by disjoint unions.
 -/
 

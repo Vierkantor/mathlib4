@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Shift.CommShift
 public import Mathlib.CategoryTheory.Shift.Induced
 public import Mathlib.CategoryTheory.Quotient
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The shift on a quotient category
 
@@ -20,7 +23,6 @@ a shift.
 
 The condition `r.IsCompatibleWithShift A` on the relation `r` is a class so that
 the shift can be automatically inferred on the quotient category.
-
 -/
 
 @[expose] public section

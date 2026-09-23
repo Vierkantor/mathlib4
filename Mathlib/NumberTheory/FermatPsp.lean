@@ -10,6 +10,9 @@ public import Mathlib.FieldTheory.Finite.Basic
 public import Mathlib.Order.Filter.Cofinite
 public import Mathlib.Tactic.GCongr
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Fermat Pseudoprimes
 
@@ -28,9 +31,9 @@ Numbers which are Fermat pseudoprimes to all bases are known as Carmichael numbe
 
 The main definitions for this file are
 
-- `Nat.ProbablePrime`: A number `n` is a probable prime to base `b` if it passes the Fermat
+* `Nat.ProbablePrime`: A number `n` is a probable prime to base `b` if it passes the Fermat
   primality test; that is, if `n` divides `b ^ (n - 1) - 1`
-- `Nat.FermatPsp`: A number `n` is a pseudoprime to base `b` if it is a probable prime to base `b`,
+* `Nat.FermatPsp`: A number `n` is a pseudoprime to base `b` if it is a probable prime to base `b`,
   is composite, and is coprime with `b` (this last condition is automatically true if `n` divides
   `b ^ (n - 1) - 1`, but some sources include it in the definition).
 
@@ -39,7 +42,8 @@ Note that all composite numbers are pseudoprimes to base 0 and 1, and that the d
 that 0 and 1 are probable primes to any base.
 
 The main theorems are
-- `Nat.exists_infinite_pseudoprimes`: there are infinitely many pseudoprimes to any base `b ≥ 1`
+
+* `Nat.exists_infinite_pseudoprimes`: there are infinitely many pseudoprimes to any base `b ≥ 1`
 -/
 
 @[expose] public section
@@ -194,7 +198,9 @@ private def psp_from_prime (b : ℕ) (p : ℕ) : ℕ :=
 This is a proof that the number produced using `psp_from_prime` is actually pseudoprime to base `b`.
 The primary purpose of this lemma is to help prove `exists_infinite_pseudoprimes`.
 
-We use <https://primes.utm.edu/notes/proofs/a_pseudoprimes.html> as a rough outline of the proof.
+We use [
+https://primes.utm.edu/notes/proofs/a\_pseudoprimes.html](https://primes.utm.edu/notes/proofs/a_pseudoprimes.html)
+as a rough outline of the proof.
 -/
 private theorem psp_from_prime_psp {b : ℕ} (b_ge_two : 2 ≤ b) {p : ℕ} (p_prime : p.Prime)
     (p_gt_two : 2 < p) (not_dvd : ¬p ∣ b * (b ^ 2 - 1)) : FermatPsp (psp_from_prime b p) b := by

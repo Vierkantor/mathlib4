@@ -9,10 +9,14 @@ public import Mathlib.MeasureTheory.Integral.Lebesgue.Map
 public import Mathlib.MeasureTheory.Integral.Lebesgue.Markov
 public import Mathlib.MeasureTheory.Measure.Count
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lebesgue integral over finite and countable types, sets and measures
 
 The lemmas in this file require at least one of the following of the Lebesgue integral:
+
 * The type of the set of integration is finite or countable
 * The set of integration is finite or countable
 * The measure is finite, s-finite or sigma-finite

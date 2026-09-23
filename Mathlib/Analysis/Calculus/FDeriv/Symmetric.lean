@@ -10,6 +10,9 @@ public import Mathlib.Analysis.Calculus.Deriv.Pow
 public import Mathlib.Analysis.Calculus.MeanValue
 public import Mathlib.Analysis.Calculus.ContDiff.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Symmetry of the second derivative
 

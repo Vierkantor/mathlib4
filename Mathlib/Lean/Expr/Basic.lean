@@ -13,6 +13,9 @@ public import Lean.Meta.AppBuilder
 public import Lean.Meta.Match.MatcherInfo
 public import Lean.Meta.Transform
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Additional operations on Expr and related types
 
@@ -27,7 +30,9 @@ namespace Lean
 
 namespace BinderInfo
 
-/-! ### Declarations about `BinderInfo` -/
+/-!
+# Declarations about `BinderInfo`
+-/
 
 /-- The brackets corresponding to a given `BinderInfo`. -/
 def brackets : BinderInfo → String × String
@@ -115,7 +120,9 @@ def mkConst' (constName : Name) : MetaM Expr := do
 
 namespace Expr
 
-/-! ### Declarations about `Expr` -/
+/-!
+# Declarations about `Expr`
+-/
 
 def bvarIdx? : Expr → Option Nat
   | bvar idx => some idx

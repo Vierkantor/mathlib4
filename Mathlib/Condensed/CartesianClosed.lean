@@ -10,8 +10,10 @@ public import Mathlib.CategoryTheory.Category.Init
 public import Mathlib.Data.EReal.Inv
 public import Mathlib.Topology.Algebra.InfiniteSum.Order
 public import Mathlib.Topology.MetricSpace.Bounded
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Condensed sets form a Cartesian closed category
 -/
 

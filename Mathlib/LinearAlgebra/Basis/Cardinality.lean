@@ -10,6 +10,9 @@ public import Mathlib.LinearAlgebra.LinearIndependent.Defs
 public import Mathlib.LinearAlgebra.Span.Basic
 public import Mathlib.SetTheory.Cardinal.Pigeonhole
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Results relating bases and cardinality.
 -/

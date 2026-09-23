@@ -11,27 +11,27 @@ public import Mathlib.Tactic.TFAE
 public import Mathlib.Topology.ContinuousOn
 public import Mathlib.Topology.Maps.OpenQuotient
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Inseparable points in a topological space
 
 In this file we prove basic properties of the following notions defined elsewhere.
 
 * `Specializes` (notation: `x ⤳ y`) : a relation saying that `𝓝 x ≤ 𝓝 y`;
-
 * `Inseparable`: a relation saying that two points in a topological space have the same
   neighbourhoods; equivalently, they can't be separated by an open set;
-
 * `InseparableSetoid X`: same relation, as a `Setoid`;
-
 * `SeparationQuotient X`: the quotient of `X` by its `InseparableSetoid`.
 
 We also prove various basic properties of the relation `Inseparable`.
 
 ## Notation
 
-- `x ⤳ y`: notation for `Specializes x y`;
-- `x ~ᵢ y` is used as a local notation for `Inseparable x y`;
-- `𝓝 x` is the neighbourhoods filter `nhds x` of a point `x`, defined elsewhere.
+* `x ⤳ y`: notation for `Specializes x y`;
+* `x ~ᵢ y` is used as a local notation for `Inseparable x y`;
+* `𝓝 x` is the neighbourhoods filter `nhds x` of a point `x`, defined elsewhere.
 
 ## Tags
 
@@ -47,7 +47,7 @@ variable {X Y Z α ι : Type*} {A : ι → Type*} [TopologicalSpace X] [Topologi
   [TopologicalSpace Z] [∀ i, TopologicalSpace (A i)] {x y z : X} {s : Set X} {f g : X → Y}
 
 /-!
-### `Specializes` relation
+# `Specializes` relation
 -/
 
 /-- A collection of equivalent definitions of `x ⤳ y`. The public API is given by `iff` lemmas
@@ -447,7 +447,7 @@ lemma GeneralizingMap.comp {f : X → Y} {g : Y → Z}
   exact fun s h ↦ hg _ (hf _ h)
 
 /-!
-### `Inseparable` relation
+# `Inseparable` relation
 -/
 
 local infixl:0 " ~ᵢ " => Inseparable
@@ -558,7 +558,7 @@ theorem IsOpen.not_inseparable (hs : IsOpen s) (hx : x ∈ s) (hy : y ∉ s) : �
   hy <| (h.mem_open_iff hs).1 hx
 
 /-!
-### Separation quotient
+# Separation quotient
 
 In this section we define the quotient of a topological space by the `Inseparable` relation.
 -/

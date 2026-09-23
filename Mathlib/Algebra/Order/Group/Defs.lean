@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Order.Group.Unbundled.Basic
 public import Mathlib.Algebra.Order.Monoid.Defs
 public import Mathlib.Algebra.Order.Sub.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Ordered groups
 
@@ -63,7 +66,7 @@ theorem IsOrderedMonoid.toIsOrderedCancelMonoid'
   le_of_mul_le_mul_left _ _ _ h := le_of_mul_le_mul_left' h
 
 /-!
-### Linearly ordered commutative groups
+# Linearly ordered commutative groups
 -/
 /- `LinearOrderedCommGroup` and `LinearOrderedAddCommGroup` no longer exist,
 but we still use the namespaces.

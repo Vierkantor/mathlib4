@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Order.GroupWithZero.Defs
 public import Mathlib.Algebra.Order.Monoid.Defs
 public import Mathlib.Order.Filter.Cofinite
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lemmas about `Is(Co)Bounded(Under)`
 

@@ -12,6 +12,9 @@ public import Mathlib.Order.Filter.Pointwise
 public import Mathlib.Topology.Algebra.Monoid.Defs
 public import Mathlib.Topology.Algebra.Ring.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Topology on extended natural numbers
 -/

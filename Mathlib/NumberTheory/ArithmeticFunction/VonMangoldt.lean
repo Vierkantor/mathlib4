@@ -9,6 +9,9 @@ public import Mathlib.Analysis.SpecialFunctions.Log.Basic
 public import Mathlib.Data.Nat.Cast.Field
 public import Mathlib.NumberTheory.ArithmeticFunction.Moebius
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The von Mangoldt Function
 
@@ -19,7 +22,7 @@ In this file we define the von Mangoldt function: the function on natural number
 
 The main definition for this file is
 
-- `ArithmeticFunction.vonMangoldt`: The von Mangoldt function `Λ`.
+* `ArithmeticFunction.vonMangoldt`: The von Mangoldt function `Λ`.
 
 We then prove the classical summation property of the von Mangoldt function in
 `ArithmeticFunction.vonMangoldt_sum`, that `∑ i ∈ n.divisors, Λ i = Real.log n`, and use this
@@ -31,7 +34,6 @@ to deduce alternative expressions for the von Mangoldt function via Möbius inve
 We use the standard notation `Λ` to represent the von Mangoldt function.
 It is accessible in the locales `ArithmeticFunction` (like the notations for other arithmetic
 functions) and also in the scope `ArithmeticFunction.vonMangoldt`.
-
 -/
 
 @[expose] public section

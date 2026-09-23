@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Init
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Definition of `Nat.nthRoot`
 
@@ -16,10 +19,12 @@ The function is defined in terms of natural numbers with no dependencies outside
 
 @[expose] public section
 
-/-- `Nat.nthRoot n a = ⌊(a : ℝ) ^ (1 / n : ℝ)⌋₊` defined in terms of natural numbers.
+/--
+`Nat.nthRoot n a = ⌊(a : ℝ) ^ (1 / n : ℝ)⌋₊` defined in terms of natural numbers.
 
-We use Newton's method to find a root of $x^n = a$,
-so it converges superexponentially fast. -/
+We use Newton's method to find a root of $`x^n = a`,
+so it converges superexponentially fast.
+-/
 def Nat.nthRoot : Nat → Nat → Nat
   | 0, _ => 1
   | 1, a => a

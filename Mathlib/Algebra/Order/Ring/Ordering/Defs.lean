@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Ring.Subsemiring.Defs
 public import Mathlib.RingTheory.Ideal.Prime
 public import Mathlib.Algebra.Group.Pointwise.Set.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Ring orderings
 
@@ -18,6 +21,7 @@ addition and multiplication that contains all squares, but not `-1`.
 The support of a preordering `P` is the set of elements `x` such that both `x` and `-x` lie in `P`.
 
 An ordering `O` on `R` is a preordering such that
+
 1. `O` contains either `x` or `-x` for each `x` in `R` and
 2. the support of `O` is a prime ideal.
 
@@ -29,14 +33,13 @@ into an ordered ring, and vice versa.
 
 ## References
 
-- [*An introduction to real algebra*, T.Y. Lam][lam_1984]
-
+* ‍\[_An introduction to real algebra_, T.Y. Lam\]\[lam\_1984\]
 -/
 
 @[expose] public section
 
 /-!
-#### Preorderings
+# Preorderings
 -/
 
 variable (R : Type*) [CommRing R]
@@ -126,7 +129,7 @@ end copy
 variable {P : RingPreordering R}
 
 /-!
-#### Support
+# Support
 -/
 
 section supportAddSubgroup

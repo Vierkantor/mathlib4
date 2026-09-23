@@ -10,6 +10,9 @@ public import Mathlib.CategoryTheory.ConcreteCategory.Bundled
 public import Mathlib.CategoryTheory.Types.Basic
 public import Mathlib.CategoryTheory.ConcreteCategory.Notation
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Category of categories
 

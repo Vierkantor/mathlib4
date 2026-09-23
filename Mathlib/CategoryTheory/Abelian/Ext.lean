@@ -12,6 +12,9 @@ public import Mathlib.CategoryTheory.Abelian.Opposite
 public import Mathlib.CategoryTheory.Abelian.Projective.Resolution
 public import Mathlib.CategoryTheory.Linear.Yoneda
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Ext
 
@@ -23,7 +26,6 @@ by (left) deriving in the first argument of the bifunctor `(X, Y) ↦ ModuleCat.
 TODO (@joelriou): When the derived category enters mathlib, the Ext groups shall be
 redefined using morphisms in the derived category, and then it will be possible to
 compute `Ext` using both projective or injective resolutions.
-
 -/
 
 @[expose] public section

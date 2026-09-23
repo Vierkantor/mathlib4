@@ -9,6 +9,9 @@ public import Mathlib.Data.Finset.Defs
 public import Mathlib.Data.Multiset.ZeroCons
 public import Mathlib.Order.Directed
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Finsets of ordered types
 -/

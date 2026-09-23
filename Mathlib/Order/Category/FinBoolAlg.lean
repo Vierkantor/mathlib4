@@ -11,6 +11,9 @@ public import Mathlib.Order.Category.FinBddDistLat
 public import Mathlib.Order.Hom.CompleteLattice
 public import Mathlib.Data.Set.Subsingleton
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The category of finite Boolean algebras
 

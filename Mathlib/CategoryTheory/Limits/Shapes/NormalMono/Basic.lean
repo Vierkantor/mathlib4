@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Limits.Shapes.RegularMono
 public import Mathlib.CategoryTheory.Limits.Shapes.Kernels
 public import Mathlib.CategoryTheory.Limits.Preserves.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Definitions and basic properties of normal monomorphisms and epimorphisms.
 
@@ -22,7 +25,6 @@ normal monomorphism is normal (`CategoryTheory.normalOfIsPullbackSndOfNormal`).
 We also define classes `IsNormalMonoCategory` and `IsNormalEpiCategory` for categories in which
 every monomorphism or epimorphism is normal, and deduce that these categories are
 `RegularMonoCategory`s resp. `RegularEpiCategory`s.
-
 -/
 
 @[expose] public section

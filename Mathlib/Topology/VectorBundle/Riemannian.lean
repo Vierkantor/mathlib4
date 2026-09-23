@@ -9,7 +9,11 @@ public import Mathlib.Analysis.InnerProductSpace.LinearMap
 public import Mathlib.Topology.VectorBundle.Constructions
 public import Mathlib.Topology.VectorBundle.Hom
 
-/-! # Riemannian vector bundles
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Riemannian vector bundles
 
 Given a real vector bundle over a topological space whose fibers are all endowed with an inner
 product, we say that this bundle is Riemannian if the inner product depends continuously on the
@@ -35,6 +39,7 @@ the tangent bundle. As instances related to Riemannian bundles are both costly a
 they are scoped to the `Bundle` namespace.
 
 ## Keywords
+
 Vector bundle, Riemannian metric
 -/
 
@@ -53,10 +58,12 @@ variable
 local notation "⟪" x ", " y "⟫" => inner ℝ x y
 
 variable (F E) in
-/-- Consider a real vector bundle in which each fiber is endowed with an inner product.
-We say that the bundle is *Riemannian* if the inner product depends continuously on the base point.
+/--
+Consider a real vector bundle in which each fiber is endowed with an inner product.
+We say that the bundle is _Riemannian_ if the inner product depends continuously on the base point.
 This assumption is spelled `IsContinuousRiemannianBundle F E` where `F` is the model fiber,
-and `E : B → Type*` is the bundle. -/
+and `E : B → Type*` is the bundle.
+-/
 class IsContinuousRiemannianBundle : Prop where
   /-- There exists a bilinear form, depending continuously on the basepoint and defining the
   inner product in the fibers. This is expressed as an existence statement so that it is Prop-valued
@@ -396,8 +403,10 @@ instance defined on it, otherwise this will create a second non-defeq norm insta
   definite v h := by contrapose! h; exact (g.pos b v h).ne'
 
 variable (E) in
-/-- Class used to create an inner product structure space on the fibers of a fiber bundle, without
+/--
+Class used to create an inner product structure space on the fibers of a fiber bundle, without
 creating diamonds. Use as follows:
+
 * `instance : RiemannianBundle E := ⟨g⟩` where `g : RiemannianMetric E` registers the inner product
   space on the fibers;
 * `instance : RiemannianBundle E := ⟨g.toRiemannianMetric⟩` where
@@ -409,8 +418,9 @@ creating diamonds. Use as follows:
   `[IsContinuousRiemannianBundle]` instances.
 
 Note that this is only useful when there is a preexisting topology in the fibers of a vector
-bundle, like for the tangent bundle. This should *not* be used to express theorems for general
+bundle, like for the tangent bundle. This should _not_ be used to express theorems for general
 bundles with a metric. Instead, use
+
 ```
 variable {E : B → Type*} [TopologicalSpace (TotalSpace F E)]
   [∀ x, NormedAddCommGroup (E x)] [∀ x, InnerProductSpace ℝ (E x)]

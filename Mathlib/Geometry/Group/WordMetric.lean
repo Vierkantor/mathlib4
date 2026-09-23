@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.Normed.Group.Defs
 public import Mathlib.Geometry.Group.WordProd
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The word metric
 
@@ -39,12 +42,12 @@ family given by `Group.Generators`. The word length defines a norm on `G` induci
   characterized by `wordLength_le_iff`, so we tag it with `@[no_expose]`.
 
 ## TODO
+
 * Relate the word metric to the distance in the Cayley graph.
 
 ## Tags
 
 word metric, word length, geometric group theory
-
 -/
 
 @[expose] public section
@@ -55,13 +58,17 @@ variable {G ι : Type*} [Group G]
 
 variable (P : Group.Generators G ι) (g h : G) (l : List (ι × Bool))
 
-/-! ### Definition of word length -/
+/-!
+# Definition of word length
+-/
 
 /-- The word length of `g` with respect to the generating family `P`. -/
 @[no_expose]
 noncomputable def wordLength : ℕ := sInf {n | ∃ l, P.wordProd l = g ∧ l.length = n}
 
-/-! ### Geodesic words -/
+/-!
+# Geodesic words
+-/
 
 /-- A word `l` is geodesic if its length is exactly the word length of the group element it
 represents. -/
@@ -75,7 +82,9 @@ theorem exists_isGeodesic : ∃ l, P.IsGeodesic l ∧ P.wordProd l = g := by
   obtain ⟨l, rfl, hlen⟩ := Nat.sInf_mem (Set.Nonempty.image List.length (P.wordProd_surjective g))
   exact ⟨l, hlen.symm, rfl⟩
 
-/-! ### Word length -/
+/-!
+# Word length
+-/
 
 lemma wordLength_wordProd_le : P.wordLength (P.wordProd l) ≤ l.length :=
   Nat.sInf_le ⟨l, rfl, rfl⟩
@@ -124,7 +133,9 @@ noncomputable def groupNorm : GroupNorm G where
   inv' := by simp
   eq_one_of_map_eq_zero' := by simp
 
-/-! ### Word metric -/
+/-!
+# Word metric
+-/
 
 /-- `G` as a metric space `NormedGroup G` with respect to a generating family `P`. The metric is
 given by `dist g h = ‖g⁻¹ * h‖`, where the norm is given by `groupNorm`. -/

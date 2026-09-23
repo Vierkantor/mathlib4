@@ -6,8 +6,10 @@ Authors: Dagur Asgeirsson
 module
 
 public import Mathlib.CategoryTheory.Monoidal.Functor
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Constructing monoidal functors from natural transformations between multifunctors
 
 This file provides alternative constructors for (op/lax) monoidal functors, given tensorators
@@ -102,14 +104,13 @@ open MonoidalCategory
 namespace Functor.LaxMonoidal
 
 /-!
-
-## Lax monoidal functors
+# Lax monoidal functors
 
 Given a unit morphism `ε : 𝟙_ D ⟶ F.obj (𝟙_ C))` and a tensorator `μ : F - ⊗ F - ⟶ F (- ⊗ -)`
 such that the diagrams below commute, we define
 `CategoryTheory.Functor.LaxMonoidal.ofBifunctor : F.LaxMonoidal`.
 
-### Associativity hexagon
+## Associativity hexagon
 
 ```
       (F - ⊗ F -) ⊗ F -
@@ -124,7 +125,7 @@ F ((- ⊗ -) ⊗ -)    F - ⊗ F (- ⊗ -)
        F (- ⊗ (- ⊗ -))
 ```
 
-### Left unitality square
+## Left unitality square
 
 ```
 𝟙 ⊗ F - ⟶ F 𝟙 ⊗ F -
@@ -133,7 +134,7 @@ F ((- ⊗ -) ⊗ -)    F - ⊗ F (- ⊗ -)
   F    ←   F (𝟙 ⊗ -)
 ```
 
-### Right unitality square
+## Right unitality square
 
 ```
 F - ⊗ 𝟙 ⟶ F - ⊗ F 𝟙
@@ -295,14 +296,13 @@ end LaxMonoidal
 namespace OplaxMonoidal
 
 /-!
-
-## Oplax monoidal functors
+# Oplax monoidal functors
 
 Given a counit morphism `η : F.obj (𝟙_ C)) ⟶ 𝟙_ D` and a tensorator `δ : F (- ⊗ -) ⟶ F - ⊗ F -`
 such that the diagrams below commute, we define
 `CategoryTheory.Functor.OplaxMonoidal.ofBifunctor : F.OplaxMonoidal`.
 
-### Oplax associativity hexagon
+## Oplax associativity hexagon
 
 ```
       F ((- ⊗ -) ⊗ -)
@@ -317,7 +317,7 @@ F (- ⊗ -) ⊗ F -      F (- ⊗ (- ⊗ -))
        F - ⊗ (F - ⊗ F -)
 ```
 
-### Oplax left unitality square
+## Oplax left unitality square
 
 ```
   F   ⟶  F (𝟙 ⊗ -)
@@ -326,7 +326,7 @@ F (- ⊗ -) ⊗ F -      F (- ⊗ (- ⊗ -))
 𝟙 ⊗ F - ← F 𝟙 ⊗ F -
 ```
 
-### Oplax right unitality square
+## Oplax right unitality square
 
 ```
   F  ⟶   F (- ⊗ 𝟙)

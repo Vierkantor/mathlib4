@@ -8,15 +8,20 @@ module
 public import Mathlib.Analysis.InnerProductSpace.Projection.Submodule
 public import Mathlib.Dynamics.BirkhoffSum.NormedSpace
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Von Neumann Mean Ergodic Theorem in a Hilbert Space
 
 In this file we prove the von Neumann Mean Ergodic Theorem for an operator in a Hilbert space.
 It says that for a contracting linear self-map `f : E →ₗ[𝕜] E` of a Hilbert space,
 the Birkhoff averages
+
 ```
 birkhoffAverage 𝕜 f id N x = (N : 𝕜)⁻¹ • ∑ n ∈ Finset.range N, f^[n] x
 ```
+
 converge to the orthogonal projection of `x` to the subspace of fixed points of `f`,
 see `ContinuousLinearMap.tendsto_birkhoffAverage_orthogonalProjection`.
 -/

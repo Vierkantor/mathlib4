@@ -11,6 +11,9 @@ public import Mathlib.Geometry.Manifold.MFDeriv.UniqueDifferential
 public import Mathlib.Geometry.Manifold.VectorBundle.Tangent
 public import Mathlib.Geometry.Manifold.Diffeomorph
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Derivatives of maps in the tangent bundle
 

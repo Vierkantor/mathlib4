@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.Normed.Module.TransferInstance
 public import Mathlib.Algebra.Group.Shrink
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Transfer normed algebraic structures from `α` to `Shrink α`
 -/

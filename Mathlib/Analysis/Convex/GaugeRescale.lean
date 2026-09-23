@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Analysis.Convex.Gauge
 public import Mathlib.Analysis.Normed.Module.Convex
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # "Gauge rescale" homeomorphism between convex sets
 

@@ -10,6 +10,9 @@ public import Mathlib.Analysis.Normed.Module.Ball.RadialEquiv
 public import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 public import Mathlib.MeasureTheory.Integral.Prod
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Generalized polar coordinate change
 

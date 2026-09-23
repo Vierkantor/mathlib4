@@ -11,6 +11,9 @@ public import Mathlib.Analysis.InnerProductSpace.Projection.Submodule
 public import Mathlib.Algebra.DirectSum.Decomposition
 public import Mathlib.Analysis.Normed.Module.RCLike.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Orthogonal projections in finite-dimensional spaces
 
@@ -307,12 +310,14 @@ theorem OrthogonalFamily.projection_directSum_coeAddHom [DecidableEq ι] {V : ι
     simp_rw [map_add]
     exact congr_arg₂ (· + ·) hx hy
 
-/-- If a family of submodules is orthogonal and they span the whole space, then the orthogonal
+/--
+If a family of submodules is orthogonal and they span the whole space, then the orthogonal
 projection provides a means to decompose the space into its submodules.
 
 The projection function is `decompose V x i = (V i).orthogonalProjection x`.
 
-See note [reducible non-instances]. -/
+See note \[reducible non-instances\].
+-/
 noncomputable abbrev OrthogonalFamily.decomposition
     [DecidableEq ι] [Fintype ι] {V : ι → Submodule 𝕜 E}
     [∀ i, CompleteSpace (V i)] (hV : OrthogonalFamily 𝕜 (fun i => V i) fun i => (V i).subtypeₗᵢ)

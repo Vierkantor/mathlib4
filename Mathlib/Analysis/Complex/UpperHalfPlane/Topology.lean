@@ -13,6 +13,9 @@ public import Mathlib.Analysis.Complex.ReImTopology
 public import Mathlib.Topology.Homotopy.Contractible
 public import Mathlib.Topology.OpenPartialHomeomorph.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Topology on the upper half plane
 

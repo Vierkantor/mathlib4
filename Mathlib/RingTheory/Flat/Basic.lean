@@ -14,12 +14,15 @@ public import Mathlib.RingTheory.TensorProduct.Finite
 public import Mathlib.RingTheory.Adjoin.FGBaseChange
 public import Mathlib.RingTheory.Nilpotent.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Flat modules
 
-A module `M` over a commutative semiring `R` is *mono-flat* if for all monomorphisms of modules
+A module `M` over a commutative semiring `R` is _mono-flat_ if for all monomorphisms of modules
 (i.e., injective linear maps) `N →ₗ[R] P`, the canonical map `N ⊗ M → P ⊗ M` is injective
-(cf. [Katsov2004], [KatsovNam2011]).
+(cf. \[Katsov2004\], \[KatsovNam2011\]).
 To show a module is mono-flat, it suffices to check inclusions of finitely generated
 submodules `N` into finitely generated modules `P`, and `P` can be further assumed to lie in
 the same universe as `R`.
@@ -27,7 +30,7 @@ the same universe as `R`.
 `M` is flat if `· ⊗ M` preserves finite limits (equivalently, pullbacks, or equalizers).
 If `R` is a ring, an `R`-module `M` is flat if and only if it is mono-flat, and to show
 a module is flat, it suffices to check inclusions of finitely generated ideals into `R`.
-See <https://stacks.math.columbia.edu/tag/00HD>.
+See [https://stacks.math.columbia.edu/tag/00HD](https://stacks.math.columbia.edu/tag/00HD).
 
 Currently, `Module.Flat` is defined to be equivalent to mono-flatness over a semiring.
 It is left as a TODO item to introduce the genuine flatness over semirings and rename
@@ -58,7 +61,6 @@ the current `Module.Flat` to `Module.MonoFlat`.
 ## TODO
 
 * Generalize flatness to noncommutative semirings.
-
 -/
 
 @[expose] public section
@@ -77,7 +79,9 @@ open LinearMap Submodule DirectSum
 
 section Semiring
 
-/-! ### Flatness over a semiring -/
+/-!
+# Flatness over a semiring
+-/
 
 variable {R : Type u} {M : Type v} {N P Q : Type*} [CommSemiring R] [AddCommMonoid M] [Module R M]
   [AddCommMonoid N] [Module R N] [AddCommMonoid P] [Module R P] [AddCommMonoid Q] [Module R Q]
@@ -277,7 +281,9 @@ end Semiring
 
 namespace Flat
 
-/-! ### Flatness over a ring -/
+/-!
+# Flatness over a ring
+-/
 
 variable {R : Type u} {M : Type v} [CommRing R] [AddCommGroup M] [Module R M]
 variable {N : Type w} [AddCommGroup N] [Module R N]

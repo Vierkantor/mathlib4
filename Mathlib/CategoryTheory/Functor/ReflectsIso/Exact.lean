@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Homology.ShortComplex.ShortExact
 public import Mathlib.Algebra.Homology.ShortComplex.PreservesHomology
 public import Mathlib.Algebra.Homology.QuasiIso
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Exactness properties of functors which jointly reflect isomorphisms
 
@@ -25,7 +28,6 @@ between short complexes or homological complexes in `C`.
 `Mathlib/Algebra/Homology/QuasiIso.lean` and
 `ShortComplex.quasiIso_map_iff_of_preservesLeftHomology`
 `Mathlib/Algebra/Homology/ShortComplex/PreservesHomology.lean`.)
-
 -/
 
 public section

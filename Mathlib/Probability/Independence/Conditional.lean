@@ -10,6 +10,9 @@ public import Mathlib.Probability.Kernel.CompProdEqIff
 public import Mathlib.Probability.Kernel.Composition.Lemmas
 public import Mathlib.Probability.Kernel.Condexp
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Conditional Independence
 
@@ -27,6 +30,7 @@ We use this property as the definition of conditional independence.
 ## Main definitions
 
 We provide four definitions of conditional independence:
+
 * `iCondIndepSets`: conditional independence of a family of sets of sets `pi : ι → Set (Set Ω)`.
   This is meant to be used with π-systems.
 * `iCondIndep`: conditional independence of a family of measurable space structures
@@ -60,7 +64,6 @@ The definitions of conditional independence in this file are a particular case o
 respect to a kernel and a measure, as defined in the file
 `Mathlib/Probability/Independence/Kernel.lean`.
 The kernel used is `ProbabilityTheory.condExpKernel`.
-
 -/
 
 @[expose] public section
@@ -473,7 +476,9 @@ theorem condIndep_of_condIndep_of_le_right {m' m₁ m₂ m₃ : MeasurableSpace 
 
 end CondIndep
 
-/-! ### Deducing `CondIndep` from `iCondIndep` -/
+/-!
+# Deducing `CondIndep` from `iCondIndep`
+-/
 
 
 section FromiCondIndepToCondIndep
@@ -501,7 +506,7 @@ theorem iCondIndepFun.condIndepFun {β : ι → Type*}
 end FromiCondIndepToCondIndep
 
 /-!
-## π-system lemma
+# π-system lemma
 
 Conditional independence of measurable spaces is equivalent to conditional independence of
 generating π-systems.
@@ -510,8 +515,11 @@ generating π-systems.
 
 section FromMeasurableSpacesToSetsOfSets
 
-/-! ### Conditional independence of σ-algebras implies conditional independence of
-  generating π-systems -/
+/-!
+# Conditional independence of σ-algebras implies conditional independence of
+
+generating π-systems
+-/
 
 variable {m' : MeasurableSpace Ω}
   {mΩ : MeasurableSpace Ω} [StandardBorelSpace Ω]
@@ -532,8 +540,11 @@ end FromMeasurableSpacesToSetsOfSets
 
 section FromPiSystemsToMeasurableSpaces
 
-/-! ### Conditional independence of generating π-systems implies conditional independence of
-  σ-algebras -/
+/-!
+# Conditional independence of generating π-systems implies conditional independence of
+
+σ-algebras
+-/
 
 variable {m' m₁ m₂ : MeasurableSpace Ω} {mΩ : MeasurableSpace Ω} [StandardBorelSpace Ω]
   {hm' : m' ≤ mΩ} {μ : Measure Ω} [IsFiniteMeasure μ]
@@ -619,8 +630,8 @@ end FromPiSystemsToMeasurableSpaces
 
 section CondIndepSet
 
-/-! ### Conditional independence of measurable sets
-
+/-!
+# Conditional independence of measurable sets
 -/
 
 variable {m' m₁ m₂ : MeasurableSpace Ω} {mΩ : MeasurableSpace Ω} [StandardBorelSpace Ω]
@@ -648,8 +659,8 @@ end CondIndepSet
 
 section CondIndepFun
 
-/-! ### Conditional independence of random variables
-
+/-!
+# Conditional independence of random variables
 -/
 
 variable {β β' : Type*} {m' : MeasurableSpace Ω}

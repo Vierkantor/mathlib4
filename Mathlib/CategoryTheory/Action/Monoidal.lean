@@ -14,6 +14,9 @@ public import Mathlib.CategoryTheory.Monoidal.Types.Basic
 public import Mathlib.CategoryTheory.Action.Concrete
 public import Mathlib.CategoryTheory.Action.Limits
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Induced monoidal structure on `Action V G`
 

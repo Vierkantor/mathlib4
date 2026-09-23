@@ -10,6 +10,9 @@ public import Mathlib.Tactic.Continuity
 public import Mathlib.Tactic.Lift
 public import Mathlib.Topology.Defs.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Continuous bundled maps
 
@@ -67,7 +70,9 @@ instance : CoeTC F C(X, Y) := ⟨toContinuousMap⟩
 
 end ContinuousMapClass
 
-/-! ### Continuous maps -/
+/-!
+# Continuous maps
+-/
 
 
 namespace ContinuousMap
@@ -88,7 +93,9 @@ theorem toFun_eq_coe {f : C(X, Y)} : f.toFun = (f : X → Y) :=
 
 instance : CanLift (X → Y) C(X, Y) DFunLike.coe Continuous := ⟨fun f hf ↦ ⟨⟨f, hf⟩, rfl⟩⟩
 
-/-- See note [custom simps projection]. -/
+/--
+See note \[custom simps projection\].
+-/
 def Simps.apply (f : C(X, Y)) : X → Y := f
 
 -- this must come after the coe_to_fun definition

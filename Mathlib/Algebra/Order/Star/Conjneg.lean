@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Order.Pi
 public import Mathlib.Algebra.Order.Star.Basic
 public import Mathlib.Algebra.Star.Conjneg
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Order properties of conjugation-negation
 -/

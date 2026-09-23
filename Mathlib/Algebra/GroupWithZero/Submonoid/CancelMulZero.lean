@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.GroupWithZero.InjSurj
 public import Mathlib.Algebra.Group.Submonoid.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Submagmas with zero inherit cancellations
 -/

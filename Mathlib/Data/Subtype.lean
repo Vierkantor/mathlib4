@@ -9,6 +9,9 @@ public import Mathlib.Logic.Function.Basic
 public import Mathlib.Tactic.AdaptationNote
 public import Mathlib.Tactic.Simps
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Subtypes
 

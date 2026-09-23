@@ -12,6 +12,9 @@ import Mathlib.Data.Multiset.Fintype
 import Mathlib.RingTheory.Polynomial.Vieta
 import Mathlib.RingTheory.Polynomial.ScaleRoots
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Evaluating symmetric polynomials
 

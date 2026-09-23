@@ -8,12 +8,14 @@ module
 public import Mathlib.AlgebraicTopology.SimplicialSet.StdSimplex
 public import Mathlib.AlgebraicTopology.SimplexCategory.ToMkOne
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Simplices in `Δ[1]`
 
 We define a bijection `SSet.stdSimplex.objMk₁` between `Fin (n + 2)` and `Δ[1] _⦋n⦌`
 for any `n : ℕ`.
-
 -/
 
 @[expose] public section

@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.GroupWithZero.Basic
 public import Mathlib.Algebra.Group.Pointwise.Finset.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Pointwise operations of finsets in a group with zero
 

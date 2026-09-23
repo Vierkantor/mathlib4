@@ -11,6 +11,9 @@ public import Mathlib.Data.List.Forall2
 public import Mathlib.Data.Set.Functor
 public import Mathlib.Data.List.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # LawfulTraversable instances
 

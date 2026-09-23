@@ -12,14 +12,17 @@ public import Mathlib.Topology.Sheaves.SheafCondition.Sites
 public import Mathlib.Topology.Sheaves.Functors
 public import Mathlib.Algebra.Module.LocalizedModule.Basic
 
-/-!
-# $Spec$ as a functor to locally ringed spaces.
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
-We define the functor $Spec$ from commutative rings to locally ringed spaces.
+/-!
+# $`Spec` as a functor to locally ringed spaces.
+
+We define the functor $`Spec` from commutative rings to locally ringed spaces.
 
 ## Implementation notes
 
-We define $Spec$ in three consecutive steps, each with more structure than the last:
+We define $`Spec` in three consecutive steps, each with more structure than the last:
 
 1. `Spec.toTop`, valued in the category of topological spaces,
 2. `Spec.toSheafedSpace`, valued in the category of sheafed spaces and
@@ -31,7 +34,6 @@ a forgetful functor.
 ## Related results
 
 The adjunction `Γ ⊣ Spec` is constructed in `Mathlib/AlgebraicGeometry/GammaSpecAdjunction.lean`.
-
 -/
 
 @[expose] public section

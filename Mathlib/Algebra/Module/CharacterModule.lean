@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Category.Grp.Injective
 public import Mathlib.Topology.Instances.AddCircle.Defs
 public import Mathlib.LinearAlgebra.Isomorphisms
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Character module of a module
 
@@ -20,13 +23,12 @@ For commutative ring `R` and an `R`-module `M` and an injective module `D`, its 
 
 ## Main results
 
-- `CharacterModuleFunctor` : the contravariant functor of `R`-modules where `M ↦ M⋆` and
+* `CharacterModuleFunctor` : the contravariant functor of `R`-modules where `M ↦ M⋆` and
   an `R`-linear map `l : M ⟶ N` induces an `R`-linear map `l⋆ : f ↦ f ∘ l` where `f : N⋆`.
-- `LinearMap.dual_surjective_of_injective` : If `l` is injective then `l⋆` is surjective,
+* `LinearMap.dual_surjective_of_injective` : If `l` is injective then `l⋆` is surjective,
   in another word taking character module as a functor sends monos to epis.
-- `CharacterModule.homEquiv` : there is a bijection between linear map `Hom(N, M⋆)` and
+* `CharacterModule.homEquiv` : there is a bijection between linear map `Hom(N, M⋆)` and
   `(N ⊗ M)⋆` given by `curry` and `uncurry`.
-
 -/
 
 @[expose] public section

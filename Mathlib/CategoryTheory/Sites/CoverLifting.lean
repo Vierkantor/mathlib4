@@ -10,12 +10,15 @@ public import Mathlib.CategoryTheory.Functor.KanExtension.Adjunction
 public import Mathlib.CategoryTheory.Sites.CoverPreserving
 public import Mathlib.CategoryTheory.Sites.Sheafification
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cocontinuous functors between sites.
 
 We define cocontinuous functors between sites as functors that pull covering sieves back to
-covering sieves. This concept is also known as *cover-lifting* or
-*cover-reflecting functors*. We use the original terminology and definition of SGA 4 III 2.1.
+covering sieves. This concept is also known as _cover-lifting_ or
+_cover-reflecting functors_. We use the original terminology and definition of SGA 4 III 2.1.
 However, the notion of cocontinuous functor should not be confused with
 the general definition of cocontinuous functors between categories as functors preserving
 small colimits.
@@ -28,6 +31,7 @@ small colimits.
   `G : (C, J) ⥤ (D, K)` induces a functor `Sheaf J A ⥤ Sheaf K A`.
 
 ## Main results
+
 * `CategoryTheory.ran_isSheaf_of_isCocontinuous`: If `G : C ⥤ D` is cocontinuous, then
   `G.op.ran` (`ₚu`) as a functor `(Cᵒᵖ ⥤ A) ⥤ (Dᵒᵖ ⥤ A)` of presheaves maps sheaves to sheaves.
 * `CategoryTheory.Functor.sheafAdjunctionCocontinuous`: If `G : (C, J) ⥤ (D, K)` is cocontinuous
@@ -36,10 +40,9 @@ small colimits.
 
 ## References
 
-* [Elephant]: *Sketches of an Elephant*, P. T. Johnstone: C2.3.
-* [S. MacLane, I. Moerdijk, *Sheaves in Geometry and Logic*][MM92]
+* ‍\[Elephant\]: _Sketches of an Elephant_, P. T. Johnstone: C2.3.
+* ‍\[S. MacLane, I. Moerdijk, _Sheaves in Geometry and Logic_\]\[MM92\]
 * https://stacks.math.columbia.edu/tag/00XI
-
 -/
 
 @[expose] public section
@@ -145,13 +148,13 @@ end IsCocontinuous
 We will now prove that `G.op.ran : (Cᵒᵖ ⥤ A) ⥤ (Dᵒᵖ ⥤ A)` maps sheaves
 to sheaves when `G : C ⥤ D` is a cocontinuous functor.
 
-We do not follow the proofs in SGA 4 III 2.2 or <https://stacks.math.columbia.edu/tag/00XK>.
+We do not follow the proofs in SGA 4 III 2.2 or [
+https://stacks.math.columbia.edu/tag/00XK](https://stacks.math.columbia.edu/tag/00XK).
 Instead, we verify as directly as possible that if `F : Cᵒᵖ ⥤ A` is a sheaf,
 then `G.op.ran.obj F` is a sheaf. In order to do this, we use the "multifork"
 characterization of sheaves which involves limits in the category `A`.
 As `G.op.ran.obj F` is the chosen right Kan extension of `F` along `G.op : Cᵒᵖ ⥤ Dᵒᵖ`,
 we actually verify that any pointwise right Kan extension of `F` along `G.op` is a sheaf.
-
 -/
 
 variable {C D : Type*} [Category* C] [Category* D] (G : C ⥤ D)

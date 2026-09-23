@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Order.BigOperators.Ring.Finset
 public import Mathlib.RingTheory.RamificationInertia.Inertia
 public import Mathlib.RingTheory.RamificationInertia.Ramification
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Primes in an extension of localization at prime
 
@@ -22,21 +25,16 @@ bijection and that the residual degree and ramification index are preserved by t
 
 ## Main definitions and results
 
-- `IsLocalization.AtPrime.mem_primesOver_of_isPrime`: The nonzero prime ideals of `Sₚ` are
+* `IsLocalization.AtPrime.mem_primesOver_of_isPrime`: The nonzero prime ideals of `Sₚ` are
   primes over the maximal ideal of `Rₚ`.
-
-- `IsLocalization.AtPrime.equivQuotientMapOfIsMaximal`: `S ⧸ P ≃+* Sₚ ⧸ P·Sₚ` where
+* `IsLocalization.AtPrime.equivQuotientMapOfIsMaximal`: `S ⧸ P ≃+* Sₚ ⧸ P·Sₚ` where
   `P` is a maximal ideal of `S` above `p`.
-
-- `IsDedekindDomain.primesOverEquivPrimesOver`: the bijection between the primes over
+* `IsDedekindDomain.primesOverEquivPrimesOver`: the bijection between the primes over
   `p` in `S` and the primes over the maximal ideal of `Rₚ` in `Sₚ`.
-
-- `IsDedekindDomain.primesOverEquivPrimesOver_inertiagDeg_eq`: the bijection
+* `IsDedekindDomain.primesOverEquivPrimesOver_inertiagDeg_eq`: the bijection
   `primesOverEquivPrimesOver` preserves the inertia degree.
-
-- `IsDedekindDomain.primesOverEquivPrimesOver_ramificationIdx_eq`: the bijection
+* `IsDedekindDomain.primesOverEquivPrimesOver_ramificationIdx_eq`: the bijection
   `primesOverEquivPrimesOver` preserves the ramification index.
-
 -/
 
 @[expose] public section

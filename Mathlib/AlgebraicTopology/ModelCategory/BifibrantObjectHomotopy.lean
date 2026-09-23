@@ -10,6 +10,9 @@ public import Mathlib.AlgebraicTopology.ModelCategory.FibrantObjectHomotopy
 public import Mathlib.CategoryTheory.Localization.CalculusOfFractions.OfAdjunction
 public import Mathlib.CategoryTheory.Quotient.LocallySmall
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The homotopy category of bifibrant objects
 
@@ -21,7 +24,6 @@ We also show that certain localizer morphisms are localized weak equivalences,
 which can be understood by saying that we obtain the same localized
 category (up to equivalence) by inverting weak equivalences in `C`,
 `CofibrantObject C`, `FibrantObject C` or `BifibrantObject C`.
-
 -/
 
 @[expose] public section

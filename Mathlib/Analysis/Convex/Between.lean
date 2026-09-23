@@ -14,6 +14,9 @@ public import Mathlib.Tactic.FieldSimp
 
 import Mathlib.Tactic.Bound
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Betweenness in affine spaces
 
@@ -24,7 +27,6 @@ This file defines notions of a point in an affine space being between two given 
 * `affineSegment R x y`: The segment of points weakly between `x` and `y`.
 * `Wbtw R x y z`: The point `y` is weakly between `x` and `z`.
 * `Sbtw R x y z`: The point `y` is strictly between `x` and `z`.
-
 -/
 
 @[expose] public section

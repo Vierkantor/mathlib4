@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Init
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Reordering arguments in a translation
 
@@ -32,14 +35,12 @@ The universe reordering is always inferred automatically, using `guessUnivReorde
 
 ## Examples
 
-- `to_dual` needs to swap the arguments of some definitions to translate them,
+* `to_dual` needs to swap the arguments of some definitions to translate them,
   such as `a ≤ b` ↦ `b ≤ a` and `a ⇨ b` ↦ `b \ a`.
   In these cases, we reorder the 3rd and 4th arguments, which can be specified using
   `@[to_dual (reorder := 3 4)]`.
-
-- `to_additive` needs to swap the arguments when translating `a ^ n` ↦ `n • a`.
-
-- Some theorems are dual to themselves only after reordering some arguments.
+* `to_additive` needs to swap the arguments when translating `a ^ n` ↦ `n • a`.
+* Some theorems are dual to themselves only after reordering some arguments.
   For example, `le_total : ∀ a b : α, a ≤ b ∨ b ≤ a` is dual to itself after swapping `a` and `b`.
   Thanks to the heuristic in `guessReorder`, it suffices to write `@[to_dual self]`.
 
@@ -48,7 +49,6 @@ The universe reordering is always inferred automatically, using `guessUnivReorde
 Permutation are stored as their disjoint cycle representation (`Permutation`).
 This allows efficiently permuting an array/list of arguments/universes
 (`Permutation.permute!`/`Permutation.permuteList!`).
-
 -/
 
 public meta section
@@ -170,7 +170,9 @@ def Reorder.reverse (r : Reorder) : Reorder where
   univReorder := r.univReorder.reverse
   reorder := r.reorder.reverse
 
-/-! ### Reordering an expression -/
+/-!
+# Reordering an expression
+-/
 
 /-- Apply the given binder infos to the binders in expression `e`. -/
 private def fixBinderInfos (bis : List BinderInfo) (e : Expr) : Expr :=
@@ -223,7 +225,9 @@ partial def reorderLambda (reorder : ArgReorder) (e : Expr) : MetaM Expr := do
 
 end
 
-/-! ### Guessing the reorder given the reordered expression -/
+/-!
+# Guessing the reorder given the reordered expression
+-/
 
 /-- Decompose the permutation `map` into its disjoint cycle representation. -/
 private def decomposePerm {n} (map : Vector (Option (Fin n)) n) : Permutation := Id.run do
@@ -325,7 +329,9 @@ where
     modify (·.insert (src, tgt))
     return map
 
-/-! ### Syntax for specifying a reorder -/
+/-!
+# Syntax for specifying a reorder
+-/
 
 -- Note: We have to use `declare_syntax_cat` because the reorder syntax is recursive.
 /-- The syntax category for the reorder syntax. -/

@@ -7,14 +7,15 @@ module
 
 public import Mathlib.MeasureTheory.Measure.Typeclasses.SFinite
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Restriction of a measure to a sub-σ-algebra
-
 
 ## Main definitions
 
 * `MeasureTheory.Measure.trim`: restriction of a measure to a sub-sigma algebra.
-
 -/
 
 @[expose] public section

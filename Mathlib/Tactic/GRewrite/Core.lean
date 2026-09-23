@@ -10,12 +10,16 @@ public import Mathlib.Tactic.GCongr.Core
 public import Lean.Meta.Tactic.Rewrite
 meta import Mathlib.Tactic.GCongr.Core
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The generalized rewriting tactic
 
 This module defines the core of the `grw`/`grewrite` tactic.
 
 This file provides two implementations of the tactic:
+
 1. The simple implementation uses `kabstract` to determine where to rewrite,
    and then calls `MVarId.gcongr` to prove that the rewrite is valid.
    This is used by `nth_grw` and `grw +useKAbstract`.

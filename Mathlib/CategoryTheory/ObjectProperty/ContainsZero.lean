@@ -10,6 +10,9 @@ public import Mathlib.CategoryTheory.ObjectProperty.Opposite
 public import Mathlib.CategoryTheory.ObjectProperty.FullSubcategory
 public import Mathlib.CategoryTheory.Limits.Preserves.Shapes.Zero
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Properties of objects which hold for a zero object
 
@@ -17,7 +20,6 @@ Given a category `C` and `P : ObjectProperty C`, we define a type class `P.Conta
 expressing that there exists a zero object for which `P` holds. (We do not require
 that `P` holds for all zero objects, as in some applications (e.g. triangulated categories),
 `P` may not necessarily be closed under isomorphisms.)
-
 -/
 
 public section

@@ -11,6 +11,9 @@ public meta import Lean.PrettyPrinter
 public meta import Lean.Elab.SyntheticMVars
 public meta import Lean.PrettyPrinter.Delaborator.Builtins
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `#check` tactic
 

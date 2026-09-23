@@ -11,6 +11,9 @@ public import Mathlib.Logic.Equiv.Option
 public import Mathlib.Data.Int.Init
 public import Batteries.Data.Fin.Lemmas
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Equivalences for `Fin n`
 -/
@@ -24,7 +27,7 @@ universe u
 variable {m n : ℕ}
 
 /-!
-### Miscellaneous
+# Miscellaneous
 
 This is currently not very sorted. PRs welcome!
 -/

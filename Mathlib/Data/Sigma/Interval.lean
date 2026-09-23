@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.Sigma.Order
 public import Mathlib.Order.Interval.Finset.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Finite intervals in a sigma type
 
@@ -28,7 +31,9 @@ namespace Sigma
 
 variable {ι : Type*} {α : ι → Type*}
 
-/-! ### Disjoint sum of orders -/
+/-!
+# Disjoint sum of orders
+-/
 
 
 section Disjoint

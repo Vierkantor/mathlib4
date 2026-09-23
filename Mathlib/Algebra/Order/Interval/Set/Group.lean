@@ -12,7 +12,12 @@ public import Mathlib.Data.Int.Cast.Basic
 public import Mathlib.Order.Interval.Set.Basic
 public import Mathlib.Logic.Pairwise
 
-/-! # Lemmas about arithmetic operations and intervals -/
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Lemmas about arithmetic operations and intervals
+-/
 
 public section
 
@@ -145,7 +150,9 @@ theorem nonempty_Ico_sdiff {x dx y dy : α} (h : dy < dx) (hx : 0 < dx) :
 
 end LinearOrderedAddCommGroup
 
-/-! ### Lemmas about disjointness of translates of intervals -/
+/-!
+# Lemmas about disjointness of translates of intervals
+-/
 
 open scoped Function -- required for scoped `on` notation
 section PairwiseDisjoint

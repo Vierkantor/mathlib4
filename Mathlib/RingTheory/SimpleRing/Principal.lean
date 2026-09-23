@@ -9,11 +9,13 @@ public import Mathlib.RingTheory.PrincipalIdealDomain
 public import Mathlib.RingTheory.SimpleRing.Field
 public import Mathlib.RingTheory.TwoSidedIdeal.Operations
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # A commutative simple ring is a principal ideal domain
 
 Indeed, it is a field.
-
 -/
 
 public section

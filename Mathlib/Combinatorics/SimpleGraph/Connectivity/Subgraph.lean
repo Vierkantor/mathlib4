@@ -9,6 +9,9 @@ public import Mathlib.Combinatorics.SimpleGraph.Connectivity.Connected
 public import Mathlib.Combinatorics.SimpleGraph.Walk.Chord
 public import Mathlib.Data.Set.Card
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Connectivity of subgraphs and induced graphs
 
@@ -16,7 +19,6 @@ public import Mathlib.Data.Set.Card
 
 * `SimpleGraph.Subgraph.Preconnected` and `SimpleGraph.Subgraph.Connected` give subgraphs
   connectivity predicates via `SimpleGraph.Subgraph.coe`.
-
 -/
 
 @[expose] public section
@@ -170,7 +172,9 @@ theorem maximal_subgraph_connected_iff (G' : G.Subgraph) :
 
 end ConnectedComponent
 
-/-! ### Walks as subgraphs -/
+/-!
+# Walks as subgraphs
+-/
 
 namespace Walk
 

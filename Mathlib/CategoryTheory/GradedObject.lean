@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Shift.Basic
 public import Mathlib.Data.Set.Subsingleton
 public import Mathlib.Algebra.Group.Int.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The category of graded objects
 
@@ -28,7 +31,6 @@ show that it is faithful, and deduce that when `C` is concrete so is `GradedObje
 A covariant functoriality of `GradedObject β C` with respect to the index set `β` is also
 introduced: if `p : I → J` is a map such that `C` has coproducts indexed by `p ⁻¹' {j}`, we
 have a functor `map : GradedObject I C ⥤ GradedObject J C`.
-
 -/
 
 @[expose] public section

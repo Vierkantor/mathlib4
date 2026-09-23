@@ -9,6 +9,9 @@ public import Mathlib.Geometry.Convex.ConvexSpace.Module
 public import Mathlib.LinearAlgebra.AffineSpace.Combination
 public import Mathlib.LinearAlgebra.AffineSpace.AffineMap
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Affine spaces are convex spaces
 

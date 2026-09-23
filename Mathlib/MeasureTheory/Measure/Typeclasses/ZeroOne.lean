@@ -9,20 +9,21 @@ module
 public import Mathlib.MeasureTheory.Constructions.Polish.Basic
 public import Mathlib.MeasureTheory.Measure.Typeclasses.Probability
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 We introduce the typeclass `IsZeroOneMeasure` for measures that only take the values `0` and `1`.
 
-## Main definitions
+# Main definitions
 
 * `IsZeroOneMeasure`: a measure is a zero-one measure if it only takes the values `0`
   or `1`.
 
-## Main statements
+# Main statements
 
 * `exists_eq_dirac`: in a standard Borel space, a zero-one measure that is not the zero measure is
   a Dirac measure.
-
 -/
 
 public section

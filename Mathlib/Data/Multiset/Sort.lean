@@ -10,6 +10,9 @@ public import Mathlib.Data.Multiset.Range
 public meta import Mathlib.Util.Qq
 public meta import Mathlib.Data.Multiset.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Construct a sorted list from a multiset.
 -/

@@ -10,6 +10,9 @@ public import Mathlib.Tactic.Common
 public import Mathlib.Data.Set.Insert
 public import Mathlib.Tactic.Attr.Core
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Set enumeration
 

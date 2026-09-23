@@ -8,6 +8,9 @@ module
 public import Mathlib.Topology.Instances.ENNReal.Lemmas
 public import Mathlib.MeasureTheory.Measure.Dirac.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Probability mass functions
 

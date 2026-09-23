@@ -9,6 +9,9 @@ public import Mathlib.Data.Set.Lattice.Bounded
 public import Mathlib.Data.Set.Lattice.Disjoint
 public import Mathlib.Logic.Small.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Results about `Small` on coerced sets
 -/

@@ -10,6 +10,9 @@ public import Mathlib.AlgebraicGeometry.Properties
 public import Mathlib.Topology.LocallyFinsupp.Pushforward
 public import Mathlib.AlgebraicGeometry.ResidueField
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Algebraic Cycles
 

@@ -13,6 +13,9 @@ public import Mathlib.CategoryTheory.Sites.LocallyBijective
 public import Mathlib.CategoryTheory.Limits.Shapes.Products
 public import Mathlib.CategoryTheory.Limits.Shapes.Pullback.Iso
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Representability of schemes is a local property
 
@@ -20,8 +23,10 @@ In this file we prove that a sheaf of types `F` on `Sch` is representable if it 
 locally representable.
 
 ## Main result
-- `AlgebraicGeometry.Scheme.LocalRepresentability.isRepresentable`:
+
+* `AlgebraicGeometry.Scheme.LocalRepresentability.isRepresentable`:
   Suppose
+
   * F is a `Type u`-valued sheaf on `Sch` with respect to the Zariski topology
   * X : ι → Sch is a family of schemes
   * f : Π i, yoneda.obj (X i) ⟶ F is a family of relatively representable open immersions
@@ -30,8 +35,8 @@ locally representable.
   Then `F` is representable.
 
 ## References
-* https://stacks.math.columbia.edu/tag/01JJ
 
+* https://stacks.math.columbia.edu/tag/01JJ
 -/
 
 @[expose] public section

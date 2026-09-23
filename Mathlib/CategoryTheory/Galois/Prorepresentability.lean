@@ -11,6 +11,9 @@ public import Mathlib.CategoryTheory.Galois.Decomposition
 public import Mathlib.CategoryTheory.Limits.IndYoneda
 public import Mathlib.CategoryTheory.Limits.Preserves.Ulift
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Pro-Representability of fiber functors
 
@@ -22,17 +25,17 @@ groups of all Galois objects.
 
 ## Main definitions
 
-- `PointedGaloisObject`: the category of pointed Galois objects
-- `PointedGaloisObject.cocone`: a cocone on `(PointedGaloisObject.incl F).op ≫ coyoneda` with
+* `PointedGaloisObject`: the category of pointed Galois objects
+* `PointedGaloisObject.cocone`: a cocone on `(PointedGaloisObject.incl F).op ≫ coyoneda` with
   point `F ⋙ FintypeCat.incl`.
-- `autGaloisSystem`: the system of automorphism groups indexed by the pointed Galois objects.
+* `autGaloisSystem`: the system of automorphism groups indexed by the pointed Galois objects.
 
 ## Main results
 
-- `PointedGaloisObject.isColimit`: the cocone `PointedGaloisObject.cocone` is a colimit cocone.
-- `autMulEquivAutGalois`: `Aut F` is canonically isomorphic to the limit over the automorphism
+* `PointedGaloisObject.isColimit`: the cocone `PointedGaloisObject.cocone` is a colimit cocone.
+* `autMulEquivAutGalois`: `Aut F` is canonically isomorphic to the limit over the automorphism
   groups of all Galois objects.
-- `FiberFunctor.isPretransitive_of_isConnected`: The `Aut F` action on the fiber of a connected
+* `FiberFunctor.isPretransitive_of_isConnected`: The `Aut F` action on the fiber of a connected
   object is transitive.
 
 ## Implementation details
@@ -51,8 +54,7 @@ an arbitrary `FintypeCat.{w}`.
 
 ## References
 
-* [lenstraGSchemes]: H. W. Lenstra. Galois theory for schemes.
-
+* ‍\[lenstraGSchemes\]: H. W. Lenstra. Galois theory for schemes.
 -/
 
 @[expose] public section
@@ -263,8 +265,7 @@ theorem AutGalois.π_surjective (A : PointedGaloisObject F) :
 section EndAutGaloisIsomorphism
 
 /-!
-
-### Isomorphism between `Aut F` and `AutGalois F`
+# Isomorphism between `Aut F` and `AutGalois F`
 
 In this section we establish the isomorphism between the automorphism group of `F` and
 the limit over the automorphism groups of all Galois objects.
@@ -272,7 +273,7 @@ the limit over the automorphism groups of all Galois objects.
 We first establish the isomorphism between `End F` and `AutGalois F`, from which we deduce that
 `End F` is a group, hence `End F = Aut F`. The isomorphism is built in multiple steps:
 
-- `endEquivSectionsFibers : End F ≅ (incl F ⋙ F').sections`: the endomorphisms of
+* `endEquivSectionsFibers : End F ≅ (incl F ⋙ F').sections`: the endomorphisms of
   `F` are isomorphic to the limit over `F.obj A` for all Galois objects `A`.
   This is obtained as the composition (slightly simplified):
 
@@ -280,14 +281,12 @@ We first establish the isomorphism between `End F` and `AutGalois F`, from which
 
   Where the first isomorphism is induced from the pro-representability of `F` and the second one
   from the pro-coyoneda lemma.
-
-- `endEquivAutGalois : End F ≅ AutGalois F`: this is the composition of `endEquivSectionsFibers`
+* `endEquivAutGalois : End F ≅ AutGalois F`: this is the composition of `endEquivSectionsFibers`
   with:
 
   `(incl F ⋙ F).sections ≅ (autGaloisSystem F ⋙ forget GrpCat).sections`
 
   which is induced from the level-wise equivalence `Aut A ≃ F.obj A` for a Galois object `A`.
-
 -/
 
 -- Local notation for `F` considered as a functor to types instead of finite types.

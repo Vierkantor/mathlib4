@@ -15,6 +15,9 @@ public import Mathlib.Tactic.CrossRefAttribute
 
 import Mathlib.Data.Set.Lattice.Disjoint
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Simple graphs
 
@@ -23,13 +26,9 @@ This module defines simple graphs on a vertex type `V` as an irreflexive symmetr
 ## Main definitions
 
 * `SimpleGraph` is a structure for symmetric, irreflexive relations.
-
 * `SimpleGraph.neighborSet` is the `Set` of vertices adjacent to a given vertex.
-
 * `SimpleGraph.commonNeighbors` is the intersection of the neighbor sets of two given vertices.
-
 * `SimpleGraph.incidenceSet` is the `Set` of edges containing a given vertex.
-
 * `CompleteAtomicBooleanAlgebra` instance: Under the subgraph relation, `SimpleGraph` forms a
   `CompleteAtomicBooleanAlgebra`. In other words, this is the complete lattice of spanning subgraphs
   of the complete graph.
@@ -750,7 +749,9 @@ end FromEdgeSet
 theorem disjoint_left {G H : SimpleGraph V} : Disjoint G H ↔ ∀ x y, G.Adj x y → ¬H.Adj x y := by
   simp [← disjoint_edgeSet, Set.disjoint_left, Sym2.forall]
 
-/-! ### Incidence set -/
+/-!
+# Incidence set
+-/
 
 
 /-- Set of edges incident to a given vertex, aka incidence set. -/

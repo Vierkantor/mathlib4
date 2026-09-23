@@ -8,6 +8,9 @@ module
 public import Mathlib.Init
 public meta import Lean.Elab.SyntheticMVars
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `clean%` term elaborator
 
@@ -39,6 +42,8 @@ end Lean.Expr
 
 namespace Mathlib.Tactic
 
+
+set_option doc.verso false
 /--
 `clean% t` fully elaborates `t` and then eliminates all identity functions from it.
 
@@ -60,6 +65,8 @@ def x' : Id Nat := clean% by dsimp [Id]; exact 1
 @[deprecated "`clean%` is not used/needed anymore" (since := "2026-09-03")]
 syntax (name := cleanStx) "clean% " term : term
 
+
+set_option doc.verso true
 @[term_elab cleanStx, inherit_doc cleanStx]
 def elabClean : Term.TermElab := fun stx expectedType? =>
   match stx with

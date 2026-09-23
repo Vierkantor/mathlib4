@@ -8,9 +8,11 @@ module
 public import Mathlib.RingTheory.Finiteness.Defs
 public import Mathlib.Algebra.Module.Submodule.Bilinear
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Finitely generated submodules and bilinear maps
-
 -/
 
 public section

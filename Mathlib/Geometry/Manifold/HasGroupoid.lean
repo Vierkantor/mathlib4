@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Geometry.Manifold.ChartedSpace
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Charted spaces with a given structure groupoid
 -/
@@ -356,7 +359,9 @@ lemma StructureGroupoid.subtypeRestr_mem_maximalAtlas {e : OpenPartialHomeomorph
   exact ⟨G.trans_restricted he (chart_mem_atlas H (x : M)) hs,
          G.trans_restricted (chart_mem_atlas H (x : M)) he hs⟩
 
-/-! ### Structomorphisms -/
+/-!
+# Structomorphisms
+-/
 
 /-- A `G`-diffeomorphism between two charted spaces is a homeomorphism which, when read in the
 charts, belongs to `G`. We avoid the word diffeomorph as it is too related to the smooth category,

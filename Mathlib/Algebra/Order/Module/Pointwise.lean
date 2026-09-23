@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Order.Module.Field
 public import Mathlib.Order.Bounds.OrderIso
 public import Mathlib.Order.GaloisConnection.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Bounds on scalar multiplication of set
 

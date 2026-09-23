@@ -13,7 +13,11 @@ public import Mathlib.Topology.Algebra.TopologicallyNilpotent
 public import Mathlib.Topology.Algebra.LinearTopology
 public import Mathlib.Topology.Algebra.UniformRing
 
-/-! # Evaluation of multivariate power series
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Evaluation of multivariate power series
 
 Let `σ`, `R`, `S` be types, with `CommRing R`, `CommRing S`.
 One assumes that `IsTopologicalRing R` and `IsUniformAddGroup R`,
@@ -27,9 +31,10 @@ If `f` is (the coercion of) a polynomial, it coincides with the evaluation of th
 Otherwise, it is defined by density from polynomials;
 its values are irrelevant unless `φ` is continuous and `a` satisfies two conditions
 bundled in `MvPowerSeries.HasEval a` :
-  - for all `s : σ`, `a s` is topologically nilpotent,
-    meaning that `(a s) ^ n` tends to 0 when `n` tends to infinity
-  - when `a s` tends to zero for the filter of cofinite subsets of `σ`.
+
+* for all `s : σ`, `a s` is topologically nilpotent,
+  meaning that `(a s) ^ n` tends to 0 when `n` tends to infinity
+* when `a s` tends to zero for the filter of cofinite subsets of `σ`.
 
 Under `Continuous φ` and `HasEval a`, the following lemmas furnish the properties of evaluation:
 
@@ -38,7 +43,6 @@ Under `Continuous φ` and `HasEval a`, the following lemmas furnish the properti
 * `MvPowerSeries.uniformContinuous_eval₂`: uniform continuity of the evaluation
 * `MvPowerSeries.continuous_eval₂`: continuity of the evaluation
 * `MvPowerSeries.eval₂_eq_tsum`: the evaluation is given by the sum of its monomials, evaluated.
-
 -/
 
 @[expose] public section
@@ -91,7 +95,9 @@ theorem HasEval.mul_right [IsLinearTopology S S]
     (c : σ → S) {x : σ → S} (hx : HasEval x) : HasEval (x * c) :=
   mul_comm x c ▸ HasEval.mul_left c hx
 
-/-- [Bourbaki, *Algebra*, chap. 4, §4, n°3, Prop. 4 (i) (a & b)][bourbaki1981]. -/
+/--
+‍\[Bourbaki, _Algebra_, chap. 4, §4, n°3, Prop. 4 (i) (a & b)\]\[bourbaki1981\].
+-/
 theorem HasEval.map (hφ : Continuous φ) {a : σ → R} (ha : HasEval a) :
     HasEval (fun s ↦ φ (a s)) where
   hpow s := (ha.hpow s).map hφ

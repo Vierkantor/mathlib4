@@ -12,6 +12,9 @@ public import Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset
 public import Mathlib.Algebra.Order.BigOperators.Ring.Multiset
 public import Mathlib.Tactic.Ring
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Big operators on a finset in ordered rings
 
@@ -128,7 +131,9 @@ lemma prod_add_prod_le' (hi : i ∈ s) (h2i : g i + h i ≤ f i) (hgf : ∀ j �
 
 end CanonicallyOrderedAdd
 
-/-! ### Named inequalities -/
+/-!
+# Named inequalities
+-/
 
 /-- **Cauchy-Schwarz inequality** for finsets.
 
@@ -191,7 +196,9 @@ theorem sq_sum_div_le_sum_sq_div [Semifield R] [LinearOrder R] [IsStrictOrderedR
 
 end Finset
 
-/-! ### Absolute values -/
+/-!
+# Absolute values
+-/
 
 section AbsoluteValue
 
@@ -219,7 +226,9 @@ lemma IsAbsoluteValue.map_prod [CommSemiring R] [Nontrivial R]
 
 end AbsoluteValue
 
-/-! ### Positivity extension -/
+/-!
+# Positivity extension
+-/
 
 namespace Mathlib.Meta.Positivity
 open Qq Lean Meta Finset

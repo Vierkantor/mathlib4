@@ -8,7 +8,11 @@ module
 public import Mathlib.Topology.MetricSpace.Antilipschitz
 public import Mathlib.Topology.MetricSpace.Lipschitz
 
-/-! # Bilipschitz equivalence
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Bilipschitz equivalence
 
 A common pattern in Mathlib is to replace the topology, uniformity and bornology on a type
 synonym with those of the underlying type.

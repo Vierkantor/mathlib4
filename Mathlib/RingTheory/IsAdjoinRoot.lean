@@ -8,6 +8,9 @@ module
 public import Mathlib.FieldTheory.Minpoly.Finite
 public import Mathlib.FieldTheory.Minpoly.IsIntegrallyClosed
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # A predicate on adjoining roots of polynomial
 

@@ -10,6 +10,9 @@ public import Mathlib.CategoryTheory.PUnit
 public import Mathlib.CategoryTheory.Groupoid
 public import Mathlib.CategoryTheory.Category.ULift
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Connected category
 
@@ -21,20 +24,21 @@ We instead are interested in categories with exactly one 'connected
 component'.
 
 We give some equivalent definitions:
-- A nonempty category for which every functor to a discrete category is
+
+* A nonempty category for which every functor to a discrete category is
   constant on objects.
   See `any_functor_const_on_obj` and `Connected.of_any_functor_const_on_obj`.
-- A nonempty category for which every function `F` for which the presence of a
+* A nonempty category for which every function `F` for which the presence of a
   morphism `f : j₁ ⟶ j₂` implies `F j₁ = F j₂` must be constant everywhere.
   See `constant_of_preserves_morphisms` and `Connected.of_constant_of_preserves_morphisms`.
-- A nonempty category for which any subset of its elements containing the
+* A nonempty category for which any subset of its elements containing the
   default and closed under morphisms is everything.
   See `induct_on_objects` and `Connected.of_induct`.
-- A nonempty category for which every object is related under the reflexive
+* A nonempty category for which every object is related under the reflexive
   transitive closure of the relation "there is a morphism in some direction
   from `j₁` to `j₂`".
   See `connected_zigzag` and `zigzag_connected`.
-- A nonempty category for which for any two objects there is a sequence of
+* A nonempty category for which for any two objects there is a sequence of
   morphisms (some reversed) from one to the other.
   See `exists_zigzag'` and `connected_of_zigzag`.
 
@@ -230,9 +234,10 @@ instance [hc : IsConnected J] : IsConnected (ULiftHom.{v₂} (ULift.{u₂} J)) :
       exact hj₀
     apply induct_on_objects p' hj₀' fun f => h ((ULiftHomULiftCategory.equiv J).functor.map f)
 
-/-- Another induction principle for `IsPreconnected J`:
+/--
+Another induction principle for `IsPreconnected J`:
 given a type family `Z : J → Sort*` and
-a rule for transporting in *both* directions along a morphism in `J`,
+a rule for transporting in _both_ directions along a morphism in `J`,
 we can transport an `x : Z j₀` to a point in `Z j` for any `j`.
 -/
 theorem isPreconnected_induction [IsPreconnected J] (Z : J → Sort*)

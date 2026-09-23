@@ -10,6 +10,9 @@ public import Mathlib.Analysis.PSeries
 public import Mathlib.Order.Interval.Finset.Box
 public import Mathlib.Analysis.Asymptotics.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Summability of Eisenstein series
 

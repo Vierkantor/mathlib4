@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.Normed.Operator.Conformal
 public import Mathlib.Analysis.InnerProductSpace.LinearMap
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Conformal maps between inner product spaces
 

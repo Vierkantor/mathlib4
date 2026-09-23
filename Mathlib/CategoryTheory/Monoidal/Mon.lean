@@ -11,6 +11,9 @@ public import Mathlib.CategoryTheory.Monoidal.CoherenceLemmas
 public import Mathlib.CategoryTheory.Limits.Shapes.Terminal
 
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The category of monoids in a monoidal category.
 
@@ -746,7 +749,7 @@ end Mon
 /-!
 We next show that if `C` is symmetric, then `Mon C` is braided, and indeed symmetric.
 
-Note that `Mon C` is *not* braided in general when `C` is only braided.
+Note that `Mon C` is _not_ braided in general when `C` is only braided.
 
 The more interesting construction is the 2-category of monoids in `C`,
 bimodules between the monoids, and intertwiners between the bimodules.

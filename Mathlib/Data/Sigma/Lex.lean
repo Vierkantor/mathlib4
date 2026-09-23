@@ -9,6 +9,9 @@ public import Mathlib.Logic.Function.Defs
 public import Mathlib.Order.Defs.Unbundled
 public import Batteries.Logic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lexicographic order on a sigma type
 
@@ -22,6 +25,7 @@ related by the summand's relation.
 ## See also
 
 Related files are:
+
 * `Combinatorics.CoLex`: Colexicographic order on finite sets.
 * `Data.List.Lex`: Lexicographic order on lists.
 * `Data.Sigma.Order`: Lexicographic order on `Σ i, α i` per se.
@@ -136,7 +140,9 @@ instance [Std.Trichotomous r] [∀ i, Std.Trichotomous (s i)] : Std.Trichotomous
 
 end Sigma
 
-/-! ### `PSigma` -/
+/-!
+# `PSigma`
+-/
 
 
 namespace PSigma

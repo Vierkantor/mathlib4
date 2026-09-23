@@ -11,6 +11,9 @@ public import Mathlib.LinearAlgebra.Matrix.MvPolynomial
 public import Mathlib.LinearAlgebra.Matrix.Polynomial
 public import Mathlib.GroupTheory.GroupAction.Ring
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cramer's rule and adjugate matrices
 
@@ -35,7 +38,7 @@ We prove the adjugate behaves like `det A • A⁻¹`.
 
 ## References
 
-  * https://en.wikipedia.org/wiki/Cramer's_rule#Finding_inverse_matrix
+* https://en.wikipedia.org/wiki/Cramer's\_rule#Finding\_inverse\_matrix
 
 ## Tags
 
@@ -57,11 +60,11 @@ open Matrix Polynomial Equiv Equiv.Perm Finset
 section Cramer
 
 /-!
-  ### `cramer` section
+# `cramer` section
 
-  Introduce the linear map `cramer` with values defined by `cramerMap`.
-  After defining `cramerMap` and showing it is linear,
-  we will restrict our proofs to using `cramer`.
+Introduce the linear map `cramer` with values defined by `cramerMap`.
+After defining `cramerMap` and showing it is linear,
+we will restrict our proofs to using `cramer`.
 -/
 
 
@@ -170,7 +173,7 @@ end Cramer
 section Adjugate
 
 /-!
-### `adjugate` section
+# `adjugate` section
 
 Define the `adjugate` matrix and a few equations.
 These will hold for any matrix over a commutative ring.

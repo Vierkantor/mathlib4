@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Algebra.Subalgebra.Lattice
 public import Mathlib.Algebra.Algebra.Tower
 public import Mathlib.RingTheory.Ideal.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Subalgebras in towers of algebras
 
@@ -26,7 +29,6 @@ compatibility condition `(r • s) • a = r • (s • a)`.
   between `S` and `R`, then `A/S₀/R` is a tower
 * `Subalgebra.restrictScalars`: turn an `S`-subalgebra of `A` into an `R`-subalgebra of `A`,
   given that `A/S/R` is a tower
-
 -/
 
 @[expose] public section

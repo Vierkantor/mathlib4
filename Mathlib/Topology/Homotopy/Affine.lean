@@ -8,6 +8,9 @@ module
 public import Mathlib.Topology.Homotopy.Path
 public import Mathlib.Analysis.Convex.PathConnected
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Affine homotopy between two continuous maps
 

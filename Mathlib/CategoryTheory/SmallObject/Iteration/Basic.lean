@@ -15,7 +15,11 @@ public import Mathlib.Order.ConditionallyCompleteLattice.Basic
 public import Mathlib.Order.SuccPred.Limit
 public import Mathlib.Order.Interval.Set.InitialSeg
 
-/-! # Transfinite iterations of a successor structure
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Transfinite iterations of a successor structure
 
 In this file, we introduce the structure `SuccStruct` on a category `C`.
 It consists of the data of an object `X₀ : C`, a successor map `succ : C → C`
@@ -63,7 +67,6 @@ his code, he found that the approach described above had already
 been used in the pioneering formalization work in Lean 3 by
 Reid Barton in 2018 towards the model category structure on
 topological spaces.
-
 -/
 
 @[expose] public section

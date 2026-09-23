@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Order.Group.Nat
 public import Mathlib.Data.List.Rotate
 public import Mathlib.GroupTheory.Perm.Support
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Permutations from a list
 

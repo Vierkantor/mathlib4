@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Sites.Hypercover.Zero
 public import Mathlib.CategoryTheory.Limits.Shapes.Pullback.Equalizer
 public import Mathlib.CategoryTheory.MorphismProperty.Limits
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Locality conditions on morphism properties
 
@@ -17,15 +20,15 @@ precoverage in a category `C` and `P` be a morphism property on `C` that respect
 
 We say that
 
-- `P` is local at the target if for every `f : X ⟶ Y`, `P` holds for `f` if and only if it holds
+* `P` is local at the target if for every `f : X ⟶ Y`, `P` holds for `f` if and only if it holds
   for the restrictions of `f` to `Uᵢ` for a
   `K`-cover `{Uᵢ}` of `Y`.
-- `P` is local at the source if for every `f : X ⟶ Y`, `P` holds for `f` if and only if it holds
+* `P` is local at the source if for every `f : X ⟶ Y`, `P` holds for `f` if and only if it holds
   for the restrictions of `f` to `Uᵢ` for a `K`-cover `{Uᵢ}` of `X`.
 
 ## TODOs
 
-- Define source and target local closure of a morphism property.
+* Define source and target local closure of a morphism property.
 -/
 
 public section

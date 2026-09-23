@@ -16,6 +16,9 @@ public import Mathlib.Logic.Equiv.Fin.Basic
 public import Mathlib.LinearAlgebra.Prod
 public import Mathlib.Data.Fintype.Option
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Pi types of modules
 
@@ -25,13 +28,14 @@ It contains theorems relating these to each other, as well as to `LinearMap.ker`
 
 ## Main definitions
 
-- pi types in the codomain:
-  - `LinearMap.pi`
-  - `LinearMap.single`
-- pi types in the domain:
-  - `LinearMap.proj`
-  - `LinearMap.diag`
+* pi types in the codomain:
 
+  * `LinearMap.pi`
+  * `LinearMap.single`
+* pi types in the domain:
+
+  * `LinearMap.proj`
+  * `LinearMap.diag`
 -/
 
 @[expose] public section
@@ -238,8 +242,10 @@ theorem disjoint_single_single (I J : Set ι) (h : Disjoint I J) :
       · exact hJ i hiJ
     · exact hI i hiI
 
-/-- The linear equivalence between linear functions on a finite product of modules and
-families of functions on these modules. See note [bundled maps over different rings]. -/
+/--
+The linear equivalence between linear functions on a finite product of modules and
+families of functions on these modules. See note \[bundled maps over different rings\].
+-/
 @[simps symm_apply]
 def lsum (S) [AddCommMonoid M] [Module R M] [Fintype ι] [Semiring S] [Module S M]
     [SMulCommClass R S M] : ((i : ι) → φ i →ₗ[R] M) ≃ₗ[S] ((i : ι) → φ i) →ₗ[R] M where
@@ -283,8 +289,10 @@ theorem pi_ext (h : ∀ i x, f (Pi.single i x) = g (Pi.single i x)) : f = g :=
 theorem pi_ext_iff : f = g ↔ ∀ i x, f (Pi.single i x) = g (Pi.single i x) :=
   ⟨fun h _ _ => h ▸ rfl, pi_ext⟩
 
-/-- This is used as the ext lemma instead of `LinearMap.pi_ext` for reasons explained in
-note [partially-applied ext lemmas]. -/
+/--
+This is used as the ext lemma instead of `LinearMap.pi_ext` for reasons explained in
+note \[partially-applied ext lemmas\].
+-/
 @[ext]
 theorem pi_ext' (h : ∀ i, f.comp (single R φ i) = g.comp (single R φ i)) : f = g := by
   refine pi_ext fun i x => ?_
@@ -537,13 +545,15 @@ def piOptionEquivProd {ι : Type*} {M : Option ι → Type*} [(i : Option ι) �
 variable (ι M) (S : Type*) [Fintype ι] [DecidableEq ι] [Semiring S] [AddCommMonoid M]
   [Module R M] [Module S M] [SMulCommClass R S M]
 
-/-- Linear equivalence between linear functions `Rⁿ → M` and `Mⁿ`. The spaces `Rⁿ` and `Mⁿ`
+/--
+Linear equivalence between linear functions `Rⁿ → M` and `Mⁿ`. The spaces `Rⁿ` and `Mⁿ`
 are represented as `ι → R` and `ι → M`, respectively, where `ι` is a finite type.
 
 This as an `S`-linear equivalence, under the assumption that `S` acts on `M` commuting with `R`.
 When `R` is commutative, we can take this to be the usual action with `S = R`.
 Otherwise, `S = ℕ` shows that the equivalence is additive.
-See note [bundled maps over different rings]. -/
+See note \[bundled maps over different rings\].
+-/
 def piRing : ((ι → R) →ₗ[R] M) ≃ₗ[S] ι → M :=
   (LinearMap.lsum R (fun _ : ι => R) S).symm.trans
     (piCongrRight fun _ => LinearMap.ringLmapEquivSelf R S M)
@@ -667,7 +677,8 @@ def Fin.consLinearEquiv
   map_smul' c x := funext <| Fin.cases rfl (by simp)
 
 
-/-! ### Bundled versions of `Matrix.vecCons` and `Matrix.vecEmpty`
+/-!
+# Bundled versions of `Matrix.vecCons` and `Matrix.vecEmpty`
 
 The idea of these definitions is to be able to define a map as `x ↦ ![f₁ x, f₂ x, f₃ x]`, where
 `f₁ f₂ f₃` are already linear maps, as `f₁.vecCons <| f₂.vecCons <| f₃.vecCons <| vecEmpty`.
@@ -677,7 +688,6 @@ definitionally equal to the result using `LinearMap.vecCons`, as `Fin.cases` and
 application do not commute definitionally.
 
 Versions for when `f₁ f₂ f₃` are bilinear maps are also provided.
-
 -/
 
 

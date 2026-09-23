@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Group.Submonoid.Membership
 public import Mathlib.Data.DFinsupp.BigOperators
 public import Mathlib.Order.ConditionallyCompleteLattice.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `DFinsupp` and submonoids
 

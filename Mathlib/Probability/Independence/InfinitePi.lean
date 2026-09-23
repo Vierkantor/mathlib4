@@ -9,6 +9,9 @@ public import Mathlib.Probability.HasLaw
 public import Mathlib.Probability.Independence.Basic
 public import Mathlib.Probability.ProductMeasure
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Independence of an infinite family of random variables
 
@@ -18,6 +21,7 @@ variables, relying on `Measure.infinitePi`.
 ## Implementation note
 
 There are several possible measurability assumptions:
+
 * The map `ω ↦ (Xᵢ(ω))ᵢ` is measurable.
 * For all `i`, the map `ω ↦ Xᵢ(ω)` is measurable.
 * The map `ω ↦ (Xᵢ(ω))ᵢ` is almost everywhere measurable.

@@ -10,6 +10,9 @@ public import Mathlib.Combinatorics.SimpleGraph.Triangle.Tripartite
 public import Mathlib.Tactic.Rify
 public import Mathlib.Tactic.Qify
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The Ruzsa-Szemerédi problem
 
@@ -36,7 +39,9 @@ open scoped Pointwise
 
 variable {α β : Type*}
 
-/-! ### The Ruzsa-Szemerédi number -/
+/-!
+# The Ruzsa-Szemerédi number
+-/
 
 section ruzsaSzemerediNumber
 variable [DecidableEq α] [DecidableEq β] [Fintype α] [Fintype β] {G : SimpleGraph α}
@@ -112,7 +117,9 @@ lemma ruzsaSzemerediNumberNat_le : ruzsaSzemerediNumberNat n ≤ n.choose 3 :=
 
 end ruzsaSzemerediNumber
 
-/-! ### The Ruzsa-Szemerédi construction -/
+/-!
+# The Ruzsa-Szemerédi construction
+-/
 
 section RuzsaSzemeredi
 variable [Fintype α] [CommRing α] {s : Finset α} {x : α × α × α}

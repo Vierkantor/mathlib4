@@ -9,6 +9,9 @@ public import Mathlib.Data.Nat.Basic
 public import Mathlib.Tactic.Push
 public import Batteries.Tactic.Init
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `Nat.find` and `Nat.findGreatest`
 -/
@@ -21,7 +24,9 @@ namespace Nat
 
 section Find
 
-/-! ### `Nat.find` -/
+/-!
+# `Nat.find`
+-/
 
 private def lbp (m n : ℕ) : Prop :=
   m = n + 1 ∧ ∀ k ≤ n, ¬p k
@@ -155,7 +160,9 @@ lemma find_add {hₘ : ∃ m, p (m + n)} {hₙ : ∃ n, p n} (hn : n ≤ Nat.fin
 
 end Find
 
-/-! ### `Nat.findGreatest` -/
+/-!
+# `Nat.findGreatest`
+-/
 
 section FindGreatest
 

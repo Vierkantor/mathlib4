@@ -11,6 +11,9 @@ public import Mathlib.CategoryTheory.Galois.FullSubcategory
 public import Mathlib.Topology.Algebra.OpenSubgroup
 public import Mathlib.Topology.Category.FinTopCat
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The Galois category of finite sets with a continuous action of a topological group
 
@@ -21,7 +24,6 @@ In order to do this, we show that the corresponding property
 consists of the union over all open subgroups `H` of `G` of the properties
 `trivialOnSet FintypeCat H` (which are satisfied by the representations
 that are trivial on `H`).
-
 -/
 
 @[expose] public section

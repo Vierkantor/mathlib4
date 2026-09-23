@@ -10,7 +10,11 @@ public import Mathlib.Topology.VectorBundle.Hom
 public import Mathlib.Geometry.Manifold.VectorBundle.MDifferentiable
 public import Mathlib.Geometry.Manifold.Notation
 
-/-! # Homs of `C^n` vector bundles over the same base space
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Homs of `C^n` vector bundles over the same base space
 
 Here we show that the bundle of continuous linear maps is a `C^n` vector bundle. We also show
 that applying a smooth family of linear maps to a smooth family of vectors gives a smooth

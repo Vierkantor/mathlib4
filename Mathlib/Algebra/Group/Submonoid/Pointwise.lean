@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Group.Submonoid.Membership
 public import Mathlib.Algebra.Order.BigOperators.Group.List
 public import Mathlib.Order.WellFoundedSet
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Pointwise instances on `Submonoid`s and `AddSubmonoid`s
 

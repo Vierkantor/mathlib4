@@ -8,13 +8,15 @@ module
 public import Mathlib.Order.LatticeIntervals
 public import Mathlib.Order.SuccPred.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Successors in intervals
 
 If `j` is an element of a partially ordered set equipped
 with a successor function, then for any element `i : Set.Iic j`
 which is not the maximum, we have `↑(Order.succ i) = Order.succ ↑i`.
-
 -/
 
 public section

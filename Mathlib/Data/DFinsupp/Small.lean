@@ -9,6 +9,9 @@ public import Mathlib.Data.Finsupp.ToDFinsupp
 public import Mathlib.Data.DFinsupp.Defs
 public import Mathlib.Logic.Small.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Smallness of the `DFinsupp` type
 

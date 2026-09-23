@@ -8,6 +8,9 @@ module
 public import Mathlib.Tactic.NormNum.Ineq
 public meta import Mathlib.Data.Int.Init
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `norm_num` extension for integer div/mod and divides
 

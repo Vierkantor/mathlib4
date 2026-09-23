@@ -11,6 +11,9 @@ public import Mathlib.RingTheory.PowerSeries.Basic
 public import Mathlib.RingTheory.PowerSeries.PiTopology
 public import Mathlib.RingTheory.PowerSeries.Substitution
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Construction of L-functions
 
@@ -24,6 +27,7 @@ This file constructs L-functions as formal Dirichlet series.
 ## Implementation notes
 
 We take the following route from polynomials to L-functions:
+
 * Starting from a polynomial in `T`, `PowerSeries.invOfUnit` gives the reciporical power series.
 * `ofPowerSeries` gives the local Euler factor as a formal Dirichlet series on powers of `q`.
 * `eulerProduct` gives the L-function as the formal product of these local Euler factors.
@@ -32,6 +36,7 @@ We take the following route from polynomials to L-functions:
 For example, the Riemann zeta function `ζ(s)` corresponds to taking `1 - T` at each prime `p`.
 
 For context, here is a diagram of the possible routes from polynomials to L-functions:
+
 ```
                    T=q⁻ˢ                     s ∈ ℂ
 [polynomials in T] ----> [polynomials in q⁻ˢ] ----> [analytic function in s]

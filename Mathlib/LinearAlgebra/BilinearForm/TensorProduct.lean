@@ -11,6 +11,9 @@ public import Mathlib.LinearAlgebra.Dual.Lemmas
 public import Mathlib.LinearAlgebra.TensorProduct.Tower
 public import Mathlib.RingTheory.TensorProduct.Finite
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The bilinear form on a tensor product
 
@@ -20,7 +23,6 @@ public import Mathlib.RingTheory.TensorProduct.Finite
   applying `B₁` on `M₁` and `B₂` on `M₂`.
 * `LinearMap.BilinMap.tensorDistribEquiv`: `BilinForm.tensorDistrib` as an equivalence on finite
   free modules.
-
 -/
 
 @[expose] public section

@@ -10,6 +10,9 @@ public meta import Lean.Elab.Tactic.Basic
 public import Qq
 public import Qq.Typ
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `SynthesizeUsing`
 
@@ -48,6 +51,8 @@ def synthesizeUsing' {u : Level} (type : Q(Sort u)) (tac : TacticM Unit) : MetaM
     throwError m!"synthesizeUsing': unsolved goals\n{goalsToMessageData goals}"
   return e
 
+
+set_option doc.verso false
 /--
 `synthesizeUsing type tacticSyntax` synthesizes an element of type `type` by evaluating the
 given tactic syntax.
@@ -64,6 +69,10 @@ def synthesizeUsingTactic {u : Level} (type : Q(Sort u)) (tac : Syntax) :
     MetaM (List MVarId × Q($type)) := do
   synthesizeUsing type (do evalTactic tac)
 
+
+set_option doc.verso true
+
+set_option doc.verso false
 /--
 `synthesizeUsing' type tacticSyntax` synthesizes an element of type `type` by evaluating the
 given tactic syntax.
@@ -93,3 +102,5 @@ elab "simpTerm% " t:term : term => do simpTerm (← Term.elabTerm t none)
 -/
 def synthesizeUsingTactic' {u : Level} (type : Q(Sort u)) (tac : Syntax) : MetaM Q($type) := do
   synthesizeUsing' type (do evalTactic tac)
+
+set_option doc.verso true

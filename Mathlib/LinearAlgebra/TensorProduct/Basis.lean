@@ -11,6 +11,9 @@ public import Mathlib.LinearAlgebra.Finsupp.VectorSpace
 public import Mathlib.LinearAlgebra.FreeModule.Basic
 public import Mathlib.LinearAlgebra.TensorProduct.Lift
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Bases and dimensionality of tensor products of modules
 

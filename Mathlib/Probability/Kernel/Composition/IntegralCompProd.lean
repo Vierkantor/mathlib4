@@ -8,6 +8,9 @@ module
 public import Mathlib.Probability.Kernel.Composition.MeasureComp
 public import Mathlib.Probability.Kernel.MeasurableIntegral
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Bochner integral of a function against the composition and the composition-products of two kernels
 
@@ -28,7 +31,6 @@ prove the same equality for the Bochner integral.
 
 * `ProbabilityTheory.integral_compProd`: the integral against the composition-product is
   `∫ z, f z ∂((κ ⊗ₖ η) a) = ∫ x, ∫ y, f (x, y) ∂(η (a, x)) ∂(κ a)`.
-
 * `ProbabilityTheory.integral_comp`: the integral against the composition is
   `∫⁻ z, f z ∂((η ∘ₖ κ) a) = ∫⁻ x, ∫⁻ y, f y ∂(η x) ∂(κ a)`.
 
@@ -96,7 +98,9 @@ theorem _root_.MeasureTheory.AEStronglyMeasurable.compProd_mk_left {δ : Type*} 
   filter_upwards [ae_ae_of_ae_compProd hf.ae_eq_mk] with x hx using
     ⟨fun y => hf.mk f (x, y), hf.stronglyMeasurable_mk.comp_measurable measurable_prodMk_left, hx⟩
 
-/-! ### Integrability -/
+/-!
+# Integrability
+-/
 
 
 theorem hasFiniteIntegral_compProd_iff ⦃f : β × γ → E⦄ (h1f : StronglyMeasurable f) :
@@ -157,7 +161,9 @@ theorem _root_.MeasureTheory.Integrable.integral_compProd [NormedSpace ℝ E]
             integral_nonneg_of_ae <|
               Eventually.of_forall fun y => (norm_nonneg (f (x, y)) :)).symm
 
-/-! ### Bochner integral -/
+/-!
+# Bochner integral
+-/
 
 
 variable [NormedSpace ℝ E] {E' : Type*} [NormedAddCommGroup E'] [NormedSpace ℝ E']
@@ -292,7 +298,9 @@ theorem _root_.MeasureTheory.AEStronglyMeasurable.comp {δ : Type*} [Topological
   filter_upwards [ae_ae_of_ae_comp hf.ae_eq_mk] with x hx using
     ⟨hf.mk f, hf.stronglyMeasurable_mk, hx⟩
 
-/-! ### Integrability with respect to composition -/
+/-!
+# Integrability with respect to composition
+-/
 
 theorem hasFiniteIntegral_comp_iff ⦃f : γ → E⦄ (hf : StronglyMeasurable f) :
     HasFiniteIntegral f ((η ∘ₖ κ) a) ↔
@@ -347,7 +355,9 @@ theorem _root_.MeasureTheory.Integrable.integral_comp [NormedSpace ℝ E] ⦃f :
     ae_of_all _ fun _ ↦ (norm_integral_le_integral_norm _).trans_eq
     (norm_of_nonneg <| integral_nonneg_of_ae <| ae_of_all _ fun _ ↦ norm_nonneg _).symm
 
-/-! ### Bochner integral with respect to the composition -/
+/-!
+# Bochner integral with respect to the composition
+-/
 
 variable [NormedSpace ℝ E] {E' : Type*} [NormedAddCommGroup E'] [NormedSpace ℝ E']
 

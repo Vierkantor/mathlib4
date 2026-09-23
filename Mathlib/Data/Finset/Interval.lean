@@ -9,6 +9,9 @@ public import Mathlib.Data.Finset.Grade
 public import Mathlib.Data.Finset.Powerset
 public import Mathlib.Order.Interval.Finset.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Intervals of finsets as finsets
 

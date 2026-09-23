@@ -10,6 +10,9 @@ public meta import Lean.Meta.Tactic.SplitIf
 public meta import Lean.Elab.Tactic.Simp
 public import Mathlib.Tactic.Core
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 Tactic to split if-then-else expressions.
 -/

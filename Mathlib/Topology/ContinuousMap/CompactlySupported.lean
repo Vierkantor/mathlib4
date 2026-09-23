@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Order.Module.PositiveLinearMap
 public import Mathlib.Topology.Algebra.Order.Support
 public import Mathlib.Topology.ContinuousMap.ZeroAtInfty
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Compactly supported continuous functions
 
@@ -24,7 +27,6 @@ When `β` has more structures, `C_c(α, β)` inherits such structures as `AddCom
 
 When the domain `α` is compact, `CompactlySupportedContinuousMap.continuousMapEquiv`
 gives the identification `C(α, β) ≃ C_c(α, β)`.
-
 -/
 
 @[expose] public section
@@ -161,7 +163,8 @@ lemma compLeft_apply {g : C(β, γ)} (hg : g 0 = 0) (f : C_c(α, β)) (a : α) :
 
 end Basics
 
-/-! ### Algebraic structure
+/-!
+# Algebraic structure
 
 Whenever `β` has the structure of continuous additive monoid and a compatible topological structure,
 then `C_c(α, β)` inherits a corresponding algebraic structure. The primary exception to this is that
@@ -372,7 +375,8 @@ end AlgebraicStructure
 
 section Star
 
-/-! ### Star structure
+/-!
+# Star structure
 
 It is possible to equip `C_c(α, β)` with a pointwise `star` operation whenever there is a continuous
 `star : β → β` for which `star (0 : β) = 0`. We don't have quite this weak a typeclass, but
@@ -435,7 +439,9 @@ end StarRing
 
 section PartialOrder
 
-/-! ### The partial order in `C_c`
+/-!
+# The partial order in `C_c`
+
 When `β` is equipped with a partial order, `C_c(α, β)` is given the pointwise partial order.
 -/
 
@@ -538,7 +544,8 @@ instance : IsOrderedAddMonoid C_c(α, β) where
 
 end IsOrderedAddMonoid
 
-/-! ### `C_c` as a functor
+/-!
+# `C_c` as a functor
 
 For each `β` with sufficient structure, there is a contravariant functor `C_c(-, β)` from the
 category of topological spaces with morphisms given by `CocompactMap`s.

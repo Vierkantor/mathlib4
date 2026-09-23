@@ -10,6 +10,9 @@ public import Mathlib.Tactic.AdaptationNote
 public import Mathlib.Tactic.FieldSimp
 public import Mathlib.Tactic.Linarith
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Slopes of convex functions
 

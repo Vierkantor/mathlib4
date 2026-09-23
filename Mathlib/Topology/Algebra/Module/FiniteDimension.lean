@@ -20,6 +20,9 @@ public import Mathlib.Topology.Algebra.SeparationQuotient.FiniteDimensional
 public import Mathlib.Topology.Maps.Strict.Basic
 public import Lean.Meta.Tactic.Rfl
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Finite-dimensional topological vector spaces over complete fields
 
@@ -50,7 +53,6 @@ then `ξ.equivFun : E →ₗ (ι → 𝕜)` is continuous. However, for technica
 prove this when `ι` and `E` live in the same universe. So we start by doing that as a private
 lemma, then we deduce `LinearMap.continuous_of_finiteDimensional` from it, and then the general
 result follows as `continuous_equivFun_basis`.
-
 -/
 
 @[expose] public section
@@ -99,8 +101,10 @@ variable {𝕜 : Type u} [hnorm : NontriviallyNormedField 𝕜] {E : Type v} [Ad
   [AddCommGroup F'] [Module 𝕜 F'] [TopologicalSpace F'] [IsTopologicalAddGroup F']
   [ContinuousSMul 𝕜 F']
 
-/-- If `𝕜` is a nontrivially normed field, any T2 topology on `𝕜` which makes it a topological
-vector space over itself (with the norm topology) is *equal* to the norm topology. -/
+/--
+If `𝕜` is a nontrivially normed field, any T2 topology on `𝕜` which makes it a topological
+vector space over itself (with the norm topology) is _equal_ to the norm topology.
+-/
 theorem unique_topology_of_t2 {t : TopologicalSpace 𝕜} (h₁ : @IsTopologicalAddGroup 𝕜 t _)
     (h₂ : @ContinuousSMul 𝕜 𝕜 _ hnorm.toUniformSpace.toTopologicalSpace t) (h₃ : @T2Space 𝕜 t) :
     t = hnorm.toUniformSpace.toTopologicalSpace := by

@@ -13,6 +13,9 @@ public import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
 public import Mathlib.LinearAlgebra.Matrix.SesquilinearForm
 public import Mathlib.LinearAlgebra.Matrix.Symmetric
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Quadratic maps
 
@@ -25,7 +28,7 @@ that:
   `QuadraticMap.polar_smul_left`, `QuadraticMap.polar_smul_right`:
   the map `QuadraticMap.polar Q := fun x y ↦ Q (x + y) - Q x - Q y` is bilinear.
 
-This notion generalizes to commutative semirings using the approach in [izhakian2016][] which
+This notion generalizes to commutative semirings using the approach in \[izhakian2016\]\[\] which
 requires that there be a (possibly non-unique) companion bilinear map `B` such that
 `∀ x y, Q (x + y) = Q x + Q y + B x y`. Over a ring, this `B` is precisely `QuadraticMap.polar Q`.
 
@@ -62,16 +65,17 @@ The variable `S` is used when `R` itself has a `•` action.
 
 While the definition and many results make sense if we drop commutativity assumptions,
 the correct definition of a quadratic maps in the noncommutative setting would require
-substantial refactors from the current version, such that $Q(rm) = rQ(m)r^*$ for some
-suitable conjugation $r^*$.
+substantial refactors from the current version, such that $`Q(rm) = rQ(m)r^*` for some
+suitable conjugation $`r^*`.
 
-The [Zulip thread](https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quadratic.20Maps/near/395529867)
+The [Zulip
+thread](https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/Quadratic.20Maps/near/395529867)
 has some further discussion.
 
 ## References
 
-* https://en.wikipedia.org/wiki/Quadratic_form
-* https://en.wikipedia.org/wiki/Discriminant#Quadratic_forms
+* https://en.wikipedia.org/wiki/Quadratic\_form
+* https://en.wikipedia.org/wiki/Discriminant#Quadratic\_forms
 
 ## Tags
 
@@ -93,9 +97,10 @@ variable [CommRing R] [AddCommGroup M] [AddCommGroup N]
 
 namespace QuadraticMap
 
-/-- Up to a factor 2, `Q.polar` is the associated bilinear map for a quadratic map `Q`.
+/--
+Up to a factor 2, `Q.polar` is the associated bilinear map for a quadratic map `Q`.
 
-Source of this name: https://en.wikipedia.org/wiki/Quadratic_form#Generalization
+Source of this name: https://en.wikipedia.org/wiki/Quadratic\_form#Generalization
 -/
 def polar (f : M → N) (x y : M) :=
   f (x + y) - f x - f y
@@ -646,7 +651,7 @@ end NonUnitalNonAssocSemiring
 end QuadraticMap
 
 /-!
-### Associated bilinear maps
+# Associated bilinear maps
 
 If multiplication by 2 is invertible on the target module `N` of
 `QuadraticMap R M N`, then there is a linear bijection `QuadraticMap.associated`
@@ -999,7 +1004,9 @@ end Associated
 
 section IsOrtho
 
-/-! ### Orthogonality -/
+/-!
+# Orthogonality
+-/
 
 section CommSemiring
 variable [CommSemiring R] [AddCommMonoid M] [Module R M] [AddCommMonoid N] [Module R N]
@@ -1150,7 +1157,7 @@ end QuadraticMap
 section
 
 /-!
-### Quadratic forms and matrices
+# Quadratic forms and matrices
 
 Connect quadratic forms and matrices, in order to explicitly compute with them.
 The convention is twos out, so there might be a factor 2⁻¹ in the entries of the

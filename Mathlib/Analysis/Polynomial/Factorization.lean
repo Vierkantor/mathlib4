@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Polynomial.Degree.IsMonicOfDegree
 public import Mathlib.Analysis.Complex.Polynomial.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Factorization of monic polynomials of given degree
 
@@ -16,7 +19,6 @@ This file contains two main results:
 * `Polynomial.IsMonicOfDegree.eq_mul_isMonicOfDegree_one_isMonicOfDegree`
   shows that a monic polynomial of positive degree over an algebraically closed field
   can be written as a monic polynomial of degree 1 times another monic factor.
-
 * `Polynomial.IsMonicOfDegree.eq_mul_isMonicOfDegree_two_isMonicOfDegree`
   shows that a monic polynomial of degree at least two over `ℝ` can be written as
   a monic polynomial of degree two times another monic factor.

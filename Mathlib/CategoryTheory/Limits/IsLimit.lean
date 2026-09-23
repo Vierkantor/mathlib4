@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Adjunction.Basic
 public import Mathlib.CategoryTheory.Limits.Cones
 public import Batteries.Tactic.Congr
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Limits and colimits
 
@@ -17,15 +20,17 @@ In this introduction we only describe the setup for limits;
 it is repeated, with slightly different names, for colimits.
 
 The main structures defined in this file is
+
 * `IsLimit c`, for `c : Cone F`, `F : J ⥤ C`, expressing that `c` is a limit cone,
 
 See also `CategoryTheory.Limits.HasLimits` which further builds:
+
 * `LimitCone F`, which consists of a choice of cone for `F` and the fact it is a limit cone, and
 * `HasLimit F`, asserting the mere existence of some limit cone for `F`.
 
 ## References
-* [Stacks: Limits and colimits](https://stacks.math.columbia.edu/tag/002D)
 
+* [Stacks: Limits and colimits](https://stacks.math.columbia.edu/tag/002D)
 -/
 
 @[expose] public section

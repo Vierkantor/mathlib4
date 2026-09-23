@@ -13,6 +13,9 @@ public import Mathlib.CategoryTheory.Limits.FunctorCategory.Basic
 public import Mathlib.CategoryTheory.Opposites
 public import Mathlib.Util.Superscript
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Simplicial objects in a category.
 
@@ -23,14 +26,14 @@ A simplicial object in a category `C` is a `C`-valued presheaf on `SimplexCatego
 
 The following notations can be enabled via `open Simplicial`.
 
-- `X _⦋n⦌` denotes the `n`-th term of a simplicial object `X`, where `n : ℕ`.
-- `X ^⦋n⦌` denotes the `n`-th term of a cosimplicial object `X`, where `n : ℕ`.
+* `X _⦋n⦌` denotes the `n`-th term of a simplicial object `X`, where `n : ℕ`.
+* `X ^⦋n⦌` denotes the `n`-th term of a cosimplicial object `X`, where `n : ℕ`.
 
 The following notations can be enabled via
 `open CategoryTheory.SimplicialObject.Truncated`.
 
-- `X _⦋m⦌ₙ` denotes the `m`-th term of an `n`-truncated simplicial object `X`.
-- `X ^⦋m⦌ₙ` denotes the `m`-th term of an `n`-truncated cosimplicial object `X`.
+* `X _⦋m⦌ₙ` denotes the `m`-th term of an `n`-truncated simplicial object `X`.
+* `X ^⦋m⦌ₙ` denotes the `m`-th term of an `n`-truncated cosimplicial object `X`.
 -/
 
 @[expose] public section

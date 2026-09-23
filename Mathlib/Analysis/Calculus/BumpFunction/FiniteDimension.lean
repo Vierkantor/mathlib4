@@ -13,6 +13,9 @@ public import Mathlib.Data.Set.Pointwise.Support
 public import Mathlib.MeasureTheory.Measure.Haar.NormedSpace
 public import Mathlib.MeasureTheory.Measure.Haar.Unique
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Bump functions in finite-dimensional vector spaces
 

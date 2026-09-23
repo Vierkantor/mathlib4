@@ -13,6 +13,9 @@ public import Mathlib.Data.Finset.Powerset
 public import Mathlib.Data.Fintype.Pi
 public import Mathlib.Order.Preorder.Finite
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Dissociation and span
 

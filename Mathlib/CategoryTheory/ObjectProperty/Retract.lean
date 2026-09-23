@@ -12,7 +12,11 @@ public import Mathlib.CategoryTheory.ObjectProperty.ContainsZero
 public import Mathlib.CategoryTheory.ObjectProperty.Small
 public import Mathlib.CategoryTheory.Retract
 
-/-! # Properties of objects which are stable under retracts
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Properties of objects which are stable under retracts
 
 Given a category `C` and `P : ObjectProperty C` (i.e. `P : C → Prop`),
 this file introduces the type class `P.IsStableUnderRetracts`.

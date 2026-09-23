@@ -9,6 +9,9 @@ public import Mathlib.GroupTheory.Goursat
 public import Mathlib.LinearAlgebra.Prod
 public import Mathlib.LinearAlgebra.Quotient.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Goursat's lemma for submodules
 

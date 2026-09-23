@@ -8,6 +8,9 @@ module
 public import Mathlib.CategoryTheory.Limits.Shapes.Products
 public import Mathlib.SetTheory.Cardinal.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Any small complete category is a preorder
 
@@ -19,7 +22,7 @@ we instead show that the homsets are subsingleton.
 
 ## References
 
-* https://ncatlab.org/nlab/show/complete+small+category#in_classical_logic
+* https://ncatlab.org/nlab/show/complete+small+category#in\_classical\_logic
 
 ## Tags
 

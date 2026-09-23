@@ -8,6 +8,9 @@ module
 public import Mathlib.CategoryTheory.Limits.Constructions.EpiMono
 public import Mathlib.CategoryTheory.Limits.FunctorCategory.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Monomorphisms and epimorphisms in functor categories
 
@@ -15,7 +18,6 @@ A natural transformation `f : F ⟶ G` between functors `K ⥤ C`
 is a mono (resp. epi) iff for all `k : K`, `f.app k` is,
 at least when `C` has pullbacks (resp. pushouts),
 see `NatTrans.mono_iff_mono_app` and `NatTrans.epi_iff_epi_app`.
-
 -/
 
 public section

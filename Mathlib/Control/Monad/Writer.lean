@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Group.Monoid
 public import Mathlib.Logic.Equiv.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Writer monads
 
@@ -16,9 +19,10 @@ Common applications are logging monads where the monad logs messages as the
 computation progresses.
 
 ## References
-- https://hackage.haskell.org/package/mtl-2.2.1/docs/Control-Monad-Writer-Class.html
-- [Original Mark P Jones article introducing `Writer`](https://web.cecs.pdx.edu/~mpj/pubs/springschool.html)
 
+* https://hackage.haskell.org/package/mtl-2.2.1/docs/Control-Monad-Writer-Class.html
+* [Original Mark P Jones article introducing
+  `Writer`](https://web.cecs.pdx.edu/~mpj/pubs/springschool.html)
 -/
 
 @[expose] public section
@@ -191,9 +195,11 @@ class MonadWriterAdapter (ω : outParam (Type u)) (m : Type u → Type v) where
 export MonadWriterAdapter (adaptWriter)
 
 variable {m : Type u → Type*}
-/-- Transitivity.
+/--
+Transitivity.
 
-see Note [lower instance priority] -/
+see Note \[lower instance priority\]
+-/
 instance (priority := 100) monadWriterAdapterTrans {n : Type u → Type v}
     [MonadWriterAdapter ω m] [MonadFunctor m n] : MonadWriterAdapter ω n where
   adaptWriter f := monadMap (fun {α} ↦ (adaptWriter f : m α → m α))

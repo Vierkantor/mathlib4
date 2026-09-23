@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Lie.Weights.Basic
 public import Mathlib.LinearAlgebra.Trace
 public import Mathlib.LinearAlgebra.FreeModule.PID
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lie modules with linear weights
 
@@ -17,6 +20,7 @@ studies `M` via its weights. These are functions `χ : L → R` whose correspond
 `LieModule.genWeightSpace M χ`, is non-trivial. If `L` is Abelian or if `R` has characteristic zero
 (and `M` is finite-dimensional) then such `χ` are necessarily `R`-linear. However in general
 non-linear weights do exist. For example if we take:
+
 * `R`: the field with two elements (or indeed any perfect field of characteristic two),
 * `L`: `sl₂` (this is nilpotent in characteristic two),
 * `M`: the natural two-dimensional representation of `L`,
@@ -29,6 +33,7 @@ have linear weights and provide typeclass instances in the two important cases t
 or `R` has characteristic zero.
 
 ## Main definitions
+
 * `LieModule.LinearWeights`: a typeclass encoding the fact that a given Lie module has linear
   weights, and furthermore that the weights vanish on the derived ideal.
 * `LieModule.instLinearWeightsOfCharZero`: a typeclass instance encoding the fact that for an
@@ -38,7 +43,6 @@ or `R` has characteristic zero.
 * `LieModule.exists_forall_lie_eq_smul`: existence of simultaneous
   eigenvectors from existence of simultaneous generalized eigenvectors for Noetherian Lie modules
   with linear weights.
-
 -/
 
 @[expose] public section

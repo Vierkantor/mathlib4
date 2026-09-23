@@ -7,6 +7,9 @@ module
 
 public import Mathlib.FieldTheory.IntermediateField.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Adjoining Elements to Fields
 
@@ -16,7 +19,7 @@ For example, `K[x]` might not include `x⁻¹`.
 
 ## Notation
 
-- `F⟮α⟯`: adjoin a single element `α` to `F` (in scope `IntermediateField`).
+* `F⟮α⟯`: adjoin a single element `α` to `F` (in scope `IntermediateField`).
 -/
 
 @[expose] public section

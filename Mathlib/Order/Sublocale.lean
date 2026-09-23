@@ -8,6 +8,9 @@ module
 public import Mathlib.Order.Nucleus
 public import Mathlib.Order.SupClosed
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Sublocale
 
@@ -21,7 +24,7 @@ Create separate definitions for `sInf_mem` and `HImpClosed` (also useful for `Co
 
 ## References
 
-* [J. Picada A. Pultr, *Frames and Locales*][picado2012]
+* ‍\[J. Picada A. Pultr, _Frames and Locales_\]\[picado2012\]
 * https://ncatlab.org/nlab/show/sublocale
 * https://ncatlab.org/nlab/show/nucleus
 -/

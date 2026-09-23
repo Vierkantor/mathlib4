@@ -9,6 +9,9 @@ public import Mathlib.Topology.Algebra.Ring.Basic
 public import Mathlib.Topology.Algebra.Group.Quotient
 public import Mathlib.RingTheory.Ideal.Quotient.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Ideals and quotients of topological rings
 

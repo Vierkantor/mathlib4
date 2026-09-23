@@ -9,8 +9,11 @@ public import Mathlib.Init
 public meta import Lean.Meta.CoeAttr
 public import Lean.Meta.CoeAttr
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
-## `funProp` Meta programming functions like in Lean.Expr.* but for working with bundled morphisms.
+# `funProp` Meta programming functions like in Lean.Expr.\* but for working with bundled morphisms.
 
 Function application in normal lean expression looks like `.app f x` but when we work with bundled
 morphism `f` it looks like `.app (.app coe f) x` where `f`. In mathlib `coe` is usually
@@ -18,9 +21,11 @@ morphism `f` it looks like `.app (.app coe f) x` where `f`. In mathlib `coe` is 
 
 The main difference when working with expression involving morphisms is that the notion the head of
 expression changes. For example in:
+
 ```
   coe (f a) b
 ```
+
 the head of expression is considered to be `f` and not `coe`.
 -/
 

@@ -11,6 +11,9 @@ public import Mathlib.CategoryTheory.Whiskering
 public import Mathlib.CategoryTheory.EssentialImage
 public import Mathlib.Tactic.CategoryTheory.Slice
 public import Mathlib.Data.Int.Notation
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Equivalence of categories
 
@@ -23,6 +26,7 @@ two natural transformations `η : 𝟭 C ⟶ F ⋙ G` and `ε : G ⋙ F ⟶ 𝟭
 counit, such that the compositions `F ⟶ FGF ⟶ F` and `G ⟶ GFG ⟶ G` are the identity. Unfortunately,
 it is not the case that the natural isomorphisms `η` and `ε` in the definition of an equivalence
 automatically give an adjunction. However, it is true that
+
 * if one of the two compositions is the identity, then so is the other, and
 * given an equivalence of categories, it is always possible to refine `η` in such a way that the
   identities are satisfied.
@@ -55,7 +59,6 @@ if it is full, faithful and essentially surjective.
 ## Notation
 
 We write `C ≌ D` (`\backcong`, not to be confused with `≅`/`\cong`) for a bundled equivalence.
-
 -/
 
 @[expose] public section

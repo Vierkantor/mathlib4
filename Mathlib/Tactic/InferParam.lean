@@ -9,6 +9,9 @@ public import Mathlib.Init
 public meta import Lean.Elab.Tactic.Basic
 public meta import Lean.Meta.Tactic.Replace
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Infer an optional parameter
 

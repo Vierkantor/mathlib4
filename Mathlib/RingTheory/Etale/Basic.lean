@@ -9,8 +9,10 @@ public import Mathlib.RingTheory.Ideal.Quotient.Nilpotent
 public import Mathlib.RingTheory.Smooth.Basic
 public import Mathlib.RingTheory.Unramified.Basic
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Étale morphisms
 
 An `R`-algebra `A` is formally etale if `Ω[A⁄R]` and `H¹(L_{A/R})` both vanish.
@@ -24,7 +26,6 @@ under `R`-algebra homomorphisms and compositions.
 
 We show that étale is stable under algebra isomorphisms, composition and
 localization at an element.
-
 -/
 
 @[expose] public section

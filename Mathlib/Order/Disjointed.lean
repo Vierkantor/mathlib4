@@ -11,11 +11,14 @@ public import Mathlib.Order.SuccPred.LinearLocallyFinite
 public import Mathlib.Order.Interval.Finset.SuccPred
 public import Mathlib.Data.Finset.Lattice.Union
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Making a sequence disjoint
 
 This file defines the way to make a sequence of sets - or, more generally, a map from a partially
-ordered type `ι` into a (generalized) Boolean algebra `α` - into a *pairwise disjoint* sequence with
+ordered type `ι` into a (generalized) Boolean algebra `α` - into a _pairwise disjoint_ sequence with
 the same partial sups.
 
 For a sequence `f : ℕ → α`, this new sequence will be `f 0`, `f 1 \ f 0`, `f 2 \ (f 0 ⊔ f 1) ⋯`.
@@ -198,7 +201,7 @@ end PartialOrder
 section LinearOrder -- the index type is a linear order
 
 /-!
-### Linear orders
+# Linear orders
 -/
 
 variable [LinearOrder ι] [LocallyFiniteOrderBot ι]
@@ -271,7 +274,7 @@ lemma biUnion_Ioc_disjointed_of_monotone
 end LinearOrder
 
 /-!
-### Functions on an arbitrary fintype
+# Functions on an arbitrary fintype
 -/
 
 /-- For any finite family of elements `f : ι → α`, we can find a pairwise-disjoint family `g`
@@ -295,7 +298,9 @@ end GeneralizedBooleanAlgebra
 
 section CompleteBooleanAlgebra
 
-/-! ### Complete Boolean algebras -/
+/-!
+# Complete Boolean algebras
+-/
 
 variable [CompleteBooleanAlgebra α]
 
@@ -311,7 +316,9 @@ end CompleteBooleanAlgebra
 
 section Set
 
-/-! ### Lemmas specific to set-valued functions -/
+/-!
+# Lemmas specific to set-valued functions
+-/
 
 theorem disjointed_subset [Preorder ι] [LocallyFiniteOrderBot ι] (f : ι → Set α) (i : ι) :
     disjointed f i ⊆ f i :=
@@ -341,7 +348,7 @@ end Set
 section Nat
 
 /-!
-### Functions on `ℕ`
+# Functions on `ℕ`
 
 (See also `Mathlib/Algebra/Order/Disjointed.lean` for results with more algebra pre-requisites.)
 -/

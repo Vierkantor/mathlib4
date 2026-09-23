@@ -12,6 +12,9 @@ public import Mathlib.Analysis.Normed.Module.MultipliableUniformlyOn
 public import Mathlib.NumberTheory.ModularForms.EisensteinSeries.E2.Summable
 public import Mathlib.NumberTheory.TsumDivisorsAntidiagonal
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Dedekind eta function
 
@@ -24,7 +27,9 @@ public import Mathlib.NumberTheory.TsumDivisorsAntidiagonal
   derivative and show that it is a multiple of the Eisenstein series `E2`.
 
 ## References
-* [F. Diamond and J. Shurman, *A First Course in Modular Forms*][diamondshurman2005], section 1.2
+
+* ‍\[F. Diamond and J. Shurman, _A First Course in Modular Forms_\]\[diamondshurman2005\], section
+  1.2
 -/
 
 @[expose] public section

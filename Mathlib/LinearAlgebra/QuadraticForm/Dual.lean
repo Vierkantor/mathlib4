@@ -9,6 +9,9 @@ public import Mathlib.LinearAlgebra.Dual.Lemmas
 public import Mathlib.LinearAlgebra.QuadraticForm.IsometryEquiv
 public import Mathlib.LinearAlgebra.QuadraticForm.Prod
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Quadratic form structures related to `Module.Dual`
 
@@ -20,7 +23,6 @@ public import Mathlib.LinearAlgebra.QuadraticForm.Prod
   `f x`.
 * `QuadraticForm.toDualProd : (Q.prod <| -Q) →qᵢ QuadraticForm.dualProd R M` a form-preserving map
   from `(Q.prod <| -Q)` to `QuadraticForm.dualProd R M`.
-
 -/
 
 @[expose] public section
@@ -125,10 +127,12 @@ variable [CommRing R] [AddCommGroup M] [Module R M]
 variable {R M}
 
 set_option backward.defeqAttrib.useBackward true in
-/-- The isometry sending `(Q.prod <| -Q)` to `(QuadraticForm.dualProd R M)`.
+/--
+The isometry sending `(Q.prod <| -Q)` to `(QuadraticForm.dualProd R M)`.
 
 This is `σ` from Proposition 4.8, page 84 of
-[*Hermitian K-Theory and Geometric Applications*][hyman1973]; though we swap the order of the pairs.
+‍\[_Hermitian K-Theory and Geometric Applications_\]\[hyman1973\]; though we swap the order of the
+pairs.
 -/
 @[simps!]
 def toDualProd (Q : QuadraticForm R M) [Invertible (2 : R)] :
@@ -157,10 +161,12 @@ end Ring
 
 end QuadraticForm
 
-/-- Vectors which subtend obtuse angles with each other and all lie in the same half-space are
+/--
+Vectors which subtend obtuse angles with each other and all lie in the same half-space are
 linearly independent.
 
-This is [serre1965](Ch. V, §9, Lemma 4). -/
+This is \[serre1965\](Ch. V, §9, Lemma 4).
+-/
 lemma LinearMap.BilinForm.linearIndependent_of_pairwise_le_zero {ι R M : Type*}
     [CommRing R] [LinearOrder R] [IsStrictOrderedRing R] [AddCommGroup M] [Module R M]
     (B : LinearMap.BilinForm R M) (hB : B.toQuadraticMap.PosDef)

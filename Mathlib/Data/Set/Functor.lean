@@ -11,6 +11,9 @@ public import Mathlib.Data.Set.Defs
 public import Mathlib.Data.Set.Lattice.Image
 public import Mathlib.Data.Set.Notation
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Functoriality of `Set`
 
@@ -114,7 +117,9 @@ instance : LawfulMonad Set where
   pure_bind := biUnion_singleton
   bind_assoc _ _ _ := by simp only [bind_def, biUnion_iUnion]
 
-/-! ### Monadic coercion lemmas -/
+/-!
+# Monadic coercion lemmas
+-/
 
 variable {β : Set α} {γ : Set β}
 
@@ -139,10 +144,13 @@ alias image_coe_eq_restrict_image := image_coe_eq_domRestrict_image
 
 end with_instance
 
-/-! ### Coercion applying functoriality for `Subtype.val`
+/-!
+# Coercion applying functoriality for `Subtype.val`
+
 The `Monad` instance gives a coercion using the internal function `Lean.Internal.coeM`.
 In practice this is only used for applying the `Set` functor to `Subtype.val`,
-as was defined in `Data.Set.Notation`. -/
+as was defined in `Data.Set.Notation`.
+-/
 
 attribute [local instance] Set.monad in
 /-- The coercion from `Set.monad` as an instance is equal to the coercion in `Data.Set.Notation`. -/
@@ -174,7 +182,9 @@ alias image_image_val_eq_restrict_image := image_image_val_eq_domRestrict_image
 
 end Set
 
-/-! ### Wrapper to enable the `Set` monad -/
+/-!
+# Wrapper to enable the `Set` monad
+-/
 
 /-- This is `Set` but with a `Monad` instance. -/
 def SetM (α : Type u) := Set α

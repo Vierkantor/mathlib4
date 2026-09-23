@@ -10,6 +10,9 @@ public import Mathlib.Data.FunLike.IsApply
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.RelIso.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Relation isomorphisms form a group
 
@@ -19,8 +22,8 @@ is an abbreviation for `RelIso`, there is no need for an additional instance.
 
 ## TODO
 
-+ Rename the `mul_def`/`one_def` lemmas to `mul_eq_comp`/`one_eq_id`.
-+ Use the `IsMulApplyEqComp` and `IsOneApplyEqSelf` classes for `RelHom` and `RelIso`.
+* Rename the `mul_def`/`one_def` lemmas to `mul_eq_comp`/`one_eq_id`.
+* Use the `IsMulApplyEqComp` and `IsOneApplyEqSelf` classes for `RelHom` and `RelIso`.
 -/
 
 public section

@@ -9,6 +9,9 @@ public import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
 public import Mathlib.LinearAlgebra.Matrix.Trace
 public import Mathlib.RingTheory.TensorProduct.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Kronecker product of matrices
 
@@ -26,7 +29,6 @@ This defines the [Kronecker product](https://en.wikipedia.org/wiki/Kronecker_pro
 
 * `Matrix.kronecker`: An alias of `kroneckerMap (*)`. Prefer using the notation.
 * `Matrix.kroneckerBilinear`: `Matrix.kronecker` is bilinear
-
 * `Matrix.kroneckerTMul`: An alias of `kroneckerMap (⊗ₜ)`. Prefer using the notation.
 * `Matrix.kroneckerTMulBilinear`: `Matrix.kroneckerTMul` is bilinear
 
@@ -37,7 +39,6 @@ These require `open Kronecker`:
 * `A ⊗ₖ B` for `kroneckerMap (*) A B`. Lemmas about this notation use the token `kronecker`.
 * `A ⊗ₖₜ B` and `A ⊗ₖₜ[R] B` for `kroneckerMap (⊗ₜ) A B`.
   Lemmas about this notation use the token `kroneckerTMul`.
-
 -/
 
 @[expose] public section
@@ -261,7 +262,9 @@ theorem det_kroneckerMapBilinear [Semiring S] [Semiring R] [Fintype m] [Fintype 
 
 end KroneckerMap
 
-/-! ### Specialization to `Matrix.kroneckerMap (*)` -/
+/-!
+# Specialization to `Matrix.kroneckerMap (*)`
+-/
 
 
 section Kronecker
@@ -415,7 +418,9 @@ theorem conjTranspose_kronecker' [Mul R] [StarMul R] (x : Matrix l m R) (y : Mat
 
 end Kronecker
 
-/-! ### Specialization to `Matrix.kroneckerMap (⊗ₜ)` -/
+/-!
+# Specialization to `Matrix.kroneckerMap (⊗ₜ)`
+-/
 
 
 section KroneckerTmul

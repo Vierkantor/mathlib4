@@ -11,6 +11,9 @@ public import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
 public import Mathlib.RingTheory.MvPolynomial.Basic
 public import Mathlib.Algebra.MvPolynomial.CommRing
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Polynomials over finite fields
 -/

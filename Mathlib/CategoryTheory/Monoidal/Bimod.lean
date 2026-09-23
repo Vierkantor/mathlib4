@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Bicategory.Basic
 public import Mathlib.CategoryTheory.Monoidal.Mon
 public import Mathlib.CategoryTheory.Limits.Preserves.Shapes.Equalizers
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The category of bimodule objects over a pair of monoid objects.
 -/

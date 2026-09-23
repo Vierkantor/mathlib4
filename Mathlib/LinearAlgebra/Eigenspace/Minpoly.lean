@@ -11,6 +11,9 @@ public import Mathlib.FieldTheory.Minpoly.Basic
 public import Mathlib.LinearAlgebra.Eigenspace.Basic
 public import Mathlib.RingTheory.IntegralClosure.Algebra.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Eigenvalues are the roots of the minimal polynomial.
 

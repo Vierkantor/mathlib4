@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Order.Ring.Abs
 public import Mathlib.Order.Filter.AtTopBot.Finite
 public import Mathlib.Tactic.Positivity.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `a * c ^ n < (n - d)!` holds true for sufficiently large `n`.
 -/

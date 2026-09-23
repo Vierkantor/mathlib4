@@ -11,6 +11,9 @@ public import Mathlib.Data.Subtype
 public import Mathlib.Tactic.CrossRefAttribute
 public import Mathlib.Tactic.MkIffOfInductiveProp
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Countable and uncountable types
 
@@ -33,7 +36,7 @@ universe u v
 variable {α : Sort u} {β : Sort v}
 
 /-!
-### Definition and basic properties
+# Definition and basic properties
 -/
 
 /-- A type `α` is countable if there exists an injective map `α → ℕ`. -/
@@ -76,7 +79,7 @@ instance {β : Type v} [Countable β] : Countable (ULift.{u} β) :=
   Countable.of_equiv _ Equiv.ulift.symm
 
 /-!
-### Operations on `Sort*`s
+# Operations on `Sort*`s
 -/
 
 
@@ -117,7 +120,7 @@ instance (priority := 500) [Countable α] {s : Setoid α} : Countable (Quotient 
   inferInstanceAs <| Countable (@Quot α _)
 
 /-!
-### Uncountable types
+# Uncountable types
 -/
 
 /-- A type `α` is uncountable if it is not countable. -/

@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Combinatorics.SimpleGraph.Hasse
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Definition of cycle graphs
 

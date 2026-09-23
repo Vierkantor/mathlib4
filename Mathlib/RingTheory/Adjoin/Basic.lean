@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Algebra.Subalgebra.Tower
 public import Mathlib.LinearAlgebra.Basis.Basic
 public import Mathlib.LinearAlgebra.Prod
 public import Mathlib.Algebra.Order.Group.Nat
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Adjoining elements to form subalgebras
 
@@ -18,7 +21,6 @@ This file contains basic results on `Algebra.adjoin`.
 ## Tags
 
 adjoin, algebra
-
 -/
 
 public section

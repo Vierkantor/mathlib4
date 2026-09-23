@@ -8,10 +8,13 @@ module
 public import Mathlib.Analysis.Calculus.ContDiff.Operations
 public import Mathlib.Analysis.Calculus.IteratedDeriv.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Absolutely monotone functions
 
-A function `f : ℝ → ℝ` is *absolutely monotone* on a set `s` if its iterated derivatives are all
+A function `f : ℝ → ℝ` is _absolutely monotone_ on a set `s` if its iterated derivatives are all
 nonnegative on `s`.
 
 ## Main definitions
@@ -40,7 +43,7 @@ iterated derivative within `s` nonnegative.
 
 ## References
 
-* [D. V. Widder, *The Laplace Transform*][widder1941]
+* ‍\[D. V. Widder, _The Laplace Transform_\]\[widder1941\]
 -/
 
 public section
@@ -48,12 +51,14 @@ public section
 open Set
 open scoped ContDiff
 
-/-- A function `f : ℝ → ℝ` is **absolutely monotone on a set `s`** if, heuristically, all
+/--
+A function `f : ℝ → ℝ` is *absolutely monotone on a set `s`* if, heuristically, all
 iterated derivatives of `f` on `s` are nonnegative. For technical reasons related to unique
 differentiability, the precise definition is phrased as the existence of a Taylor series for
 `f` on `s` whose `n`th term, evaluated at the all-ones tuple, is nonnegative for every `n` and
 every `x ∈ s`. See `AbsolutelyMonotoneOn.iff_iteratedDerivWithin_nonneg` for the equivalence
-under `UniqueDiffOn`. -/
+under `UniqueDiffOn`.
+-/
 def AbsolutelyMonotoneOn (f : ℝ → ℝ) (s : Set ℝ) : Prop :=
   ∃ p : ℝ → FormalMultilinearSeries ℝ ℝ ℝ,
     HasFTaylorSeriesUpToOn ∞ f p s ∧
@@ -68,8 +73,10 @@ theorem contDiffOn (hf : AbsolutelyMonotoneOn f s) : ContDiffOn ℝ ∞ f s := b
   obtain ⟨_, hp, _⟩ := hf
   exact hp.contDiffOn
 
-/-- A globally `C^∞` function whose iterated derivatives are nonnegative on `s` is absolutely
-monotone on `s`. The set `s` need *not* satisfy `UniqueDiffOn`. -/
+/--
+A globally `C^∞` function whose iterated derivatives are nonnegative on `s` is absolutely
+monotone on `s`. The set `s` need _not_ satisfy `UniqueDiffOn`.
+-/
 theorem of_contDiff (hf : ContDiff ℝ ∞ f) (h : ∀ n : ℕ, ∀ x ∈ s, 0 ≤ iteratedDeriv n f x) :
     AbsolutelyMonotoneOn f s := by
   refine ⟨ftaylorSeries ℝ f, (hf.ftaylorSeries).hasFTaylorSeriesUpToOn s, fun n x hx => ?_⟩
@@ -95,7 +102,9 @@ theorem iff_iteratedDerivWithin_nonneg (hs : UniqueDiffOn ℝ s) :
   refine ⟨ftaylorSeriesWithin ℝ f s, hcont.ftaylorSeriesWithin hs, fun n x hx => ?_⟩
   exact iteratedDerivWithin_eq_iteratedFDerivWithin (𝕜 := ℝ) (f := f) (s := s) ▸ hnn n x hx
 
-/-! ### Closure properties -/
+/-!
+# Closure properties
+-/
 
 /-- The sum of two absolutely monotone functions is absolutely monotone. -/
 theorem add (hf : AbsolutelyMonotoneOn f s) (hg : AbsolutelyMonotoneOn g s) :

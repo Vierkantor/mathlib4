@@ -8,10 +8,13 @@ module
 public import Mathlib.Algebra.Algebra.Pi
 public import Mathlib.MeasureTheory.Constructions.BorelSpace.Order
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Simple functions
 
-A function `f` from a measurable space to any type is called *simple*, if every preimage `f ⁻¹' {x}`
+A function `f` from a measurable space to any type is called _simple_, if every preimage `f ⁻¹' {x}`
 is measurable, and the range is finite. In this file, we define simple functions and establish their
 basic properties; and we construct a sequence of simple functions approximating an arbitrary Borel
 measurable function `f : α → ℝ≥0∞`.
@@ -41,9 +44,11 @@ namespace MeasureTheory
 
 variable {α β γ δ : Type*}
 
-/-- A function `f` from a measurable space to any type is called *simple*,
+/--
+A function `f` from a measurable space to any type is called _simple_,
 if every preimage `f ⁻¹' {x}` is measurable, and the range is finite. This structure bundles
-a function with these properties. -/
+a function with these properties.
+-/
 structure SimpleFunc.{u, v} (α : Type u) [MeasurableSpace α] (β : Type v) where
   /-- The underlying function -/
   toFun : α → β

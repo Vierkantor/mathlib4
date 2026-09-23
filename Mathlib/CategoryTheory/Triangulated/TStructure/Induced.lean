@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.ObjectProperty.Shift
 public import Mathlib.CategoryTheory.Triangulated.Subcategory
 public import Mathlib.CategoryTheory.Triangulated.TStructure.TruncLEGT
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Induced t-structures
 
@@ -20,7 +23,6 @@ If `P` is a triangulated subcategory of `C`, we introduce a typeclass
 In particular, we show that the triangulated subcategory `t.plus`
 of `t`-bounded above objects can be endowed with a t-structure `t.onPlus`,
 and the same applies to `t.minus` and `t.bounded`.
-
 -/
 
 @[expose] public section

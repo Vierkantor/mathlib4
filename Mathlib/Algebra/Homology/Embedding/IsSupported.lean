@@ -9,7 +9,11 @@ public import Mathlib.Algebra.Homology.Embedding.Basic
 public import Mathlib.Algebra.Homology.Opposite
 public import Mathlib.Algebra.Homology.ShortComplex.HomologicalComplex
 
-/-! # Support of homological complexes
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Support of homological complexes
 
 Given an embedding `e : c.Embedding c'` of complex shapes, we say
 that `K : HomologicalComplex C c'` is supported (resp. strictly supported) on `e`
@@ -22,7 +26,6 @@ when the conditions above are satisfied for those `i'` that are of the form `e.f
 (These two predicates are not made typeclasses because in most practical applications,
 they are equivalent to `K.IsSupported e'` or `K.IsStrictlySupported e'` for a
 complementary embedding `e'`.)
-
 -/
 
 public section

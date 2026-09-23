@@ -8,6 +8,9 @@ module
 public import Mathlib.Init
 public import Batteries.Util.LibraryNote
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Documentation of the algebraic hierarchy
 
@@ -19,11 +22,12 @@ refer to files/types that currently only exist in mathlib3.
 
 Add sections about algebra-order and algebra-topology mixins and interactions with
 normed typeclasses.
-
 -/
 
 @[expose] public section
 
+
+set_option doc.verso false
 library_note «the algebraic hierarchy» /-- # The algebraic hierarchy
 
 In any theorem proving environment,
@@ -191,22 +195,36 @@ Hopefully this document makes it easy to assemble this list.
 Another alternative to a TODO list in the doc-strings is adding Github issues.
 -/
 
+
+set_option doc.verso true
 library_note «reducible non-instances» /--
-Some definitions that define objects of a class cannot be instances, because they have an
-explicit argument that does not occur in the conclusion. An example is `Preorder.lift` that has a
-function `f : α → β` as an explicit argument to lift a preorder on `β` to a preorder on `α`.
+                                       Some definitions that define objects of a class cannot be
+instances, because they have an
+explicit argument that does not occur in the conclusion. An
+example is `Preorder.lift` that has a
+function `f : α → β` as an explicit argument to lift a
+preorder on `β` to a preorder on `α`.
 
-If these definitions are used to define instances of this class *and* this class is an argument to
-some other type-class so that type-class inference will have to unfold these instances to check
-for definitional equality, then these definitions should be marked `@[reducible]`.
+                                       If these definitions are used to define instances of this
+class _and_ this class is an argument to
+some other type-class so that type-class inference will have
+to unfold these instances to check
+for definitional equality, then these definitions should be
+marked `@[reducible]`.
 
-For example, `Preorder.lift` is used to define `Units.Preorder` and `PartialOrder.lift` is used
-to define `Units.PartialOrder`. In some cases it is important that type-class inference can
-recognize that `Units.Preorder` and `Units.PartialOrder` give rise to the same `LE` instance.
-For example, you might have another class that takes `[LE α]` as an argument, and this argument
-sometimes comes from `Units.Preorder` and sometimes from `Units.PartialOrder`.
-Therefore, `Preorder.lift` and `PartialOrder.lift` are marked `@[reducible]`.
--/
+                                       For example, `Preorder.lift` is used to define
+`Units.Preorder` and `PartialOrder.lift` is used
+to define `Units.PartialOrder`. In some cases it is important
+that type-class inference can
+recognize that `Units.Preorder` and `Units.PartialOrder` give
+rise to the same `LE` instance.
+For example, you might have another class that takes `[LE α]`
+as an argument, and this argument
+sometimes comes from `Units.Preorder` and sometimes from
+`Units.PartialOrder`.
+Therefore, `Preorder.lift` and `PartialOrder.lift` are marked
+`@[reducible]`.
+                                       -/
 
 library_note «implicit instance arguments» /--
 There are places where typeclass arguments are specified with implicit `{}` brackets instead of
@@ -278,6 +296,8 @@ where the `Group G` instance appears in `IsKleinFour G`. Future work may be done
 type class synthesis order in this situation.
 -/
 
+
+set_option doc.verso false
 library_note «commutative subobjects» /--
 The algebraic hierarchy is designed so that commutativity (e.g., of multiplication) is bundled
 into the type class, so that we have, for example `Group` and `CommGroup`, `Ring` and `CommRing`,
@@ -322,3 +342,5 @@ the entirery of both the bundled and unbundled hierarchies), these instances are
 available inside the `IsMulCommutative` scope and are simultaneously given the very low priority
 `50`.
 -/
+
+set_option doc.verso true

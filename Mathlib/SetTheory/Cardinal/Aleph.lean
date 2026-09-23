@@ -14,6 +14,9 @@ public import Mathlib.SetTheory.Ordinal.Univ
 
 import Mathlib.SetTheory.Ordinal.Principal
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Omega, aleph, and beth functions
 
@@ -35,12 +38,12 @@ and "preliminary" versions which include finite values and are sometimes more co
 
 The following notations are scoped to the `Ordinal` namespace.
 
-- `ω_ o` is notation for `Ordinal.omega o`. `ω₁` is notation for `ω_ 1`.
+* `ω_ o` is notation for `Ordinal.omega o`. `ω₁` is notation for `ω_ 1`.
 
 The following notations are scoped to the `Cardinal` namespace.
 
-- `ℵ_ o` is notation for `aleph o`. `ℵ₁` is notation for `ℵ_ 1`.
-- `ℶ_ o` is notation for `beth o`. The value `ℶ_ 1` equals the continuum `𝔠`, which is defined in
+* `ℵ_ o` is notation for `aleph o`. `ℵ₁` is notation for `ℵ_ 1`.
+* `ℶ_ o` is notation for `beth o`. The value `ℶ_ 1` equals the continuum `𝔠`, which is defined in
   `Mathlib/SetTheory/Cardinal/Continuum.lean`.
 -/
 
@@ -54,7 +57,9 @@ open Function Set Cardinal Equiv Order Ordinal
 
 universe u v w
 
-/-! ### Omega ordinals -/
+/-!
+# Omega ordinals
+-/
 
 namespace Ordinal
 
@@ -279,7 +284,9 @@ theorem preOmega_of_omega0_sq_le {o : Ordinal} (ho : ω ^ 2 ≤ o) : preOmega o 
 
 end Ordinal
 
-/-! ### Aleph cardinals -/
+/-!
+# Aleph cardinals
+-/
 
 namespace Cardinal
 
@@ -564,7 +571,9 @@ theorem countable_Iio_of_lt_omega_one {o : Ordinal} (h : o < ω₁) : (Iio o).Co
 
 end Cardinal
 
-/-! ### Beth cardinals -/
+/-!
+# Beth cardinals
+-/
 
 namespace Cardinal
 
@@ -779,7 +788,9 @@ theorem preBeth_of_omega0_sq_le {o : Ordinal} (ho : ω ^ 2 ≤ o) : preBeth o = 
   apply left_lt_opow one_lt_omega0
   simp
 
-/-! ### Simp lemmas with `lift` -/
+/-!
+# Simp lemmas with `lift`
+-/
 
 section lift
 variable {c : Cardinal.{u}} {n : ℕ}

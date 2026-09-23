@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Group.Subgroup.Ker
 public import Mathlib.Algebra.Module.Submodule.Map
 public import Mathlib.Algebra.Module.Submodule.RestrictScalars
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Kernel of a linear map
 
@@ -25,8 +28,8 @@ This file defines the kernel of a linear map.
   (resp. linear) maps from `M` to `M₂` over the ring homomorphism `σ` (resp. over the ring `R`).
 
 ## Tags
-linear algebra, vector space, module
 
+linear algebra, vector space, module
 -/
 
 @[expose] public section
@@ -39,7 +42,9 @@ variable {K : Type*}
 variable {M : Type*} {M₂ : Type*} {M₃ : Type*}
 variable {V : Type*} {V₂ : Type*}
 
-/-! ### Properties of linear maps -/
+/-!
+# Properties of linear maps
+-/
 
 
 namespace LinearMap
@@ -302,7 +307,9 @@ end RestrictScalars
 
 end LinearMap
 
-/-! ### Linear equivalences -/
+/-!
+# Linear equivalences
+-/
 
 
 namespace LinearEquiv

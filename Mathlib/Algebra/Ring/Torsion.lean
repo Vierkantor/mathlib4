@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Group.Torsion
 public import Mathlib.Algebra.GroupWithZero.Basic
 public import Mathlib.Algebra.Ring.Commute
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Torsion-free rings
 

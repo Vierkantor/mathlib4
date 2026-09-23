@@ -8,6 +8,9 @@ module
 public import Mathlib.MeasureTheory.MeasurableSpace.EventuallyMeasurable
 public import Mathlib.MeasureTheory.Measure.AEDisjoint
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Null measurable sets and complete measures
 
@@ -15,7 +18,7 @@ public import Mathlib.MeasureTheory.Measure.AEDisjoint
 
 ### Null measurable sets and functions
 
-A set `s : Set α` is called *null measurable* (`MeasureTheory.NullMeasurableSet`) if it satisfies
+A set `s : Set α` is called _null measurable_ (`MeasureTheory.NullMeasurableSet`) if it satisfies
 any of the following equivalent conditions:
 
 * there exists a measurable set `t` such that `s =ᵐ[μ] t` (this is used as a definition);

@@ -10,6 +10,9 @@ public import Mathlib.Data.Nat.Find
 public import Mathlib.Order.Atoms
 public import Mathlib.Data.SetLike.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Rooted trees
 

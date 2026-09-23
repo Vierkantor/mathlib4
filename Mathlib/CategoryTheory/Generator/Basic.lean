@@ -13,6 +13,9 @@ public import Mathlib.CategoryTheory.ObjectProperty.ColimitsOfShape
 public import Mathlib.CategoryTheory.ObjectProperty.LimitsOfShape
 public import Mathlib.CategoryTheory.Comma.StructuredArrow.Small
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Separating and detecting sets
 
@@ -20,17 +23,18 @@ There are several non-equivalent notions of a generator of a category. Here, we 
 them:
 
 * We say that `P : ObjectProperty C` is a separating set if the functors `C(G, -)`
-    for `G` such that `P G` are collectively faithful, i.e., if
-    `h ≫ f = h ≫ g` for all `h` with domain satisfying `P` implies `f = g`.
+  for `G` such that `P G` are collectively faithful, i.e., if
+  `h ≫ f = h ≫ g` for all `h` with domain satisfying `P` implies `f = g`.
 * We say that `P : ObjectProperty C` is a detecting set if the functors `C(G, -)`
-    collectively reflect isomorphisms, i.e., if any `h` with domain satisfying `P`
-    uniquely factors through `f`, then `f` is an isomorphism.
+  collectively reflect isomorphisms, i.e., if any `h` with domain satisfying `P`
+  uniquely factors through `f`, then `f` is an isomorphism.
 
 There are, of course, also the dual notions of coseparating and codetecting sets.
 
 ## Main results
 
 We
+
 * define predicates `IsSeparating`, `IsCoseparating`, `IsDetecting` and `IsCodetecting` on
   `ObjectProperty C`;
 * show that equivalences of categories preserve these notions;
@@ -55,7 +59,6 @@ We
 ## Examples
 
 See the files `CategoryTheory.Generator.Presheaf` and `CategoryTheory.Generator.Sheaf`.
-
 -/
 
 @[expose] public section

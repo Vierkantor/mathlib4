@@ -10,7 +10,11 @@ public import Mathlib.Data.Nat.Log
 public import Mathlib.Tactic.NormNum
 public import Batteries.Lean.Expr
 
-/-! # `norm_num` extensions for `Nat.log` and `Nat.clog`
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# `norm_num` extensions for `Nat.log` and `Nat.clog`
 
 This module defines `norm_num` extensions for `Nat.log` and `Nat.clog`.
 -/

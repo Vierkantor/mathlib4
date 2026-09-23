@@ -11,12 +11,16 @@ public import Mathlib.RingTheory.KrullDimension.Zero
 public import Mathlib.RingTheory.LocalProperties.Reduced
 public import Mathlib.RingTheory.Ideal.Height
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Basic properties of schemes
 
 We provide some basic properties of schemes
 
 ## Main definition
+
 * `AlgebraicGeometry.IsIntegral`: A scheme is integral if it is nontrivial and all nontrivial
   components of the structure sheaf are integral domains.
 * `AlgebraicGeometry.IsReduced`: A scheme is reduced if all the components of the structure sheaf

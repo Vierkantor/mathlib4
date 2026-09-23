@@ -9,7 +9,11 @@ public import Mathlib.LinearAlgebra.TensorProduct.Pi
 public import Mathlib.LinearAlgebra.TensorProduct.RightExactness
 public import Mathlib.RingTheory.Ideal.Quotient.Operations
 
-/-! # Module version of Chinese remainder theorem
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Module version of Chinese remainder theorem
 -/
 
 public section

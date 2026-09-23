@@ -12,6 +12,9 @@ public import Mathlib.Algebra.Order.Monoid.Unbundled.ExistsOfLE
 public import Mathlib.Algebra.Order.Monoid.Unbundled.OrderDual
 public import Mathlib.Algebra.Order.Monoid.Unbundled.Pow
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lemmas about densely linearly ordered groups.
 -/

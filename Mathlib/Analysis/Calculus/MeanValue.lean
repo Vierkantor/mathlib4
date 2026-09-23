@@ -15,6 +15,9 @@ public import Mathlib.Analysis.RCLike.Basic
 public import Mathlib.Topology.Instances.RealVectorSpace
 public import Mathlib.Topology.LocallyConstant.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The mean value inequality and equalities
 
@@ -25,27 +28,22 @@ In this file we prove the following facts:
   constant `C`; also a variant in which what is bounded by `C` is the norm of the difference of the
   derivative from a fixed linear map. This lemma and its versions are formulated using `RCLike`,
   so they work both for real and complex derivatives.
-
 * `image_le_of*`, `image_norm_le_of_*` : several similar lemmas deducing `f x ≤ B x` or
   `‖f x‖ ≤ B x` from upper estimates on `f'` or `‖f'‖`, respectively. These lemmas differ by
   their assumptions:
-
-  * `of_liminf_*` lemmas assume that limit inferior of some ratio is less than `B' x`;
-  * `of_deriv_right_*`, `of_norm_deriv_right_*` lemmas assume that the right derivative
-    or its norm is less than `B' x`;
-  * `of_*_lt_*` lemmas assume a strict inequality whenever `f x = B x` or `‖f x‖ = B x`;
-  * `of_*_le_*` lemmas assume a non-strict inequality everywhere on `[a, b)`;
-  * name of a lemma ends with `'` if (1) it assumes that `B` is continuous on `[a, b]`
-    and has a right derivative at every point of `[a, b)`, and (2) the lemma has
-    a counterpart assuming that `B` is differentiable everywhere on `ℝ`
-
+* `of_liminf_*` lemmas assume that limit inferior of some ratio is less than `B' x`;
+* `of_deriv_right_*`, `of_norm_deriv_right_*` lemmas assume that the right derivative
+  or its norm is less than `B' x`;
+* `of_*_lt_*` lemmas assume a strict inequality whenever `f x = B x` or `‖f x‖ = B x`;
+* `of_*_le_*` lemmas assume a non-strict inequality everywhere on `[a, b)`;
+* name of a lemma ends with `'` if (1) it assumes that `B` is continuous on `[a, b]`
+  and has a right derivative at every point of `[a, b)`, and (2) the lemma has
+  a counterpart assuming that `B` is differentiable everywhere on `ℝ`
 * `norm_image_sub_le_*_segment` : if derivative of `f` on `[a, b]` is bounded above
   by a constant `C`, then `‖f x - f a‖ ≤ C * ‖x - a‖`; several versions deal with
   right derivative and derivative within `[a, b]` (`HasDerivWithinAt` or `derivWithin`).
-
 * `Convex.is_const_of_fderivWithin_eq_zero` : if a function has derivative `0` on a convex set `s`,
   then it is a constant on `s`.
-
 * `hasStrictFDerivAt_of_hasFDerivAt_of_continuousAt` : a C^1 function over the reals is
   strictly differentiable. (This is a corollary of the mean value inequality.)
 -/
@@ -59,7 +57,9 @@ open Metric Set Asymptotics ContinuousLinearMap Filter
 
 open scoped Topology NNReal
 
-/-! ### One-dimensional fencing inequalities -/
+/-!
+# One-dimensional fencing inequalities
+-/
 
 
 /-- General fencing theorem for continuous functions with an estimate on the derivative.
@@ -204,7 +204,9 @@ theorem image_le_of_deriv_right_le_deriv_boundary {f f' : ℝ → ℝ} {a b : �
   image_le_of_liminf_slope_right_le_deriv_boundary hf ha hB hB' fun x hx _ hr =>
     (hf' x hx).liminf_right_slope_le (lt_of_le_of_lt (bound x hx) hr)
 
-/-! ### Vector-valued functions `f : ℝ → E` -/
+/-!
+# Vector-valued functions `f : ℝ → E`
+-/
 
 
 section
@@ -399,12 +401,13 @@ theorem eq_of_derivWithin_eq (fdiff : DifferentiableOn ℝ f (Icc a b))
 end
 
 /-!
-### Vector-valued functions `f : E → G`
+# Vector-valued functions `f : E → G`
 
 Theorems in this section work both for real and complex differentiable functions. We use assumptions
 `[NontriviallyNormedField 𝕜] [IsRCLikeNormedField 𝕜] [NormedSpace 𝕜 E] [NormedSpace 𝕜 G]` to
 achieve this result. For the domain `E` we also assume `[NormedSpace ℝ E]` to have a notion
-of a `Convex` set. -/
+of a `Convex` set.
+-/
 
 section
 
@@ -789,7 +792,7 @@ end
 section RCLike
 
 /-!
-### Vector-valued functions `f : E → F`. Strict differentiability.
+# Vector-valued functions `f : E → F`. Strict differentiability.
 
 A `C^1` function is strictly differentiable, when the field is `ℝ` or `ℂ`. This follows from the
 mean value inequality on balls, which is a particular case of the above results after restricting

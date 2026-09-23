@@ -8,13 +8,15 @@ module
 public import Mathlib.Algebra.Homology.ShortComplex.ShortExact
 public import Mathlib.CategoryTheory.ObjectProperty.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Properties of objects that are closed under extensions
 
 Given a category `C` and `P : ObjectProperty C`, we define a type
 class `P.IsClosedUnderExtensions` expressing that the property
 is closed under extensions.
-
 -/
 
 public section

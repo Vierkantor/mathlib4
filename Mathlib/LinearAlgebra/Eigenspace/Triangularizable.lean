@@ -9,6 +9,9 @@ public import Mathlib.LinearAlgebra.Eigenspace.Basic
 public import Mathlib.FieldTheory.IsAlgClosed.Spectrum
 public import Mathlib.LinearAlgebra.FreeModule.Finite.Matrix
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Triangularizable linear endomorphisms
 
@@ -26,8 +29,8 @@ This file contains basic results relevant to the triangularizability of linear e
 
 ## References
 
-* [Sheldon Axler, *Linear Algebra Done Right*][axler2024]
-* https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors
+* ‍\[Sheldon Axler, _Linear Algebra Done Right_\]\[axler2024\]
+* https://en.wikipedia.org/wiki/Eigenvalues\_and\_eigenvectors
 
 ## TODO
 

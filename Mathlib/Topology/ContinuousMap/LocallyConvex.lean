@@ -8,6 +8,9 @@ module
 public import Mathlib.Topology.ContinuousMap.Algebra
 public import Mathlib.Topology.Algebra.Module.LocallyConvex
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The space of continuous maps is a locally convex space
 

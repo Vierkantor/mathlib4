@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Group.Basic
 public import Mathlib.Algebra.Module.NatInt
 public import Mathlib.ModelTheory.Semantics
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Presburger arithmetic
 
@@ -16,13 +19,13 @@ This file defines the first-order language of Presburger arithmetic as (0,1,+).
 
 ## Main Definitions
 
-- `FirstOrder.Language.presburger`: the language of Presburger arithmetic.
+* `FirstOrder.Language.presburger`: the language of Presburger arithmetic.
 
 ## TODO
 
-- Generalize `presburger.sum` (maybe also `NatCast` and `SMul`) for classes like
+* Generalize `presburger.sum` (maybe also `NatCast` and `SMul`) for classes like
   `FirstOrder.Language.IsOrdered`.
-- Define the theory of Presburger arithmetic and prove its properties (quantifier elimination,
+* Define the theory of Presburger arithmetic and prove its properties (quantifier elimination,
   completeness, etc).
 -/
 

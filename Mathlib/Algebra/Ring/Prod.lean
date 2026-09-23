@@ -10,6 +10,9 @@ public import Mathlib.Algebra.GroupWithZero.Prod
 public import Mathlib.Algebra.Ring.CompTypeclasses
 public import Mathlib.Algebra.Ring.Equiv
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Semiring, ring etc. structures on `R × S`
 

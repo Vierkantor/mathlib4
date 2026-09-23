@@ -9,10 +9,14 @@ public import Mathlib.Algebra.Order.Archimedean.Class
 public import Mathlib.Algebra.Order.Module.Basic
 public import Mathlib.Algebra.Module.Submodule.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Archimedean classes for ordered module
 
 ## Main definitions
+
 * `ArchimedeanClass.ball` are `ArchimedeanClass.ballAddSubgroup` as a submodules.
 * `ArchimedeanClass.closedBall` are `ArchimedeanClass.closedBallAddSubgroup` as a submodules.
 -/

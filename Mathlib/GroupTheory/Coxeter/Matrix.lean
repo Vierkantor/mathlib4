@@ -8,10 +8,13 @@ module
 public import Mathlib.LinearAlgebra.Matrix.Notation
 public import Mathlib.LinearAlgebra.Matrix.Symmetric
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Coxeter matrices
 
-Let us say that a matrix (possibly an infinite matrix) is a *Coxeter matrix* (`CoxeterMatrix`) if
+Let us say that a matrix (possibly an infinite matrix) is a _Coxeter matrix_ (`CoxeterMatrix`) if
 its entries are natural numbers, it is symmetric, its diagonal entries are equal to 1, and its
 off-diagonal entries are not equal to 1. In this file, we define Coxeter matrices and provide some
 ways of constructing them.
@@ -25,9 +28,10 @@ that in this file.
 
 ## Implementation details
 
-In some texts on Coxeter groups, each entry $M_{i,i'}$ of a Coxeter matrix can be either a
-positive integer or $\infty$. In our treatment of Coxeter matrices, we use the value $0$ instead of
-$\infty$. This will turn out to have some fortunate consequences when defining the Coxeter group of
+In some texts on Coxeter groups, each entry $`M_{i,i'}` of a Coxeter matrix can be either a
+positive integer or $`\infty`. In our treatment of Coxeter matrices, we use the value $`0` instead
+of
+$`\infty`. This will turn out to have some fortunate consequences when defining the Coxeter group of
 a Coxeter matrix and the standard geometric representation of a Coxeter group.
 
 ## Main definitions
@@ -54,17 +58,17 @@ a Coxeter matrix and the standard geometric representation of a Coxeter group.
 
 ## References
 
-* [N. Bourbaki, *Lie Groups and Lie Algebras, Chapters 4--6*](bourbaki1968) chapter IV
+* [N. Bourbaki, _Lie Groups and Lie Algebras, Chapters 4--6_](bourbaki1968) chapter IV
   pages 4--5, 13--15
-
-* [J. Baez, *Coxeter and Dynkin Diagrams*](https://math.ucr.edu/home/baez/twf_dynkin.pdf)
-
+* [J. Baez, _Coxeter and Dynkin Diagrams_](https://math.ucr.edu/home/baez/twf_dynkin.pdf)
 -/
 
 @[expose] public section
 
-/-- A *Coxeter matrix* is a symmetric matrix of natural numbers whose diagonal entries are equal to
-1 and whose off-diagonal entries are not equal to 1. -/
+/--
+A _Coxeter matrix_ is a symmetric matrix of natural numbers whose diagonal entries are equal to
+1 and whose off-diagonal entries are not equal to 1.
+-/
 @[ext]
 structure CoxeterMatrix (B : Type*) where
   /-- The underlying matrix of the Coxeter matrix. -/

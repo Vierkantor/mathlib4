@@ -10,6 +10,9 @@ public import Mathlib.Data.List.TakeDrop
 public import Mathlib.Data.List.Lattice
 public import Mathlib.Data.List.Nodup
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # List Permutations and list lattice operations.
 

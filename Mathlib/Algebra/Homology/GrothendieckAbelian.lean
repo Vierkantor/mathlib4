@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Abelian.GrothendieckCategory.Basic
 public import Mathlib.CategoryTheory.Generator.HomologicalComplex
 public import Mathlib.Algebra.Homology.HomologicalComplexAbelian
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Homological complexes in a Grothendieck abelian category
 
@@ -16,7 +19,6 @@ Let `c : ComplexShape ι` be a complex shape with no loop, and
 such that `Small.{w} ι`. Then, if `C` is a Grothendieck abelian
 category (with `IsGrothendieckAbelian.{w} C`), the category
 `HomologicalComplex C c` is Grothendieck abelian.
-
 -/
 
 public section

@@ -8,6 +8,9 @@ module
 public import Mathlib.CategoryTheory.Abelian.Refinements
 public import Mathlib.Algebra.Homology.ShortComplex.HomologicalComplex
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Refinements
 
@@ -15,7 +18,6 @@ This file contains lemmas about "refinements" that are specific to
 the study of the homology of `HomologicalComplex`. General
 lemmas about refinements and the case of `ShortComplex` appear
 in the file `Mathlib/CategoryTheory/Abelian/Refinements.lean`.
-
 -/
 
 public section

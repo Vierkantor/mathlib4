@@ -10,12 +10,13 @@ public import Mathlib.Data.ZMod.Basic
 public import Mathlib.RingTheory.LocalRing.MaximalIdeal.Basic
 public import Mathlib.RingTheory.Ideal.Maps
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Local rings homomorphisms
 
 We prove basic properties of local rings homomorphisms.
-
 -/
 
 public section

@@ -8,6 +8,9 @@ module
 public import Mathlib.AlgebraicTopology.SimplexCategory.Truncated
 public import Mathlib.CategoryTheory.MorphismProperty.Composition
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Properties of morphisms in the simplex category
 
@@ -17,7 +20,6 @@ saying that if `W : MorphismProperty SimplexCategory` is
 multiplicative, and contains faces and degeneracies, then `W = ⊤`.
 This statement is deduced from a similar statement for
 the category `SimplexCategory.Truncated d`.
-
 -/
 
 public section

@@ -13,6 +13,9 @@ public import Mathlib.Logic.Equiv.Sum
 public import Mathlib.Tactic.Common
 public import Mathlib.Tactic.Attr.Core
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Covering
 

@@ -9,6 +9,9 @@ public import Mathlib.RingTheory.Spectrum.Prime.Basic
 public import Mathlib.RingTheory.LocalRing.ResidueField.Ideal
 public import Mathlib.RingTheory.TensorProduct.Maps
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Functoriality of the prime spectrum
 
@@ -18,7 +21,6 @@ In this file we define the induced map on prime spectra induced by a ring homomo
 
 * `PrimeSpectrum.comap`: The induced map on prime spectra by a ring homomorphism. The proof that
   it is continuous is in `Mathlib/RingTheory/Spectrum/Prime/Topology.lean`.
-
 -/
 
 @[expose] public section

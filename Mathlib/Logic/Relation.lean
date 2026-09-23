@@ -14,6 +14,9 @@ public import Mathlib.Order.Defs.Unbundled
 public import Batteries.Logic
 public import Batteries.Tactic.Trans
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Relation closures
 
@@ -916,10 +919,11 @@ lemma reflTransGen_symmGen : ReflTransGen (SymmGen r) = EqvGen r := by
 
 end EqvGen
 
-/-- The join of a relation on a single type is a new relation for which
+/--
+The join of a relation on a single type is a new relation for which
 pairs of terms are related if there is a third term they are both
 related to.  For example, if `r` is a relation representing rewrites
-in a term rewriting system, then *confluence* is the property that if
+in a term rewriting system, then _confluence_ is the property that if
 `a` rewrites to both `b` and `c`, then `join r` relates `b` and `c`
 (see `Relation.church_rosser`).
 -/

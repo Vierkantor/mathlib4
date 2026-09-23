@@ -9,7 +9,11 @@ public import Mathlib.Algebra.Algebra.Unitization
 public import Mathlib.Topology.Compactification.OnePoint.Basic
 public import Mathlib.Topology.ContinuousMap.ZeroAtInfty
 
-/-!  # The unitization (over `R`) of `C₀(X, R)` is `C(OnePoint X, R)`
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# The unitization (over `R`) of `C₀(X, R)` is `C(OnePoint X, R)`
 
 Given a topological space `X` and a topological ring `R` one can extend an element `C₀(X, R)`, the
 continuous functions vanishing at infinity, to `C(OnePoint X, R)`, the continuous functions on the
@@ -18,9 +22,10 @@ equivalence between `Unitization R C₀(X, R)` and `C(OnePoint X, R)`.
 
 ## Main definitions
 
-+ `ZeroAtInftyContinuousMap.toOnePoint : C₀(X, R) → C(OnePoint X, R)` : the extension of
+* `ZeroAtInftyContinuousMap.toOnePoint : C₀(X, R) → C(OnePoint X, R)` : the extension of
   `f : C₀(X, R)` to the function which takes the value `0` at `∞`
-+ `ContinuousMap.toZeroAtInfty: C(OnePoint X, R) → C₀(X, R)` : `f ↦ fun x ↦ g x - g ∞`
+* `ContinuousMap.toZeroAtInfty: C(OnePoint X, R) → C₀(X, R)` : `f ↦ fun x ↦ g x - g ∞`
+
 * `ZeroAtInftyContinuousMap.unitizationEquiv : Unitization R C₀(X, R) ≃ C(OnePoint X, R)` :
   lift `ZeroAtInftyContinuousMap.toOnePoint` to an equivalence from the `Unitization`, with
   inverse given by `f ↦ .mk (f ∞, f.toZeroAtInfty)`

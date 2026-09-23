@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Order.IsBotOne
 public import Mathlib.Algebra.Prime.Lemmas
 public import Mathlib.Order.BoundedOrder.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Associated elements.
 

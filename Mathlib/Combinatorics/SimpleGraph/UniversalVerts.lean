@@ -9,6 +9,9 @@ public import Mathlib.Combinatorics.SimpleGraph.Clique
 public import Mathlib.Combinatorics.SimpleGraph.Connectivity.Represents
 public import Mathlib.Combinatorics.SimpleGraph.Matching
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Universal Vertices
 

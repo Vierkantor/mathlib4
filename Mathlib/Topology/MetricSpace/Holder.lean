@@ -9,6 +9,9 @@ public import Mathlib.Topology.MetricSpace.Lipschitz
 public import Mathlib.Analysis.SpecialFunctions.Pow.Continuity
 public import Mathlib.Analysis.Convex.NNReal
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Hölder continuous functions
 
@@ -17,9 +20,9 @@ properties of Hölder continuous functions.
 
 ## Main definitions
 
-* `HolderOnWith`: `f : X → Y` is said to be *Hölder continuous* with constant `C : ℝ≥0` and
+* `HolderOnWith`: `f : X → Y` is said to be _Hölder continuous_ with constant `C : ℝ≥0` and
   exponent `r : ℝ≥0` on a set `s`, if `edist (f x) (f y) ≤ C * edist x y ^ r` for all `x y ∈ s`;
-* `HolderWith`: `f : X → Y` is said to be *Hölder continuous* with constant `C : ℝ≥0` and exponent
+* `HolderWith`: `f : X → Y` is said to be _Hölder continuous_ with constant `C : ℝ≥0` and exponent
   `r : ℝ≥0`, if `edist (f x) (f y) ≤ C * edist x y ^ r` for all `x y : X`.
 
 ## Implementation notes
@@ -32,7 +35,6 @@ for `r` to ensure that `d ^ r` is monotone in `d`. It might be a good idea to us
 ## Tags
 
 Hölder continuity, Lipschitz continuity
-
 -/
 
 @[expose] public section

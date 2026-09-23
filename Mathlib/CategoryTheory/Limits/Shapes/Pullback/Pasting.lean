@@ -7,10 +7,14 @@ module
 
 public import Mathlib.CategoryTheory.Limits.Shapes.Pullback.HasPullback
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Pasting lemma
 
 This file proves the pasting lemma for pullbacks. That is, given the following diagram:
+
 ```
   X₁ - f₁ -> X₂ - f₂ -> X₃
   |          |          |
@@ -18,17 +22,18 @@ This file proves the pasting lemma for pullbacks. That is, given the following d
   ∨          ∨          ∨
   Y₁ - g₁ -> Y₂ - g₂ -> Y₃
 ```
+
 if the right square is a pullback, then the left square is a pullback iff the big square is a
 pullback.
 
 ## Main results
+
 * `pasteHorizIsPullback` shows that the big square is a pullback if both the small squares are.
 * `leftSquareIsPullback` shows that the left square is a pullback if the other two are.
 * `pullbackRightPullbackFstIso` shows, using the `pullback` API, that
   `W ×[X] (X ×[Z] Y) ≅ W ×[Z] Y`.
 * `pullbackLeftPullbackSndIso` shows, using the `pullback` API, that
   `(X ×[Z] Y) ×[Y] W ≅ X ×[Z] W`.
-
 -/
 
 @[expose] public section

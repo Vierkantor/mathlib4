@@ -13,6 +13,9 @@ public import Mathlib.LinearAlgebra.Matrix.SemiringInverse
 public import Mathlib.LinearAlgebra.Matrix.ToLin
 public import Mathlib.LinearAlgebra.Matrix.Trace
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Nonsingular inverses
 
@@ -47,7 +50,7 @@ The rest of the results in the file are then about `A⁻¹`
 
 ## References
 
-  * https://en.wikipedia.org/wiki/Cramer's_rule#Finding_inverse_matrix
+* https://en.wikipedia.org/wiki/Cramer's\_rule#Finding\_inverse\_matrix
 
 ## Tags
 
@@ -66,7 +69,9 @@ variable {l : Type*} {m : Type u} {n : Type u'} {α : Type v}
 open Matrix Equiv Equiv.Perm Finset
 open scoped Ring
 
-/-! ### Matrices are `Invertible` iff their determinants are -/
+/-!
+# Matrices are `Invertible` iff their determinants are
+-/
 
 
 section Invertible
@@ -131,7 +136,9 @@ theorem isUnit_iff_isUnit_det : IsUnit A ↔ IsUnit A.det := by
 theorem isUnits_det_units (A : (Matrix n n α)ˣ) : IsUnit (A : Matrix n n α).det :=
   isUnit_iff_isUnit_det _ |>.mp A.isUnit
 
-/-! #### Variants of the statements above with `IsUnit` -/
+/-!
+# Variants of the statements above with `IsUnit`
+-/
 
 
 theorem isUnit_det_of_invertible [Invertible A] : IsUnit A.det :=
@@ -162,7 +169,9 @@ theorem isUnit_det_transpose (h : IsUnit A.det) : IsUnit Aᵀ.det := by
   rw [det_transpose]
   exact h
 
-/-! ### A noncomputable `Inv` instance  -/
+/-!
+# A noncomputable `Inv` instance
+-/
 
 
 /-- The inverse of a square matrix, when it is invertible (and zero otherwise). -/
@@ -665,7 +674,8 @@ theorem det_smul_inv_vecMul_eq_cramer_transpose (A : Matrix n n α) (b : n → �
   rw [← A⁻¹.transpose_transpose, vecMul_transpose, transpose_nonsing_inv, ← det_transpose,
     Aᵀ.det_smul_inv_mulVec_eq_cramer _ (isUnit_det_transpose A h)]
 
-/-! ### Inverses of permutated matrices
+/-!
+# Inverses of permutated matrices
 
 Note that the simp-normal form of `Matrix.reindex` is `Matrix.submatrix`, so we prove most of these
 results about only the latter.
@@ -760,7 +770,9 @@ theorem inv_kronecker [Fintype m] [DecidableEq m]
     rw [← mul_kronecker_mul, ← one_kronecker_one, mul_nonsing_inv _ hA, mul_nonsing_inv _ hB]
 
 
-/-! ### More results about determinants -/
+/-!
+# More results about determinants
+-/
 
 
 section Det
@@ -777,7 +789,9 @@ theorem det_conj' {M : Matrix m m α} (h : IsUnit M) (N : Matrix m m α) :
 
 end Det
 
-/-! ### More results about traces -/
+/-!
+# More results about traces
+-/
 
 
 section trace

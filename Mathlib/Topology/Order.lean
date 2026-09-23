@@ -8,12 +8,15 @@ module
 public import Mathlib.Topology.Continuous
 public import Mathlib.Topology.Defs.Induced
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Ordering on topologies and (co)induced topologies
 
 Topologies on a fixed type `α` are ordered, by reverse inclusion.  That is, for topologies `t₁` and
 `t₂` on `α`, we write `t₁ ≤ t₂` if every set open in `t₂` is also open in `t₁`.  (One also calls
-`t₁` *finer* than `t₂`, and `t₂` *coarser* than `t₁`.)
+`t₁` _finer_ than `t₂`, and `t₂` _coarser_ than `t₁`.)
 
 Any function `f : α → β` induces
 
@@ -24,6 +27,7 @@ Continuity, the ordering on topologies and (co)induced topologies are related as
 
 * The identity map `(α, t₁) → (α, t₂)` is continuous iff `t₁ ≤ t₂`.
 * A map `f : (α, t) → (β, u)` is continuous
+
   * iff `t ≤ TopologicalSpace.induced f u` (`continuous_iff_le_induced`)
   * iff `TopologicalSpace.coinduced f t ≤ u` (`continuous_iff_coinduced_le`).
 

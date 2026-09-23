@@ -9,6 +9,9 @@ public import Mathlib.Analysis.Fourier.AddCircle
 public import Mathlib.NumberTheory.ModularForms.NormTrace
 public import Mathlib.NumberTheory.ModularForms.Petersson
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Bounds for the norm of a modular form
 
@@ -19,7 +22,7 @@ bounds for its q-expansion coefficients. The main results are
   is bounded by a constant multiple of `max 1 (1 / (im τ) ^ k))`.
 * `CuspFormClass.exists_bound`: a cusp form of weight `k` (for an arithmetic subgroup `Γ`)
   is bounded by a constant multiple of `1 / (im τ) ^ (k / 2)`.
-* `hasSum_norm_sq_qExpansion_coeff_mul_exp`: **Parseval's identity** for `q`-expansions, expressing
+* `hasSum_norm_sq_qExpansion_coeff_mul_exp`: *Parseval's identity* for `q`-expansions, expressing
   the mean square of `f` along a horizontal line as a weighted sum of the squared norms of the
   `q`-expansion coefficients.
 * `CuspFormClass.exists_sum_range_norm_sq_qExpansion_coeff_le_of_mem_strictPeriods` and
@@ -29,7 +32,7 @@ bounds for its q-expansion coefficients. The main results are
   `CuspFormClass.sum_range_norm_sq_qExpansion_coeff_isBigO`).
 * `ModularFormClass.qExpansion_isBigO`: for a a modular form of weight `k` (for an arithmetic
   subgroup `Γ`), the `n`-th q-expansion coefficient is `O(n ^ k)`.
-* `CuspFormClass.qExpansion_isBigO`: **Hecke's bound** for a a cusp form of weight `k` (for
+* `CuspFormClass.qExpansion_isBigO`: *Hecke's bound* for a a cusp form of weight `k` (for
   an arithmetic subgroup `Γ`): the `n`-th q-expansion coefficient is `O(n ^ (k / 2))`.
 -/
 

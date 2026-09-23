@@ -10,6 +10,9 @@ public import Mathlib.Analysis.Normed.Module.RCLike.Basic
 public import Mathlib.Analysis.Normed.Module.Seminorm.Basic
 public import Mathlib.Topology.MetricSpace.HausdorffDistance
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Applications of the Hausdorff distance in normed spaces
 
@@ -23,7 +26,7 @@ guarantee `‖x‖ ≤ R` and `‖x - y‖ ≥ 1` for any `y` in `F`. This is `r
 For a normed space over an `RCLike` field, one can find an element of norm exactly `1` with the same
 property. This is `riesz_lemma_one`.
 
-A further lemma, `Metric.closedBall_infDist_compl_subset_closure`, finds a *closed* ball within
+A further lemma, `Metric.closedBall_infDist_compl_subset_closure`, finds a _closed_ ball within
 the closure of a set `s` of optimal distance from a point in `x` to the frontier of `s`.
 -/
 

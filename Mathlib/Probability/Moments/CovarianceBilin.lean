@@ -11,6 +11,9 @@ public import Mathlib.MeasureTheory.SpecificCodomains.WithLp
 public import Mathlib.Probability.Moments.Basic
 public import Mathlib.Probability.Moments.CovarianceBilinDual
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Covariance in Hilbert spaces
 

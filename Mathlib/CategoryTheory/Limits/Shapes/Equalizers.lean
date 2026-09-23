@@ -9,12 +9,15 @@ public import Mathlib.CategoryTheory.EpiMono
 public import Mathlib.CategoryTheory.Limits.HasLimits
 public import Mathlib.CategoryTheory.Limits.Shapes.Pullback.HasPullback
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Equalizers and coequalizers
 
 This file defines (co)equalizers as special cases of (co)limits.
 
-An equalizer is the categorical generalization of the subobject ${a ∈ A | f(a) = g(a)}$ known
+An equalizer is the categorical generalization of the subobject $`{a ∈ A | f(a) = g(a)}` known
 from abelian groups or modules. It is a limit cone over the diagram formed by `f` and `g`.
 
 A coequalizer is the dual concept.
@@ -24,6 +27,7 @@ A coequalizer is the dual concept.
 * `WalkingParallelPair` is the indexing category used for (co)equalizer diagrams
 * `parallelPair` is a functor from `WalkingParallelPair` to our category `C`.
 * a `fork` is a cone over a parallel pair.
+
   * there is really only one interesting morphism in a fork: the arrow from the vertex of the fork
     to the domain of f and g. It is called `fork.ι`.
 * an `equalizer` is now just a `limit (parallelPair f g)`
@@ -37,13 +41,14 @@ Each of these has a dual.
   equalizer of `f` and `f`.
 
 ## Implementation notes
+
 As with the other special shapes in the limits library, all the definitions here are given as
 `abbrev`s of the general statements for limits, so all the `simp` lemmas and theorems about
 general limits can be used.
 
 ## References
 
-* [F. Borceux, *Handbook of Categorical Algebra 1*][borceux-vol1]
+* ‍\[F. Borceux, _Handbook of Categorical Algebra 1_\]\[borceux-vol1\]
 -/
 
 @[expose] public section

@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Order.Group.Pointwise.Interval
 public import Mathlib.Topology.MetricSpace.Pseudo.Pi
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lemmas about distances between points in intervals in `ℝ`.
 -/

@@ -8,6 +8,9 @@ module
 public import Mathlib.FieldTheory.PrimitiveElement
 public import Mathlib.GroupTheory.CosetCover
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Algebraic extensions are determined by their sets of minimal polynomials up to isomorphism
 
@@ -23,9 +26,8 @@ in `F[X]` has a root in `E`, then `E` is an algebraic closure of `F`.
 
 ## References
 
-[Isaacs1980] *Roots of Polynomials in Algebraic Extensions of Fields*,
+‍\[Isaacs1980\] _Roots of Polynomials in Algebraic Extensions of Fields_,
 The American Mathematical Monthly
-
 -/
 
 public section

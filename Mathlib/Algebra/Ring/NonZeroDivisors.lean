@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Regular.Basic
 public import Mathlib.Algebra.Regular.Opposite
 public import Mathlib.Algebra.Ring.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Non-zero divisors in a ring
 -/

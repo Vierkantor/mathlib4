@@ -8,6 +8,9 @@ module
 public import Mathlib.Topology.Algebra.Module.Multilinear.Topology
 public import Mathlib.Topology.Algebra.Module.Alternating.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Topology on continuous alternating maps
 
@@ -169,8 +172,10 @@ theorem hasBasis_nhds_zero :
       fun SV => { f | MapsTo f SV.1 SV.2 } :=
   hasBasis_nhds_zero_of_basis (Filter.basis_sets _)
 
-/-- The inclusion of *alternating* continuous multilinear maps into continuous multilinear maps
-as a continuous linear map. -/
+/--
+The inclusion of _alternating_ continuous multilinear maps into continuous multilinear maps
+as a continuous linear map.
+-/
 @[simps! -fullyApplied]
 def toContinuousMultilinearMapCLM
     (R : Type*) [Semiring R] [Module R F] [ContinuousConstSMul R F] [SMulCommClass 𝕜 R F] :

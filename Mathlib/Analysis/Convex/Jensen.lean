@@ -9,6 +9,9 @@ public import Mathlib.Analysis.Convex.Combination
 public import Mathlib.Analysis.Convex.Function
 public import Mathlib.Tactic.FieldSimp
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Jensen's inequality and maximum principle for convex functions
 
@@ -18,6 +21,7 @@ functions. The integral versions are to be found in `Analysis.Convex.Integral`.
 ## Main declarations
 
 Jensen's inequalities:
+
 * `ConvexOn.map_centerMass_le`, `ConvexOn.map_sum_le`: Convex Jensen's inequality. The image of a
   convex combination of points under a convex function is less than the convex combination of the
   images.
@@ -26,6 +30,7 @@ Jensen's inequalities:
 * `StrictConcaveOn.lt_map_sum`: Concave strict Jensen inequality.
 
 As corollaries, we get:
+
 * `StrictConvexOn.map_sum_eq_iff`: Equality case of the convex Jensen inequality.
 * `StrictConcaveOn.map_sum_eq_iff`: Equality case of the concave Jensen inequality.
 * `ConvexOn.exists_ge_of_mem_convexHull`: Maximum principle for convex functions.
@@ -39,7 +44,9 @@ open Finset Set Convex
 
 variable {𝕜 E β ι : Type*}
 
-/-! ### Jensen's inequality -/
+/-!
+# Jensen's inequality
+-/
 
 
 section Jensen
@@ -92,7 +99,9 @@ lemma ConcaveOn.map_add_sum_le (hf : ConcaveOn 𝕜 s f) (h₀ : ∀ i ∈ t, 0 
     v • f q + ∑ i ∈ t, w i • f (p i) ≤ f (v • q + ∑ i ∈ t, w i • p i) :=
   hf.dual.map_add_sum_le h₀ h₁ hmem hv hq
 
-/-! ### Strict Jensen inequality -/
+/-!
+# Strict Jensen inequality
+-/
 
 /-- Convex **strict Jensen inequality**.
 
@@ -148,7 +157,9 @@ lemma StrictConcaveOn.lt_map_sum (hf : StrictConcaveOn 𝕜 s f) (h₀ : ∀ i �
     (h₁ : ∑ i ∈ t, w i = 1) (hmem : ∀ i ∈ t, p i ∈ s) (hp : ∃ j ∈ t, ∃ k ∈ t, p j ≠ p k) :
     ∑ i ∈ t, w i • f (p i) < f (∑ i ∈ t, w i • p i) := hf.dual.map_sum_lt h₀ h₁ hmem hp
 
-/-! ### Equality case of Jensen's inequality -/
+/-!
+# Equality case of Jensen's inequality
+-/
 
 /-- A form of the **equality case of Jensen's equality**.
 
@@ -328,7 +339,9 @@ theorem StrictConcaveOn.lt_map_sum_iff_of_nonneg' (hf : StrictConcaveOn 𝕜 s f
 
 end Jensen
 
-/-! ### Maximum principle -/
+/-!
+# Maximum principle
+-/
 
 
 section MaximumPrinciple

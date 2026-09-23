@@ -7,6 +7,9 @@ module
 
 public import Mathlib.SetTheory.Cardinal.Cofinality.Ordinal
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Fundamental sequences
 
@@ -16,7 +19,7 @@ with cofinal range. We can generalize this notion to arbitrary ordinals by setti
 
 ## Main results
 
-- `Ordinal.exists_isFundamentalSeq`: every ordinal has a fundamental sequence.
+* `Ordinal.exists_isFundamentalSeq`: every ordinal has a fundamental sequence.
 -/
 
 @[expose] public section
@@ -120,7 +123,9 @@ theorem exists_isFundamentalSeq (ha : o.cof.ord = a) : ∃ f : Iio a → Iio o, 
   rw [range_comp', OrderIso.map_isCofinal_iff, range_comp', g.range_eq]
   simpa
 
-/-! ### Deprecated material -/
+/-!
+# Deprecated material
+-/
 
 /-- A fundamental sequence for `a` is an increasing sequence of length `o = cof a` that converges at
     `a`. We provide `o` explicitly in order to avoid type rewrites. -/

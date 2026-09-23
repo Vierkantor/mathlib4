@@ -10,6 +10,9 @@ public import Mathlib.RingTheory.Flat.Rank
 public import Mathlib.RingTheory.Smooth.Flat
 public import Mathlib.RingTheory.TensorProduct.Pi
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Totally split algebras
 
@@ -21,7 +24,7 @@ locally totally split.
 
 ## Main results
 
-- `Algebra.IsFiniteSplit.exists_tensorProduct_of_etale`: If `S` is finite étale over `R` of
+* `Algebra.IsFiniteSplit.exists_tensorProduct_of_etale`: If `S` is finite étale over `R` of
   some constant rank, there exists a faithfully flat, finite étale `R`-algebra `T` such that
   `T ⊗[R] S` is finite split.
 -/
@@ -140,7 +143,7 @@ If `S` is finite étale over `R` of (constant) rank `n`, there exists
 a finite faithfully flat, étale `R`-algebra `T` such that `T ⊗[R] S` is split of rank `n`
 over `T`.
 This is the commutative algebra version of
-[Lenstra, Galois theory for schemes, 5.10][lenstraGSchemes].
+‍\[Lenstra, Galois theory for schemes, 5.10\]\[lenstraGSchemes\].
 -/
 lemma exists_tensorProduct_of_etale [Etale R S] [Module.Finite R S] {n : ℕ}
     (hn : Module.rankAtStalk (R := R) S = n) :

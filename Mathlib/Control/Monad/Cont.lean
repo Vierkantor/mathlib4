@@ -11,13 +11,18 @@ public import Mathlib.Control.Lawful
 public import Batteries.Tactic.Congr
 public import Batteries.Lean.Except
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Continuation Monad
 
 Monad encapsulating continuation passing programming style, similar to
 Haskell's `Cont`, `ContT` and `MonadCont`:
-<https://hackage.haskell.org/package/mtl-2.2.2/docs/Control-Monad-Cont.html>
-<https://hackage.haskell.org/package/transformers-0.6.2.0/docs/Control-Monad-Trans-Cont.html>
+[
+https://hackage.haskell.org/package/mtl-2.2.2/docs/Control-Monad-Cont.html](https://hackage.haskell.org/package/mtl-2.2.2/docs/Control-Monad-Cont.html)
+[
+https://hackage.haskell.org/package/transformers-0.6.2.0/docs/Control-Monad-Trans-Cont.html](https://hackage.haskell.org/package/transformers-0.6.2.0/docs/Control-Monad-Trans-Cont.html)
 -/
 
 @[expose] public section

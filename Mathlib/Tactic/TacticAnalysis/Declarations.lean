@@ -13,6 +13,9 @@ public import Mathlib.Tactic.ExtractGoal
 public import Mathlib.Tactic.TacticAnalysis
 public import Mathlib.Util.ParseCommand
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Tactic linters
 
@@ -480,6 +483,8 @@ def Mathlib.TacticAnalysis.tryAtEachStepFromStrings
     let tac : TSyntax `tactic := ⟨mkNode ``Lean.Parser.Tactic.tacticSeq1Indented #[tacSeq]⟩
     (tryAtEachStepCore (fun _ _ => pure tac) label).run seq
 
+
+set_option doc.verso false
 /-- Run a custom tactic at each proof step, configured via environment variables.
 
 Reads from environment variables:
@@ -508,6 +513,8 @@ def Mathlib.TacticAnalysis.tryAtEachStepFromEnvImpl : TacticAnalysis.Config wher
     let label := (← IO.getEnv "TRY_AT_EACH_STEP_LABEL").getD tacticStr
     (tryAtEachStepFromStrings label tacticStr).run seq
 
+
+set_option doc.verso true
 /-- Run `grind` at every step in proofs, reporting where it succeeds. -/
 register_option linter.tacticAnalysis.tryAtEachStepGrind : Bool := {
   defValue := false

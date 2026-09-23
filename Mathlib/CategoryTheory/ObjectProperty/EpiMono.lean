@@ -8,13 +8,15 @@ module
 public import Mathlib.CategoryTheory.ObjectProperty.ClosedUnderIsomorphisms
 public import Mathlib.Algebra.Homology.ShortComplex.ShortExact
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Properties of objects that are closed under subobjects and quotients
 
 Given a category `C` and `P : ObjectProperty C`, we define type classes
 `P.IsClosedUnderSubobjects` and `P.IsClosedUnderQuotients` expressing
 that `P` is closed under subobjects (resp. quotients).
-
 -/
 
 public section

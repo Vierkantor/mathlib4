@@ -10,6 +10,9 @@ public import Mathlib.Analysis.Complex.UpperHalfPlane.Manifold
 public import Mathlib.Analysis.Complex.LocallyUniformLimit
 public import Mathlib.Geometry.Manifold.MFDeriv.FDeriv
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Holomorphicity of Eisenstein series
 

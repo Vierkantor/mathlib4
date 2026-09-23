@@ -12,6 +12,9 @@ public import Mathlib.Analysis.RCLike.Basic
 public import Mathlib.LinearAlgebra.UnitaryGroup
 public import Mathlib.Topology.UniformSpace.Matrix
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Analytic properties of the `star` operation on matrices
 
@@ -32,7 +35,6 @@ This transports the operator norm on `EuclideanSpace 𝕜 n →L[𝕜] Euclidean
 
 We take care to ensure the topology and uniformity induced by `Matrix.instMetricSpaceL2Op`
 coincide with the existing topology and uniformity on matrices.
-
 -/
 
 @[expose] public section

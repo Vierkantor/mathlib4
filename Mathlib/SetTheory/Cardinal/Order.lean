@@ -13,6 +13,9 @@ public import Mathlib.Order.SuccPred.CompleteLinearOrder
 public import Mathlib.SetTheory.Cardinal.Defs
 public import Mathlib.SetTheory.Cardinal.SchroederBernstein
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Order on cardinal numbers
 
@@ -50,7 +53,7 @@ That is reflected in this file containing both the order and algebra structure.
 
 ## References
 
-* <https://en.wikipedia.org/wiki/Cardinal_number>
+* [https://en.wikipedia.org/wiki/Cardinal\_number](https://en.wikipedia.org/wiki/Cardinal_number)
 
 ## Tags
 
@@ -72,7 +75,9 @@ variable {α β : Type u}
 
 namespace Cardinal
 
-/-! ### Order on cardinals -/
+/-!
+# Order on cardinals
+-/
 
 /-- We define the order on cardinal numbers by `#α ≤ #β` if and only if
   there exists an embedding (injective function) from α to β. -/
@@ -136,7 +141,9 @@ we provide this statement separately so you don't have to solve the specializati
 theorem lift_mk_le' {α : Type u} {β : Type v} : lift.{v} #α ≤ lift.{u} #β ↔ Nonempty (α ↪ β) :=
   lift_mk_le.{0}
 
-/-! ### `lift` sends `Cardinal.{u}` to an initial segment of `Cardinal.{max u v}`. -/
+/-!
+# `lift` sends `Cardinal.{u}` to an initial segment of `Cardinal.{max u v}`.
+-/
 
 /-- `Cardinal.lift` as an `InitialSeg`. -/
 @[simps!]
@@ -197,7 +204,9 @@ theorem lt_lift_iff {a : Cardinal.{u}} {b : Cardinal.{max u v}} :
     b < lift.{v, u} a ↔ ∃ a' < a, lift.{v, u} a' = b :=
   liftInitialSeg.lt_apply_iff
 
-/-! ### Basic cardinals -/
+/-!
+# Basic cardinals
+-/
 
 @[simp]
 theorem lift_eq_zero {a : Cardinal.{v}} : lift.{u} a = 0 ↔ a = 0 :=
@@ -268,7 +277,9 @@ theorem mk_powerset {α : Type u} (s : Set α) : #(↥(𝒫 s)) = 2 ^ #(↥s) :=
 theorem lift_two_power (a : Cardinal) : lift.{v} (2 ^ a) = 2 ^ lift.{v} a := by
   simp [← one_add_one_eq_two]
 
-/-! ### Order properties -/
+/-!
+# Order properties
+-/
 
 instance orderBot : OrderBot Cardinal.{u} where
   bot := 0
@@ -410,7 +421,9 @@ theorem lift_succ (a) : lift.{v, u} (succ a) = succ (lift.{v, u} a) := by
   rw [lt_succ_iff, ← lift_le, hb] at h
   exact h.not_gt (lt_succ _)
 
-/-! ### Limit cardinals -/
+/-!
+# Limit cardinals
+-/
 
 theorem ne_zero_of_isSuccLimit {c} (h : IsSuccLimit c) : c ≠ 0 :=
   h.ne_bot
@@ -465,7 +478,9 @@ theorem IsStrongPrelimit.zero : IsStrongPrelimit 0 := by
 theorem not_isStrongLimit_zero : ¬ IsStrongLimit (0 : Cardinal) :=
   fun h ↦ h.ne_zero rfl
 
-/-! ### Indexed cardinal `sum` -/
+/-!
+# Indexed cardinal `sum`
+-/
 
 theorem lift_le_sum {ι : Type u} (f : ι → Cardinal.{v}) (i) : lift.{u, v} (f i) ≤ sum f := by
   rw [← Quotient.out_eq (f i)]
@@ -515,7 +530,9 @@ theorem lift_mk_le_lift_mk_mul_of_lift_mk_preimage_le {α : Type u} {β : Type v
 
 end Cardinal
 
-/-! ### Well-ordering theorem -/
+/-!
+# Well-ordering theorem
+-/
 
 open Cardinal in
 theorem nonempty_embedding_to_cardinal : Nonempty (α ↪ Cardinal.{u}) :=
@@ -573,7 +590,9 @@ lemma exists_eq_of_iSup_eq_of_not_isSuccLimit
   subst h
   exact exists_eq_ciSup_of_not_isSuccLimit hf hc
 
-/-! ### Indexed cardinal `prod` -/
+/-!
+# Indexed cardinal `prod`
+-/
 
 /-- **König's theorem** -/
 theorem sum_lt_prod {ι} (f g : ι → Cardinal) (H : ∀ i, f i < g i) : sum f < prod g :=
@@ -598,7 +617,9 @@ theorem prod_le_prod {ι} (f g : ι → Cardinal) (H : ∀ i, f i ≤ g i) : pro
   ⟨Embedding.piCongrRight fun i =>
       Classical.choice <| by have := H i; rwa [← mk_out (f i), ← mk_out (g i)] at this⟩
 
-/-! ### The first infinite cardinal `aleph0` -/
+/-!
+# The first infinite cardinal `aleph0`
+-/
 
 theorem aleph0_pos : 0 < ℵ₀ :=
   pos_iff_ne_zero.2 aleph0_ne_zero
@@ -627,7 +648,9 @@ theorem aleph0_eq_lift {c : Cardinal.{u}} : ℵ₀ = lift.{v} c ↔ ℵ₀ = c :
 theorem lift_eq_aleph0 {c : Cardinal.{u}} : lift.{v} c = ℵ₀ ↔ c = ℵ₀ := by
   simp [eqComm]
 
-/-! ### Properties about the cast from `ℕ` -/
+/-!
+# Properties about the cast from `ℕ`
+-/
 
 theorem mk_fin (n : ℕ) : #(Fin n) = n := by simp
 

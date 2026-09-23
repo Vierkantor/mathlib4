@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Category.Grp.Colimits
 public import Mathlib.CategoryTheory.ConcreteCategory.Elementwise
 public import Mathlib.LinearAlgebra.DFinsupp
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The category of R-modules has all colimits.
 

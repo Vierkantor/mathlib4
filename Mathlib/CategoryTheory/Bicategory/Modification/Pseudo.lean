@@ -8,6 +8,9 @@ module
 public import Mathlib.CategoryTheory.Bicategory.NaturalTransformation.Pseudo
 public import Mathlib.CategoryTheory.Bicategory.Modification.Oplax
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Modifications between transformations of pseudofunctors
 
@@ -24,7 +27,6 @@ Given two pseudofunctors `F` and `G`, we define:
   between `F` and `G`, where the morphisms are modifications, and composition is given by vertical
   composition of modifications. Note that this a scoped instance in the `Pseudofunctor.StrongTrans`
   namespace, so you need to run `open scoped Pseudofunctor.StrongTrans` to access it.
-
 -/
 
 @[expose] public section

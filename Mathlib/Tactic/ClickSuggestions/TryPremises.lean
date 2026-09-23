@@ -8,6 +8,9 @@ module
 public import Mathlib.Tactic.ClickSuggestions.FindPremises
 meta import Mathlib.Tactic.ClickSuggestions.FindPremises
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # generating lemma suggestions, given the the shortlist of candidate lemmas
 -/

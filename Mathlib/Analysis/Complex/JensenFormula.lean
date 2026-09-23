@@ -9,6 +9,9 @@ public import Mathlib.Analysis.Complex.Harmonic.Poisson
 public import Mathlib.Analysis.SpecialFunctions.Integrals.PosLog
 
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Jensen's Formula of Complex Analysis
 
@@ -31,7 +34,7 @@ open scoped ComplexConjugate
 
 
 /-!
-## Preparatory Material
+# Preparatory Material
 
 In preparation to the proof of Jensen's formula, compute several circle averages and reformulate
 some of the terms that appear in the formula and its proof.
@@ -293,7 +296,7 @@ lemma countingFunction_finsum_eq_finsum_add {c : ℂ} {R : ℝ} {D : ℂ → ℤ
       ring
 
 /-!
-## Jensen's Formula
+# Jensen's Formula
 -/
 
 /--

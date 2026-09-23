@@ -9,8 +9,10 @@ public import Mathlib.CategoryTheory.Elementwise
 public import Mathlib.Topology.Sequences
 public import Mathlib.Topology.Instances.Discrete
 public import Mathlib.Topology.Category.TopCat.Basic
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # The category of sequential topological spaces
 
 We define the category `Sequential` of sequential topological spaces. We follow the usual template

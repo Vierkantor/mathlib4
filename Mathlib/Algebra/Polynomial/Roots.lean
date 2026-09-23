@@ -14,6 +14,9 @@ public import Mathlib.RingTheory.Localization.FractionRing
 public import Mathlib.SetTheory.Cardinal.Order
 public import Mathlib.Order.Filter.TendstoCofinite
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Theory of univariate polynomials
 
@@ -30,7 +33,6 @@ We define the multiset of roots of a polynomial, and prove basic results about i
 * `Polynomial.C_leadingCoeff_mul_prod_multiset_X_sub_C`: If a polynomial has as many roots as its
   degree, it can be written as the product of its leading coefficient with `∏ (X - a)` where `a`
   ranges through its roots.
-
 -/
 
 @[expose] public section

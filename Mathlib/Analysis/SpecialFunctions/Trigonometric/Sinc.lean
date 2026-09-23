@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds
 public import Mathlib.Analysis.Calculus.DSlope
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Sinc function
 
@@ -21,7 +24,6 @@ This file contains the definition of the sinc function and some of its propertie
 ## Main statements
 
 * `continuous_sinc`: the sinc function is continuous.
-
 -/
 
 @[expose] public section

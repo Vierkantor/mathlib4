@@ -8,6 +8,9 @@ module
 public import Mathlib.CategoryTheory.Equivalence
 public import Mathlib.CategoryTheory.Adjunction.Mates
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Functoriality of the symmetry of equivalences
 
@@ -16,13 +19,13 @@ to the symmetric equivalence defines an equivalence between `C ≌ D` and `(D �
 and provides the definition of the functor that takes an equivalence to its inverse.
 
 ## Main definitions
-- `Equivalence.symmEquiv C D`: the equivalence `(C ≌ D) ≌ (D ≌ C)ᵒᵖ` obtained by
-  taking `Equivalence.symm` on objects, and `conjugateEquiv` on maps.
-- `Equivalence.inverseFunctor C D`: The functor `(C ≌ D) ⥤ (D ⥤ C)ᵒᵖ` sending an equivalence
-  `e` to the functor `e.inverse`.
-- `congrLeftFunctor C D E`: the functor (C ≌ D) ⥤ ((C ⥤ E) ≌ (D ⥤ E))ᵒᵖ that applies
-  `Equivalence.congrLeft` on objects, and whiskers left by `conjugateEquiv` on maps.
 
+* `Equivalence.symmEquiv C D`: the equivalence `(C ≌ D) ≌ (D ≌ C)ᵒᵖ` obtained by
+  taking `Equivalence.symm` on objects, and `conjugateEquiv` on maps.
+* `Equivalence.inverseFunctor C D`: The functor `(C ≌ D) ⥤ (D ⥤ C)ᵒᵖ` sending an equivalence
+  `e` to the functor `e.inverse`.
+* `congrLeftFunctor C D E`: the functor (C ≌ D) ⥤ ((C ⥤ E) ≌ (D ⥤ E))ᵒᵖ that applies
+  `Equivalence.congrLeft` on objects, and whiskers left by `conjugateEquiv` on maps.
 -/
 
 set_option backward.defeqAttrib.useBackward true

@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Group.Subsemigroup.Defs
 public import Mathlib.Tactic.FastInstance
 public import Mathlib.Data.Set.Insert
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Submonoids: definition
 
@@ -45,6 +48,7 @@ This file is designed to have very few dependencies. In particular, it should no
 numbers. `Submonoid` is implemented by extending `Subsemigroup` requiring `one_mem'`.
 
 ## Tags
+
 submonoid, submonoids
 -/
 

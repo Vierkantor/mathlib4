@@ -9,6 +9,9 @@ public import Mathlib.Order.Atoms
 public import Mathlib.LinearAlgebra.Span.Defs
 public import Mathlib.LinearAlgebra.AffineSpace.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Affine spaces
 
@@ -42,8 +45,8 @@ topology are defined elsewhere; see `Analysis.Normed.Affine.AddTorsor` and
 
 ## References
 
-* https://en.wikipedia.org/wiki/Affine_space
-* https://en.wikipedia.org/wiki/Principal_homogeneous_space
+* https://en.wikipedia.org/wiki/Affine\_space
+* https://en.wikipedia.org/wiki/Principal\_homogeneous\_space
 -/
 
 @[expose] public section

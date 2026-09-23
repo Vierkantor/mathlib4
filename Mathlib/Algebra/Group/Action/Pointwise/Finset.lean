@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Group.Pointwise.Finset.Scalar
 public import Mathlib.Algebra.Group.Pointwise.Finset.Basic
 public import Mathlib.Algebra.Regular.SMul
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Pointwise actions of finsets
 -/
@@ -29,7 +32,9 @@ variable {F α β γ : Type*}
 
 namespace Finset
 
-/-! ### Instances -/
+/-!
+# Instances
+-/
 
 section Instances
 

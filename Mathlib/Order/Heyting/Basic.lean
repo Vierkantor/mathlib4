@@ -8,6 +8,9 @@ module
 public import Mathlib.Order.PropInstances
 public import Mathlib.Order.GaloisConnection.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Heyting algebras
 
@@ -43,7 +46,7 @@ use of `to_dual none`.
 
 ## References
 
-* [Francis Borceux, *Handbook of Categorical Algebra III*][borceux-vol3]
+* ‍\[Francis Borceux, _Handbook of Categorical Algebra III_\]\[borceux-vol3\]
 
 ## Tags
 
@@ -63,7 +66,9 @@ universe u
 
 variable {ι α β : Type*}
 
-/-! ### Notation -/
+/-!
+# Notation
+-/
 
 @[to_dual]
 instance Prod.instHImp [HImp α] [HImp β] : HImp (α × β) :=

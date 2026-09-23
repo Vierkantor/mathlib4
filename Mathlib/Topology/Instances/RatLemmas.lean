@@ -10,6 +10,9 @@ public import Mathlib.Topology.Instances.Rat
 public import Mathlib.Topology.Compactification.OnePoint.Basic
 public import Mathlib.Topology.Metrizable.Uniformity
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Additional lemmas about the topology on rational numbers
 
@@ -19,14 +22,13 @@ compactification.
 
 ## Main statements
 
-- `Rat.TotallyDisconnectedSpace`: `ℚ` is a totally disconnected space;
-
-- `Rat.not_countably_generated_nhds_infty_opc`: the filter of neighbourhoods of infinity in
+* `Rat.TotallyDisconnectedSpace`: `ℚ` is a totally disconnected space;
+* `Rat.not_countably_generated_nhds_infty_opc`: the filter of neighbourhoods of infinity in
   `OnePoint ℚ` is not countably generated.
 
 ## Notation
 
-- `ℚ∞` is used as a local notation for `OnePoint ℚ`
+* `ℚ∞` is used as a local notation for `OnePoint ℚ`
 -/
 
 public section

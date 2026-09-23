@@ -11,6 +11,9 @@ public import Mathlib.Data.Fin.Rev
 public import Mathlib.Order.Heyting.Basic
 public import Mathlib.Order.Hom.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `Fin n` forms a bounded linear order
 
@@ -46,7 +49,9 @@ open Function Nat Set
 namespace Fin
 variable {m n : ℕ}
 
-/-! ### Instances -/
+/-!
+# Instances
+-/
 
 attribute [norm_cast] Fin.val_max Fin.val_min
 
@@ -78,7 +83,7 @@ require a change to std4, defining `NeZero n` and thus re-defining `last n`
 lemmas, this would be equivalent to the existing definition. -/
 
 /-!
-### Extra instances to short-circuit type class resolution
+# Extra instances to short-circuit type class resolution
 
 These also prevent non-computable instances being used to construct these instances non-computably.
 -/
@@ -88,7 +93,9 @@ instance instLattice : Lattice (Fin n) := inferInstance
 instance instHeytingAlgebra [NeZero n] : HeytingAlgebra (Fin n) := inferInstance
 instance instCoheytingAlgebra [NeZero n] : CoheytingAlgebra (Fin n) := inferInstance
 
-/-! ### Miscellaneous lemmas -/
+/-!
+# Miscellaneous lemmas
+-/
 
 instance [NeZero n] : IsBotZeroClass (Fin n) where
   isBot_zero := isBot_bot
@@ -174,7 +181,9 @@ lemma orderHom_injective_iff {α : Type*} [PartialOrder α] {n : ℕ} (f : Fin (
 
 end FromFin
 
-/-! #### Monotonicity -/
+/-!
+# Monotonicity
+-/
 
 lemma val_strictMono : StrictMono (val : Fin n → ℕ) := fun _ _ ↦ id
 lemma cast_strictMono {k l : ℕ} (h : k = l) : StrictMono (Fin.cast h) := fun {_ _} h ↦ h
@@ -286,7 +295,9 @@ lemma predAbove_left_injective : Injective (@predAbove n) := by
 @[simp] lemma predAbove_left_inj {x y : Fin n} : x.predAbove = y.predAbove ↔ x = y :=
   predAbove_left_injective.eq_iff
 
-/-! #### Order isomorphisms -/
+/-!
+# Order isomorphisms
+-/
 
 /-- The equivalence `Fin n ≃ {i // i < n}` is an order isomorphism. -/
 @[simps! apply symm_apply]
@@ -323,7 +334,9 @@ lemma rev_strictAnti : StrictAnti (@rev n) := fun _ _ ↦ rev_lt_rev.mpr
 
 lemma rev_anti : Antitone (@rev n) := rev_strictAnti.antitone
 
-/-! #### Order embeddings -/
+/-!
+# Order embeddings
+-/
 
 /-- The inclusion map `Fin n → ℕ` is an order embedding. -/
 @[simps! apply]
@@ -410,7 +423,9 @@ lemma range_succAboveOrderEmb {n : ℕ} (i : Fin (n + 1)) :
     Set.range (Fin.succAboveOrderEmb i) = {i}ᶜ := by
   simp
 
-/-! ### Uniqueness of order isomorphisms -/
+/-!
+# Uniqueness of order isomorphisms
+-/
 
 /-- If `e` is an `orderIso` between `Fin n` and `Fin m`, then `n = m` and `e` is the identity
 map. In this lemma we state that for each `i : Fin n` we have `(e i : ℕ) = (i : ℕ)`. -/

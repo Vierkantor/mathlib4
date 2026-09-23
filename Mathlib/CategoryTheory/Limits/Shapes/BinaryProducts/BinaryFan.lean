@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Limits.Shapes.BinaryProducts.WalkingPair
 public import Mathlib.CategoryTheory.Limits.HasLimits
 public import Mathlib.CategoryTheory.Limits.Shapes.IsTerminal
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Binary fans and cofans
 
@@ -16,6 +19,7 @@ A binary (co)fan is a (co)cone over a walking-pair diagram. These will be used (
 file) to define binary products and coproducts.
 
 ## References
+
 * [Stacks: Products of pairs](https://stacks.math.columbia.edu/tag/001R)
 * [Stacks: coproducts of pairs](https://stacks.math.columbia.edu/tag/04AN)
 -/

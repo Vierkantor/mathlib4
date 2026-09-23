@@ -9,6 +9,9 @@ public import Mathlib.Analysis.Normed.Field.Lemmas
 public import Mathlib.Analysis.SpecificLimits.Basic
 public import Mathlib.Topology.MetricSpace.ProperSpace
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Proper nontrivially normed fields
 

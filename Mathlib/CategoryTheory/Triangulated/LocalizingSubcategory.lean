@@ -8,6 +8,9 @@ module
 public import Mathlib.CategoryTheory.Triangulated.Opposite.Subcategory
 public import Mathlib.CategoryTheory.Triangulated.Opposite.Triangulated
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Localizing subcategories
 
@@ -20,9 +23,9 @@ the functor from the Verdier quotient `A/(A ⊓ B)` to `C/B` is fully
 faithful.
 
 ## References
-* [Jean-Louis Verdier, *Des catégories dérivées des catégories abéliennes*,
-  Proposition 2.3.5, Chapitre II][verdier1996]
 
+* ‍\[Jean-Louis Verdier, _Des catégories dérivées des catégories abéliennes_,
+  Proposition 2.3.5, Chapitre II\]\[verdier1996\]
 -/
 
 @[expose] public section

@@ -10,6 +10,9 @@ public import Mathlib.Data.Matrix.Mul
 public import Mathlib.Data.Matrix.Basis
 public import Mathlib.Algebra.Algebra.Bilinear
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Bundled versions of multiplication for matrices
 

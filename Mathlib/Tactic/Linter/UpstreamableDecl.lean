@@ -8,7 +8,11 @@ module
 public import Mathlib.Init
 public import ImportGraph.Tools.FindHome
 
-/-! # The `upstreamableDecl` linter
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# The `upstreamableDecl` linter
 
 The `upstreamableDecl` linter detects declarations that could be moved to a file higher up in the
 import hierarchy. This is intended to assist with splitting files.

@@ -9,6 +9,9 @@ public import Mathlib.Init
 public import Lean.Meta.Tactic.Util
 public import Lean.SubExpr
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Utilities for `SubExpr.GoalsLocation`
 

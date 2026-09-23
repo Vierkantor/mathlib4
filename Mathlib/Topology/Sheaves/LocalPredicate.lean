@@ -9,6 +9,9 @@ public import Mathlib.Topology.Sheaves.SheafOfFunctions
 public import Mathlib.Topology.Sheaves.Stalks
 public import Mathlib.Topology.Sheaves.SheafCondition.UniqueGluing
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Functions satisfying a local predicate form a sheaf.
 
@@ -28,6 +31,7 @@ any collection of dependent functions on a topological space
 satisfying a "local predicate".
 
 As an application, we check that continuity is a local predicate in this sense, and provide
+
 * `TopCat.sheafToTop`: continuous functions into a topological space form a sheaf
 
 A sheaf constructed in this way has a natural map `stalkToFiber` from the stalks

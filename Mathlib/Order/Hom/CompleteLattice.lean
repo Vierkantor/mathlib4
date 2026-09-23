@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.Set.Lattice.Image
 public import Mathlib.Order.Hom.BoundedLattice
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Complete lattice homomorphisms
 
@@ -194,7 +197,9 @@ instance [CompleteLattice α] [CompleteLattice β] [CompleteLatticeHomClass F α
     CoeTC F (CompleteLatticeHom α β) :=
   ⟨fun f => ⟨f, map_sSup f⟩⟩
 
-/-! ### Supremum and infimum homomorphisms -/
+/-!
+# Supremum and infimum homomorphisms
+-/
 
 
 namespace sSupHom
@@ -328,7 +333,9 @@ theorem bot_apply (a : α) : (⊥ : sSupHom α β) a = ⊥ :=
 
 end sSupHom
 
-/-! ### Frame homomorphisms -/
+/-!
+# Frame homomorphisms
+-/
 
 
 namespace FrameHom
@@ -434,7 +441,9 @@ instance : PartialOrder (FrameHom α β) :=
 
 end FrameHom
 
-/-! ### Complete lattice homomorphisms -/
+/-!
+# Complete lattice homomorphisms
+-/
 
 namespace CompleteLatticeHom
 
@@ -542,7 +551,9 @@ theorem cancel_left {g : CompleteLatticeHom β γ} {f₁ f₂ : CompleteLatticeH
 
 end CompleteLatticeHom
 
-/-! ### Dual homs -/
+/-!
+# Dual homs
+-/
 
 
 namespace sSupHom
@@ -610,7 +621,9 @@ theorem symm_dual_comp (g : CompleteLatticeHom βᵒᵈ γᵒᵈ) (f : CompleteL
 
 end CompleteLatticeHom
 
-/-! ### Concrete homs -/
+/-!
+# Concrete homs
+-/
 
 
 namespace CompleteLatticeHom

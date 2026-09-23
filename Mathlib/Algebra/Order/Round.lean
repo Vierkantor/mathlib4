@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Algebra.Order.Floor.Ring
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Rounding
 
@@ -32,7 +35,9 @@ variable {F α β : Type*}
 
 open Int
 
-/-! ### Round -/
+/-!
+# Round
+-/
 
 section round
 

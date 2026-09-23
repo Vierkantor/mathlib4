@@ -10,6 +10,9 @@ public import Mathlib.Combinatorics.SimpleGraph.Extremal.Basic
 public import Mathlib.Combinatorics.SimpleGraph.DegreeSum
 public import Mathlib.Order.Partition.Equipartition
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Turán's theorem
 
@@ -39,7 +42,7 @@ the property through `turanGraph n r` using the isomorphism provided by the forw
 
 ## References
 
-* https://en.wikipedia.org/wiki/Turán%27s_theorem
+* https://en.wikipedia.org/wiki/Turán%27s\_theorem
 -/
 
 @[expose] public section
@@ -324,7 +327,9 @@ theorem card_edgeFinset_eq_extremalNumber_top_iff_nonempty_iso_turanGraph :
   rw [← isTuranMaximal_iff_nonempty_iso_turanGraph (Nat.sub_pos_iff_lt.mpr one_lt_card),
     ← isExtremal_top_free_iff_isTuranMaximal, isExtremal_free_iff]
 
-/-! ### Number of edges in the Turán graph -/
+/-!
+# Number of edges in the Turán graph
+-/
 
 /-- The number of edges in `turanGraph n r`. -/
 abbrev turanNumber (n r : ℕ) : ℕ := #(turanGraph n r).edgeFinset

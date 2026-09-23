@@ -14,6 +14,9 @@ public import Mathlib.Topology.Algebra.Affine
 public import Mathlib.Topology.ContinuousMap.Algebra
 public import Mathlib.Topology.GDelta.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Urysohn's lemma
 

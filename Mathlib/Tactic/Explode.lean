@@ -11,6 +11,9 @@ public meta import Mathlib.Tactic.Explode.Datatypes
 public import Mathlib.Tactic.Explode.Datatypes
 public import Mathlib.Tactic.Explode.Pretty
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Explode command
 
@@ -148,6 +151,8 @@ def explode (e : Expr) (filterProofs : Bool := true) : MetaM Entries := do
   let (_, entries) ← explodeCore (start := true) filter false e 0 default
   return entries
 
+
+set_option doc.verso false
 open Elab in
 /--
 `#explode expr` displays a proof term in a line-by-line format somewhat akin to a Fitch-style
@@ -276,6 +281,8 @@ elab "#explode " stx:term : command => withoutModifyingEnv <| Command.runTermEla
     let fitchTable : MessageData ← entriesToMessageData entries
     logInfo <|← addMessageContext m!"{heading}\n\n{fitchTable}\n"
 
+
+set_option doc.verso true
 end Explode
 
 end Mathlib

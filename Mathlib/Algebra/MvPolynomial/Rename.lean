@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Algebra.MvPolynomial.Eval
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Renaming variables of polynomials
 
@@ -22,19 +25,13 @@ which modifies the set of variables.
 
 As in other polynomial files, we typically use the notation:
 
-+ `σ τ α : Type*` (indexing the variables)
-
-+ `R S : Type*` `[CommSemiring R]` `[CommSemiring S]` (the coefficients)
-
-+ `s : σ →₀ ℕ`, a function from `σ` to `ℕ` which is zero away from a finite set.
+* `σ τ α : Type*` (indexing the variables)
+* `R S : Type*` `[CommSemiring R]` `[CommSemiring S]` (the coefficients)
+* `s : σ →₀ ℕ`, a function from `σ` to `ℕ` which is zero away from a finite set.
   This will give rise to a monomial in `MvPolynomial σ R` which mathematicians might call `X^s`.
-
-+ `r : R` elements of the coefficient ring
-
-+ `i : σ`, with corresponding monomial `X i`, often denoted `X_i` by mathematicians
-
-+ `p : MvPolynomial σ α`
-
+* `r : R` elements of the coefficient ring
+* `i : σ`, with corresponding monomial `X i`, often denoted `X_i` by mathematicians
+* `p : MvPolynomial σ α`
 -/
 
 @[expose] public section

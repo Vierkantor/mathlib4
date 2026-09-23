@@ -10,6 +10,9 @@ public import Mathlib.Order.Filter.SmallSets
 public import Mathlib.Order.Filter.AtTopBot.Basic
 public import Mathlib.Order.Filter.Bases.Finite
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Convergence of intervals
 
@@ -72,7 +75,6 @@ that need topology are defined in `Mathlib/Topology/Algebra/Ordered`.
 | `𝓝[Set.Ici a] b` | `𝓝[Set.Ici a] b` | `𝓝[Set.Ici a] b` | `𝓝[Set.Ioi a] b` | `𝓝[Set.Ioi a] b` |
 | `𝓝[Set.Ioi a] b` | `𝓝[Set.Ioi a] b` | `𝓝[Set.Ioi a] b` | `𝓝[Set.Ioi a] b` | `𝓝[Set.Ioi a] b` |
 | `𝓝[Set.Iio a] b` | `𝓝[Set.Iio a] b` | `𝓝[Set.Iio a] b` | `𝓝[Set.Iio a] b` | `𝓝[Set.Iio a] b` |
-
 -/
 
 public section

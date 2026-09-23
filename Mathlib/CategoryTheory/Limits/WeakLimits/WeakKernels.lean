@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Limits.WeakLimits.WeakEqualizers
 public import Mathlib.CategoryTheory.Limits.Shapes.Kernels
 public import Mathlib.CategoryTheory.Preadditive.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Weak kernels
 
@@ -16,7 +19,6 @@ These are weak equalizers for functors of the form `parallelPair f 0`.
 
 If the category is preadditive, then weak equalizers exist if and only if weak kernels exist.
 (See `hasWeakEqualizer_of_hasWeakKernel` and `hasWeakKernel_of_hasWeakEqualizer`.)
-
 -/
 
 @[expose] public section

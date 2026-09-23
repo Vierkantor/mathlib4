@@ -10,14 +10,15 @@ public import Mathlib.Algebra.Category.ModuleCat.Topology.Basic
 public import Mathlib.Algebra.Homology.ShortComplex.Abelian
 public import Mathlib.Algebra.Homology.ShortComplex.PreservesHomology
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # `TopModuleCat` is a `CategoryWithHomology`
 
 `TopModuleCat R`, the category of topological `R`-modules, is not an abelian category.
 But since the topology on subquotients is well-defined, we can still talk about homology in this
 category. See the `CategoryWithHomology (TopModuleCat R)` instance in this file.
-
 -/
 
 @[expose] public section

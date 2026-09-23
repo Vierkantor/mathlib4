@@ -8,6 +8,9 @@ module
 public import Mathlib.CategoryTheory.Shift.Basic
 public import Mathlib.CategoryTheory.NatIso
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Functors which commute with shifts
 
@@ -24,8 +27,8 @@ identify to `A`. The choice of a cleavage for this fibered category gives the in
 shift functors.)
 
 ## References
-* [Jean-Louis Verdier, *Des catégories dérivées des catégories abéliennes*][verdier1996]
 
+* ‍\[Jean-Louis Verdier, _Des catégories dérivées des catégories abéliennes_\]\[verdier1996\]
 -/
 
 set_option backward.defeqAttrib.useBackward true

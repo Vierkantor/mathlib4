@@ -19,6 +19,9 @@ public import Mathlib.Tactic.FieldSimp
 import Mathlib.LinearAlgebra.GeneralLinearGroup.AlgEquiv
 import Mathlib.RingTheory.SimpleRing.Matrix
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Determinant of families of vectors
 
@@ -109,7 +112,9 @@ end Conjugate
 
 namespace LinearMap
 
-/-! ### Determinant of a linear map -/
+/-!
+# Determinant of a linear map
+-/
 
 
 variable {A : Type*} [CommRing A] [Module A M]

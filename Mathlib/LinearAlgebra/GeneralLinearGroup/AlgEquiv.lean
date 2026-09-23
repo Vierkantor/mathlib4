@@ -12,6 +12,9 @@ public import Mathlib.LinearAlgebra.GeneralLinearGroup.Basic
 import Mathlib.LinearAlgebra.Dual.Lemmas
 public import Mathlib.Algebra.Module.Projective
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Algebra isomorphisms between endomorphisms of projective modules are inner
 

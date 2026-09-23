@@ -8,7 +8,11 @@ module
 public import Mathlib.Algebra.Ring.Action.End
 public import Mathlib.RingTheory.Ideal.Maps
 
-/-! # Pointwise instances on `Ideal`s
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Pointwise instances on `Ideal`s
 
 This file provides the action `Ideal.pointwiseMulAction` which morally matches the action of
 `mulActionSet` (though here an extra `Ideal.span` is inserted).
@@ -19,7 +23,6 @@ This action is available in the `Pointwise` locale.
 
 This file is similar (but not identical) to `Mathlib/Algebra/Ring/Subsemiring/Pointwise.lean`.
 Where possible, try to keep them in sync.
-
 -/
 
 @[expose] public section

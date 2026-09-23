@@ -9,10 +9,13 @@ public import Mathlib.Init
 public import Lean.Elab.Tactic.Simp
 public import Lean.Meta.DiscrTree
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Helper functions for using the simplifier.
 
-[TODO] Needs documentation, cleanup, and possibly reunification of `mkSimpContext'` with core.
+‍\[TODO\] Needs documentation, cleanup, and possibly reunification of `mkSimpContext'` with core.
 -/
 
 public section

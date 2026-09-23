@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Limits.Preserves.Finite
 public import Mathlib.CategoryTheory.WithTerminal.FinCategory
 public import Mathlib.CategoryTheory.WithTerminal.Cone
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # If a functor preserves limits, so does the induced functor in the `Over` or `Under` category
 

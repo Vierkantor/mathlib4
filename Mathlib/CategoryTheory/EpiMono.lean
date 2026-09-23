@@ -8,6 +8,9 @@ module
 public import Mathlib.CategoryTheory.Groupoid
 public import Mathlib.CategoryTheory.CommSq
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Facts about epimorphisms and monomorphisms.
 

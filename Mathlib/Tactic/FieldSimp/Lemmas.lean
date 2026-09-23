@@ -11,8 +11,11 @@ public import Mathlib.Algebra.Order.GroupWithZero.Basic
 public import Mathlib.Algebra.Ring.Int.Parity -- shake: keep (Qq dependency)
 public meta import Mathlib.Util.Qq
 
-/-! # Lemmas for the `field_simp` tactic
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
+# Lemmas for the `field_simp` tactic
 -/
 
 public section
@@ -173,7 +176,8 @@ theorem lt_eq_cancel_lt {M : Type*} [MonoidWithZero M] [PartialOrder M] [PosMulS
   apply Iff.eq
   exact mul_lt_mul_iff_of_pos_left HL
 
-/-! ### Theory of lists of pairs (exponent, atom)
+/-!
+# Theory of lists of pairs (exponent, atom)
 
 This section contains the lemmas which are orchestrated by the `field_simp` tactic
 to prove goals in fields.  The basic object which these lemmas concern is `NF M`, a type synonym
@@ -376,7 +380,9 @@ theorem eval_cons_eq_eval_of_eq_of_eq [CommGroupWithZero M] (r : ℤ) (x : M) {t
 end NF
 end
 
-/-! ### Negations of algebraic operations -/
+/-!
+# Negations of algebraic operations
+-/
 
 @[expose] public meta section Sign
 open Lean Qq
@@ -500,7 +506,9 @@ def Sign.congr {y y' : Q($M)} (g : Sign M) (pf : Q($y = $y')) : Q($(g.expr y)= $
   | .plus => pf
   | .minus _ => q(congr_arg Neg.neg $pf)
 
-/-- If `a` = ± `b`, `b = C * d`, and `d = e`, construct a proof that `a` = `C` * ± `e`. -/
+/--
+If `a` = ± `b`, `b = C * d`, and `d = e`, construct a proof that `a` = `C` \* ± `e`.
+-/
 def Sign.mkEqMul (iM : Q(CommGroupWithZero $M)) {a b C d e : Q($M)} {g : Sign M}
       (pf₁ : Q($a = $(g.expr b))) (pf₂ : Q($b = $C * $d))
       (pf₃ : Q($d = $e)) : MetaM Q($a = $C * $(g.expr e)) := do

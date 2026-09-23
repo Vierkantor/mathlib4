@@ -8,6 +8,9 @@ module
 public import Mathlib.Probability.Kernel.Composition.MeasureComp
 public import Mathlib.Probability.Kernel.IonescuTulcea.Traj
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Infinite product of probability measures
 
@@ -99,7 +102,9 @@ section Nat
 
 open Kernel
 
-/-! ### Product of measures indexed by `ℕ` -/
+/-!
+# Product of measures indexed by `ℕ`
+-/
 
 variable {X : ℕ → Type*}
 
@@ -236,7 +241,9 @@ section InfinitePi
 
 open Measure
 
-/-! ### Product of infinitely many probability measures -/
+/-!
+# Product of infinitely many probability measures
+-/
 
 variable {ι : Type*} {X : ι → Type*} {mX : ∀ i, MeasurableSpace (X i)}
   (μ : (i : ι) → Measure (X i)) [hμ : ∀ i, IsProbabilityMeasure (μ i)]

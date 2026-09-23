@@ -9,6 +9,9 @@ public import Mathlib.Logic.Small.List
 public import Mathlib.SetTheory.Ordinal.Enum
 public import Mathlib.SetTheory.Ordinal.Exponential
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Fixed points of normal functions
 
@@ -38,7 +41,9 @@ open Function Order
 
 namespace Ordinal
 
-/-! ### Fixed points of type-indexed families of ordinals -/
+/-!
+# Fixed points of type-indexed families of ordinals
+-/
 
 section
 
@@ -234,7 +239,9 @@ theorem derivFamily_eq_enumOrd [Small.{u} ι] (H : ∀ i, IsNormal (f i)) :
 
 end
 
-/-! ### Fixed points of a single function -/
+/-!
+# Fixed points of a single function
+-/
 
 section
 
@@ -395,7 +402,9 @@ theorem deriv_zero_left (a) : deriv 0 a = a := by
 
 end
 
-/-! ### Fixed points of addition -/
+/-!
+# Fixed points of addition
+-/
 
 @[simp]
 theorem nfp_add_zero (a) : nfp (a + ·) 0 = a * ω := by
@@ -430,7 +439,9 @@ theorem deriv_add_eq_mul_omega0_add (a b : Ordinal.{u}) : deriv (a + ·) b = a *
   · rw [succ_eq_add_one, deriv_add_one, h, ← add_assoc]
     exact nfp_eq_self (add_eq_right_iff_mul_omega0_le.2 (le_self_add.trans (le_succ _)))
 
-/-! ### Fixed points of multiplication -/
+/-!
+# Fixed points of multiplication
+-/
 
 @[simp]
 theorem nfp_mul_one {a : Ordinal} (ha : 0 < a) : nfp (a * ·) 1 = a ^ ω := by

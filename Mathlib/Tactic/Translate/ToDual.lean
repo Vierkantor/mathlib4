@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Tactic.Translate.TagUnfoldBoundary
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The `@[to_dual]` attribute.
 
@@ -14,12 +17,13 @@ The `@[to_dual]` attribute is used to translate declarations to their dual equiv
 See the docstrings of `to_dual` and `to_additive` for more information.
 
 Known limitations:
-- When combining `to_additive` and `to_dual`, we need to make sure that all translations are added.
+
+* When combining `to_additive` and `to_dual`, we need to make sure that all translations are added.
   For example `attribute [to_dual (attr := to_additive) le_mul] mul_le` should generate
   `le_mul`, `le_add` and `add_le`, and in particular should realize that `le_add` and `add_le`
   are dual to each other. Currently, this requires writing
   `attribute [to_dual existing le_add] add_le`.
-- It is currently not possible for a constant to have multiple possible duals.
+* It is currently not possible for a constant to have multiple possible duals.
   This would be useful for constants that have orders on different types, such as `Monotone f`.
   If the domain and codomain of `f` are both dualized, then `Monotone f` is simply dual to itself.
   But there are also cases where only the domain or only the codomain should be dualized.

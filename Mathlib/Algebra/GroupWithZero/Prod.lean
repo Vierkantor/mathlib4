@@ -10,6 +10,9 @@ public import Mathlib.Algebra.GroupWithZero.Hom
 public import Mathlib.Algebra.GroupWithZero.Units.Basic
 public import Mathlib.Algebra.GroupWithZero.WithZero
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Products of monoids with zero, groups with zero
 
@@ -63,7 +66,9 @@ lemma WithZero.coe_withZeroUnitsEquiv [GroupWithZero M₀] [DecidablePred fun x 
 @[deprecated (since := "2026-09-15")]
 alias WithZero.ofClass_withZeroUnitsEquiv := WithZero.coe_withZeroUnitsEquiv
 
-/-! ### Multiplication and division as homomorphisms -/
+/-!
+# Multiplication and division as homomorphisms
+-/
 
 section BundledMulDiv
 

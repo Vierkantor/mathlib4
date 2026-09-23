@@ -11,6 +11,9 @@ public import Mathlib.Data.FunLike.Basic
 public import Mathlib.Logic.Function.Iterate
 public import Mathlib.Logic.Equiv.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Type tags that turn additive structures into multiplicative, and vice versa
 
@@ -26,7 +29,6 @@ We also define instances `Additive.*` and `Multiplicative.*` that actually trans
 ## See also
 
 This file is similar to `Mathlib/Order/Synonym.lean`.
-
 -/
 
 @[expose] public section

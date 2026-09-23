@@ -8,12 +8,15 @@ module
 public import Mathlib.Algebra.Polynomial.Eval.Degree
 public import Mathlib.Algebra.Prime.Lemmas
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Theory of degrees of polynomials
 
 Some of the main results include
-- `natDegree_comp_le` : The degree of the composition is at most the product of degrees
 
+* `natDegree_comp_le` : The degree of the composition is at most the product of degrees
 -/
 
 public section

@@ -9,6 +9,9 @@ public import Mathlib.Combinatorics.SimpleGraph.Connectivity.Connected
 
 import Mathlib.Combinatorics.SimpleGraph.Connectivity.EdgeConnectivity
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Hamiltonian Graphs
 
@@ -16,9 +19,9 @@ In this file we introduce Hamiltonian paths, cycles and graphs.
 
 ## Main definitions
 
-- `SimpleGraph.Walk.IsHamiltonian`: Predicate for a walk to be Hamiltonian.
-- `SimpleGraph.Walk.IsHamiltonianCycle`: Predicate for a walk to be a Hamiltonian cycle.
-- `SimpleGraph.IsHamiltonian`: Predicate for a graph to be Hamiltonian.
+* `SimpleGraph.Walk.IsHamiltonian`: Predicate for a walk to be Hamiltonian.
+* `SimpleGraph.Walk.IsHamiltonianCycle`: Predicate for a walk to be a Hamiltonian cycle.
+* `SimpleGraph.IsHamiltonian`: Predicate for a graph to be Hamiltonian.
 -/
 
 @[expose] public section

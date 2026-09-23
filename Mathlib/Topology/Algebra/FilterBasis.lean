@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Topology.Algebra.Module.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Group and ring filter bases
 
@@ -32,7 +35,7 @@ Given a group `G` and a ring `R`:
 
 ## References
 
-* [N. Bourbaki, *General Topology*][bourbaki1966]
+* ‍\[N. Bourbaki, _General Topology_\]\[bourbaki1966\]
 -/
 
 @[expose] public section

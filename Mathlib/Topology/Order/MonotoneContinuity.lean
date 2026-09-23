@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Topology.Order.LeftRightNhds
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Continuity of monotone functions
 
@@ -266,7 +269,7 @@ theorem Monotone.continuous_of_surjective [DenselyOrdered β] {f : α → β} (h
 end LinearOrder
 
 /-!
-### Continuity of order isomorphisms
+# Continuity of order isomorphisms
 
 In this section we prove that an `OrderIso` is continuous, hence it is a `Homeomorph`. We prove
 this for an `OrderIso` between to partial orders with order topology.

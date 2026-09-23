@@ -14,6 +14,9 @@ import Mathlib.Analysis.SpecialFunctions.Log.RpowTendsto
 import Mathlib.Analysis.SpecialFunctions.Pow.Deriv
 import Mathlib.Analysis.Convex.FunctionTopology
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Order properties of the operator logarithm
 

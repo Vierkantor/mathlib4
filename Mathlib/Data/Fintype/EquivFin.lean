@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.Fintype.Card
 public import Mathlib.Data.List.NodupEquivFin
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Equivalences between `Fintype`, `Fin` and `Finite`
 
@@ -30,9 +33,9 @@ See `Infinite.of_injective` and `Infinite.of_surjective`.
 ## Instances
 
 We provide `Infinite` instances for
+
 * specific types: `ℕ`, `ℤ`, `String`
 * type constructors: `Multiset α`, `List α`
-
 -/
 
 @[expose] public section
@@ -156,7 +159,7 @@ theorem card_eq {α β} [_F : Fintype α] [_G : Fintype β] : card α = card β 
 end Fintype
 
 /-!
-### Relation to `Finite`
+# Relation to `Finite`
 
 In this section we prove that `α : Type*` is `Finite` if and only if `Fintype α` is nonempty.
 -/

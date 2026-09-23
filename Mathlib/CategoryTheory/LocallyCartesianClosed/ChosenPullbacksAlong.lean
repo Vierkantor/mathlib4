@@ -10,29 +10,29 @@ public import Mathlib.CategoryTheory.Monoidal.Cartesian.Basic
 public import Mathlib.CategoryTheory.Adjunction.Unique
 public import Mathlib.CategoryTheory.Limits.Shapes.Pullback.IsPullback.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Chosen pullbacks along a morphism
 
 ## Main declarations
 
-- `ChosenPullbacksAlong` : For a morphism `f : Y ⟶ X` in `C`, the type class
+* `ChosenPullbacksAlong` : For a morphism `f : Y ⟶ X` in `C`, the type class
   `ChosenPullbacksAlong f` provides the data of a pullback functor `Over X ⥤ Over Y`
   as a right adjoint to `Over.map f`.
 
 ## Main results
 
-- We prove that `ChosenPullbacksAlong` has good closure properties: isos have chosen pullbacks,
+* We prove that `ChosenPullbacksAlong` has good closure properties: isos have chosen pullbacks,
   and composition of morphisms with chosen pullbacks have chosen pullbacks.
-
-- We prove that chosen pullbacks yield usual pullbacks: `ChosenPullbacksAlong.isPullback`
+* We prove that chosen pullbacks yield usual pullbacks: `ChosenPullbacksAlong.isPullback`
   proves that for morphisms `f` and `g` with the same codomain, the object
   `ChosenPullbacksAlong.pullbackObj f g` together with morphisms
   `ChosenPullbacksAlong.fst f g` and `ChosenPullbacksAlong.snd f g` form a pullback square
   over `f` and `g`.
-
-- We prove that in cartesian monoidal categories, morphisms to the terminal tensor unit and
+* We prove that in cartesian monoidal categories, morphisms to the terminal tensor unit and
   the product projections have chosen pullbacks.
-
 -/
 
 @[expose] public section

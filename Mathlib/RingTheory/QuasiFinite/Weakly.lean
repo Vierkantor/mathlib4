@@ -7,8 +7,10 @@ module
 
 public import Mathlib.RingTheory.QuasiFinite.Basic
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Weakly Quasi-finite primes
 
 The definition `Algebra.QuasiFiniteAt` is equivalent to the usual definition "isolated in fibers"
@@ -30,7 +32,6 @@ This is fine mathematically because the set of quasi-finite primes is open
 to be stated with an a priori weaker notion of quasi-finite.
 Hence we introduce `Algebra.WeaklyQuasiFiniteAt` where we mod out all the primes that lie in a
 different fiber.
-
 -/
 
 @[expose] public section

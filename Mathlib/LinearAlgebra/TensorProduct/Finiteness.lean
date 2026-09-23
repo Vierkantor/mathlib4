@@ -9,25 +9,25 @@ public import Mathlib.LinearAlgebra.DFinsupp
 public import Mathlib.RingTheory.Finiteness.Basic
 public import Mathlib.LinearAlgebra.TensorProduct.Map
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Some finiteness results of tensor product
 
 This file contains some finiteness results of tensor product.
 
-- `TensorProduct.exists_multiset`, `TensorProduct.exists_finsupp_left`,
+* `TensorProduct.exists_multiset`, `TensorProduct.exists_finsupp_left`,
   `TensorProduct.exists_finsupp_right`, `TensorProduct.exists_finset`:
   any element of `M ⊗[R] N` can be written as a finite sum of pure tensors.
   See also `TensorProduct.span_tmul_eq_top`.
-
-- `TensorProduct.exists_finite_submodule_left_of_setFinite`,
+* `TensorProduct.exists_finite_submodule_left_of_setFinite`,
   `TensorProduct.exists_finite_submodule_right_of_setFinite`,
   `TensorProduct.exists_finite_submodule_of_setFinite`:
   any finite subset of `M ⊗[R] N` is contained in `M' ⊗[R] N`,
   resp. `M ⊗[R] N'`, resp. `M' ⊗[R] N'`,
   for some finitely generated submodules `M'` and `N'` of `M` and `N`, respectively.
-
-- `TensorProduct.exists_finite_submodule_left_of_setFinite'`,
+* `TensorProduct.exists_finite_submodule_left_of_setFinite'`,
   `TensorProduct.exists_finite_submodule_right_of_setFinite'`,
   `TensorProduct.exists_finite_submodule_of_setFinite'`:
   variation of the above results where `M` and `N` are already submodules.
@@ -35,7 +35,6 @@ This file contains some finiteness results of tensor product.
 ## Tags
 
 tensor product, finitely generated
-
 -/
 
 public section

@@ -11,6 +11,9 @@ public import Mathlib.FieldTheory.SplittingField.Construction
 public import Mathlib.RingTheory.Polynomial.DegreeLT
 public import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Resultant of two polynomials
 

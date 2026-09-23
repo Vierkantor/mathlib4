@@ -9,11 +9,13 @@ public import Mathlib.RepresentationTheory.Subrepresentation
 public import Mathlib.RepresentationTheory.Intertwining
 public import Mathlib.RepresentationTheory.AlgebraRepresentation.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Irreducible representations
 
 This file defines irreducible monoid representations.
-
 -/
 
 public section

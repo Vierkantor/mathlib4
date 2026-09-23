@@ -11,6 +11,9 @@ public import Mathlib.Analysis.Calculus.Deriv.Basic
 public import Mathlib.Analysis.Calculus.FDeriv.Equiv
 public import Mathlib.MeasureTheory.Integral.Prod
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Divergence theorem for Bochner integral
 
@@ -76,7 +79,7 @@ local notation "e " i => Pi.single i 1
 section
 
 /-!
-### Divergence theorem for functions on `ℝⁿ⁺¹ = Fin (n + 1) → ℝ`.
+# Divergence theorem for functions on `ℝⁿ⁺¹ = Fin (n + 1) → ℝ`.
 
 In this section we use the divergence theorem for a Henstock-Kurzweil-like integral
 `BoxIntegral.hasIntegral_GP_divergence_of_forall_hasDerivWithinAt` to prove the divergence
@@ -91,12 +94,10 @@ in several aspects.
 * We use Bochner integral instead of a Henstock-Kurzweil integral. This modification is done in
   `MeasureTheory.integral_divergence_of_hasFDerivWithinAt_off_countable_aux₁`. As a side effect
   of this change, we need to assume that the divergence is integrable.
-
 * We don't assume differentiability on the boundary of the box. This modification is done in
   `MeasureTheory.integral_divergence_of_hasFDerivAt_off_countable_aux₂`. To prove it, we
   choose an increasing sequence of smaller boxes that cover the interior of the original box, then
   apply the previous lemma to these smaller boxes and take the limit of both sides of the equation.
-
 * We assume `a ≤ b` instead of `∀ i, a i < b i`. This is the last step of the proof, and it is done
   in the main theorem `MeasureTheory.integral_divergence_of_hasFDerivAt_off_countable`.
 -/

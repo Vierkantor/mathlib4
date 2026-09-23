@@ -7,6 +7,9 @@ module
 
 public import Mathlib.LinearAlgebra.TensorProduct.Tower
 public import Mathlib.Algebra.DirectSum.Module
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Tensor products of direct sums
 

@@ -9,6 +9,9 @@ public import Mathlib.Data.Finsupp.Lex
 public import Mathlib.Data.Finsupp.Multiset
 public import Mathlib.Order.GameAdd
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Termination of a hydra game
 

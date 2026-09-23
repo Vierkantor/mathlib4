@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Analysis.BoxIntegral.Partition.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Tagged partitions
 
@@ -15,7 +18,7 @@ A tagged (pre)partition is a (pre)partition `π` enriched with a tagged point fo
 on all boxes `J : Box ι` but use its values only on boxes of the partition. Given
 `π : BoxIntegral.TaggedPrepartition I`, we require that each `BoxIntegral.TaggedPrepartition π J`
 belongs to `BoxIntegral.Box.Icc I`. If for every `J ∈ π`, `π.tag J` belongs to `J.Icc`, then `π` is
-called a *Henstock* partition. We do not include this assumption into the definition of a tagged
+called a _Henstock_ partition. We do not include this assumption into the definition of a tagged
 (pre)partition because McShane integral is defined as a limit along tagged partitions without this
 requirement.
 

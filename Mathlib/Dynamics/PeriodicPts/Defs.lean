@@ -12,6 +12,9 @@ public import Mathlib.Data.List.Cycle
 public import Mathlib.Data.PNat.Notation
 public import Mathlib.Dynamics.FixedPoints.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Periodic points
 
@@ -39,8 +42,7 @@ is a periodic point of `f` of period `n` if and only if `minimalPeriod f x | n`.
 
 ## References
 
-* https://en.wikipedia.org/wiki/Periodic_point
-
+* https://en.wikipedia.org/wiki/Periodic\_point
 -/
 
 @[expose] public section
@@ -572,7 +574,8 @@ lemma isPeriodicPt_smul_iff {m : M} {a : α} {n : ℕ} :
     IsPeriodicPt (m • ·) n a ↔ m ^ n • a = a := by
   rw [← smul_iterate_apply, IsPeriodicPt, IsFixedPt]
 
-/-! ### Multiples of `MulAction.period`
+/-!
+# Multiples of `MulAction.period`
 
 It is easy to convince oneself that if `g ^ n • a = a` (resp. `(n • g) +ᵥ a = a`),
 then `n` must be a multiple of `period g a`.

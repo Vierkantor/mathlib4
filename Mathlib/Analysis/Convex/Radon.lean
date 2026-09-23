@@ -10,6 +10,9 @@ public import Mathlib.Data.Set.Card
 public import Mathlib.LinearAlgebra.AffineSpace.FiniteDimensional
 public import Mathlib.Topology.Separation.Hausdorff
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Radon's theorem on convex sets
 

@@ -12,6 +12,9 @@ public import Mathlib.Order.Preorder.Chain
 public import Mathlib.Order.ScottContinuity
 public import Mathlib.Dynamics.FixedPoints.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Omega Complete Partial Orders
 
@@ -38,10 +41,12 @@ supremum helps define the meaning of recursive procedures.
 * product types
 * `OrderHom`
 * `ContinuousHom` (with notation →𝒄)
+
   * an instance of `OmegaCompletePartialOrder (α →𝒄 β)`
 * `ContinuousHom.ofFun`
 * `ContinuousHom.ofMono`
 * continuous functions:
+
   * `id`
   * `ite`
   * `const`
@@ -51,9 +56,9 @@ supremum helps define the meaning of recursive procedures.
 
 ## References
 
-* [Chain-complete posets and directed sets with applications][markowsky1976]
-* [Recursive definitions of partial functions and their computations][cadiou1972]
-* [Semantics of Programming Languages: Structures and Techniques][gunter1992]
+* ‍\[Chain-complete posets and directed sets with applications\]\[markowsky1976\]
+* ‍\[Recursive definitions of partial functions and their computations\]\[cadiou1972\]
+* ‍\[Semantics of Programming Languages: Structures and Techniques\]\[gunter1992\]
 -/
 
 @[expose] public section
@@ -65,12 +70,14 @@ variable {ι : Sort*} {α β γ δ : Type*}
 
 namespace OmegaCompletePartialOrder
 
-/-- A chain is a monotone sequence.
+/--
+A chain is a monotone sequence.
 
 This is made a one-field structure around order homomorphisms `ℕ →o α` because we want to endow
 chains with the domination order rather than the pointwise order. See `Chain.instLE`.
 
-See the definition on page 114 of [gunter1992]. -/
+See the definition on page 114 of \[gunter1992\].
+-/
 structure Chain (α : Type u) [Preorder α] extends ℕ →o α
 
 namespace Chain
@@ -86,7 +93,9 @@ initialize_simps_projections Chain (toFun → apply)
 instance : OrderHomClass (Chain α) ℕ α where
   map_rel c _m _n hmn := c.monotone hmn
 
-/-- See note [partially-applied ext lemmas]. -/
+/--
+See note \[partially-applied ext lemmas\].
+-/
 @[ext] lemma ext ⦃f g : Chain α⦄ (h : ⇑f = ⇑g) : f = g := DFunLike.ext' h
 
 @[simp] lemma coe_toOrderHom (c : Chain α) : ⇑c.toOrderHom = c := rfl
@@ -171,12 +180,14 @@ end OmegaCompletePartialOrder
 
 open OmegaCompletePartialOrder Chain
 
-/-- An omega-complete partial order is a partial order with a supremum
+/--
+An omega-complete partial order is a partial order with a supremum
 operation on increasing sequences indexed by natural numbers (which we
 call `ωSup`). In this sense, it is strictly weaker than join complete
 semi-lattices as only ω-sized totally ordered sets have a supremum.
 
-See the definition on page 114 of [gunter1992]. -/
+See the definition on page 114 of \[gunter1992\].
+-/
 class OmegaCompletePartialOrder (α : Type*) extends PartialOrder α where
   /-- The supremum of an increasing sequence -/
   ωSup : Chain α → α
@@ -518,7 +529,8 @@ theorem toOrderHom_eq_coe (f : α →𝒄 β) : f.1 = f := rfl
 
 @[simp] theorem coe_toOrderHom (f : α →𝒄 β) : ⇑f.1 = f := rfl
 
-/-- See Note [custom simps projection]. We specify this explicitly because we don't have a DFunLike
+/--
+See Note \[custom simps projection\]. We specify this explicitly because we don't have a DFunLike
 instance.
 -/
 def Simps.apply (h : α →𝒄 β) : α → β :=

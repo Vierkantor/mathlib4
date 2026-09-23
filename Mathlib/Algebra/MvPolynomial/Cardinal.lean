@@ -12,6 +12,9 @@ public import Mathlib.Algebra.MvPolynomial.Basic
 public import Mathlib.SetTheory.Cardinal.Order
 public import Mathlib.Tactic.NormNum
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cardinality of Multivariate Polynomial Ring
 

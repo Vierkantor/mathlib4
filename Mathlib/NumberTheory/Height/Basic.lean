@@ -13,6 +13,9 @@ import Mathlib.Algebra.Order.Ring.IsNonarchimedean
 import Mathlib.Data.Fintype.Order
 import Mathlib.RingTheory.Nilpotent.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Basic theory of heights
 
@@ -22,10 +25,11 @@ We aim at a level of generality that allows to apply the theory to algebraic num
 and to function fields (and possibly beyond).
 
 The general set-up for heights is the following. Let `K` be a field.
+
 * We have a `Multiset` of archimedean absolute values on `K` (with values in `ℝ`).
 * We also have a `Set` of non-archimedean (i.e., `|x+y| ≤ max |x| |y|`) absolute values.
 * For a given `x ≠ 0` in `K`, `|x|ᵥ = 1` for all but finitely many (non-archimedean) `v`.
-* We have the *product formula* `∏ v : arch, |x|ᵥ * ∏ v : nonarch, |x|ᵥ = 1`
+* We have the _product formula_ `∏ v : arch, |x|ᵥ * ∏ v : nonarch, |x|ᵥ = 1`
   for all `x ≠ 0` in `K`, where the first product is over the multiset of archimedean
   absolute values.
 
@@ -33,12 +37,13 @@ We realize this implementation via the class `Height.AdmissibleAbsValues K`.
 
 ## Main definitions
 
-We define *multiplicative heights* and *logarithmic heights* (which are just defined to
+We define _multiplicative heights_ and _logarithmic heights_ (which are just defined to
 be the (real) logarithm of the corresponding multiplicative height). This leads to some
 duplication (in the definitions and statements; the proofs are reduced to those for the
 multiplicative height), which is justified, as both versions are frequently used.
 
 We define the following variants.
+
 * `Height.mulHeight₁ x` and `Height.logHeight₁ x` for `x : K`.
   This is the height of an element of `K`.
 * `Height.mulHeight x` and `Height.logHeight x` for `x : ι → K` with `ι` finite. This is the height
@@ -51,16 +56,15 @@ We define the following variants.
 ## TODO
 
 * Add `Height.AdmissibleAbsValues` instances for
+
   * Fields of rational functions in `n` variables and
   * Finite extensions of fields with `Height.AdmissibleAbsValues`.
-
 * Prove upper and lower bounds on the height of the image of a tuple under a tuple
   of homogeneous polynomial maps of the same degree.
 
 ## Tags
 
 Height, absolute value
-
 -/
 
 @[expose] public noncomputable section
@@ -68,7 +72,7 @@ Height, absolute value
 namespace Height
 
 /-!
-### Families of admissible absolute values
+# Families of admissible absolute values
 
 We define the class `AdmissibleAbsValues K` for a field `K`, which captures the notion of a
 family of absolute values on `K` satisfying a product formula.
@@ -104,7 +108,7 @@ def totalWeight : ℕ := archAbsVal (K := K) |>.card
 variable {K}
 
 /-!
-### Heights of field elements
+# Heights of field elements
 
 We use the subscript `₁` to denote multiplicative and logarithmic heights of field elements
 (this is because we are in the one-dimensional case of (affine) heights).
@@ -179,7 +183,7 @@ lemma logHeight₁_eq (x : K) :
 end Height
 
 /-!
-### Positivity extension for mulHeight₁, logHeight₁
+# Positivity extension for mulHeight₁, logHeight₁
 -/
 
 namespace Mathlib.Meta.Positivity
@@ -209,7 +213,7 @@ meta def evalLogHeight₁ : PositivityExt where eval {u α} _ pα? e :=
 end Mathlib.Meta.Positivity
 
 /-!
-### Heights of tuples and finitely supported maps
+# Heights of tuples and finitely supported maps
 
 We define the multiplicative height of a nonzero tuple `x : ι → K` as the product of the maxima
 of `v` on `x`, as `v` runs through the relevant absolute values of `K`. As usual, the
@@ -301,7 +305,7 @@ lemma _root_.Finsupp.logHeight_eq_log_mulHeight (x : α →₀ K) :
     logHeight x = log (mulHeight x) := rfl
 
 /-!
-### First properties of heights
+# First properties of heights
 -/
 
 private lemma max_eq_iSup {α : Type*} [ConditionallyCompleteLattice α] (a b : α) :
@@ -500,7 +504,7 @@ end tuple
 end Height
 
 /-!
-### Positivity extension for mulHeight, logHeight
+# Positivity extension for mulHeight, logHeight
 -/
 
 namespace Mathlib.Meta.Positivity
@@ -538,7 +542,7 @@ meta def evalLogHeight : PositivityExt where eval {u α} _ pα? e :=
 end Mathlib.Meta.Positivity
 
 /-!
-### Further properties of heights
+# Further properties of heights
 -/
 
 namespace Height
@@ -639,7 +643,7 @@ lemma logHeight₁_zpow (x : K) (n : ℤ) : logHeight₁ (x ^ n) = n.natAbs * lo
 end Height
 
 /-!
-### Heights and "Segre embedding"
+# Heights and "Segre embedding"
 
 We show that the multiplicative height of `fun (i, j) ↦ x i * y j` is the product of the
 multiplicative heights of `x` and `y` (and the analogous statement for logarithmic heights).
@@ -725,7 +729,7 @@ lemma logHeight_fun_mul_eq {x : ι → K} (hx : x ≠ 0) {y : ι' → K} (hy : y
 end two
 
 /-!
-### Height bound for products
+# Height bound for products
 -/
 
 variable {ι : Type*}
@@ -810,7 +814,7 @@ lemma logHeight₁_prod_le (s : Finset ι) (x : ι → K) :
 end Height
 
 /-!
-### Bounds for the height of sums of field elements
+# Bounds for the height of sums of field elements
 
 We prove the general case (finite sums of arbitrary length) first and deduce the result
 for sums of two elements from it.

@@ -8,12 +8,14 @@ module
 public import Mathlib.Topology.Perfect
 public import Mathlib.Tactic.Peel
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Derived set
 
 This file defines the derived set of a set, the set of all `AccPt`s of its principal filter,
 and proves some properties of it.
-
 -/
 
 @[expose] public section

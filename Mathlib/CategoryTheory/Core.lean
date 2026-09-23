@@ -10,6 +10,9 @@ public import Mathlib.CategoryTheory.Types.Basic
 public import Mathlib.CategoryTheory.Whiskering
 public import Mathlib.Control.EquivFunctor
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The core of a category
 

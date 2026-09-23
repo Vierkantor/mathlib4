@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Ring.Defs
 public import Mathlib.Data.Rat.Init
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Division (semi)rings and (semi)fields
 
@@ -74,15 +77,17 @@ Do not use this directly (instances of `DivisionRing` are allowed to override th
 better definitional properties). Instead, use the coercion. -/
 def Rat.castRec [NatCast K] [IntCast K] [Div K] (q : ℚ) : K := q.num / q.den
 
-/-- A `DivisionSemiring` is a `Semiring` with multiplicative inverses for nonzero elements.
+/--
+A `DivisionSemiring` is a `Semiring` with multiplicative inverses for nonzero elements.
 
 An instance of `DivisionSemiring K` includes maps `nnratCast : ℚ≥0 → K` and `nnqsmul : ℚ≥0 → K → K`.
 Those two fields are needed to implement the `DivisionSemiring K → Algebra ℚ≥0 K` instance since we
 need to control the specific definitions for some special cases of `K` (in particular `K = ℚ≥0`
-itself). See also note [forgetful inheritance].
+itself). See also note \[forgetful inheritance\].
 
 If the division semiring has positive characteristic `p`, our division by zero convention forces
-`nnratCast (1 / p) = 1 / 0 = 0`. -/
+`nnratCast (1 / p) = 1 / 0 = 0`.
+-/
 class DivisionSemiring (K : Type*) extends Semiring K, GroupWithZero K, NNRatCast K where
   protected nnratCast := NNRat.castRec
   /-- However `NNRat.cast` is defined, it must be propositionally equal to `a / b`.
@@ -103,16 +108,18 @@ class DivisionSemiring (K : Type*) extends Semiring K, GroupWithZero K, NNRatCas
 
 attribute [instance 500] DivisionSemiring.toSemiring
 
-/-- A `DivisionRing` is a `Ring` with multiplicative inverses for nonzero elements.
+/--
+A `DivisionRing` is a `Ring` with multiplicative inverses for nonzero elements.
 
 An instance of `DivisionRing K` includes maps `ratCast : ℚ → K` and `qsmul : ℚ → K → K`.
 Those two fields are needed to implement the `DivisionRing K → Algebra ℚ K` instance since we need
 to control the specific definitions for some special cases of `K` (in particular `K = ℚ` itself).
-See also note [forgetful inheritance]. Similarly, there are maps `nnratCast ℚ≥0 → K` and
+See also note \[forgetful inheritance\]. Similarly, there are maps `nnratCast ℚ≥0 → K` and
 `nnqsmul : ℚ≥0 → K → K` to implement the `DivisionSemiring K → Algebra ℚ≥0 K` instance.
 
 If the division ring has positive characteristic `p`, our division by zero convention forces
-`ratCast (1 / p) = 1 / 0 = 0`. -/
+`ratCast (1 / p) = 1 / 0 = 0`.
+-/
 class DivisionRing (K : Type*)
   extends Ring K, DivInvMonoid K, Nontrivial K, NNRatCast K, RatCast K where
   /-- For a nonzero `a`, `a⁻¹` is a right multiplicative inverse. -/
@@ -156,26 +163,30 @@ class DivisionRing (K : Type*)
 instance (priority := 100) DivisionRing.toDivisionSemiring [DivisionRing K] : DivisionSemiring K :=
   { ‹DivisionRing K› with }
 
-/-- A `Semifield` is a `CommSemiring` with multiplicative inverses for nonzero elements.
+/--
+A `Semifield` is a `CommSemiring` with multiplicative inverses for nonzero elements.
 
 An instance of `Semifield K` includes maps `nnratCast : ℚ≥0 → K` and `nnqsmul : ℚ≥0 → K → K`.
 Those two fields are needed to implement the `DivisionSemiring K → Algebra ℚ≥0 K` instance since we
 need to control the specific definitions for some special cases of `K` (in particular `K = ℚ≥0`
-itself). See also note [forgetful inheritance].
+itself). See also note \[forgetful inheritance\].
 
 If the semifield has positive characteristic `p`, our division by zero convention forces
-`nnratCast (1 / p) = 1 / 0 = 0`. -/
+`nnratCast (1 / p) = 1 / 0 = 0`.
+-/
 class Semifield (K : Type*) extends CommSemiring K, DivisionSemiring K, CommGroupWithZero K
 
-/-- A `Field` is a `CommRing` with multiplicative inverses for nonzero elements.
+/--
+A `Field` is a `CommRing` with multiplicative inverses for nonzero elements.
 
 An instance of `Field K` includes maps `ratCast : ℚ → K` and `qsmul : ℚ → K → K`.
 Those two fields are needed to implement the `DivisionRing K → Algebra ℚ K` instance since we need
 to control the specific definitions for some special cases of `K` (in particular `K = ℚ` itself).
-See also note [forgetful inheritance].
+See also note \[forgetful inheritance\].
 
 If the field has positive characteristic `p`, our division by zero convention forces
-`ratCast (1 / p) = 1 / 0 = 0`. -/
+`ratCast (1 / p) = 1 / 0 = 0`.
+-/
 @[stacks 09FD "first part"]
 class Field (K : Type u) extends CommRing K, DivisionRing K
 

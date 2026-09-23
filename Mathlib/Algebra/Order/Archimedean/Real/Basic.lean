@@ -13,9 +13,11 @@ public import Mathlib.Order.Interval.Set.Disjoint
 import Mathlib.Algebra.Order.Group.Pointwise.CompleteLattice
 import Mathlib.Data.Int.LeastGreatest
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The real numbers are an Archimedean floor ring, and a conditionally complete linear order.
-
 -/
 
 @[expose] public section

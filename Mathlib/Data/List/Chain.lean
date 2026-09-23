@@ -11,6 +11,9 @@ public import Mathlib.Data.List.Lex
 public import Mathlib.Data.List.Pairwise
 public import Mathlib.Logic.Function.Iterate
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Relation chain
 

@@ -14,6 +14,9 @@ public import Mathlib.LinearAlgebra.Basis.VectorSpace
 public import Mathlib.LinearAlgebra.LinearPMap
 public import Mathlib.RingTheory.HahnSeries.Lex
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Hahn embedding theorem on ordered modules
 
@@ -41,12 +44,13 @@ to a proof of the classic Hahn embedding theorem. (See `hahnEmbedding_isOrderedA
 
 ## References
 
-* [M. Hausner, J.G. Wendel, *Ordered vector spaces*][hausnerwendel1952]
+* ‍\[M. Hausner, J.G. Wendel, _Ordered vector spaces_\]\[hausnerwendel1952\]
 -/
 
 @[expose] public section
 
-/-! ### Step 1: base embedding
+/-!
+# Step 1: base embedding
 
 We start with `HahnEmbedding.ArchimedeanStrata` that gives a family of Archimedean submodules,
 and a "seed" `HahnEmbedding.Seed` that specifies how to embed each
@@ -241,7 +245,8 @@ theorem mem_domain_baseEmbedding {x : M} {c : FiniteArchimedeanClass M} (h : x �
 
 end Seed
 
-/-! ### Step 2: characterize partial embedding
+/-!
+# Step 2: characterize partial embedding
 
 We characterize the base embedding as a member of a class of partial linear embeddings
 `HahnEmbedding.Partial`. These embeddings share nice properties, including being strictly monotone,
@@ -256,7 +261,9 @@ structure IsPartial (f : M →ₗ.[K] Lex R⟦FiniteArchimedeanClass M⟧) : Pro
   strictMono : StrictMono f
   /-- A partial Hahn embedding always extends `baseEmbedding`. -/
   baseEmbedding_le : seed.baseEmbedding ≤ f
-  /-- If a Hahn series $f$ is in the range, then any truncation of $f$ is also in the range. -/
+  /--
+  If a Hahn series $`f` is in the range, then any truncation of $`f` is also in the range.
+  -/
   truncLT_mem_range : ∀ x, ∀ c,
     toLex (HahnSeries.truncLTLinearMap K c (ofLex (f x))) ∈ LinearMap.range f.toFun
 
@@ -499,7 +506,8 @@ theorem coeff_eq_of_mem [IsOrderedAddMonoid R] [Archimedean R] (x : M) {y z : f.
   rw [this]
   exact Submodule.sub_mem _ hy hz
 
-/-! ### Step 3: extend the embedding
+/-!
+# Step 3: extend the embedding
 
 We create a larger `HahnEmbedding.Partial` from an existing one by adding a new element to the
 domain and assigning an appropriate output that preserves all `HahnEmbedding.Partial`'s properties.
@@ -858,7 +866,8 @@ theorem lt_extend [IsOrderedAddMonoid R] [Archimedean R] {x : M} (hx : x ∉ f.v
   contrapose! hx with h
   simpa using! Submodule.mem_sup_right (by simp)
 
-/-! ### Step 4: use Zorn's lemma
+/-!
+# Step 4: use Zorn's lemma
 
 We show that `sSup` makes sense on `HahnEmbedding.Partial`, which allows us to use Zorn's lemma
 to assert the existence of maximal embedding. Since we already show that we can create greater

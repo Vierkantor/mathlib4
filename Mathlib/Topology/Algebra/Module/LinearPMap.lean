@@ -9,6 +9,9 @@ public import Mathlib.LinearAlgebra.LinearPMap
 public import Mathlib.Topology.Algebra.Module.Basic
 public import Mathlib.Topology.Algebra.Module.Equiv
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Partially defined linear operators over topological vector spaces
 
@@ -36,7 +39,7 @@ underlying spaces are normed.
 
 ## References
 
-* [J. Weidmann, *Linear Operators in Hilbert Spaces*][weidmann_linear]
+* ‍\[J. Weidmann, _Linear Operators in Hilbert Spaces_\]\[weidmann\_linear\]
 
 ## Tags
 
@@ -52,7 +55,9 @@ variable [TopologicalSpace E] [TopologicalSpace F]
 
 namespace LinearPMap
 
-/-! ### Closed and closable operators -/
+/-!
+# Closed and closable operators
+-/
 
 section Basic
 
@@ -135,7 +140,9 @@ theorem isClosable_iff_exists_closed_extension {f : E →ₗ.[R] F} :
   ⟨fun h => ⟨f.closure, h.closure_isClosed, f.le_closure⟩, fun ⟨_, hg, h⟩ =>
     hg.isClosable.leIsClosable h⟩
 
-/-! ### The core of a linear operator -/
+/-!
+# The core of a linear operator
+-/
 
 
 /-- A submodule `S` is a core of `f` if the closure of the restriction of `f` to `S` is `f`. -/
@@ -164,7 +171,9 @@ theorem closureHasCore (f : E →ₗ.[R] F) : f.closure.HasCore f.domain := by
 
 end Basic
 
-/-! ### Topological properties of the inverse -/
+/-!
+# Topological properties of the inverse
+-/
 
 section Inverse
 

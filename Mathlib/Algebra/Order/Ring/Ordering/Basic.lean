@@ -12,6 +12,9 @@ public import Mathlib.Tactic.FieldSimp
 public import Mathlib.Tactic.LinearCombination
 public import Mathlib.Tactic.Ring
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Ring orderings
 
@@ -19,8 +22,7 @@ We prove basic properties of (pre)orderings on rings and their supports.
 
 ## References
 
-- [*An introduction to real algebra*, T.Y. Lam][lam_1984]
-
+* ‍\[_An introduction to real algebra_, T.Y. Lam\]\[lam\_1984\]
 -/
 
 @[expose] public section
@@ -28,7 +30,7 @@ We prove basic properties of (pre)orderings on rings and their supports.
 variable {R : Type*} [CommRing R] {P : RingPreordering R}
 
 /-!
-### Preorderings
+# Preorderings
 -/
 
 namespace RingPreordering
@@ -88,7 +90,7 @@ def mk' {R : Type*} [CommRing R] (P : Set R)
 end mk'
 
 /-!
-### Supports
+# Supports
 -/
 
 section ne_top

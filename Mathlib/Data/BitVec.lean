@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Ring.Equiv
 public import Mathlib.Data.ZMod.Defs
 public import Mathlib.Data.Int.Cast.Lemmas
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Basic Theorems About Bitvectors
 
@@ -46,7 +49,7 @@ open Fin.CommRing in
   rw [← ofFin_intCast]
 
 /-!
-## Injectivity
+# Injectivity
 -/
 
 theorem toNat_injective {n : Nat} : Function.Injective (BitVec.toNat : BitVec n → _)
@@ -56,7 +59,7 @@ theorem toFin_injective {n : Nat} : Function.Injective (toFin : BitVec n → _)
   | ⟨_, _⟩, ⟨_, _⟩, rfl => rfl
 
 /-!
-## Scalar Multiplication and Powers
+# Scalar Multiplication and Powers
 -/
 
 open Fin.NatCast
@@ -77,7 +80,7 @@ lemma toFin_pow (x : BitVec w) (n : ℕ) : toFin (x ^ n) = x.toFin ^ n := by
   | succ n ih => simp [ih, BitVec.pow_succ, pow_succ]
 
 /-!
-## Ring
+# Ring
 -/
 
 -- Verify that the `HPow` instance from Lean agrees definitionally with the instance via `Monoid`.

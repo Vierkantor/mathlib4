@@ -12,6 +12,9 @@ public import Mathlib.Algebra.Order.Group.OrderIso
 public import Mathlib.Algebra.Order.Monoid.OrderDual
 public import Mathlib.Order.UpperLower.Closure
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Algebraic operations on upper/lower sets
 

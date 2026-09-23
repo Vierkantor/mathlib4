@@ -9,6 +9,9 @@ public import Mathlib.Topology.GDelta.MetrizableSpace
 public import Mathlib.Topology.Separation.CompletelyRegular
 public import Mathlib.Topology.Separation.Profinite
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Further separation lemmas
 -/

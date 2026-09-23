@@ -11,6 +11,9 @@ public import Mathlib.RingTheory.LocalRing.ResidueField.Basic
 public import Mathlib.RingTheory.Valuation.Discrete.IsDiscreteValuationRing
 public import Mathlib.GroupTheory.ArchimedeanDensely
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Reduction of Weierstrass curves over local fields
 
@@ -37,7 +40,7 @@ fraction fields of discrete valuation rings.
 
 ## References
 
-* [J Silverman, *The Arithmetic of Elliptic Curves*][silverman2009]
+* ‍\[J Silverman, _The Arithmetic of Elliptic Curves_\]\[silverman2009\]
 
 ## Tags
 

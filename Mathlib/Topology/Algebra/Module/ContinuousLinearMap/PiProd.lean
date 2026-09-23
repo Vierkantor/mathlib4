@@ -8,6 +8,9 @@ module
 
 public import Mathlib.Topology.Algebra.Module.ContinuousLinearMap.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Continuous linear maps on products and Pi types
 
@@ -38,7 +41,7 @@ Binary products (viewed as categorical coproducts):
   `ContinuousLinearMap.inr R M₁ M₂ : M₂ →L[R] M₁ × M₂` are the two inclusions, given
   respectively by `inl x = (x, 0)` and `inr x = (0, x)`. These are the continuous versions
   of `LinearMap.inl` and `LinearMap.inr`.
-* `ContinuousLinearMap.coprod f₁ f₂` is the continuous linear map ` M₁ × M₂ →L[R] N` given by
+* `ContinuousLinearMap.coprod f₁ f₂` is the continuous linear map `  M₁ × M₂ →L[R] N` given by
   two continuous linear maps `f₁ : M₁ →L[R] N` and `f₂ : M₂ →L[R] N`. This is the continuous
   version of `LinearMap.coprod`.
 * `ContinuousLinearMap.coprodEquiv` shows that the above is a bijection: every continuous linear
@@ -70,7 +73,7 @@ namespace ContinuousLinearMap
 section Semiring
 
 /-!
-### Properties that hold for non-necessarily commutative semirings.
+# Properties that hold for non-necessarily commutative semirings.
 -/
 
 variable
@@ -401,9 +404,10 @@ lemma coprod_comp_inl_inr [ContinuousAdd M₁] [ContinuousAdd M₂] (f : M × M�
     (f ∘L .inl R M M₁).coprod (f ∘L .inr R M M₁) = f := by
   rw [← ContinuousLinearMap.comp_coprod, coprod_inl_inr, comp_id]
 
-/-- Taking the product of two maps with the same codomain is equivalent to taking the product of
+/--
+Taking the product of two maps with the same codomain is equivalent to taking the product of
 their domains.
-See note [bundled maps over different rings] for why separate `R` and `S` semirings are used.
+See note \[bundled maps over different rings\] for why separate `R` and `S` semirings are used.
 
 See `ContinuousLinearMap.coprodEquivL` for the `ContinuousLinearEquiv` version.
 -/

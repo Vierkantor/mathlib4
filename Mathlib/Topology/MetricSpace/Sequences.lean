@@ -8,6 +8,9 @@ module
 public import Mathlib.Topology.Sequences
 public import Mathlib.Topology.MetricSpace.Bounded
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Sequential compacts in metric spaces
 
@@ -23,9 +26,11 @@ variable {X : Type*} [PseudoMetricSpace X]
 
 variable [ProperSpace X] {s : Set X}
 
-/-- A version of **Bolzano-Weierstrass**: in a proper metric space (e.g. $ℝ^n$),
+/--
+A version of *Bolzano-Weierstrass*: in a proper metric space (e.g. $`ℝ^n`),
 every bounded sequence has a converging subsequence. This version assumes only
-that the sequence is frequently in some bounded set. -/
+that the sequence is frequently in some bounded set.
+-/
 theorem tendsto_subseq_of_frequently_bounded (hs : IsBounded s) {x : ℕ → X}
     (hx : ∃ᶠ n in atTop, x n ∈ s) :
     ∃ a ∈ closure s, ∃ φ : ℕ → ℕ, StrictMono φ ∧ Tendsto (x ∘ φ) atTop (𝓝 a) :=
@@ -33,8 +38,10 @@ theorem tendsto_subseq_of_frequently_bounded (hs : IsBounded s) {x : ℕ → X}
   have hu' : ∃ᶠ n in atTop, x n ∈ closure s := hx.mono fun _n hn => subset_closure hn
   hcs.subseq_of_frequently_in hu'
 
-/-- A version of **Bolzano-Weierstrass**: in a proper metric space (e.g. $ℝ^n$),
-every bounded sequence has a converging subsequence. -/
+/--
+A version of *Bolzano-Weierstrass*: in a proper metric space (e.g. $`ℝ^n`),
+every bounded sequence has a converging subsequence.
+-/
 theorem tendsto_subseq_of_bounded (hs : IsBounded s) {x : ℕ → X} (hx : ∀ n, x n ∈ s) :
     ∃ a ∈ closure s, ∃ φ : ℕ → ℕ, StrictMono φ ∧ Tendsto (x ∘ φ) atTop (𝓝 a) :=
   tendsto_subseq_of_frequently_bounded hs <| Frequently.of_forall hx

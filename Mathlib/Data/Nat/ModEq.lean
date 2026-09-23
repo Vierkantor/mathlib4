@@ -12,6 +12,9 @@ public import Mathlib.Data.Nat.GCD.Basic
 import Mathlib.Data.Nat.Cast.Basic
 public import Mathlib.Algebra.CharZero.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Congruences modulo a natural number
 

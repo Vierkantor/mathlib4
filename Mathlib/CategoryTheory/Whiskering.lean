@@ -9,6 +9,9 @@ public import Mathlib.Tactic.CategoryTheory.IsoReassoc
 public import Mathlib.CategoryTheory.Functor.Category
 public import Mathlib.CategoryTheory.Functor.FullyFaithful
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Whiskering
 

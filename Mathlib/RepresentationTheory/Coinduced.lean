@@ -10,18 +10,21 @@ public import Mathlib.RepresentationTheory.Intertwining
 public import Mathlib.RepresentationTheory.Rep.Basic
 public import Mathlib.RepresentationTheory.Rep.Res
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Coinduced representations
 
 Given a commutative ring `k`, a monoid homomorphism `φ : G →* H`, and a `k`-linear
-`G`-representation `A`, this file introduces the coinduced representation $Coind_G^H(A)$ of `A` as
+`G`-representation `A`, this file introduces the coinduced representation $`Coind_G^H(A)` of `A` as
 an `H`-representation.
 
 By `coind φ A` we mean the submodule of functions `H → A` such that for all `g : G`, `h : H`,
 `f (φ g * h) = ρ g (f h)`. We define a representation of `H` on this submodule by sending `h : H`
 and `f : coind φ A` to the function `H → A` sending `h₁` to `f (h₁ * h)`.
 
-Alternatively, we could define $Coind_G^H(A)$ as the morphisms $Hom(k[H], A)$ in the category
+Alternatively, we could define $`Coind_G^H(A)` as the morphisms $`Hom(k[H], A)` in the category
 `Rep k G`, which we equip with the `H`-representation sending `h : H` and `f : k[H] ⟶ A` to the
 representation morphism sending `r · h₁` to `r • f (h₁ * h)`. We include this definition as
 `coind' φ A` and prove the two representations are isomorphic.
@@ -40,7 +43,6 @@ coinduction functor and hence that the coinduction functor preserves limits.
 * `Rep.resCoindAdjunction k φ`: given a monoid homomorphism `φ : G →* H`, this is the adjunction
   between the restriction functor `Rep k H ⥤ Rep k G` along `φ` and the coinduction functor
   along `φ`.
-
 -/
 
 @[expose] public section

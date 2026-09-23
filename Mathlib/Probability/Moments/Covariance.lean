@@ -10,6 +10,9 @@ public import Mathlib.Probability.Independence.Basic
 import Mathlib.Probability.Independence.Integration
 public import Mathlib.Probability.Notation
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Covariance
 
@@ -28,7 +31,6 @@ We define the covariance of two real-valued random variables.
 
 * `cov[X, Y; μ] = covariance X Y μ`
 * `cov[X, Y] = covariance X Y volume`
-
 -/
 
 @[expose] public section

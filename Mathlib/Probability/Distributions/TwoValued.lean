@@ -9,6 +9,9 @@ public import Mathlib.MeasureTheory.Integral.Bochner.Basic
 public import Mathlib.Probability.CondVar
 
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Distributions on two values
 

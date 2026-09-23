@@ -12,6 +12,9 @@ import Mathlib.Topology.Algebra.Group.Pointwise
 public import Mathlib.Tactic.Bound.Init
 public import Mathlib.Topology.Algebra.MulAction
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Topological torsors of groups
 

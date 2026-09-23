@@ -13,6 +13,9 @@ public import Mathlib.RingTheory.Localization.FractionRing
 public import Mathlib.RingTheory.Polynomial.Pochhammer
 public import Mathlib.Algebra.MvPolynomial.CommRing
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Vandermonde matrix
 

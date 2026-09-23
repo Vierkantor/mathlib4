@@ -10,12 +10,16 @@ public import Mathlib.CategoryTheory.CopyDiscardCategory.Deterministic
 public import Mathlib.CategoryTheory.Monoidal.Cartesian.Comon_
 public import Mathlib.CategoryTheory.Monoidal.Cartesian.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cartesian Categories as Copy-Discard Categories
 
 Every cartesian monoidal category is a copy-discard category where:
-- Copy is the diagonal map
-- Discard is the unique map to terminal
+
+* Copy is the diagonal map
+* Discard is the unique map to terminal
 
 ## Main results
 

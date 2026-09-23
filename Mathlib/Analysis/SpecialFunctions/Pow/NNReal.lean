@@ -12,10 +12,14 @@ public import Mathlib.Tactic.Rify
 public import Qq
 import Mathlib.Tactic.Basify.Attr
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Power function on `ℝ≥0` and `ℝ≥0∞`
 
 We construct the power functions `x ^ y` where
+
 * `x` is a nonnegative real number and `y` is a real number;
 * `x` is a number from `[0, +∞]` (a.k.a. `ℝ≥0∞`) and `y` is a real number.
 
@@ -1117,7 +1121,9 @@ end ENNReal
 
 -- end Tactics
 
-/-! ### Positivity extension -/
+/-!
+# Positivity extension
+-/
 
 namespace Mathlib.Meta.Positivity
 open Lean Meta Qq
@@ -1181,7 +1187,7 @@ meta def evalENNRealRpow : PositivityExt where eval {u α} _ pα? e :=
 end Mathlib.Meta.Positivity
 
 /-!
-## NormNum extension for NNReal powers
+# NormNum extension for NNReal powers
 -/
 
 namespace Mathlib.Meta.NormNum

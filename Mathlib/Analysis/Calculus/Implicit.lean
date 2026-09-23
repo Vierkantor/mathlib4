@@ -11,6 +11,9 @@ public import Mathlib.Analysis.Calculus.FDeriv.Prod
 public import Mathlib.Analysis.Normed.Module.Complemented
 public import Mathlib.Topology.Algebra.Module.FiniteDimension
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Implicit function theorem
 
@@ -28,7 +31,7 @@ Finally, if the codomain of `f` is a finite-dimensional space, then we can autom
 that the kernel of `f'` is complemented, hence the only assumptions are `HasStrictFDerivAt`
 and `f'.range = ⊤`. This version is named `HasStrictFDerivAt.implicitFunction`.
 
-For the version where the implicit equation is defined by a $C^n$ function `f : E × F → G` with an
+For the version where the implicit equation is defined by a $`C^n` function `f : E × F → G` with an
 invertible derivative `∂f/∂y`, see `ContDiffAt.implicitFunction`.
 
 ## TODO
@@ -40,7 +43,7 @@ invertible derivative `∂f/∂y`, see `ContDiffAt.implicitFunction`.
   differentiable in a neighborhood as well. Current setup only proves differentiability at one
   point for the implicit function constructed in this file (as opposed to an unspecified implicit
   function). One of the ways to overcome this difficulty is to use uniqueness of the implicit
-  function in the general version of the theorem. Another way is to prove that *any* implicit
+  function in the general version of the theorem. Another way is to prove that _any_ implicit
   function satisfying some predicate is strictly differentiable.
 
 ## Tags
@@ -63,7 +66,7 @@ open ContinuousLinearEquiv (ofBijective)
 open LinearMap (ker range)
 
 /-!
-### General version
+# General version
 
 Consider two functions `f : E → F` and `g : E → G` and a point `a` such that
 
@@ -293,7 +296,7 @@ namespace HasStrictFDerivAt
 section Complemented
 
 /-!
-### Case of a complemented kernel
+# Case of a complemented kernel
 
 In this section we prove the following version of the implicit function theorem. Consider a map
 `f : E → F` and a point `a : E` such that `f` is strictly differentiable at `a`, its derivative `f'`
@@ -430,7 +433,7 @@ theorem to_implicitFunctionOfComplemented (hf : HasStrictFDerivAt f f' a) (hf' :
 end Complemented
 
 /-!
-### Finite-dimensional case
+# Finite-dimensional case
 
 In this section we prove the following version of the implicit function theorem. Consider a map
 `f : E → F` from a Banach normed space to a finite-dimensional space.

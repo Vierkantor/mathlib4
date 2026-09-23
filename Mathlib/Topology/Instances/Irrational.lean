@@ -10,6 +10,9 @@ public import Mathlib.NumberTheory.Real.Irrational
 public import Mathlib.Topology.Separation.GDelta
 public import Mathlib.Topology.Instances.Real.Lemmas
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Topology of irrational numbers
 
@@ -17,7 +20,6 @@ In this file we prove the following theorems:
 
 * `IsGδ.setOfPred_irrational`, `dense_irrational`, `eventually_residual_irrational`: irrational
   numbers form a dense Gδ set;
-
 * `Irrational.eventually_forall_le_dist_cast_div`,
   `Irrational.eventually_forall_le_dist_cast_div_of_denom_le`;
   `Irrational.eventually_forall_le_dist_cast_rat_of_denom_le`: a sufficiently small neighborhood of

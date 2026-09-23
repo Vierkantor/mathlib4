@@ -12,6 +12,9 @@ public import Mathlib.Algebra.GroupWithZero.Conj
 public import Mathlib.Algebra.Lie.OfAssociative
 public import Mathlib.FieldTheory.PurelyInseparable.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The Jacobson-Noether theorem
 
@@ -21,19 +24,19 @@ the noncommutative division algebra `D` with center `k`.
 
 ## Main Results
 
-- `exists_separable_and_not_isCentral` : (Jacobson-Noether theorem) For a
+* `exists_separable_and_not_isCentral` : (Jacobson-Noether theorem) For a
   non-commutative algebraic division algebra `D` (with base ring
   being its center `k`), then there exist an element `x` of
   `D \ k` that is separable over its center.
-- `exists_separable_and_not_isCentral'` : (Jacobson-Noether theorem) For a
+* `exists_separable_and_not_isCentral'` : (Jacobson-Noether theorem) For a
   non-commutative algebraic division algebra `D` (with base ring
   being a field `L`), if the center of `D` over `L` is `L`,
   then there exist an element `x` of `D \ L` that is separable over `L`.
 
 ## Notation
 
-- `D` is a noncommutative division algebra
-- `k` is the center of `D`
+* `D` is a noncommutative division algebra
+* `k` is the center of `D`
 
 ## Implementation Notes
 
@@ -46,7 +49,8 @@ separate variables constrained by certain relations.
 
 ## References
 
-* <https://ysharifi.wordpress.com/2011/09/30/the-jacobson-noether-theorem/>
+* [
+  https://ysharifi.wordpress.com/2011/09/30/the-jacobson-noether-theorem/](https://ysharifi.wordpress.com/2011/09/30/the-jacobson-noether-theorem/)
 -/
 
 public section

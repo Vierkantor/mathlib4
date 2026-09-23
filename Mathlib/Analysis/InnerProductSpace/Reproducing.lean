@@ -9,6 +9,9 @@ public import Mathlib.Analysis.InnerProductSpace.Completion
 public import Mathlib.Analysis.InnerProductSpace.Positive
 public import Mathlib.Analysis.Normed.Operator.Extend
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Reproducing Kernel Hilbert Spaces
 
@@ -18,29 +21,30 @@ positive semidefinite matrices.
 
 ## Main results
 
-- `RKHS`: the class of reproducing kernel Hilbert spaces
-- `RKHS.kernel`: the kernel of a RKHS as a matrix.
-- `RKHS.kerFun`: the kernel functions of a RKHS.
-- `RKHS.kerFun_dense`: the kernel functions are dense in the Hilbert space.
-- `RKHS.posSemidef_kernel`: The kernel is positive semidefinite.
-- `RKHS.OfKernel`: RKHS constructed from a positive semidefinite matrix.
-- `RKHS.kernel_ofKernel`: The kernel of the constructed RKHS is equal to the matrix, this is
-    essentially Moore's theorem.
-- `RKHS.subRKHS`: the closed subspace of an RKHS is again an RKHS.
-- `RKHS.kerFun_subRKHS`: the kernel functions of the subRKHS are an orthogonal projection of the
+* `RKHS`: the class of reproducing kernel Hilbert spaces
+* `RKHS.kernel`: the kernel of a RKHS as a matrix.
+* `RKHS.kerFun`: the kernel functions of a RKHS.
+* `RKHS.kerFun_dense`: the kernel functions are dense in the Hilbert space.
+* `RKHS.posSemidef_kernel`: The kernel is positive semidefinite.
+* `RKHS.OfKernel`: RKHS constructed from a positive semidefinite matrix.
+* `RKHS.kernel_ofKernel`: The kernel of the constructed RKHS is equal to the matrix, this is
+  essentially Moore's theorem.
+* `RKHS.subRKHS`: the closed subspace of an RKHS is again an RKHS.
+* `RKHS.kerFun_subRKHS`: the kernel functions of the subRKHS are an orthogonal projection of the
   kernel functions of the full RKHS.
-- `RKHS.kernel_subRKHS`: the kernel of the subRKHS is formed by composing the adjoint of the kernel
+* `RKHS.kernel_subRKHS`: the kernel of the subRKHS is formed by composing the adjoint of the kernel
   function of the full RKHS with a star projection acting on the kernel function of the full RKHS.
-- `RKHS.outerKernel`: the kernel generated from a function `f : X → V` with the rank-one operators
+* `RKHS.outerKernel`: the kernel generated from a function `f : X → V` with the rank-one operators
   `⟪f y, ·⟫ • f x` as its entries.
 
 ## TODO
 
-- Privatize `RKHS.H₀`
+* Privatize `RKHS.H₀`
 
 ## References
-* [Paulsen, Vern I. and Raghupathi, Mrinal,
-  *An introduction to the theory of reproducing kernel Hilbert spaces*][MR3526117]
+
+* ‍\[Paulsen, Vern I. and Raghupathi, Mrinal,
+  _An introduction to the theory of reproducing kernel Hilbert spaces_\]\[MR3526117\]
 -/
 
 public noncomputable section
@@ -213,7 +217,7 @@ theorem posSemidef_kernel : (kernel H).PosSemidef := by
 instance : Fact (kernel H).PosSemidef := ⟨posSemidef_kernel H⟩
 
 /-!
-## Construction of RKHS from kernel
+# Construction of RKHS from kernel
 -/
 
 variable {H} {K : Matrix X X (V →L[𝕜] V)}

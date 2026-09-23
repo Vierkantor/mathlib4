@@ -13,6 +13,9 @@ public import Mathlib.Util.AtomM.Recurse
 public import Mathlib.Util.SynthesizeUsing
 public import Mathlib.Data.Ineq
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `field_simp` tactic
 
@@ -29,7 +32,9 @@ initialize registerTraceClass `Tactic.field_simp
 
 variable {v : Level} {M : Q(Type v)}
 
-/-! ### Lists of expressions representing exponents and atoms, and operations on such lists -/
+/-!
+# Lists of expressions representing exponents and atoms, and operations on such lists
+-/
 
 /-- Basic meta-code "normal form" object of the `field_simp` tactic: a type synonym
 for a list of ordered triples comprising an expression representing a term of a type `M` (where
@@ -316,12 +321,14 @@ def mkDenomConditionProofSucc' {iM : Q(CommGroupWithZero $M)}
 
 namespace qNF
 
-/-- Extract a common factor `L` of two products-of-powers `l₁` and `l₂` in `M`, in the sense that
-both `l₁` and `l₂` are quotients by `L` of products of *positive* powers.
+/--
+Extract a common factor `L` of two products-of-powers `l₁` and `l₂` in `M`, in the sense that
+both `l₁` and `l₂` are quotients by `L` of products of _positive_ powers.
 
-The variable `cond` specifies whether we extract a *certified nonzero(/positive)* (and therefore
+The variable `cond` specifies whether we extract a _certified nonzero(/positive)_ (and therefore
 potentially smaller) common factor. If so, the metaprogram returns a "proof" that this common factor
-is nonzero/positive, i.e. an expression `Q(NF.eval $(L.toNF) ≠ 0)` / `Q(0 < NF.eval $(L.toNF))`. -/
+is nonzero/positive, i.e. an expression `Q(NF.eval $(L.toNF) ≠ 0)` / `Q(0 < NF.eval $(L.toNF))`.
+-/
 partial def gcd (iM : Q(CommGroupWithZero $M)) (l₁ l₂ : qNF M)
     (disch : ∀ {u : Level} (type : Q(Sort u)), MetaM Q($type))
     (cond : DenomCondition (M := M) q(inferInstance)) :
@@ -407,11 +414,15 @@ partial def gcd (iM : Q(CommGroupWithZero $M)) (l₁ l₂ : qNF M)
 
 end qNF
 
-/-! ### Core of the `field_simp` tactic -/
+/-!
+# Core of the `field_simp` tactic
+-/
 
-/-- The main algorithm behind the `field_simp` tactic: partially-normalizing an
-expression in a field `M` into the form x1 ^ c1 * x2 ^ c2 * ... x_k ^ c_k,
-where x1, x2, ... are distinct atoms in `M`, and c1, c2, ... are integers. -/
+/--
+The main algorithm behind the `field_simp` tactic: partially-normalizing an
+expression in a field `M` into the form x1 ^ c1 \* x2 ^ c2 \* ... x\_k ^ c\_k,
+where x1, x2, ... are distinct atoms in `M`, and c1, c2, ... are integers.
+-/
 partial def normalize (disch : ∀ {u : Level} (type : Q(Sort u)), MetaM Q($type))
     (iM : Q(CommGroupWithZero $M)) (x : Q($M)) :
     AtomM (Σ y : Q($M), (Σ g : Sign M, Q($x = $(g.expr y))) ×
@@ -528,8 +539,10 @@ partial def normalize (disch : ∀ {u : Level} (type : Q(Sort u)), MetaM Q($type
   /- anything else should be treated as an atom -/
   | _ => pure ⟨x, ⟨.plus, q(rfl)⟩, ← baseCase x true⟩
 
-/-- Given `x` in a commutative group-with-zero, construct a new expression in the standard form
-*** / *** (all denominators at the end) which is equal to `x`. -/
+/--
+Given `x` in a commutative group-with-zero, construct a new expression in the standard form
+‍\*\*\* / \*\*\* (all denominators at the end) which is equal to `x`.
+-/
 def reduceExprQ (disch : ∀ {u : Level} (type : Q(Sort u)), MetaM Q($type))
     (iM : Q(CommGroupWithZero $M)) (x : Q($M)) : AtomM (Σ x' : Q($M), Q($x = $x')) := do
   let ⟨y, ⟨g, pf_sgn⟩, l, pf⟩ ← normalize disch iM x
@@ -589,8 +602,10 @@ def reduceLtQ (disch : ∀ {u : Level} (type : Q(Sort u)), MetaM Q($type))
   have pf_ef₂ := ← Sign.mkEqMul iM pf_sgn₂ q(Eq.trans $pf_l₂ (Eq.symm $pf_rhs)) pf_l₂'
   return ⟨g₁.expr f₁', g₂.expr f₂', q(lt_eq_cancel_lt $pf_ef₁ $pf_ef₂ $pf₀)⟩
 
-/-- Given `x` in a commutative group-with-zero, construct a new expression in the standard form
-*** / *** (all denominators at the end) which is equal to `x`. -/
+/--
+Given `x` in a commutative group-with-zero, construct a new expression in the standard form
+‍\*\*\* / \*\*\* (all denominators at the end) which is equal to `x`.
+-/
 def reduceExpr (disch : ∀ {u : Level} (type : Q(Sort u)), MetaM Q($type)) (x : Expr) :
     AtomM Simp.Result := do
   -- for `field_simp` to work with the recursive infrastructure in `AtomM.recurse`, we need to fail
@@ -642,7 +657,9 @@ def reduceProp (disch : ∀ {u : Level} (type : Q(Sort u)), MetaM Q($type)) (t :
     let t' ← mkAppM `LT.lt #[a', b']
     return { expr := t', proof? := pf }
 
-/-! ### Frontend -/
+/-!
+# Frontend
+-/
 
 open Elab Tactic Lean.Parser.Tactic
 
@@ -669,7 +686,7 @@ def parseDischarger (d : Option (TSyntax ``discharger)) (args : Option (TSyntax 
 `field_simp` normalizes expressions in (semi-)fields (i.e., does not require additive inverses)
 by rewriting them to a common denominator, i.e. to reduce them to expressions of the form `n / d`
 where neither `n` nor `d` contains any division symbol. The `field_simp` tactic will also clear
-denominators in field *(in)equalities*, by cross-multiplying.
+denominators in field _(in)equalities_, by cross-multiplying.
 
 A very common pattern is `field_simp; ring` (clear denominators, then the resulting goal is
 solvable by the axioms of a commutative ring). The finishing tactic `field` is a shorthand for this
@@ -688,6 +705,7 @@ known, etc). See `field_simp_discharge` for full details of the default discharg
   nonzeroness/positivity proofs.
 
 Examples:
+
 ```
 -- `x / (1 - y) / (1 + y / (1 - y))` is reduced to `x / (1 - y + y)`
 example (x y z : ℚ) (hy : 1 - y ≠ 0) :
@@ -720,7 +738,7 @@ i.e. to reduce it to an expression of the form `n / d` where neither `n` nor `d`
 division symbol.
 
 The `field_simp` conv tactic is a variant of the main (i.e., not conv) `field_simp` tactic. The
-latter operates recursively on subexpressions, bringing *every* field-expression encountered to the
+latter operates recursively on subexpressions, bringing _every_ field-expression encountered to the
 form `n / d`.
 
 The tactic will try discharge proofs of nonzeroness of denominators, and skip steps if discharging

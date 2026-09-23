@@ -8,6 +8,9 @@ module
 public import Mathlib.Topology.Algebra.Group.Neighborhood
 public import Mathlib.Topology.UniformSpace.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Uniform structure on topological groups
 
@@ -15,7 +18,7 @@ Given a topological group `G`, one can naturally build two uniform structures
 (the "left" and "right" ones) on `G` inducing its topology.
 This file defines typeclasses for groups equipped with either of these uniform structures, as well
 as a separate typeclass for the (very common) case where the given uniform structure
-coincides with **both** the left and right uniform structures.
+coincides with *both* the left and right uniform structures.
 
 ## Main declarations
 

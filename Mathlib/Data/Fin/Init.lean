@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.Nat.Notation
 public import Init.Data.Fin.Bitwise
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Basic operations on bounded natural numbers.
 

@@ -9,6 +9,9 @@ public import Mathlib.Control.Basic
 public import Mathlib.Data.Set.Lattice.Image
 public import Mathlib.Order.Filter.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Theorems about map and comap on filters.
 -/
@@ -26,7 +29,9 @@ namespace Filter
 
 variable {α β γ δ : Type*} {ι : Sort*} {F : Filter α} {G : Filter β}
 
-/-! ### Push-forwards, pull-backs, and the monad structure -/
+/-!
+# Push-forwards, pull-backs, and the monad structure
+-/
 
 section Map
 
@@ -179,7 +184,7 @@ theorem bind_map {α β} (m : α → β) (f : Filter α) (g : β → Filter γ) 
   rfl
 
 /-!
-### `Filter` as a `Monad`
+# `Filter` as a `Monad`
 
 In this section we define `Filter.monad`, a `Monad` structure on `Filter`s. This definition is not
 an instance because its `Seq` projection is not equal to the `Filter.seq` function we use in the
@@ -220,7 +225,9 @@ theorem map_def {α β} (m : α → β) (f : Filter α) : m <$> f = map m f :=
 theorem bind_def {α β} (f : Filter α) (m : α → Filter β) : f >>= m = bind f m :=
   rfl
 
-/-! #### `map` and `comap` equations -/
+/-!
+# `map` and `comap` equations
+-/
 
 section Map
 
@@ -927,7 +934,9 @@ instance : CommApplicative (Filter : Type u → Type u) :=
 
 end Applicative
 
-/-! #### `bind` equations -/
+/-!
+# `bind` equations
+-/
 
 
 section Bind

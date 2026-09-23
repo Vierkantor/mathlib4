@@ -8,6 +8,9 @@ module
 public import Mathlib.Tactic.Order.CollectFacts
 public meta import Mathlib.Util.AtomM
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Facts preprocessing for the `order` tactic
 

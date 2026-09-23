@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Group.Monoid
 public import Batteries.Data.List.Lemmas
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Sums and products from lists
 

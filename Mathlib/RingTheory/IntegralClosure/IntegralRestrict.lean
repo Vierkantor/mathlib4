@@ -12,6 +12,9 @@ public import Mathlib.RingTheory.Norm.Transitivity
 public import Mathlib.CategoryTheory.Category.Init
 public import Mathlib.RingTheory.Localization.Finiteness
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Restriction of various maps between fields to integrally closed subrings.
 
@@ -20,12 +23,12 @@ In this file, we assume `A` is an integrally closed domain; `K` is the fraction 
 We call this the AKLB setup.
 
 ## Main definitions
-- `galRestrict`: The restriction `Aut(L/K) → Aut(B/A)` as an `MulEquiv` in an AKLB setup.
-- `Algebra.intTrace`: The trace map of a finite extension of integrally closed domains `B/A` is
-  defined to be the restriction of the trace map of `Frac(B)/Frac(A)`.
-- `Algebra.intNorm`: The norm map of a finite extension of integrally closed domains `B/A` is
-  defined to be the restriction of the norm map of `Frac(B)/Frac(A)`.
 
+* `galRestrict`: The restriction `Aut(L/K) → Aut(B/A)` as an `MulEquiv` in an AKLB setup.
+* `Algebra.intTrace`: The trace map of a finite extension of integrally closed domains `B/A` is
+  defined to be the restriction of the trace map of `Frac(B)/Frac(A)`.
+* `Algebra.intNorm`: The norm map of a finite extension of integrally closed domains `B/A` is
+  defined to be the restriction of the norm map of `Frac(B)/Frac(A)`.
 -/
 
 @[expose] public section

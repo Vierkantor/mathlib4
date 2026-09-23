@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Data.Fin.Tuple.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lists from functions
 
@@ -17,8 +20,8 @@ of length `n`.
 
 The main statements pertain to lists generated using `List.ofFn`
 
-- `List.get?_ofFn`, which tells us the nth element of such a list
-- `List.equivSigmaTuple`, which is an `Equiv` between lists and the functions that generate them
+* `List.get?_ofFn`, which tells us the nth element of such a list
+* `List.equivSigmaTuple`, which is an `Equiv` between lists and the functions that generate them
   via `List.ofFn`.
 -/
 

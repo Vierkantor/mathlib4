@@ -10,6 +10,9 @@ public import Mathlib.NumberTheory.LSeries.AbstractFuncEq
 public import Mathlib.NumberTheory.LSeries.MellinEqDirichlet
 public import Mathlib.Analysis.PSeries
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The `L`-function of a modular form
 -/

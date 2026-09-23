@@ -8,6 +8,9 @@ module
 public import Mathlib.RingTheory.TwoSidedIdeal.Basic
 public import Mathlib.RingTheory.TwoSidedIdeal.Lattice
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Kernel of a ring homomorphism as a two-sided ideal
 

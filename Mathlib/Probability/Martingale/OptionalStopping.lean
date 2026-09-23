@@ -9,7 +9,11 @@ public import Mathlib.Probability.Notation
 public import Mathlib.Probability.Process.HittingTime
 public import Mathlib.Probability.Martingale.Basic
 
-/-! # Optional stopping theorem (fair game theorem)
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Optional stopping theorem (fair game theorem)
 
 The optional stopping theorem states that a strongly adapted integrable process `f` is a
 submartingale if and only if for all bounded stopping times `τ` and `π` such that `τ ≤ π`, the
@@ -18,13 +22,12 @@ stopped value of `f` at `τ` has expectation smaller than its stopped value at `
 This file also contains Doob's maximal inequality: given a non-negative submartingale `f`, for all
 `ε : ℝ≥0`, we have `ε • μ {ε ≤ f* n} ≤ ∫ ω in {ε ≤ f* n}, f n` where `f * n ω = max_{k ≤ n}, f k ω`.
 
-### Main results
+## Main results
 
 * `MeasureTheory.submartingale_iff_expected_stoppedValue_mono`: the optional stopping theorem.
 * `MeasureTheory.Submartingale.stoppedProcess`: the stopped process of a submartingale with
   respect to a stopping time is a submartingale.
 * `MeasureTheory.maximal_ineq`: Doob's maximal inequality.
-
 -/
 
 public section

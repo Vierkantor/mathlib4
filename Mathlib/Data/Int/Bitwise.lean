@@ -11,12 +11,16 @@ public import Mathlib.Data.Nat.Size
 public import Batteries.Data.Int
 import all Init.Data.Nat.Bitwise.Basic  -- for unfolding `Nat.bitwise`
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Bitwise operations on integers
 
 Possibly only of archaeological significance.
 
 ## Recursors
+
 * `Int.bitCasesOn`: Parity disjunction. Something is true/defined on `ℤ` if it's true/defined for
   even and for odd values.
 -/
@@ -101,7 +105,9 @@ instance : ShiftLeft ℤ where
 instance : ShiftRight ℤ where
   shiftRight m n := m <<< (-n)
 
-/-! ### bitwise ops -/
+/-!
+# bitwise ops
+-/
 
 @[simp]
 theorem bodd_zero : bodd 0 = false :=
@@ -361,7 +367,9 @@ theorem shiftRight_add' : ∀ (m : ℤ) (n k : ℕ), m >>> (n + k : ℤ) = (m >>
     rw [shiftRight_negSucc, shiftRight_negSucc, ← Int.natCast_add, shiftRight_negSucc,
       Nat.shiftRight_add]
 
-/-! ### bitwise ops -/
+/-!
+# bitwise ops
+-/
 
 /-- Connection of `HShiftLeft Int Int Int` and `HShiftLeft Int Nat Int`. -/
 lemma shiftLeft_natCast_right (m : ℤ) (n : ℕ) :

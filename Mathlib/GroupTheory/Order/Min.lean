@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Group.Torsion
 public import Mathlib.Data.ENat.Lattice
 public import Mathlib.Data.ZMod.QuotientGroup
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Minimum order of an element
 
@@ -18,7 +21,7 @@ This file defines the minimum order of an element of a monoid.
 
 * `Monoid.minOrder`: The minimum order of an element of a given monoid.
 * `Monoid.minOrder_eq_top`: The minimum order is infinite iff the monoid is torsion-free.
-* `ZMod.minOrder`: The minimum order of $ℤ/nℤ$ is the smallest factor of `n`, unless `n = 0, 1`.
+* `ZMod.minOrder`: The minimum order of $`ℤ/nℤ` is the smallest factor of `n`, unless `n = 0, 1`.
 -/
 
 @[expose] public section

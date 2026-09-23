@@ -9,6 +9,9 @@ public import Mathlib.Basic.Finite.Defs
 public import Mathlib.Data.Finset.Filter
 public import Mathlib.Order.Lex
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Finite types
 
@@ -27,6 +30,7 @@ the equivalence with `Fin (Fintype.card α)`, and pigeonhole principles.
 ## Instances
 
 Instances for `Fintype` for
+
 * `{x // p x}` are in this file as `Fintype.subtype`
 * `Option α` are in `Data.Fintype.Option`
 * `α × β` are in `Data.Fintype.Prod`
@@ -60,7 +64,9 @@ class Fintype (α : Type*) where
   /-- A proof that `elems` contains every element of the type -/
   complete : ∀ x : α, x ∈ elems
 
-/-! ### Preparatory lemmas -/
+/-!
+# Preparatory lemmas
+-/
 
 namespace Finset
 

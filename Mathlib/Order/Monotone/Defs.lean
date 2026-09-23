@@ -10,6 +10,9 @@ public import Mathlib.Logic.Function.Iterate
 public import Mathlib.Order.Basic
 public import Mathlib.Tactic.Coe
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Monotonicity
 
@@ -134,7 +137,9 @@ instance [i : Decidable (∀ a ∈ s, ∀ b ∈ s, a < b → f b < f a)] :
 
 end Decidable
 
-/-! ### Monotonicity in function spaces -/
+/-!
+# Monotonicity in function spaces
+-/
 
 
 section Preorder
@@ -166,7 +171,9 @@ end Preorder
 theorem Function.monotone_eval {ι : Type u} {α : ι → Type v} [∀ i, Preorder (α i)] (i : ι) :
     Monotone (Function.eval i : (∀ i, α i) → α i) := fun _ _ H ↦ H i
 
-/-! ### Monotonicity hierarchy -/
+/-!
+# Monotonicity hierarchy
+-/
 
 
 section Preorder
@@ -281,7 +288,9 @@ protected theorem StrictAnti.antitone (hf : StrictAnti f) : Antitone f :=
 
 end PartialOrder
 
-/-! ### Monotonicity from and to subsingletons -/
+/-!
+# Monotonicity from and to subsingletons
+-/
 
 
 namespace Subsingleton
@@ -308,7 +317,9 @@ protected theorem strictAnti [Subsingleton α] (f : α → β) : StrictAnti f :=
 
 end Subsingleton
 
-/-! ### Miscellaneous monotonicity results -/
+/-!
+# Miscellaneous monotonicity results
+-/
 
 
 theorem monotone_id [Preorder α] : Monotone (id : α → α) := fun _ _ ↦ id
@@ -351,7 +362,9 @@ theorem Function.Injective.of_eq_imp_le [PartialOrder α] {f : α → β}
     (h : ∀ {x y}, f x = f y → x ≤ y) : f.Injective :=
   fun _ _ hxy ↦ h hxy |>.antisymm <| h hxy.symm
 
-/-! ### Monotonicity under composition -/
+/-!
+# Monotonicity under composition
+-/
 
 
 section Composition
@@ -448,7 +461,9 @@ lemma StrictAntiOn.comp_strictMonoOn (hg : StrictAntiOn g t) (hf : StrictMonoOn 
 
 end Composition
 
-/-! ### Monotonicity in linear orders  -/
+/-!
+# Monotonicity in linear orders
+-/
 
 
 section LinearOrder
@@ -548,7 +563,9 @@ theorem StrictAnti.prodMap (hf : StrictAnti f) (hg : StrictAnti g) : StrictAnti 
 
 end PartialOrder
 
-/-! ### Pi types -/
+/-!
+# Pi types
+-/
 
 namespace Function
 

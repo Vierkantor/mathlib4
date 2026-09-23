@@ -7,11 +7,15 @@ module
 
 public import Mathlib.Basic.ENNReal.Inv
 
-/-! # Hölder triples
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Hölder triples
 
 This file defines a new class: `ENNReal.HolderTriple` which takes arguments `p q r : ℝ≥0∞`,
 with `r` marked as a `semiOutParam`, and states that `p⁻¹ + q⁻¹ = r⁻¹`. This is exactly the
-condition for which **Hölder's inequality** is valid (see `MeasureTheory.MemLp.smul`).
+condition for which *Hölder's inequality* is valid (see `MeasureTheory.MemLp.smul`).
 This allows us to declare a heterogeneous scalar multiplication (`HSMul`) instance on
 `MeasureTheory.Lp` spaces.
 
@@ -48,7 +52,9 @@ abbrev HolderConjugate (p q : ℝ≥0∞) := HolderTriple p q 1
 lemma holderConjugate_iff {p q : ℝ≥0∞} : HolderConjugate p q ↔ p⁻¹ + q⁻¹ = 1 := by
   simp [holderTriple_iff]
 
-/-! ### Hölder triples -/
+/-!
+# Hölder triples
+-/
 
 namespace HolderTriple
 
@@ -121,7 +127,9 @@ lemma holderConjugate_div_div (hr₀ : r ≠ 0) (hr : r ≠ ∞) : HolderConjuga
 
 end HolderTriple
 
-/-! ### Hölder conjugates -/
+/-!
+# Hölder conjugates
+-/
 
 namespace HolderConjugate
 

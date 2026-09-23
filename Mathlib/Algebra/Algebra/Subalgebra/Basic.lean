@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Algebra.NonUnitalSubalgebra
 public import Mathlib.Algebra.Module.Submodule.EqLocus
 public import Mathlib.RingTheory.SimpleRing.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Subalgebras over Commutative Semiring
 
@@ -784,7 +787,8 @@ theorem coe_equivMapOfInjective_apply (x : S) : ↑(equivMapOfInjective S f hf x
 
 end equivMapOfInjective
 
-/-! ## Actions by `Subalgebra`s
+/-!
+# Actions by `Subalgebra`s
 
 These are just copies of the definitions about `Subsemiring` starting from
 `Subring.mulAction`.

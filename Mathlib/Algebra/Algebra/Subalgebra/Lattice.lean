@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Algebra.Operations
 public import Mathlib.Algebra.Algebra.Subalgebra.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Complete lattice structure of subalgebras
 
@@ -765,10 +768,12 @@ instance isMulCommutative_adjoin_singleton (x : A) :
   isMulCommutative_adjoin R (by simp)
 
 open scoped IsMulCommutative in
-/-- If all elements of `s : Set A` commute pairwise, then `adjoin R s` is a non-unital commutative
+/--
+If all elements of `s : Set A` commute pairwise, then `adjoin R s` is a non-unital commutative
 semiring.
 
-See note [reducible non-instances]. -/
+See note \[reducible non-instances\].
+-/
 @[deprecated isMulCommutative_adjoin +typeChanged (since := "2026-03-11")]
 abbrev adjoinCommSemiringOfComm {s : Set A} (hcomm : s.Pairwise Commute) :
     CommSemiring (adjoin R s) :=

@@ -10,6 +10,9 @@ public import Mathlib.Tactic.NormNum.Basic
 public import Mathlib.Topology.Algebra.Field
 public import Mathlib.Topology.Algebra.Order.Group
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Topologies on linear ordered fields
 

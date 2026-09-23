@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Module.Submodule.Basic
 public import Mathlib.Algebra.Module.Submodule.Lattice
 public import Mathlib.Algebra.Module.Submodule.LinearMap
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `map` and `comap` for `Submodule`s
 
@@ -616,8 +619,10 @@ theorem map_smul_le_map [RingHomSurjective τ₁₂] (f : M →ₛₗ[τ₁₂] 
     map (c • f) p ≤ map f p := by
   grw [map_le_iff_le_comap, ← comap_le_comap_smul (map f p) f c, ← map_le_iff_le_comap]
 
-/-- Given modules `M`, `M₂` over a commutative ring, together with submodules `p ⊆ M`, `q ⊆ M₂`,
-the set of maps $\{f ∈ Hom(M, M₂) | f(p) ⊆ q \}$ is a submodule of `Hom(M, M₂)`. -/
+/--
+Given modules `M`, `M₂` over a commutative ring, together with submodules `p ⊆ M`, `q ⊆ M₂`,
+the set of maps $`\{f ∈ Hom(M, M₂) | f(p) ⊆ q \}` is a submodule of `Hom(M, M₂)`.
+-/
 def compatibleMaps : Submodule S (N →ₗ[S] N₂) where
   carrier := { fₗ | pₗ ≤ comap fₗ qₗ }
   zero_mem' := by simp
@@ -714,7 +719,9 @@ theorem comap_restrict {p : Submodule R₂ M₂} {q : Submodule R M} {f : M₂ �
 
 end LinearMap
 
-/-! ### Linear equivalences -/
+/-!
+# Linear equivalences
+-/
 
 namespace LinearEquiv
 

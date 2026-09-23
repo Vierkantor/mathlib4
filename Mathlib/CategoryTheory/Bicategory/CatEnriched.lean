@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Monoidal.Cartesian.Cat
 public import Mathlib.CategoryTheory.Enriched.Basic
 public import Mathlib.CategoryTheory.Enriched.Ordinary.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The strict bicategory associated to a Cat-enriched category
 
@@ -30,7 +33,6 @@ Thus, we define a type alias `CatEnrichedOrdinary C` for a type `C` with an
 `EnrichedOrdinaryCategory Cat C` structure. We provide this with an instance of a strict bicategory
 structure extending the category structure provided by the given instance `Category C` constructing
 `Bicategory.Strict (CatEnrichedOrdinary C)`.
-
 -/
 
 @[expose] public section

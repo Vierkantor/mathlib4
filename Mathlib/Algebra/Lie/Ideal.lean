@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Algebra.Lie.Submodule
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lie Ideals
 

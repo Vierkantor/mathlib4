@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Group.Basic
 public import Mathlib.Algebra.Group.Nat.Defs
 public import Mathlib.Data.Nat.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Partial predecessor and partial subtraction on the natural numbers
 
@@ -18,9 +21,8 @@ wrap the result in an `Option` type instead:
 
 ## Main definitions
 
-- `Nat.ppred`: a partial predecessor operation
-- `Nat.psub`: a partial subtraction operation
-
+* `Nat.ppred`: a partial predecessor operation
+* `Nat.psub`: a partial subtraction operation
 -/
 
 @[expose] public section

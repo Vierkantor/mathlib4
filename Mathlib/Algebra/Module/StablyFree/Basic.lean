@@ -9,10 +9,14 @@ public import Mathlib.Algebra.Module.Projective
 public import Mathlib.LinearAlgebra.Basis.Prod
 public import Mathlib.RingTheory.Finiteness.Small
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Stably free modules
 
 ## Main definition
+
 * `IsStablyFree`: A module `M` over a ring `R` is called stably free if there exists a finite free
   `R`-module `N` such that `M ⊕ N` is free.
 -/

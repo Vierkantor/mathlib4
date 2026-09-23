@@ -10,10 +10,13 @@ public import Mathlib.CategoryTheory.Functor.Currying
 public import Mathlib.CategoryTheory.Limits.FunctorCategory.Basic
 public import Mathlib.CategoryTheory.ConcreteCategory.Elementwise
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The morphism comparing a colimit of limits with the corresponding limit of colimits.
 
-For `F : J × K ⥤ C` there is always a morphism $\colim_k \lim_j F(j,k) → \lim_j \colim_k F(j, k)$.
+For `F : J × K ⥤ C` there is always a morphism $`\colim_k \lim_j F(j,k) → \lim_j \colim_k F(j, k)`.
 While it is not usually an isomorphism, with additional hypotheses on `J` and `K` it may be,
 in which case we say that "colimits commute with limits".
 
@@ -21,6 +24,7 @@ The prototypical example, proved in `CategoryTheory.Limits.FilteredColimitCommut
 is that when `C = Type`, filtered colimits commute with finite limits.
 
 ## References
+
 * Borceux, Handbook of categorical algebra 1, Section 2.13
 * [Stacks: Filtered colimits](https://stacks.math.columbia.edu/tag/002W)
 -/
@@ -52,8 +56,9 @@ variable [HasLimitsOfShape J C]
 variable [HasColimitsOfShape K C]
 
 set_option backward.defeqAttrib.useBackward true in
-/-- The universal morphism
-$\colim_k \lim_j F(j,k) → \lim_j \colim_k F(j, k)$.
+/--
+The universal morphism
+$`\colim_k \lim_j F(j,k) → \lim_j \colim_k F(j, k)`.
 -/
 noncomputable def colimitLimitToLimitColimit :
     colimit (curry.obj (Prod.swap K J ⋙ F) ⋙ lim) ⟶ limit (curry.obj F ⋙ colim) :=

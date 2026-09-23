@@ -11,6 +11,9 @@ public import Mathlib.Logic.Function.Iterate
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Lattice.Nat
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Relation embeddings from the naturals
 

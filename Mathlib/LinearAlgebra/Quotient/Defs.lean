@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Module.Submodule.Defs
 public import Mathlib.GroupTheory.QuotientGroup.Defs
 public import Mathlib.Logic.Small.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Quotients by submodules
 
@@ -22,7 +25,6 @@ public import Mathlib.Logic.Small.Basic
 * `Submodule.Quotient.module`: `M ⧸ p` is a module
 * `Submodule.Quotient.mkQ`: a linear map sending an element of `M` to `M ⧸ p`
 * `Submodule.quotEquivOfEq`: if `p` and `p'` are equal, their quotients are equivalent
-
 -/
 
 @[expose] public section
@@ -240,10 +242,12 @@ end
 
 variable {R₂ M₂ : Type*} [Ring R₂] [AddCommGroup M₂] [Module R₂ M₂] {τ₁₂ : R →+* R₂}
 
-/-- Two `LinearMap`s from a quotient module are equal if their compositions with
+/--
+Two `LinearMap`s from a quotient module are equal if their compositions with
 `submodule.mkQ` are equal.
 
-See note [partially-applied ext lemmas]. -/
+See note \[partially-applied ext lemmas\].
+-/
 @[ext high] -- Increase priority so this applies before `LinearMap.ext`
 theorem linearMap_qext ⦃f g : M ⧸ p →ₛₗ[τ₁₂] M₂⦄ (h : f.comp p.mkQ = g.comp p.mkQ) : f = g :=
   LinearMap.ext fun x => Submodule.Quotient.induction_on _ x <| (LinearMap.congr_fun h :)

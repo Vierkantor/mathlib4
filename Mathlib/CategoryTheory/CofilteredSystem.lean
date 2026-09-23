@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Topology.Category.TopCat.Limits.Konig
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cofiltered systems
 
@@ -48,7 +51,6 @@ Given a functor `F : J ⥤ Type v`:
 ## Tags
 
 Mittag-Leffler, surjective, eventual range, inverse system,
-
 -/
 
 @[expose] public section

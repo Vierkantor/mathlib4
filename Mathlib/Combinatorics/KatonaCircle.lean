@@ -10,6 +10,9 @@ public import Mathlib.Data.Fintype.Prod
 public import Mathlib.Data.Fintype.Perm
 public import Mathlib.Data.Nat.Choose.Cast
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The Katona circle method
 

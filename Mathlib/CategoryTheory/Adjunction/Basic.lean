@@ -7,6 +7,9 @@ module
 
 public import Mathlib.CategoryTheory.Yoneda
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Adjunctions between functors
 
@@ -14,6 +17,7 @@ public import Mathlib.CategoryTheory.Yoneda
 `F : C ⥤ D` and `G : D ⥤ C`. `F` is the left adjoint and `G` is the right adjoint.
 
 We provide various useful constructors:
+
 * `mkOfHomEquiv`
 * `mk'`: construct an adjunction from the data of a hom set equivalence, unit and counit natural
   transformations together with proofs of the equalities `homEquiv_unit` and `homEquiv_counit`
@@ -48,6 +52,7 @@ Conversely `Equivalence.toAdjunction` recovers the underlying adjunction from an
   and counit.
 * The file `Limits` proves that left adjoints preserve colimits and right adjoints preserve limits.
 * The file `Mates` establishes the bijection between the 2-cells
+
   ```
           L₁                  R₁
         C --→ D             C ←-- D
@@ -55,6 +60,7 @@ Conversely `Equivalence.toAdjunction` recovers the underlying adjunction from an
         E --→ F             E ←-- F
           L₂                  R₂
   ```
+
   where `L₁ ⊣ R₁` and `L₂ ⊣ R₂`. Specializing to a pair of adjoints `L₁ L₂ : C ⥤ D`,
   `R₁ R₂ : D ⥤ C`, it provides equivalences `(L₂ ⟶ L₁) ≃ (R₁ ⟶ R₂)` and `(L₂ ≅ L₁) ≃ (R₁ ≅ R₂)`.
 * The file `Opposites` contains constructions to relate adjunctions of functors to adjunctions of

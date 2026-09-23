@@ -11,6 +11,9 @@ module
 public meta import Mathlib.Tactic.Linter.Header  -- shake: keep
 public import Lean.Exception
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 This file defines the environment extension to keep track of which tactics are allowed to leave
 the tactic state unchanged and not trigger the unused tactic linter.
@@ -73,6 +76,8 @@ public initialize allowedRef : IO.Ref (Std.HashSet SyntaxNodeKind) ←
     ``Lean.Parser.Tactic.Conv.skip
   ]
 
+
+set_option doc.verso false
 /--
 `#allow_unused_tactic` takes as input a space-separated list of identifiers.
 These identifiers are then allowed by the unused tactic linter:
@@ -104,6 +109,10 @@ elab "#allow_unused_tactic" pers:("!")? ppSpace colGt ids:ident* : command => do
         The command `#show_kind {ref}` may help to find the correct `SyntaxNodeKind`.")
     | _ => logError e.toMessageData
 
+
+set_option doc.verso true
+
+set_option doc.verso false
 /--
 `#show_kind tac` takes as input the syntax of a tactic and returns the `SyntaxNodeKind`
 at the head of the tactic syntax tree.
@@ -119,4 +128,6 @@ elab "#show_kind " t:tactic : command => do
   let stx ← `(tactic| $t)
   Lean.logInfoAt t m!"The `SyntaxNodeKind` is '{stx.raw.getKind}'."
 
+
+set_option doc.verso true
 end Mathlib.Linter.UnusedTactic

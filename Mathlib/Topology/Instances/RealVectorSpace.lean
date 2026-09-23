@@ -9,6 +9,9 @@ public import Mathlib.Topology.Algebra.Module.Equiv
 public import Mathlib.Topology.Instances.Rat
 public import Mathlib.Algebra.Module.Rat
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Continuous additive maps are `ℝ`-linear
 

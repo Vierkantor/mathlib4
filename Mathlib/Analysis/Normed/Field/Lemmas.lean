@@ -11,15 +11,18 @@ public import Mathlib.Analysis.Normed.Ring.Lemmas
 public import Mathlib.Topology.MetricSpace.DilationEquiv
 import Mathlib.Analysis.Normed.MulAction
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Normed fields
 
 In this file we continue building the theory of normed division rings and fields.
 
 Some useful results that relate the topology of the normed field to the discrete topology include:
+
 * `discreteTopology_or_nontriviallyNormedField`
 * `discreteTopology_of_bddAbove_range_norm`
-
 -/
 
 @[expose] public section

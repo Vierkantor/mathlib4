@@ -16,6 +16,9 @@ public import Batteries.Util.LibraryNote
 public import Lean.Elab.ConfigEval
 public import Lean.Elab.Tactic.Simp
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Simps attribute
 
@@ -25,6 +28,7 @@ reducing a definition when projections are applied to it.
 ## Implementation Notes
 
 There are three attributes being defined here
+
 * `@[simps]` is the attribute for objects of a structure or instances of a class. It will
   automatically generate simplification lemmas for each projection of the object/instance that
   contains data. See the doc strings for `Lean.Parser.Attr.simps` and `Simps.Config`
@@ -38,15 +42,17 @@ There are three attributes being defined here
   these notation classes instead of the projections of the superclasses.
   Example: if `Mul` is tagged with `@[notation_class]` then the projection used for `Semigroup`
   will be `fun α hα ↦ @Mul.mul α (@Semigroup.toMul α hα)` instead of `@Semigroup.mul`.
-  [this is not correctly implemented in Lean 4 yet]
+  ‍\[this is not correctly implemented in Lean 4 yet\]
 
 ### Possible Future Improvements
+
 * If multiple declarations are generated from a `simps` without explicit projection names, then
   only the first one is shown when mousing over `simps`.
 
 ## Changes w.r.t. Lean 3
 
 There are some small changes in the attribute. None of them should have great effects
+
 * The attribute will now raise an error if it tries to generate a lemma when there already exists
   a lemma with that name (in Lean 3 it would generate a different unique name)
 * `transparency.none` has been replaced by `TransparencyMode.reducible`
@@ -148,6 +154,8 @@ syntax simpsConfig := many(simpsConfigItem)
 /-- Arguments to `@[simps]` attribute. -/
 syntax simpsArgsRest := simpsConfig (ppSpace ident)*
 
+
+set_option doc.verso false
 /-- The `@[simps]` attribute automatically derives lemmas specifying the projections of this
 declaration.
 
@@ -256,6 +264,8 @@ derives two `simp` lemmas:
   (this likely never happens, so is not included in the official doc). -/
 syntax (name := simps) "simps" "!"? "?"? simpsArgsRest : attr
 
+
+set_option doc.verso true
 @[inherit_doc simps] macro "simps?"  rest:simpsArgsRest : attr => `(attr| simps   ? $rest)
 @[inherit_doc simps] macro "simps!"  rest:simpsArgsRest : attr => `(attr| simps !   $rest)
 @[inherit_doc simps] macro "simps!?" rest:simpsArgsRest : attr => `(attr| simps ! ? $rest)
@@ -406,11 +416,12 @@ instance : ToMessageData ProjectionData where toMessageData
 /--
 The `Simps.structureExt` environment extension specifies the preferred projections of the given
 structure, used by the `@[simps]` attribute.
-- You can generate this with the command `initialize_simps_projections`.
-- If not generated, the `@[simps]` attribute will generate this automatically.
-- To change the default value, see Note [custom simps projection].
-- The first argument is the list of names of the universe variables used in the structure
-- The second argument is an array that consists of the projection data for each projection.
+
+* You can generate this with the command `initialize_simps_projections`.
+* If not generated, the `@[simps]` attribute will generate this automatically.
+* To change the default value, see Note \[custom simps projection\].
+* The first argument is the list of names of the universe variables used in the structure
+* The second argument is an array that consists of the projection data for each projection.
 -/
 initialize structureExt : NameMapExtension (List Name × Array ProjectionData) ←
   registerNameMapExtension (List Name × Array ProjectionData)
@@ -769,9 +780,10 @@ extension instead. See the documentation for this extension for the data this ta
 
 The returned universe levels are the universe levels of the structure. For the projections there
 are three cases
+
 * If the declaration `{StructureName}.Simps.{projectionName}` has been declared, then the value
   of this declaration is used (after checking that it is definitionally equal to the actual
-  projection). If you rename the projection name, the declaration should have the *new* projection
+  projection). If you rename the projection name, the declaration should have the _new_ projection
   name.
 * You can also declare a custom projection that is a composite of multiple projections.
 * Otherwise, for every class with the `notation_class` attribute, and the structure has an
@@ -786,12 +798,14 @@ are three cases
   `oldStructureCmd` (does this exist?)).
 * Otherwise, the projection of the structure is chosen.
   For example: ``getRawProjections env `Prod`` gives the default projections.
+
   ```
   ([u, v], [(`fst, `(Prod.fst.{u v}), [0], true, false),
      (`snd, `(@Prod.snd.{u v}), [1], true, false)])
   ```
 
 Optionally, this command accepts three optional arguments:
+
 * If `traceIfExists` the command will always generate a trace message when the structure already
   has an entry in `structureExt`.
 * The `rules` argument specifies whether projections should be added, renamed, used as prefix, and

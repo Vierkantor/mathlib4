@@ -14,6 +14,9 @@ public import Mathlib.Tactic.NormNum
 public import Mathlib.Tactic.Positivity.Finset
 public import Mathlib.Tactic.Ring
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Small tripling implies small powers
 

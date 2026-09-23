@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Analysis.SpecialFunctions.Integrability.Log
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Integrability of Functions Prominently Involving `log⁺`
 
@@ -22,7 +25,7 @@ public section
 open Filter Interval MeasureTheory MeromorphicOn Metric Real
 
 /-!
-### Interval Integrability for `log⁺` of Real Meromorphic Functions
+# Interval Integrability for `log⁺` of Real Meromorphic Functions
 -/
 
 section IntervalIntegrable
@@ -48,7 +51,7 @@ alias MeromorphicOn.intervalIntegrable_posLog_norm_meromorphicOn := intervalInte
 end IntervalIntegrable
 
 /-!
-### Circle Integrability for `log⁺` of Complex Meromorphic Functions
+# Circle Integrability for `log⁺` of Complex Meromorphic Functions
 -/
 
 section CircleIntegrable

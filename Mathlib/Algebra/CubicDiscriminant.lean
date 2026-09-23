@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Polynomial.Splits
 public import Mathlib.Tactic.IntervalCases
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cubics and discriminants
 
@@ -25,7 +28,7 @@ This file defines cubic polynomials over a semiring and their discriminants over
 
 ## References
 
-* https://en.wikipedia.org/wiki/Cubic_equation
+* https://en.wikipedia.org/wiki/Cubic\_equation
 * https://en.wikipedia.org/wiki/Discriminant
 
 ## Tags
@@ -81,7 +84,9 @@ theorem prod_X_sub_C_eq [CommRing S] {x y z : S} :
       toPoly ⟨1, -(x + y + z), x * y + x * z + y * z, -(x * y * z)⟩ := by
   rw [← one_mul <| X - C x, ← C_1, C_mul_prod_X_sub_C_eq, one_mul, one_mul, one_mul]
 
-/-! ### Coefficients -/
+/-!
+# Coefficients
+-/
 
 
 section Coeff
@@ -231,7 +236,9 @@ theorem monic_of_d_eq_one' : (toPoly ⟨0, 0, 0, 1⟩).Monic :=
 
 end Coeff
 
-/-! ### Degrees -/
+/-!
+# Degrees
+-/
 
 
 section Degree
@@ -356,7 +363,9 @@ theorem natDegree_of_zero : (0 : Cubic R).toPoly.natDegree = 0 :=
 
 end Degree
 
-/-! ### Map across a homomorphism -/
+/-!
+# Map across a homomorphism
+-/
 
 
 section Map
@@ -378,7 +387,9 @@ section Roots
 
 open Multiset
 
-/-! ### Roots over an extension -/
+/-!
+# Roots over an extension
+-/
 
 
 section Extension
@@ -407,7 +418,9 @@ end Extension
 
 variable {P : Cubic F} [Field F] [Field K] {φ : F →+* K} {x y z : K}
 
-/-! ### Roots over a splitting field -/
+/-!
+# Roots over a splitting field
+-/
 
 
 section Split
@@ -452,7 +465,9 @@ theorem d_eq_three_roots (ha : P.a ≠ 0) (h3 : (map φ P).roots = {x, y, z}) :
 
 end Split
 
-/-! ### Discriminant over a splitting field -/
+/-!
+# Discriminant over a splitting field
+-/
 
 
 section Discriminant

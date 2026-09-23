@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Sites.Canonical
 public import Mathlib.CategoryTheory.Sites.Hypercover.SheafOfTypes
 public import Mathlib.CategoryTheory.MorphismProperty.Local
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Covers in subcanonical topologies
 

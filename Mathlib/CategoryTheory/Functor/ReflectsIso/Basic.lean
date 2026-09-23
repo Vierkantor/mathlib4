@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Whiskering
 public import Mathlib.CategoryTheory.Iso
 public import Mathlib.CategoryTheory.Functor.FullyFaithful
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Functors which reflect isomorphisms
 

@@ -9,6 +9,9 @@ public import Mathlib.Algebra.BigOperators.Fin
 public import Mathlib.LinearAlgebra.LinearIndependent.Defs
 public import Mathlib.Logic.Equiv.Fin.Rotate
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Linear independence
 
@@ -38,7 +41,6 @@ Rework proofs to hold in semirings, by avoiding the path through
 ## Tags
 
 linearly dependent, linear dependence, linearly independent, linear independence
-
 -/
 
 public section
@@ -409,7 +411,9 @@ theorem LinearIndependent.finSnoc' {m : ℕ} (v : Fin m → M) (x : M) (hli : Li
 
 end Module
 
-/-! ### Properties which require `Ring R` -/
+/-!
+# Properties which require `Ring R`
+-/
 
 
 section Module

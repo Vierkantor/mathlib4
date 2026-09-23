@@ -10,6 +10,9 @@ public import Mathlib.Topology.ContinuousMap.Ordered
 public import Mathlib.Topology.CompactOpen
 public import Mathlib.Topology.UnitInterval
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Homotopy between functions
 
@@ -51,7 +54,7 @@ and for `ContinuousMap.homotopic` and `ContinuousMap.homotopic_rel`, we also def
 
 ## References
 
-- [HOL-Analysis formalisation](https://isabelle.in.tum.de/library/HOL/HOL-Analysis/Homotopy.html)
+* [HOL-Analysis formalisation](https://isabelle.in.tum.de/library/HOL/HOL-Analysis/Homotopy.html)
 -/
 
 @[expose] public section
@@ -119,8 +122,10 @@ instance : HomotopyLike (Homotopy f₀ f₁) f₀ f₁ where
 theorem ext {F G : Homotopy f₀ f₁} (h : ∀ x, F x = G x) : F = G :=
   DFunLike.ext _ _ h
 
-/-- See Note [custom simps projection]. We need to specify this projection explicitly in this case,
-because it is a composition of multiple projections. -/
+/--
+See Note \[custom simps projection\]. We need to specify this projection explicitly in this case,
+because it is a composition of multiple projections.
+-/
 def Simps.apply (F : Homotopy f₀ f₁) : I × X → Y :=
   F
 
@@ -411,8 +416,10 @@ theorem coeFn_injective : @Function.Injective (HomotopyWith f₀ f₁ P) (I × X
 @[ext]
 theorem ext {F G : HomotopyWith f₀ f₁ P} (h : ∀ x, F x = G x) : F = G := DFunLike.ext F G h
 
-/-- See Note [custom simps projection]. We need to specify this projection explicitly in this case,
-because it is a composition of multiple projections. -/
+/--
+See Note \[custom simps projection\]. We need to specify this projection explicitly in this case,
+because it is a composition of multiple projections.
+-/
 def Simps.apply (F : HomotopyWith f₀ f₁ P) : I × X → Y := F
 
 initialize_simps_projections HomotopyWith (toFun → apply, -toHomotopy_toContinuousMap)

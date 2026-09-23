@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Order.Archimedean.Hom  -- shake: keep (Subsingleto
 public import Mathlib.Analysis.Real.Sqrt
 import Mathlib.Algebra.Order.CompleteField
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Uniqueness of ring homomorphisms to the real numbers
 

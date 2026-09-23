@@ -11,6 +11,9 @@ public import Mathlib.Order.Interval.Set.Defs
 public import Mathlib.Order.WellFounded
 public import Mathlib.Tactic.MinImports
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Order homomorphisms and sets
 -/

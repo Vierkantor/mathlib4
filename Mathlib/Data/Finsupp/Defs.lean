@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.FiniteSupport.Defs
 public import Mathlib.Data.Multiset.Find
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Type of functions with finite support
 
@@ -18,10 +21,8 @@ on `α` except on a finite set.
 Functions with finite support are used (at least) in the following parts of the library:
 
 * `MonoidAlgebra R M` and `AddMonoidAlgebra R M` are defined as `M →₀ R`;
-
 * polynomials and multivariate polynomials are defined as `AddMonoidAlgebra`s, hence they use
   `Finsupp` under the hood;
-
 * the linear combination of a family of vectors `v i` with coefficients `f i` (as used, e.g., to
   define linearly independent family `LinearIndependent`) is defined as a map
   `Finsupp.linearCombination : (ι → M) → (ι →₀ R) →ₗ[R] M`.
@@ -56,11 +57,8 @@ We also use the following convention for `Type*` variables in this file
 
 * `α`, `β`: types with no additional structure that appear as the first argument to `Finsupp`
   somewhere in the statement;
-
 * `ι` : an auxiliary index type;
-
 * `M`, `N`, `O`: types with `Zero` or `(Add)(Comm)Monoid` structure;
-
 * `G`, `H`: groups (commutative or not, multiplicative or additive);
 
 ## Implementation notes
@@ -70,7 +68,6 @@ This file is a `noncomputable theory` and uses classical logic throughout.
 ## TODO
 
 * Expand the list of definitions and important lemmas to the module docstring.
-
 -/
 
 @[expose] public section
@@ -99,7 +96,9 @@ infixr:25 " →₀ " => Finsupp
 
 namespace Finsupp
 
-/-! ### Basic declarations about `Finsupp` -/
+/-!
+# Basic declarations about `Finsupp`
+-/
 
 
 section Basic
@@ -221,7 +220,9 @@ theorem unique_ext [Unique α] {f g : α →₀ M} (h : f default = g default) :
 
 end Basic
 
-/-! ### Declarations about `onFinset` -/
+/-!
+# Declarations about `onFinset`
+-/
 
 
 section OnFinset
@@ -291,7 +292,9 @@ instance instCanLift : CanLift (α → M) (α →₀ M) (⇑) fun f => (Function
 
 end OfSupportFinite
 
-/-! ### Declarations about `mapRange` -/
+/-!
+# Declarations about `mapRange`
+-/
 
 
 section MapRange
@@ -403,7 +406,9 @@ lemma mapRange.equiv_symm (e : M ≃ N) (hf) :
 
 end Equiv
 
-/-! ### Declarations about `embDomain` -/
+/-!
+# Declarations about `embDomain`
+-/
 
 
 section EmbDomain
@@ -469,7 +474,9 @@ lemma embDomain_refl : embDomain (M := M) (Function.Embedding.refl α) = id := b
 
 end EmbDomain
 
-/-! ### Declarations about `zipWith` -/
+/-!
+# Declarations about `zipWith`
+-/
 
 
 section ZipWith

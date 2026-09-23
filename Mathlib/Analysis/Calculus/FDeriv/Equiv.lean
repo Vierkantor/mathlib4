@@ -9,6 +9,9 @@ public import Mathlib.Analysis.Asymptotics.AsymptoticEquivalent
 public import Mathlib.Analysis.Calculus.FDeriv.Add
 public import Mathlib.Analysis.Calculus.FDeriv.Linear
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The derivative of a linear equivalence
 
@@ -41,7 +44,9 @@ variable {f : E → F} {f' : E →L[𝕜] F} {x : E} {s : Set E} {c : F}
 
 namespace ContinuousLinearEquiv
 
-/-! ### Differentiability of linear equivs, and invariance of differentiability -/
+/-!
+# Differentiability of linear equivs, and invariance of differentiability
+-/
 
 
 variable (iso : E ≃L[𝕜] F)
@@ -234,7 +239,9 @@ end ContinuousLinearEquiv
 
 namespace LinearIsometryEquiv
 
-/-! ### Differentiability of linear isometry equivs, and invariance of differentiability -/
+/-!
+# Differentiability of linear isometry equivs, and invariance of differentiability
+-/
 
 
 variable (iso : E ≃ₗᵢ[𝕜] F)

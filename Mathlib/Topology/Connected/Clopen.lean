@@ -11,6 +11,9 @@ public import Mathlib.Topology.Clopen
 public import Mathlib.Topology.Compactness.Compact
 public import Mathlib.Topology.Connected.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Connected subsets and their relation to clopen sets
 
@@ -19,10 +22,9 @@ to clopen sets.
 
 ## Main declarations
 
-+ `IsClopen.biUnion_connectedComponent_eq`: a clopen set is the union of its connected components.
-+ `PreconnectedSpace.induction₂`: an induction principle for preconnected spaces.
-+ `ConnectedComponents`: The connected components of a topological space, as a quotient type.
-
+* `IsClopen.biUnion_connectedComponent_eq`: a clopen set is the union of its connected components.
+* `PreconnectedSpace.induction₂`: an induction principle for preconnected spaces.
+* `ConnectedComponents`: The connected components of a topological space, as a quotient type.
 -/
 
 @[expose] public section

@@ -8,11 +8,13 @@ module
 public import Mathlib.CategoryTheory.Limits.Opposites
 public import Mathlib.CategoryTheory.Limits.Filtered
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Filtered colimits and cofiltered limits in `C` and `Cᵒᵖ`
 
 We construct filtered colimits and cofiltered limits in the opposite categories.
-
 -/
 
 public section

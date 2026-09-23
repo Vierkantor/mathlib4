@@ -8,6 +8,9 @@ module
 public import Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Formula
 public import Mathlib.AlgebraicGeometry.EllipticCurve.Jacobian.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Negation and addition formulae for nonsingular points in Jacobian coordinates
 
@@ -51,7 +54,7 @@ mirrored in `Mathlib/AlgebraicGeometry/EllipticCurve/Projective/Formula.lean`.
 
 ## References
 
-[J Silverman, *The Arithmetic of Elliptic Curves*][silverman2009]
+‍\[J Silverman, _The Arithmetic of Elliptic Curves_\]\[silverman2009\]
 
 ## Tags
 
@@ -81,7 +84,9 @@ variable {R : Type r} {S : Type s} {A F : Type u} {B K : Type v} [CommRing R] [C
 
 namespace Jacobian
 
-/-! ## Negation formulae in Jacobian coordinates -/
+/-!
+# Negation formulae in Jacobian coordinates
+-/
 
 variable (W') in
 /-- The `Y`-coordinate of a representative of `-P` for a Jacobian point representative `P` on a
@@ -161,7 +166,9 @@ lemma nonsingular_iff_of_Y_eq_negY {P : Fin 3 → F} (hPz : P z ≠ 0) (hy : P y
   have hy' : eval P W.polynomialY = P y - W.negY P := by rw [negY, eval_polynomialY]; ring1
   rw [nonsingular_iff_of_Z_ne_zero hPz, hy', hy, sub_self, ne_self_iff_false, or_false]
 
-/-! ## Doubling formulae in Jacobian coordinates -/
+/-!
+# Doubling formulae in Jacobian coordinates
+-/
 
 variable (W') in
 /-- The unit associated to a representative of `2 • P` for a Jacobian point representative `P` on a
@@ -388,7 +395,9 @@ lemma dblXYZ_of_Z_ne_zero [DecidableEq F] {P Q : Fin 3 → F}
   erw [dblXYZ, smul_fin3, ← dblX_of_Z_ne_zero hP hQ hPz hQz hx hy, hZ.mul_div_cancel,
     ← dblY_of_Z_ne_zero hP hQ hPz hQz hx hy, hZ.mul_div_cancel, mul_one]
 
-/-! ## Addition formulae in Jacobian coordinates -/
+/-!
+# Addition formulae in Jacobian coordinates
+-/
 
 /-- The unit associated to a representative of `P + Q` for two Jacobian point representatives `P`
 and `Q` on a Weierstrass curve `W` that are not `2`-torsion.
@@ -702,7 +711,9 @@ lemma addXYZ_of_Z_ne_zero [DecidableEq F] {P Q : Fin 3 → F} (hP : W.Equation P
   erw [addXYZ, smul_fin3, ← addX_of_Z_ne_zero hP hQ hPz hQz hx, hZ.mul_div_cancel,
     ← addY_of_Z_ne_zero hP hQ hPz hQz hx, hZ.mul_div_cancel, mul_one]
 
-/-! ## Maps and base changes -/
+/-!
+# Maps and base changes
+-/
 
 variable (f : R →+* S) (P Q : Fin 3 → R)
 

@@ -9,6 +9,9 @@ public import Mathlib.Data.Finset.Max
 public import Mathlib.Data.Finset.Sigma
 public import Mathlib.Data.Fintype.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Induction principles for `∀ i, Finset (α i)`
 
@@ -18,12 +21,12 @@ finite type.
 * `Finset.induction_on_pi` is a generic lemma that requires only `[Finite ι]`, `[DecidableEq ι]`,
   and `[∀ i, DecidableEq (α i)]`; this version can be seen as a direct generalization of
   `Finset.induction_on`.
-
 * `Finset.induction_on_pi_max` and `Finset.induction_on_pi_min`: generalizations of
   `Finset.induction_on_max`; these versions require `∀ i, LinearOrder (α i)` but assume
   `∀ y ∈ g i, y < x` and `∀ y ∈ g i, x < y` respectively in the induction step.
 
 ## Tags
+
 finite set, finite type, induction, function
 -/
 

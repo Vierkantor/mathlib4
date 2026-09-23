@@ -13,6 +13,9 @@ public import Mathlib.RingTheory.Congruence.Basic
 public import Mathlib.Algebra.Ring.Subsemiring.Basic
 public import Mathlib.Algebra.Ring.Subring.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Congruence relations and ring homomorphisms
 
@@ -26,7 +29,6 @@ relations and morphisms for rings and semirings
   on the quotient given that the congruence is in the kernel
 * `RingCon.map`, `RingCon.mapₐ`: homomorphism / algebra morphism
   from a smaller to a larger quotient
-
 * `RingCon.quotientKerEquivRangeS`, `RingCon.quotientKerEquivRange`,
   `RingCon.quotientKerEquivRangeₐ` :
   the first isomorphism theorem for semirings (using `RingHom.rangeS`),
@@ -35,7 +37,6 @@ relations and morphisms for rings and semirings
   `RingCon.comapQuotientEquivRangeₐ` : the second isomorphism theorem
   for semirings (using `RingHom.rangeS`), rings (using `RingHom.range`)
   and algebras (using `AlgHom.range`).
-
 * `RingCon.quotientQuotientEquivQuotient`, `RingCon.quotientQuotientEquivQuotientₐ` :
   the third isomorphism theorem for semirings (or rings) and algebras
 

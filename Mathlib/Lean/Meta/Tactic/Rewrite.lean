@@ -8,6 +8,9 @@ module
 public import Mathlib.Init
 public import Lean.Meta.Tactic.Rewrite
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Additional declarations for `Lean.Meta.Tactic.Rewrite`
 -/

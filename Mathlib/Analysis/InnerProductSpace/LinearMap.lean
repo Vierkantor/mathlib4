@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Analysis.InnerProductSpace.Continuous
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Linear maps on inner product spaces
 
@@ -14,16 +17,15 @@ This file studies linear maps on inner product spaces.
 
 ## Main results
 
-- We define `innerSL` as the inner product bundled as a continuous sesquilinear map
-- We prove a general polarization identity for linear maps (`inner_map_polarization`)
-- We show that a linear map preserving the inner product is an isometry
+* We define `innerSL` as the inner product bundled as a continuous sesquilinear map
+* We prove a general polarization identity for linear maps (`inner_map_polarization`)
+* We show that a linear map preserving the inner product is an isometry
   (`LinearMap.isometryOfInner`) and conversely an isometry preserves the inner product
   (`LinearIsometry.inner_map_map`).
 
 ## Tags
 
 inner product space, Hilbert space, norm
-
 -/
 
 @[expose] public section

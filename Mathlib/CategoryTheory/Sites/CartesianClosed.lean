@@ -9,8 +9,10 @@ public import Mathlib.CategoryTheory.Monoidal.Closed.Ideal
 public import Mathlib.CategoryTheory.Monoidal.Cartesian.FunctorCategory
 public import Mathlib.CategoryTheory.Sites.CartesianMonoidal
 public import Mathlib.CategoryTheory.Sites.Sheafification
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Sheaf categories are Cartesian closed
 
 ...if the underlying presheaf category is Cartesian closed, the target category has

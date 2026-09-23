@@ -9,6 +9,9 @@ public import Mathlib.RingTheory.Adjoin.Basic
 public import Mathlib.RingTheory.PowerBasis
 public import Mathlib.LinearAlgebra.Matrix.Basis
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Power basis for `R[x]`
 

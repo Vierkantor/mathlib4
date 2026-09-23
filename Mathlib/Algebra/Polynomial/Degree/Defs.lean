@@ -12,6 +12,9 @@ public import Mathlib.Data.Nat.Cast.WithTop
 public import Mathlib.Data.Nat.SuccPred
 public import Mathlib.Order.SuccPred.WithBot
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Degree of univariate polynomials
 

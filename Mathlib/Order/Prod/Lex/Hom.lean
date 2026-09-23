@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.Prod.Lex
 public import Mathlib.Order.Hom.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Order homomorphism for `Prod.Lex`
 -/

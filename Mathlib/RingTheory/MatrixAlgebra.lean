@@ -11,14 +11,16 @@ public import Mathlib.Data.Matrix.Composition
 public import Mathlib.LinearAlgebra.Matrix.Kronecker
 public import Mathlib.RingTheory.TensorProduct.Maps
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Algebra isomorphisms between tensor products and matrices
 
 ## Main definitions
 
 * `matrixEquivTensor : Matrix n n A ≃ₐ[R] (A ⊗[R] Matrix n n R)`.
-* `Matrix.kroneckerTMulAlgEquiv :
-    Matrix m m A ⊗[R] Matrix n n B ≃ₐ[S] Matrix (m × n) (m × n) (A ⊗[R] B)`,
+* `Matrix.kroneckerTMulAlgEquiv : Matrix m m A ⊗[R] Matrix n n B ≃ₐ[S] Matrix (m × n) (m × n) (A ⊗[R] B)`,
   where the forward map is the (tensor-ified) Kronecker product.
 -/
 

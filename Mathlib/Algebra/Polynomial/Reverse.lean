@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Polynomial.Degree.TrailingDegree
 public import Mathlib.Algebra.Polynomial.EraseLead
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Reverse of a univariate polynomial
 

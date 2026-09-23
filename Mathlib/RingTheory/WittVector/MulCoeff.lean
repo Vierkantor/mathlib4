@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.MvPolynomial.Supported
 public import Mathlib.RingTheory.WittVector.Truncated
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Leading terms of Witt vector multiplication
 
@@ -24,7 +27,6 @@ that needs to happen in characteristic 0.
 
 * `WittVector.nth_mul_coeff`: expresses the coefficient of a product of Witt vectors
   in terms of the previous coefficients of the multiplicands.
-
 -/
 
 @[expose] public section

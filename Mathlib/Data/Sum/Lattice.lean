@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.Sum.Order
 public import Mathlib.Order.Hom.Lattice
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lexicographic sum of lattices
 

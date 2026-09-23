@@ -12,16 +12,17 @@ public import Mathlib.Topology.Covering.Quotient
 public import Mathlib.Topology.Homotopy.Path
 public import Mathlib.Topology.UnitInterval
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The homotopy lifting property for covering maps
 
-- `IsCoveringMap.exists_path_lifts`, `IsCoveringMap.liftPath`: any path in the base of a covering
+* `IsCoveringMap.exists_path_lifts`, `IsCoveringMap.liftPath`: any path in the base of a covering
   map lifts uniquely to the covering space (given a lift of the starting point).
-
-- `IsCoveringMap.liftHomotopy`: any homotopy `I × A → X` in the base of a covering map `E → X` can
+* `IsCoveringMap.liftHomotopy`: any homotopy `I × A → X` in the base of a covering map `E → X` can
   be lifted to a homotopy `I × A → E`, starting from a given lift of the restriction `{0} × A → X`.
-
-- `IsCoveringMap.existsUnique_continuousMap_lifts`: any continuous map from a simply-connected,
+* `IsCoveringMap.existsUnique_continuousMap_lifts`: any continuous map from a simply-connected,
   locally path-connected space lifts uniquely through a covering map (given a lift of an
   arbitrary point).
 -/
@@ -39,14 +40,16 @@ namespace IsLocalHomeomorph
 variable (homeo : IsLocalHomeomorph p)
 include homeo
 
-/-- If `p : E → X` is a local homeomorphism, and if `g : I × A → E` is a lift of `f : C(I × A, X)`
-  continuous on `{0} × A ∪ I × {a}` for some `a : A`, then there exists a neighborhood `N ∈ 𝓝 a`
-  and `g' : I × A → E` continuous on `I × N` that agrees with `g` on `{0} × A ∪ I × {a}`.
-  The proof follows [hatcher02], Proof of Theorem 1.7, p.30.
+/--
+If `p : E → X` is a local homeomorphism, and if `g : I × A → E` is a lift of `f : C(I × A, X)`
+continuous on `{0} × A ∪ I × {a}` for some `a : A`, then there exists a neighborhood `N ∈ 𝓝 a`
+and `g' : I × A → E` continuous on `I × N` that agrees with `g` on `{0} × A ∪ I × {a}`.
+The proof follows \[hatcher02\], Proof of Theorem 1.7, p.30.
 
-  Possible TODO: replace `I` by an arbitrary space assuming `A` is locally connected
-  and `p` is a separated map, which guarantees uniqueness and therefore well-definedness
-  on the intersections. -/
+Possible TODO: replace `I` by an arbitrary space assuming `A` is locally connected
+and `p` is a separated map, which guarantees uniqueness and therefore well-definedness
+on the intersections.
+-/
 theorem exists_lift_nhds {f : C(I × A, X)} {g : I × A → E} (g_lifts : p ∘ g = f)
     (cont_0 : Continuous (g ⟨0, ·⟩)) (a : A) (cont_a : Continuous (g ⟨·, a⟩)) :
     ∃ N ∈ 𝓝 a, ∃ g' : I × A → E, ContinuousOn g' (Set.univ ×ˢ N) ∧ p ∘ g' = f ∧
@@ -304,10 +307,12 @@ end path_lifting
 section homotopy_lifting
 variable (H : C(I × A, X)) (f : C(A, E)) (H_0 : ∀ a, H (0, a) = p (f a))
 
-/-- The existence of `liftHomotopy` satisfying `liftHomotopy_lifts` and `liftHomotopy_zero` is
-  the homotopy lifting property for covering maps.
-  In other words, a covering map is a Hurewicz fibration.
-  Proposition 1.30 of [hatcher02]. -/
+/--
+The existence of `liftHomotopy` satisfying `liftHomotopy_lifts` and `liftHomotopy_zero` is
+the homotopy lifting property for covering maps.
+In other words, a covering map is a Hurewicz fibration.
+Proposition 1.30 of \[hatcher02\].
+-/
 @[simps] def liftHomotopy : C(I × A, E) where
   toFun ta := cov.liftPath (H.comp <| (ContinuousMap.id I).prodMk <| .const I ta.2)
     (f ta.2) (H_0 ta.2) ta.1
@@ -463,8 +468,10 @@ theorem monodromy_bijective {x y : X} (γ : Path.Homotopic.Quotient x y) :
     (cov.monodromy γ).Bijective :=
   (isIso_iff_bijective _).mp (cov.monodromyFunctor.map_isIso _)
 
-/-- A covering map induces an injection on all Hom-sets of the fundamental groupoid,
-  in particular on the fundamental group. The first part of Proposition 1.31 of [hatcher02]. -/
+/--
+A covering map induces an injection on all Hom-sets of the fundamental groupoid,
+in particular on the fundamental group. The first part of Proposition 1.31 of \[hatcher02\].
+-/
 lemma injective_path_homotopic_map (e₀ e₁ : E) :
     Injective fun γ : Path.Homotopic.Quotient e₀ e₁ ↦ γ.map ⟨p, cov.continuous⟩ := by
   refine Quotient.ind₂ fun γ₀ γ₁ ↦ ?_
@@ -495,10 +502,12 @@ theorem existsUnique_continuousMap_lifts [SimplyConnectedSpace A] [LocallyPathCo
 
 set_option backward.isDefEq.respectTransparency.types false in
 open FundamentalGroup Path.Homotopic.Quotient in
-/-- A continuous map `f` from a path connected, locally path-connected space `A` to another
-  space `X` lifts uniquely through a covering map `p : E → X` (such that `f a₀` is lifted to `e₀`)
-  if `f⁎ π₁(A, a₀) ⊆ p⁎ π₁(E, e₀)`. Proposition 1.33 of [hatcher02], known as
-  the lifting criterion. -/
+/--
+A continuous map `f` from a path connected, locally path-connected space `A` to another
+space `X` lifts uniquely through a covering map `p : E → X` (such that `f a₀` is lifted to `e₀`)
+if `f⁎ π₁(A, a₀) ⊆ p⁎ π₁(E, e₀)`. Proposition 1.33 of \[hatcher02\], known as
+the lifting criterion.
+-/
 theorem existsUnique_continuousMap_lifts_of_range_le
     [PathConnectedSpace A] [LocallyPathConnectedSpace A]
     {f : C(A, X)} {a₀ : A} {e₀ : E} (he : p e₀ = f a₀)

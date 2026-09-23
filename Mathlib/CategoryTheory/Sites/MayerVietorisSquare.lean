@@ -15,6 +15,9 @@ public import Mathlib.CategoryTheory.Sites.Abelian
 public import Mathlib.CategoryTheory.Sites.Adjunction
 public import Mathlib.CategoryTheory.Sites.Sheafification
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Mayer-Vietoris squares
 
@@ -48,8 +51,8 @@ we introduce a sheaf condition `S.SheafCondition P` and show
 that it is indeed satisfied by sheaves.
 
 ## References
-* https://stacks.math.columbia.edu/tag/08GL
 
+* https://stacks.math.columbia.edu/tag/08GL
 -/
 
 @[expose] public section

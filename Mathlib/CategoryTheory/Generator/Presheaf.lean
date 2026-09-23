@@ -8,13 +8,15 @@ module
 public import Mathlib.CategoryTheory.Generator.Basic
 public import Mathlib.CategoryTheory.Limits.FunctorCategory.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Generators in the category of presheaves
 
 In this file, we show that if `A` is a category with zero morphisms that
 has a separator (and suitable coproducts), then the category of
 presheaves `Cᵒᵖ ⥤ A` also has a separator.
-
 -/
 
 @[expose] public section

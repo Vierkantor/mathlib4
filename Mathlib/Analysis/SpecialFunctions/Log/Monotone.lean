@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.SpecialFunctions.Pow.Real
 public import Mathlib.Analysis.SpecialFunctions.Log.NegMulLog
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Logarithm Tonality
 

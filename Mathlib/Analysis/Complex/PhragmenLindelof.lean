@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.Complex.AbsMax
 public import Mathlib.Analysis.Asymptotics.SuperpolynomialDecay
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Phragmen-Lindelöf principle
 
@@ -18,23 +21,17 @@ modulus principle for an unbounded domain.
 
 * `PhragmenLindelof.horizontal_strip`: the Phragmen-Lindelöf principle in a horizontal strip
   `{z : ℂ | a < complex.im z < b}`;
-
 * `PhragmenLindelof.eq_zero_on_horizontal_strip`, `PhragmenLindelof.eqOn_horizontal_strip`:
   extensionality lemmas based on the Phragmen-Lindelöf principle in a horizontal strip;
-
 * `PhragmenLindelof.vertical_strip`: the Phragmen-Lindelöf principle in a vertical strip
   `{z : ℂ | a < complex.re z < b}`;
-
 * `PhragmenLindelof.eq_zero_on_vertical_strip`, `PhragmenLindelof.eqOn_vertical_strip`:
   extensionality lemmas based on the Phragmen-Lindelöf principle in a vertical strip;
-
 * `PhragmenLindelof.quadrant_I`, `PhragmenLindelof.quadrant_II`, `PhragmenLindelof.quadrant_III`,
   `PhragmenLindelof.quadrant_IV`: the Phragmen-Lindelöf principle in the coordinate quadrants;
-
 * `PhragmenLindelof.right_half_plane_of_tendsto_zero_on_real`,
   `PhragmenLindelof.right_half_plane_of_bounded_on_real`: two versions of the Phragmen-Lindelöf
   principle in the right half-plane;
-
 * `PhragmenLindelof.eq_zero_on_right_half_plane_of_superexponential_decay`,
   `PhragmenLindelof.eqOn_right_half_plane_of_superexponential_decay`: extensionality lemmas based
   on the Phragmen-Lindelöf principle in the right half-plane.
@@ -54,7 +51,7 @@ local notation "expR" => Real.exp
 namespace PhragmenLindelof
 
 /-!
-### Auxiliary lemmas
+# Auxiliary lemmas
 -/
 
 
@@ -96,7 +93,7 @@ theorem isBigO_sub_exp_rpow {a : ℝ} {f g : ℂ → E} {l : Filter ℂ}
 variable [NormedSpace ℂ E] {a b C : ℝ} {f g : ℂ → E} {z : ℂ}
 
 /-!
-### Phragmen-Lindelöf principle in a horizontal strip
+# Phragmen-Lindelöf principle in a horizontal strip
 -/
 
 /-- **Phragmen-Lindelöf principle** in a strip `U = {z : ℂ | a < im z < b}`.
@@ -258,7 +255,7 @@ theorem eqOn_horizontal_strip {g : ℂ → E} (hdf : DiffContOnCl ℂ f (im ⁻�
     (fun w hw => sub_eq_zero.2 (ha w hw)) (fun w hw => sub_eq_zero.2 (hb w hw)) hz)
 
 /-!
-### Phragmen-Lindelöf principle in a vertical strip
+# Phragmen-Lindelöf principle in a vertical strip
 -/
 
 /-- **Phragmen-Lindelöf principle** in a strip `U = {z : ℂ | a < re z < b}`.
@@ -330,7 +327,7 @@ theorem eqOn_vertical_strip {g : ℂ → E} (hdf : DiffContOnCl ℂ f (re ⁻¹'
     (fun w hw => sub_eq_zero.2 (ha w hw)) (fun w hw => sub_eq_zero.2 (hb w hw)) hz)
 
 /-!
-### Phragmen-Lindelöf principle in coordinate quadrants
+# Phragmen-Lindelöf principle in coordinate quadrants
 -/
 
 /-- **Phragmen-Lindelöf principle** in the first quadrant. Let `f : ℂ → E` be a function such that
@@ -629,7 +626,7 @@ theorem eqOn_quadrant_IV (hdf : DiffContOnCl ℂ f (Ioi 0 ×ℂ Iio 0))
     (fun x hx => sub_eq_zero.2 <| hre x hx) (fun x hx => sub_eq_zero.2 <| him x hx) hz
 
 /-!
-### Phragmen-Lindelöf principle in the right half-plane
+# Phragmen-Lindelöf principle in the right half-plane
 -/
 
 

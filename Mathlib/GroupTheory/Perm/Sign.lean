@@ -19,6 +19,9 @@ public import Mathlib.Logic.Equiv.Fintype
 public import Mathlib.Tactic.NormNum.Ineq
 public import Mathlib.Data.Finset.Sigma
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Sign of a permutation
 
@@ -26,7 +29,6 @@ The main definition of this file is `Equiv.Perm.sign`,
 associating a `ℤˣ` sign with a permutation.
 
 Other lemmas have been moved to `Mathlib/GroupTheory/Perm/Finite.lean`
-
 -/
 
 @[expose] public section

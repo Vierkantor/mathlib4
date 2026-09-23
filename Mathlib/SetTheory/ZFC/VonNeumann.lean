@@ -8,6 +8,9 @@ module
 public import Mathlib.SetTheory.Cardinal.Arithmetic
 public import Mathlib.SetTheory.ZFC.Class
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Von Neumann hierarchy
 
@@ -17,7 +20,7 @@ that `⋃ o, V_ o = univ`.
 
 ## Notation
 
-- `V_ o` is notation for `vonNeumann o`. It is scoped in the `ZFSet` namespace.
+* `V_ o` is notation for `vonNeumann o`. It is scoped in the `ZFSet` namespace.
 -/
 
 @[expose] public section

@@ -11,9 +11,11 @@ public import Mathlib.Algebra.GroupWithZero.Units.Basic
 public import Mathlib.GroupTheory.MonoidLocalization.Maps
 public import Mathlib.RingTheory.OreLocalization.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Localizations of commutative monoids with zeroes
-
 -/
 
 @[expose] public section

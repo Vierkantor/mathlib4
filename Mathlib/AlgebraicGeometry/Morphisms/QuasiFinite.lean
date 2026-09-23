@@ -12,6 +12,9 @@ public import Mathlib.AlgebraicGeometry.Morphisms.UniversallyInjective
 public import Mathlib.RingTheory.RingHom.QuasiFinite
 public import Mathlib.RingTheory.ZariskisMainTheorem
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Quasi-finite morphisms
 
@@ -24,16 +27,17 @@ Note that this does not require `f` to be quasi-compact nor locally of finite ty
 We prove that this is stable under composition and base change, and is right cancellative.
 
 ## Main results
-- `AlgebraicGeometry.LocallyQuasiFinite` : The class of locally quasi-finite morphisms.
-- `AlgebraicGeometry.Scheme.Hom.isDiscrete_preimage_singleton`:
+
+* `AlgebraicGeometry.LocallyQuasiFinite` : The class of locally quasi-finite morphisms.
+* `AlgebraicGeometry.Scheme.Hom.isDiscrete_preimage_singleton`:
   Locally quasi-finite morphisms have discrete fibers.
-- `AlgebraicGeometry.Scheme.Hom.finite_preimage_singleton`:
+* `AlgebraicGeometry.Scheme.Hom.finite_preimage_singleton`:
   Quasi-finite, quasi-compact morphisms have finite fibers.
-- `AlgebraicGeometry.locallyQuasiFinite_iff_isFinite_fiber`: If `f` is quasi-compact,
+* `AlgebraicGeometry.locallyQuasiFinite_iff_isFinite_fiber`: If `f` is quasi-compact,
   then `f` is locally quasi-finite iff all the fibers `f⁻¹(x)` are `κ(x)`-finite.
-- `AlgebraicGeometry.locallyQuasiFinite_iff_isDiscrete_preimage_singleton`:
+* `AlgebraicGeometry.locallyQuasiFinite_iff_isDiscrete_preimage_singleton`:
   If `f` is locally of finite type, then `f` is locally quasi-finite iff `f` has discrete fibers.
-- `AlgebraicGeometry.locallyQuasiFinite_iff_finite_preimage_singleton`:
+* `AlgebraicGeometry.locallyQuasiFinite_iff_finite_preimage_singleton`:
   If `f` is of finite type, then `f` is locally quasi-finite iff `f` has finite fibers.
 -/
 

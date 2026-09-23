@@ -9,12 +9,14 @@ public import Mathlib.AlgebraicTopology.SimplicialSet.Dimension
 public import Mathlib.AlgebraicTopology.SimplicialSet.NonDegenerateSimplices
 public import Mathlib.Basic.Finite.Sigma
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Finite simplicial sets
 
 A simplicial set is finite (`SSet.Finite`) if it has finitely
 many nondegenerate simplices.
-
 -/
 
 public section

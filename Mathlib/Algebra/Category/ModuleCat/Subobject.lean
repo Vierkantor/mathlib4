@@ -10,12 +10,14 @@ public import Mathlib.Algebra.Category.ModuleCat.Kernels
 public import Mathlib.CategoryTheory.Subobject.WellPowered
 public import Mathlib.CategoryTheory.Subobject.Limits
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Subobjects in the category of `R`-modules
 
 We construct an explicit order isomorphism between the categorical subobjects of an `R`-module `M`
 and its submodules. This immediately implies that the category of `R`-modules is well-powered.
-
 -/
 
 @[expose] public section

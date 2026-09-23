@@ -10,7 +10,11 @@ public import Mathlib.Data.Finset.Attr
 public import Mathlib.Tactic.Ring.Basic
 public import Mathlib.Tactic.SetLike
 
-/-! # Lemmas for the `algebra` tactic.
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Lemmas for the `algebra` tactic.
 -/
 
 public section

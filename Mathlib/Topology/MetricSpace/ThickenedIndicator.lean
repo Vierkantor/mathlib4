@@ -9,6 +9,9 @@ public import Mathlib.Basic.ENNReal.Lemmas
 public import Mathlib.Topology.ContinuousMap.Bounded.Basic
 public import Mathlib.Topology.MetricSpace.Thickening
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Thickened indicators
 
@@ -28,11 +31,11 @@ members of the approximating sequence are nonnegative bounded continuous functio
 
 * For a sequence of thickening radii tending to 0, the `δ`-thickened indicators of a set `E` tend
   pointwise to the indicator of `closure E`.
-  - `thickenedIndicatorAux_tendsto_indicator_closure`: The version is for the
-    unbundled `ℝ≥0∞`-valued functions.
-  - `thickenedIndicator_tendsto_indicator_closure`: The version is for the bundled `ℝ≥0`-valued
-    bounded continuous functions.
 
+  * `thickenedIndicatorAux_tendsto_indicator_closure`: The version is for the
+    unbundled `ℝ≥0∞`-valued functions.
+  * `thickenedIndicator_tendsto_indicator_closure`: The version is for the bundled `ℝ≥0`-valued
+    bounded continuous functions.
 -/
 
 @[expose] public section

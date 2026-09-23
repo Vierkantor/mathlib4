@@ -11,6 +11,9 @@ public import Mathlib.Data.Nat.BitIndices
 public import Mathlib.Order.SupClosed
 public import Mathlib.Order.UpperLower.Closure
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Colexicographic order
 
@@ -21,7 +24,7 @@ The colex ordering likes to avoid large values: If the biggest element of `t` is
 elements of `s`, then `s < t`.
 
 In the special case of `ℕ`, it can be thought of as the "binary" ordering. That is, order `s` based
-on $∑_{i ∈ s} 2^i$. It's defined here on `Finset α` for any linear order `α`.
+on $`∑_{i ∈ s} 2^i`. It's defined here on `Finset α` for any linear order `α`.
 
 In the context of the Kruskal-Katona theorem, we are interested in how colex behaves for sets of a
 fixed size. For example, for size 3, the colex order on ℕ starts
@@ -40,6 +43,7 @@ fixed size. For example, for size 3, the colex order on ℕ starts
 ## See also
 
 Related files are:
+
 * `Data.List.Lex`: Lexicographic order on lists.
 * `Data.Pi.Lex`: Lexicographic order on `Πₗ i, α i`.
 * `Data.PSigma.Order`: Lexicographic order on `Σ' i, α i`.
@@ -411,7 +415,9 @@ instance instBoundedOrder : BoundedOrder (Colex (Finset α)) where
 
 end Fintype
 
-/-! ### Initial segments -/
+/-!
+# Initial segments
+-/
 
 /-- `𝒜` is an initial segment of the colexicographic order on sets of `r`, and that if `t` is below
 `s` in colex where `t` has size `r` and `s` is in `𝒜`, then `t` is also in `𝒜`. In effect, `𝒜` is
@@ -478,7 +484,7 @@ lemma isInitSeg_iff_exists_initSeg :
 end Colex
 
 /-!
-### Colex on `ℕ`
+# Colex on `ℕ`
 
 The colexicographic order agrees with the order induced by interpreting a set of naturals as a
 `n`-ary expansion.

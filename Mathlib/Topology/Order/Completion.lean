@@ -14,6 +14,9 @@ public import Mathlib.Order.Completion
 
 import Mathlib.Algebra.Order.Field.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Dense and continuous completion of a linear order
 

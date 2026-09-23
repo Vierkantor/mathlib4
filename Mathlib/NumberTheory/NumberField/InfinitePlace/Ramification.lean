@@ -9,6 +9,9 @@ public import Mathlib.Analysis.Normed.Ring.WithAbs
 public import Mathlib.NumberTheory.NumberField.InfinitePlace.Basic
 public import Mathlib.NumberTheory.NumberField.InfinitePlace.Embeddings
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Ramification of infinite places of a number field
 

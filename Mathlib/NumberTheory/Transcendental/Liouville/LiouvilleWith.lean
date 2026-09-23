@@ -9,6 +9,9 @@ public import Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics
 public import Mathlib.NumberTheory.Transcendental.Liouville.Basic
 public import Mathlib.Topology.Instances.Irrational
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Liouville numbers with a given exponent
 
@@ -18,11 +21,9 @@ number `C` such that for infinitely many denominators `n` there exists a numerat
 `Liouville` if it is `LiouvilleWith` any real exponent, see `forall_liouvilleWith_iff`.
 
 * If `p ≤ 1`, then this condition is trivial.
-
 * If `1 < p ≤ 2`, then this condition is equivalent to `Irrational x`. The forward implication
   does not require `p ≤ 2` and is formalized as `LiouvilleWith.irrational`; the other implication
   follows from approximations by continued fractions and is not formalized yet.
-
 * If `p > 2`, then this is a non-trivial condition on irrational numbers. In particular,
   [Thue–Siegel–Roth theorem](https://en.wikipedia.org/wiki/Roth's_theorem) states that such numbers
   must be transcendental.

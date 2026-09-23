@@ -10,6 +10,9 @@ public import Mathlib.Analysis.Meromorphic.NormalForm
 public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv
 public import Mathlib.Analysis.SpecialFunctions.Trigonometric.DerivHyp
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Meromorphicity of `Complex.tan` and `Complex.tanh`
 -/

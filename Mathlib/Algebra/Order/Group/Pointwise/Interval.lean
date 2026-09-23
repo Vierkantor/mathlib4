@@ -14,6 +14,9 @@ public import Mathlib.Order.Interval.Set.OrderIso
 public import Mathlib.Order.Interval.Set.UnorderedInterval
 public import Mathlib.Algebra.Group.Pointwise.Set.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # (Pre)images of intervals
 
@@ -34,7 +37,8 @@ variable {α : Type*}
 
 namespace Set
 
-/-! ### Binary pointwise operations
+/-!
+# Binary pointwise operations
 
 Note that the subset operations below only cover the cases with the largest possible intervals on
 the LHS: to conclude that `Ioo a b * Ioo c d ⊆ Ioo (a * c) (c * d)`, you can use monotonicity of `*`
@@ -180,7 +184,7 @@ lemma Icc_div_Icc_subset' (a b c d : α) : Icc a b / Icc c d ⊆ Icc (a / d) (b 
   simp only [div_eq_mul_inv, inv_Icc, Icc_mul_Icc_subset']
 
 /-!
-### Preimages under `x ↦ a * x`
+# Preimages under `x ↦ a * x`
 -/
 
 @[to_additive (attr := simp)]
@@ -216,7 +220,7 @@ theorem preimage_const_mul_Ioo : (fun x => a * x) ⁻¹' Ioo b c = Ioo (b / a) (
   simp [← Ioi_inter_Iio]
 
 /-!
-### Preimages under `x ↦ x * a`
+# Preimages under `x ↦ x * a`
 -/
 
 @[to_additive (attr := simp)]
@@ -252,7 +256,7 @@ theorem preimage_mul_const_Ioo : (fun x => x * a) ⁻¹' Ioo b c = Ioo (b / a) (
   simp [← Ioi_inter_Iio]
 
 /-!
-### Preimages under `x ↦ x / a`
+# Preimages under `x ↦ x / a`
 -/
 
 @[to_additive (attr := simp)]
@@ -288,7 +292,7 @@ theorem preimage_div_const_Ioo : (fun x => x / a) ⁻¹' Ioo b c = Ioo (b * a) (
   simp [div_eq_mul_inv]
 
 /-!
-### Preimages under `x ↦ a / x`
+# Preimages under `x ↦ a / x`
 -/
 
 @[to_additive (attr := simp)]
@@ -324,7 +328,7 @@ theorem preimage_const_div_Ioo : (fun x => a / x) ⁻¹' Ioo b c = Ioo (a / c) (
   simp [← Ioi_inter_Iio, inter_comm]
 
 /-!
-### Images under `x ↦ a * x`
+# Images under `x ↦ a * x`
 -/
 
 -- simp can prove this modulo `mul_comm`
@@ -336,7 +340,7 @@ theorem image_const_mul_Iic : (fun x => a * x) '' Iic b = Iic (a * b) := by simp
 theorem image_const_mul_Iio : (fun x => a * x) '' Iio b = Iio (a * b) := by simp [mul_comm]
 
 /-!
-### Images under `x ↦ x * a`
+# Images under `x ↦ x * a`
 -/
 
 @[to_additive]
@@ -347,7 +351,7 @@ theorem image_mul_const_Iio : (fun x => x * a) '' Iio b = Iio (b * a) := by simp
 
 
 /-!
-### Images under `x ↦ x⁻¹`
+# Images under `x ↦ x⁻¹`
 -/
 
 @[to_additive]
@@ -377,7 +381,7 @@ theorem image_inv_Ioo : Inv.inv '' Ioo a b = Ioo (b⁻¹) (a⁻¹) := by simp
 
 
 /-!
-### Images under `x ↦ a / x`
+# Images under `x ↦ a / x`
 -/
 
 @[to_additive (attr := simp)]
@@ -421,7 +425,7 @@ theorem image_const_div_Ioo : (fun x => a / x) '' Ioo b c = Ioo (a / c) (a / b) 
   simp [div_eq_mul_inv, this, mul_comm]
 
 /-!
-### Images under `x ↦ x / a`
+# Images under `x ↦ x / a`
 -/
 
 @[to_additive (attr := simp)]
@@ -453,7 +457,7 @@ theorem image_div_const_Ioo : (fun x => x / a) '' Ioo b c = Ioo (b / a) (c / a) 
   simp [div_eq_mul_inv]
 
 /-!
-### Bijections
+# Bijections
 -/
 
 @[to_additive]
@@ -659,7 +663,7 @@ theorem inv_Ioi₀ (ha : 0 < a) : (Ioi a)⁻¹ = Ioo 0 a⁻¹ := by
 end GroupWithZero
 
 /-!
-### Commutative group with zero
+# Commutative group with zero
 
 The only reason why we need `G₀` to be commutative in this section
 is that we write `a / c`, not `c⁻¹ * a`.
@@ -707,7 +711,7 @@ theorem preimage_const_mul_Ico₀ (a b : G₀) (h : 0 < c) :
 end CommGroupWithZero
 
 /-!
-### Images under `x ↦ a * x + b` in a semifield
+# Images under `x ↦ a * x + b` in a semifield
 -/
 
 section OrderedSemifield
@@ -746,7 +750,7 @@ theorem image_affine_Ioo (h : 0 < a) (b c d : K) :
 end OrderedSemifield
 
 /-!
-### Multiplication and inverse in a field
+# Multiplication and inverse in a field
 -/
 
 section LinearOrderedField

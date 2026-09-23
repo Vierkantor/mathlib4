@@ -12,10 +12,14 @@ public import Mathlib.Tactic.Linter.DirectoryDependency
 public meta import Lean.Linter.Basic
 public import Std.Sync.Mutex
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The "header" linter
 
 The "header" style linter checks that a file starts with
+
 ```
 /-
 Copyright ...
@@ -29,7 +33,9 @@ module doc-string*
 
 remaining file
 ```
+
 It emits a warning if
+
 * the copyright statement is malformed;
 * `Mathlib.Tactic` is imported;
 * any import in `Lake` is present;
@@ -59,11 +65,12 @@ def toSyntax (s pattern : String) (offset : String.Pos.Raw := 0) : Syntax :=
   let fin := (((s.splitOn pattern).getD 0 "") ++ pattern).rawEndPos.offsetBy offset
   mkAtomFrom (.ofRange ⟨beg, fin⟩) pattern
 
-/-- Return if `line` looks like a correct authors line in a copyright header.
+/--
+Return if `line` looks like a correct authors line in a copyright header.
 
 The `offset` input is used to shift the position information of the `Syntax` that the command
 produces.
-`authorsLineChecks` computes a position for its warning *relative to `line`*.
+`authorsLineChecks` computes a position for its warning _relative to `line`_.
 The `offset` input passes on the starting position of `line` in the whole file.
 -/
 def authorsLineChecks (line : String) (offset : String.Pos.Raw) : Array (Syntax × String) :=
@@ -191,13 +198,15 @@ def isInLibraryRoot (modName : Name) : IO Bool := do
     return res.imports.any (·.module == modName)
   else return false
 
-/-- `inLibraryRootMutex` caches whether the current file is imported in the library root file
+/--
+`inLibraryRootMutex` caches whether the current file is imported in the library root file
 (e.g. `Mathlib.lean`), as computed by `isInLibraryRoot`. It is
+
 * `none` at initialization time;
 * `some true` if the `header` linter has already discovered that the current file
   is imported in the library root file;
 * `some false` if the `header` linter has already discovered that the current file
-  is *not* imported in the library root file.
+  is _not_ imported in the library root file.
 -/
 initialize inLibraryRootMutex : Std.Mutex (Option Bool) ← Std.Mutex.new none
 

@@ -14,6 +14,9 @@ public import Mathlib.Tactic.Contrapose
 public import Mathlib.Tactic.Use
 public import Mathlib.Tactic.GRewrite
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Ordered monoids
 
@@ -29,7 +32,6 @@ The reason is that we did not want to change existing names in the library.
 
 Almost no monoid is actually present in this file: most assumptions have been generalized to
 `Mul` or `MulOneClass`.
-
 -/
 
 @[expose] public section

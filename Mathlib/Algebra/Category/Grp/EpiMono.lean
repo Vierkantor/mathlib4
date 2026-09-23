@@ -11,6 +11,9 @@ public import Mathlib.CategoryTheory.Limits.Constructions.EpiMono
 public import Mathlib.GroupTheory.Coset.Basic
 public import Mathlib.GroupTheory.QuotientGroup.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Monomorphisms and epimorphisms in `Group`
 

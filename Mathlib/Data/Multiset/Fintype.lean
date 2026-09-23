@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.Fintype.Card
 public import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Multiset coercion to type
 

@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Equivalence
 public import Mathlib.CategoryTheory.EqToHom
 public import Mathlib.Data.ULift
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Basic API for ULift
 
@@ -18,7 +21,7 @@ instance on `ULift C` where `C` is a type with a category instance.
 1. `CategoryTheory.ULift.upFunctor` is the functorial version of the usual `ULift.up`.
 2. `CategoryTheory.ULift.downFunctor` is the functorial version of the usual `ULift.down`.
 3. `CategoryTheory.ULift.equivalence` is the categorical equivalence between
-  `C` and `ULift C`.
+   `C` and `ULift C`.
 
 ## ULiftHom
 

@@ -14,6 +14,9 @@ public import Mathlib.RingTheory.PowerSeries.WellKnown
 public import Mathlib.Tactic.FieldSimp
 public import Mathlib.Algebra.NoZeroSMulDivisors.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Hilbert polynomials
 

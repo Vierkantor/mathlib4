@@ -9,6 +9,9 @@ public import Mathlib.NumberTheory.ModularForms.SlashInvariantForms
 public import Mathlib.NumberTheory.ModularForms.CongruenceSubgroups
 public import Mathlib.NumberTheory.ModularForms.Cusps
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Identities of ModularForms and SlashInvariantForms
 

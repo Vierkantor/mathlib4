@@ -8,6 +8,9 @@ module
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Algebra.Group.Units.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Units in ordered monoids
 -/

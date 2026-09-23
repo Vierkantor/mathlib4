@@ -12,6 +12,9 @@ public import Mathlib.CategoryTheory.Monoidal.Closed.FunctorToTypes
 public import Mathlib.CategoryTheory.Limits.Presheaf
 public import Mathlib.CategoryTheory.Monoidal.Closed.Cartesian
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The adjunction between the nerve and the homotopy category functor
 
@@ -33,7 +36,6 @@ reflective. Since the category of simplicial sets is cocomplete, we conclude in
 
 Finally we show that `hoFunctor : SSet.{u} ⥤ Cat.{u, u}` preserves finite cartesian products; note
 that it fails to preserve infinite products.
-
 -/
 
 @[expose] public section

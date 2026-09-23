@@ -8,11 +8,15 @@ module
 public import Mathlib.Algebra.Homology.HomologicalComplexLimits
 public import Mathlib.Algebra.Homology.HomotopyCategory.HomComplex
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lifting properties in cochain complexes
 
 Let `C` be an abelian category. Consider a commutative diagram
 in the category `CochainComplex C ℤ`.
+
 ```
    t
  A ⟶ X
@@ -21,11 +25,11 @@ i|   |p
  B ⟶ Y
    b
 ```
+
 Assume that there exists a degreewise lifting `B.X n ⟶ X.X n` for any `n : ℤ`,
 that `Q` is a cokernel of `i`, and `K` is a kernel of `p`. In this situation,
 we construct a cocycle in `Cocycle Q K 1` and show that there exists
 a lifting `B ⟶ X` if this cocycle is a coboundary.
-
 -/
 
 @[expose] public section

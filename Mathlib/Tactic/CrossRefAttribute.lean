@@ -8,6 +8,9 @@ module
 public meta import Lean.Elab.Command
 public import Mathlib.Init
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cross-reference attributes
 
@@ -148,7 +151,9 @@ def addCrossRefDoc (db : Database) (decl : Name) (idStr comment : String) : Core
 
 open Parser
 
-/-! ### Stacks (and Kerodon) parser -/
+/-!
+# Stacks (and Kerodon) parser
+-/
 
 /-- `stacksTag` is the node kind of Stacks Project Tags: a sequence of digits and
 uppercase letters. -/
@@ -183,7 +188,9 @@ def stacksTagNoAntiquot : Parser := {
 def stacksTagParser : Parser :=
   withAntiquot (mkAntiquot "stacksTag" stacksTagKind) stacksTagNoAntiquot
 
-/-! ### Wikidata parser -/
+/-!
+# Wikidata parser
+-/
 
 /-- `wikidataId` is the node kind of Wikidata identifiers: the letter `Q` followed by digits. -/
 abbrev wikidataIdKind : SyntaxNodeKind := `wikidataId
@@ -219,7 +226,9 @@ def wikidataIdNoAntiquot : Parser := {
 def wikidataIdParser : Parser :=
   withAntiquot (mkAntiquot "wikidataId" wikidataIdKind) wikidataIdNoAntiquot
 
-/-! ### LMFDB parser -/
+/-!
+# LMFDB parser
+-/
 
 /-- `lmfdbId` is the node kind of LMFDB identifiers: lower case words with `.` in between.
 The words can also contain underscores and digits. -/
@@ -252,7 +261,9 @@ def lmfdbIdNoAntiquot : Parser := {
 def lmfdbIdParser : Parser :=
   withAntiquot (mkAntiquot "lmfdbId" lmfdbIdKind) lmfdbIdNoAntiquot
 
-/-! ### π-Base parser -/
+/-!
+# π-Base parser
+-/
 
 /-- `pibaseId` is the node kind of π-Base identifiers: one of the letters `P`, `S`, or `T`,
 followed by exactly six digits. -/
@@ -295,20 +306,26 @@ def pibaseIdNoAntiquot : Parser := {
 def pibaseIdParser : Parser :=
   withAntiquot (mkAntiquot "pibaseId" pibaseIdKind) pibaseIdNoAntiquot
 
-/-! ### DLMF parser -/
+/-!
+# DLMF parser
+-/
 
-/-- `dlmfId` is the node kind of DLMF references:
-generally <chapter_no>.<section_no>.E<equation_no> (e.g. `5.4.E1`).
+/--
+`dlmfId` is the node kind of DLMF references:
+generally <chapter\_no>.<section\_no>.E<equation\_no> (e.g. `5.4.E1`).
 See https://dlmf.nist.gov/help/cite for more details on the permalink format.
 Note that while underscores are not mentioned in the DLMF permalink table, they are
-supported and present in some actual links for equations. -/
+supported and present in some actual links for equations.
+-/
 abbrev dlmfIdKind : SyntaxNodeKind := `dlmfId
 
-/-- The main parser for DLMF references:
-generally <chapter_no>.<section_no>.E<equation_no> (e.g. `5.4.E1`).
+/--
+The main parser for DLMF references:
+generally <chapter\_no>.<section\_no>.E<equation\_no> (e.g. `5.4.E1`).
 See https://dlmf.nist.gov/help/cite for more details on the permalink format.
 Note that while underscores are not mentioned in the DLMF permalink table, they are
-supported and present in some actual links for equations. -/
+supported and present in some actual links for equations.
+-/
 def dlmfIdFn : ParserFn := fun c s =>
   let i := s.pos
   let s := takeWhileFn (fun c => c.isAlphanum || c == '.' || c == '_') c s
@@ -411,7 +428,9 @@ end Lean.PrettyPrinter.Parenthesizer
 
 namespace Mathlib.CrossRef
 
-/-! ### Stacks / Kerodon attribute -/
+/-!
+# Stacks / Kerodon attribute
+-/
 
 /-- The syntax category for the database name. -/
 declare_syntax_cat stacksTagDB
@@ -445,7 +464,9 @@ initialize Lean.registerBuiltinAttribute {
   applicationTime := .beforeElaboration
 }
 
-/-! ### Wikidata attribute -/
+/-!
+# Wikidata attribute
+-/
 
 /-- The `wikidata` attribute.
 Use it as `@[wikidata Q12345 "Optional comment"]` to associate a Mathlib declaration with
@@ -467,7 +488,9 @@ initialize Lean.registerBuiltinAttribute {
   applicationTime := .beforeElaboration
 }
 
-/-! ### LMFDB attribute -/
+/-!
+# LMFDB attribute
+-/
 
 /-- The `lmfdb` attribute.
 Use it as `@[lmfdb foo.bar "Optional comment"]` to associate a Mathlib declaration with
@@ -487,7 +510,9 @@ initialize Lean.registerBuiltinAttribute {
   applicationTime := .beforeElaboration
 }
 
-/-! ### π-Base attribute -/
+/-!
+# π-Base attribute
+-/
 
 -- This parser should track the possible values of `PiBaseTopic`.
 /-- The topic identifying a π-Base database. Possible values:
@@ -530,7 +555,9 @@ initialize Lean.registerBuiltinAttribute {
   applicationTime := .beforeElaboration
 }
 
-/-! ### DLMF attribute -/
+/-!
+# DLMF attribute
+-/
 
 /-- The `dlmf` attribute.
 Use it as `@[dlmf 5.4.E1 "Optional comment"]` to associate a Mathlib declaration with

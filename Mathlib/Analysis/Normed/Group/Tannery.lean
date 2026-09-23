@@ -11,12 +11,16 @@ public import Mathlib.Analysis.Normed.Ring.Basic
 public import Mathlib.Analysis.Real.Sqrt
 public import Mathlib.Tactic.ContinuousFunctionalCalculus
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Tannery's theorem
 
 Tannery's theorem gives a sufficient criterion for the limit of an infinite sum (with respect to
 an auxiliary parameter) to equal the sum of the pointwise limits. See
-https://en.wikipedia.org/wiki/Tannery%27s_theorem. It is a special case of the dominated convergence
+https://en.wikipedia.org/wiki/Tannery%27s\_theorem. It is a special case of the dominated
+convergence
 theorem (with the measure chosen to be the counting measure); but we give here a direct proof, in
 order to avoid some unnecessary hypotheses that appear when specialising the general
 measure-theoretic result.

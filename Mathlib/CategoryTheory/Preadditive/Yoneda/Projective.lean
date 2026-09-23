@@ -10,6 +10,9 @@ public import Mathlib.CategoryTheory.Preadditive.Projective.Basic
 public import Mathlib.Algebra.Category.Grp.EpiMono
 public import Mathlib.Algebra.Category.ModuleCat.EpiMono
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Projective objects
 

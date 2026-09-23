@@ -9,17 +9,19 @@ public import Mathlib.RingTheory.Ideal.Quotient.HasFiniteQuotients.Basic
 public import Mathlib.Algebra.Order.BigOperators.Ring.Finset
 public import Mathlib.RingTheory.RamificationInertia.Ramification
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Unramified and ramification index
 
 We connect `Ideal.ramificationIdx` to the commutative algebra notion predicate of `IsUnramifiedAt`.
 
 ## Main result
-- `Algebra.isUnramifiedAt_iff_of_isDedekindDomain`:
+
+* `Algebra.isUnramifiedAt_iff_of_isDedekindDomain`:
   Let `R` be a domain of characteristic 0, finite rank over `ℤ`, `S ⊇ R` be a Dedekind domain
   that is a finite `R`-algebra. Let `p` be a prime of `S`, then `p` is unramified iff `e(p) = 1`.
-
 -/
 
 public section

@@ -10,6 +10,9 @@ public import Mathlib.Data.Nat.GCD.Basic
 public import Mathlib.Tactic.Ring
 public import Mathlib.Tactic.Linarith
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Central binomial coefficients
 

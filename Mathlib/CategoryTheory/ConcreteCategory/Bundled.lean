@@ -8,6 +8,9 @@ module
 public import Mathlib.Init
 public import Batteries.Tactic.Lint.Misc
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Bundled types
 

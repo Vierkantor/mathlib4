@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Prime.Defs
 public import Mathlib.Data.Nat.Sqrt
 public import Mathlib.Order.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Prime numbers
 
@@ -18,13 +21,12 @@ This file deals with prime numbers: natural numbers `p ≥ 2` whose only divisor
 
 ## Important declarations
 
-- `Nat.Prime`: the predicate that expresses that a natural number `p` is prime
-- `Nat.Primes`: the subtype of natural numbers that are prime
-- `Nat.minFac n`: the minimal prime factor of a natural number `n ≠ 1`
-- `Nat.prime_iff`: `Nat.Prime` coincides with the general definition of `Prime`
-- `Nat.irreducible_iff_nat_prime`: a non-unit natural number is
-                                  only divisible by `1` iff it is prime
-
+* `Nat.Prime`: the predicate that expresses that a natural number `p` is prime
+* `Nat.Primes`: the subtype of natural numbers that are prime
+* `Nat.minFac n`: the minimal prime factor of a natural number `n ≠ 1`
+* `Nat.prime_iff`: `Nat.Prime` coincides with the general definition of `Prime`
+* `Nat.irreducible_iff_nat_prime`: a non-unit natural number is
+  only divisible by `1` iff it is prime
 -/
 
 @[expose] public section
@@ -163,7 +165,7 @@ instance decidablePrime (p : ℕ) : Decidable (Prime p) :=
   decidable_of_iff' _ prime_def_lt'
 
 /-!
-### Specific small primes
+# Specific small primes
 
 It is recommended not to add further lemmas to this list; instead, import
 `Mathlib.Tactic.NormNum.Prime` in downstream files and use `norm_num` for primality proofs.

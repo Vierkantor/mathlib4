@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.InnerProductSpace.Calculus
 public import Mathlib.Analysis.SpecialFunctions.Pow.Deriv
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Properties about the powers of the norm
 
@@ -15,8 +18,8 @@ In this file we prove that `x ↦ ‖x‖ ^ p` is continuously differentiable fo
 an inner product space and for a real number `p > 1`.
 
 ## TODO
-* `x ↦ ‖x‖ ^ p` should be `C^n` for `p > n`.
 
+* `x ↦ ‖x‖ ^ p` should be `C^n` for `p > n`.
 -/
 
 public section

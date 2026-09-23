@@ -12,6 +12,9 @@ public import Mathlib.Algebra.Order.Monoid.Unbundled.Pow
 public import Mathlib.Algebra.Order.Monoid.Unbundled.WithTop
 public import Mathlib.Data.Finset.Lattice.Prod
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `Finset.sup` in a group
 -/

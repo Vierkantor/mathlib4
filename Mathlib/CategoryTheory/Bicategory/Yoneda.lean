@@ -8,11 +8,13 @@ module
 public import Mathlib.CategoryTheory.Bicategory.FunctorBicategory.Pseudo
 public import Mathlib.CategoryTheory.Bicategory.Opposites
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # 2-Yoneda embedding
 
 In this file we define the bicategorical Yoneda embedding.
-
 -/
 
 @[expose] public section

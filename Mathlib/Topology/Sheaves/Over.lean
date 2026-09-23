@@ -10,6 +10,9 @@ public import Mathlib.CategoryTheory.Sites.Over
 public import Mathlib.Topology.Sets.Opens
 public import Mathlib.Topology.Sheaves.SheafCondition.Sites
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Opens and Over categories
 
@@ -18,7 +21,6 @@ we show that the category `Over U` (whose objects are the
 `V : Opens X` equipped with a morphism `V ⟶ U`) is equivalent
 to the category `Opens U`.
 This equivalence is bi-continuous, and thus induces an equivalence of sheaf categories.
-
 -/
 
 @[expose] public section

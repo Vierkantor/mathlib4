@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Order.Ring.Cast
 public import Mathlib.Basic.Sign.Defs
 public import Mathlib.Data.Fintype.BigOperators
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Sign function
 

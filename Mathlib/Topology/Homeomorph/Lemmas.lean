@@ -11,12 +11,14 @@ public import Mathlib.Topology.DenseEmbedding
 public import Mathlib.Topology.Connected.TotallyDisconnected
 public import Mathlib.Topology.Baire.Lemmas
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Further properties of homeomorphisms
 
 This file proves further properties of homeomorphisms between topological spaces.
 Pretty much every topological property is preserved under homeomorphisms.
-
 -/
 
 @[expose] public section

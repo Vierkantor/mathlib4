@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.Fin.Fin2
 public import Mathlib.Util.Notation3
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Alternate definition of `Vector` in terms of `Fin2`
 

@@ -11,6 +11,9 @@ public import Mathlib.LinearAlgebra.Matrix.Rank
 public import Mathlib.RingTheory.LocalProperties.Basic
 public import Mathlib.RingTheory.LocalRing.ResidueField.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The Symplectic Group
 
@@ -24,20 +27,20 @@ This file defines the symplectic group and proves elementary properties.
 ## Implementation Notes
 
 * `SymplecticGroup.det_eq_one`: Symplectic matrices have determinant 1. The proof strategy
-comes in two steps:
+  comes in two steps:
 
 1. Consider a symplectic matrix `M` over a local ring, we can construct a matrix of the
-form `fromBlocks 1 X 0 1` s.t. the upper-left block of `(fromBlocks 1 X 0 1) * M` is invertible.
-From this we can calculate the determinant.
-
+   form `fromBlocks 1 X 0 1` s.t. the upper-left block of `(fromBlocks 1 X 0 1) * M` is invertible.
+   From this we can calculate the determinant.
 2. For a symplectic matrix `M` over general commutative ring `R`, we note that by step 1,
-`M.det - 1 = 0` in any localization at a maximal ideal in `R`. Therefore `M.det = 1` in `R`.
+   `M.det - 1 = 0` in any localization at a maximal ideal in `R`. Therefore `M.det = 1` in `R`.
 
 Developing the proof in two steps is helpful, since the local ring hypothesis allows us to
 construct the desired `X` in step 1 at the residue field level, and lift back to the ring while
 keeping the upper-left block invertible.
 
 ## TODO
+
 * For `n = 1` the symplectic group coincides with the special linear group.
 -/
 

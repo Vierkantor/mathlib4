@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Data.PFunctor.Multivariate.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The W construction as a multivariate polynomial functor.
 
@@ -27,7 +30,7 @@ Three views of M-types:
 
 * `wp`: polynomial functor
 * `W`: data type inductively defined by a triple:
-     shape of the root, data in the root and children of the root
+  shape of the root, data in the root and children of the root
 * `W`: least fixed point of a polynomial functor
 
 Specifically, we define the polynomial functor `wp` as:
@@ -42,7 +45,7 @@ its valid paths to values of `α`
 ## Reference
 
 * Jeremy Avigad, Mario M. Carneiro and Simon Hudon.
-  [*Data Types as Quotients of Polynomial Functors*][avigad-carneiro-hudon2019]
+  ‍\[_Data Types as Quotients of Polynomial Functors_\]\[avigad-carneiro-hudon2019\]
 -/
 
 @[expose] public section

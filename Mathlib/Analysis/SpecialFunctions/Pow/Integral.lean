@@ -10,6 +10,9 @@ public import Mathlib.MeasureTheory.Integral.Layercake
 public import Mathlib.MeasureTheory.Constructions.HaarToSphere
 public import Mathlib.Tactic.MoveAdd
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The integral of the real power of a nonnegative function
 

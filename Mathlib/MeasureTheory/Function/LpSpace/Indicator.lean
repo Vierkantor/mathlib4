@@ -10,6 +10,9 @@ public import Mathlib.MeasureTheory.Function.LpSpace.Basic
 public import Mathlib.MeasureTheory.Measure.Real
 public import Mathlib.Order.Filter.IndicatorFunction
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Indicator of a set as an element of `Lp`
 

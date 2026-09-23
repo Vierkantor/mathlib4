@@ -17,6 +17,9 @@ import Mathlib.Algebra.Order.Ring.Pow
 import Mathlib.Data.Int.LeastGreatest
 public import Mathlib.Data.Rat.Cast.Lemmas
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Archimedean groups and fields
 

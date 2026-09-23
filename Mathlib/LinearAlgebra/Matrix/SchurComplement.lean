@@ -8,7 +8,11 @@ module
 public import Mathlib.LinearAlgebra.Matrix.Invertible
 public import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
 
-/-! # 2×2 block matrices and the Schur complement
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# 2×2 block matrices and the Schur complement
 
 This file proves properties of 2×2 block matrices `[A B; C D]` that relate to the Schur complement
 `D - C*A⁻¹*B`.
@@ -26,8 +30,7 @@ Compare with `Matrix.invertibleOfFromBlocks₁₁Invertible`.
   block triangular matrix.
 * `Matrix.isUnit_fromBlocks_zero₂₁`, `Matrix.isUnit_fromBlocks_zero₁₂`: invertibility of a
   block triangular matrix.
-* `Matrix.det_one_add_mul_comm`: the **Weinstein–Aronszajn identity**.
-
+* `Matrix.det_one_add_mul_comm`: the *Weinstein–Aronszajn identity*.
 -/
 
 @[expose] public section
@@ -70,7 +73,9 @@ theorem fromBlocks_eq_of_invertible₂₂ (A : Matrix l m α) (B : Matrix l n α
 
 section Triangular
 
-/-! #### Block triangular matrices -/
+/-!
+# Block triangular matrices
+-/
 
 
 /-- An upper-block-triangular matrix is invertible if its diagonal is. -/
@@ -219,12 +224,16 @@ theorem inv_fromBlocks_zero₁₂_of_isUnit_iff (A : Matrix m m α) (C : Matrix 
 
 end Triangular
 
-/-! ### 2×2 block matrices -/
+/-!
+# 2×2 block matrices
+-/
 
 
 section Block
 
-/-! #### General 2×2 block matrices -/
+/-!
+# General 2×2 block matrices
+-/
 
 
 /-- A block matrix is invertible if the bottom right corner and the corresponding Schur complement
@@ -360,7 +369,9 @@ theorem isUnit_fromBlocks_iff_of_invertible₁₁ {A : Matrix m m α} {B : Matri
 
 end Block
 
-/-! ### Lemmas about `Matrix.det` -/
+/-!
+# Lemmas about `Matrix.det`
+-/
 
 
 section Det

@@ -8,6 +8,9 @@ module
 public import Mathlib.Lean.Meta.RefinedDiscrTree.Basic
 public import Lean.Meta.CompletionName
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Constructing a RefinedDiscrTree
 
@@ -22,7 +25,6 @@ and does this with a parallel computation.
 
 There is also `createModuleDiscrTree` which does the same but with the constants
 from the current file.
-
 -/
 
 public section

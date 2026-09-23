@@ -8,13 +8,15 @@ module
 public import Mathlib.CategoryTheory.Limits.Types.Colimits
 public import Mathlib.CategoryTheory.Filtered.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Filtered colimits in the category of types.
 
 We give a characterisation of the equality in filtered colimits in `Type` as a
 lemma `CategoryTheory.Limits.Types.FilteredColimit.colimit_eq_iff`:
 `colimit.ι F i xi = colimit.ι F j xj ↔ ∃ k (f : i ⟶ k) (g : j ⟶ k), F.map f xi = F.map g xj`.
-
 -/
 
 @[expose] public section
@@ -86,7 +88,7 @@ variable [IsFilteredOrEmpty J]
 /--
 Note that the body of `isColimitOf'` locally enables `respectTransparency true` for a subterm.
 The underlying reason is that there is one corner case where `respectTransparency true` unfolds
-*more*, and we need that here.
+_more_, and we need that here.
 The intended fix is to get rid of the outer `respectTransparency false`. After that, the inner
 `respectTransparency true` is redundant and can be removed, too.
 -/

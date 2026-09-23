@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.LocallyConvex.HahnBanach
 public import Mathlib.Analysis.Normed.Module.Span
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Hahn-Banach extension theorem
 
@@ -17,6 +20,7 @@ its norm. For Hahn-Banach theorems for locally convex spaces, see
 `Mathlib.Analysis.LocallyConvex.HahnBanach`.
 
 We prove
+
 * `exists_extension_norm_eq`: Hahn-Banach theorem for continuous linear functionals on normed spaces
   over `ℝ` or `ℂ`.
 

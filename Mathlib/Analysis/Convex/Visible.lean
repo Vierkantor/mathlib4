@@ -13,6 +13,9 @@ public import Mathlib.Topology.Algebra.Affine
 public import Mathlib.Topology.MetricSpace.Pseudo.Lemmas
 public import Mathlib.Topology.Order.Monotone
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Points in sight
 

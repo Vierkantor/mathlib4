@@ -12,8 +12,11 @@ public meta import Mathlib.Util.Qq
 public import Lean.Elab.Tactic.Try  -- shake: keep (`register_try?_tactic` command dependency)
 public meta import Lean.Meta.Tactic.Try.Collect
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
-## `norm_num` core functionality
+# `norm_num` core functionality
 
 This file sets up the `norm_num` tactic and the `@[norm_num]` attribute,
 which allow for plugging in new normalization functionality around a simp-based driver.
@@ -26,6 +29,8 @@ public meta section
 open Lean
 open Lean.Meta Qq Lean.Elab Term
 
+
+set_option doc.verso false
 /-- `@[norm_num e]`, where `e` is an expression (optionally with `_`s) adds the tagged definition,
 of type `NormNumExt`, to the set of normalization procedures used by the `norm_num` tactic, such
 that it will fire on expressions matching the form `e`. Use holes in `e` to indicate arbitrary
@@ -44,6 +49,8 @@ Example:
 -/
 syntax (name := norm_num) "norm_num " term,+ : attr
 
+
+set_option doc.verso true
 namespace Mathlib
 namespace Meta.NormNum
 
@@ -274,6 +281,8 @@ end Meta.NormNum
 namespace Tactic
 open Lean.Parser.Tactic Meta.NormNum
 
+
+set_option doc.verso false
 /--
 `norm_num` normalizes numerical expressions in the goal. By default, it supports the operations
 `+` `-` `*` `/` `⁻¹` `^` and `%` over types with (at least) an `AddMonoidWithOne` instance, such as
@@ -306,6 +315,10 @@ elab (name := normNum)
     "norm_num" cfg:optConfig only:&" only"? args:(simpArgs ?) loc:(location ?) : tactic =>
   elabNormNum cfg args loc (simpOnly := only.isSome) (useSimp := true)
 
+
+set_option doc.verso true
+
+set_option doc.verso false
 /--
 `norm_num1` normalizes numerical expressions in the goal. It is a basic version of `norm_num`
 that does not call `simp`.
@@ -330,6 +343,8 @@ example : ¬ (7-2)/(2*3) ≥ (1:ℝ) + 2/(3^2) := by norm_num1
 elab (name := normNum1) "norm_num1" loc:(location ?) : tactic =>
   elabNormNum mkNullNode mkNullNode loc (simpOnly := true) (useSimp := false)
 
+
+set_option doc.verso true
 open Lean Elab Tactic
 
 @[inherit_doc normNum1] syntax (name := normNum1Conv) "norm_num1" : conv

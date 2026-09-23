@@ -14,6 +14,9 @@ public import Mathlib.Tactic.SplitIfs
 public import Mathlib.Order.Defs.PartialOrder
 public import Batteries.Tactic.Init
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Orders
 
@@ -30,7 +33,7 @@ variable {α : Type*}
 section LinearOrder
 
 /-!
-### Definition of `LinearOrder` and lemmas about types with a linear order
+# Definition of `LinearOrder` and lemmas about types with a linear order
 -/
 
 /-- Default definition of `max`. -/

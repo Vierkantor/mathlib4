@@ -8,6 +8,9 @@ module
 public import Mathlib.Order.Interval.Finset.Basic
 public import Mathlib.Data.Fintype.BigOperators
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Intervals in a pi type
 

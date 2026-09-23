@@ -10,6 +10,9 @@ public import Mathlib.MeasureTheory.Measure.Dirac.Basic
 public import Mathlib.MeasureTheory.VectorMeasure.Relations
 public import Mathlib.MeasureTheory.VectorMeasure.Variation.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Properties of variation
 
@@ -28,8 +31,7 @@ such vector-valued measures.
 
 ## References
 
-* [Walter Rudin, Real and Complex Analysis.][Rud87]
-
+* ‍\[Walter Rudin, Real and Complex Analysis.\]\[Rud87\]
 -/
 
 public section

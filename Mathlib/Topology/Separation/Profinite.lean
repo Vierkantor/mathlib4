@@ -9,6 +9,9 @@ public import Mathlib.Data.Fintype.Option
 public import Mathlib.Topology.Separation.Regular
 public import Mathlib.Topology.Connected.TotallyDisconnected
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Separation properties: profinite spaces
 -/

@@ -9,6 +9,9 @@ public import Mathlib.Logic.Relation
 public import Mathlib.Order.CompleteLattice.Basic
 public import Mathlib.Order.GaloisConnection.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Equivalence relations
 
@@ -436,10 +439,12 @@ theorem mapOfSurjective_eq_map (h : ker f ≤ r) (hf : Surjective f) :
     map r f = mapOfSurjective r f h hf := by
   rw [← eqvGen_of_setoid (mapOfSurjective r f h hf)]; rfl
 
-/-- Given a function `f : α → β`, an equivalence relation `r` on `β` induces an equivalence
+/--
+Given a function `f : α → β`, an equivalence relation `r` on `β` induces an equivalence
 relation on `α` defined by '`x ≈ y` iff `f(x)` is related to `f(y)` by `r`'.
 
-See note [reducible non-instances]. -/
+See note \[reducible non-instances\].
+-/
 abbrev comap (f : α → β) (r : Setoid β) : Setoid α :=
   ⟨r on f, r.iseqv.comap _⟩
 

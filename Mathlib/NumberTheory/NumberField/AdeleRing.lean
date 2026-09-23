@@ -8,6 +8,9 @@ module
 public import Mathlib.NumberTheory.NumberField.InfiniteAdeleRing
 public import Mathlib.RingTheory.DedekindDomain.FiniteAdeleRing
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The adele ring of a number field
 
@@ -16,13 +19,15 @@ direct product of the infinite adele ring and the finite adele ring.
 
 ## Main definitions
 
-- `NumberField.AdeleRing K` is the adele ring of a number field `K`.
-- `NumberField.AdeleRing.principalSubgroup K` is the subgroup of principal adeles `(x)ᵥ`.
+* `NumberField.AdeleRing K` is the adele ring of a number field `K`.
+* `NumberField.AdeleRing.principalSubgroup K` is the subgroup of principal adeles `(x)ᵥ`.
 
 ## References
-* [J.W.S. Cassels, A. Fröhlich, *Algebraic Number Theory*][cassels1967algebraic]
+
+* ‍\[J.W.S. Cassels, A. Fröhlich, _Algebraic Number Theory_\]\[cassels1967algebraic\]
 
 ## Tags
+
 adele ring, number field
 -/
 
@@ -34,7 +39,9 @@ namespace NumberField
 
 open AbsoluteValue.Completion InfinitePlace.Completion IsDedekindDomain
 
-/-! ## The adele ring  -/
+/-!
+# The adele ring
+-/
 
 variable (R K : Type*) [CommRing R] [IsDedekindDomain R] [Field K]
   [Algebra R K] [IsFractionRing R K]

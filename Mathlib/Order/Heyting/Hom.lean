@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Order.Hom.BoundedLattice
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Heyting algebra morphisms
 
@@ -105,7 +108,9 @@ section Hom
 
 variable [FunLike F α β]
 
-/-! This section passes in some instances implicitly. See note [implicit instance arguments] -/
+/-!
+This section passes in some instances implicitly. See note \[implicit instance arguments\]
+-/
 
 -- See note [lower instance priority]
 instance (priority := 100) HeytingHomClass.toBoundedLatticeHomClass [HeytingAlgebra α]

@@ -10,6 +10,9 @@ public import Mathlib.CategoryTheory.IsConnected
 public import Mathlib.CategoryTheory.Limits.Final
 public import Mathlib.CategoryTheory.HomCongr
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Colimits of connected index categories
 

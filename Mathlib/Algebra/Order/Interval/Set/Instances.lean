@@ -13,6 +13,9 @@ public import Mathlib.Algebra.Ring.Regular
 public import Mathlib.Order.Interval.Set.Basic
 public import Mathlib.Tactic.FastInstance
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Algebraic instances for unit intervals
 
@@ -24,6 +27,7 @@ Note: Instances for the interval `Ici 0` are dealt with in
 ## Main definitions
 
 The strongest typeclass provided on each interval is:
+
 * `Set.Icc.commMonoidWithZero`
 * `Set.Icc.instIsCancelMulZero`
 * `Set.Ico.commSemigroup`
@@ -53,7 +57,9 @@ section OrderedSemiring
 
 variable [Semiring R] [PartialOrder R] [IsOrderedRing R]
 
-/-! ### Instances for `↥(Set.Icc 0 1)` -/
+/-!
+# Instances for `↥(Set.Icc 0 1)`
+-/
 
 
 namespace Set.Icc
@@ -168,7 +174,9 @@ theorem one_sub_le_one (x : Icc (0 : β) 1) : 1 - (x : β) ≤ 1 := by simpa usi
 
 end Set.Icc
 
-/-! ### Instances for `↥(Set.Ico 0 1)` -/
+/-!
+# Instances for `↥(Set.Ico 0 1)`
+-/
 
 
 namespace Set.Ico
@@ -230,7 +238,9 @@ end OrderedSemiring
 
 variable [Semiring R] [PartialOrder R] [IsStrictOrderedRing R]
 
-/-! ### Instances for `↥(Set.Ioc 0 1)` -/
+/-!
+# Instances for `↥(Set.Ioc 0 1)`
+-/
 
 
 namespace Set.Ioc
@@ -315,7 +325,9 @@ def coeMonoidHom : (Ioc (0 : R) 1) →* R where
 
 end Set.Ioc
 
-/-! ### Instances for `↥(Set.Ioo 0 1)` -/
+/-!
+# Instances for `↥(Set.Ioo 0 1)`
+-/
 
 
 namespace Set.Ioo

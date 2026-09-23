@@ -10,6 +10,9 @@ public import Mathlib.RingTheory.Spectrum.Prime.TensorProduct
 public import Mathlib.RingTheory.TensorProduct.Quotient
 public import Mathlib.Topology.Homeomorph.Lemmas
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The fiber of a ring homomorphism at a prime ideal
 

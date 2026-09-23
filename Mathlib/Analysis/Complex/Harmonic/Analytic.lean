@@ -10,6 +10,9 @@ public import Mathlib.Analysis.Complex.Conformal
 public import Mathlib.Analysis.Complex.HasPrimitives
 public import Mathlib.Analysis.InnerProductSpace.Harmonic.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Analyticity of Harmonic Functions
 

@@ -8,6 +8,9 @@ module
 public import Mathlib.GroupTheory.GroupAction.SubMulAction.Closure
 public import Mathlib.Algebra.Group.Pointwise.Set.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Semigroup ideals
 
@@ -18,7 +21,8 @@ submonoid of the ring.
 
 ## References
 
-* [Samuel Eilenberg and M. P. Schützenberger, *Rational Sets in Commutative Monoids*][eilenberg1969]
+* ‍\[Samuel Eilenberg and M. P. Schützenberger, _Rational Sets in Commutative
+  Monoids_\]\[eilenberg1969\]
 -/
 
 @[expose] public section

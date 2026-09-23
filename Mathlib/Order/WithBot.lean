@@ -14,6 +14,9 @@ public import Mathlib.Data.Option.Basic
 public import Mathlib.Order.Lattice
 public import Mathlib.Order.BoundedOrder.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `WithBot`, `WithTop`
 
@@ -22,7 +25,6 @@ Adding a `bot` or a `top` to an order.
 ## Main declarations
 
 * `With<Top/Bot> α`: Equips `Option α` with the order on `α` plus `none` as the top/bottom element.
-
 -/
 
 @[expose] public section
@@ -893,7 +895,9 @@ instance noMaxOrder [LT α] [NoMaxOrder α] [Nonempty α] : NoMaxOrder (WithBot 
 
 variable {a b : α}
 
-/-! ### `(WithBot α)ᵒᵈ ≃ WithTop αᵒᵈ`, `(WithTop α)ᵒᵈ ≃ WithBot αᵒᵈ` -/
+/-!
+# `(WithBot α)ᵒᵈ ≃ WithTop αᵒᵈ`, `(WithTop α)ᵒᵈ ≃ WithBot αᵒᵈ`
+-/
 
 open Function
 

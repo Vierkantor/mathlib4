@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Group.Action.Defs
 public import Mathlib.Algebra.Group.Opposite
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Scalar actions on and by `Mᵐᵒᵖ`
 
@@ -34,7 +37,7 @@ assert_not_exists MonoidWithZero Units FaithfulSMul MonoidHom
 variable {M N α β : Type*}
 
 /-!
-### Actions _on_ the opposite type
+# Actions _on_ the opposite type
 
 Actions on the opposite type just act on the underlying type.
 -/
@@ -72,7 +75,7 @@ lemma unop_smul_eq_unop_smul_unop [SMul M α] [SMul Mᵐᵒᵖ α] [IsCentralSca
 end MulOpposite
 
 /-!
-### Right actions
+# Right actions
 
 In this section we establish `SMul αᵐᵒᵖ β` as the canonical spelling of right scalar multiplication
 of `β` by `α`, and provide convenient notations.
@@ -140,7 +143,9 @@ lemma op_smul_mul (b : β) (a₁ a₂ : α) : b <• (a₁ * a₂) = b <• a₁
 
 end
 
-/-! ### Actions _by_ the opposite type (right actions) -/
+/-!
+# Actions _by_ the opposite type (right actions)
+-/
 
 open MulOpposite
 

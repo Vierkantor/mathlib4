@@ -8,6 +8,9 @@ module
 public import Mathlib.CategoryTheory.Localization.Trifunctor
 public import Mathlib.CategoryTheory.Monoidal.Functor
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Localization of monoidal categories
 
@@ -24,7 +27,6 @@ of a unit object.
 
 The symmetric case is considered in the file
 `Mathlib/CategoryTheory/Localization/Monoidal/Braided.lean`.
-
 -/
 
 @[expose] public section

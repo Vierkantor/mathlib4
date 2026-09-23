@@ -7,6 +7,9 @@ module
 
 public import Mathlib.RepresentationTheory.FDRep
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Tannaka duality for finite groups
 
@@ -20,7 +23,8 @@ The main result is the isomorphism `equiv : G ≃* Aut (forget k G)`.
 
 ## Reference
 
-<https://math.leidenuniv.nl/scripties/1bachCommelin.pdf>
+[
+https://math.leidenuniv.nl/scripties/1bachCommelin.pdf](https://math.leidenuniv.nl/scripties/1bachCommelin.pdf)
 -/
 
 @[expose] public section

@@ -14,13 +14,14 @@ public import Mathlib.Tactic.CrossRefAttribute
 public import Mathlib.Util.Superscript
 public import Mathlib.LinearAlgebra.Matrix.InvariantBasisNumber
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `L²` inner product space structure on finite products of inner product spaces
 
 The `L²` norm on a finite product of inner product spaces is compatible with an inner product
-$$
-\langle x, y\rangle = \sum \langle x_i, y_i \rangle.
-$$
+$$`  \langle x, y\rangle = \sum \langle x_i, y_i \rangle.  `
 This is recorded in this file as an inner product space instance on `PiLp 2`.
 
 This file develops the notion of a finite-dimensional Hilbert space over `𝕜 = ℂ, ℝ`, referred to as
@@ -34,31 +35,24 @@ the last section, various properties of matrices are explored.
 
 ## Main definitions
 
-- `EuclideanSpace 𝕜 n`: defined to be `PiLp 2 (n → 𝕜)` for any `Fintype n`, i.e., the space
+* `EuclideanSpace 𝕜 n`: defined to be `PiLp 2 (n → 𝕜)` for any `Fintype n`, i.e., the space
   from functions to `n` to `𝕜` with the `L²` norm. We register several instances on it (notably
   that it is a finite-dimensional inner product space), and provide a `!ₚ[]` notation (for numeric
   subscripts like `₂`) for the case when the indexing type is `Fin n`.
-
-- `OrthonormalBasis 𝕜 ι`: defined to be an isometry to Euclidean space from a given
+* `OrthonormalBasis 𝕜 ι`: defined to be an isometry to Euclidean space from a given
   finite-dimensional inner product space, `E ≃ₗᵢ[𝕜] EuclideanSpace 𝕜 ι`.
-
-- `Basis.toOrthonormalBasis`: constructs an `OrthonormalBasis` for a finite-dimensional
+* `Basis.toOrthonormalBasis`: constructs an `OrthonormalBasis` for a finite-dimensional
   Euclidean space from a `Basis` which is `Orthonormal`.
-
-- `Orthonormal.exists_orthonormalBasis_extension`: provides an existential result of an
+* `Orthonormal.exists_orthonormalBasis_extension`: provides an existential result of an
   `OrthonormalBasis` extending a given orthonormal set
-
-- `exists_orthonormalBasis`: provides an orthonormal basis on a finite-dimensional vector space
-
-- `stdOrthonormalBasis`: provides an arbitrarily-chosen `OrthonormalBasis` of a given
+* `exists_orthonormalBasis`: provides an orthonormal basis on a finite-dimensional vector space
+* `stdOrthonormalBasis`: provides an arbitrarily-chosen `OrthonormalBasis` of a given
   finite-dimensional inner product space
-
-- `orthonormalBasisSingleton`: an orthonormal basis formed by a single unit vector in a
+* `orthonormalBasisSingleton`: an orthonormal basis formed by a single unit vector in a
   one-dimensional inner product space.
 
 For consequences in infinite dimension (Hilbert bases, etc.), see the file
 `Analysis.InnerProductSpace.L2Space`.
-
 -/
 
 @[expose] public section
@@ -924,7 +918,9 @@ end Complex
 
 open Module
 
-/-! ### Matrix representation of an orthonormal basis with respect to another -/
+/-!
+# Matrix representation of an orthonormal basis with respect to another
+-/
 
 
 section ToMatrix
@@ -1001,7 +997,9 @@ end Real
 
 end ToMatrix
 
-/-! ### Existence of orthonormal basis, etc. -/
+/-!
+# Existence of orthonormal basis, etc.
+-/
 
 
 section FiniteDimensional

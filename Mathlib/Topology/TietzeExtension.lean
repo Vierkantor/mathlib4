@@ -9,6 +9,9 @@ public import Mathlib.Order.Interval.Set.IsoIoo
 public import Mathlib.Topology.ContinuousMap.Bounded.Normed
 public import Mathlib.Topology.UrysohnsBounded
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Tietze extension theorem
 
@@ -19,7 +22,9 @@ function belong to some (finite or infinite, open or closed) interval, then the 
 chosen so that it takes values in the same interval. In particular, if the original function is a
 bounded function, then there exists a bounded extension of the same norm.
 
-The proof mostly follows <https://ncatlab.org/nlab/show/Tietze+extension+theorem>. We patch a small
+The proof mostly follows [
+https://ncatlab.org/nlab/show/Tietze+extension+theorem](https://ncatlab.org/nlab/show/Tietze+extension+theorem).
+We patch a small
 gap in the proof for unbounded functions, see
 `exists_extension_forall_exists_le_ge_of_isClosedEmbedding`.
 
@@ -27,7 +32,7 @@ In addition we provide a class `TietzeExtension` encoding the idea that a topolo
 satisfies the Tietze extension theorem. This allows us to get a version of the Tietze extension
 theorem that simultaneously applies to `ℝ`, `ℝ × ℝ`, `ℂ`, `ι → ℝ`, `ℝ≥0` et cetera. At some point
 in the future, it may be desirable to provide instead a more general approach via
-*absolute retracts*, but the current implementation covers the most common use cases easily.
+_absolute retracts_, but the current implementation covers the most common use cases easily.
 
 ## Implementation notes
 
@@ -43,7 +48,9 @@ public section
 
 open Topology
 
-/-!  ### The `TietzeExtension` class -/
+/-!
+# The `TietzeExtension` class
+-/
 
 section TietzeExtensionClass
 
@@ -91,12 +98,14 @@ theorem ContinuousMap.exists_extension' (he : IsClosedEmbedding e) (f : C(X₁, 
     ∃ (g : C(X, Y)), g ∘ e = f :=
   f.exists_extension he |>.imp fun g hg ↦ by ext x; congrm($(hg) x)
 
-/-- This theorem is not intended to be used directly because it is rare for a set alone to
+/--
+This theorem is not intended to be used directly because it is rare for a set alone to
 satisfy `[TietzeExtension t]`. For example, `Metric.ball` in `ℝ` only satisfies it when
 the radius is strictly positive, so finding this as an instance will fail.
 
-Instead, it is intended to be used as a constructor for theorems about sets which *do* satisfy
-`[TietzeExtension t]` under some hypotheses. -/
+Instead, it is intended to be used as a constructor for theorems about sets which _do_ satisfy
+`[TietzeExtension t]` under some hypotheses.
+-/
 theorem ContinuousMap.exists_forall_mem_restrict_eq (hs : IsClosed s)
     {Y : Type v} [TopologicalSpace Y] (f : C(s, Y))
     {t : Set Y} (hf : ∀ x, f x ∈ t) [ht : TietzeExtension.{u, v} t] :
@@ -104,12 +113,14 @@ theorem ContinuousMap.exists_forall_mem_restrict_eq (hs : IsClosed s)
   obtain ⟨g, hg⟩ := mk _ (map_continuous f |>.codRestrict hf) |>.exists_restrict_eq hs
   exact ⟨comp ⟨Subtype.val, by fun_prop⟩ g, by simp, by ext x; congrm(($(hg) x : Y))⟩
 
-/-- This theorem is not intended to be used directly because it is rare for a set alone to
+/--
+This theorem is not intended to be used directly because it is rare for a set alone to
 satisfy `[TietzeExtension t]`. For example, `Metric.ball` in `ℝ` only satisfies it when
 the radius is strictly positive, so finding this as an instance will fail.
 
-Instead, it is intended to be used as a constructor for theorems about sets which *do* satisfy
-`[TietzeExtension t]` under some hypotheses. -/
+Instead, it is intended to be used as a constructor for theorems about sets which _do_ satisfy
+`[TietzeExtension t]` under some hypotheses.
+-/
 theorem ContinuousMap.exists_extension_forall_mem (he : IsClosedEmbedding e)
     {Y : Type v} [TopologicalSpace Y] (f : C(X₁, Y))
     {t : Set Y} (hf : ∀ x, f x ∈ t) [ht : TietzeExtension.{u, v} t] :

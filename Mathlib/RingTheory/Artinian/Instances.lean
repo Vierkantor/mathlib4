@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Polynomial.FieldDivision
 public import Mathlib.LinearAlgebra.InvariantBasisNumber
 public import Mathlib.RingTheory.Artinian.Module
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Instances related to Artinian rings
 

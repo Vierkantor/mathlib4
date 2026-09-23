@@ -10,6 +10,9 @@ public import Mathlib.Probability.Distributions.Binomial
 public import Mathlib.Probability.ProbabilityMassFunction.Constructions
 public import Mathlib.Tactic.FinCases
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The binomial distribution
 

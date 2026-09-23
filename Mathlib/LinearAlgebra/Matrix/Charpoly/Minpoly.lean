@@ -9,6 +9,9 @@ public import Mathlib.LinearAlgebra.Matrix.Charpoly.Coeff
 public import Mathlib.LinearAlgebra.Matrix.ToLin
 public import Mathlib.RingTheory.PowerBasis
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The minimal polynomial divides the characteristic polynomial of a matrix.
 

@@ -10,6 +10,9 @@ public import Mathlib.Combinatorics.SimpleGraph.Finite
 public import Mathlib.Combinatorics.SimpleGraph.Maps
 public import Mathlib.Data.Int.Cast.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Edge deletion
 
@@ -20,11 +23,9 @@ case.
 
 * `SimpleGraph.deleteEdges G s` is the simple graph `G` with the edges `s : Set (Sym2 V)` removed
   from the edge set.
-
 * `SimpleGraph.deleteIncidenceSet G v` is the simple graph `G` with the incidence set of `v`
   removed from the edge set.
-
-* `SimpleGraph.DeleteFar G p r` is the predicate that a graph is `r`-*delete-far* from a property
+* `SimpleGraph.DeleteFar G p r` is the predicate that a graph is `r`-_delete-far_ from a property
   `p`, that is, at least `r` edges must be deleted to satisfy `p`.
 -/
 
@@ -217,8 +218,10 @@ section DeleteFar
 variable {𝕜 : Type*} [Ring 𝕜] [PartialOrder 𝕜]
   [Fintype G.edgeSet] {p : SimpleGraph V → Prop} {r r₁ r₂ : 𝕜}
 
-/-- A graph is `r`-*delete-far* from a property `p` if we must delete at least `r` edges from it to
-get a graph with the property `p`. -/
+/--
+A graph is `r`-_delete-far_ from a property `p` if we must delete at least `r` edges from it to
+get a graph with the property `p`.
+-/
 def DeleteFar (p : SimpleGraph V → Prop) (r : 𝕜) : Prop :=
   ∀ ⦃s⦄, s ⊆ G.edgeFinset → p (G.deleteEdges s) → r ≤ #s
 

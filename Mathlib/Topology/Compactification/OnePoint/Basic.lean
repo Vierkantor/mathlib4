@@ -10,6 +10,9 @@ public import Mathlib.Topology.Homeomorph.Lemmas
 public import Mathlib.Topology.Sets.Opens
 import Mathlib.Topology.WithTopology
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The one-point compactification
 
@@ -42,7 +45,7 @@ one point compactification, Alexandroff compactification, compactness
 open Set Filter Topology
 
 /-!
-### Definition and basic properties
+# Definition and basic properties
 
 In this section we define `OnePoint X` to be the disjoint union of `X` and `∞`, implemented as
 `Option X`. Then we restate some lemmas about `Option X` for `OnePoint X`.
@@ -182,7 +185,7 @@ theorem map_comp {Z : Type*} (f : Y → Z) (g : X → Y) :
   (Option.map_comp_map _ _).symm
 
 /-!
-### Topological space structure on `OnePoint X`
+# Topological space structure on `OnePoint X`
 
 We define a topological space structure on `OnePoint X` so that `s` is open if and only if
 
@@ -485,13 +488,13 @@ theorem continuous_map [TopologicalSpace Y] {f : X → Y} (hc : Continuous f)
   continuous_map_iff.mpr ⟨hc, h⟩
 
 /-!
-### Compactness and separation properties
+# Compactness and separation properties
 
 In this section we prove that `OnePoint X` is a compact space; it is a T₀ (resp., T₁) space if
 the original space satisfies the same separation axiom. If the original space is a locally compact
 Hausdorff space, then `OnePoint X` is a normal (hence, T₃ and Hausdorff) space.
 
-Finally, if the original space `X` is *not* compact and is a preconnected space, then
+Finally, if the original space `X` is _not_ compact and is a preconnected space, then
 `OnePoint X` is a connected space.
 -/
 

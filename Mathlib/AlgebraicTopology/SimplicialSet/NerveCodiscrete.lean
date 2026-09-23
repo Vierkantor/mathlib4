@@ -8,6 +8,9 @@ module
 public import Mathlib.CategoryTheory.CodiscreteCategory
 public import Mathlib.AlgebraicTopology.SimplicialSet.Nerve
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The Nerve of a Codiscrete Category
 

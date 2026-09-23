@@ -10,6 +10,9 @@ public import Mathlib.CategoryTheory.Sites.PreservesSheafification
 public import Mathlib.CategoryTheory.Sites.Subsheaf
 public import Mathlib.CategoryTheory.Sites.Whiskering
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Locally injective morphisms of (pre)sheaves
 
@@ -21,7 +24,6 @@ if `x` and `y` are two elements of some `F₁.obj U` such
 the images of `x` and `y` in `F₂.obj U` coincide, then
 the equality `x = y` must hold locally, i.e. after restriction
 by the maps of a covering sieve.
-
 -/
 
 @[expose] public section

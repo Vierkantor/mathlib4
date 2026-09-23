@@ -12,8 +12,10 @@ public import Mathlib.LinearAlgebra.Finsupp.LinearCombination
 public import Mathlib.RingTheory.Ideal.Maximal
 public import Mathlib.Tactic.FinCases
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Ideals over a ring
 
 This file contains an assortment of definitions and results for `Ideal R`,

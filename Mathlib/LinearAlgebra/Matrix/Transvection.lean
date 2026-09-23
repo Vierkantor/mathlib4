@@ -11,6 +11,9 @@ public import Mathlib.LinearAlgebra.Matrix.Reindex
 public import Mathlib.Tactic.Field
 public import Mathlib.GroupTheory.GroupAction.Ring
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Transvections
 
@@ -20,7 +23,7 @@ is the basic matrix with a `c` at position `(i, j)`. Multiplying by such a trans
 (resp `c` times the `i`-th column to the `j`-th column). Therefore, they are useful to present
 algorithms operating on rows and columns.
 
-Transvections are a special case of *elementary matrices* (according to most references, these also
+Transvections are a special case of _elementary matrices_ (according to most references, these also
 contain the matrices exchanging rows, and the matrices multiplying a row by a constant).
 
 We show that, over a field, any matrix can be written as `L * D * L'`, where `L` and `L'` are
@@ -33,11 +36,9 @@ form by operations on its rows and columns, a variant of Gauss' pivot algorithm.
 * `TransvectionStruct n R` is a structure containing the data of `i, j, c` and a proof that
   `i ≠ j`. These are often easier to manipulate than straight matrices, especially in inductive
   arguments.
-
 * `exists_list_transvec_mul_diagonal_mul_list_transvec` states that any matrix `M` over a field can
   be written in the form `t_1 * ... * t_k * D * t'_1 * ... * t'_l`, where `D` is diagonal and
   the `t_i`, `t'_j` are transvections.
-
 * `diagonal_transvection_induction` shows that a property which is true for diagonal matrices and
   transvections, and invariant under product, is true for all matrices.
 * `diagonal_transvection_induction_of_det_ne_zero` is the same statement over invertible matrices.
@@ -311,7 +312,7 @@ end TransvectionStruct
 end Transvection
 
 /-!
-### Reducing matrices by left and right multiplication by transvections
+# Reducing matrices by left and right multiplication by transvections
 
 In this section, we show that any matrix can be reduced to diagonal form by left and right
 multiplication by transvections (or, equivalently, by elementary operations on lines and columns).

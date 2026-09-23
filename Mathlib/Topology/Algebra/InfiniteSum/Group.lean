@@ -12,6 +12,9 @@ public import Mathlib.Topology.UniformSpace.Cauchy
 public import Mathlib.Topology.Algebra.IsUniformGroup.Defs
 public import Mathlib.Topology.Algebra.Group.Pointwise
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Infinite sums and products in topological groups
 
@@ -421,7 +424,7 @@ variable {K : Type*} [CommGroupWithZero K] [TopologicalSpace K]
   {f g : α → K} {L : SummationFilter α}
 
 /-!
-## Groups with a zero
+# Groups with a zero
 
 These lemmas apply to a `CommGroupWithZero`; the most familiar case is when `K` is a field. These
 are specific to the product setting and do not have a sensible additive analogue.

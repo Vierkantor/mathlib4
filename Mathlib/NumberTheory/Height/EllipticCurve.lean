@@ -10,16 +10,21 @@ public import Mathlib.GroupTheory.Descent
 public import Mathlib.NumberTheory.Height.MvPolynomial
 public import Mathlib.Order.Northcott
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The naïve height and the approximate parallelogram law
 
-This file defines the *naïve height* on an elliptic curve (over a field `F` with a theory of
+This file defines the _naïve height_ on an elliptic curve (over a field `F` with a theory of
 heights, i.e., satisfying `[Height.AdmissibleAbsValues F]`).
 
-We then prove the *approximate parallelogram law* for (affine) points on elliptic curves,
+We then prove the _approximate parallelogram law_ for (affine) points on elliptic curves,
+
 ```
   |h(P+Q) + h(P-Q) - 2*(h(P) + h(Q))| ≤ C
 ```
+
 where `h` is the naïve height, `P` and `Q` are affine points on a `WeierstrassCurve` and `C`
 is some real constant depending only on the Weierstrass model.
 -/
@@ -112,8 +117,10 @@ instance [Northcott (logHeight₁ (K := F))] : Northcott (Point.naiveHeight (F :
 variable [Northcott (logHeight₁ (K := F))]
 
 variable (W) in
-/-- The set of `F`-points on `W` with naïve height bounded by `B` is finite.
-This is an important ingredient for the *Mordell-Weil Theorem*. -/
+/--
+The set of `F`-points on `W` with naïve height bounded by `B` is finite.
+This is an important ingredient for the _Mordell-Weil Theorem_.
+-/
 lemma finite_naiveHeight_le (B : ℝ) : {P : W.Point | P.naiveHeight ≤ B}.Finite :=
   Northcott.finite_le B
 

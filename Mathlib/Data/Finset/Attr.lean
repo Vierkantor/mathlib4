@@ -9,6 +9,9 @@ public import Mathlib.Init
 public import Aesop.Frontend
 public import Aesop.Frontend.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Aesop rule set for finsets
 

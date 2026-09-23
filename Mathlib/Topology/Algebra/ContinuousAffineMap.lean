@@ -9,6 +9,9 @@ public import Mathlib.LinearAlgebra.AffineSpace.AffineMap
 public import Mathlib.Topology.Algebra.Module.ContinuousLinearMap.PiProd
 public import Mathlib.Topology.Algebra.Affine
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Continuous affine maps.
 

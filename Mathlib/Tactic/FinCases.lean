@@ -11,6 +11,9 @@ public import Mathlib.Data.Finset.Attr
 public import Mathlib.Data.Fintype.Defs
 public meta import Mathlib.Tactic.ToDual
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The `fin_cases` tactic.
 
@@ -97,17 +100,17 @@ With neither actually used in mathlib, they haven't been re-implemented here.
 In case someone finds a need for them, and wants to re-implement, the relevant sections of
 the doc-string are preserved here:
 
----
-
 `fin_cases h with l` takes a list of descriptions for the cases of `h`.
 These should be definitionally equal to and in the same order as the
 default enumeration of the cases.
 
 For example,
+
 ```
 example (x y : ℕ) (h : x ∈ [1, 2]) : x = y := by
   fin_cases h with 1, 1+1
 ```
+
 produces two cases: `1 = y` and `1 + 1 = y`.
 
 When using `fin_cases a` on data `a` defined with `let`,
@@ -116,11 +119,13 @@ and will instead produce hypotheses `this : a = ...`.
 These hypotheses can be given a name using `fin_cases a using ha`.
 
 For example,
+
 ```
 example (f : ℕ → Fin 3) : True := by
   let a := f 3
   fin_cases a using ha
 ```
+
 produces three goals with hypotheses
 `ha : a = 0`, `ha : a = 1`, and `ha : a = 2`.
 -/

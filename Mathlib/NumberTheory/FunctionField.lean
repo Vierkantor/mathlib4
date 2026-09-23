@@ -13,6 +13,9 @@ public import Mathlib.FieldTheory.RatFunc.IntermediateField
 public import Mathlib.RingTheory.Adjoin.Polynomial.Bivariate
 public import Mathlib.FieldTheory.RatFunc.Valuation -- for deprecation to `RatFunc.inftyValuation` and `RatFunc.CompletionAtInfty`
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Function fields
 
@@ -20,24 +23,27 @@ This file defines a function field and the ring of integers corresponding to it.
 
 ## Main definitions
 
-- `FunctionField F K` states that `K` is a function field over the field `F`,
+* `FunctionField F K` states that `K` is a function field over the field `F`,
   i.e. it is a finite extension of the field of rational functions in one variable over `F`.
-- `FunctionField.ringOfIntegers` defines the ring of integers corresponding to a function field
+* `FunctionField.ringOfIntegers` defines the ring of integers corresponding to a function field
   as the integral closure of `F[X]` in the function field.
 
 ## Implementation notes
+
 The definitions that involve a field of fractions choose a canonical field of fractions,
 but are independent of that choice. We also omit assumptions like
 `IsScalarTower F[X] (FractionRing F[X]) K` in definitions,
 adding them back in lemmas when they are needed.
 
 ## References
-* [D. Marcus, *Number Fields*][marcus1977number]
-* [J.W.S. Cassels, A. Fröhlich, *Algebraic Number Theory*][cassels1967algebraic]
-* [P. Samuel, *Algebraic Theory of Numbers*][samuel1967]
-* [M. Rosen, *Number Theory in Function Fields*][rosen2002]
+
+* ‍\[D. Marcus, _Number Fields_\]\[marcus1977number\]
+* ‍\[J.W.S. Cassels, A. Fröhlich, _Algebraic Number Theory_\]\[cassels1967algebraic\]
+* ‍\[P. Samuel, _Algebraic Theory of Numbers_\]\[samuel1967\]
+* ‍\[M. Rosen, _Number Theory in Function Fields_\]\[rosen2002\]
 
 ## Tags
+
 function field, ring of integers
 -/
 

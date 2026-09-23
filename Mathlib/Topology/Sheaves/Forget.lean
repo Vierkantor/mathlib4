@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Topology.Sheaves.Sheaf
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Checking the sheaf condition on the underlying presheaf of types.
 
@@ -22,6 +25,7 @@ Then to check the sheaf condition it suffices
 to check it on the underlying sheaf of types.
 
 ## References
+
 * https://stacks.math.columbia.edu/tag/0073
 -/
 

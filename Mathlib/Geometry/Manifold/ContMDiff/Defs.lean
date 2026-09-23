@@ -8,6 +8,9 @@ module
 public import Mathlib.Geometry.Manifold.IsManifold.ExtChartAt
 public import Mathlib.Geometry.Manifold.LocalInvariantProperties
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `C^n` functions between manifolds
 
@@ -52,7 +55,9 @@ open Set Function Filter ChartedSpace IsManifold
 
 open scoped Topology Manifold ContDiff
 
-/-! ### Definition of `Cⁿ` functions between manifolds -/
+/-!
+# Definition of `Cⁿ` functions between manifolds
+-/
 
 
 variable {𝕜 : Type*} [NontriviallyNormedField 𝕜]
@@ -211,7 +216,9 @@ number, `∞`, or `ω`, where `C^ω` corresponds to analytic functions. -/
 def ContMDiff (n : ℕ∞ω) (f : M → M') :=
   ∀ x, ContMDiffAt I I' n f x
 
-/-! ### Deducing smoothness from higher smoothness -/
+/-!
+# Deducing smoothness from higher smoothness
+-/
 
 theorem ContMDiffWithinAt.of_le (hf : ContMDiffWithinAt I I' n f s x) (le : m ≤ n) :
     ContMDiffWithinAt I I' m f s x := by
@@ -227,7 +234,9 @@ theorem ContMDiffOn.of_le (hf : ContMDiffOn I I' n f s) (le : m ≤ n) : ContMDi
 theorem ContMDiff.of_le (hf : ContMDiff I I' n f) (le : m ≤ n) : ContMDiff I I' m f := fun x =>
   (hf x).of_le le
 
-/-! ### Basic properties of `C^n` functions between manifolds -/
+/-!
+# Basic properties of `C^n` functions between manifolds
+-/
 
 theorem ContMDiff.contMDiffAt (h : ContMDiff I I' n f) : ContMDiffAt I I' n f x :=
   h x
@@ -602,7 +611,9 @@ theorem contMDiff_zero_iff :
 end IsManifold
 
 
-/-! ### `C^(n+1)` functions are `C^n` -/
+/-!
+# `C^(n+1)` functions are `C^n`
+-/
 
 theorem ContMDiffWithinAt.of_succ (h : ContMDiffWithinAt I I' (n + 1) f s x) :
     ContMDiffWithinAt I I' n f s x :=
@@ -618,7 +629,9 @@ theorem ContMDiff.of_succ (h : ContMDiff I I' (n + 1) f) : ContMDiff I I' n f :=
   (h x).of_succ
 
 
-/-! ### `C^n` functions are continuous -/
+/-!
+# `C^n` functions are continuous
+-/
 
 theorem ContMDiffWithinAt.continuousWithinAt (hf : ContMDiffWithinAt I I' n f s x) :
     ContinuousWithinAt f s x :=
@@ -633,7 +646,9 @@ theorem ContMDiffOn.continuousOn (hf : ContMDiffOn I I' n f s) : ContinuousOn f 
 theorem ContMDiff.continuous (hf : ContMDiff I I' n f) : Continuous f :=
   continuous_iff_continuousAt.2 fun x => (hf x).continuousAt
 
-/-! ### `C^∞` functions -/
+/-!
+# `C^∞` functions
+-/
 
 theorem contMDiffWithinAt_infty :
     ContMDiffWithinAt I I' ∞ f s x ↔ ∀ n : ℕ, ContMDiffWithinAt I I' n f s x :=
@@ -681,7 +696,9 @@ theorem contMDiffAt_iff_le_ne_infty :
   simp only [← contMDiffWithinAt_univ]
   rw [contMDiffWithinAt_iff_le_ne_infty]
 
-/-! ### Restriction to a smaller set -/
+/-!
+# Restriction to a smaller set
+-/
 
 theorem ContMDiffWithinAt.mono_of_mem_nhdsWithin
     (hf : ContMDiffWithinAt I I' n f s x) (hts : s ∈ 𝓝[t] x) :
@@ -855,7 +872,9 @@ theorem contMDiffWithinAt_iff_contMDiffWithinAt_nhdsWithin
   apply (h x' h'x').mono_of_mem_nhdsWithin
   exact nhdsWithin_mono _ (subset_insert x s) hx'
 
-/-! ### Congruence lemmas -/
+/-!
+# Congruence lemmas
+-/
 
 theorem ContMDiffWithinAt.congr (h : ContMDiffWithinAt I I' n f s x) (h₁ : ∀ y ∈ s, f₁ y = f y)
     (hx : f₁ x = f x) : ContMDiffWithinAt I I' n f₁ s x :=
@@ -923,7 +942,9 @@ theorem contMDiff_congr (h₁ : ∀ y, f₁ y = f y) :
   simp_rw [← contMDiffOn_univ]
   exact contMDiffOn_congr fun y _ ↦ h₁ y
 
-/-! ### Locality -/
+/-!
+# Locality
+-/
 
 
 /-- Being `C^n` is a local property. -/

@@ -8,11 +8,13 @@ module
 public import Mathlib.Geometry.Euclidean.Angle.Unoriented.Affine
 public import Mathlib.Geometry.Euclidean.Projection
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Angles and orthogonal projection.
 
 This file proves lemmas relating to angles involving orthogonal projections.
-
 -/
 
 public section

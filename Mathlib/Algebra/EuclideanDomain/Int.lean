@@ -10,6 +10,9 @@ public import Mathlib.Algebra.EuclideanDomain.Defs
 public import Mathlib.Algebra.Order.Group.Unbundled.Int
 public import Mathlib.Algebra.Ring.Int.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Instances for Euclidean domains
 

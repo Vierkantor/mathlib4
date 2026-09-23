@@ -9,6 +9,9 @@ public import Mathlib.Data.Fintype.List
 public import Mathlib.Data.Fintype.OfMap
 public import Mathlib.Data.Fin.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cycles of a list
 
@@ -21,7 +24,6 @@ We also define a representation of concrete cycles, available when viewing them 
 via `#eval`, when over representable types. For example, the cycle `(2 1 4 3)` will be shown
 as `c[2, 1, 4, 3]`. Two equal cycles may be printed differently if their internal representation
 is different.
-
 -/
 
 @[expose] public section

@@ -8,12 +8,14 @@ module
 public import Mathlib.Topology.UniformSpace.Basic
 public import Mathlib.Topology.Compactness.Compact
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Compact sets in uniform spaces
 
 * `compactSpace_uniformity`: On a compact uniform space, the topology determines the
   uniform structure, entourages are exactly the neighborhoods of the diagonal.
-
 -/
 
 public section

@@ -10,6 +10,9 @@ public import Mathlib.Tactic.CrossRefAttribute
 public import Mathlib.Topology.MetricSpace.Perfect
 public import Mathlib.Topology.Separation.CountableSeparatingOn
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The Borel sigma-algebra on Polish spaces
 
@@ -68,7 +71,9 @@ open Set Function PolishSpace PiNat TopologicalSpace Bornology Metric Filter Mea
 
 open scoped Topology
 
-/-! ### Standard Borel Spaces -/
+/-!
+# Standard Borel Spaces
+-/
 
 variable (α : Type*)
 
@@ -172,7 +177,9 @@ namespace MeasureTheory
 
 variable [TopologicalSpace α]
 
-/-! ### Analytic sets -/
+/-!
+# Analytic sets
+-/
 
 /-- An analytic set is a set which is the continuous image of some Polish space. There are several
 equivalent characterizations of this definition. For the definition, we pick one that avoids
@@ -372,7 +379,9 @@ protected lemma AnalyticSet.preimage {X Y : Type*} [TopologicalSpace X] [Topolog
   ext x
   simp [eq_comm]
 
-/-! ### Separating sets with measurable sets -/
+/-!
+# Separating sets with measurable sets
+-/
 
 /-- Two sets `u` and `v` in a measurable space are measurably separable if there
 exists a measurable set containing `u` and disjoint from `v`.
@@ -530,7 +539,7 @@ theorem AnalyticSet.measurableSet_of_compl [T2Space α] [MeasurableSpace α] [Op
 end MeasureTheory
 
 /-!
-### Measurability of preimages under measurable maps
+# Measurability of preimages under measurable maps
 -/
 
 namespace Measurable
@@ -651,7 +660,9 @@ instance QuotientGroup.borelSpace {G : Type*} [TopologicalSpace G] [PolishSpace 
     [IsClosed (N : Set G)] : BorelSpace (G ⧸ N) :=
   ⟨continuous_mk.map_eq_borel mk_surjective⟩
 
-/-! ### Injective images of Borel sets -/
+/-!
+# Injective images of Borel sets
+-/
 
 variable {γ : Type*}
 
@@ -1115,7 +1126,9 @@ theorem MeasurableSet.standardBorel {s : Set α} (hs : MeasurableSet s) :
 
 end StandardBorelSpace
 
-/-! ### The Borel Isomorphism Theorem -/
+/-!
+# The Borel Isomorphism Theorem
+-/
 
 namespace PolishSpace
 

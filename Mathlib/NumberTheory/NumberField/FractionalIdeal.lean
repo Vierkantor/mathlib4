@@ -10,8 +10,10 @@ public import Mathlib.NumberTheory.NumberField.Basic
 public import Mathlib.RingTheory.FractionalIdeal.Norm
 public import Mathlib.RingTheory.FractionalIdeal.Operations
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Fractional ideals of number fields
 
 Prove some results on the fractional ideals of number fields.

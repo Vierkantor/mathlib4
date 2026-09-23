@@ -10,12 +10,15 @@ public import Mathlib.Data.Finset.Sym
 public import Mathlib.Data.Nat.Choose.Cast
 public import Mathlib.Data.Nat.Choose.Multinomial
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Bounds on higher derivatives
 
 `norm_iteratedFDeriv_comp_le` gives the bound `n! * C * D ^ n` for the `n`-th derivative
-  of `g ∘ f` assuming that the derivatives of `g` are bounded by `C` and the `i`-th
-  derivative of `f` is bounded by `D ^ i`.
+of `g ∘ f` assuming that the derivatives of `g` are bounded by `C` and the `i`-th
+derivative of `f` is bounded by `D ^ i`.
 -/
 
 public section
@@ -33,7 +36,9 @@ variable {𝕜 : Type*} [NontriviallyNormedField 𝕜] {D : Type uD} [NormedAddC
   [NormedAddCommGroup F] [NormedSpace 𝕜 F] {G : Type uG} [NormedAddCommGroup G] [NormedSpace 𝕜 G]
   {s t u : Set E}
 
-/-!## Quantitative bounds -/
+/-!
+# Quantitative bounds
+-/
 
 /-- Bounding the norm of the iterated derivative of `B (f x) (g x)` within a set in terms of the
 iterated derivatives of `f` and `g` when `B` is bilinear. This lemma is an auxiliary version

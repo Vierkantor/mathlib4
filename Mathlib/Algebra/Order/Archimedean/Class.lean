@@ -16,6 +16,9 @@ public import Mathlib.Order.UpperLower.Principal
 public import Mathlib.Algebra.Order.Archimedean.Defs
 public import Mathlib.Data.Rat.Floor
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Archimedean classes of a linearly ordered group
 
@@ -43,19 +46,19 @@ elements.
 
 The following theorems state that an ordered commutative group is (mul-)archimedean if and only if
 all non-identity elements belong to the same (`Mul`-)`ArchimedeanClass`:
+
 * `ArchimedeanClass.archimedean_of_mk_eq_mk` / `MulArchimedeanClass.mulArchimedean_of_mk_eq_mk`
 * `ArchimedeanClass.mk_eq_mk_of_archimedean` / `MulArchimedeanClass.mk_eq_mk_of_mulArchimedean`
 
 ## Implementation notes
 
 Archimedean classes are equipped with a linear order, where elements with smaller absolute value
-are placed in a *higher* classes by convention. Ordering backwards this way simplifies
+are placed in a _higher_ classes by convention. Ordering backwards this way simplifies
 formalization of theorems such as the Hahn embedding theorem.
 
 To naturally derive this order, we first define it on the underlying group via the type
 synonym (`Mul`-)`ArchimedeanOrder`, and define (`Mul`-)`ArchimedeanClass` as `Antisymmetrization` of
 the order.
-
 -/
 
 @[expose] public section

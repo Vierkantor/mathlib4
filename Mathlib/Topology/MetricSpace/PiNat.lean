@@ -11,6 +11,9 @@ public import Mathlib.Topology.MetricSpace.HausdorffDistance
 public import Mathlib.Topology.Order.ProjIcc
 public import Mathlib.Topology.UnitInterval
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Topological study of spaces `Π (n : ℕ), E n`
 
@@ -48,13 +51,12 @@ One can also put distances on `Π (i : ι), E i` when the spaces `E i` are metri
 in general), and `ι` is countable.
 
 * `PiCountable.dist` is the distance on `Π i, E i` given by
-    `dist x y = ∑' i, min (1/2)^(encode i) (dist (x i) (y i))`.
+  `dist x y = ∑' i, min (1/2)^(encode i) (dist (x i) (y i))`.
 * `PiCountable.metricSpace` is the corresponding metric space structure, adjusted so that
   the uniformity is definitionally the product uniformity. Not registered as an instance.
 * `PiNatEmbed` gives an equivalence between a space and itself in a sequence of spaces
 * `Metric.PiNatEmbed.metricSpace` proves that a topological `X` separated by countably many
   continuous functions to metric spaces, can be embedded inside their product.
-
 -/
 
 @[expose] public section
@@ -69,7 +71,9 @@ variable {E : ℕ → Type*}
 
 namespace PiNat
 
-/-! ### The firstDiff function -/
+/-!
+# The firstDiff function
+-/
 
 open scoped Classical in
 /-- In a product space `Π n, E n`, then `firstDiff x y` is the first index at which `x` and `y`
@@ -100,7 +104,9 @@ theorem min_firstDiff_le (x y z : ∀ n, E n) (h : x ≠ z) :
     x (firstDiff x z) = y (firstDiff x z) := apply_eq_of_lt_firstDiff H.1
     _ = z (firstDiff x z) := apply_eq_of_lt_firstDiff H.2
 
-/-! ### Cylinders -/
+/-!
+# Cylinders
+-/
 
 /-- In a product space `Π n, E n`, the cylinder set of length `n` around `x`, denoted
 `cylinder x n`, is the set of sequences `y` that coincide with `x` on the first `n` symbols, i.e.,
@@ -240,7 +246,7 @@ theorem cylinder_eq_res (x : ℕ → α) (n : ℕ) :
 end Res
 
 /-!
-### A distance function on `Π n, E n`
+# A distance function on `Π n, E n`
 
 We define a distance function on `Π n, E n`, given by `dist x y = (1/2)^n` where `n` is the first
 index at which `x` and `y` differ. When each `E n` has the discrete topology, this distance will
@@ -458,7 +464,7 @@ protected theorem boundedSpace : BoundedSpace (∀ n, E n) := by
   apply PiNat.dist_le_one
 
 /-!
-### Retractions inside product spaces
+# Retractions inside product spaces
 
 We show that, in a space `Π (n : ℕ), E n` where each `E n` is discrete, there is a retraction on
 any closed nonempty subset `s`, i.e., a continuous map `f` from the whole space to `s` restricting
@@ -784,7 +790,7 @@ open Encodable ENNReal
 namespace PiCountable
 
 /-!
-### Products of (possibly non-discrete) metric spaces
+# Products of (possibly non-discrete) metric spaces
 -/
 
 variable {ι : Type*} [Encodable ι] {F : ι → Type*}
@@ -964,7 +970,9 @@ protected def metricSpace : MetricSpace (∀ i, F i) :=
 end MetricSpace
 end PiCountable
 
-/-! ### Embedding a countably separated space inside a space of sequences -/
+/-!
+# Embedding a countably separated space inside a space of sequences
+-/
 
 namespace Metric
 

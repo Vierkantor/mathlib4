@@ -10,6 +10,9 @@ public import Mathlib.Combinatorics.Additive.Corner.Defs
 public import Mathlib.Combinatorics.SimpleGraph.Triangle.Removal
 public import Mathlib.Combinatorics.SimpleGraph.Triangle.Tripartite
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The corners theorem and Roth's theorem
 
@@ -17,8 +20,8 @@ This file proves the corners theorem and Roth's theorem on arithmetic progressio
 
 ## References
 
-* [Yaël Dillies, Bhavik Mehta, *Formalising Szemerédi’s Regularity Lemma in Lean*][srl_itp]
-* [Wikipedia, *Corners theorem*](https://en.wikipedia.org/wiki/Corners_theorem)
+* ‍\[Yaël Dillies, Bhavik Mehta, _Formalising Szemerédi’s Regularity Lemma in Lean_\]\[srl\_itp\]
+* [Wikipedia, _Corners theorem_](https://en.wikipedia.org/wiki/Corners_theorem)
 -/
 
 @[expose] public section

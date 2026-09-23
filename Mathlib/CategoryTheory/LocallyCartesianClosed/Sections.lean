@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.LocallyCartesianClosed.ChosenPullbacksAlong
 public import Mathlib.CategoryTheory.LocallyCartesianClosed.Over
 public import Mathlib.CategoryTheory.Monoidal.Closed.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The section functor as a right adjoint to the toOver functor
 
@@ -19,7 +22,6 @@ of `X` over `I`.
 
 In particular, if `C` is cartesian closed, then for all objects `I` in `C`, `toOver I : C ⥤ Over I`
 has a right adjoint.
-
 -/
 
 @[expose] public section

@@ -7,17 +7,17 @@ module
 
 public import Mathlib.Analysis.Analytic.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Changing origin in a power series
 
 If a function is analytic in a disk `D(x, R)`, then it is analytic in any disk contained in that
 one. Indeed, one can write
-$$
-f (x + y + z) = \sum_{n} p_n (y + z)^n = \sum_{n, k} \binom{n}{k} p_n y^{n-k} z^k
-= \sum_{k} \Bigl(\sum_{n} \binom{n}{k} p_n y^{n-k}\Bigr) z^k.
-$$
+$$`  f (x + y + z) = \sum_{n} p_n (y + z)^n = \sum_{n, k} \binom{n}{k} p_n y^{n-k} z^k = \sum_{k} \Bigl(\sum_{n} \binom{n}{k} p_n y^{n-k}\Bigr) z^k.  `
 The corresponding power series has thus a `k`-th coefficient equal to
-$\sum_{n} \binom{n}{k} p_n y^{n-k}$. In the general case where `pₙ` is a multilinear map, this has
+$`\sum_{n} \binom{n}{k} p_n y^{n-k}`. In the general case where `pₙ` is a multilinear map, this has
 to be interpreted suitably: instead of having a binomial coefficient, one should sum over all
 possible subsets `s` of `Fin n` of cardinality `k`, and attribute `z` to the indices in `s` and
 `y` to the indices outside of `s`.
@@ -27,7 +27,7 @@ check its convergence and the fact that its sum coincides with the original sum.
 discussion is that the set of points where a function is analytic is open. All these arguments
 require the target space to be complete, as otherwise the series might not converge.
 
-### Main results
+## Main results
 
 In a complete space, if a function admits a power series in a ball, then it is analytic at any
 point `y` of this ball, and the power series there can be expressed in terms of the initial power
@@ -51,15 +51,16 @@ section
 
 variable (p : FormalMultilinearSeries 𝕜 E F) {x y : E} {r : ℝ≥0}
 
-/-- A term of `FormalMultilinearSeries.changeOriginSeries`.
+/--
+A term of `FormalMultilinearSeries.changeOriginSeries`.
 
 Given a formal multilinear series `p` and a point `x` in its ball of convergence,
 `p.changeOrigin x` is a formal multilinear series such that
 `p.sum (x+y) = (p.changeOrigin x).sum y` when this makes sense. Each term of `p.changeOrigin x`
 is itself an analytic function of `x` given by the series `p.changeOriginSeries`. Each term in
 `changeOriginSeries` is the sum of `changeOriginSeriesTerm`'s over all `s` of cardinality `l`.
-The definition is such that `p.changeOriginSeriesTerm k l s hs (fun _ ↦ x) (fun _ ↦ y) =
-p (k + l) (s.piecewise (fun _ ↦ x) (fun _ ↦ y))`
+The definition is such that
+`p.changeOriginSeriesTerm k l s hs (fun _ ↦ x) (fun _ ↦ y) = p (k + l) (s.piecewise (fun _ ↦ x) (fun _ ↦ y))`
 -/
 def changeOriginSeriesTerm (k l : ℕ) (s : Finset (Fin (k + l))) (hs : s.card = l) :
     E [×l]→L[𝕜] E [×k]→L[𝕜] F :=

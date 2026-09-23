@@ -13,6 +13,9 @@ public import Mathlib.Algebra.Order.Ring.Rat
 public import Mathlib.Data.Fintype.BigOperators
 public import Mathlib.Data.ZMod.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Witt polynomials
 
@@ -53,9 +56,8 @@ In this file we use the following notation
 
 ## References
 
-* [Hazewinkel, *Witt Vectors*][Haze09]
-
-* [Commelin and Lewis, *Formalizing the Ring of Witt Vectors*][CL21]
+* ‍\[Hazewinkel, _Witt Vectors_\]\[Haze09\]
+* ‍\[Commelin and Lewis, _Formalizing the Ring of Witt Vectors_\]\[CL21\]
 -/
 
 @[expose] public section
@@ -180,8 +182,7 @@ end PPrime
 end
 
 /-!
-
-## Witt polynomials as a basis of the polynomial algebra
+# Witt polynomials as a basis of the polynomial algebra
 
 If `p` is invertible in `R`, then the Witt polynomials form a basis
 of the polynomial algebra `MvPolynomial ℕ R`.

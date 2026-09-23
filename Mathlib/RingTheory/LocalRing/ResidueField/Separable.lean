@@ -9,6 +9,9 @@ public import Mathlib.FieldTheory.Perfect
 public import Mathlib.RingTheory.Ideal.GoingUp
 public import Mathlib.RingTheory.LocalRing.ResidueField.Instances
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Separable residue field extensions
 

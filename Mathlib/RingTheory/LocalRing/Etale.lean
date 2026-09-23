@@ -11,6 +11,9 @@ public import Mathlib.RingTheory.LocalRing.Quotient
 public import Mathlib.RingTheory.Smooth.Flat
 public import Mathlib.RingTheory.Unramified.LocalRing
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Étale extensions of local rings
 
@@ -36,11 +39,13 @@ These are parts 1 and 2 of Lemma 3.2 of [arXiv:2503.07846](https://arxiv.org/abs
 
 ## Future work
 
-The following results from [arXiv:2503.07846](https://arxiv.org/abs/2503.07846) (formalized at [uw-math-ai/monogenic-extensions](https://github.com/uw-math-ai/monogenic-extensions)) are planned for
+The following results from [arXiv:2503.07846](https://arxiv.org/abs/2503.07846) (formalized at [
+uw-math-ai/monogenic-extensions](https://github.com/uw-math-ai/monogenic-extensions)) are planned
+for
 future PRs:
 
-* **Converse**: If `S ≅ R[X]/(f)` with `f` monic and `f'(root)` a unit, then `R → S` is étale.
-* **Lemma 3.1** (partial étale case): If `R` and `S` are local integral domains with `R`
+* *Converse*: If `S ≅ R[X]/(f)` with `f` monic and `f'(root)` a unit, then `R → S` is étale.
+* *Lemma 3.1* (partial étale case): If `R` and `S` are local integral domains with `R`
   integrally closed, `S` a UFD, `R → S` finite and injective, and there exists a height-one
   prime `q ⊆ S` such that `R/(q ∩ R) → S/q` is étale, then `S ≅ R[X]/(f)` for some monic `f`.
 

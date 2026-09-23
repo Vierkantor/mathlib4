@@ -8,6 +8,9 @@ module
 public import Mathlib.CategoryTheory.Limits.Shapes.Kernels
 public import Mathlib.CategoryTheory.Limits.Preserves.Shapes.Zero
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Preserving (co)kernels
 

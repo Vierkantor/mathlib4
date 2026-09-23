@@ -10,6 +10,9 @@ public import Mathlib.CategoryTheory.EssentiallySmall
 public import Mathlib.CategoryTheory.ObjectProperty.Small
 public import Mathlib.CategoryTheory.ShrinkYoneda
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The category of elements
 
@@ -26,11 +29,15 @@ so this is mostly just a more convenient API. We prove the equivalence in
 `CategoryTheory.Functor.Elements.structuredArrowEquivalence`.
 
 ## References
-* [Emily Riehl, *Category Theory in Context*, Section 2.4][riehl2017]
-* <https://en.wikipedia.org/wiki/Category_of_elements>
-* <https://ncatlab.org/nlab/show/category+of+elements>
+
+* ‍\[Emily Riehl, _Category Theory in Context_, Section 2.4\]\[riehl2017\]
+* [
+  https://en.wikipedia.org/wiki/Category\_of\_elements](https://en.wikipedia.org/wiki/Category_of_elements)
+* [
+  https://ncatlab.org/nlab/show/category+of+elements](https://ncatlab.org/nlab/show/category+of+elements)
 
 ## Tags
+
 category of elements, Grothendieck construction, comma category
 -/
 

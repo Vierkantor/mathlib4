@@ -9,6 +9,9 @@ public import Mathlib.Tactic.LinearCombination.Lemmas
 public import Mathlib.Tactic.Positivity.Core
 public import Mathlib.Tactic.Ring.Compare
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `linear_combination` Tactic
 
@@ -32,8 +35,8 @@ Lastly, calls a normalization tactic on this target.
 
 ## References
 
-* <https://leanprover.zulipchat.com/#narrow/stream/239415-metaprogramming-.2F.20tactics/topic/Linear.20algebra.20tactic/near/213928196>
-
+* [
+  https://leanprover.zulipchat.com/#narrow/stream/239415-metaprogramming-.2F.20tactics/topic/Linear.20algebra.20tactic/near/213928196](https://leanprover.zulipchat.com/#narrow/stream/239415-metaprogramming-.2F.20tactics/topic/Linear.20algebra.20tactic/near/213928196)
 -/
 
 public meta section

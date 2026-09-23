@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.Fintype.EquivFin
 public import Mathlib.Data.Finset.Option
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # fintype instances for option
 -/

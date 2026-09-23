@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Order.Floor.Div
 public import Mathlib.Algebra.Order.Ring.Nat
 public import Mathlib.Data.Nat.Factorization.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Roots of natural numbers, rounded up and down
 
@@ -17,7 +20,7 @@ This file defines the flooring and ceiling root of a natural number.
 number whose `p`-adic valuation is the floor/ceil of the `p`-adic valuation of `a`.
 
 For example the `2`-nd flooring and ceiling roots of `2^3 * 3^2 * 5` are `2 * 3` and `2^2 * 3 * 5`
-respectively. Note this is **not** the `n`-th root of `a` as a real number, rounded up or down.
+respectively. Note this is *not* the `n`-th root of `a` as a real number, rounded up or down.
 
 These operations are respectively the right and left adjoints to the map `a ↦ a ^ n` where `ℕ` is
 ordered by divisibility. This is useful because it lets us characterise the numbers `a` whose `n`-th

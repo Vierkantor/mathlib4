@@ -7,6 +7,9 @@ module
 
 public import Mathlib.CategoryTheory.FiberedCategory.HomLift
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cartesian morphisms
 
@@ -23,7 +26,8 @@ the sense of SGA 1 VI 5.1. This means that for any morphism `φ' : a' ⟶ b` lyi
 a unique morphism `τ : a' ⟶ a` lying over `𝟙 R`, such that `φ' = τ ≫ φ`.
 
 `IsStronglyCartesian p f φ` expresses that `φ` is a strongly Cartesian morphism lying over `f` with
-respect to `p`, see <https://stacks.math.columbia.edu/tag/02XK>.
+respect to `p`, see [
+https://stacks.math.columbia.edu/tag/02XK](https://stacks.math.columbia.edu/tag/02XK).
 
 ## Implementation
 
@@ -34,7 +38,8 @@ difference between the two is that the latter is more flexible with respect to n
 equalities.
 
 ## References
-* [A. Grothendieck, M. Raynaud, *SGA 1*](https://arxiv.org/abs/math/0206203)
+
+* [A. Grothendieck, M. Raynaud, _SGA 1_](https://arxiv.org/abs/math/0206203)
 * [Stacks: Fibred Categories](https://stacks.math.columbia.edu/tag/02XJ)
 -/
 

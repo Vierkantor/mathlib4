@@ -10,6 +10,9 @@ public import Mathlib.Topology.AlexandrovDiscrete
 public import Mathlib.Topology.ContinuousMap.Basic
 public import Mathlib.Topology.Order.LowerUpperTopology
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Upper and lower sets topologies
 
@@ -22,15 +25,16 @@ topology does not coincide with the lower topology.
 
 ## Main statements
 
-- `Topology.IsUpperSet.toAlexandrovDiscrete`: The upper set topology is Alexandrov-discrete.
-- `Topology.IsUpperSet.isClosed_iff_isLower` - a set is closed if and only if it is a Lower set
-- `Topology.IsUpperSet.closure_eq_lowerClosure` - topological closure coincides with lower closure
-- `Topology.IsUpperSet.monotone_iff_continuous` - the continuous functions are the monotone
+* `Topology.IsUpperSet.toAlexandrovDiscrete`: The upper set topology is Alexandrov-discrete.
+* `Topology.IsUpperSet.isClosed_iff_isLower` - a set is closed if and only if it is a Lower set
+* `Topology.IsUpperSet.closure_eq_lowerClosure` - topological closure coincides with lower closure
+* `Topology.IsUpperSet.monotone_iff_continuous` - the continuous functions are the monotone
   functions
-- `IsUpperSet.monotone_to_upperTopology_continuous`: A monotone map from a preorder with the upper
+* `IsUpperSet.monotone_to_upperTopology_continuous`: A monotone map from a preorder with the upper
   set topology to a preorder with the upper topology is continuous.
 
 We provide the upper set topology in three ways (and similarly for the lower set topology):
+
 * `Topology.upperSet`: The upper set topology as a `TopologicalSpace α`
 * `Topology.IsUpperSet`: Prop-valued mixin typeclass stating that an existing topology is the upper
   set topology.
@@ -256,7 +260,7 @@ lemma closure_eq_lowerClosure {s : Set α} : closure s = lowerClosure s := by
 
 /--
 The closure of a singleton `{a}` in the upper set topology is the right-closed left-infinite
-interval $(-∞,a]$.
+interval $`(-∞,a]`.
 -/
 @[simp] lemma closure_singleton {a : α} : closure {a} = Iic a := by
   rw [closure_eq_lowerClosure, lowerClosure_singleton]
@@ -352,7 +356,7 @@ lemma closure_eq_upperClosure {s : Set α} : closure s = upperClosure s :=
 
 /--
 The closure of a singleton `{a}` in the lower set topology is the right-closed left-infinite
-interval $(-∞,a]$.
+interval $`(-∞,a]`.
 -/
 @[simp] lemma closure_singleton {a : α} : closure {a} = Ici a := by
   rw [closure_eq_upperClosure, upperClosure_singleton]

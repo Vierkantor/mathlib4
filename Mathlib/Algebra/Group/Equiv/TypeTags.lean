@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Group.Equiv.Defs
 public import Mathlib.Algebra.Notation.Prod
 public import Mathlib.Tactic.Spread
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Additive and multiplicative equivalences associated to `Multiplicative` and `Additive`.
 -/

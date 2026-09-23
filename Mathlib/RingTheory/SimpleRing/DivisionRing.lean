@@ -8,9 +8,12 @@ module
 public import Mathlib.Algebra.Category.ModuleCat.Simple
 public import Mathlib.RingTheory.SimpleModule.Basic
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
-## Simple modules over division rings
+/-!
+# Simple modules over division rings
+
 This file contains some results about simple modules over division rings.
 
 # Main results
@@ -25,8 +28,8 @@ This file contains some results about simple modules over division rings.
   then `e(M)` is a simple module over `S`.
 
 ## Tags
-Noncommutative algebra, simple module, division ring
 
+Noncommutative algebra, simple module, division ring
 -/
 
 public section

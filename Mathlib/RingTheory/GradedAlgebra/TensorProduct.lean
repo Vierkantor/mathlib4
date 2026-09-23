@@ -9,7 +9,11 @@ public import Mathlib.LinearAlgebra.TensorProduct.Decomposition
 public import Mathlib.RingTheory.GradedAlgebra.AlgHom
 public import Mathlib.RingTheory.TensorProduct.Basic
 
-/-! # Tensor product of graded algebra
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Tensor product of graded algebra
 
 In this file we show that if `𝒜` is a graded `R`-algebra, and `S` is any `R`-algebra, then
 `S ⊗[R] 𝒜` is a graded `S`-algebra with the grading `fun i ↦ (𝒜 i).baseChange S`.

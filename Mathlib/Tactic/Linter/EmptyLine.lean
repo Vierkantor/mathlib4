@@ -11,6 +11,9 @@ module
 public meta import Mathlib.Tactic.Linter.Header  -- shake: keep
 public import Lean.Parser.Command
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The "emptyLine" linter
 
@@ -30,7 +33,7 @@ def Substring.Raw.getRange : Substring.Raw → Syntax.Range
 
 namespace Syntax
 /-!
-### `Syntax` filters
+# `Syntax` filters
 -/
 
 /--

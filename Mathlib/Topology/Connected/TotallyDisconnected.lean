@@ -7,10 +7,14 @@ module
 
 public import Mathlib.Topology.Connected.Clopen
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Totally disconnected and totally separated topological spaces
 
 ## Main definitions
+
 We define the following properties for sets in a topological space:
 
 * `IsTotallyDisconnected`: all of its connected components are singletons.

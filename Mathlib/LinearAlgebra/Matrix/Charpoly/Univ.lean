@@ -9,6 +9,9 @@ public import Mathlib.Algebra.MvPolynomial.Equiv
 public import Mathlib.LinearAlgebra.Matrix.Charpoly.Coeff
 public import Mathlib.RingTheory.MvPolynomial.Homogeneous
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The universal characteristic polynomial
 

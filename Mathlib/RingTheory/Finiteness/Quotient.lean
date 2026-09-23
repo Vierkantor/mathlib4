@@ -10,6 +10,9 @@ public import Mathlib.RingTheory.FiniteType
 public import Mathlib.RingTheory.Ideal.Pointwise
 public import Mathlib.RingTheory.Ideal.Over
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Finiteness of quotient modules
 -/

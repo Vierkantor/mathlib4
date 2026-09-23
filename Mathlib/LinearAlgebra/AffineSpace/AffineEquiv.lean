@@ -8,6 +8,9 @@ module
 public import Mathlib.LinearAlgebra.AffineSpace.AffineMap
 public import Mathlib.LinearAlgebra.GeneralLinearGroup.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Affine equivalences
 
@@ -18,9 +21,7 @@ affine maps.
 We define the following equivalences:
 
 * `AffineEquiv.refl k P`: the identity map as an `AffineEquiv`;
-
 * `e.symm`: the inverse map of an `AffineEquiv` as an `AffineEquiv`;
-
 * `e.trans e'`: composition of two `AffineEquiv`s; note that the order follows `mathlib`'s
   `CategoryTheory` convention (apply `e`, then `e'`), not the convention used in function
   composition and compositions of bundled morphisms.
@@ -180,11 +181,15 @@ theorem coe_symm_toEquiv (e : P₁ ≃ᵃ[k] P₂) : ⇑e.toEquiv.symm = e.symm 
 theorem linear_symm (e : P₁ ≃ᵃ[k] P₂) : e.symm.linear = e.linear.symm :=
   rfl
 
-/-- See Note [custom simps projection] -/
+/--
+See Note \[custom simps projection\]
+-/
 def Simps.apply (e : P₁ ≃ᵃ[k] P₂) : P₁ → P₂ :=
   e
 
-/-- See Note [custom simps projection] -/
+/--
+See Note \[custom simps projection\]
+-/
 def Simps.symm_apply (e : P₁ ≃ᵃ[k] P₂) : P₂ → P₁ :=
   e.symm
 

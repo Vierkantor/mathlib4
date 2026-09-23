@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Geometry.Manifold.IntegralCurve.ExistUnique
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Uniform time lemma for the global existence of integral curves
 
@@ -18,7 +21,7 @@ public import Mathlib.Geometry.Manifold.IntegralCurve.ExistUnique
 
 ## Reference
 
-* [Lee, J. M. (2012). _Introduction to Smooth Manifolds_. Springer New York.][lee2012]
+* ‍\[Lee, J. M. (2012). _Introduction to Smooth Manifolds_. Springer New York.\]\[lee2012\]
 
 ## Tags
 
@@ -159,11 +162,13 @@ lemma isMIntegralCurveOn_piecewise [BoundarylessManifold I M]
     rw [(isOpen_Ioo.union isOpen_Ioo).nhdsWithin_eq ht']
     exact Ioo_mem_nhds (ht hmem).1 (ht hmem).2
 
-/-- If there exists `ε > 0` such that the local integral curve at each point `x : M` is defined at
+/--
+If there exists `ε > 0` such that the local integral curve at each point `x : M` is defined at
 least on an open interval `Ioo (-ε) ε`, then every point on `M` has a global integral curve
 passing through it.
 
-See Lemma 9.15, [J.M. Lee (2012)][lee2012]. -/
+See Lemma 9.15, \[J.M. Lee (2012)\]\[lee2012\].
+-/
 lemma exists_isMIntegralCurve_of_isMIntegralCurveOn [BoundarylessManifold I M]
     {v : (x : M) → TangentSpace I x}
     (hv : CMDiff 1 (fun x ↦ (⟨x, v x⟩ : TangentBundle I M)))

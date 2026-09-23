@@ -9,6 +9,9 @@ public import Mathlib.Analysis.SpecificLimits.ArithmeticGeometric
 public import Mathlib.MeasureTheory.Constructions.BorelSpace.ContinuousLinearMap
 public import Mathlib.MeasureTheory.Function.L1Space.Integrable
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Fernique's theorem for rotation-invariant measures
 
@@ -63,15 +66,14 @@ Summing over all annuli (over `n`) gives a finite value for the integral.
 
 ## References
 
-* [Xavier Fernique, *Intégrabilité des vecteurs gaussiens*][fernique1970integrabilite]
-* [Martin Hairer, *An introduction to stochastic PDEs*][hairer2009introduction]
+* ‍\[Xavier Fernique, _Intégrabilité des vecteurs gaussiens_\]\[fernique1970integrabilite\]
+* ‍\[Martin Hairer, _An introduction to stochastic PDEs_\]\[hairer2009introduction\]
 
 ## TODO
 
 From the intermediate result `lintegral_exp_mul_sq_norm_le_of_map_rotation_eq_self`,
 we can deduce bounds on all the moments of the measure `μ` as function of powers of
 the first moment.
-
 -/
 
 @[expose] public section

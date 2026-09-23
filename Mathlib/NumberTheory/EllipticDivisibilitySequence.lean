@@ -11,6 +11,9 @@ public import Mathlib.Data.Nat.EvenOddRec
 public import Mathlib.Tactic.Linarith
 import Mathlib.Algebra.Group.Int.Even
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Elliptic divisibility sequences
 
@@ -20,29 +23,30 @@ sequence, as well as the canonical example of a normalised elliptic divisibility
 ## Mathematical background
 
 Let `R` be a commutative ring, and let `W` be a sequence of elements in `R` indexed by `ℤ`. The
-*elliptic relator* `ER(p, q, r, s) ∈ R` associated to `W` is given for all `p, q, r, s ∈ ℤ` by
+_elliptic relator_ `ER(p, q, r, s) ∈ R` associated to `W` is given for all `p, q, r, s ∈ ℤ` by
 `ER(p, q, r, s) := W(p+q+s)W(p-q)W(r+s)W(r) - W(p+r+s)W(p-r)W(q+s)W(q) + W(q+r+s)W(q-r)W(p+s)W(p)`.
-Call `W` an *elliptic net* if it satisfies the *elliptic relation* `ER(p, q, r, s) = 0` for all
+Call `W` an _elliptic net_ if it satisfies the _elliptic relation_ `ER(p, q, r, s) = 0` for all
 `p, q, r, s ∈ ℤ`. By a change of variables, `ER` is related to the symmetric relation `ERₐ` (see
 `IsEllipticNet.rel_eq` and `IsEllipticNet.atomRel_eq`), where `ERₐ(a, b, c, d) ∈ R` is given for all
 `a, b, c, d ∈ ℤ` by `ERₐ(a, b, c, d) := Wₐ(a, b)Wₐ(c, d) - Wₐ(a, c)Wₐ(b, d) + Wₐ(a, d)Wₐ(b, c)`
-defined in terms of *elliptic atoms* `Wₐ(a, b) := W((a + b) / 2)W((a - b) / 2)`.
+defined in terms of _elliptic atoms_ `Wₐ(a, b) := W((a + b) / 2)W((a - b) / 2)`.
 
-As a special case, `W` is an *elliptic sequence* if it satisfies `ER(p, q, r, 0) = 0` for all
-`p, q, r ∈ ℤ`. It is a *divisibility sequence* if it satisfies `W(k) ∣ W(n * k)` for all `k, n ∈ ℤ`,
-and an *elliptic divisibility sequence* (EDS) if it is a divisibility sequence that is elliptic. If
+As a special case, `W` is an _elliptic sequence_ if it satisfies `ER(p, q, r, 0) = 0` for all
+`p, q, r ∈ ℤ`. It is a _divisibility sequence_ if it satisfies `W(k) ∣ W(n * k)` for all `k, n ∈ ℤ`,
+and an _elliptic divisibility sequence_ (EDS) if it is a divisibility sequence that is elliptic. If
 `W` is an EDS, then `x • W` is also an EDS for any `x ∈ R`. It turns out that any EDS `W` can be
 normalised such that `W(1) = 1`, in which case it can be characterised completely by
 
-* the *even relations* `ER(m + 1, m - 1, 1, 0) = 0` for all `m ∈ ℤ`, or in other words that
+* the _even relations_ `ER(m + 1, m - 1, 1, 0) = 0` for all `m ∈ ℤ`, or in other words that
   `W(2m)W(2) = W(m - 1)²W(m)W(m + 2) - W(m - 2)W(m)W(m + 1)²` for all `m ∈ ℤ`, and
-* the *odd relations* `ER(m + 1, m, 1, 0) = 0` for all `m ∈ ℤ`, or in other words that
+* the _odd relations_ `ER(m + 1, m, 1, 0) = 0` for all `m ∈ ℤ`, or in other words that
   `W(2m + 1) = W(m + 2)W(m)³ - W(m - 1)W(m + 1)³` for all `m ∈ ℤ`,
 
 with initial values `W(0) = 0`, `W(1) = 1`, `W(2) = b`, `W(3) = c`, and `W(4) = d * b` for some
-`b, c, d ∈ R`. This will be called the *canonical example of a normalised EDS* in this file.
+`b, c, d ∈ R`. This will be called the _canonical example of a normalised EDS_ in this file.
 
 Some examples of EDSs include
+
 * the identity sequence,
 * certain terms of Lucas sequences, and
 * division polynomials of elliptic curves.
@@ -81,15 +85,15 @@ when `n` is even. This coincides with the definition in the references since bot
 
 One reason is to avoid the necessity for ring division by `b` in the inductive definition of
 `normEDS b c d (2 * (m + 3))`. The idea is that it can be shown that `normEDS b c d (2 * (m + 3))`
-always contains a factor of `b`, so it is possible to remove a factor of `b` *a posteriori*, but
+always contains a factor of `b`, so it is possible to remove a factor of `b` _a posteriori_, but
 stating this lemma requires first defining `normEDS b c d (2 * (m + 3))`, which requires having this
-factor of `b` *a priori*. Another reason is to allow the definition of univariate `n`-division
+factor of `b` _a priori_. Another reason is to allow the definition of univariate `n`-division
 polynomials of elliptic curves, omitting a factor of the bivariate `2`-division polynomial.
 
 ## References
 
-* K Stange, *Elliptic Nets and Elliptic Curves*
-* M Ward, *Memoir on Elliptic Divisibility Sequences*
+* K Stange, _Elliptic Nets and Elliptic Curves_
+* M Ward, _Memoir on Elliptic Divisibility Sequences_
 
 ## Tags
 

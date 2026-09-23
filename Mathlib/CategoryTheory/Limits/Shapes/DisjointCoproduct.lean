@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Limits.Shapes.Pullback.IsPullback.Basic
 public import Mathlib.CategoryTheory.Limits.Shapes.Products
 public import Mathlib.CategoryTheory.Limits.Shapes.StrictInitial
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Disjoint coproducts
 

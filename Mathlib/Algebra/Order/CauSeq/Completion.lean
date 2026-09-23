@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Order.CauSeq.Basic
 public import Mathlib.Algebra.Ring.Action.Rat
 public import Mathlib.Tactic.FastInstance
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cauchy completion
 

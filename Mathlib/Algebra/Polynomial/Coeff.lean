@@ -11,12 +11,14 @@ public import Mathlib.Algebra.Polynomial.Basic
 public import Mathlib.Algebra.Regular.Basic
 public import Mathlib.Data.Nat.Choose.Sum
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Theory of univariate polynomials
 
 The theorems include formulas for computing coefficients, such as
 `coeff_add`, `coeff_sum`, `coeff_mul`
-
 -/
 
 @[expose] public section

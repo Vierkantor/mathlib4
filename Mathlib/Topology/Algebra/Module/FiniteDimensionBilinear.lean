@@ -8,6 +8,9 @@ module
 public import Mathlib.Topology.Algebra.Module.FiniteDimension
 public import Mathlib.Topology.Algebra.Module.Spaces.ContinuousLinearMap
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Building continuous bilinear maps in finite dimensions over complete fields
 
@@ -19,7 +22,6 @@ This applies in particular to evaluation of linear maps between such spaces.
 Working with topological vector spaces instead of normed spaces is important for applications in the
 differential geometry part of Mathlib where we don’t want to fix a norm on tangent spaces for
 instance.
-
 -/
 
 @[expose] public section

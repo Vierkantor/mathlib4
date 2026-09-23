@@ -9,6 +9,9 @@ public import Mathlib.MeasureTheory.Measure.Decomposition.Exhaustion
 public import Mathlib.MeasureTheory.Group.Convolution
 public import Mathlib.Analysis.LConvolution
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Measure with a given density with respect to another measure
 
@@ -20,7 +23,6 @@ An important result about `withDensity` is the Radon-Nikodym theorem. It states 
 `ν` if and only if there exists a measurable function `f : α → ℝ≥0∞` such that
 `μ = ν.withDensity f`.
 See `MeasureTheory.Measure.absolutelyContinuous_iff_withDensity_rnDeriv_eq`.
-
 -/
 
 @[expose] public section
@@ -386,13 +388,14 @@ theorem measurable_withDensity {β : Type*} [MeasurableSpace β] {f : β → α 
 
 open MeasureTheory.SimpleFunc
 
-/-- This is Exercise 1.2.1 from [tao2010]. It allows you to express integration of a measurable
+/--
+This is Exercise 1.2.1 from \[tao2010\]. It allows you to express integration of a measurable
 function with respect to `(μ.withDensity f)` as an integral with respect to `μ`, called the base
 measure. `μ` is often the Lebesgue measure, and in this circumstance `f` is the probability density
 function, and `(μ.withDensity f)` represents any continuous random variable as a
 probability measure, such as the uniform distribution between 0 and 1, the Gaussian distribution,
 the exponential distribution, the Beta distribution, or the Cauchy distribution (see Section 2.4
-of [wasserman2004]). Thus, this method shows how to one can calculate expectations, variances,
+of \[wasserman2004\]). Thus, this method shows how to one can calculate expectations, variances,
 and other moments as a function of the probability density function.
 -/
 theorem lintegral_withDensity_eq_lintegral_mul (μ : Measure α) {f : α → ℝ≥0∞}

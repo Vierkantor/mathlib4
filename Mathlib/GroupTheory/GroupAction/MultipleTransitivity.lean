@@ -10,24 +10,23 @@ public import Mathlib.GroupTheory.SpecificGroups.Alternating
 public import Mathlib.GroupTheory.GroupAction.SubMulAction.OfFixingSubgroup
 public import Mathlib.SetTheory.Cardinal.Embedding
 
-/-! # Multiple transitivity
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Multiple transitivity
 
 * `MulAction.IsMultiplyPretransitive`:
   A multiplicative action of a group `G` on a type `α` is n-transitive
   if the action of `G` on `Fin n ↪ α` is pretransitive.
-
 * `MulAction.is_zero_pretransitive` : any action is 0-pretransitive
-
 * `MulAction.is_one_pretransitive_iff` :
   An action is 1-pretransitive iff it is pretransitive
-
 * `MulAction.is_two_pretransitive_iff` :
   An action is 2-pretransitive if for any `a`, `b`, `c`, `d`, such that
   `a ≠ b` and `c ≠ d`, there exist `g : G` such that `g • a = b` and `g • c = d`.
-
 * `MulAction.isPreprimitive_of_is_two_pretransitive` :
   A 2-transitive action is preprimitive
-
 * `MulAction.isMultiplyPretransitive_of_le` :
   If an action is `n`-pretransitive, then it is `m`-pretransitive for all `m ≤ n`,
   provided `α` has at least `n` elements.
@@ -37,11 +36,8 @@ public import Mathlib.SetTheory.Cardinal.Embedding
 * `SubMulAction.ofStabilizer.isPretransitive_iff_conj` shows
   that for `a`, `b` and `g` such that `g • a = b`, the actions
   of `stabilizer G a` and of `stabilizer G b` are equivalently `n`-pretransitive for all `n : ℕ`.
-
 * `SubMulAction.ofStabilizer.isMultiplyPretransitive_iff_conj hg` shows the
   same result for `n`-transitivity.
-
-
 * `SubMulAction.ofStabilizer.isMultiplyPretransitive_iff` : if the action of `G` on `α`
   is pretransitive, then it is `n.succ` pretransitive if and only if
   the action of `stabilizer G a` on `ofStabilizer G a` is `n`-pretransitive.
@@ -50,7 +46,6 @@ public import Mathlib.SetTheory.Cardinal.Embedding
 
 * The permutation group is pretransitive, is multiply pretransitive,
   and is preprimitive (for its natural action)
-
 * `Equiv.Perm.eq_top_if_isMultiplyPretransitive`:
   a subgroup of `Equiv.Perm α` which is `Nat.card α - 1` pretransitive is equal to `⊤`.
 
@@ -58,7 +53,6 @@ public import Mathlib.SetTheory.Cardinal.Embedding
 
 These results are results about actions on types `n ↪ α` induced by an action
 on `α`, and some results are developed in this context.
-
 -/
 
 @[expose] public section
@@ -345,9 +339,11 @@ theorem isMultiplyPretransitive_iff [IsPretransitive G α] {n : ℕ} {a b : α} 
 /-- Multiple transitivity of a pretransitive action
 is equivalent to one less transitivity of stabilizer of a point
 (Wielandt, th. 9.1, 1st part) -/
-@[to_additive /-- Multiple transitivity of a pretransitive action
+@[to_additive /--
+              Multiple transitivity of a pretransitive action
 is equivalent to one less transitivity of stabilizer of a point
-[Wielandt, th. 9.1, 1st part][Wielandt-1964]. -/]
+‍\[Wielandt, th. 9.1, 1st part\]\[Wielandt-1964\].
+              -/]
 theorem isMultiplyPretransitive [IsPretransitive G α] {n : ℕ} {a : α} :
     IsMultiplyPretransitive G α n.succ ↔
       IsMultiplyPretransitive (stabilizer G a) (SubMulAction.ofStabilizer G a) n := by

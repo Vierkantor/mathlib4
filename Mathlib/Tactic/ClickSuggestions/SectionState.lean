@@ -9,6 +9,9 @@ public import Mathlib.Tactic.ClickSuggestions.Util
 public import ProofWidgets.Component.FilterDetails
 public meta import ProofWidgets.Util
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Infrastructure for searching and displaying sets of lemmas
 
@@ -37,7 +40,9 @@ variable {α : Type} [Ord α] [Inhabited α]
 instance : Ord (Result α) := ⟨(compare ·.key ·.key)⟩
 instance : LT (Result α) := ltOfOrd
 
-/-! ### Maintaining the state of the widget -/
+/-!
+# Maintaining the state of the widget
+-/
 
 /-- The state of one section of library search suggestions.
 We use this for 4 kinds of suggestions: `rw`, `grw`, `apply` and `apply at`. -/

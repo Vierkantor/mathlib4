@@ -13,6 +13,9 @@ import Mathlib.Tactic.Basify.Attr
 import Mathlib.Algebra.Group.Nat.Units
 import Mathlib.Data.Nat.Cast.Order.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `LinearOrderedAddCommMonoidWithTop` structure on `ENat`
 -/

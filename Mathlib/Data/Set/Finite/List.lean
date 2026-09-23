@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.Fintype.Vector
 public import Mathlib.Data.Set.Finite.Lattice
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Finiteness of sets of lists
 

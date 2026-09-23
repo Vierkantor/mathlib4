@@ -10,6 +10,9 @@ public import Mathlib.RingTheory.RingHom.Surjective
 public import Mathlib.RingTheory.Spectrum.Prime.TensorProduct
 public import Mathlib.Topology.LocalAtTarget
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Morphisms surjective on stalks
 

@@ -10,7 +10,11 @@ public import Mathlib.Analysis.CStarAlgebra.Classes
 public import Mathlib.Analysis.CStarAlgebra.ContinuousFunctionalCalculus.Order
 public import Mathlib.Analysis.CStarAlgebra.SpecialFunctions.PosPart
 
-/-! # Positive linear maps in C⋆-algebras
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Positive linear maps in C⋆-algebras
 
 This file develops the API for positive linear maps over C⋆-algebras.
 

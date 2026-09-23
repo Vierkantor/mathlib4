@@ -10,6 +10,9 @@ public import Mathlib.CategoryTheory.Sites.Pretopology
 public import Mathlib.CategoryTheory.Limits.Lattice
 public import Mathlib.Topology.Sets.OpenCover
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Grothendieck topology on a topological space
 
@@ -24,8 +27,8 @@ site, Grothendieck topology, space
 
 ## References
 
-* [nLab, *Grothendieck topology*](https://ncatlab.org/nlab/show/Grothendieck+topology)
-* [S. MacLane, I. Moerdijk, *Sheaves in Geometry and Logic*][MM92]
+* [nLab, _Grothendieck topology_](https://ncatlab.org/nlab/show/Grothendieck+topology)
+* ‍\[S. MacLane, I. Moerdijk, _Sheaves in Geometry and Logic_\]\[MM92\]
 
 ## Implementation notes
 

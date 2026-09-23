@@ -9,6 +9,9 @@ public import Mathlib.Order.Interval.Set.Basic
 public import Mathlib.Data.Set.Function
 public import Mathlib.Order.Directed
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Monotone functions on intervals
 

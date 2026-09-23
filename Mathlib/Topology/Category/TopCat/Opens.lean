@@ -13,6 +13,9 @@ public import Mathlib.Topology.Category.TopCat.EpiMono
 public import Mathlib.Topology.Sets.Opens
 public import Mathlib.CategoryTheory.Limits.Preserves.Lattice
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The category of open sets in a topological space.
 

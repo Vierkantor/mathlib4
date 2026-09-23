@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.SpecialFunctions.Pow.Deriv
 public import Mathlib.Analysis.Complex.PhragmenLindelof
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Hadamard three-lines Theorem
 
@@ -15,7 +18,7 @@ In this file we present a proof of Hadamard's three-lines Theorem.
 
 ## Main result
 
-- `norm_le_interp_of_mem_verticalClosedStrip` :
+* `norm_le_interp_of_mem_verticalClosedStrip` :
   Hadamard three-line theorem: If `f` is a bounded function, continuous on
   `re ⁻¹' [l, u]` and differentiable on `re ⁻¹' (l, u)`, then for
   `M(x) := sup ((norm ∘ f) '' re ⁻¹' {x})`, that is `M(x)` is the supremum of the absolute value
@@ -23,34 +26,27 @@ In this file we present a proof of Hadamard's three-lines Theorem.
   `‖f(z)‖ ≤ M(0) ^ (1 - ((z.re - l) / (u - l))) * M(1) ^ ((z.re - l) / (u - l))` holds.
   This can be seen to be equivalent to the statement
   that `log M(re z)` is a convex function on `[0, 1]`.
-
-- `norm_le_interp_of_mem_verticalClosedStrip'` :
+* `norm_le_interp_of_mem_verticalClosedStrip'` :
   Variant of the above lemma in simpler terms. In particular, it makes no mention of the helper
   functions defined in this file.
 
 ## Main definitions
 
-- `Complex.HadamardThreeLines.verticalStrip` :
-    The vertical strip defined by : `re ⁻¹' Ioo a b`
-
-- `Complex.HadamardThreeLines.verticalClosedStrip` :
-    The vertical strip defined by : `re ⁻¹' Icc a b`
-
-- `Complex.HadamardThreeLines.sSupNormIm` :
-    The supremum function on vertical lines defined by : `sSup {|f(z)| : z.re = x}`
-
-- `Complex.HadamardThreeLines.interpStrip` :
-    The interpolation between the `sSupNormIm` on the edges of the vertical strip `re⁻¹ [0, 1]`.
-
-- `Complex.HadamardThreeLines.interpStrip` :
-    The interpolation between the `sSupNormIm` on the edges of any vertical strip.
-
-- `Complex.HadamardThreeLines.invInterpStrip` :
-    Inverse of the interpolation between the `sSupNormIm` on the edges of the
-    vertical strip `re⁻¹ [0, 1]`.
-
-- `Complex.HadamardThreeLines.F` :
-    Function defined by `f` times `invInterpStrip`. Convenient form for proofs.
+* `Complex.HadamardThreeLines.verticalStrip` :
+  The vertical strip defined by : `re ⁻¹' Ioo a b`
+* `Complex.HadamardThreeLines.verticalClosedStrip` :
+  The vertical strip defined by : `re ⁻¹' Icc a b`
+* `Complex.HadamardThreeLines.sSupNormIm` :
+  The supremum function on vertical lines defined by : `sSup {|f(z)| : z.re = x}`
+* `Complex.HadamardThreeLines.interpStrip` :
+  The interpolation between the `sSupNormIm` on the edges of the vertical strip `re⁻¹ [0, 1]`.
+* `Complex.HadamardThreeLines.interpStrip` :
+  The interpolation between the `sSupNormIm` on the edges of any vertical strip.
+* `Complex.HadamardThreeLines.invInterpStrip` :
+  Inverse of the interpolation between the `sSupNormIm` on the edges of the
+  vertical strip `re⁻¹ [0, 1]`.
+* `Complex.HadamardThreeLines.F` :
+  Function defined by `f` times `invInterpStrip`. Convenient form for proofs.
 
 ## Note
 

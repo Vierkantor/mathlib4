@@ -8,12 +8,16 @@ module
 public import Mathlib.Order.Fin.Basic
 public import Mathlib.Order.Preorder.Chain
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Range of `f : Fin (n + 1) → α` as a `Flag`
 
 Let `f : Fin (n + 1) → α` be an `(n + 1)`-tuple `(f₀, …, fₙ)` such that
-- `f₀ = ⊥` and `fₙ = ⊤`;
-- `fₖ₊₁` weakly covers `fₖ` for all `0 ≤ k < n`;
+
+* `f₀ = ⊥` and `fₙ = ⊤`;
+* `fₖ₊₁` weakly covers `fₖ` for all `0 ≤ k < n`;
   this means that `fₖ ≤ fₖ₊₁` and there is no `c` such that `fₖ<c<fₖ₊₁`.
 
 Then the range of `f` is a maximal chain.

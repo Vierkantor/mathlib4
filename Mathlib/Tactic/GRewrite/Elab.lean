@@ -11,17 +11,19 @@ public import Mathlib.Tactic.GRewrite.Core
 public import Lean.Elab.ConfigEval
 meta import Mathlib.Tactic.GRewrite.Core
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # The generalized rewriting tactic
 
 This file defines the tactics that use the backend defined in `Mathlib.Tactic.GRewrite.Core`:
-- `grewrite`
-- `grw`
-- `apply_rw`
-- `nth_grewrite`
-- `nth_grw`
 
+* `grewrite`
+* `grw`
+* `apply_rw`
+* `nth_grewrite`
+* `nth_grw`
 -/
 
 meta section
@@ -162,6 +164,8 @@ public def evalGRewriteSeq : Tactic := fun stx => do
       (grewriteTarget term symm cfg)
       (throwTacticEx `grewrite · "did not find instance of the pattern in the current goal")
 
+
+set_option doc.verso false
 /--
 `grw [e₁, ..., eₙ]` uses each expression `eᵢ : Rᵢ aᵢ bᵢ` (where `Rᵢ` is any two-argument
 relation) as a generalized rewrite rule on the main goal, replacing occurrences of `aᵢ` with `bᵢ`,
@@ -221,6 +225,8 @@ macro (name := grwSeq) "grw " c:optConfig s:rwRuleSeq l:(location)? : tactic =>
     `(tactic| (grewrite $c [$rs,*] $(l)?; with_annotate_state $rbrak (try (with_reducible rfl))))
   | _ => Macro.throwUnsupported
 
+
+set_option doc.verso true
 /--
 `apply_rewrite [e₁, ..., eₙ]` uses the expressions `e₁`, ..., `eₙ` as generalized rewrite rules, of
 type `pᵢ → qᵢ`, on the main goal, replacing occurrences of `pᵢ` with `qᵢ`. The difference with

@@ -9,10 +9,14 @@ public import Mathlib.Algebra.Category.Grp.Basic
 public import Mathlib.Algebra.Ring.Equiv
 public import Mathlib.Algebra.Ring.PUnit
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Category instances for `Semiring`, `Ring`, `CommSemiring`, and `CommRing`.
 
 We introduce the bundled categories:
+
 * `SemiRingCat`
 * `RingCat`
 * `CommSemiRingCat`

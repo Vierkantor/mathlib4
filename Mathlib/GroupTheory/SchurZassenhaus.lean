@@ -7,6 +7,9 @@ module
 
 public import Mathlib.GroupTheory.Transfer
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The Schur-Zassenhaus Theorem
 
@@ -14,10 +17,10 @@ In this file we prove the Schur-Zassenhaus theorem.
 
 ## Main results
 
-- `Subgroup.exists_right_complement'_of_coprime`: The **Schur-Zassenhaus** theorem:
+* `Subgroup.exists_right_complement'_of_coprime`: The *Schur-Zassenhaus* theorem:
   If `H : Subgroup G` is normal and has order coprime to its index,
   then there exists a subgroup `K` which is a (right) complement of `H`.
-- `Subgroup.exists_left_complement'_of_coprime`: The **Schur-Zassenhaus** theorem:
+* `Subgroup.exists_left_complement'_of_coprime`: The *Schur-Zassenhaus* theorem:
   If `H : Subgroup G` is normal and has order coprime to its index,
   then there exists a subgroup `K` which is a (left) complement of `H`.
 -/
@@ -127,7 +130,8 @@ universe u
 
 namespace SchurZassenhausInduction
 
-/-! ## Proof of the Schur-Zassenhaus theorem
+/-!
+# Proof of the Schur-Zassenhaus theorem
 
 In this section, we prove the Schur-Zassenhaus theorem.
 The proof is by contradiction. We assume that `G` is a minimal counterexample to the theorem.

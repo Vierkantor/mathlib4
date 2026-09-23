@@ -14,6 +14,9 @@ public import Mathlib.Data.Set.Pairwise.Basic
 public import Mathlib.Algebra.Group.Pointwise.Set.Basic
 public import Mathlib.Algebra.Regular.SMul
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Pointwise actions on sets
 
@@ -23,7 +26,8 @@ of `α`/`Set α` on `Set β`.
 ## Implementation notes
 
 * We put all instances in the scope `Pointwise`, so that these instances are not available by
-  default. Note that we do not mark them as reducible (as argued by note [reducible non-instances])
+  default. Note that we do not mark them as reducible (as argued by note \[reducible
+  non-instances\])
   since we expect the scope to be open whenever the instances are actually used (and making the
   instances reducible changes the behavior of `simp`).
 -/
@@ -39,7 +43,9 @@ variable {F α β γ : Type*}
 
 namespace Set
 
-/-! ### Translation/scaling of sets -/
+/-!
+# Translation/scaling of sets
+-/
 
 @[to_additive vadd_set_prod]
 lemma smul_set_prod {M α : Type*} [SMul M α] [SMul M β] (c : M) (s : Set α) (t : Set β) :

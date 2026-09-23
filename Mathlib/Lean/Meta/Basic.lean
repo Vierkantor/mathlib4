@@ -9,6 +9,9 @@ public import Mathlib.Init
 public import Lean.Meta.AppBuilder
 public import Lean.Meta.Coe
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Additions to `Lean.Meta.Basic`
 

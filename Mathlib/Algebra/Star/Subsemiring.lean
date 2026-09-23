@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Star.NonUnitalSubsemiring
 public import Mathlib.Algebra.Ring.Subsemiring.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Star subrings
 

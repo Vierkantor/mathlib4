@@ -10,6 +10,9 @@ public import Mathlib.MeasureTheory.Integral.CompactlySupported
 public import Mathlib.MeasureTheory.Integral.RieszMarkovKakutani.Basic
 public import Mathlib.Order.Interval.Set.Union
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Riesz–Markov–Kakutani representation theorem for real-linear functionals
 
@@ -39,7 +42,7 @@ equality is proven using two inequalities by considering `Λ f` and `Λ (-f)` fo
 
 ## References
 
-* [Walter Rudin, Real and Complex Analysis.][Rud87]
+* ‍\[Walter Rudin, Real and Complex Analysis.\]\[Rud87\]
 -/
 
 @[expose] public section

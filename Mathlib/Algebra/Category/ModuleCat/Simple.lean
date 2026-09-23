@@ -11,6 +11,9 @@ public import Mathlib.CategoryTheory.Simple
 public import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
 public import Mathlib.RingTheory.SimpleModule.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Simple objects in the category of `R`-modules
 

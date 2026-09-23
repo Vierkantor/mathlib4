@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Group.Hom.Basic
 public import Mathlib.Logic.Equiv.Basic
 public import Mathlib.Tactic.Spread
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Multiplicative and additive equivs
 
@@ -71,7 +74,7 @@ def funUnique [Unique α] : (α → M) ≃* M where
 end Mul
 
 /-!
-## Monoids
+# Monoids
 -/
 
 /-- A multiplicative analogue of `Equiv.arrowCongr`,

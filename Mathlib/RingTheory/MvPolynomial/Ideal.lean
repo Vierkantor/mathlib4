@@ -12,6 +12,9 @@ public import Mathlib.RingTheory.MvPolynomial.MonomialOrder
 public import Mathlib.RingTheory.MvPolynomial.Basic
 import Mathlib.Algebra.Order.Group.Pointwise.Interval
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lemmas about ideals of `MvPolynomial`
 

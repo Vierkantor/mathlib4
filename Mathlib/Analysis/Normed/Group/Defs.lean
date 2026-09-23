@@ -13,6 +13,9 @@ public import Mathlib.Tactic.Group
 public import Mathlib.Topology.MetricSpace.Defs
 import Mathlib.Tactic.Basify.Attr
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # (Semi)normed groups: definitions
 

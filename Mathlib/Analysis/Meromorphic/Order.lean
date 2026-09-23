@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.Meromorphic.Basic
 public import Mathlib.Algebra.Order.WithTop.Untop0
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Orders of Meromorphic Functions
 
@@ -35,7 +38,7 @@ variable {𝕜 : Type*} [NontriviallyNormedField 𝕜]
   {f f₁ f₂ : 𝕜 → E} {x : 𝕜}
 
 /-!
-## Order at a Point: Definition and Characterization
+# Order at a Point: Definition and Characterization
 -/
 
 open scoped Classical in
@@ -416,7 +419,7 @@ The order of a constant function is `⊤` if the constant is zero and `0` otherw
   rw [← WithTop.coe_one, ← meromorphicOrderAt_zpow_id_sub_const (𝕜 := 𝕜), zpow_one]
 
 /-!
-## Order at a Point: Behaviour under Ring Operations
+# Order at a Point: Behaviour under Ring Operations
 
 We establish additivity of the order under multiplication and taking powers.
 -/
@@ -709,7 +712,7 @@ lemma MeromorphicAt.isTheta_pow_sub (hf : MeromorphicAt f z₀) (hf' : meromorph
 end IsTheta
 
 /-!
-## Level Sets of the Order Function
+# Level Sets of the Order Function
 -/
 
 namespace MeromorphicOn
@@ -916,7 +919,7 @@ end MeromorphicOn
 
 section comp
 /-!
-## Order at a Point: Behaviour under Composition
+# Order at a Point: Behaviour under Composition
 -/
 variable {x : 𝕜} {f : 𝕜 → E} {g : 𝕜 → 𝕜}
 
@@ -1009,7 +1012,7 @@ theorem meromorphicOrderAt_const_smul_eq_meromorphicOrderAt {f : 𝕜 → E} {s 
 end smul
 
 /-!
-## Order at a Point of the Derivative
+# Order at a Point of the Derivative
 -/
 
 section deriv

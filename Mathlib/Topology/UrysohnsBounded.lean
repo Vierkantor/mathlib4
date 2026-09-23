@@ -8,6 +8,9 @@ module
 public import Mathlib.Topology.UrysohnsLemma
 public import Mathlib.Topology.ContinuousMap.Bounded.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Urysohn's lemma for bounded continuous functions
 

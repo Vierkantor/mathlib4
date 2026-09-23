@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Polynomial.Cardinal
 public import Mathlib.Algebra.Polynomial.Roots
 public import Mathlib.RingTheory.Algebraic.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cardinality of algebraic extensions
 

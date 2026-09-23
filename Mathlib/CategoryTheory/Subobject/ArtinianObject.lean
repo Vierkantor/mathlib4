@@ -12,6 +12,9 @@ public import Mathlib.CategoryTheory.Limits.Constructions.EventuallyConstant
 public import Mathlib.Order.OrderIsoNat
 public import Mathlib.CategoryTheory.Simple
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Artinian objects
 
@@ -25,7 +28,6 @@ closed under subobjects.
 
 * when `C` is an abelian category, relate `IsArtinianObject` in `C`
   with `IsNoetherianObject` in `Cᵒᵖ`.
-
 -/
 
 @[expose] public section

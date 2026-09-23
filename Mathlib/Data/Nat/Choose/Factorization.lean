@@ -10,6 +10,9 @@ public import Mathlib.Data.Nat.Choose.Central
 public import Mathlib.Data.Nat.Digits.Lemmas
 public import Mathlib.Data.Nat.Factorization.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Factorization of Binomial Coefficients
 

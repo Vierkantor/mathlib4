@@ -10,6 +10,9 @@ public import Mathlib.NumberTheory.ModularForms.EisensteinSeries.Defs
 public import Mathlib.NumberTheory.ModularForms.EisensteinSeries.Summable
 public import Mathlib.NumberTheory.ModularForms.Identities
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Boundedness of Eisenstein series
 

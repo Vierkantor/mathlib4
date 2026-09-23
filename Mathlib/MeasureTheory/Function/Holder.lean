@@ -7,7 +7,11 @@ module
 
 public import Mathlib.MeasureTheory.Integral.Bochner.Basic
 
-/-! # Continuous bilinear maps on `MeasureTheory.Lp` spaces
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Continuous bilinear maps on `MeasureTheory.Lp` spaces
 
 Given a continuous bilinear map `B : E →L[𝕜] F →L[𝕜] G`, we define an associated map
 `ContinuousLinearMap.holder : Lp E p μ → Lp F q μ → Lp G r μ` where `p q r` are a Hölder triple.
@@ -31,7 +35,9 @@ open scoped NNReal
 
 noncomputable section
 
-/-! ### Induced bilinear maps -/
+/-!
+# Induced bilinear maps
+-/
 
 section Bilinear
 
@@ -161,9 +167,10 @@ end Bilinear
 namespace MeasureTheory
 namespace Lp
 
-/-! ### Heterogeneous scalar multiplication
+/-!
+# Heterogeneous scalar multiplication
 
-While the previous section is *nominally* more general than this one, and indeed, we could
+While the previous section is _nominally_ more general than this one, and indeed, we could
 use the constructions of the previous section to define the scalar multiplication herein,
 we would lose some slight generality as we would need to require that `𝕜` is a nontrivially
 normed field everywhere. Moreover, it would only simplify a few proofs.

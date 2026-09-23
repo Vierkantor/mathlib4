@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Data.Seq.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Partially defined possibly infinite lists
 

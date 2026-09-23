@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Order.AbsoluteValue.Euclidean
 public import Mathlib.Algebra.Order.Ring.Basic
 public import Mathlib.Algebra.Polynomial.FieldDivision
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Absolute value on polynomials over a finite field.
 
@@ -22,9 +25,9 @@ to `q ^ degree p` (where `q ^ degree 0 = 0`) is an absolute value.
   to `q ^ degree p` (where `q ^ degree 0 = 0`)
 
 ## Main results
+
 * `Polynomial.cardPowDegree_isEuclidean`: `cardPowDegree` respects the
   Euclidean domain structure on the ring of polynomials
-
 -/
 
 @[expose] public section

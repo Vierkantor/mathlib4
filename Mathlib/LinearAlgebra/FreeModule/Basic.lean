@@ -12,6 +12,9 @@ public import Mathlib.Data.Finsupp.Fintype
 public import Mathlib.LinearAlgebra.Basis.Basic
 public import Mathlib.Logic.Small.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Free modules
 
@@ -88,14 +91,16 @@ Here `ι = ChooseBasisIndex R M`. -/
 noncomputable def chooseBasis : Basis (ChooseBasisIndex R M) R M :=
   ((Module.free_iff_set R M).mp ‹_›).choose_spec.some
 
-/-- The universal property of free modules: giving a function `(ChooseBasisIndex R M) → N`, for `N`
+/--
+The universal property of free modules: giving a function `(ChooseBasisIndex R M) → N`, for `N`
 an `R`-module, is the same as giving an `R`-linear map `M →ₗ[R] N`.
 
 This definition is parameterized over an extra `Semiring S`,
 such that `SMulCommClass R S M'` holds.
 If `R` is commutative, you can set `S := R`; if `R` is not commutative,
 you can recover an `AddEquiv` by setting `S := ℕ`.
-See library note [bundled maps over different rings]. -/
+See library note \[bundled maps over different rings\].
+-/
 noncomputable def constr {S : Type z} [Semiring S] [Module S N] [SMulCommClass R S N] :
     (ChooseBasisIndex R M → N) ≃ₗ[S] M →ₗ[R] N :=
   Basis.constr (chooseBasis R M) S

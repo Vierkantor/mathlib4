@@ -11,12 +11,14 @@ public import Mathlib.Algebra.Homology.Precylinder
 public import Mathlib.CategoryTheory.Localization.OfQuotient
 public import Mathlib.CategoryTheory.Shift.SingleFunctorsLift
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The triangulated subcategory of bounded below cochain complexes up to homotopy
 
 In this file, we introduce the triangulated full subcategory `HomotopyCategory.Plus C`
 of `HomotopyCategory C (.up ℤ)` consisting of bounded below cochain complexes.
-
 -/
 
 @[expose] public section

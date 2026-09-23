@@ -10,6 +10,9 @@ public import Mathlib.Order.Filter.AtTopBot.Finite
 public import Mathlib.Order.Filter.AtTopBot.Prod
 public import Mathlib.Topology.Algebra.Ring.Real
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Convergence of subadditive sequences
 

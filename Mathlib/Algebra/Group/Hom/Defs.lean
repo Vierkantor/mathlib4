@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Notation.Pi.Defs
 public import Mathlib.Data.FunLike.Basic
 public import Mathlib.Logic.Function.Iterate
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Monoid and group homomorphisms
 
@@ -57,7 +60,6 @@ deprecated and moved to `Deprecated/Group`.
 ## Tags
 
 MonoidHom, AddMonoidHom
-
 -/
 
 @[expose] public section
@@ -197,6 +199,8 @@ instance OneHom.funLike : FunLike (OneHom M N) M N where
 instance OneHom.oneHomClass : OneHomClass (OneHom M N) M N where
   map_one := OneHom.map_one'
 
+
+set_option doc.verso false
 library_note «hom simp lemma priority»
 /--
 The hom class hierarchy allows for a single lemma, such as `map_one`, to apply to a large variety
@@ -227,9 +231,13 @@ As `map_mul` is tagged `simp mid`, this means that it still fires before `fooMon
 is the behavior we desire.
 -/
 
+
+set_option doc.verso true
 variable [FunLike F M N]
 
-/-- See note [hom simp lemma priority] -/
+/--
+See note \[hom simp lemma priority\]
+-/
 @[to_additive (attr := simp mid, grind =)]
 theorem map_one [OneHomClass F M N] (f : F) : f 1 = 1 :=
   OneHomClass.map_one f
@@ -321,7 +329,9 @@ instance MulHom.mulHomClass : MulHomClass (M →ₙ* N) M N where
 
 variable [FunLike F M N]
 
-/-- See note [hom simp lemma priority] -/
+/--
+See note \[hom simp lemma priority\]
+-/
 @[to_additive (attr := simp mid, grind =)]
 theorem map_mul [MulHomClass F M N] (f : F) (x y : M) : f (x * y) = f x * f y :=
   MulHomClass.map_mul f x y
@@ -440,9 +450,11 @@ lemma map_comp_div' [DivInvMonoid G] [DivInvMonoid H] [MulHomClass F G H] (f : F
     (hf : ∀ a, f a⁻¹ = (f a)⁻¹) (g h : ι → G) : f ∘ (g / h) = f ∘ g / f ∘ h := by
   ext; simp [map_div' f hf]
 
-/-- Group homomorphisms preserve inverse.
+/--
+Group homomorphisms preserve inverse.
 
-See note [hom simp lemma priority] -/
+See note \[hom simp lemma priority\]
+-/
 @[to_additive (attr := simp mid, grind =) /-- Additive group homomorphisms preserve negation. -/]
 theorem map_inv [Group G] [DivisionMonoid H] [MonoidHomClass F G H]
     (f : F) (a : G) : f a⁻¹ = (f a)⁻¹ :=
@@ -461,9 +473,11 @@ theorem map_mul_inv [Group G] [DivisionMonoid H] [MonoidHomClass F G H] (f : F) 
 lemma map_comp_mul_inv [Group G] [DivisionMonoid H] [MonoidHomClass F G H] (f : F) (g h : ι → G) :
     f ∘ (g * h⁻¹) = f ∘ g * (f ∘ h)⁻¹ := by simp
 
-/-- Group homomorphisms preserve division.
+/--
+Group homomorphisms preserve division.
 
-See note [hom simp lemma priority] -/
+See note \[hom simp lemma priority\]
+-/
 @[to_additive (attr := simp mid, grind =) /-- Additive group homomorphisms preserve subtraction. -/]
 theorem map_div [Group G] [DivisionMonoid H] [MonoidHomClass F G H] (f : F) :
     ∀ a b, f (a / b) = f a / f b := map_div' _ <| map_inv f
@@ -472,7 +486,9 @@ theorem map_div [Group G] [DivisionMonoid H] [MonoidHomClass F G H] (f : F) :
 lemma map_comp_div [Group G] [DivisionMonoid H] [MonoidHomClass F G H] (f : F) (g h : ι → G) :
     f ∘ (g / h) = f ∘ g / f ∘ h := by ext; simp
 
-/-- See note [hom simp lemma priority] -/
+/--
+See note \[hom simp lemma priority\]
+-/
 @[to_additive (attr := simp mid, grind =) (reorder := a n)]
 theorem map_pow [Monoid G] [Monoid H] [MonoidHomClass F G H] (f : F) (a : G) :
     ∀ n : ℕ, f (a ^ n) = f a ^ n
@@ -494,9 +510,11 @@ lemma map_comp_zpow' [DivInvMonoid G] [DivInvMonoid H] [MonoidHomClass F G H] (f
     (hf : ∀ x : G, f x⁻¹ = (f x)⁻¹) (g : ι → G) (n : ℤ) : f ∘ (g ^ n) = f ∘ g ^ n := by
   ext; simp [map_zpow' f hf]
 
-/-- Group homomorphisms preserve integer power.
+/--
+Group homomorphisms preserve integer power.
 
-See note [hom simp lemma priority] -/
+See note \[hom simp lemma priority\]
+-/
 @[to_additive (attr := simp mid, grind =) (reorder := g n)
 /-- Additive group homomorphisms preserve integer scaling. -/]
 theorem map_zpow [Group G] [DivisionMonoid H] [MonoidHomClass F G H]

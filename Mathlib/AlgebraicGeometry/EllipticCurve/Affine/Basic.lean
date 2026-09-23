@@ -8,13 +8,16 @@ module
 public import Mathlib.Algebra.Polynomial.Bivariate
 public import Mathlib.AlgebraicGeometry.EllipticCurve.VariableChange
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Weierstrass equations and the nonsingular condition in affine coordinates
 
-Let `W` be a Weierstrass curve over a commutative ring `R` with coefficients `aᵢ`. An *affine point*
-on `W` is a tuple `(x, y)` of elements in `R` satisfying the *Weierstrass equation* `W(X, Y) = 0` in
-*affine coordinates*, where `W(X, Y) := Y² + a₁XY + a₃Y - (X³ + a₂X² + a₄X + a₆)`. It is
-*nonsingular* if its partial derivatives `W_X(x, y)` and `W_Y(x, y)` do not vanish simultaneously.
+Let `W` be a Weierstrass curve over a commutative ring `R` with coefficients `aᵢ`. An _affine point_
+on `W` is a tuple `(x, y)` of elements in `R` satisfying the _Weierstrass equation_ `W(X, Y) = 0` in
+_affine coordinates_, where `W(X, Y) := Y² + a₁XY + a₃Y - (X³ + a₂X² + a₄X + a₆)`. It is
+_nonsingular_ if its partial derivatives `W_X(x, y)` and `W_Y(x, y)` do not vanish simultaneously.
 
 This file defines polynomials associated to Weierstrass equations and the nonsingular condition in
 affine coordinates. The group law on the actual type of nonsingular points in affine coordinates
@@ -39,7 +42,7 @@ abbreviation for `WeierstrassCurve` that can be converted using `WeierstrassCurv
 
 ## References
 
-[J Silverman, *The Arithmetic of Elliptic Curves*][silverman2009]
+‍\[J Silverman, _The Arithmetic of Elliptic Curves_\]\[silverman2009\]
 
 ## Tags
 
@@ -67,7 +70,9 @@ variable {R : Type r}
 
 namespace WeierstrassCurve
 
-/-! ## Affine coordinates -/
+/-!
+# Affine coordinates
+-/
 
 variable (R) in
 /-- An abbreviation for a Weierstrass curve in affine coordinates. -/
@@ -83,7 +88,9 @@ variable [CommRing R] {W : Affine R}
 
 namespace Affine
 
-/-! ## Weierstrass equations in affine coordinates -/
+/-!
+# Weierstrass equations in affine coordinates
+-/
 
 variable (W) in
 /-- The polynomial `W(X, Y) := Y² + a₁XY + a₃Y - (X³ + a₂X² + a₄X + a₆)` associated to a Weierstrass
@@ -167,7 +174,9 @@ lemma equation_iff_variableChange (x y : R) :
   congr! 1
   ring1
 
-/-! ## The nonsingular condition in affine coordinates -/
+/-!
+# The nonsingular condition in affine coordinates
+-/
 
 variable (W) in
 /-- The partial derivative `W_X(X, Y)` with respect to `X` of the polynomial `W(X, Y)` associated to
@@ -250,7 +259,9 @@ lemma equation_iff_nonsingular [Nontrivial R] [W.IsElliptic] {x y : R} :
     W.Equation x y ↔ W.Nonsingular x y :=
   W.equation_iff_nonsingular_of_Δ_ne_zero <| W.coe_Δ' ▸ W.Δ'.ne_zero
 
-/-! ### Maps and base changes -/
+/-!
+# Maps and base changes
+-/
 
 variable (W) (f : R →+* S)
 

@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Topology.ContinuousMap.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Continuous open maps
 
@@ -56,7 +59,9 @@ instance [TopologicalSpace α] [TopologicalSpace β] [FunLike F α β]
     CoeTC F (α →CO β) :=
   ⟨fun f => ⟨f, map_open f⟩⟩
 
-/-! ### Continuous open maps -/
+/-!
+# Continuous open maps
+-/
 
 
 namespace ContinuousOpenMap

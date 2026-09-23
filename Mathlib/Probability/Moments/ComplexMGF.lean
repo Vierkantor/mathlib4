@@ -11,6 +11,9 @@ public import Mathlib.MeasureTheory.Measure.CharacteristicFunction.Basic
 public import Mathlib.Probability.Moments.Basic
 public import Mathlib.Probability.Moments.IntegrableExpMul
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The complex-valued moment-generating function
 
@@ -29,7 +32,6 @@ properties of the mgf from those of the characteristic function).
 ## Main results
 
 * `complexMGF_ofReal`: for `x : ℝ`, `complexMGF X μ x = mgf X μ x`.
-
 * `hasDerivAt_complexMGF`: for all `z : ℂ` such that the real part `z.re` belongs to the interior
   of the interval of definition of the mgf, `complexMGF X μ` is differentiable at `z`
   with derivative `μ[X * exp (z * X)]`.
@@ -37,14 +39,12 @@ properties of the mgf from those of the characteristic function).
   `{z | z.re ∈ interior (integrableExpSet X μ)}`.
 * `analyticOn_complexMGF`: `complexMGF X μ` is analytic on the vertical strip
   `{z | z.re ∈ interior (integrableExpSet X μ)}`.
-
 * `eqOn_complexMGF_of_mgf`: if two random variables have the same moment-generating function,
   then they have the same `complexMGF` on the vertical strip
   `{z | z.re ∈ interior (integrableExpSet X μ)}`.
   Once we know that equal `mgf` implies equal distributions, we will be able to show that
   the `complexMGF` are equal everywhere, not only on the strip.
   This lemma will be used in the proof of the equality of distributions.
-
 * `ext_of_complexMGF_eq`: If the complex moment-generating functions of two random variables `X`
   and `Y` with respect to the finite measures `μ`, `μ'`, respectively, coincide, then
   `μ.map X = μ'.map Y`. In other words, complex moment-generating functions separate the
@@ -53,7 +53,6 @@ properties of the mgf from those of the characteristic function).
 ## TODO
 
 * Prove that if two random variables have the same `mgf`, then the have the same `complexMGF`.
-
 -/
 
 @[expose] public section
@@ -200,7 +199,9 @@ end Analytic
 
 section Deriv
 
-/-! ### Iterated derivatives of `complexMGF` -/
+/-!
+# Iterated derivatives of `complexMGF`
+-/
 
 lemma hasDerivAt_iteratedDeriv_complexMGF (hz : z.re ∈ interior (integrableExpSet X μ)) (n : ℕ) :
     HasDerivAt (iteratedDeriv n (complexMGF X μ)) μ[fun ω ↦ X ω ^ (n + 1) * cexp (z * X ω)] z := by

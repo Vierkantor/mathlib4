@@ -8,6 +8,9 @@ module
 public import Mathlib.Topology.NhdsSet
 public import Mathlib.Topology.Inseparable
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Neighborhoods kernel of a set
 

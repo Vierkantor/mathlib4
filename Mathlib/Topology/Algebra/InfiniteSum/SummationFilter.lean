@@ -11,6 +11,9 @@ public import Mathlib.Order.Interval.Finset.Nat
 public import Mathlib.Order.LiminfLimsup
 
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Summation filters
 
@@ -159,12 +162,14 @@ end map_comap
 
 section examples
 /-!
-## Examples of summation filters
+# Examples of summation filters
 -/
 variable (β)
 
-/-- **Unconditional summation**: a function on `β` is said to be *unconditionally summable* if its
-partial sums over finite subsets converge with respect to the `atTop` filter. -/
+/--
+*Unconditional summation*: a function on `β` is said to be _unconditionally summable_ if its
+partial sums over finite subsets converge with respect to the `atTop` filter.
+-/
 @[simps] def unconditional : SummationFilter β where
   filter := atTop
 

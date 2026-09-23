@@ -10,12 +10,15 @@ public import Mathlib.Algebra.Order.GroupWithZero.WithZero
 public import Mathlib.Algebra.Order.Hom.MonoidWithZero
 public import Mathlib.Algebra.Order.Monoid.Basic
 
-/-! # The range of a MonoidWithZeroHom
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# The range of a MonoidWithZeroHom
 
 Given a `MonoidWithZeroHom` `f : A → B` whose codomain `B` is a `LinearOrderedCommGroupWithZero`,
 we provide some order properties of the `MonoidWithZeroHom.ValueGroup₀` as defined in
 `Mathlib.Algebra.GroupWithZero.Range`.
-
 -/
 
 @[expose] public section

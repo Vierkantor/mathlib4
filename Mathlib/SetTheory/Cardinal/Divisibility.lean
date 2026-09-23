@@ -9,6 +9,9 @@ public import Mathlib.Algebra.IsPrimePow
 public import Mathlib.SetTheory.Cardinal.Arithmetic
 public import Mathlib.Tactic.WLOG
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cardinal Divisibility
 
@@ -27,7 +30,6 @@ cancellative `CommMonoidWithZero`.
 * `Cardinal.is_prime_iff`: a `Cardinal` is prime iff it is infinite or a prime natural number.
 * `Cardinal.isPrimePow_iff`: a `Cardinal` is a prime power iff it is infinite or a natural number
   which is itself a prime power.
-
 -/
 
 public section

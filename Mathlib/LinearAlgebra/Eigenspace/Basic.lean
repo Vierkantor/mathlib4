@@ -14,11 +14,15 @@ public import Mathlib.RingTheory.Nilpotent.Defs
 public import Mathlib.RingTheory.Nilpotent.Lemmas
 public import Mathlib.Tactic.Peel
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Eigenvectors and eigenvalues
 
 This file defines eigenspaces, eigenvalues, and eigenvectors, as well as their generalized
-counterparts. We follow Axler's approach [axler2024] because it allows us to derive many properties
+counterparts. We follow Axler's approach \[axler2024\] because it allows us to derive many
+properties
 without choosing a basis and without using matrices.
 
 An eigenspace of a linear map `f` for a scalar `μ` is the kernel of the map `(f - μ • id)`. The
@@ -43,8 +47,8 @@ The existence of eigenvalues over an algebraically closed field
 
 ## References
 
-* [Sheldon Axler, *Linear Algebra Done Right*][axler2024]
-* https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors
+* ‍\[Sheldon Axler, _Linear Algebra Done Right_\]\[axler2024\]
+* https://en.wikipedia.org/wiki/Eigenvalues\_and\_eigenvectors
 
 ## Tags
 
@@ -65,11 +69,13 @@ open Module Set
 variable {K R : Type v} {V M : Type w} [CommRing R] [AddCommGroup M] [Module R M] [Field K]
   [AddCommGroup V] [Module K V]
 
-/-- The submodule `genEigenspace f μ k` for a linear map `f`, a scalar `μ`,
+/--
+The submodule `genEigenspace f μ k` for a linear map `f`, a scalar `μ`,
 and a number `k : ℕ∞` is the kernel of `(f - μ • id) ^ k` if `k` is a natural number,
-or the union of all these kernels if `k = ∞`. (`k = ∞` corresponds to Def 8.19 of [axler2024].)
+or the union of all these kernels if `k = ∞`. (`k = ∞` corresponds to Def 8.19 of \[axler2024\].)
 A generalized eigenspace for some exponent `k` is contained in
-the generalized eigenspace for exponents larger than `k`. -/
+the generalized eigenspace for exponents larger than `k`.
+-/
 def genEigenspace (f : End R M) (μ : R) : ℕ∞ →o Submodule R M where
   toFun k := ⨆ l : ℕ, ⨆ _ : l ≤ k, LinearMap.ker ((f - μ • 1) ^ l)
   monotone' _ _ hkl := biSup_mono fun _ hi ↦ hi.trans hkl
@@ -365,8 +371,10 @@ lemma maxUnifEigenspaceIndex_le_finrank [FiniteDimensional K V] (f : End K V) (�
     rw [genEigenspace_nat, genEigenspace_nat]
     apply ker_pow_le_ker_pow_finrank
 
-/-- Every generalized eigenvector is a generalized eigenvector for exponent `finrank K V`.
-(Lemma 8.20 of [axler2024]) -/
+/--
+Every generalized eigenvector is a generalized eigenvector for exponent `finrank K V`.
+(Lemma 8.20 of \[axler2024\])
+-/
 lemma genEigenspace_le_genEigenspace_finrank [FiniteDimensional K V] (f : End K V)
     (μ : K) (k : ℕ∞) : f.genEigenspace μ k ≤ f.genEigenspace μ (finrank K V) := by
   calc f.genEigenspace μ k
@@ -419,8 +427,10 @@ lemma isNilpotent_restrict_genEigenspace_top [IsNoetherian R M] (f : End R M) (�
   on_goal 2 => apply isNilpotent_restrict_genEigenspace_nat f μ (maxUnifEigenspaceIndex f μ)
   rw [genEigenspace_top_eq_maxUnifEigenspaceIndex]
 
-/-- The submodule `eigenspace f μ` for a linear map `f` and a scalar `μ` consists of all vectors `x`
-such that `f x = μ • x`. (Def 5.52 of [axler2024]). -/
+/--
+The submodule `eigenspace f μ` for a linear map `f` and a scalar `μ` consists of all vectors `x`
+such that `f x = μ • x`. (Def 5.52 of \[axler2024\]).
+-/
 abbrev eigenspace (f : End R M) (μ : R) : Submodule R M :=
   f.genEigenspace μ 1
 
@@ -432,15 +442,19 @@ lemma eigenspace_def {f : End R M} {μ : R} :
 theorem eigenspace_zero (f : End R M) : f.eigenspace 0 = LinearMap.ker f := by
   simp only [eigenspace, ← Nat.cast_one (R := ℕ∞), genEigenspace_zero_nat, pow_one]
 
-/-- A nonzero element of an eigenspace is an eigenvector. (Def 5.8 of [axler2024]) -/
+/--
+A nonzero element of an eigenspace is an eigenvector. (Def 5.8 of \[axler2024\])
+-/
 abbrev HasEigenvector (f : End R M) (μ : R) (x : M) : Prop :=
   HasUnifEigenvector f μ 1 x
 
 lemma hasEigenvector_iff {f : End R M} {μ : R} {x : M} :
     f.HasEigenvector μ x ↔ x ∈ f.eigenspace μ ∧ x ≠ 0 := Iff.rfl
 
-/-- A scalar `μ` is an eigenvalue for a linear map `f` if there are nonzero vectors `x`
-such that `f x = μ • x`. (Def 5.5 of [axler2024]). -/
+/--
+A scalar `μ` is an eigenvalue for a linear map `f` if there are nonzero vectors `x`
+such that `f x = μ • x`. (Def 5.5 of \[axler2024\]).
+-/
 abbrev HasEigenvalue (f : End R M) (a : R) : Prop :=
   HasUnifEigenvalue f a 1
 
@@ -533,8 +547,10 @@ theorem eigenspace_div (f : End K V) (a b : K) (hb : b ≠ 0) :
     eigenspace f (a / b) = LinearMap.ker (b • f - algebraMap K (End K V) a) :=
   genEigenspace_div f a b hb
 
-/-- A nonzero element of a generalized eigenspace is a generalized eigenvector.
-(Def 8.8 of [axler2024]) -/
+/--
+A nonzero element of a generalized eigenspace is a generalized eigenvector.
+(Def 8.8 of \[axler2024\])
+-/
 abbrev HasGenEigenvector (f : End R M) (μ : R) (k : ℕ) (x : M) : Prop :=
   HasUnifEigenvector f μ k x
 
@@ -748,12 +764,14 @@ theorem eigenvectors_linearIndependent' {ι : Type*} [IsDomain R] [IsTorsionFree
   f.eigenspaces_iSupIndep.comp hμ |>.linearIndependent _
     (fun i ↦ h_eigenvec i |>.left) (fun i ↦ h_eigenvec i |>.right)
 
-/-- Eigenvectors corresponding to distinct eigenvalues of a linear operator are linearly
-independent. (Lemma 5.11 of [axler2024])
+/--
+Eigenvectors corresponding to distinct eigenvalues of a linear operator are linearly
+independent. (Lemma 5.11 of \[axler2024\])
 
 We use the eigenvalues as indexing set to ensure that there is only one eigenvector for each
 eigenvalue in the image of `xs`.
-See `Module.End.eigenvectors_linearIndependent'` for an indexed variant. -/
+See `Module.End.eigenvectors_linearIndependent'` for an indexed variant.
+-/
 theorem eigenvectors_linearIndependent [IsDomain R] [IsTorsionFree R M]
     (f : End R M) (μs : Set R) (xs : μs → M)
     (h_eigenvec : ∀ μ : μs, f.HasEigenvector μ (xs μ)) : LinearIndependent R xs :=

@@ -10,8 +10,11 @@ public import Mathlib.Data.Rat.Cast.Defs
 public import Mathlib.Tactic.Positivity.Basic
 public import Mathlib.Tactic.SetLike
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
-## `norm_num` plugin for scientific notation.
+# `norm_num` plugin for scientific notation.
 -/
 
 public meta section

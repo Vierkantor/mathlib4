@@ -9,6 +9,9 @@ public import Mathlib.Data.Stream.Init
 public import Mathlib.Control.Fix
 public import Mathlib.Order.OmegaCompletePartialOrder
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lawful fixed point operators
 

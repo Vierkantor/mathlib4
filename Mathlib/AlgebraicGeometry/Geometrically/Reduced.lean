@@ -9,24 +9,29 @@ public import Mathlib.AlgebraicGeometry.Artinian
 public import Mathlib.AlgebraicGeometry.Geometrically.Basic
 public import Mathlib.AlgebraicGeometry.Morphisms.SchemeTheoreticallyDominant
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Geometrically Reduced Schemes
 
 ## Main results
-- `AlgebraicGeometry.GeometricallyReduced`:
+
+* `AlgebraicGeometry.GeometricallyReduced`:
   We say that morphism `f : X ⟶ Y` is geometrically reduced if for all `Spec K ⟶ Y` with `K`
   a field, `X ×[Y] Spec K` is reduced.
   We also provide the fact that this is stable under base change (by `infer_instance`)
-- `GeometricallyReduced.iff_geometricallyReduced_fiber`:
+* `GeometricallyReduced.iff_geometricallyReduced_fiber`:
   A scheme is geometrically reduced over `S` iff the fibers of all
   `s : S` are geometrically reduced.
-- `AlgebraicGeometry.GeometricallyReduced.isReduced_of_flat_of_isLocallyNoetherian`:
+* `AlgebraicGeometry.GeometricallyReduced.isReduced_of_flat_of_isLocallyNoetherian`:
   If `X` is geometrically reduced and flat over a reduced and locally noetherian scheme,
   then `X` is also reduced.
   In particular, the base change of a geometrically reduced and flat scheme to an
   reduced and locally noetherian scheme is reduced (by `infer_instance`).
 
 ## TODO
+
 Get rid of the noetherian assumption.
 -/
 

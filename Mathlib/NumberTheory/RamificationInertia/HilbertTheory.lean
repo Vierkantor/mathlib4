@@ -7,8 +7,10 @@ module
 
 public import Mathlib.NumberTheory.RamificationInertia.Galois
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Decomposition and Inertia fields
 
 In this file, we develop Hilbert Theory on the splitting of prime ideals in a Galois extension.
@@ -24,6 +26,7 @@ group of `P` in `Gal(L/K)`.
 Let `e` and `f` the ramification index and inertia degree of `P` over `p` and let `g`
 be the number of prime ideals above `p` in `L`. Denote by `𝓟D`, resp. `𝓟E`, the prime ideal of `D`,
 resp. `E`, below `P`. Then we have the following properties
+
 ```
 degree            ramif. index   inertia deg.
         L      P
@@ -34,7 +37,6 @@ degree            ramif. index   inertia deg.
   g     |      |      1               1
         K      p
 ```
-
 -/
 
 @[expose] public section

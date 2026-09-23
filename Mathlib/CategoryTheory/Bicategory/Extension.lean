@@ -8,6 +8,9 @@ module
 public import Mathlib.CategoryTheory.Bicategory.Basic
 public import Mathlib.CategoryTheory.Comma.StructuredArrow.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Extensions and lifts in bicategories
 
@@ -18,15 +21,16 @@ framework, commutative diagrams are replaced by 2-morphisms. Depending on the or
 right here is a common one in the theory of Kan extensions.
 
 ## Implementation notes
+
 We define extensions and lifts as objects in certain comma categories (`StructuredArrow` for left,
 and `CostructuredArrow` for right). See the file `CategoryTheory.StructuredArrow` for properties
 about these categories. We introduce some intuitive aliases. For example, `LeftExtension.extension`
 is an alias for `Comma.right`.
 
 ## References
+
 * https://ncatlab.org/nlab/show/lifts+and+extensions
 * https://ncatlab.org/nlab/show/Kan+extension
-
 -/
 
 @[expose] public section

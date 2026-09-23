@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Homology.ShortComplex.SnakeLemma
 public import Mathlib.Algebra.Homology.ShortComplex.ShortExact
 public import Mathlib.Algebra.Homology.HomologicalComplexLimits
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The homology sequence
 
@@ -28,7 +31,6 @@ the Liquid Tensor Experiment.
 ## References
 
 * https://stacks.math.columbia.edu/tag/0111
-
 -/
 
 @[expose] public section

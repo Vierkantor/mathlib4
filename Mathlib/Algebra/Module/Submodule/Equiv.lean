@@ -8,7 +8,12 @@ module
 
 public import Mathlib.Algebra.Module.Submodule.Range
 
-/-! # Linear equivalences involving submodules -/
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Linear equivalences involving submodules
+-/
 
 @[expose] public section
 

@@ -8,6 +8,9 @@ module
 public import Mathlib.Dynamics.Ergodic.AddCircle
 public import Mathlib.MeasureTheory.Covering.LiminfLimsup
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Well-approximable numbers and Gallagher's ergodic theorem
 
@@ -18,22 +21,21 @@ respect to the Lebesgue measure.
 Gallagher's theorem concerns the approximation of real numbers by rational numbers. The input is a
 sequence of distances `δ₁, δ₂, ...`, and the theorem concerns the set of real numbers `x` for which
 there are infinitely many solutions to:
-$$
-  |x - m/n| < δₙ,
-$$
+$$`  |x - m/n| < δₙ,  `
 where the rational number `m/n` is in lowest terms. The result is that for any `δ`, this set is
 either almost all `x` or almost no `x`.
 
 This result was proved by Gallagher in 1959
-[P. Gallagher, *Approximation by reduced fractions*][Gallagher1961]. It is formalised here as
+‍\[P. Gallagher, _Approximation by reduced fractions_\]\[Gallagher1961\]. It is formalised here as
 `AddCircle.addWellApproximable_ae_empty_or_univ` except with `x` belonging to the circle `ℝ ⧸ ℤ`
 since this turns out to be more natural.
 
 Given a particular `δ`, the Duffin-Schaeffer conjecture (now a theorem) gives a criterion for
 deciding which of the two cases in the conclusion of Gallagher's theorem actually occurs. It was
 proved by Koukoulopoulos and Maynard in 2019
-[D. Koukoulopoulos, J. Maynard, *On the Duffin-Schaeffer conjecture*][KoukoulopoulosMaynard2020].
-We do *not* include a formalisation of the Koukoulopoulos-Maynard result here.
+‍\[D. Koukoulopoulos, J. Maynard, _On the Duffin-Schaeffer
+conjecture_\]\[KoukoulopoulosMaynard2020\].
+We do _not_ include a formalisation of the Koukoulopoulos-Maynard result here.
 
 ## Main definitions and results:
 
@@ -42,7 +44,7 @@ We do *not* include a formalisation of the Koukoulopoulos-Maynard result here.
 * `wellApproximable`: in a seminormed group `A`, given a sequence of distances `δ₁, δ₂, ...`,
   `wellApproximable A δ` is the limsup as `n → ∞` of the sets `approxOrderOf A n δₙ`. Thus, it
   is the set of points that lie in infinitely many of the sets `approxOrderOf A n δₙ`.
-* `AddCircle.addWellApproximable_ae_empty_or_univ`: *Gallagher's ergodic theorem* says that for
+* `AddCircle.addWellApproximable_ae_empty_or_univ`: _Gallagher's ergodic theorem_ says that for
   the (additive) circle `𝕊`, for any sequence of distances `δ`, the set
   `addWellApproximable 𝕊 δ` is almost empty or almost full.
 * `NormedAddCommGroup.exists_norm_nsmul_le`: a general version of Dirichlet's approximation theorem

@@ -8,6 +8,9 @@ module
 public import Mathlib.RingTheory.FractionalIdeal.Extended
 public import Mathlib.RingTheory.ClassGroup.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Class group map induced by an extension of domains
 
@@ -17,15 +20,15 @@ pushing fractional ideals forward along the algebra map.
 
 ## Main definitions
 
-- `ClassGroup.extendedHom A B`: the induced map between the class groups.
-- `ClassGroup.extendedIdeal A B`: the extension of a nonzero integral ideal.
+* `ClassGroup.extendedHom A B`: the induced map between the class groups.
+* `ClassGroup.extendedIdeal A B`: the extension of a nonzero integral ideal.
 
 ## Main results
 
-- `ClassGroup.extendedHom_mk`: compatibility with representatives as fractional ideals.
-- `ClassGroup.extendedHom_mk0`: compatibility with representatives as nonzero integral ideals.
-- `ClassGroup.extendedHom_comp`: compatibility of extension in a tower `A → B → C`.
-- `ClassGroup.extendedHom_eq_one_of_forall_isPrincipal`: if the extension of every ideal is
+* `ClassGroup.extendedHom_mk`: compatibility with representatives as fractional ideals.
+* `ClassGroup.extendedHom_mk0`: compatibility with representatives as nonzero integral ideals.
+* `ClassGroup.extendedHom_comp`: compatibility of extension in a tower `A → B → C`.
+* `ClassGroup.extendedHom_eq_one_of_forall_isPrincipal`: if the extension of every ideal is
   principal, then `ClassGroup.extendedHom A B` is trivial.
 -/
 

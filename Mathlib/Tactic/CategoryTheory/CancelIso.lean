@@ -8,6 +8,9 @@ module
 public import Mathlib.Tactic.Push
 public import Mathlib.CategoryTheory.Iso
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Simproc for canceling morphisms with their inverses
 

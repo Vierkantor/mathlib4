@@ -8,6 +8,9 @@ module
 public import Mathlib.Topology.UniformSpace.UniformEmbedding
 public import Mathlib.Topology.UniformSpace.Equiv
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Abstract theory of Hausdorff completions of uniform spaces
 

@@ -12,6 +12,9 @@ public import Mathlib.LinearAlgebra.Matrix.ToLin
 public import Mathlib.RingTheory.Localization.FractionRing
 public import Mathlib.RingTheory.Localization.Integer
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Matrices and linear equivalences
 
@@ -29,7 +32,6 @@ to linear equivs.
 ## Tags
 
 matrix, linear equivalence, linear isomorphism, determinant, inverse
-
 -/
 
 @[expose] public section

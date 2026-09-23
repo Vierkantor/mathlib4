@@ -8,14 +8,17 @@ module
 public import Mathlib.CategoryTheory.FiberedCategory.Fiber
 public import Mathlib.CategoryTheory.FiberedCategory.Fibered
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Fibers of functors
 
 In this file we introduce a typeclass `HasFibers` for a functor `p : 𝒳 ⥤ 𝒮`, consisting of:
-- A collection of categories `Fib S` for every `S` in `𝒮` (the fiber categories)
-- Functors `ι : Fib S ⥤ 𝒳` such that `ι ⋙ p = const (Fib S) S`
-- The induced functor `Fib S ⥤ Fiber p S` is an equivalence.
+
+* A collection of categories `Fib S` for every `S` in `𝒮` (the fiber categories)
+* Functors `ι : Fib S ⥤ 𝒳` such that `ι ⋙ p = const (Fib S) S`
+* The induced functor `Fib S ⥤ Fiber p S` is an equivalence.
 
 We also provide a canonical `HasFibers` instance, which uses the standard fibers `Fiber p S`
 (see `Mathlib/CategoryTheory/FiberedCategory/Fiber.lean`). This makes it so that any result proven
@@ -34,20 +37,20 @@ is an element of `F(S)`. The fiber category `Fiber p S` is then equivalent to th
 categories `F(S)` and the functor `ι` sends `a : F(S)` to `(S, a)` in the fibered category.
 
 ## Main API
+
 The following API is developed so that the fibers from a `HasFibers` instance can be used
 analogously to the standard fibers.
 
-- `Fib.homMk φ` is a lift of a morphism `φ : (ι S).obj a ⟶ (ι S).obj b` in `𝒳`, which lies over
+* `Fib.homMk φ` is a lift of a morphism `φ : (ι S).obj a ⟶ (ι S).obj b` in `𝒳`, which lies over
   `𝟙 S`, to a morphism in the fiber over `S`.
-- `Fib.mk` gives an object in the fiber over `S` which is isomorphic to a given `a : 𝒳` that
+* `Fib.mk` gives an object in the fiber over `S` which is isomorphic to a given `a : 𝒳` that
   satisfies `p(a) = S`. The isomorphism is given by `Fib.mkIsoSelf`.
-- `HasFibers.mkPullback` is a version of `IsPreFibered.mkPullback` which ensures that the object
+* `HasFibers.mkPullback` is a version of `IsPreFibered.mkPullback` which ensures that the object
   lies in a given fiber. The corresponding Cartesian morphism is given by `HasFibers.pullbackMap`.
-- `HasFibers.inducedMap` is a version of `IsCartesian.inducedMap` which gives the corresponding
+* `HasFibers.inducedMap` is a version of `IsCartesian.inducedMap` which gives the corresponding
   morphism in the fiber category.
-- `fiber_factorization` is the statement that any morphism in `𝒳` can be factored as a morphism in
+* `fiber_factorization` is the statement that any morphism in `𝒳` can be factored as a morphism in
   some fiber followed by a pullback.
-
 -/
 
 @[expose] public section
@@ -70,7 +73,9 @@ class HasFibers (p : 𝒳 ⥤ 𝒮) where
   category (S : 𝒮) : Category.{v₃} (Fib S) := by infer_instance
   /-- The functor `ι : Fib S ⥤ 𝒳`. -/
   ι (S : 𝒮) : Fib S ⥤ 𝒳
-  /-- The composition with the functor `p` is *equal* to the constant functor mapping to `S`. -/
+  /--
+  The composition with the functor `p` is _equal_ to the constant functor mapping to `S`.
+  -/
   comp_const (S : 𝒮) : ι S ⋙ p = (const (Fib S)).obj S
   /-- The induced functor from `Fib S` to the fiber of `𝒳 ⥤ 𝒮` over `S` is an equivalence. -/
   equiv (S : 𝒮) : Functor.IsEquivalence (inducedFunctor (comp_const S)) := by infer_instance

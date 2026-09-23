@@ -11,31 +11,33 @@ public import Mathlib.RingTheory.MvPolynomial.Tower
 public import Mathlib.RingTheory.TensorProduct.MvPolynomial
 public import Mathlib.RingTheory.Extension.Basic
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Generators of algebras
 
 ## Main definition
 
-- `Algebra.Generators`: A family of generators of an `R`-algebra `S` consists of
+* `Algebra.Generators`: A family of generators of an `R`-algebra `S` consists of
+
   1. `ι`: The type of variables.
   2. `val : ι → S`: The assignment of each variable to a value.
   3. `σ`: A set-theoretic section of the induced `R`-algebra homomorphism `R[X] → S`, where we
      write `R[X]` for `R[ι]`.
+* `Algebra.Generators.Hom`: Given a commuting square
 
-- `Algebra.Generators.Hom`: Given a commuting square
   ```
   R --→ P = R[X] ---→ S
   |                   |
   ↓                   ↓
   R' -→ P' = R'[X'] → S
   ```
+
   A hom between `P` and `P'` is an assignment `X → P'` such that the arrows commute.
-
-- `Algebra.Generators.Cotangent`: The cotangent space w.r.t. `P = R[X] → S`, i.e. the
+* `Algebra.Generators.Cotangent`: The cotangent space w.r.t. `P = R[X] → S`, i.e. the
   space `I/I²` with `I` being the kernel of the presentation.
-
-- `Algebra.Generators.mvPolynomial`: The canonical `R`-generators of the polynomial algebra
+* `Algebra.Generators.mvPolynomial`: The canonical `R`-generators of the polynomial algebra
   `MvPolynomial ι R`, indexed by `ι` via the variables `X`.
 
 ## TODOs
@@ -46,7 +48,6 @@ from constructions, e.g. composition. This causes fragile and cumbersome proofs,
 be refactored in a way that makes these equalities reducibly def-eq, for example
 by unbundling the `ι` field or making the field globally reducible in constructions using
 unification hints.
-
 -/
 
 @[expose] public section
@@ -89,7 +90,9 @@ instance : Algebra P.Ring S := P.algebra
 /-- The designated section w.r.t. a family of generators. -/
 def σ : S → P.Ring := P.σ'
 
-/-- See Note [custom simps projection] -/
+/--
+See Note \[custom simps projection\]
+-/
 def Simps.σ : S → P.Ring := P.σ
 
 initialize_simps_projections Algebra.Generators (σ' → σ)
@@ -399,11 +402,12 @@ section
 variable [Algebra R R'] [Algebra R' R''] [Algebra R' S'']
 variable [Algebra S S'] [Algebra S' S''] [Algebra S S'']
 
-/-- Given a commuting square
-R --→ P = R[X] ---→ S
+/--
+Given a commuting square
+R --→ P = R\[X\] ---→ S
 |                   |
 ↓                   ↓
-R' -→ P' = R'[X'] → S
+R' -→ P' = R'\[X'\] → S
 A hom between `P` and `P'` is an assignment `I → P'` such that the arrows commute.
 Also see `Algebra.Generators.Hom.equivAlgHom`.
 -/

@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Topology.Defs.Induced
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Basic lemmas and instances about the `WithTopology` type synonym
 
@@ -81,7 +84,9 @@ lemma continuous_toTopology : Continuous[t, _] (toTopology t) :=
 lemma continuous_ofTopology : Continuous[_, t] (ofTopology (t := t)) :=
   ⟨fun _ ↦ (·)⟩
 
-/-! ### Set-theoretic lemmas -/
+/-!
+# Set-theoretic lemmas
+-/
 
 open Set
 
@@ -98,7 +103,7 @@ lemma preimage_ofTopology (s : Set X) : ofTopology ⁻¹' s = toTopology t '' s 
   (image_toTopology t s).symm
 
 /-!
-### Instance transfers
+# Instance transfers
 
 In this section we transfer some instances from `X` to `WithTopology X t`.
 -/

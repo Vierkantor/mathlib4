@@ -12,15 +12,17 @@ public import Mathlib.Topology.ContinuousOn
 public import Mathlib.Topology.Ultrafilter
 public import Mathlib.Topology.Defs.Ultrafilter
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Compact sets and compact spaces
 
 ## Main results
 
-* `isCompact_univ_pi`: **Tychonov's theorem** - an arbitrary product of compact sets
+* `isCompact_univ_pi`: *Tychonov's theorem* - an arbitrary product of compact sets
   is compact.
-
-* `isCompact_generateFrom`: **Alexander's subbasis theorem** - suppose `X` is a topological space
+* `isCompact_generateFrom`: *Alexander's subbasis theorem* - suppose `X` is a topological space
   with a subbasis `S` and `s` is a subset of `X`, then `s` is compact if for any open cover of `s`
   with all elements taken from `S`, there is a finite subcover.
 -/
@@ -525,9 +527,11 @@ theorem IsCompact.union (hs : IsCompact s) (ht : IsCompact t) : IsCompact (s ∪
 protected theorem IsCompact.insert (hs : IsCompact s) (a) : IsCompact (insert a s) :=
   isCompact_singleton.union hs
 
-/-- If `V : ι → Set X` is a decreasing family of closed compact sets then any neighborhood of
-`⋂ i, V i` contains some `V i`. We assume each `V i` is compact *and* closed because `X` is
-not assumed to be Hausdorff. See `exists_subset_nhds_of_isCompact` for a version assuming this. -/
+/--
+If `V : ι → Set X` is a decreasing family of closed compact sets then any neighborhood of
+`⋂ i, V i` contains some `V i`. We assume each `V i` is compact _and_ closed because `X` is
+not assumed to be Hausdorff. See `exists_subset_nhds_of_isCompact` for a version assuming this.
+-/
 theorem exists_subset_nhds_of_isCompact' [Nonempty ι] {V : ι → Set X}
     (hV : Directed (· ⊇ ·) V) (hV_cpct : ∀ i, IsCompact (V i)) (hV_closed : ∀ i, IsClosed (V i))
     {U : Set X} (hU : U ∈ 𝓝ˢ (⋂ i, V i)) : ∃ i, V i ⊆ U := by

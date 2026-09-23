@@ -9,13 +9,16 @@ public import Mathlib.CategoryTheory.EssentiallySmall
 public import Mathlib.CategoryTheory.Filtered.Basic
 public import Mathlib.Tactic.DepRewrite
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # A functor from a small category to a filtered category factors through a small filtered category
 
 A consequence of this is that if `C` is filtered and finally small, then `C` is also
 "finally filtered-small", i.e., there is a final functor from a small filtered category to `C`.
 This is occasionally useful, for example in the proof of the recognition theorem for ind-objects
-(Proposition 6.1.5 in [Kashiwara2006]).
+(Proposition 6.1.5 in \[Kashiwara2006\]).
 -/
 
 @[expose] public section

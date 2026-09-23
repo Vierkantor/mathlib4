@@ -8,6 +8,9 @@ module
 public import Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Point
 public import Mathlib.AlgebraicGeometry.EllipticCurve.Jacobian.Formula
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Nonsingular points and the group law in Jacobian coordinates
 
@@ -54,7 +57,7 @@ mirrored in `Mathlib/AlgebraicGeometry/EllipticCurve/Projective/Point.lean`.
 
 ## References
 
-[J Silverman, *The Arithmetic of Elliptic Curves*][silverman2009]
+‍\[J Silverman, _The Arithmetic of Elliptic Curves_\]\[silverman2009\]
 
 ## Tags
 
@@ -84,7 +87,9 @@ variable {R : Type r} {S : Type s} {A F : Type u} {B K : Type v} [CommRing R] [C
 
 namespace Jacobian
 
-/-! ## Negation on Jacobian point representatives -/
+/-!
+# Negation on Jacobian point representatives
+-/
 
 variable (W') in
 /-- The negation of a Jacobian point representative on a Weierstrass curve. -/
@@ -186,7 +191,9 @@ lemma nonsingularLift_negMap {P : PointClass F} (hP : W.NonsingularLift P) :
   rcases P with ⟨_⟩
   exact nonsingular_neg hP
 
-/-! ## Addition on Jacobian point representatives -/
+/-!
+# Addition on Jacobian point representatives
+-/
 
 open scoped Classical in
 variable (W') in
@@ -364,7 +371,9 @@ lemma nonsingularLift_addMap {P Q : PointClass F} (hP : W.NonsingularLift P)
   rcases P; rcases Q
   exact nonsingular_add hP hQ
 
-/-! ## Nonsingular Jacobian points -/
+/-!
+# Nonsingular Jacobian points
+-/
 
 variable (W') in
 /-- A nonsingular Jacobian point on a Weierstrass curve `W`. -/
@@ -439,7 +448,9 @@ lemma add_def (P Q : W.Point) : P + Q = P.add Q :=
 lemma add_point (P Q : W.Point) : (P + Q).point = W.addMap P.point Q.point :=
   rfl
 
-/-! ## Equivalence between Jacobian and affine coordinates -/
+/-!
+# Equivalence between Jacobian and affine coordinates
+-/
 
 open scoped Classical in
 variable (W) in
@@ -611,7 +622,9 @@ noncomputable instance : AddCommGroup W.Point where
 
 end Point
 
-/-! ## Maps and base changes -/
+/-!
+# Maps and base changes
+-/
 
 @[simp]
 protected lemma map_neg (f : R →+* S) (P : Fin 3 → R) : (W'.map f).neg (f ∘ P) = f ∘ W'.neg P := by

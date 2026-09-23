@@ -11,7 +11,12 @@ public import Mathlib.RingTheory.TensorProduct.Finite
 public import Mathlib.LinearAlgebra.TensorProduct.Tower
 
 
-/-! # The characteristic polynomial of base change -/
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# The characteristic polynomial of base change
+-/
 
 public section
 

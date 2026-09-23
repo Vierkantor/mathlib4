@@ -10,6 +10,9 @@ public import Mathlib.AlgebraicGeometry.Properties
 public import Mathlib.AlgebraicGeometry.PullbackCarrier
 public import Mathlib.Topology.Sets.CompactOpenCovered
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Quasi-compact covers
 

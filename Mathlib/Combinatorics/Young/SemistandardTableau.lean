@@ -7,6 +7,10 @@ module
 
 public import Mathlib.Combinatorics.Young.YoungDiagram
 
+set_option doc.verso true
+set_option doc.verso.module false
+set_option doc.verso.suggestions false
+
 /-!
 # Semistandard Young tableaux
 

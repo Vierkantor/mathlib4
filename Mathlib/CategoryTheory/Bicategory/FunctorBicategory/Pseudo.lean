@@ -7,10 +7,14 @@ module
 
 public import Mathlib.CategoryTheory.Bicategory.Modification.Pseudo
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The bicategory of pseudofunctors
 
 Given bicategories `B` and `C`, we define a bicategory structure on `Pseudofunctor B C` whose
+
 * objects are pseudofunctors,
 * 1-morphisms are strong natural transformations, and
 * 2-morphisms are modifications.

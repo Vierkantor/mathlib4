@@ -10,6 +10,9 @@ public import Mathlib.Order.Interval.Set.OrderEmbedding
 public import Mathlib.Order.SetNotation
 public import Mathlib.Order.WellFounded
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Properties of unbundled upper/lower sets
 

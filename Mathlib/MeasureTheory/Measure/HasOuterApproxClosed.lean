@@ -9,6 +9,9 @@ public import Mathlib.MeasureTheory.Integral.BoundedContinuousFunction
 public import Mathlib.MeasureTheory.Integral.IntegrableOn
 public import Mathlib.Topology.MetricSpace.ThickenedIndicator
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Spaces where indicators of closed sets have decreasing approximations by continuous functions
 
@@ -34,7 +37,6 @@ convergence in distribution for random variables behave somewhat well in spaces 
   closed set tend to the measure of the set.
 * `ext_of_forall_lintegral_eq_of_IsFiniteMeasure`: Two finite measures are equal if the integrals
   of all bounded continuous functions with respect to both agree.
-
 -/
 
 @[expose] public section

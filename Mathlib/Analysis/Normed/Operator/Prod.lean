@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Analysis.Normed.Operator.Bilinear
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Operator norm: Cartesian products
 

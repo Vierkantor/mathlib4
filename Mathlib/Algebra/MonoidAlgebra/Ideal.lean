@@ -9,6 +9,9 @@ public import Mathlib.RingTheory.Ideal.BigOperators
 public import Mathlib.RingTheory.Ideal.Span
 public import Mathlib.Algebra.MonoidAlgebra.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lemmas about ideals of `MonoidAlgebra` and `AddMonoidAlgebra`
 -/

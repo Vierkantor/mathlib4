@@ -9,6 +9,9 @@ public import Mathlib.Analysis.Complex.AbsMax
 public import Mathlib.Analysis.Complex.RemovableSingularity
 public import Mathlib.Analysis.Normed.Module.HahnBanach
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Schwarz lemma
 
@@ -18,22 +21,18 @@ In this file we prove several versions of the Schwarz lemma.
   on an open disk with center `c` and a positive radius `R₁`.
   If `f` sends this ball to a closed ball with center `f c` and radius `R₂`,
   then the norm of the derivative of `f` at `c` is at most the ratio `R₂ / R₁`.
-
 * `Complex.dist_le_div_mul_dist_of_mapsTo_ball`. Let `f : E → F` be a complex analytic function
   on an open ball with center `c` and radius `R₁`.
   If `f` sends this ball to a closed ball with center `f c` and radius `R₂`,
   then for any `z` in the former ball we have `dist (f z) (f c) ≤ (R₂ / R₁) * dist z c`.
-
 * `Complex.norm_deriv_le_one_of_mapsTo_ball`. If `f : ℂ → E` is complex analytic
   on an open disk with center `c` and a positive radius `R₁`,
   and it sends this disk to a closed ball with center `f c` and radius the same radius,
   then the norm of the derivative of `f` at the center of this disk is at most `1`.
-
 * `Complex.dist_le_dist_of_mapsTo_ball`. Let `f : E → F` be a complex analytic function
   on an open ball with center `c`.
   If `f` sends this ball to a closed ball with center `f c` and the same radius,
   then for any `z` in the former ball we have `dist (f z) (f c) ≤ dist z c`.
-
 * `Complex.norm_le_norm_of_mapsTo_ball`:
   Let `f : E → F` be a complex analytic on an open ball with center at the origin.
   If `f` sends this ball to the closed ball with center `0` of the same radius and `f 0 = 0`,

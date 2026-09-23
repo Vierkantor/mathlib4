@@ -10,10 +10,13 @@ public import Mathlib.MeasureTheory.Measure.AEMeasurable
 public import Mathlib.MeasureTheory.OuterMeasure.BorelCantelli
 public import Mathlib.MeasureTheory.MeasurableSpace.MeasurablyGenerated
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Quasi-Measure-Preserving Functions
 
-A map `f : α → β` is said to be *quasi-measure-preserving* (a.k.a. non-singular) w.r.t. measures
+A map `f : α → β` is said to be _quasi-measure-preserving_ (a.k.a. non-singular) w.r.t. measures
 `μa` and `μb` if it is measurable and `μb s = 0` implies `μa (f ⁻¹' s) = 0`.
 That last condition can also be written `μa.map f ≪ μb` (the map of `μa` by `f` is
 absolutely continuous with respect to `μb`).
@@ -22,7 +25,6 @@ absolutely continuous with respect to `μb`).
 
 * `MeasureTheory.Measure.QuasiMeasurePreserving f μa μb`: `f` is quasi-measure-preserving with
   respect to `μa` and `μb`.
-
 -/
 
 public section
@@ -39,8 +41,10 @@ variable {mα : MeasurableSpace α} {mβ : MeasurableSpace β} {mγ : Measurable
 
 namespace Measure
 
-/-- A map `f : α → β` is said to be *quasi-measure-preserving* (a.k.a. non-singular) w.r.t. measures
-`μa` and `μb` if it is measurable and `μb s = 0` implies `μa (f ⁻¹' s) = 0`. -/
+/--
+A map `f : α → β` is said to be _quasi-measure-preserving_ (a.k.a. non-singular) w.r.t. measures
+`μa` and `μb` if it is measurable and `μb s = 0` implies `μa (f ⁻¹' s) = 0`.
+-/
 @[fun_prop]
 structure QuasiMeasurePreserving {m0 : MeasurableSpace α} (f : α → β)
   (μa : Measure α := by volume_tac)

@@ -9,6 +9,9 @@ public import Mathlib.LinearAlgebra.Finsupp.Pi
 public import Mathlib.LinearAlgebra.TensorProduct.Finiteness
 public import Mathlib.LinearAlgebra.TensorProduct.Associator
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Coalgebras
 
@@ -21,7 +24,7 @@ In this file we define `Coalgebra`, and provide instances for:
 
 ## References
 
-* <https://en.wikipedia.org/wiki/Coalgebra>
+* [https://en.wikipedia.org/wiki/Coalgebra](https://en.wikipedia.org/wiki/Coalgebra)
 -/
 
 @[expose] public section

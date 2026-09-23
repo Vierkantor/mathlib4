@@ -11,26 +11,30 @@ public import Mathlib.LinearAlgebra.Matrix.Trace
 public import Mathlib.Algebra.Lie.SkewAdjoint
 public import Mathlib.LinearAlgebra.SymplecticGroup
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Classical Lie algebras
 
 This file is the place to find definitions and basic properties of the classical Lie algebras:
-  * Aₗ = sl(l+1)
-  * Bₗ ≃ so(l+1, l) ≃ so(2l+1)
-  * Cₗ = sp(l)
-  * Dₗ ≃ so(l, l) ≃ so(2l)
+
+* Aₗ = sl(l+1)
+* Bₗ ≃ so(l+1, l) ≃ so(2l+1)
+* Cₗ = sp(l)
+* Dₗ ≃ so(l, l) ≃ so(2l)
 
 ## Main definitions
 
-  * `LieAlgebra.SpecialLinear.sl`
-  * `LieAlgebra.Symplectic.sp`
-  * `LieAlgebra.Orthogonal.so`
-  * `LieAlgebra.Orthogonal.so'`
-  * `LieAlgebra.Orthogonal.soIndefiniteEquiv`
-  * `LieAlgebra.Orthogonal.typeD`
-  * `LieAlgebra.Orthogonal.typeB`
-  * `LieAlgebra.Orthogonal.typeDEquivSo'`
-  * `LieAlgebra.Orthogonal.typeBEquivSo'`
+* `LieAlgebra.SpecialLinear.sl`
+* `LieAlgebra.Symplectic.sp`
+* `LieAlgebra.Orthogonal.so`
+* `LieAlgebra.Orthogonal.so'`
+* `LieAlgebra.Orthogonal.soIndefiniteEquiv`
+* `LieAlgebra.Orthogonal.typeD`
+* `LieAlgebra.Orthogonal.typeB`
+* `LieAlgebra.Orthogonal.typeDEquivSo'`
+* `LieAlgebra.Orthogonal.typeBEquivSo'`
 
 ## Implementation notes
 
@@ -46,12 +50,7 @@ which approach should be preferred so the choice should be assumed to be somewha
 
 For the algebras of type `B` and `D`, there are two natural definitions. For example since the
 `2l × 2l` matrix:
-$$
-  J = \left[\begin{array}{cc}
-              0_l & 1_l\\
-              1_l & 0_l
-            \end{array}\right]
-$$
+$$`  J = \left[\begin{array}{cc} 0_l & 1_l\\ 1_l & 0_l \end{array}\right]  `
 defines a symmetric bilinear form equivalent to that defined by the identity matrix `I`, we can
 define the algebras of type `D` to be the Lie subalgebra of skew-adjoint matrices either for `J` or
 for `I`. Both definitions have their advantages (in particular the `J`-skew-adjoint matrices define

@@ -12,14 +12,16 @@ public import Mathlib.Algebra.Order.Nonneg.Module
 public import Mathlib.Geometry.Convex.Cone.Basic
 
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Pointed cones
 
-A *pointed cone* is defined to be a submodule of a module where the scalars are restricted to be
+A _pointed cone_ is defined to be a submodule of a module where the scalars are restricted to be
 nonnegative. This is equivalent to saying that, as a set, a pointed cone is a convex cone which
 contains `0`. This is a bundled version of `ConvexCone.Pointed`. We choose the submodule definition
 as it allows us to use the `Module` API to work with convex cones.
-
 -/
 
 @[expose] public section
@@ -241,15 +243,13 @@ variable [AddCommMonoid F] [Module R F]
 variable [AddCommMonoid G] [Module R G]
 
 /-!
-
-## Maps between pointed cones
+# Maps between pointed cones
 
 There is already a definition of maps between submodules, `Submodule.map`. In our case, these maps
 are induced from linear maps between the ambient modules that are linear over nonnegative scalars.
 Such maps are unlikely to be of any use in practice. So, we construct some API to define maps
 between pointed cones induced from linear maps between the ambient modules that are linear over
-*all* scalars.
-
+_all_ scalars.
 -/
 
 /-- The image of a pointed cone under an `R`-linear map is a pointed cone. -/

@@ -10,14 +10,16 @@ public import Mathlib.Algebra.IsPrimePow
 public import Mathlib.Data.Nat.Factorization.Basic
 public import Mathlib.RingTheory.LocalRing.ResidueField.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Characteristics of local rings
 
 ## Main result
 
-- `charP_zero_or_prime_power`: In a commutative local ring the characteristic is either
+* `charP_zero_or_prime_power`: In a commutative local ring the characteristic is either
   zero or a prime power.
-
 -/
 
 public section

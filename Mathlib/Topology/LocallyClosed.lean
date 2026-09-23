@@ -9,6 +9,9 @@ public import Mathlib.Topology.Constructions
 public import Mathlib.Topology.NhdsWithin
 public import Mathlib.Tactic.TFAE
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Locally closed sets
 
@@ -20,8 +23,9 @@ These are defined earlier, but most of their API should be in this file.
 
 * `isLocallyClosedAt_tfae`:
   A set `s` is locally closed at a point `x` if one of the equivalent conditions below hold
+
   1. There is a neighborhood `U` of `x` such that `U ∩ s` can be written `U ∩ Z` for some closed set
-    `Z` (this is the definition).
+     `Z` (this is the definition).
   2. There is a neighborhood `U` of `x` such that `U ∩ s` is a closed subset of `U`.
   3. There is a neighborhood `U` of `x` such that `U ∩ closure s ⊆ s`.
   4. There is a neighborhood `U` of `x` such that `U ∩ s = U ∩ closure s`.
@@ -32,13 +36,13 @@ These are defined earlier, but most of their API should be in this file.
   9. `coborder s` is a neighborhood of `x`.
 * `isLocallyClosed_tfae`:
   A set `s` is locally closed if one of the equivalent conditions below hold
+
   1. It is the intersection of some open set and some closed set (this is the definition).
   2. It is locally closed at each of its points.
   3. It is locally closed at each point of its coborder.
   4. The coborder `(closure s \ s)ᶜ` is open.
   5. `s` is the intersection of an open set and `closure s`.
   6. `s` is open in the closure of `s`.
-
 -/
 
 public section

@@ -9,6 +9,9 @@ public import Mathlib.Init
 public import Lean.LocalContext
 public import Batteries.Control.AlternativeMonad
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Additional methods about `LocalContext`
 -/

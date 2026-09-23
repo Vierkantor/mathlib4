@@ -10,8 +10,10 @@ public import Mathlib.NumberTheory.Padics.PadicIntegers
 public import Mathlib.RingTheory.LocalRing.ResidueField.Defs
 public import Mathlib.RingTheory.ZMod
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Relating `ℤ_[p]` to `ZMod (p ^ n)`, aka `ℤ/p^nℤ`.
 
 In this file we establish connections between the `p`-adic integers `ℤ_[p]`
@@ -22,6 +24,7 @@ and the integers modulo powers of `p`, `ℤ/p^nℤ`, implemented as `ZMod (p^n)`
 We show that `ℤ_[p]` has a ring homomorphism to `ℤ/p^nℤ` for each `n`.
 The case for `n = 1` is handled separately, since it is used in the general construction
 and we may want to use it without the `^1` getting in the way.
+
 * `PadicInt.toZMod`: ring homomorphism to `ℤ/pℤ`, implemented as `ZMod p`.
 * `PadicInt.toZModPow`: ring homomorphism to `ℤ/p^nℤ`, implemented as `ZMod (p^n)`.
 * `PadicInt.ker_toZMod` / `PadicInt.ker_toZModPow`: the kernels of these maps are the ideals
@@ -31,6 +34,7 @@ and we may want to use it without the `^1` getting in the way.
 We also establish the universal property of `ℤ_[p]` as a projective limit.
 Given a family of compatible ring homomorphisms `f_k : R → ℤ/p^nℤ`,
 there is a unique limit `R → ℤ_[p]`
+
 * `PadicInt.lift`: the limit function
 * `PadicInt.lift_spec` / `PadicInt.lift_unique`: the universal property
 
@@ -38,7 +42,6 @@ there is a unique limit `R → ℤ_[p]`
 
 The constructions of the ring homomorphisms go through an auxiliary constructor
 `PadicInt.toZModHom`, which removes some boilerplate code.
-
 -/
 
 @[expose] public section
@@ -54,7 +57,9 @@ variable {p : ℕ} [hp_prime : Fact p.Prime]
 
 section RingHoms
 
-/-! ### Ring homomorphisms to `ZMod p` and `ZMod (p ^ n)` -/
+/-!
+# Ring homomorphisms to `ZMod p` and `ZMod (p ^ n)`
+-/
 
 
 variable (p) (r : ℚ)
@@ -521,7 +526,9 @@ end RingHoms
 
 section lift
 
-/-! ### Universal property as projective limit -/
+/-!
+# Universal property as projective limit
+-/
 
 
 open CauSeq PadicSeq

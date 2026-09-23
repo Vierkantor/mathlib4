@@ -11,6 +11,9 @@ public import Mathlib.CategoryTheory.Adjunction.Limits
 public import Mathlib.CategoryTheory.Adjunction.Opposites
 public import Mathlib.CategoryTheory.Adjunction.Reflective
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Adjunction between `Γ` and `Spec`
 
@@ -32,7 +35,6 @@ case the unit and the counit would switch to each other.
   `CommRingᵒᵖ` to `LocallyRingedSpace`.
 * `AlgebraicGeometry.ΓSpec.adjunction` : The adjunction `Γ ⊣ Spec` from
   `CommRingᵒᵖ` to `Scheme`.
-
 -/
 
 @[expose] public section

@@ -8,12 +8,14 @@ module
 public import Mathlib.LinearAlgebra.ExteriorPower.Basic
 public import Mathlib.LinearAlgebra.TensorPower.Pairing
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The pairing between the exterior power of the dual and the exterior power
 
 We construct the pairing
 `exteriorPower.pairingDual : ⋀[R]^n (Module.Dual R M) →ₗ[R] (Module.Dual R (⋀[R]^n M))`.
-
 -/
 
 @[expose] public section

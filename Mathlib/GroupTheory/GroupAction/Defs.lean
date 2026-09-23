@@ -12,6 +12,9 @@ public import Mathlib.Algebra.Group.Submonoid.MulAction
 public import Mathlib.Data.Set.BooleanAlgebra
 public meta import Mathlib.Tactic.ToDual
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Definition of `orbit`, `fixedPoints` and `stabilizer`
 
@@ -23,7 +26,6 @@ This file defines orbits, stabilizers, and other objects defined in terms of act
 * `MulAction.fixedPoints`
 * `MulAction.fixedBy`
 * `MulAction.stabilizer`
-
 -/
 
 @[expose] public section

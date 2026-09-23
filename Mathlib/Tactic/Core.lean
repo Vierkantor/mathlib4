@@ -11,9 +11,11 @@ public meta import Lean.Elab.Tactic.RCases
 public meta import Batteries.Lean.Expr
 public import Mathlib.Init
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Generally useful tactics.
-
 -/
 
 public meta section

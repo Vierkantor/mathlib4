@@ -8,6 +8,9 @@ module
 public import Mathlib.CategoryTheory.Bicategory.Functor.Oplax
 public import Mathlib.Tactic.CategoryTheory.Bicategory.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Transformations between oplax functors
 
@@ -15,6 +18,7 @@ Just as there are natural transformations between functors, there are transforma
 between oplax functors. The equality in the naturality condition of a natural transformation gets
 replaced by a specified 2-morphism. Now, there are three possible types of transformations (between
 oplax functors):
+
 * oplax natural transformations;
 * lax natural transformations;
 * strong natural transformations.
@@ -40,14 +44,15 @@ Using these, we define three (scoped) `CategoryStruct` instances on `B ⥤ᵒᵖ
 transformations respectively.
 
 We also provide API for going between oplax transformations and strong transformations:
+
 * `OplaxTrans.StrongCore η`: a structure on an oplax transformation between oplax functors that
   promotes it to a strong transformation.
 * `StrongTrans.mkOfOplax η η'`: given an oplax transformation `η` such that each component
   2-morphism is an isomorphism, `mkOfOplax` gives the corresponding strong transformation.
 
 ## References
-* [Niles Johnson, Donald Yau, *2-Dimensional Categories*](https://arxiv.org/abs/2002.06055)
 
+* [Niles Johnson, Donald Yau, _2-Dimensional Categories_](https://arxiv.org/abs/2002.06055)
 -/
 
 @[expose] public section

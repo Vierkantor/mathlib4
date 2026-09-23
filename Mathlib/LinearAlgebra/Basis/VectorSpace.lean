@@ -11,6 +11,9 @@ public import Mathlib.LinearAlgebra.LinearPMap
 public import Mathlib.LinearAlgebra.Projection
 public import Mathlib.Tactic.Field
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Bases in a vector space
 
@@ -28,7 +31,6 @@ import cycle.
 ## Tags
 
 basis, bases
-
 -/
 
 @[expose] public section

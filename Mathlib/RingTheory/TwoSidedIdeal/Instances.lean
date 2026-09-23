@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Ring.Defs
 public import Mathlib.RingTheory.NonUnitalSubring.Defs
 public import Mathlib.RingTheory.TwoSidedIdeal.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Additional instances for two-sided ideals.
 -/

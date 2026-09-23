@@ -12,6 +12,9 @@ public import Batteries.Data.Fin.Lemmas
 
 import Mathlib.Data.Set.Insert
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Operation on tuples
 
@@ -55,8 +58,10 @@ ways to move between tuples of length `n` and of length `n + 1` by adding/removi
 
 ### Adding in the middle
 
-For a **pivot** `p : Fin (n + 1)`,
+For a *pivot* `p : Fin (n + 1)`,
+
 * `Fin.succAbove`: Send `i : Fin n` to
+
   * `i : Fin (n + 1)` if `i < p`,
   * `i + 1 : Fin (n + 1)` if `p ≤ i`.
 * `Fin.succAboveCases`: Induction/recursion principle for `Fin`: To prove a property/define a
@@ -78,7 +83,6 @@ For a **pivot** `p : Fin (n + 1)`,
   hypothesis that `h : ∃ i, p i`.
 * `Fin.append a b` : append two tuples.
 * `Fin.repeat n a` : repeat a tuple `n` times.
-
 -/
 
 @[expose] public section

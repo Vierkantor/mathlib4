@@ -8,7 +8,11 @@ module
 public import Mathlib.Analysis.Analytic.Constructions
 public import Mathlib.Analysis.Analytic.CPolynomialDef
 
-/-! # Properties of continuously polynomial functions
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Properties of continuously polynomial functions
 
 We expand the API around continuously polynomial functions. Notably, we show that this class is
 stable under the usual operations (addition, subtraction, negation).
@@ -101,7 +105,7 @@ theorem CPolynomialOn.sub {s : Set E} (hf : CPolynomialOn 𝕜 f s) (hg : CPolyn
 
 
 /-!
-### Continuous multilinear maps
+# Continuous multilinear maps
 
 We show that continuous multilinear maps are continuously polynomial, and therefore analytic.
 -/
@@ -136,7 +140,7 @@ end ContinuousMultilinearMap
 
 
 /-!
-### Continuous linear maps into continuous multilinear maps
+# Continuous linear maps into continuous multilinear maps
 
 We show that a continuous linear map into continuous multilinear maps is continuously polynomial
 (as a function of two variables, i.e., uncurried). Therefore, it is also analytic.

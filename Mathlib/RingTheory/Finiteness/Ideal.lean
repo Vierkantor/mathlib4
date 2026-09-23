@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Group.Pointwise.Finset.Scalar
 public import Mathlib.RingTheory.Finiteness.Finsupp
 public import Mathlib.RingTheory.Ideal.Maps
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Finitely generated ideals
 

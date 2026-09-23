@@ -8,6 +8,9 @@ module
 public import Mathlib.Topology.Category.LightProfinite.EffectiveEpi
 public import Mathlib.CategoryTheory.Sites.Equivalence
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `HasSheafify` instances
 
@@ -16,7 +19,6 @@ instance (and similarly for other concrete categories). These instances
 are not obtained automatically because `LightProfinite.{u}` is a large category,
 but as it is essentially small, the instances can be obtained using the results
 in the file `Mathlib/CategoryTheory/Sites/Equivalence.lean`.
-
 -/
 
 public section

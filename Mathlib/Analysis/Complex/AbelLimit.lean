@@ -10,6 +10,9 @@ public import Mathlib.Analysis.SpecificLimits.Normed
 public import Mathlib.Tactic.Peel
 public import Mathlib.Tactic.Positivity
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Abel's limit theorem
 
@@ -27,7 +30,7 @@ left with angle less than `π`.
 ## References
 
 * https://planetmath.org/proofofabelslimittheorem
-* https://en.wikipedia.org/wiki/Abel%27s_theorem
+* https://en.wikipedia.org/wiki/Abel%27s\_theorem
 -/
 
 @[expose] public section

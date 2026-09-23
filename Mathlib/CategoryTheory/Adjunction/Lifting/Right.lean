@@ -8,6 +8,9 @@ module
 public import Mathlib.CategoryTheory.Monad.Adjunction
 public import Mathlib.CategoryTheory.Monad.Equalizer
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Adjoint lifting
 
@@ -47,11 +50,12 @@ Please try to keep them in sync.
 
 ## TODO
 
-- Dualise to lift left adjoints through comonads (by reversing 2-cells).
-- Investigate whether it is possible to give a more explicit description of the lifted adjoint,
+* Dualise to lift left adjoints through comonads (by reversing 2-cells).
+* Investigate whether it is possible to give a more explicit description of the lifted adjoint,
   especially in the case when the isomorphism `comm` is `Iso.refl _`
 
 ## References
+
 * https://ncatlab.org/nlab/show/adjoint+triangle+theorem
 * https://ncatlab.org/nlab/show/adjoint+lifting+theorem
 * Adjoint Lifting Theorems for Categories of Algebras (PT Johnstone, 1975)

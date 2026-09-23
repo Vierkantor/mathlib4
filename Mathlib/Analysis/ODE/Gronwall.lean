@@ -7,24 +7,27 @@ module
 
 public import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Grönwall's inequality
 
 The main technical result of this file is the Grönwall-like inequality
 `norm_le_gronwallBound_of_norm_deriv_right_le`. It states that if `f : ℝ → E` satisfies `‖f a‖ ≤ δ`
-and `∀ x ∈ [a, b), ‖f' x‖ ≤ K * ‖f x‖ + ε`, then for all `x ∈ [a, b]` we have `‖f x‖ ≤ δ * exp (K *
-x) + (ε / K) * (exp (K * x) - 1)`.
+and `∀ x ∈ [a, b), ‖f' x‖ ≤ K * ‖f x‖ + ε`, then for all `x ∈ [a, b]` we have
+`‖f x‖ ≤ δ * exp (K * x) + (ε / K) * (exp (K * x) - 1)`.
 
 Then we use this inequality to prove some estimates on the possible rate of growth of the distance
 between two approximate or exact solutions of an ordinary differential equation.
 
-The proofs are based on [Hubbard and West, *Differential Equations: A Dynamical Systems Approach*,
-Sec. 4.5][HubbardWest-ode], where `norm_le_gronwallBound_of_norm_deriv_right_le` is called
+The proofs are based on \[Hubbard and West, _Differential Equations: A Dynamical Systems Approach_,
+Sec. 4.5\]\[HubbardWest-ode\], where `norm_le_gronwallBound_of_norm_deriv_right_le` is called
 “Fundamental Inequality”.
 
 ## TODO
 
-- Once we have FTC, prove an inequality for a function satisfying `‖f' x‖ ≤ K x * ‖f x‖ + ε`,
+* Once we have FTC, prove an inequality for a function satisfying `‖f' x‖ ≤ K x * ‖f x‖ + ε`,
   or more generally `liminf_{y→x+0} (f y - f x)/(y - x) ≤ K x * f x + ε` with any sign
   of `K x` and `f x`.
 -/
@@ -36,7 +39,9 @@ open scoped Topology NNReal
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-/-! ### Technical lemmas about `gronwallBound` -/
+/-!
+# Technical lemmas about `gronwallBound`
+-/
 
 
 /-- Upper bound used in several Grönwall-like inequalities. -/
@@ -100,7 +105,9 @@ lemma gronwallBound_mono {δ K ε : ℝ} (hδ : 0 ≤ δ) (hε : 0 ≤ ε) (hK :
   · have hK_pos : 0 < K := by positivity
     gcongr
 
-/-! ### Inequality and corollaries -/
+/-!
+# Inequality and corollaries
+-/
 
 /-- A Grönwall-like inequality: if `f : ℝ → ℝ` is continuous on `[a, b]` and satisfies
 the inequalities `f a ≤ δ` and

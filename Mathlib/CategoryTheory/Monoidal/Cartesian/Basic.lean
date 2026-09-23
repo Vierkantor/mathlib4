@@ -10,6 +10,9 @@ public import Mathlib.CategoryTheory.Limits.FullSubcategory
 public import Mathlib.CategoryTheory.Limits.Preserves.Shapes.Terminal
 public import Mathlib.CategoryTheory.Monoidal.Braided.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Categories with chosen finite products
 
@@ -35,10 +38,9 @@ instead turn on the corresponding `ofChosenFiniteProducts` declaration for that 
 
 ## Projects
 
-- Construct an instance of chosen finite products in the category of affine scheme, using
+* Construct an instance of chosen finite products in the category of affine scheme, using
   the tensor product.
-- Construct chosen finite products in other categories appearing "in nature".
-
+* Construct chosen finite products in other categories appearing "in nature".
 -/
 
 @[expose] public section

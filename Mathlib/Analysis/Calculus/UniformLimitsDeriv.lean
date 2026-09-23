@@ -10,6 +10,10 @@ public import Mathlib.Analysis.Normed.Module.RCLike.Basic
 public import Mathlib.Order.Filter.Curry
 public import Mathlib.Tactic.ModuleNF
 
+set_option doc.verso true
+set_option doc.verso.module false
+set_option doc.verso.suggestions false
+
 /-!
 # Swapping limits and derivatives via uniform convergence
 

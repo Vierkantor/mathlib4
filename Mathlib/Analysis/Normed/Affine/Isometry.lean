@@ -13,6 +13,9 @@ public import Mathlib.LinearAlgebra.AffineSpace.Restrict
 public import Mathlib.Topology.Algebra.AffineSubspace
 public import Mathlib.Topology.Algebra.ContinuousAffineEquiv
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Affine isometries
 
@@ -33,7 +36,6 @@ We introduce the notation `P →ᵃⁱ[𝕜] P₂` for `AffineIsometry 𝕜 P P�
 for isometric equivalences, etc., the "i" here is a superscript.  This is for aesthetic reasons to
 match the superscript "a" (note that in mathlib `→ᵃ` is an affine map, since `→ₐ` has been taken by
 algebra-homomorphisms.)
-
 -/
 
 @[expose] public section

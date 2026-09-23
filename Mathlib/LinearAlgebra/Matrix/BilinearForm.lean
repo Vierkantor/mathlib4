@@ -8,6 +8,9 @@ module
 public import Mathlib.LinearAlgebra.BilinearForm.Properties
 public import Mathlib.LinearAlgebra.Matrix.SesquilinearForm
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Bilinear form
 
@@ -23,13 +26,13 @@ This file defines the conversion between bilinear forms and matrices.
 ## Notation
 
 In this file we use the following type variables:
-- `M₁` is a module over the commutative semiring `R₁`,
-- `M₂` is a module over the commutative ring `R₂`.
+
+* `M₁` is a module over the commutative semiring `R₁`,
+* `M₂` is a module over the commutative ring `R₂`.
 
 ## Tags
 
 bilinear form, bilin form, BilinearForm, matrix, basis
-
 -/
 
 @[expose] public section
@@ -77,7 +80,8 @@ theorem LinearMap.toBilin'Aux_toMatrixAux [DecidableEq n] (B₂ : BilinForm R₁
 
 section ToMatrix'
 
-/-! ### `ToMatrix'` section
+/-!
+# `ToMatrix'` section
 
 This section deals with the conversion between matrices and bilinear forms on `n → R₂`.
 -/
@@ -173,7 +177,8 @@ end ToMatrix'
 
 section ToMatrix
 
-/-! ### `ToMatrix` section
+/-!
+# `ToMatrix` section
 
 This section deals with the conversion between matrices and bilinear forms on
 a module with a fixed basis.

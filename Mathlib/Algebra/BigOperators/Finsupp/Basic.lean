@@ -12,6 +12,9 @@ public import Mathlib.Algebra.Group.Submonoid.BigOperators
 public import Mathlib.Data.Finsupp.Ext
 public import Mathlib.Data.Finsupp.Indicator
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Big operators for finsupps
 
@@ -35,7 +38,7 @@ variable {β M M' N P G H R S : Type*}
 namespace Finsupp
 
 /-!
-### Declarations about `Finsupp.sum` and `Finsupp.prod`
+# Declarations about `Finsupp.sum` and `Finsupp.prod`
 
 In most of this section, the domain `β` is assumed to be an `AddMonoid`.
 -/

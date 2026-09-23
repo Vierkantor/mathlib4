@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Adjunction.FullyFaithful
 public import Mathlib.CategoryTheory.Functor.EpiMono
 public import Mathlib.CategoryTheory.HomCongr
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Reflective functors
 
@@ -33,7 +36,7 @@ variable {C : Type u₁} {D : Type u₂} {E : Type u₃}
 variable [Category.{v₁} C] [Category.{v₂} D] [Category.{v₃} E]
 
 /--
-A functor is *reflective*, or *a reflective inclusion*, if it is fully faithful and right adjoint.
+A functor is _reflective_, or _a reflective inclusion_, if it is fully faithful and right adjoint.
 -/
 class Reflective (R : D ⥤ C) extends R.Full, R.Faithful where
   /-- a choice of a left adjoint to `R` -/
@@ -176,7 +179,7 @@ def equivEssImageOfReflective [Reflective i] : D ≌ i.EssImageSubcategory where
     NatIso.ofComponents (fun X ↦ (asIso ((reflectorAdjunction i).unit.app X.obj)).symm)
 
 /--
-A functor is *coreflective*, or *a coreflective inclusion*, if it is fully faithful and left
+A functor is _coreflective_, or _a coreflective inclusion_, if it is fully faithful and left
 adjoint.
 -/
 class Coreflective (L : C ⥤ D) extends L.Full, L.Faithful where

@@ -15,6 +15,9 @@ public import Batteries.Tactic.Init
 public import Mathlib.Order.Defs.Unbundled
 
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Miscellaneous function constructions and lemmas
 -/
@@ -1171,7 +1174,9 @@ def Set.piecewise {α : Type u} {β : α → Sort v} (s : Set α) (f g : ∀ i, 
   fun i ↦ if i ∈ s then f i else g i
 
 
-/-! ### Bijectivity of `Eq.rec`, `Eq.mp`, `Eq.mpr`, and `cast` -/
+/-!
+# Bijectivity of `Eq.rec`, `Eq.mp`, `Eq.mpr`, and `cast`
+-/
 
 theorem eq_rec_on_bijective {C : α → Sort*} :
     ∀ {a a' : α} (h : a = a'), Function.Bijective (@Eq.ndrec _ _ C · _ h)

@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Homology.ShortComplex.HomologicalComplex
 public import Mathlib.Algebra.Homology.ShortComplex.Abelian
 public import Mathlib.Algebra.Homology.SpectralSequence.ComplexShape
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Spectral sequences
 
@@ -19,7 +22,6 @@ for the objects on each page (e.g. `κ := ℤ × ℤ` or `κ := ℕ × ℕ`).
 A spectral sequence is defined as the data of a sequence of homological complexes
 (the pages) and a sequence of isomorphisms between the homology of a page and the
 next page.
-
 -/
 
 @[expose] public section

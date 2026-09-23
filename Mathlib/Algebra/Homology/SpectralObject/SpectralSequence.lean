@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Homology.SpectralObject.HasSpectralSequence
 public import Mathlib.Algebra.Homology.SpectralSequence.Basic
 public import Mathlib.Order.WithBotTop
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The spectral sequence of a spectral object
 
@@ -72,7 +75,6 @@ Under the `X.IsFirstQuadrant` assumption, we obtain
 `X.E₂SpectralSequenceNat` which is a first quadrant `E₂`-spectral
 sequence (the objects in the pages are indexed by `ℕ × ℕ` instead
 of `ℤ × ℤ`).
-
 -/
 
 @[expose] public section

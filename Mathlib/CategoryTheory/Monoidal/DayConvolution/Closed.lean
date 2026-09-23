@@ -9,7 +9,11 @@ public import Mathlib.CategoryTheory.Monoidal.DayConvolution
 public import Mathlib.CategoryTheory.Monoidal.Closed.Basic
 public import Mathlib.CategoryTheory.Limits.Shapes.End
 
-/-! # Internal homs for day convolution
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Internal homs for day convolution
 
 Given a category `V` that is monoidal closed, a category `C` that
 is monoidal, a functor `C ⥤ V`, and given the data of suitable day convolutions
@@ -20,7 +24,9 @@ ends can be organised as data that exhibit `F` as monoidal closed in `C ⥤ V` f
 the Day convolution monoidal structure.
 
 ## TODOs
-* When `LawfulDayConvolutionMonoidalStruct` (https://github.com/leanprover-community/mathlib4/issues/26820) lands, transport the
+
+* When `LawfulDayConvolutionMonoidalStruct`
+  (https://github.com/leanprover-community/mathlib4/issues/26820) lands, transport the
   constructions here to produce actual `CategoryTheory.MonoidalClosed` instances.
 -/
 

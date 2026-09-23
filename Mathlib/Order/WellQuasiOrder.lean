@@ -10,6 +10,9 @@ public import Mathlib.Data.Set.Finite.Basic
 public import Mathlib.Order.Antichain
 public import Mathlib.Order.OrderIsoNat
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Well quasi-orders
 

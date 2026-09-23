@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.Finset.Card
 public import Mathlib.Data.Fintype.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cardinalities of finite types
 
@@ -19,7 +22,6 @@ We also include some elementary results on the values of `Fintype.card` on speci
 * `Fintype.card α`: Cardinality of a fintype. Equal to `Finset.univ.card`.
 * `Finite.surjective_of_injective`: an injective function from a finite type to
   itself is also surjective.
-
 -/
 
 @[expose] public section

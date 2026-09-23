@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Central.Defs
 public import Mathlib.LinearAlgebra.FiniteDimensional.Defs
 public import Mathlib.LinearAlgebra.Matrix.Reindex
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Definition of Brauer group of a field K
 
@@ -19,15 +22,18 @@ central simple algebras `A` and `B` are Brauer Equivalent if there exist `n, m �
 that `Mₙ(A) ≃ₐ[K] Mₘ(B)`.
 
 ## TODOs
+
 1. Prove that the Brauer group is an abelian group where multiplication is defined as tensor
    product.
 2. Prove that the Brauer group is a functor from the category of fields to the category of groups.
 3. Prove that over a field, being Brauer equivalent is the same as being Morita equivalent.
 
 ## References
-* [Algebraic Number Theory, *J.W.S Cassels*][cassels1967algebraic]
+
+* ‍\[Algebraic Number Theory, _J.W.S Cassels_\]\[cassels1967algebraic\]
 
 ## Tags
+
 Brauer group, Central simple algebra, Galois Cohomology
 -/
 

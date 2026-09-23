@@ -12,10 +12,13 @@ public import Mathlib.Topology.Algebra.Order.Module
 public import Mathlib.Topology.Order.DenselyOrdered
 
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Proper cones
 
-We define a *proper cone* as a closed, pointed cone. Proper cones are used in defining conic
+We define a _proper cone_ as a closed, pointed cone. Proper cones are used in defining conic
 programs which generalize linear programs. A linear program is a conic program for the positive
 cone. We then prove Farkas' lemma for conic programs following the proof in the reference below.
 Farkas' lemma is equivalent to strong duality. So, once we have the definitions of conic and
@@ -31,16 +34,16 @@ assuming `𝕜` is a dense topological field.
 ## TODO
 
 The next steps are:
-- Add `ConvexConeClass` that extends `SetLike` and replace the below instance
-- Define primal and dual cone programs and prove weak duality.
-- Prove regular and strong duality for cone programs using Farkas' lemma (see reference).
-- Define linear programs and prove LP duality as a special case of cone duality.
-- Find a better reference (textbook instead of lecture notes).
+
+* Add `ConvexConeClass` that extends `SetLike` and replace the below instance
+* Define primal and dual cone programs and prove weak duality.
+* Prove regular and strong duality for cone programs using Farkas' lemma (see reference).
+* Define linear programs and prove LP duality as a special case of cone duality.
+* Find a better reference (textbook instead of lecture notes).
 
 ## References
 
-- [B. Gartner and J. Matousek, Cone Programming][gartnerMatousek]
-
+* ‍\[B. Gartner and J. Matousek, Cone Programming\]\[gartnerMatousek\]
 -/
 
 @[expose] public section
@@ -157,7 +160,7 @@ end PositiveCone
 end ProperCone
 
 /-!
-### Topological properties of convex cones
+# Topological properties of convex cones
 
 This section proves topological results about convex cones.
 -/

@@ -8,6 +8,9 @@ module
 public import Mathlib.Probability.Kernel.Disintegration.CondCDF
 public import Mathlib.Tactic.CrossRefAttribute
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cumulative distribution function of a real probability measure
 

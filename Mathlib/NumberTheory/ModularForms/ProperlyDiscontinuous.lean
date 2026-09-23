@@ -9,6 +9,9 @@ public import Mathlib.Analysis.Complex.UpperHalfPlane.ProperAction
 public import Mathlib.NumberTheory.ModularForms.ArithmeticSubgroups
 public import Mathlib.Topology.Algebra.Group.DiscontinuousSubgroup
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Arithmetic subgroups act properly discontinuously
 -/

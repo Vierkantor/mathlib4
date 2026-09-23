@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Module.TransferInstance
 public import Mathlib.RingTheory.Localization.Defs
 public import Mathlib.RingTheory.OreLocalization.Ring
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Localized Module
 
@@ -51,8 +54,10 @@ variable (M : Type v) [AddCommMonoid M] [Module R M]
 variable (T : Type*) [CommSemiring T] [Algebra R T] [IsLocalization S T]
 variable (T' : Type*) [CommSemiring T'] [Algebra R T'] [IsLocalization S T']
 
-/-- The equivalence relation on `M × S` where `(m1, s1) ≈ (m2, s2)` if and only if
-for some (u : S), u * (s2 • m1 - s1 • m2) = 0 -/
+/--
+The equivalence relation on `M × S` where `(m1, s1) ≈ (m2, s2)` if and only if
+for some (u : S), u \* (s2 • m1 - s1 • m2) = 0
+-/
 def r (a b : M × S) : Prop :=
   ∃ u : S, u • b.2 • a.1 = u • a.2 • b.1
 
@@ -1446,7 +1451,7 @@ instance [IsDomain R] (S : Submonoid R) [IsTorsionFree R M] :
 end IsLocalizedModule
 
 /-!
-## Localizations of modules away from an element
+# Localizations of modules away from an element
 -/
 
 /-- Given `x : R` and `f : M →ₗ[R] M'`, `IsLocalizedModule.Away x f` states that `M'`

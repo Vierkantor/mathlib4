@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Polynomial.Monic
 public import Mathlib.Order.Lattice.Nat
 public import Mathlib.RingTheory.Multiplicity
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Division of univariate polynomials
 

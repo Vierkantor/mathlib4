@@ -10,6 +10,9 @@ public import Mathlib.Analysis.RCLike.Basic
 public import Mathlib.LinearAlgebra.Dual.Defs
 public import Mathlib.Topology.Algebra.Module.ContinuousLinearMap.RestrictScalars
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Extending an `ℝ`-linear functional to a `𝕜`-linear functional
 
@@ -29,7 +32,6 @@ elementary properties, like locally convex spaces.
 
 * `LinearMap.extendRCLike`
 * `ContinuousLinearMap.extendRCLike`
-
 -/
 
 @[expose] public section
@@ -123,10 +125,12 @@ lemma im_extendRCLike_apply (g : StrongDual ℝ F) (x : F) :
   obtain (h | h) := RCLike.I_eq_zero_or_im_I_eq_one (K := 𝕜)
   all_goals simp [h, extendRCLike_apply]
 
-/-- The extension `StrongDual.extendRCLike` as a linear equivalence between the algebraic duals.
+/--
+The extension `StrongDual.extendRCLike` as a linear equivalence between the algebraic duals.
 
-When `F` is a normed space, this can be upgraded to an *isometric* linear equivalence, see
-`StrongDual.extendRCLikeₗᵢ`. -/
+When `F` is a normed space, this can be upgraded to an _isometric_ linear equivalence, see
+`StrongDual.extendRCLikeₗᵢ`.
+-/
 @[simps -isSimp apply symm_apply]
 noncomputable def extendRCLikeₗ : StrongDual ℝ F ≃ₗ[ℝ] StrongDual 𝕜 F where
   toFun := StrongDual.extendRCLike (𝕜 := 𝕜)

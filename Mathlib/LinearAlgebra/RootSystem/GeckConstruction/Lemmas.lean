@@ -9,6 +9,9 @@ public import Mathlib.LinearAlgebra.RootSystem.Base
 public import Mathlib.LinearAlgebra.RootSystem.Chain
 public import Mathlib.LinearAlgebra.RootSystem.Finite.G2
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Supporting lemmas for Geck's construction of a Lie algebra associated to a root system
 -/

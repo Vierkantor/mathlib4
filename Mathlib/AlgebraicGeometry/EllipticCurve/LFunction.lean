@@ -12,6 +12,9 @@ public import Mathlib.NumberTheory.LSeries.Basic
 public import Mathlib.NumberTheory.NumberField.Completion.FinitePlace
 public import Mathlib.RingTheory.PowerSeries.Inverse
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The L-function of a Weierstrass curve
 
@@ -23,7 +26,7 @@ In this file, we define the L-function of a Weierstrass curve.
 
 ## References
 
-* [J Silverman, *The Arithmetic of Elliptic Curves*][silverman2009]
+* ‍\[J Silverman, _The Arithmetic of Elliptic Curves_\]\[silverman2009\]
 -/
 
 @[expose] public section

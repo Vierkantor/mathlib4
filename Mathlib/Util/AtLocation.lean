@@ -10,6 +10,9 @@ public meta import Lean.Elab.Tactic.Location
 public meta import Lean.Meta.Tactic.Simp.Main
 public import Lean.Elab.Tactic.Location
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Rewriting at specified locations
 

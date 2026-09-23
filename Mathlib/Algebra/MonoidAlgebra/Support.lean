@@ -12,6 +12,9 @@ public import Mathlib.Algebra.Group.Pointwise.Finset.Basic
 
 import Mathlib.Order.BourbakiWitt
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lemmas about the support of a finitely supported function
 -/

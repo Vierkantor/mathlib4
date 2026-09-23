@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Sites.Descent.IsStack
 public import Mathlib.CategoryTheory.Limits.Constructions.Over.Connected
 public import Mathlib.CategoryTheory.Limits.Shapes.Connected
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Characterization of (pre)stacks for a precoverage
 
@@ -31,7 +34,6 @@ results above that `F` is a prestack (resp. a stack) for the
 Grothendieck topology associated to `J` if `F` satisfies
 `F.IsPrestackFor R` (resp. `F.IsStackFor R`) for the presieves `R`
 that are part of `J`.
-
 -/
 
 set_option backward.defeqAttrib.useBackward true

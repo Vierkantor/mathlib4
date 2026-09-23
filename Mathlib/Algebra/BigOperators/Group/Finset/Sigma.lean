@@ -8,9 +8,11 @@ module
 public import Mathlib.Data.Finset.Sigma
 public import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Product and sums indexed by finite sets in sigma types.
-
 -/
 
 public section

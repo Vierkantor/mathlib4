@@ -13,6 +13,9 @@ public import Mathlib.Geometry.Convex.ConvexSpace.Module
 public import Mathlib.Analysis.Convex.PathConnected
 public import Mathlib.Topology.Algebra.Monoid.FunOnFinite
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The standard simplex
 
@@ -22,7 +25,6 @@ coordinates with total sum `1`.
 
 When `f : X → Y` is a map between finite types, we define the map
 `stdSimplex.map f : stdSimplex 𝕜 X → stdSimplex 𝕜 Y`.
-
 -/
 
 @[expose] public section
@@ -276,7 +278,9 @@ lemma stdSimplexHomeomorphUnitInterval_zero :
 lemma stdSimplexHomeomorphUnitInterval_one :
     stdSimplexHomeomorphUnitInterval ⟨_, single_mem_stdSimplex _ 1⟩ = 1 := rfl
 
-/-! ### Diameter of a Standard Simplex (sup metric) -/
+/-!
+# Diameter of a Standard Simplex (sup metric)
+-/
 
 variable {ι}
 
@@ -439,7 +443,9 @@ lemma eq_one_of_unique [Unique X] (s : stdSimplex S X) (x : X) :
 
 end
 
-/-! ### Barycenter of a Standard Simplex -/
+/-!
+# Barycenter of a Standard Simplex
+-/
 
 section Barycenter
 

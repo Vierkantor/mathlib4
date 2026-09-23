@@ -10,6 +10,9 @@ public import Mathlib.Analysis.InnerProductSpace.Projection.FiniteDimensional
 public import Mathlib.Analysis.InnerProductSpace.Affine
 public import Mathlib.LinearAlgebra.AffineSpace.AffineSubspace.Shift
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Altitudes of a simplex
 
@@ -19,15 +22,13 @@ This file defines the altitudes of a simplex and their feet.
 
 * `altitude` is the line that passes through a vertex of a simplex and
   is orthogonal to the opposite face.
-
 * `altitudeFoot` is the orthogonal projection of a vertex of a simplex onto the opposite face.
-
 * `height` is the distance between a vertex of a simplex and its `altitudeFoot`.
 
 ## References
 
-* <https://en.wikipedia.org/wiki/Altitude_(triangle)>
-
+* [
+  https://en.wikipedia.org/wiki/Altitude\_(triangle)](https://en.wikipedia.org/wiki/Altitude_(triangle))
 -/
 
 @[expose] public section

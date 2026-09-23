@@ -9,6 +9,9 @@ import all Lean.Meta.Tactic.Simp.Rewrite -- for `Simp.dischargeUsingAssumption?`
 public import Mathlib.Tactic.Positivity.Core
 public import Mathlib.Util.DischargerAsTactic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Discharger for `field_simp` tactic
 
@@ -17,6 +20,7 @@ expressions. In order to do this, the denominators need to be certified as nonze
 contains the discharger which carries out these checks.
 
 Currently the discharger tries four strategies:
+
 1. `assumption`
 2. `positivity`
 3. `norm_num`
@@ -29,12 +33,10 @@ get (a cheap approximation of) `positivity` on fields without a partial order.
 The refactor of `positivity` to avoid a partial order assumption would be large but not
 fundamentally difficult.
 
-### Main declarations
+## Main declarations
 
 * `Mathlib.Tactic.FieldSimp.discharge`: the discharger, of type `Expr → SimpM (Option Expr)`
-
 * `field_simp_discharge`: tactic syntax for the discharger (most useful for testing/debugging)
-
 -/
 
 public meta section

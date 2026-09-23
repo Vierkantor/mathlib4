@@ -9,6 +9,9 @@ public import Mathlib.MeasureTheory.Measure.Decomposition.RadonNikodym
 public import Mathlib.MeasureTheory.Measure.Prod
 public import Mathlib.Probability.Kernel.Disintegration.CDFToKernel
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Conditional cumulative distribution function
 
@@ -36,7 +39,6 @@ easily. Here we apply that construction to the case `β = Unit` and then drop `�
 
 * `ProbabilityTheory.setLIntegral_condCDF`: for all `a : α` and `x : ℝ`, all measurable set `s`,
   `∫⁻ a in s, ENNReal.ofReal (condCDF ρ a x) ∂ρ.fst = ρ (s ×ˢ Iic x)`.
-
 -/
 
 @[expose] public section
@@ -118,11 +120,13 @@ variable {α : Type*} {mα : MeasurableSpace α}
 
 attribute [local instance] MeasureTheory.Measure.IsFiniteMeasure.IicSnd
 
-/-! ### Auxiliary definitions
+/-!
+# Auxiliary definitions
 
 We build towards the definition of `ProbabilityTheory.condCDF`. We first define
 `ProbabilityTheory.preCDF`, a function defined on `α × ℚ` with the properties of a cdf almost
-everywhere. -/
+everywhere.
+-/
 
 /-- `preCDF` is the Radon-Nikodym derivative of `ρ.IicSnd` with respect to `ρ.fst` at each
 `r : ℚ`. This function `ℚ → α → ℝ≥0∞` is such that for almost all `a : α`, the function `ℚ → ℝ≥0∞`
@@ -234,7 +238,9 @@ lemma isRatCondKernelCDF_preCDF (ρ : Measure (α × ℝ)) [IsFiniteMeasure ρ] 
       (Kernel.const Unit ρ) (Kernel.const Unit ρ.fst) :=
   (isRatCondKernelCDFAux_preCDF ρ).isRatCondKernelCDF
 
-/-! ### Conditional cdf -/
+/-!
+# Conditional cdf
+-/
 
 /-- Conditional cdf of the measure given the value on `α`, as a Stieltjes function. -/
 noncomputable def condCDF (ρ : Measure (α × ℝ)) (a : α) : StieltjesFunction ℝ :=

@@ -10,6 +10,9 @@ public import Mathlib.Algebra.GradedMulAction
 public import Mathlib.Algebra.DirectSum.Decomposition
 public import Mathlib.Algebra.Module.BigOperators
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Graded Module
 

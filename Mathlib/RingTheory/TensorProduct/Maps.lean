@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Algebra.Subalgebra.Lattice
 public import Mathlib.Algebra.Module.Rat
 public import Mathlib.RingTheory.TensorProduct.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Maps between tensor products of R-algebras
 
@@ -17,17 +20,17 @@ This file provides results about maps between tensor products of `R`-algebras.
 
 ## Main declarations
 
-- the structure isomorphisms
+* the structure isomorphisms
+
   * `Algebra.TensorProduct.lid : R ⊗[R] A ≃ₐ[R] A`
   * `Algebra.TensorProduct.rid : A ⊗[R] R ≃ₐ[S] A` (usually used with `S = R` or `S = A`)
   * `Algebra.TensorProduct.comm : A ⊗[R] B ≃ₐ[R] B ⊗[R] A`
   * `Algebra.TensorProduct.assoc : ((A ⊗[S] C) ⊗[R] D) ≃ₐ[T] (A ⊗[S] (C ⊗[R] D))`
-- `Algebra.TensorProduct.liftEquiv`: a universal property for the tensor product of algebras.
+* `Algebra.TensorProduct.liftEquiv`: a universal property for the tensor product of algebras.
 
 ## References
 
-* [C. Kassel, *Quantum Groups* (§II.4)][Kassel1995]
-
+* ‍\[C. Kassel, _Quantum Groups_ (§II.4)\]\[Kassel1995\]
 -/
 
 @[expose] public section
@@ -845,11 +848,13 @@ variable [AddCommMonoid M] [Module R M] [AddCommMonoid N] [Module R N]
 open Module
 open scoped TensorProduct
 
-/-- The natural linear map $A ⊗ \text{Hom}_R(M, N) → \text{Hom}_A (M_A, N_A)$,
-where $M_A$ and $N_A$ are the respective modules over $A$ obtained by extension of scalars.
+/--
+The natural linear map $`A ⊗ \text{Hom}_R(M, N) → \text{Hom}_A (M_A, N_A)`,
+where $`M_A` and $`N_A` are the respective modules over $`A` obtained by extension of scalars.
 
 See `LinearMap.tensorProductEnd` for this map specialized to endomorphisms,
-and bundled as `A`-algebra homomorphism. -/
+and bundled as `A`-algebra homomorphism.
+-/
 @[simps!]
 def tensorProduct : A ⊗[R] (M →ₗ[R] N) →ₗ[A] (A ⊗[R] M) →ₗ[A] (A ⊗[R] N) :=
   TensorProduct.AlgebraTensorModule.lift <|
@@ -857,8 +862,10 @@ def tensorProduct : A ⊗[R] (M →ₗ[R] N) →ₗ[A] (A ⊗[R] M) →ₗ[A] (A
     map_add' := by simp only [add_smul, forall_true_iff]
     map_smul' := by simp only [smul_assoc, RingHom.id_apply, forall_true_iff] }
 
-/-- The natural `A`-algebra homomorphism $A ⊗ (\text{End}_R M) → \text{End}_A (A ⊗ M)$,
-where `M` is an `R`-module, and `A` an `R`-algebra. -/
+/--
+The natural `A`-algebra homomorphism $`A ⊗ (\text{End}_R M) → \text{End}_A (A ⊗ M)`,
+where `M` is an `R`-module, and `A` an `R`-algebra.
+-/
 @[simps!]
 def tensorProductEnd : A ⊗[R] (End R M) →ₐ[A] End A (A ⊗[R] M) :=
   Algebra.TensorProduct.algHomOfLinearMapTensorProduct

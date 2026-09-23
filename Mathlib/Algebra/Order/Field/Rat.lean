@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Field.Rat
 public import Mathlib.Algebra.Order.Nonneg.Field
 public import Mathlib.Algebra.Order.Ring.Rat
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The rational numbers form a linear ordered field
 
@@ -16,7 +19,7 @@ This file used to contain the linear ordered field instance on the rational numb
 
 TODO: rename this file to `Mathlib/Algebra/Order/GroupWithZero/NNRat.lean`
 
-See note [foundational algebra order theory].
+See note \[foundational algebra order theory\].
 
 ## Tags
 

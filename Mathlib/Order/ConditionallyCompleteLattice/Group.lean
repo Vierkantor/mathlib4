@@ -9,9 +9,11 @@ public import Mathlib.Order.ConditionallyCompleteLattice.Indexed
 public import Mathlib.Algebra.Order.Group.Unbundled.Basic
 public import Mathlib.Algebra.Order.Monoid.Unbundled.OrderDual
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Conditionally complete lattices and groups.
-
 -/
 
 public section

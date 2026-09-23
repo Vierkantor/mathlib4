@@ -11,10 +11,14 @@ public meta import Lean.Elab.Command
 public meta import Mathlib.Tactic.Linter.Header  -- shake: keep
 public import Lean.Parser.Command
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `#`-command linter
 
-The `#`-command linter produces a warning when a command starting with `#` is used *and*
+The `#`-command linter produces a warning when a command starting with `#` is used _and_
+
 * either the command emits no message;
 * or `warningAsError` is set to `true`.
 

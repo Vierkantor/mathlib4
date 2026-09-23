@@ -9,14 +9,17 @@ public import Mathlib.Algebra.Group.End
 public import Mathlib.Tactic.Finiteness
 public import Mathlib.Topology.EMetricSpace.Diam
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lipschitz continuous functions
 
-A map `f : α → β` between two (extended) metric spaces is called *Lipschitz continuous*
+A map `f : α → β` between two (extended) metric spaces is called _Lipschitz continuous_
 with constant `K ≥ 0` if for all `x, y` we have `edist (f x) (f y) ≤ K * edist x y`.
 For a metric space, the latter inequality is equivalent to `dist (f x) (f y) ≤ K * dist x y`.
 There is also a version asserting this inequality only for `x` and `y` in some set `s`.
-Finally, `f : α → β` is called *locally Lipschitz continuous* if each `x : α` has a neighbourhood
+Finally, `f : α → β` is called _locally Lipschitz continuous_ if each `x : α` has a neighbourhood
 on which `f` is Lipschitz continuous (with some constant).
 
 In this file we provide various ways to prove that various combinations of Lipschitz continuous
@@ -33,7 +36,6 @@ uniformly continuous, and that locally Lipschitz functions are continuous.
 * `LocallyLipschitz f`: states that `f` is locally Lipschitz
 * `LocallyLipschitzOn f s`: states that `f` is locally Lipschitz on `s`.
 * `LocallyLipschitz.continuous`: a locally Lipschitz function is continuous.
-
 
 ## Implementation notes
 
@@ -59,8 +61,10 @@ variable [PseudoEMetricSpace α] [PseudoEMetricSpace β] {K : ℝ≥0} {s t : Se
 we have `dist (f x) (f y) ≤ K * dist x y`. -/
 def LipschitzWith (K : ℝ≥0) (f : α → β) := ∀ x y, edist (f x) (f y) ≤ K * edist x y
 
-/-- A function `f` is **Lipschitz continuous** with constant `K ≥ 0` **on `s`** if
-for all `x, y` in `s` we have `dist (f x) (f y) ≤ K * dist x y`. -/
+/--
+A function `f` is *Lipschitz continuous* with constant `K ≥ 0` *on `s`* if
+for all `x, y` in `s` we have `dist (f x) (f y) ≤ K * dist x y`.
+-/
 def LipschitzOnWith (K : ℝ≥0) (f : α → β) (s : Set α) :=
   ∀ ⦃x⦄, x ∈ s → ∀ ⦃y⦄, y ∈ s → edist (f x) (f y) ≤ K * edist x y
 
@@ -361,8 +365,10 @@ protected lemma id : LocallyLipschitz (@id α) := LipschitzWith.id.locallyLipsch
 protected lemma const (b : β) : LocallyLipschitz (fun _ : α ↦ b) :=
   (LipschitzWith.const b).locallyLipschitz
 
-/-- A locally Lipschitz function is continuous. (The converse is false: for example,
-$x ↦ \sqrt{x}$ is continuous, but not locally Lipschitz at 0.) -/
+/--
+A locally Lipschitz function is continuous. (The converse is false: for example,
+$`x ↦ \sqrt{x}` is continuous, but not locally Lipschitz at 0.)
+-/
 protected theorem continuous {f : α → β} (hf : LocallyLipschitz f) : Continuous f := by
   rw [continuous_iff_continuousAt]
   intro x

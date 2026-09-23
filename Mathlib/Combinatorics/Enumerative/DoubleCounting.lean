@@ -9,6 +9,9 @@ public import Mathlib.Algebra.BigOperators.Ring.Finset
 public import Mathlib.Algebra.Order.BigOperators.Group.Finset
 public import Mathlib.Algebra.Order.Ring.Nat
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Double counting
 
@@ -43,7 +46,9 @@ open Finset Function Relator
 
 variable {R α β : Type*}
 
-/-! ### Bipartite graph -/
+/-!
+# Bipartite graph
+-/
 
 
 namespace Finset
@@ -203,9 +208,11 @@ theorem card_le_card_of_forall_subsingleton' (ht : ∀ b ∈ t, ∃ a, a ∈ s �
     (hs : ∀ a ∈ s, ({ b ∈ t | r a b } : Set β).Subsingleton) : #t ≤ #s :=
   card_le_card_of_forall_subsingleton (swap r) ht hs
 
-/-- Given a finite collection of finite subsets $B_1, \ldots, B_k$
-and, for every $x \in \bigcup_i B_i$, let $C_x$ be the set of indices
-of the $B_i$'s that contain $x$.  Then, $\sum_i |B_i| = \sum_x |C_x|$. -/
+/--
+Given a finite collection of finite subsets $`B_1, \ldots, B_k`
+and, for every $`x \in \bigcup_i B_i`, let $`C_x` be the set of indices
+of the $`B_i`'s that contain $`x`.  Then, $`\sum_i |B_i| = \sum_x |C_x|`.
+-/
 lemma sum_card_eq_sum_biUnion_card [Fintype α] [DecidableEq α] [DecidableEq β]
     (B : α → Finset β) (s : Finset α) :
     ∑ j ∈ s, #(B j) = ∑ x ∈ s.biUnion B, #{j | j ∈ s ∧ x ∈ B j} := by

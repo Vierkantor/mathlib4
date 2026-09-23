@@ -8,6 +8,9 @@ module
 public import Mathlib.AlgebraicTopology.SimplicialObject.Basic
 public import Mathlib.AlgebraicTopology.SimplexCategory.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Simplicial homotopies of simplicial objects
 
@@ -28,7 +31,7 @@ satisfying compatibilities involving the faces and degeneracies.
 
 ## References
 
-* [nLab, *Simplicial Homotopy*](https://ncatlab.org/nlab/show/simplicial+homotopy)
+* [nLab, _Simplicial Homotopy_](https://ncatlab.org/nlab/show/simplicial+homotopy)
 -/
 
 @[expose] public section

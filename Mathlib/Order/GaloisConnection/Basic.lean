@@ -9,6 +9,9 @@ public import Mathlib.Order.Bounds.Image
 public import Mathlib.Order.CompleteLattice.Basic
 public import Mathlib.Order.WithBot
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Galois connections, insertions and coinsertions
 

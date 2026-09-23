@@ -12,7 +12,11 @@ public import Mathlib.Tactic.CrossRefAttribute
 
 import Mathlib.LinearAlgebra.Complex.FiniteDimensional
 
-/-! # Poisson distributions over ℕ
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Poisson distributions over ℕ
 
 Define the Poisson measure over the natural numbers. For `r : ℝ≥0`, `poissonMeasure r` is the
 measure which to `{n}` associates `exp (-r) * r ^ n / (n)!`.
@@ -158,7 +162,9 @@ lemma charFun_map_cast_poissonMeasure (r : ℝ≥0) (t : ℝ) :
 
 end CharFun
 
-/-! ### Convolution of Poisson measures -/
+/-!
+# Convolution of Poisson measures
+-/
 
 section Convolution
 

@@ -11,6 +11,9 @@ public import Mathlib.Data.Finsupp.Notation
 public import Mathlib.Data.Finsupp.WellFounded
 public import Mathlib.Algebra.MvPolynomial.Variables
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The Fundamental Theorem of Symmetric Polynomials
 
@@ -24,7 +27,7 @@ The forward map is called `MvPolynomial.esymmAlgHom`.
 ## Proof strategy
 
 We follow the alternative proof on the Wikipedia page
-https://en.wikipedia.org/wiki/Elementary_symmetric_polynomial#Alternative_proof
+https://en.wikipedia.org/wiki/Elementary\_symmetric\_polynomial#Alternative\_proof
 It suffices to show `esymmAlgHom` is both injective and surjective.
 
 Endow the Fintype `σ` with a linear order and endow the (monic) monomials in the polynomial ring
@@ -50,7 +53,6 @@ We actually only define `Fin.accumulate` in the case `σ := Fin m` rather than a
 with a linear order; we show that `esymmAlgHom` is in fact surjective whenever `m ≤ n` and
 injective whenever `n ≤ m`, and then transfer the results to any Fintype `σ`. See
 `MvPolynomial.injective_esymmAlgHom` and `MvPolynomial.esymmAlgHom_surjective`.
-
 -/
 
 @[expose] public section
@@ -131,8 +133,10 @@ section CommSemiring
 variable [CommSemiring R] [Fintype σ] [Fintype τ]
 
 variable (σ R n) in
-/-- The `R`-algebra homomorphism from $R[x_1,\dots,x_n]$ to the symmetric subalgebra of
-  $R[\{x_i \mid i ∈ σ\}]$ sending $x_i$ to the $i$-th elementary symmetric polynomial. -/
+/--
+The `R`-algebra homomorphism from $`R[x_1,\dots,x_n]` to the symmetric subalgebra of
+$`R[\{x_i \mid i ∈ σ\}]` sending $`x_i` to the $`i`-th elementary symmetric polynomial.
+-/
 noncomputable def esymmAlgHom :
     MvPolynomial (Fin n) R →ₐ[R] symmetricSubalgebra σ R :=
   aeval (fun i ↦ ⟨esymm σ R (i + 1), esymm_isSymmetric σ R _⟩)

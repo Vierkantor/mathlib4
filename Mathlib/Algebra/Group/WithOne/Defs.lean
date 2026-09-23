@@ -11,6 +11,9 @@ public import Mathlib.Data.Option.Basic
 public import Mathlib.Tactic.Common
 public import Mathlib.Tactic.Attr.Core
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Adjoining a zero/one to semigroups and related algebraic structures
 

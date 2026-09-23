@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Opposites
 public import Mathlib.Logic.Function.Iterate
 public import Mathlib.Tactic.Spread
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Definitions of group actions
 
@@ -33,8 +36,8 @@ Also provided are typeclasses regarding the interaction of different group actio
 
 ## Notation
 
-- `a • b` is used as notation for `SMul.smul a b`.
-- `a +ᵥ b` is used as notation for `VAdd.vadd a b`.
+* `a • b` is used as notation for `SMul.smul a b`.
+* `a +ᵥ b` is used as notation for `VAdd.vadd a b`.
 
 ## Implementation details
 
@@ -137,7 +140,9 @@ class MulAction (α : Type*) (β : Type*) [Monoid α] extends SemigroupAction α
   /-- One is the neutral element for `•` -/
   protected one_smul : ∀ b : β, (1 : α) • b = b
 
-/-! ### Scalar tower and commuting actions -/
+/-!
+# Scalar tower and commuting actions
+-/
 
 /-- A typeclass mixin saying that two additive actions on the same space commute. -/
 class VAddCommClass (M N α : Type*) [VAdd M α] [VAdd N α] : Prop where
@@ -438,8 +443,10 @@ theorem smul_iterate (a : M) : ∀ n : ℕ, (a • · : α → α)^[n] = (a ^ n 
 lemma smul_iterate_apply (a : M) (n : ℕ) (x : α) : (a • ·)^[n] x = a ^ n • x := by
   rw [smul_iterate]
 
-/-- Pullback a multiplicative action along an injective map respecting `•`.
-See note [reducible non-instances]. -/
+/--
+Pullback a multiplicative action along an injective map respecting `•`.
+See note \[reducible non-instances\].
+-/
 @[to_additive
     /-- Pullback an additive action along an injective map respecting `+ᵥ`. -/]
 protected abbrev Function.Injective.mulAction [SMul M β] (f : β → α) (hf : Injective f)
@@ -447,8 +454,10 @@ protected abbrev Function.Injective.mulAction [SMul M β] (f : β → α) (hf : 
   one_smul x := hf <| (smul _ _).trans <| one_smul _ (f x)
   mul_smul c₁ c₂ x := hf <| by simp only [smul, mul_smul]
 
-/-- Pushforward a multiplicative action along a surjective map respecting `•`.
-See note [reducible non-instances]. -/
+/--
+Pushforward a multiplicative action along a surjective map respecting `•`.
+See note \[reducible non-instances\].
+-/
 @[to_additive
     /-- Pushforward an additive action along a surjective map respecting `+ᵥ`. -/]
 protected abbrev Function.Surjective.mulAction [SMul M β] (f : α → β) (hf : Surjective f)
@@ -616,15 +625,17 @@ scalar towers, then `Q / P / N` is also a scalar tower.
 
 end CompatibleScalar
 
-/-- Typeclass for multiplicative actions on multiplicative structures.
+/--
+Typeclass for multiplicative actions on multiplicative structures.
 
 The key axiom here is `smul_mul : g • (x * y) = (g • x) * (g • y)`.
 If `G` is a multiplicative group with automorphism group `Γ`, then there is a natural instance of
 `MulDistribMulAction Γ G`.
 
-The axiom is also satisfied by a Galois group $Gal(L/K)$ acting on the field `L`,
+The axiom is also satisfied by a Galois group $`Gal(L/K)` acting on the field `L`,
 but here you can use the even stronger class `MulSemiringAction`, which captures
-how the action plays with both multiplication and addition. -/
+how the action plays with both multiplication and addition.
+-/
 @[ext]
 class MulDistribMulAction (M N : Type*) [Monoid M] [Monoid N] extends MulAction M N where
   /-- Multiplying `1` by a scalar gives `1` -/

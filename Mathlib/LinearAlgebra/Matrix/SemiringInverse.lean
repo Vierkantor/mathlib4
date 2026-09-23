@@ -13,11 +13,13 @@ import Mathlib.GroupTheory.Perm.Option
 import Mathlib.Tactic.Abel
 import Mathlib.LinearAlgebra.Matrix.RowCol
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Nonsingular inverses over semirings
 
 This file proves `A * B = 1 ↔ B * A = 1` for square matrices over a commutative semiring.
-
 -/
 
 @[expose] public section

@@ -8,6 +8,9 @@ module
 public import Mathlib.Topology.Algebra.Module.Spaces.ContinuousLinearMap
 public import Mathlib.Topology.Algebra.Module.Spaces.CompactConvergenceCLM
 public import Mathlib.Analysis.Normed.Module.FiniteDimension
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Montel spaces
 
@@ -21,11 +24,11 @@ space would be `[MontelSpace 𝕜 E] [BarrelledSpace 𝕜 E]`.
 * `ContinuousLinearEquiv.toCompactConvergenceCLM`: if `E` is a Montel space then topology of compact
   convergence and the strong topology on `E →SL[σ] F` coincide. We record this as a continuous
   linear equivalence between `E →SL[σ] F` and `E →SL_c[σ] F`. This is Proposition 34.5 in
-  [F. Trèves][treves1967].
+  ‍\[F. Trèves\]\[treves1967\].
 
 ## References
-* [F. Trèves, *Topological vector spaces, distributions and kernels*][treves1967]
 
+* ‍\[F. Trèves, _Topological vector spaces, distributions and kernels_\]\[treves1967\]
 -/
 
 @[expose] public section

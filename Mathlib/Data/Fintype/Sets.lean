@@ -9,6 +9,9 @@ public import Mathlib.Data.Finset.BooleanAlgebra
 public import Mathlib.Data.Finset.SymmDiff
 public import Mathlib.Data.Fintype.OfMap
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Subsets of finite types
 
@@ -220,7 +223,9 @@ theorem Finset.toFinset_coe (s : Finset α) [Fintype (s : Set α)] : (s : Set α
 
 section Finset
 
-/-! ### `Fintype (s : Finset α)` -/
+/-!
+# `Fintype (s : Finset α)`
+-/
 
 
 instance Finset.fintypeCoeSort {α : Type u} (s : Finset α) : Fintype s :=

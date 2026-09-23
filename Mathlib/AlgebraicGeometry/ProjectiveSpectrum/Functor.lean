@@ -9,7 +9,12 @@ module
 public import Mathlib.AlgebraicGeometry.ProjectiveSpectrum.Basic
 public import Mathlib.RingTheory.GradedAlgebra.Homogeneous.Maps
 
-/-! # Functoriality of Proj -/
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Functoriality of Proj
+-/
 
 @[expose] public section
 

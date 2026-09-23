@@ -9,6 +9,9 @@ public import Mathlib.AlgebraicGeometry.ProjectiveSpectrum.StructureSheaf
 public import Mathlib.AlgebraicGeometry.GammaSpecAdjunction
 public import Mathlib.RingTheory.GradedAlgebra.Radical
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Proj as a scheme
 
@@ -34,39 +37,43 @@ equipped with this structure sheaf is a scheme. We achieve this by using an affi
 open sets in `Proj`, more specifically:
 
 1. We prove that `Proj` can be covered by basic open sets at homogeneous elements of positive
-    degree.
+   degree.
 2. We prove that for any homogeneous element `f : A` of positive degree `m`, `Proj.T | (pbo f)` is
-    homeomorphic to `Spec.T A⁰_f`:
-  - forward direction `toSpec`:
-    for any `x : pbo f`, i.e. a relevant homogeneous prime ideal `x`, send it to
-    `A⁰_f ∩ span {g / 1 | g ∈ x}` (see `ProjIsoSpecTopComponent.ToSpec.carrier`). This ideal is
-    prime, the proof is in `ProjIsoSpecTopComponent.ToSpec.toFun`. The fact that this function
-    is continuous is found in `ProjIsoSpecTopComponent.toSpec`
-  - backward direction `fromSpec`:
-    for any `q : Spec A⁰_f`, we send it to `{a | ∀ i, aᵢᵐ/fⁱ ∈ q}`; we need this to be a
-    homogeneous prime ideal that is relevant.
-    * This is in fact an ideal, the proof can be found in
-      `ProjIsoSpecTopComponent.FromSpec.carrier.asIdeal`;
-    * This ideal is also homogeneous, the proof can be found in
-      `ProjIsoSpecTopComponent.FromSpec.carrier.asIdeal.homogeneous`;
-    * This ideal is relevant, the proof can be found in
-      `ProjIsoSpecTopComponent.FromSpec.carrier.relevant`;
-    * This ideal is prime, the proof can be found in
-      `ProjIsoSpecTopComponent.FromSpec.carrier.asIdeal.prime`.
+   homeomorphic to `Spec.T A⁰_f`:
+
+* forward direction `toSpec`:
+  for any `x : pbo f`, i.e. a relevant homogeneous prime ideal `x`, send it to
+  `A⁰_f ∩ span {g / 1 | g ∈ x}` (see `ProjIsoSpecTopComponent.ToSpec.carrier`). This ideal is
+  prime, the proof is in `ProjIsoSpecTopComponent.ToSpec.toFun`. The fact that this function
+  is continuous is found in `ProjIsoSpecTopComponent.toSpec`
+* backward direction `fromSpec`:
+  for any `q : Spec A⁰_f`, we send it to `{a | ∀ i, aᵢᵐ/fⁱ ∈ q}`; we need this to be a
+  homogeneous prime ideal that is relevant.
+
+  * This is in fact an ideal, the proof can be found in
+    `ProjIsoSpecTopComponent.FromSpec.carrier.asIdeal`;
+  * This ideal is also homogeneous, the proof can be found in
+    `ProjIsoSpecTopComponent.FromSpec.carrier.asIdeal.homogeneous`;
+  * This ideal is relevant, the proof can be found in
+    `ProjIsoSpecTopComponent.FromSpec.carrier.relevant`;
+  * This ideal is prime, the proof can be found in
+    `ProjIsoSpecTopComponent.FromSpec.carrier.asIdeal.prime`.
     Hence we have a well-defined function `Spec.T A⁰_f → Proj.T | (pbo f)`, this function is called
     `ProjIsoSpecTopComponent.FromSpec.toFun`. But to prove the continuity of this function, we need
     to prove `fromSpec ∘ toSpec` and `toSpec ∘ fromSpec` are both identities; these are achieved in
     `ProjIsoSpecTopComponent.fromSpec_toSpec` and `ProjIsoSpecTopComponent.toSpec_fromSpec`.
+
 3. Then we construct a morphism of locally ringed spaces `α : Proj| (pbo f) ⟶ Spec.T A⁰_f` as the
-    following: by the Gamma-Spec adjunction, it is sufficient to construct a ring map
-    `A⁰_f → Γ(Proj, pbo f)` from the ring of homogeneous localization of `A` away from `f` to the
-    local sections of structure sheaf of projective spectrum on the basic open set around `f`.
-    The map `A⁰_f → Γ(Proj, pbo f)` is constructed in `awayToΓ` and is defined by sending
-    `s ∈ A⁰_f` to the section `x ↦ s` on `pbo f`.
+   following: by the Gamma-Spec adjunction, it is sufficient to construct a ring map
+   `A⁰_f → Γ(Proj, pbo f)` from the ring of homogeneous localization of `A` away from `f` to the
+   local sections of structure sheaf of projective spectrum on the basic open set around `f`.
+   The map `A⁰_f → Γ(Proj, pbo f)` is constructed in `awayToΓ` and is defined by sending
+   `s ∈ A⁰_f` to the section `x ↦ s` on `pbo f`.
 
 ## Main Definitions and Statements
 
 For a homogeneous element `f` of degree `m`
+
 * `ProjIsoSpecTopComponent.toSpec`: the continuous map between `Proj.T| pbo f` and `Spec.T A⁰_f`
   defined by sending `x : Proj| (pbo f)` to `A⁰_f ∩ span {g / 1 | g ∈ x}`. We also denote this map
   as `ψ`.
@@ -74,6 +81,7 @@ For a homogeneous element `f` of degree `m`
   then the preimage of `sbo a/f^m` under `toSpec f` is `pbo f ∩ pbo a`.
 
 If we further assume `m` is positive
+
 * `ProjIsoSpecTopComponent.fromSpec`: the continuous map between `Spec.T A⁰_f` and `Proj.T| pbo f`
   defined by sending `q` to `{a | aᵢᵐ/fⁱ ∈ q}` where `aᵢ` is the `i`-th coordinate of `a`.
   We also denote this map as `φ`
@@ -84,11 +92,13 @@ If we further assume `m` is positive
   adjunction defined by sending `s` to the section `x ↦ s` on `pbo f`.
 
 Finally,
+
 * `AlgebraicGeometry.Proj`: for any `ℕ`-graded ring `A`, `Proj A` is locally affine, hence is a
   scheme.
 
 ## Reference
-* [Robin Hartshorne, *Algebraic Geometry*][Har77]: Chapter II.2 Proposition 2.5
+
+* ‍\[Robin Hartshorne, _Algebraic Geometry_\]\[Har77\]: Chapter II.2 Proposition 2.5
 -/
 
 @[expose] public section

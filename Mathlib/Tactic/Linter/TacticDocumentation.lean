@@ -13,7 +13,11 @@ public import Mathlib.Tactic.Linter.Header  -- shake: keep
 public import Batteries.Tactic.Lint.Basic
 public import Lean.Elab.Tactic.Doc
 
-/-! # The `tacticDocs` linter
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# The `tacticDocs` linter
 
 The `tacticDocs` environment linter checks that all tactics defined in a module come with
 a (nonempty) docstring.

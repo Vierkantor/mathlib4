@@ -9,6 +9,10 @@ public import Mathlib.MeasureTheory.Integral.Pi
 public import Mathlib.Probability.Independence.Integrable
 public import Mathlib.Probability.Notation
 
+set_option doc.verso true
+set_option doc.verso.module false
+set_option doc.verso.suggestions false
+
 /-!
 # Integration in Probability Theory
 

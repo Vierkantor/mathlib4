@@ -11,10 +11,13 @@ public import Mathlib.Algebra.Group.Nat.Hom
 public import Mathlib.Algebra.Ring.Hom.Defs
 public import Mathlib.Algebra.Ring.Nat
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cast of natural numbers (additional theorems)
 
-This file proves additional properties about the *canonical* homomorphism from
+This file proves additional properties about the _canonical_ homomorphism from
 the natural numbers into an additive monoid with a one (`Nat.cast`).
 
 ## Main declarations

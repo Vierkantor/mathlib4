@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.Calculus.Deriv.Abs
 public import Mathlib.Analysis.Calculus.LineDeriv.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Differentiability of the norm in a real normed vector space
 
@@ -34,7 +37,6 @@ at `t • x` when `t ≠ 0`.
 ## Tags
 
 differentiability, norm
-
 -/
 
 public section

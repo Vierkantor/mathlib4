@@ -13,6 +13,9 @@ public import Mathlib.MeasureTheory.MeasurableSpace.Basic
 public import Mathlib.MeasureTheory.MeasurableSpace.Instances
 public import Mathlib.Order.Disjointed
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Constructions for measurable spaces and functions
 
@@ -293,9 +296,11 @@ section Atoms
 
 variable [MeasurableSpace β]
 
-/-- The *measurable atom* of `x` is the intersection of all the measurable sets containing `x`.
+/--
+The _measurable atom_ of `x` is the intersection of all the measurable sets containing `x`.
 It is measurable when the space is countable (or more generally when the measurable space is
-countably generated). -/
+countably generated).
+-/
 def measurableAtom (x : β) : Set β :=
   ⋂ (s : Set β) (_h's : x ∈ s) (_hs : MeasurableSet s), s
 

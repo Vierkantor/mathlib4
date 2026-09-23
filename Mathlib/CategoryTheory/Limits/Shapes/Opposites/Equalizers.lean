@@ -9,11 +9,13 @@ public import Mathlib.CategoryTheory.Limits.Opposites
 public import Mathlib.CategoryTheory.Limits.Shapes.Equalizers
 public import Mathlib.CategoryTheory.Limits.Shapes.Opposites.Pullbacks
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Equalizers and coequalizers in `C` and `Cᵒᵖ`
 
 We construct equalizers and coequalizers in the opposite categories.
-
 -/
 
 @[expose] public section

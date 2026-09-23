@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Notation.Support
 public import Mathlib.Algebra.FiniteSupport.Defs
 public import Mathlib.Data.Set.Finite.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Finiteness of support
 -/

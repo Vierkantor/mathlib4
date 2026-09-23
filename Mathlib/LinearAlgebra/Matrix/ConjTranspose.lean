@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Star.Module
 public import Mathlib.Algebra.Star.StarAlgHom
 public import Mathlib.Data.Matrix.Basis
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Matrices over star rings.
 
@@ -18,7 +21,6 @@ public import Mathlib.Data.Matrix.Basis
 The scope `Matrix` gives the following notation:
 
 * `ᴴ` for `Matrix.conjTranspose`
-
 -/
 
 @[expose] public section

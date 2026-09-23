@@ -8,9 +8,11 @@ module
 public import Mathlib.Algebra.Algebra.Hom
 public import Mathlib.LinearAlgebra.TensorProduct.Map
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Associators and unitors for tensor products of modules over a commutative ring.
-
 -/
 
 @[expose] public section

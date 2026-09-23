@@ -8,6 +8,9 @@ module
 public import Mathlib.NumberTheory.ModularForms.ArithmeticSubgroups
 public import Mathlib.NumberTheory.ModularForms.SlashActions
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Slash invariant forms
 
@@ -49,7 +52,9 @@ instance (priority := 100) SlashInvariantForm.funLike :
   coe := SlashInvariantForm.toFun
   coe_injective f g h := by cases f; cases g; congr
 
-/-- See note [custom simps projection]. -/
+/--
+See note \[custom simps projection\].
+-/
 def SlashInvariantForm.Simps.coe (f : SlashInvariantForm Γ k) : ℍ → ℂ := f
 
 initialize_simps_projections SlashInvariantForm (toFun → coe, as_prefix coe)

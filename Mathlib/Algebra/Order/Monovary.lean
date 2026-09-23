@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Order.Module.Synonym
 public import Mathlib.Algebra.Order.Monoid.OrderDual
 public import Mathlib.Order.Monotone.Monovary
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Monovarying functions and algebraic operations
 
@@ -26,7 +29,9 @@ public section
 
 variable {ι α β : Type*}
 
-/-! ### Algebraic operations on monovarying functions -/
+/-!
+# Algebraic operations on monovarying functions
+-/
 
 section OrderedCommGroup
 
@@ -359,7 +364,9 @@ alias ⟨Antivary.of_inv₀, Antivary.inv₀⟩ := antivary_inv₀
 
 end LinearOrderedSemifield
 
-/-! ### Rearrangement inequality characterisation -/
+/-!
+# Rearrangement inequality characterisation
+-/
 
 section LinearOrderedAddCommGroup
 variable [Ring α] [LinearOrder α] [IsStrictOrderedRing α]

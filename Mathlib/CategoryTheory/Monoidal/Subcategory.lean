@@ -12,6 +12,9 @@ public import Mathlib.CategoryTheory.Preadditive.AdditiveFunctor
 public import Mathlib.CategoryTheory.Linear.LinearFunctor
 public import Mathlib.CategoryTheory.Monoidal.Closed.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Full monoidal subcategories
 
@@ -24,6 +27,7 @@ When `C` is also braided/symmetric, the full monoidal subcategory also inherits 
 braided/symmetric structure.
 
 ## TODO
+
 * Add monoidal/braided versions of `ObjectProperty.Lift`
 -/
 

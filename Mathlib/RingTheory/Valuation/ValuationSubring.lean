@@ -14,14 +14,15 @@ public import Mathlib.RingTheory.LocalRing.ResidueField.Basic
 public import Mathlib.RingTheory.KrullDimension.Basic
 public import Mathlib.RingTheory.Spectrum.Prime.Topology
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Valuation subrings of a field
 
 ## Projects
 
 The order structure on `ValuationSubring K`.
-
 -/
 
 @[expose] public section
@@ -761,7 +762,8 @@ theorem unitsModPrincipalUnitsEquivResidueFieldUnits_comp_quotientGroup_mk_apply
 
 end PrincipalUnitGroup
 
-/-! ### Pointwise actions
+/-!
+# Pointwise actions
 
 This transfers the action from `Subring.pointwiseMulAction`, noting that it only applies when
 the action is by a group. Notably this provides an instances when `G` is `K ≃+* K`.

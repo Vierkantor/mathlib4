@@ -8,6 +8,9 @@ module
 public import Mathlib.AlgebraicTopology.SimplicialSet.Basic
 public import Mathlib.AlgebraicTopology.SimplicialSet.CompStructTruncated
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # 2-truncated quasicategories and homotopy relations
 
@@ -21,6 +24,7 @@ relations, and that the left and right homotopy relations coincide.
 For a 2-truncated quasicategory `A`, we define a category `HomotopyCategory₂ A` whose
 morphisms are given by (left) homotopy classes of edges. The construction of this category
 is different from `HomotopyCategory A` in `AlgebraicTopology.SimplicialSet.HomotopyCat`:
+
 * `HomotopyCategory₂ A` has morphisms given by homotopy classes of edges
 * `HomotopyCategory A` has morphisms given by equivalence classes of paths in the underlying
   reflexive quiver of `A`.
@@ -42,14 +46,15 @@ open Edge CompStruct
 
 /--
 A 2-truncated quasicategory is a 2-truncated simplicial set with the properties:
+
 * (2, 1)-filling: given two consecutive `Edge`s `e₀₁` and `e₁₂`, there exists a `CompStruct`
   with (0, 1)-edge `e₀₁` and (0, 2)-edge `e₁₂`.
 * (3, 1)-filling: given three `CompStruct`s `f₃`, `f₀` and `f₂` which form a (3, 1)-horn,
   there exists a fourth `CompStruct` such that the four faces form the boundary
-  ∂Δ[3] of a 3-simplex.
+  ∂Δ\[3\] of a 3-simplex.
 * (3, 2)-filling: given three `CompStruct`s `f₃`, `f₀` and `f₁` which form a (3, 2)-horn,
   there exists a fourth `CompStruct` such that the four faces form the boundary
-  ∂Δ[3] of a 3-simplex.
+  ∂Δ\[3\] of a 3-simplex.
 -/
 class Quasicategory₂ (X : Truncated 2) where
   fill21 {x₀ x₁ x₂ : X _⦋0⦌₂}

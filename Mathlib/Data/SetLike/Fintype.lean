@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.SetLike.Basic
 public import Mathlib.Data.Fintype.Powerset
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Set-like fintype
 

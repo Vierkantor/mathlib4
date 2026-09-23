@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.Nat.PrimeFin
 public import Mathlib.Order.Lattice.Nat
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Greatest prime factor of a natural number
 
@@ -18,6 +21,7 @@ one, with explicit values at zero and one.
 
 The list `n.primeFactorsList` is empty exactly when `n = 0` or `n = 1`. We choose the junk values
 `maxPrimeFac 0 = 0` and `maxPrimeFac 1 = 1` so that:
+
 * `maxPrimeFac n ≤ n` holds for all `n`. This forces `maxPrimeFac 0 = 0`.
 * `maxPrimeFac n ∣ n` holds for all `n`. This forces `maxPrimeFac 1 = 1`.
 

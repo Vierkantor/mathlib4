@@ -7,6 +7,9 @@ module
 
 public import Mathlib.RingTheory.ClassGroup.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The class group of a Unique Factorization Domain is trivial
 
@@ -15,12 +18,13 @@ The main application is to Unique Factorization Domains,
 which are known to be GCD Domains.
 
 ## Main result
-- `IsGCDMonoid.subsingleton_classGroup` : the class group of a GCD domain is trivial.
+
+* `IsGCDMonoid.subsingleton_classGroup` : the class group of a GCD domain is trivial.
   This includes unique factorization domains.
 
 ## References
 
-- [stacks-project]: The Stacks project, [tag 0BCH](https://stacks.math.columbia.edu/tag/0BCH)
+* ‍\[stacks-project\]: The Stacks project, [tag 0BCH](https://stacks.math.columbia.edu/tag/0BCH)
 -/
 
 open scoped nonZeroDivisors

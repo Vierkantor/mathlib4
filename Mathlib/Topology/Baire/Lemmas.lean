@@ -11,10 +11,13 @@ public import Mathlib.Topology.GDelta.Basic
 public import Mathlib.Topology.Maps.OpenQuotient
 public import Mathlib.Tactic.CrossRefAttribute
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Baire spaces
 
-A topological space is called a *Baire space*
+A topological space is called a _Baire space_
 if a countable intersection of dense open subsets is dense.
 Baire theorems say that all completely metrizable spaces
 and all locally compact regular spaces are Baire spaces.

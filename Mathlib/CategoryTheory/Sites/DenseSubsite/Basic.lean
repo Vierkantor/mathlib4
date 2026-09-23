@@ -11,6 +11,9 @@ public import Mathlib.CategoryTheory.Sites.CoverPreserving
 public import Mathlib.CategoryTheory.Adjunction.FullyFaithful
 public import Mathlib.CategoryTheory.Sites.LocallyFullyFaithful
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Dense subsites
 
@@ -19,22 +22,23 @@ that factors through images of the functor for each object in `D`.
 
 ## Main results
 
-- `CategoryTheory.Functor.IsCoverDense.Types.presheafHom`: If `G : C ⥤ (D, K)` is locally-full
+* `CategoryTheory.Functor.IsCoverDense.Types.presheafHom`: If `G : C ⥤ (D, K)` is locally-full
   and cover-dense, then given any presheaf `ℱ` and sheaf `ℱ'` on `D`,
   and a morphism `α : G ⋙ ℱ ⟶ G ⋙ ℱ'`, we may glue them together to obtain
   a morphism of presheaves `ℱ ⟶ ℱ'`.
-- `CategoryTheory.Functor.IsCoverDense.sheafIso`: If `ℱ` above is a sheaf and `α` is an iso,
+* `CategoryTheory.Functor.IsCoverDense.sheafIso`: If `ℱ` above is a sheaf and `α` is an iso,
   then the result is also an iso.
-- `CategoryTheory.Functor.IsCoverDense.iso_of_restrict_iso`: If `G : C ⥤ (D, K)` is locally-full
+* `CategoryTheory.Functor.IsCoverDense.iso_of_restrict_iso`: If `G : C ⥤ (D, K)` is locally-full
   and cover-dense, then given any sheaves `ℱ, ℱ'` on `D`, and a morphism `α : ℱ ⟶ ℱ'`,
   then `α` is an iso if `G ⋙ ℱ ⟶ G ⋙ ℱ'` is iso.
-- `CategoryTheory.Functor.IsDenseSubsite`:
+* `CategoryTheory.Functor.IsDenseSubsite`:
   The functor `G : C ⥤ D` exhibits `(C, J)` as a dense subsite of `(D, K)` if `G` is cover-dense,
   locally fully-faithful, and `S` is a cover of `C` iff the image of `S` in `D` is a cover.
-- `CategoryTheory.Functor.IsDenseSubsite.sheafEquiv`: the equivalence of
+* `CategoryTheory.Functor.IsDenseSubsite.sheafEquiv`: the equivalence of
   categories `Sheaf J A ≌ Sheaf K A` when `(C, J)` is a dense subsite of `(D, K)` and
   the pushforward functor `Sheaf K A ⥤ Sheaf J A` is an equivalence, which we show
   in two situations:
+
   * the sites are small and `A` has suitable limits (see the file
     `Mathlib/CategoryTheory/Sites/DenseSubsite/SheafEquiv.lean`).
   * the category `A` has limits of size `w` and `G` is `1`-hypercover cover dense
@@ -43,10 +47,9 @@ that factors through images of the functor for each object in `D`.
 
 ## References
 
-* [Elephant]: *Sketches of an Elephant*, ℱ. T. Johnstone: C2.2.
+* ‍\[Elephant\]: _Sketches of an Elephant_, ℱ. T. Johnstone: C2.2.
 * https://ncatlab.org/nlab/show/dense+sub-site
 * https://ncatlab.org/nlab/show/comparison+lemma
-
 -/
 
 @[expose] public section

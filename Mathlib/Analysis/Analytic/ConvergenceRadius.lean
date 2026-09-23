@@ -9,6 +9,9 @@ public import Mathlib.Analysis.Calculus.FormalMultilinearSeries
 public import Mathlib.Analysis.SpecificLimits.Normed
 public import Mathlib.Topology.Algebra.InfiniteSum.Module
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Radius of convergence of a power series
 
@@ -93,7 +96,9 @@ theorem partialSum_continuous (p : FormalMultilinearSeries 𝕜 E F) (n : ℕ) :
 
 end FormalMultilinearSeries
 
-/-! ### The radius of a formal multilinear series -/
+/-!
+# The radius of a formal multilinear series
+-/
 
 variable [NontriviallyNormedField 𝕜] [NormedAddCommGroup E] [NormedSpace 𝕜 E] [NormedAddCommGroup F]
   [NormedSpace 𝕜 F] [NormedAddCommGroup G] [NormedSpace 𝕜 G]
@@ -102,9 +107,11 @@ namespace FormalMultilinearSeries
 
 variable (p : FormalMultilinearSeries 𝕜 E F) {r : ℝ≥0}
 
-/-- The radius of a formal multilinear series is the largest `r` such that the sum `Σ ‖pₙ‖ ‖y‖ⁿ`
+/--
+The radius of a formal multilinear series is the largest `r` such that the sum `Σ ‖pₙ‖ ‖y‖ⁿ`
 converges for all `‖y‖ < r`. This implies that `Σ pₙ yⁿ` converges for all `‖y‖ < r`, but these
-definitions are *not* equivalent in general. -/
+definitions are _not_ equivalent in general.
+-/
 def radius (p : FormalMultilinearSeries 𝕜 E F) : ℝ≥0∞ :=
   ⨆ (r : ℝ≥0) (C : ℝ) (_ : ∀ n, ‖p n‖ * (r : ℝ) ^ n ≤ C), (r : ℝ≥0∞)
 

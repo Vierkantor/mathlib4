@@ -11,6 +11,9 @@ public import Mathlib.Data.Nat.GCD.Basic
 public import Mathlib.RingTheory.Coprime.Lemmas
 public import Mathlib.Data.Nat.Factorization.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `Finset.lcm` lemmas
 

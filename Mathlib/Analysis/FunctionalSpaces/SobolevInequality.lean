@@ -11,6 +11,9 @@ public import Mathlib.Analysis.InnerProductSpace.NormPow
 public import Mathlib.Data.Finset.Interval
 public import Mathlib.MeasureTheory.Integral.IntegralEqImproper
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Gagliardo-Nirenberg-Sobolev inequality
 
@@ -45,6 +48,7 @@ We state these constants as separate definitions.
   Note that in this case the constant depends on the support of `u`.
 
 Potentially also useful:
+
 * `MeasureTheory.eLpNorm_le_eLpNorm_fderiv_one`: this is the inequality for `q = 1`.
   In this version, the codomain can be an arbitrary Banach space.
 * `MeasureTheory.eLpNorm_le_eLpNorm_fderiv_of_eq_inner`: in this version,
@@ -62,7 +66,9 @@ variable {ι : Type*}
 
 local prefix:max "#" => Fintype.card
 
-/-! ## The grid-lines lemma -/
+/-!
+# The grid-lines lemma
+-/
 
 variable {A : ι → Type*} [∀ i, MeasurableSpace (A i)]
   (μ : ∀ i, Measure (A i))
@@ -288,7 +294,9 @@ theorem lintegral_prod_lintegral_pow_le [Fintype ι] [∀ i, SigmaFinite (μ i)]
 
 end DecidableEq
 
-/-! ## The Gagliardo-Nirenberg-Sobolev inequality -/
+/-!
+# The Gagliardo-Nirenberg-Sobolev inequality
+-/
 
 variable {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
 

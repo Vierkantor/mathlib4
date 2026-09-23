@@ -8,6 +8,9 @@ module
 public import Mathlib.Init
 public meta import Lean.PrettyPrinter.Delaborator.Builtins
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Notation for bundling a type into a concrete category
 
@@ -28,7 +31,7 @@ A typeclass cannot mediate this notation while keeping the elaborated term synta
 abstracted away. Instead, `↧` guesses the relevant `of` function from the expected type `FooCat ..`,
 and in particular assumes it is named `FooCat.of`.
 
-We further assume of `FooCat.of` that the carrier is its **last explicit argument**. This
+We further assume of `FooCat.of` that the carrier is its *last explicit argument*. This
 covers both categories whose `of` is the structure constructor (`CommRingCat.of R`) and
 parameterised categories, where the parameters come first (`ModuleCat.of R M`): in the latter case
 the leading explicit arguments are elaborated as `_` and solved by unification with the expected
@@ -42,10 +45,12 @@ open Lean Elab Term Meta PrettyPrinter Delaborator SubExpr
 
 namespace OfNotation
 
-/-- The number of explicit arguments of a declaration of type `ty`, together with the index of the
-last one among *all* of its arguments.
+/--
+The number of explicit arguments of a declaration of type `ty`, together with the index of the
+last one among _all_ of its arguments.
 
-Metadata is ignored. Returns `none` if `ty` takes no explicit argument. -/
+Metadata is ignored. Returns `none` if `ty` takes no explicit argument.
+-/
 def explicitArgs? (ty : Expr) : Option (Nat × Nat) := go ty 0 0 none where
   /-- Walk down the binders of `ty`, where `idx` is the index of the current argument, `num` the
   number of explicit arguments seen so far and `lastIdx?` the index of the last one. -/

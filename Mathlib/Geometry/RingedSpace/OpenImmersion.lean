@@ -8,6 +8,9 @@ module
 public import Mathlib.Topology.Category.TopCat.Limits.Pullbacks
 public import Mathlib.Geometry.RingedSpace.LocallyRingedSpace
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Open immersions of structured spaces
 
@@ -50,7 +53,6 @@ Abbreviations are also provided for `SheafedSpace`, `LocallyRingedSpace` and `Sc
   are stable under pullbacks.
 * `AlgebraicGeometry.SheafedSpace.IsOpenImmersion.of_stalk_iso`: A (topological) open embedding
   between two sheafed spaces is an open immersion if all the stalk maps are isomorphisms.
-
 -/
 
 @[expose] public section

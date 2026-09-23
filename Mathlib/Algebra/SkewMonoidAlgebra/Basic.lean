@@ -8,6 +8,9 @@ module
 public import Mathlib.LinearAlgebra.FreeModule.Basic
 public import Mathlib.Algebra.Algebra.NonUnitalHom
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Skew Monoid Algebras
 
@@ -24,9 +27,9 @@ conditions at all, and `k` is a not-necessarily-associative semiring. In this ca
 yields a not-necessarily-unital, not-necessarily-associative algebra.
 
 ## Main Definitions
-- `SkewMonoidAlgebra k G`: the skew monoid algebra of `G` over `k` is the type of finite formal
-  `k`-linear combinations of terms of `G`, endowed with a skewed convolution product.
 
+* `SkewMonoidAlgebra k G`: the skew monoid algebra of `G` over `k` is the type of finite formal
+  `k`-linear combinations of terms of `G`, endowed with a skewed convolution product.
 -/
 
 @[expose] public section
@@ -704,7 +707,9 @@ end DistribSMul
 
 end Mul
 
-/-! #### Semiring structure -/
+/-!
+# Semiring structure
+-/
 
 section Semiring
 
@@ -747,7 +752,9 @@ def liftNCRingHom (f : k →+* R) (g : G →* R) (h_comm : ∀ {x y}, (f (y • 
 
 end Semiring
 
-/-! #### Derived instances -/
+/-!
+# Derived instances
+-/
 
 section DerivedInstances
 
@@ -1122,10 +1129,12 @@ theorem of_injective [Nontrivial k] :
   simp_rw [of_apply, ← coeff_inj] at h
   simpa using (Finsupp.single_eq_single_iff _ _ _ _).mp h
 
-/-- If two ring homomorphisms from `SkewMonoidAlgebra k G` are equal on all `single a 1`
+/--
+If two ring homomorphisms from `SkewMonoidAlgebra k G` are equal on all `single a 1`
 and `single 1 b`, then they are equal.
 
-See note [partially-applied ext lemmas]. -/
+See note \[partially-applied ext lemmas\].
+-/
 @[ext high]
 theorem ringHom_ext' {f g : SkewMonoidAlgebra k G →+* k}
     (h₁ : f.comp singleOneRingHom = g.comp singleOneRingHom)
@@ -1135,7 +1144,9 @@ theorem ringHom_ext' {f g : SkewMonoidAlgebra k G →+* k}
 
 end of
 
-/-! #### Non-unital, non-associative algebra structure -/
+/-!
+# Non-unital, non-associative algebra structure
+-/
 
 section NonUnitalNonAssocAlgebra
 
@@ -1178,7 +1189,9 @@ theorem distribMulActionHom_ext [DistribMulAction R M] [DistribMulAction R N] {�
     (h : ∀ (a : α) (m : M), f (single a m) = g (single a m)) : f = g :=
   DistribMulActionHom.toAddMonoidHom_injective <| addHom_ext h
 
-/-- See note [partially-applied ext lemmas]. -/
+/--
+See note \[partially-applied ext lemmas\].
+-/
 @[ext]
 theorem distribMulActionHom_ext' [DistribMulAction R M] [DistribMulAction R N] {α : Type*}
     {f g : SkewMonoidAlgebra M α →+[R] N}
@@ -1219,7 +1232,9 @@ theorem nonUnitalAlgHom_ext [DistribMulAction k A] {φ₁ φ₂ : SkewMonoidAlge
   ext
   simp [singleAddHom_apply, h]
 
-/-- See note [partially-applied ext lemmas]. -/
+/--
+See note \[partially-applied ext lemmas\].
+-/
 @[ext high]
 theorem nonUnitalAlgHom_ext' [DistribMulAction k A] {φ₁ φ₂ : SkewMonoidAlgebra k G →ₙₐ[k] A}
     (h : φ₁.toMulHom.comp (of k G).toMulHom = φ₂.toMulHom.comp (of k G).toMulHom) : φ₁ = φ₂ :=

@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Order.Ring.Abs
 public import Mathlib.Algebra.Order.Ring.NNRat
 public import Mathlib.Algebra.Order.Star.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Star ordered ring structures on `ℚ` and `ℚ≥0`
 

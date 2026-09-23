@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Field.Basic
 public import Mathlib.Algebra.Module.Torsion.Field
 public import Mathlib.LinearAlgebra.Prod
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Partially defined linear maps
 
@@ -24,15 +27,16 @@ We define a `SemilatticeInf` with `OrderBot` instance on this, and define three 
   partial linear map on the `sSup` of their domains that extends all these maps.
 
 Moreover, we define
+
 * `LinearPMap.graph` is the graph of the partial linear map viewed as a submodule of `E × F`.
-TODO: This should be also generalized to semilinear maps, but one has to define a new type where `R`
-acts on `E` normally while `R` acts on `F` through `σ`.
+  TODO: This should be also generalized to semilinear maps, but one has to define a new type where
+  `R`
+  acts on `E` normally while `R` acts on `F` through `σ`.
 
 Partially defined maps are currently used in `Mathlib` to prove the Hahn-Banach theorem
 and its variations. Namely, `LinearPMap.sSup` implies that every chain of `LinearPMap`s
 is bounded above.
 They are also the basis for the theory of unbounded operators.
-
 -/
 
 @[expose] public section
@@ -385,7 +389,9 @@ theorem sup_h_of_disjoint (f g : E →ₛₗ.[σ] F) (h : Disjoint f.domain g.do
   have hx : x = 0 := Subtype.ext (hxy.trans <| congr_arg _ hy)
   simp [*]
 
-/-! ### Algebraic operations -/
+/-!
+# Algebraic operations
+-/
 
 
 section Zero
@@ -782,7 +788,9 @@ theorem domRestrict_apply {f : E →ₛₗ.[σ] F} {S : Submodule R E} ⦃x : �
 theorem domRestrict_le {f : E →ₛₗ.[σ] F} {S : Submodule R E} : f.domRestrict S ≤ f :=
   ⟨by simp, fun _ _ hxy => domRestrict_apply hxy⟩
 
-/-! ### Graph -/
+/-!
+# Graph
+-/
 
 
 section Graph

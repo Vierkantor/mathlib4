@@ -8,6 +8,9 @@ module
 public import Mathlib.MeasureTheory.Covering.Vitali
 public import Mathlib.MeasureTheory.Covering.Differentiation
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Uniformly locally doubling measures and Lebesgue's density theorem
 
@@ -21,10 +24,10 @@ doubling measures with results about differentiation along a Vitali family to ob
 form of Lebesgue's density theorem.
 
 ## Main results
+
 * `IsUnifLocDoublingMeasure.ae_tendsto_measure_inter_div`: a version of Lebesgue's density
   theorem for sequences of balls converging on a point but whose centres are not required to be
   fixed.
-
 -/
 
 @[expose] public section

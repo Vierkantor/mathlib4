@@ -10,6 +10,9 @@ public import Mathlib.Analysis.Calculus.FDeriv.Mul
 public import Mathlib.Analysis.Calculus.FDeriv.Add
 public import Mathlib.Analysis.Calculus.FDeriv.CompCLM
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Derivative of `f x * g x`
 
@@ -43,7 +46,9 @@ variable {x : 𝕜}
 variable {s : Set 𝕜}
 variable {L : Filter (𝕜 × 𝕜)}
 
-/-! ### Derivative of bilinear maps -/
+/-!
+# Derivative of bilinear maps
+-/
 
 namespace ContinuousLinearMap
 
@@ -94,7 +99,9 @@ end ContinuousLinearMap
 
 section SMul
 
-/-! ### Derivative of the multiplication of a scalar function and a vector function -/
+/-!
+# Derivative of the multiplication of a scalar function and a vector function
+-/
 
 
 variable {𝕜' : Type*} [NormedRing 𝕜'] [NormedAlgebra 𝕜 𝕜'] [Module 𝕜' F] [IsBoundedSMul 𝕜' F]
@@ -241,7 +248,9 @@ end ConstSMul
 
 section Mul
 
-/-! ### Derivative of the multiplication of two functions -/
+/-!
+# Derivative of the multiplication of two functions
+-/
 
 
 variable {𝕜' 𝔸 : Type*} [NormedDivisionRing 𝕜'] [NormedRing 𝔸] [NormedAlgebra 𝕜 𝕜']
@@ -585,7 +594,9 @@ end Div
 
 section CLMCompApply
 
-/-! ### Derivative of the pointwise composition/application of continuous linear maps -/
+/-!
+# Derivative of the pointwise composition/application of continuous linear maps
+-/
 
 
 open ContinuousLinearMap

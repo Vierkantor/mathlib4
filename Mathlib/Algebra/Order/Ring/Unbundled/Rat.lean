@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Order.Group.Unbundled.Int
 public import Mathlib.Data.Rat.Defs
 public import Mathlib.Algebra.Ring.Int.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The rational numbers possess a linear order
 
@@ -99,7 +102,7 @@ theorem mkRat_neg {a : ℤ} (ha : a < 0) {b : ℕ} (hb : b ≠ 0) : mkRat a b < 
   (mkRat_neg_iff a hb).mpr ha
 
 /-!
-### Extra instances to short-circuit type class resolution
+# Extra instances to short-circuit type class resolution
 
 These also prevent non-computable instances being used to construct these instances non-computably.
 -/
@@ -113,7 +116,9 @@ instance instSup : Max ℚ := inferInstance
 instance instPartialOrder : PartialOrder ℚ := inferInstance
 instance instPreorder : Preorder ℚ := inferInstance
 
-/-! ### Miscellaneous lemmas -/
+/-!
+# Miscellaneous lemmas
+-/
 
 instance : AddLeftMono ℚ where
   elim := fun _ _ _ h => Rat.add_le_add_left.2 h

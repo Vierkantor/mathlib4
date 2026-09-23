@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Homology.ComplexShape
 public import Mathlib.Combinatorics.Quiver.ReflQuiver
 public import Mathlib.Topology.Category.TopPair
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Eilenberg-Steenrod homology theories
 

@@ -10,6 +10,9 @@ public import Mathlib.Data.Sum.Order
 public import Mathlib.Order.Hom.Set
 public import Mathlib.Order.RelIso.Set
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lexicographic order and order isomorphisms
 
@@ -27,7 +30,9 @@ open Set
 
 variable {α : Type*}
 
-/-! ### Relation isomorphism -/
+/-!
+# Relation isomorphism
+-/
 
 namespace RelIso
 
@@ -75,7 +80,9 @@ theorem sumLexComplRight_symm_apply (a) : sumLexComplRight r x a = Equiv.sumComp
 
 end RelIso
 
-/-! ### Order isomorphism -/
+/-!
+# Order isomorphism
+-/
 
 namespace OrderIso
 
@@ -145,7 +152,9 @@ theorem sumLexIicIoi_symm_apply_Ioi (a : Ioi x) : (sumLexIicIoi x).symm a = Sum.
 
 end OrderIso
 
-/-! ### Degenerate products -/
+/-!
+# Degenerate products
+-/
 
 namespace Prod.Lex
 variable (α β : Type*)

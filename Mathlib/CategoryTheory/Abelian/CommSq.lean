@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Abelian.Refinements
 public import Mathlib.CategoryTheory.MorphismProperty.Limits
 public import Mathlib.Algebra.Homology.CommSq
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The exact sequence attached to a pushout square
 
@@ -25,7 +28,6 @@ l|    |r
 
 We study the associated exact sequence `X₁ ⟶ X₂ ⊞ X₃ ⟶ X₄ ⟶ 0`.
 We also show that the induced morphism `kernel t ⟶ kernel b` is an epimorphism.
-
 -/
 
 public section

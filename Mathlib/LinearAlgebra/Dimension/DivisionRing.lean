@@ -10,6 +10,9 @@ public import Mathlib.LinearAlgebra.Basis.VectorSpace
 public import Mathlib.LinearAlgebra.Dimension.RankNullity
 public import Mathlib.LinearAlgebra.FreeModule.StrongRankCondition
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Dimension of vector spaces
 
@@ -27,7 +30,6 @@ For vector spaces (i.e. modules over a division ring), we have
   is at most the `R`-rank of `M`.
 
 See also `Mathlib/LinearAlgebra/Dimension/ErdosKaplansky.lean` for the Erdős-Kaplansky theorem.
-
 -/
 
 public section

@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.Finset.Insert
 public import Mathlib.Data.Finset.Lattice.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lemmas about the lattice structure of finite sets
 
@@ -17,7 +20,6 @@ interaction between union, intersection, empty set and inserting elements.
 ## Tags
 
 finite sets, finset
-
 -/
 
 public section
@@ -35,7 +37,9 @@ namespace Finset
 -- TODO: these should be global attributes, but this will require fixing other files
 attribute [local trans] Subset.trans Superset.trans
 
-/-! ### Lattice structure -/
+/-!
+# Lattice structure
+-/
 
 
 section Lattice
@@ -45,7 +49,9 @@ variable [DecidableEq α] {s s₁ s₂ t : Finset α} {a b : α}
 theorem disjoint_iff_inter_eq_empty : Disjoint s t ↔ s ∩ t = ∅ :=
   disjoint_iff
 
-/-! #### union -/
+/-!
+# union
+-/
 
 @[simp]
 theorem union_empty (s : Finset α) : s ∪ ∅ = s :=
@@ -106,7 +112,9 @@ theorem induction_on_union (P : Finset α → Finset α → Prop) (symm : ∀ {a
   rw [Finset.insert_eq]
   exact union_of singletons (symm hi)
 
-/-! #### inter -/
+/-!
+# inter
+-/
 
 @[simp]
 theorem inter_empty (s : Finset α) : s ∩ ∅ = ∅ :=

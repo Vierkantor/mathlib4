@@ -13,6 +13,9 @@ public import Mathlib.Order.Atoms
 import Mathlib.Basic.Finite.Prod
 import Mathlib.Order.ConditionallyCompleteLattice.Finset
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Order structures on finite types
 
@@ -21,6 +24,7 @@ This file provides order instances on fintypes.
 ## Computable instances
 
 On a `Fintype`, we can construct
+
 * an `OrderBot` from `SemilatticeInf`.
 * an `OrderTop` from `SemilatticeSup`.
 * a `BoundedOrder` from `Lattice`.
@@ -33,6 +37,7 @@ Those instances are noncomputable because the definitions of `sSup` and `sInf` u
 and set membership is undecidable in general.
 
 On a `Fintype`, we can promote:
+
 * a `Lattice` to a `CompleteLattice`.
 * a `DistribLattice` to a `CompleteDistribLattice`.
 * a `LinearOrder` to a `CompleteLinearOrder`.
@@ -43,6 +48,7 @@ Those are marked as `def` to avoid typeclass loops.
 ## Concrete instances
 
 We provide a few instances for concrete types:
+
 * `Fin.completeLinearOrder`
 * `Bool.completeLinearOrder`
 * `Bool.completeBooleanAlgebra`
@@ -161,7 +167,9 @@ end Nonempty
 
 end Fintype
 
-/-! ### Concrete instances -/
+/-!
+# Concrete instances
+-/
 
 noncomputable instance Fin.completeLinearOrder {n : ℕ} [NeZero n] : CompleteLinearOrder (Fin n) :=
   Fintype.toCompleteLinearOrder _
@@ -177,7 +185,9 @@ noncomputable instance Bool.completeLinearOrder : CompleteLinearOrder Bool where
 noncomputable instance Bool.completeAtomicBooleanAlgebra : CompleteAtomicBooleanAlgebra Bool :=
   Fintype.toCompleteAtomicBooleanAlgebra _
 
-/-! ### Directed Orders -/
+/-!
+# Directed Orders
+-/
 
 section DirectedOrders
 
@@ -254,7 +264,7 @@ lemma subset_sUnion_iff_of_directed (hS : S.Nonempty) (hS' : S.Finite)
 end Set
 
 /-!
-### Suprema and infima over finite types
+# Suprema and infima over finite types
 
 We state simplified versions of `le_ciSup_if_le` and `ciSup_mono` when the indexing type
 is finite. This avoids having to explicitly use `Finite.bddAbove_range`.

@@ -11,9 +11,11 @@ public import Mathlib.CategoryTheory.Limits.Opposites
 public import Mathlib.CategoryTheory.Limits.Types.Colimits
 public import Mathlib.CategoryTheory.Limits.Weighted.HasWeightedLimit
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Weighted limits preserve limits on the weight variable
-
 -/
 
 universe w v'' u'' v' u' v u

@@ -14,6 +14,9 @@ public import Mathlib.LinearAlgebra.Matrix.ToLinearEquiv
 public import Mathlib.LinearAlgebra.SesquilinearForm.Basic
 public import Mathlib.LinearAlgebra.Basis.Bilinear
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Sesquilinear form
 
@@ -34,7 +37,6 @@ generalized to fully semi-bilinear forms.
 ## Tags
 
 Sesquilinear form, Sesquilinear map, matrix, basis
-
 -/
 
 @[expose] public section
@@ -127,7 +129,8 @@ end AuxToMatrix
 
 section ToMatrix'
 
-/-! ### Bilinear maps over `n → R`
+/-!
+# Bilinear maps over `n → R`
 
 This section deals with the conversion between matrices and sesquilinear maps on `n → R`.
 -/
@@ -306,7 +309,8 @@ end CommToMatrix'
 
 section ToMatrix
 
-/-! ### Bilinear maps over arbitrary vector spaces
+/-!
+# Bilinear maps over arbitrary vector spaces
 
 This section deals with the conversion between matrices and bilinear maps on
 a module with a fixed basis.
@@ -530,7 +534,9 @@ end
 
 end ToMatrix
 
-/-! ### Adjoint pairs -/
+/-!
+# Adjoint pairs
+-/
 
 
 section MatrixAdjoints
@@ -657,7 +663,9 @@ end MatrixAdjoints
 
 namespace LinearMap
 
-/-! ### Nondegenerate bilinear forms -/
+/-!
+# Nondegenerate bilinear forms
+-/
 
 open Matrix
 

@@ -12,6 +12,9 @@ public import Mathlib.Topology.Metrizable.Urysohn
 public import Mathlib.Topology.ContinuousMap.Ordered
 public import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Uniqueness of Haar measure in locally compact groups
 
@@ -20,6 +23,7 @@ public import Mathlib.MeasureTheory.Integral.DominatedConvergence
 In a locally compact group, we prove that two left-invariant measures `μ'` and `μ` which are finite
 on compact sets coincide, up to a normalizing scalar that we denote with `haarScalarFactor μ' μ`,
 in the following sense:
+
 * `integral_isMulLeftInvariant_eq_smul_of_hasCompactSupport`: they give the same value to the
   integral of continuous compactly supported functions, up to a scalar.
 * `measure_isMulInvariant_eq_smul_of_isCompact_closure`: they give the same value to sets with
@@ -61,8 +65,8 @@ the measures but discarding the assumption that they are finite on compact sets.
 
 ## References
 
-[Halmos, Measure Theory][halmos1950measure]
-[Fremlin, *Measure Theory* (volume 4)][fremlin_vol4]
+‍\[Halmos, Measure Theory\]\[halmos1950measure\]
+‍\[Fremlin, _Measure Theory_ (volume 4)\]\[fremlin\_vol4\]
 -/
 
 @[expose] public section
@@ -108,10 +112,10 @@ variable {G : Type*} [TopologicalSpace G] [Group G] [IsTopologicalGroup G]
   [MeasurableSpace G] [BorelSpace G]
 
 /-!
-### Uniqueness of integrals of compactly supported functions
+# Uniqueness of integrals of compactly supported functions
 
 Two left invariant measures coincide when integrating continuous compactly supported functions,
-up to a scalar that we denote with `haarScalarFactor μ' μ `.
+up to a scalar that we denote with `haarScalarFactor μ' μ  `.
 
 This is proved by relating the integral for arbitrary left invariant and right invariant measures,
 applying a version of Fubini.
@@ -424,7 +428,7 @@ lemma haarScalarFactor_pos_of_isHaarMeasure (μ' μ : Measure G) [IsHaarMeasure 
   pos_iff_ne_zero.2 (fun H ↦ by simpa [H] using haarScalarFactor_eq_mul μ' μ μ')
 
 /-!
-### Uniqueness of measure of sets with compact closure
+# Uniqueness of measure of sets with compact closure
 
 Two left invariant measures give the same measure to sets with compact closure, up to the
 scalar `haarScalarFactor μ' μ`.
@@ -712,10 +716,10 @@ lemma isHaarMeasure_eq_of_isProbabilityMeasure [LocallyCompactSpace G] (μ' μ :
   simp [A s, ← Z]
 
 /-!
-### Uniqueness of measure of open sets
+# Uniqueness of measure of open sets
 
 Two Haar measures give the same measure to open sets (or more generally to sets which are everywhere
-positive), up to the scalar `haarScalarFactor μ' μ `.
+positive), up to the scalar `haarScalarFactor μ' μ  `.
 -/
 
 @[to_additive measure_isAddHaarMeasure_eq_smul_of_isEverywherePos]
@@ -832,7 +836,7 @@ theorem measure_isHaarMeasure_eq_smul_of_isOpen [LocallyCompactSpace G]
   measure_isHaarMeasure_eq_smul_of_isEverywherePos μ' μ hs.measurableSet hs.isEverywherePos
 
 /-!
-### Uniqueness of Haar measure under regularity assumptions.
+# Uniqueness of Haar measure under regularity assumptions.
 -/
 
 /-- **Uniqueness of left-invariant measures**:

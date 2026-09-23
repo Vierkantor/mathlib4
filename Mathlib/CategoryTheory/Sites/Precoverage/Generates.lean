@@ -10,6 +10,9 @@ public import Mathlib.CategoryTheory.Sites.Coverage
 public import Mathlib.CategoryTheory.Sites.Precoverage.Subsheaf
 public import Mathlib.Logic.Small.Set
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Generators of a Grothendieck topology
 

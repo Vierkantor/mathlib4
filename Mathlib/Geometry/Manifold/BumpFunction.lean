@@ -12,6 +12,9 @@ public import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 public import Mathlib.Geometry.Manifold.Notation
 public import Mathlib.Topology.MetricSpace.ProperSpace.Lemmas
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Smooth bump functions on a smooth manifold
 
@@ -47,7 +50,7 @@ open scoped Topology Manifold ContDiff
 noncomputable section
 
 /-!
-### Smooth bump function
+# Smooth bump function
 
 In this section we define a structure for a bundled smooth bump function and prove its properties.
 -/

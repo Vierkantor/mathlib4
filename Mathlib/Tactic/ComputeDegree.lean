@@ -7,6 +7,10 @@ module
 
 public import Mathlib.Algebra.Polynomial.Degree.Lemmas
 
+set_option doc.verso true
+set_option doc.verso.module false
+set_option doc.verso.suggestions false
+
 /-!
 
 # `compute_degree` and `monicity`: tactics for explicit polynomials
@@ -152,9 +156,11 @@ end SMul
 
 section congr_lemmas
 
-/-- The following two lemmas should be viewed as a hand-made "congr"-lemmas.
+/--
+The following two lemmas should be viewed as a hand-made "congr"-lemmas.
 They achieve the following goals.
-* They introduce *two* fresh metavariables replacing the given one `deg`,
+
+* They introduce _two_ fresh metavariables replacing the given one `deg`,
   one for the `natDegree ≤` computation and one for the `coeff =` computation.
   This helps `compute_degree`, since it does not "pre-estimate" the degree,
   but it "picks it up along the way".

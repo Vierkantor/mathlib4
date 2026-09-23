@@ -10,6 +10,9 @@ public import Mathlib.Order.OmegaCompletePartialOrder
 public import Mathlib.Order.ConditionallyCompletePartialOrder.Defs
 public import Mathlib.Order.CompleteLattice.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Complete Partial Orders
 
@@ -18,17 +21,17 @@ These are partial orders for which every directed set has a least upper bound.
 
 ## Main declarations
 
-- `CompletePartialOrder`: Typeclass for (directly) complete partial orders.
+* `CompletePartialOrder`: Typeclass for (directly) complete partial orders.
 
 ## Main statements
 
-- `CompletePartialOrder.toOmegaCompletePartialOrder`: A complete partial order is an ω-complete
+* `CompletePartialOrder.toOmegaCompletePartialOrder`: A complete partial order is an ω-complete
   partial order.
-- `CompleteLattice.toCompletePartialOrder`: A complete lattice is a complete partial order.
+* `CompleteLattice.toCompletePartialOrder`: A complete lattice is a complete partial order.
 
 ## References
 
-- [B. A. Davey and H. A. Priestley, Introduction to lattices and order][davey_priestley]
+* ‍\[B. A. Davey and H. A. Priestley, Introduction to lattices and order\]\[davey\_priestley\]
 
 ## Tags
 

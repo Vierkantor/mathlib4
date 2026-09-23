@@ -14,6 +14,9 @@ import Mathlib.Analysis.Calculus.ContDiff.CPolynomial
 import Mathlib.Analysis.Calculus.LineDeriv.IntegrationByParts
 import Mathlib.Analysis.Calculus.ParametricIntegral
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Derivatives of the Fourier transform
 
@@ -56,7 +59,7 @@ With these definitions, the statements read as follows, first in a general conte
 (arbitrary `L` and `μ`):
 
 * `VectorFourier.hasFDerivAt_fourierIntegral`: the Fourier integral of `f` is differentiable, with
-    derivative the Fourier integral of `fourierSMulRight L f`.
+  derivative the Fourier integral of `fourierSMulRight L f`.
 * `VectorFourier.differentiable_fourierIntegral`: the Fourier integral of `f` is differentiable.
 * `VectorFourier.fderiv_fourierIntegral`: formula for the derivative of the Fourier integral of `f`.
 * `VectorFourier.fourierIntegral_fderiv`: formula for the Fourier integral of the derivative of `f`.

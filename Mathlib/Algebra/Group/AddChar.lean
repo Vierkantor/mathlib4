@@ -11,10 +11,13 @@ public import Mathlib.Algebra.Group.Subgroup.Ker
 public import Mathlib.Algebra.Group.TransferInstance
 public import Mathlib.Algebra.Group.Units.Equiv
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Characters from additive to multiplicative monoids
 
-Let `A` be an additive monoid, and `M` a multiplicative one. An *additive character* of `A` with
+Let `A` be an additive monoid, and `M` a multiplicative one. An _additive character_ of `A` with
 values in `M` is simply a map `A → M` which intertwines the addition operation on `A` with the
 multiplicative operation on `M`.
 
@@ -46,7 +49,7 @@ additive character
 @[expose] public section
 
 /-!
-### Definitions related to and results on additive characters
+# Definitions related to and results on additive characters
 -/
 
 open Function Multiplicative
@@ -346,7 +349,7 @@ lemma sum_ne_zero_iff_eq_zero : ∑ x, ψ x ≠ 0 ↔ ψ = 0 := sum_eq_zero_iff_
 end CommSemiring
 
 /-!
-## Additive characters of additive abelian groups
+# Additive characters of additive abelian groups
 -/
 section fromAddCommGroup
 
@@ -427,7 +430,7 @@ variable {A M₀ : Type*} [AddGroup A] [MonoidWithZero M₀] [Nontrivial M₀]
 end MonoidWithZero
 
 /-!
-## Additive characters of rings
+# Additive characters of rings
 -/
 section Ring
 

@@ -13,6 +13,9 @@ public import Mathlib.Tactic.DeriveFintype
 public import Mathlib.Data.Fintype.Sigma
 public import Mathlib.Data.Fintype.Sum
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The category of "pairwise intersections".
 

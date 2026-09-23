@@ -13,6 +13,9 @@ public import Mathlib.RingTheory.PowerSeries.Basic
 import Mathlib.RingTheory.AdicCompletion.Topology
 public import Mathlib.Algebra.DirectSum.Finsupp
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Completeness of the Adic Completion for Finitely Generated Ideals
 
@@ -23,7 +26,6 @@ when the ideal `I` is finitely generated.
 
 * `AdicCompletion.ofPowSMul`: The canonical inclusion between adic completions
   induced by the inclusion from `I ^ n • M` to `M`.
-
 * `AdicCompletion.ofValEqZero`: Given `x` in `AdicCompletion I M` projecting to zero
   in `M / I ^ n • M`, `ofValEqZero` constructs the corresponding element in
   the adic completion of `I ^ n • M`.
@@ -32,13 +34,10 @@ when the ideal `I` is finitely generated.
 
 * `AdicCompletion.pow_smul_top_eq_ker_eval`: `I ^ n • AdicCompletion I M` is exactly the kernel
   of the evaluation map `eval I M n` when `I` is finitely generated.
-
 * `AdicCompletion.isAdicComplete`: `AdicCompletion I M` is `I`-adically complete if `I` is
   finitely generated.
-
 * `MvPowerSeries.isAdicComplete`: Multivariate power series is adic complete with respect to
   the ideal spanned by all variables when the index is finite.
-
 -/
 
 public section

@@ -6,6 +6,9 @@ Authors: Sébastien Gouëzel
 module
 
 public import Mathlib.Topology.OpenPartialHomeomorph.IsImage
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Partial homeomorphisms: composition
 
@@ -26,7 +29,7 @@ namespace OpenPartialHomeomorph
 variable (e : OpenPartialHomeomorph X Y)
 
 /-!
-## Composition
+# Composition
 
 `trans`: composition of two open partial homeomorphisms
 -/

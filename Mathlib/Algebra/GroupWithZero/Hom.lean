@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Group.Hom.Basic
 public import Mathlib.Algebra.GroupWithZero.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Monoid with zero and group with zero homomorphisms
 
@@ -15,7 +18,6 @@ This file defines homomorphisms of monoids with zero.
 
 We also define coercion to a function, and usual operations: composition, identity homomorphism,
 pointwise multiplication and pointwise inversion.
-
 
 ## Notation
 

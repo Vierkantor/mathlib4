@@ -19,10 +19,13 @@ public import Mathlib.RingTheory.Noetherian.Defs
 public import Mathlib.RingTheory.Spectrum.Maximal.Basic
 public import Mathlib.RingTheory.Spectrum.Prime.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Artinian rings and modules
 
-A module satisfying these equivalent conditions is said to be an *Artinian* R-module
+A module satisfying these equivalent conditions is said to be an _Artinian_ R-module
 if every decreasing chain of submodules is eventually constant, or equivalently,
 if the relation `<` on submodules is well founded.
 
@@ -33,26 +36,22 @@ itself, or simply Artinian if it is both left and right Artinian.
 
 * `IsArtinianRing.primeSpectrum_finite`, `IsArtinianRing.isMaximal_of_isPrime`: there are only
   finitely prime ideals in a commutative Artinian ring, and each of them is maximal.
-
 * `IsArtinianRing.equivPi`: a reduced commutative Artinian ring `R` is isomorphic to a finite
   product of fields (and therefore is a semisimple ring and a decomposition monoid; moreover
   `R[X]` is also a decomposition monoid).
-
 * `IsArtinian.isSemisimpleModule_iff_jacobson`: an Artinian module is semisimple
   iff its Jacobson radical is zero.
-
 * `instIsSemiprimaryRingOfIsArtinianRing`: an Artinian ring `R` is semiprimary, in particular
   the Jacobson radical of `R` is a nilpotent ideal (`IsArtinianRing.isNilpotent_jacobson_bot`).
 
 ## References
 
-* [M. F. Atiyah and I. G. Macdonald, *Introduction to commutative algebra*][atiyah-macdonald]
-* [P. Samuel, *Algebraic Theory of Numbers*][samuel1967]
+* ‍\[M. F. Atiyah and I. G. Macdonald, _Introduction to commutative algebra_\]\[atiyah-macdonald\]
+* ‍\[P. Samuel, _Algebraic Theory of Numbers_\]\[samuel1967\]
 
 ## Tags
 
 Artinian, artinian, Artinian ring, Artinian module, artinian ring, artinian module
-
 -/
 
 @[expose] public section

@@ -10,6 +10,9 @@ public import Mathlib.Tactic.Echelon.Core
 public import Mathlib.Tactic.NormNum.Basic
 public meta import Mathlib.Tactic.Echelon.Core
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The rational model for the Bareiss elimination
 

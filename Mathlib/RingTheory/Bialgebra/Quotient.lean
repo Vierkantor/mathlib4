@@ -10,6 +10,9 @@ public import Mathlib.RingTheory.Coalgebra.Quotient
 public import Mathlib.RingTheory.Ideal.Quotient.Operations
 public import Mathlib.RingTheory.TensorProduct.Maps
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Bialgebra structure on quotients
 

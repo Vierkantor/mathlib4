@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Elements
 public import Mathlib.AlgebraicTopology.SimplicialSet.Op
 public import Mathlib.AlgebraicTopology.SimplicialSet.Subcomplex
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The preordered type of simplices of a simplicial set
 
@@ -25,7 +28,6 @@ not what is called "the category of simplices of `X`" in the literature
 * Extend the `S` structure to define the type of nondegenerate
   simplices of a simplicial set `X`, and also the type of nondegenerate
   simplices of a simplicial set `X` which do not belong to a given subcomplex.
-
 -/
 
 @[expose] public section

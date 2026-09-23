@@ -11,6 +11,10 @@ public import Mathlib.Init
 public meta import Std.Time.Format
 public meta import Mathlib.Lean.Name
 
+set_option doc.verso true
+set_option doc.verso.module false
+set_option doc.verso.suggestions false
+
 /-!
 # `deprecate to` -- a deprecation tool
 
@@ -80,6 +84,8 @@ def renameTheorem : TSyntax `command → TSyntax `Lean.Parser.Command.declId × 
     return (id, ← `($dm:declModifiers lemma $newName:declId $d:declSig $v:declVal))
   | a => (default, a)
 
+
+set_option doc.verso false
 open Meta.Tactic.TryThis in
 /--
 Writing
@@ -154,4 +160,6 @@ elab tk:"deprecate" "to" id:ident* dat:(ppSpace str ppSpace)? ppLine cmd:command
       addSuggestion (header := msg ++ "\n\nTry this:\n") (← getRef)
         toMessageData
 
+
+set_option doc.verso true
 end Mathlib.Tactic.DeprecateTo

@@ -14,10 +14,13 @@ public import Mathlib.Data.Fintype.Defs
 public import Mathlib.Algebra.Group.Equiv.Defs
 public import Mathlib.Algebra.Group.Int.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Sign type
 
-This file defines the type of signs $\{-1, 0, 1\}$ and its basic arithmetic instances.
+This file defines the type of signs $`\{-1, 0, 1\}` and its basic arithmetic instances.
 -/
 
 @[expose] public section

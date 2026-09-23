@@ -12,6 +12,9 @@ public import Mathlib.RingTheory.Spectrum.Prime.ConstructibleSet
 public import Mathlib.RingTheory.Spectrum.Prime.Polynomial
 public import Mathlib.Algebra.MvPolynomial.CommRing
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Chevalley's theorem with complexity bound
 
@@ -24,9 +27,9 @@ Constructible sets in the prime spectrum of `R[X]` are made of closed sets in th
 (using unions, intersections, and complements), which are themselves made from a family of
 polynomials.
 
-We say a closed set *has complexity at most `M`* if it can be written as the zero locus of a family
-of at most `M` polynomials each of degree at most `M`. We say a constructible set *has complexity
-at most `M`* if it can be written as `(C₁ ∪ ... ∪ Cₖ) \ D` where `k ≤ M`, `C₁, ..., Cₖ` are closed
+We say a closed set _has complexity at most `M`_ if it can be written as the zero locus of a family
+of at most `M` polynomials each of degree at most `M`. We say a constructible set _has complexity
+at most `M`_ if it can be written as `(C₁ ∪ ... ∪ Cₖ) \ D` where `k ≤ M`, `C₁, ..., Cₖ` are closed
 sets of complexity at most `M` and `D` is a closed set.
 
 This file proves a complexity-aware version of Chevalley's theorem, namely that a constructible set
@@ -46,7 +49,7 @@ Secondly, we prove the result in the case of `C : R → R[X₁, ..., Xₘ]` by c
 with itself `m` times. See the (private) lemma `chevalley_mvPolynomialC`.
 
 Note that, if composing the first result for `C : R → R[X₁]` and `C : R[X₁] → R[X₁, X₂]` naïvely,
-the second map `C : R[X₁] → R[X₁, X₂]` won't *see* the `X₁`-degree of the polynomials used to
+the second map `C : R[X₁] → R[X₁, X₂]` won't _see_ the `X₁`-degree of the polynomials used to
 describe the constructible set in `Spec R[X₁]`. One therefore needs to track a subgroup of the ring
 which all coefficients of all used polynomials lie in.
 
@@ -58,7 +61,6 @@ two maps `C : R[Y₁, ..., Yₙ] → R[X₁, ..., Xₘ, Y₁, ..., Yₙ]` and
 
 The structure of the proof follows https://stacks.math.columbia.edu/tag/00FE, although they do
 not give an explicit bound on the complexity.
-
 -/
 
 @[expose] public section
@@ -71,7 +73,9 @@ open scoped Pointwise
 
 namespace ChevalleyThm
 
-/-! ### The `C : R → R[X]` case -/
+/-!
+# The `C : R → R[X]` case
+-/
 
 namespace PolynomialC
 
@@ -578,7 +582,9 @@ lemma chevalley_polynomialC {R : Type*} [CommRing R] (M : Submodule ℤ R) (hM :
       gcongr
       rwa [Nat.one_le_iff_ne_zero]
 
-/-! ### The `C : R → R[X₁, ..., Xₘ]` case -/
+/-!
+# The `C : R → R[X₁, ..., Xₘ]` case
+-/
 
 namespace MvPolynomialC
 
@@ -774,7 +780,9 @@ lemma chevalley_mvPolynomialC
       ((degBound_casesOn_succ k _ _ _).symm.trans_le (degBound_le_degBound le_rfl _ this))
     simp +contextual [mul_add, Nat.one_le_iff_ne_zero]
 
-/-! ### The general `f : R[Y₁, ..., Yₙ] → R[X₁, ..., Xₘ]` case -/
+/-!
+# The general `f : R[Y₁, ..., Yₙ] → R[X₁, ..., Xₘ]` case
+-/
 
 /-- The bound on the number of polynomials used to describe the constructible set appearing in
 Chevalley's theorem with complexity bound. -/

@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Order.Monoid.Unbundled.WithTop
 public import Mathlib.Data.Finsupp.Defs
 public import Mathlib.Order.WellFoundedSet
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Hahn Series
 
@@ -37,7 +40,7 @@ in the file `Mathlib/RingTheory/LaurentSeries.lean`.
 
 ## References
 
-- [J. van der Hoeven, *Operators on Generalized Power Series*][van_der_hoeven]
+* ‍\[J. van der Hoeven, _Operators on Generalized Power Series_\]\[van\_der\_hoeven\]
 -/
 
 @[expose] public section

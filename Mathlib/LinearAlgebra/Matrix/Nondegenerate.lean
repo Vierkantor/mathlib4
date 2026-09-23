@@ -9,6 +9,9 @@ public import Mathlib.Data.Matrix.Basic
 public import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
 public import Mathlib.LinearAlgebra.Matrix.Adjugate
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Matrices associated with non-degenerate bilinear forms
 
@@ -16,7 +19,6 @@ public import Mathlib.LinearAlgebra.Matrix.Adjugate
 
 * `Matrix.Nondegenerate A`: the proposition that when interpreted as a bilinear form, the matrix `A`
   is nondegenerate.
-
 -/
 
 @[expose] public section

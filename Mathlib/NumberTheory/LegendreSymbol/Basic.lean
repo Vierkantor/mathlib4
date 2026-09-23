@@ -7,12 +7,15 @@ module
 
 public import Mathlib.NumberTheory.LegendreSymbol.QuadraticChar.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Legendre symbol
 
 This file contains results about Legendre symbols.
 
-We define the Legendre symbol $\Bigl(\frac{a}{p}\Bigr)$ as `legendreSym p a`.
+We define the Legendre symbol $`\Bigl(\frac{a}{p}\Bigr)` as `legendreSym p a`.
 Note the order of arguments! The advantage of this form is that then `legendreSym p`
 is a multiplicative map.
 
@@ -88,7 +91,7 @@ end Euler
 section Legendre
 
 /-!
-### Definition of the Legendre symbol and basic properties
+# Definition of the Legendre symbol and basic properties
 -/
 
 
@@ -205,7 +208,7 @@ end Legendre
 section QuadraticForm
 
 /-!
-### Applications to binary quadratic forms
+# Applications to binary quadratic forms
 -/
 
 
@@ -260,7 +263,7 @@ end QuadraticForm
 section Values
 
 /-!
-### The value of the Legendre symbol at `-1`
+# The value of the Legendre symbol at `-1`
 
 See `jacobiSym.at_neg_one` for the corresponding statement for the Jacobi symbol.
 -/

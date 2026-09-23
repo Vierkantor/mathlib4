@@ -9,6 +9,9 @@ public meta import Lean.Elab.Command
 public meta import Batteries.Lean.Position
 public import Mathlib.Tactic.Linter.UnusedInstancesInType
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # A linter for declarations with local instances that overlap
 
@@ -23,7 +26,7 @@ For classes that aren't structures, this is just the class itself.
 If any of these parent classes is duplicated, we throw a warning.
 
 This linter also warns on redundant proposition classes, i.e. those that can be synthesized from
-the other instances in the local context. (Note: we do *not* warn on proposition classes that
+the other instances in the local context. (Note: we do _not_ warn on proposition classes that
 merely overlap.) Even though redundant proposition classes cause no meaningful issue, they are
 still undesirable.
 
@@ -31,11 +34,9 @@ A common case where this linter may fire is if the same type class assumption is
 `variable` statement and a declaration. This kind of variable shadowing does not actually produce
 declarations with duplicate type class assumptions, but it is still not desirable.
 
-
 ## TODO
 
 Support declarations without bodies (`structure`s/`class`es/`inductive`s etc.)
-
 -/
 
 open Lean Meta Elab Command

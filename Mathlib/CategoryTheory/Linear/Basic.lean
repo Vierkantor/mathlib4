@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Group.Invertible.Defs
 public import Mathlib.Algebra.Module.Equiv.Defs
 public import Mathlib.CategoryTheory.Preadditive.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Linear categories
 
@@ -30,7 +33,6 @@ This makes for longer signatures than would be ideal.
 
 It would be nice to have a usable framework of enriched categories in which this would just be
 a category enriched in `Module R`.
-
 -/
 
 @[expose] public section

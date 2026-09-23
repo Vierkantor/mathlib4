@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Order.Group.Abs
 public import Mathlib.Algebra.Order.Monoid.Unbundled.MinMax
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `min` and `max` in linearly ordered groups.
 -/

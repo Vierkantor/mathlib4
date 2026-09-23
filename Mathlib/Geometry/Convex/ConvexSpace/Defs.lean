@@ -12,6 +12,9 @@ public import Mathlib.LinearAlgebra.Finsupp.LSum
 import Mathlib.Tactic.FinCases
 import Mathlib.Tactic.Positivity.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Convex spaces
 
@@ -34,7 +37,6 @@ This file defines convex spaces as an algebraic structure supporting finite conv
 The design follows a monadic structure where `StdSimplex R` forms a monad and `convexCombination`
 is a monadic algebra. This eliminates the need for explicit extensionality axioms and resolves
 universe issues with indexed families.
-
 -/
 
 @[expose] public noncomputable section

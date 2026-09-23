@@ -9,6 +9,9 @@ public import Mathlib.Analysis.Calculus.FDeriv.Basic
 public import Mathlib.Topology.OpenPartialHomeomorph.Defs
 import Mathlib.Topology.OpenPartialHomeomorph.Continuity
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Inverse function theorem, the "easy half"
 
@@ -17,11 +20,11 @@ Consider three functions `f : F → G`, `g : E → F`, and `h : E → G`,
 together with "candidate derivatives" `f' : F →L[𝕜] G`, `g' : E →L[𝕜] F`, and `h' : E →L[𝕜] G`.
 Suppose that
 
-- `f ∘ g = h` in a neighborhood of `a`;
-- `h` has derivative `h'` at `a`;
-- `f` has derivative `f'` at `g a`;
-- `g` is continuous at `a`;
-- either `f'` has a right inverse `f'⁻¹` and `g' = f'⁻¹ ∘ h'`,
+* `f ∘ g = h` in a neighborhood of `a`;
+* `h` has derivative `h'` at `a`;
+* `f` has derivative `f'` at `g a`;
+* `g` is continuous at `a`;
+* either `f'` has a right inverse `f'⁻¹` and `g' = f'⁻¹ ∘ h'`,
   or `f'` is a topological embedding and `h' = f' ∘ g'`.
 
 Then `g` has derivative `g'` at `a`.
@@ -63,7 +66,7 @@ private theorem HasFDerivAtFilter.of_comp_aux (hf_emb : Topology.IsEmbedding f')
     simp +contextual
 
 /-!
-### Left inverse
+# Left inverse
 
 In this section, we prove that `g` has derivative `f'⁻¹ ∘ h'`
 whenever `h = f ∘ g` has derivative `h'` and `f'⁻¹` is a left inverse to `f'`.
@@ -107,7 +110,7 @@ theorem HasStrictFDerivAt.of_comp_of_leftInverse
 
 
 /-!
-### Embedding
+# Embedding
 
 In this section we show that `g` has derivative `g'`
 provided that `h = f ∘ g` has derivative `f' ∘ g'`, where `f'` is a topological embedding.
@@ -150,7 +153,7 @@ theorem HasStrictFDerivAt.of_comp_of_isEmbedding
 end OfComp
 
 /-!
-### Local left inverse (equivalence)
+# Local left inverse (equivalence)
 -/
 
 section LeftInverse

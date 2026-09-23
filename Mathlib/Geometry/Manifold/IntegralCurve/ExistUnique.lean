@@ -11,16 +11,19 @@ public import Mathlib.Analysis.ODE.PicardLindelof
 public import Mathlib.Geometry.Manifold.IntegralCurve.Transform
 public import Mathlib.Geometry.Manifold.IsManifold.InteriorBoundary
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Existence and uniqueness of integral curves
 
 ## Main results
 
 * `exists_isMIntegralCurveAt_of_contMDiffAt_boundaryless`: Existence of local integral curves for a
-  $C^1$ vector field. This follows from the existence theorem for solutions to ODEs
+  $`C^1` vector field. This follows from the existence theorem for solutions to ODEs
   (`exists_forall_hasDerivAt_Ioo_eq_of_contDiffAt`).
 * `isMIntegralCurveOn_Ioo_eqOn_of_contMDiff_boundaryless`: Uniqueness of local integral curves for a
-  $C^1$ vector field. This follows from the uniqueness theorem for solutions to ODEs
+  $`C^1` vector field. This follows from the uniqueness theorem for solutions to ODEs
   (`ODE_solution_unique_of_mem_set_Ioo`). This requires the manifold to be Hausdorff (`T2Space`).
 
 ## Implementation notes
@@ -38,7 +41,7 @@ We state simpler versions of the theorem for boundaryless manifolds as corollari
 
 ## Reference
 
-* [Lee, J. M. (2012). _Introduction to Smooth Manifolds_. Springer New York.][lee2012]
+* ‍\[Lee, J. M. (2012). _Introduction to Smooth Manifolds_. Springer New York.\]\[lee2012\]
 
 ## Tags
 
@@ -60,8 +63,10 @@ variable
   {γ γ' : ℝ → M} {v : (x : M) → TangentSpace I x} {s : Set ℝ} (t₀ : ℝ) {x₀ : M}
 
 set_option backward.isDefEq.respectTransparency false in
-/-- Existence of local integral curves for a $C^1$ vector field at interior points of a `C^1`
-manifold. -/
+/--
+Existence of local integral curves for a $`C^1` vector field at interior points of a `C^1`
+manifold.
+-/
 theorem exists_isMIntegralCurveAt_of_contMDiffAt [CompleteSpace E]
     (hv : CMDiffAt 1 (fun x ↦ (⟨x, v x⟩ : TangentBundle I M)) x₀)
     (hx : I.IsInteriorPoint x₀) :
@@ -115,8 +120,10 @@ theorem exists_isMIntegralCurveAt_of_contMDiffAt [CompleteSpace E]
   rw [← (extChartAt I x₀).right_inv hf3']
   exact hasFDerivWithinAt_tangentCoordChange ⟨hft1, hft2⟩
 
-/-- Existence of local integral curves for a $C^1$ vector field on a `C^1` manifold without
-boundary. -/
+/--
+Existence of local integral curves for a $`C^1` vector field on a `C^1` manifold without
+boundary.
+-/
 lemma exists_isMIntegralCurveAt_of_contMDiffAt_boundaryless
     [CompleteSpace E] [BoundarylessManifold I M]
     (hv : CMDiffAt 1 (fun x ↦ (⟨x, v x⟩ : TangentBundle I M)) x₀) :
@@ -125,10 +132,12 @@ lemma exists_isMIntegralCurveAt_of_contMDiffAt_boundaryless
 
 variable {t₀}
 
-/-- Local integral curves are unique.
+/--
+Local integral curves are unique.
 
-If a $C^1$ vector field `v` admits two local integral curves `γ γ' : ℝ → M` at `t₀` with
-`γ t₀ = γ' t₀`, then `γ` and `γ'` agree on some open interval containing `t₀`. -/
+If a $`C^1` vector field `v` admits two local integral curves `γ γ' : ℝ → M` at `t₀` with
+`γ t₀ = γ' t₀`, then `γ` and `γ'` agree on some open interval containing `t₀`.
+-/
 theorem isMIntegralCurveAt_eventuallyEq_of_contMDiffAt (hγt₀ : I.IsInteriorPoint (γ t₀))
     (hv : CMDiffAt 1 (fun x ↦ (⟨x, v x⟩ : TangentBundle I M)) (γ t₀))
     (hγ : IsMIntegralCurveAt γ v t₀) (hγ' : IsMIntegralCurveAt γ' v t₀) (h : γ t₀ = γ' t₀) :
@@ -182,10 +191,12 @@ theorem isMIntegralCurveAt_eventuallyEq_of_contMDiffAt_boundaryless [Boundaryles
 
 variable [T2Space M] {a b : ℝ}
 
-/-- Integral curves are unique on open intervals.
+/--
+Integral curves are unique on open intervals.
 
-If a $C^1$ vector field `v` admits two integral curves `γ γ' : ℝ → M` on some open interval
-`Ioo a b`, and `γ t₀ = γ' t₀` for some `t ∈ Ioo a b`, then `γ` and `γ'` agree on `Ioo a b`. -/
+If a $`C^1` vector field `v` admits two integral curves `γ γ' : ℝ → M` on some open interval
+`Ioo a b`, and `γ t₀ = γ' t₀` for some `t ∈ Ioo a b`, then `γ` and `γ'` agree on `Ioo a b`.
+-/
 theorem isMIntegralCurveOn_Ioo_eqOn_of_contMDiff (ht₀ : t₀ ∈ Ioo a b)
     (hγt : ∀ t ∈ Ioo a b, I.IsInteriorPoint (γ t))
     (hv : CMDiff 1 (fun x ↦ (⟨x, v x⟩ : TangentBundle I M)))

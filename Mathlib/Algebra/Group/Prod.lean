@@ -16,6 +16,9 @@ public import Mathlib.Algebra.Notation.Prod
 public import Mathlib.Logic.Equiv.Prod
 public import Mathlib.Tactic.TermCongr
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Monoid, group etc. structures on `M × N`
 
@@ -651,7 +654,9 @@ theorem embedProduct_injective (α : Type*) [Monoid α] : Function.Injective (em
 
 end Units
 
-/-! ### Multiplication and division as homomorphisms -/
+/-!
+# Multiplication and division as homomorphisms
+-/
 
 
 section BundledMulDiv

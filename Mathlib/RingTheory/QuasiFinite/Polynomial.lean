@@ -8,7 +8,12 @@ module
 public import Mathlib.RingTheory.LocalRing.ResidueField.Polynomial
 public import Mathlib.RingTheory.QuasiFinite.Weakly
 
-/-! # Quasi-finite primes in polynomial algebras -/
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Quasi-finite primes in polynomial algebras
+-/
 
 public section
 

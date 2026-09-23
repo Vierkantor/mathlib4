@@ -8,6 +8,9 @@ module
 public import Mathlib.CategoryTheory.Functor.Basic
 public import Mathlib.Util.AddRelatedDecl
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The `reassoc` attribute
 

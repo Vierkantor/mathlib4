@@ -10,6 +10,9 @@ public import Mathlib.NumberTheory.Padics.PadicVal.Basic
 public import Mathlib.RingTheory.Ideal.Quotient.Defs
 public import Mathlib.RingTheory.Ideal.Span
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Multiplicity in Number Theory
 
@@ -22,7 +25,8 @@ This file contains results in number theory relating to multiplicity.
 
 ## References
 
-* [Wikipedia, *Lifting-the-exponent lemma*](https://en.wikipedia.org/wiki/Lifting-the-exponent_lemma)
+* [Wikipedia, _Lifting-the-exponent
+  lemma_](https://en.wikipedia.org/wiki/Lifting-the-exponent_lemma)
 -/
 
 public section

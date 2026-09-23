@@ -8,6 +8,9 @@ module
 public import Mathlib.Topology.Continuous
 public import Mathlib.Topology.ContinuousMap.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Continuous order homomorphisms
 
@@ -74,7 +77,9 @@ instance : CoeTC F (α →Co β) :=
   ⟨toContinuousOrderHom⟩
 
 end ContinuousOrderHomClass
-/-! ### Top homomorphisms -/
+/-!
+# Top homomorphisms
+-/
 
 
 namespace ContinuousOrderHom

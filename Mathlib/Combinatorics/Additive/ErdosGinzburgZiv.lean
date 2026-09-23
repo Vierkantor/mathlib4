@@ -9,6 +9,9 @@ public import Mathlib.Algebra.BigOperators.Ring.Finset
 public import Mathlib.Data.Multiset.Fintype
 public import Mathlib.FieldTheory.ChevalleyWarning
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The Erdős–Ginzburg–Ziv theorem
 

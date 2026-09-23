@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Group.TransferInstance
 public import Mathlib.CategoryTheory.Preadditive.AdditiveFunctor
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Pulling back a preadditive structure along a fully faithful functor
 

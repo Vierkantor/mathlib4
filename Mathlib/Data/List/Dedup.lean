@@ -9,6 +9,9 @@ public import Mathlib.Data.List.Nodup
 public import Mathlib.Data.List.Lattice
 public import Batteries.Data.List.Pairwise
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Erasure of duplicates in a list
 

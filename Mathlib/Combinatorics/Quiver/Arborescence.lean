@@ -9,6 +9,9 @@ public import Mathlib.Combinatorics.Quiver.Path
 public import Mathlib.Combinatorics.Quiver.Subquiver
 public import Mathlib.Order.WellFounded
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Arborescences
 
@@ -17,13 +20,13 @@ that for every `b : V` there is a unique path from `root` to `b`.
 
 ## Main definitions
 
-- `Quiver.Arborescence V`: a typeclass asserting that `V` is an arborescence
-- `arborescenceMk`: a convenient way of proving that a quiver is an arborescence
-- `RootedConnected r`: a typeclass asserting that there is at least one path from `r` to `b` for
+* `Quiver.Arborescence V`: a typeclass asserting that `V` is an arborescence
+* `arborescenceMk`: a convenient way of proving that a quiver is an arborescence
+* `RootedConnected r`: a typeclass asserting that there is at least one path from `r` to `b` for
   every `b`.
-- `geodesicSubtree r`: given `[RootedConnected r]`, this is a subquiver of `V` which contains
+* `geodesicSubtree r`: given `[RootedConnected r]`, this is a subquiver of `V` which contains
   just enough edges to include a shortest path from `r` to `b` for every `b`.
-- `geodesicArborescence : Arborescence (geodesicSubtree r)`: an instance saying that the geodesic
+* `geodesicArborescence : Arborescence (geodesicSubtree r)`: an instance saying that the geodesic
   subtree is an arborescence. This proves the directed analogue of 'every connected graph has a
   spanning tree'. This proof avoids the use of Zorn's lemma.
 -/

@@ -9,6 +9,9 @@ public meta import Lean.Meta.Tactic.Delta
 public import Mathlib.Init
 public import Lean.Meta.Tactic.Simp
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Modify proof terms so that they don't rely on unfolding certain constants
 
@@ -22,9 +25,10 @@ So, the procedure is to check that an expression is well typed, analogous to `Me
 and at each type mismatch, we try to insert a cast.
 
 There are two kinds of casts:
-- Equality casts. This is for propositions and terms,
+
+* Equality casts. This is for propositions and terms,
   where it is possible to prove that one is equal to the other. For example `Monotone`.
-- Explicit casting functions, both for unfolding and refolding. This is for types, where we
+* Explicit casting functions, both for unfolding and refolding. This is for types, where we
   cannot express their equivalence with an equality. For example `DecidableLE`.
 -/
 

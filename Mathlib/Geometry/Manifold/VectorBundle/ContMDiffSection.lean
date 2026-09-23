@@ -12,6 +12,9 @@ public import Mathlib.Topology.ContinuousMap.Basic
 public import Mathlib.Geometry.Manifold.VectorBundle.Basic
 public import Mathlib.Geometry.Manifold.Notation
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `C^n` sections
 
@@ -20,7 +23,6 @@ sections of a vector bundle over a manifold `M` and prove that it's a module ove
 
 In passing, we prove that binary and finite sums, differences and scalar products of `C^n`
 sections are `C^n`.
-
 -/
 
 @[expose] public section

@@ -9,7 +9,11 @@ public import Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset
 public import Mathlib.Algebra.Order.BigOperators.Group.Finset
 public import Mathlib.Data.NNRat.Defs
 
-/-! # Casting lemmas for non-negative rational numbers involving sums and products
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Casting lemmas for non-negative rational numbers involving sums and products
 -/
 
 public section

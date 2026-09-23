@@ -8,6 +8,9 @@ module
 public import Mathlib.Topology.Category.TopCat.Adjunctions
 public import Mathlib.CategoryTheory.Functor.EpiMono
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Epi- and monomorphisms in `Top`
 

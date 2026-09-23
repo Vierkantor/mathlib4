@@ -10,6 +10,9 @@ public import Mathlib.AlgebraicGeometry.Morphisms.FiniteType
 public import Mathlib.CategoryTheory.Monoidal.Cartesian.CommGrp_
 public import Mathlib.RingTheory.Bialgebra.TensorProduct
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The equivalence between Hopf algebras and affine group schemes
 
@@ -37,6 +40,7 @@ follow the following simpler diagram:
       ↑ ↓                        ↓
 R-Hopf algebras → Affine group schemes over Spec R
 ```
+
 where the top `⥤` comes from the essentially surjective functor `Cogrp Mod_R ⥤ Grp Sch_{Spec R}`,
 so that in particular we do not easily know that its inverse is given by `Γ`.
 -/
@@ -53,12 +57,12 @@ universe w v u
 variable {R : CommRingCat.{u}}
 
 /-!
-### Left edge: `R`-Hopf algebras correspond to cogroup objects under `R`
+# Left edge: `R`-Hopf algebras correspond to cogroup objects under `R`
 
 Ways to turn an unbundled `R`-Hopf algebra into a bundled cogroup object under `R`, and vice versa,
 are already provided in `Mathlib.Algebra.Category.CommHopfAlgCat`.
 
-### Top edge: `Spec` as a functor on Hopf algebras
+# Top edge: `Spec` as a functor on Hopf algebras
 
 In this section we bundle `Spec` as a functor from `R`-Hopf algebras to affine group schemes over
 `Spec R`.
@@ -458,7 +462,7 @@ end universe_monomorphic
 end topEdge
 
 /-!
-### Right edge: The essential image of `Spec` on Hopf algebras
+# Right edge: The essential image of `Spec` on Hopf algebras
 
 In this section we show that the essential image of `R`-Hopf algebras under `Spec` is precisely
 affine group schemes over `Spec R`.

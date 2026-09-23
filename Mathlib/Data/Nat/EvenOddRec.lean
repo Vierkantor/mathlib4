@@ -8,7 +8,12 @@ module
 public import Mathlib.Algebra.Ring.Parity
 public import Mathlib.Data.Nat.BinaryRec
 
-/-! # A recursion principle based on even and odd numbers. -/
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# A recursion principle based on even and odd numbers.
+-/
 
 @[expose] public section
 

@@ -11,6 +11,9 @@ public import Mathlib.Order.CompleteLattice.Lemmas
 public import Mathlib.Order.Directed
 public import Mathlib.Order.GaloisConnection.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Frames, completely distributive lattices and complete Boolean algebras
 
@@ -18,13 +21,14 @@ In this file we define and provide API for (co)frames, completely distributive l
 complete Boolean algebras.
 
 We distinguish two different distributivity properties:
+
 1. `inf_iSup_eq : (a ⊓ ⨆ i, f i) = ⨆ i, a ⊓ f i` (finite `⊓` distributes over infinite `⨆`).
-  This is required by `Frame`, `CompleteDistribLattice`, and `CompleteBooleanAlgebra`
-  (`Coframe`, etc., require the dual property).
+   This is required by `Frame`, `CompleteDistribLattice`, and `CompleteBooleanAlgebra`
+   (`Coframe`, etc., require the dual property).
 2. `iInf_iSup_eq : (⨅ i, ⨆ j, f i j) = ⨆ s, ⨅ i, f i (s i)`
-  (infinite `⨅` distributes over infinite `⨆`).
-  This stronger property is called "completely distributive",
-  and is required by `CompletelyDistribLattice` and `CompleteAtomicBooleanAlgebra`.
+   (infinite `⨅` distributes over infinite `⨆`).
+   This stronger property is called "completely distributive",
+   and is required by `CompletelyDistribLattice` and `CompleteAtomicBooleanAlgebra`.
 
 ## Typeclasses
 
@@ -46,8 +50,8 @@ distributive lattice.
 
 ## References
 
-* [Wikipedia, *Complete Heyting algebra*](https://en.wikipedia.org/wiki/Complete_Heyting_algebra)
-* [Francis Borceux, *Handbook of Categorical Algebra III*][borceux-vol3]
+* [Wikipedia, _Complete Heyting algebra_](https://en.wikipedia.org/wiki/Complete_Heyting_algebra)
+* ‍\[Francis Borceux, _Handbook of Categorical Algebra III_\]\[borceux-vol3\]
 -/
 
 @[expose] public section
@@ -655,7 +659,7 @@ end CompleteBooleanAlgebra
 A complete atomic Boolean algebra is a complete Boolean algebra
 that is also completely distributive.
 
-We take iSup_iInf_eq as the definition here,
+We take iSup\_iInf\_eq as the definition here,
 and prove later on that this implies atomicity.
 -/
 -- We do not directly extend `CompletelyDistribLattice` to avoid having the `hnot` field

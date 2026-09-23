@@ -12,6 +12,9 @@ public import Mathlib.Algebra.Order.Group.Nat
 import all Init.Data.String.Iterator  -- for unfolding `Iterator.curr`
 import all Init.Data.Ord.String  -- for unfolding `String.compare`
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Strings
 

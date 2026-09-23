@@ -12,6 +12,9 @@ public import Mathlib.GroupTheory.OrderOfElement
 public import Mathlib.RepresentationTheory.Coinvariants
 public import Mathlib.RepresentationTheory.Rep.Iso
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Projective resolution of `k` as a trivial `k`-linear representation of a finite cyclic group
 
@@ -37,7 +40,6 @@ this resolution to compute the group cohomology of representations of finite cyc
 ## TODO
 
 * Use this to analyse the group homology of representations of finite cyclic groups.
-
 -/
 
 @[expose] public section

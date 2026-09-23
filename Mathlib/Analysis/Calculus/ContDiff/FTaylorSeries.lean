@@ -11,6 +11,9 @@ public import Mathlib.Analysis.Calculus.FDeriv.CompCLM
 public import Mathlib.Analysis.Calculus.FormalMultilinearSeries
 public import Mathlib.Data.ENat.Lattice
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Iterated derivatives of a function
 
@@ -22,7 +25,7 @@ Note that, in domains, there may be several choices of possible derivative, so w
 arbitrary choice in the definition.
 
 We also define a predicate `HasFTaylorSeriesUpTo` (and its localized version
-`HasFTaylorSeriesUpToOn`), saying that a sequence of multilinear maps is *a* sequence of
+`HasFTaylorSeriesUpToOn`), saying that a sequence of multilinear maps is _a_ sequence of
 derivatives of `f`. Contrary to `iteratedFDerivWithin`, it accommodates well the
 non-uniqueness of derivatives.
 
@@ -34,14 +37,12 @@ Let `f : E → F` be a map between normed vector spaces over a nontrivially norm
   of iterated derivatives of `f`, up to the `n`-th term (where `n` is a natural number or `∞`).
 * `HasFTaylorSeriesUpToOn n f p s`: same thing, but inside a set `s`. The notion of derivative
   is now taken inside `s`. In particular, derivatives don't have to be unique.
-
 * `iteratedFDerivWithin 𝕜 n f s x` is an `n`-th derivative of `f` over the field `𝕜` on the
   set `s` at the point `x`. It is a continuous multilinear map from `E^n` to `F`, defined as a
   derivative within `s` of `iteratedFDerivWithin 𝕜 (n-1) f s` if one exists, and `0` otherwise.
 * `iteratedFDeriv 𝕜 n f x` is the `n`-th derivative of `f` over the field `𝕜` at the point `x`.
   It is a continuous multilinear map from `E^n` to `F`, defined as a derivative of
   `iteratedFDeriv 𝕜 (n-1) f` if one exists, and `0` otherwise.
-
 
 ### Side of the composition, and universe issues
 
@@ -128,7 +129,9 @@ variable {𝕜 : Type u} [NontriviallyNormedField 𝕜] {E : Type uE} [NormedAdd
   {s t u : Set E} {f f₁ : E → F} {x : E} {m n N : ℕ∞ω}
   {p : E → FormalMultilinearSeries 𝕜 E F}
 
-/-! ### Functions with a Taylor series on a domain -/
+/-!
+# Functions with a Taylor series on a domain
+-/
 
 /-- `HasFTaylorSeriesUpToOn n f p s` registers the fact that `p 0 = f` and `p (m+1)` is a
 derivative of `p m` for `m < n`, and is continuous for `m ≤ n`. This is a predicate analogous to
@@ -386,7 +389,9 @@ theorem hasFTaylorSeriesUpToOn_succ_iff_right :
   | (⊤ : ℕ∞) => exact hasFTaylorSeriesUpToOn_top_iff_right (by simp)
   | (n : ℕ) => exact hasFTaylorSeriesUpToOn_succ_nat_iff_right
 
-/-! ### Iterated derivative within a set -/
+/-!
+# Iterated derivative within a set
+-/
 
 
 variable (𝕜)
@@ -693,7 +698,9 @@ lemma iteratedFDerivWithin_comp_sub (n : ℕ) (a : E) :
       iteratedFDerivWithin 𝕜 n f (-a +ᵥ s) (x - a) := by
   simp [iteratedFDerivWithin_comp_sub']
 
-/-! ### Functions with a Taylor series on the whole space -/
+/-!
+# Functions with a Taylor series on the whole space
+-/
 
 /-- `HasFTaylorSeriesUpTo n f p` registers the fact that `p 0 = f` and `p (m+1)` is a
 derivative of `p m` for `m < n`, and is continuous for `m ≤ n`. This is a predicate analogous to
@@ -795,7 +802,9 @@ lemma HasFTaylorSeriesUpTo.tsupport_subset {m : ℕ} (h : m ≤ n)
   refine tsupport_comp_eq (g := ContinuousMultilinearMap.curry0) (fun {x} ↦ ?_) _ |>.symm
   exact (continuousMultilinearCurryFin0 _ _ _).map_eq_zero_iff (x := x)
 
-/-! ### Iterated derivative -/
+/-!
+# Iterated derivative
+-/
 
 
 variable (𝕜)

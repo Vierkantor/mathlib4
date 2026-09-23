@@ -8,10 +8,11 @@ module
 public import Mathlib.Algebra.Polynomial.Basic
 public import Mathlib.LinearAlgebra.Basis.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
-
 # Basis of a polynomial ring
-
 -/
 
 @[expose] public noncomputable section

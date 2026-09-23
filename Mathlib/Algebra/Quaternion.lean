@@ -11,6 +11,9 @@ public import Mathlib.LinearAlgebra.FreeModule.Finite.Basic
 
 import Mathlib.Algebra.Module.Torsion.Prod
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Quaternions
 
@@ -20,9 +23,9 @@ algebraic structures on `ℍ[R]`.
 ## Main definitions
 
 * `QuaternionAlgebra R a b c`, `ℍ[R, a, b, c]` :
-  [Bourbaki, *Algebra I*][bourbaki1989] with coefficients `a`, `b`, `c`
-  (Many other references such as Wikipedia assume $\operatorname{char} R ≠ 2$ therefore one can
-  complete the square and WLOG assume $b = 0$.)
+  ‍\[Bourbaki, _Algebra I_\]\[bourbaki1989\] with coefficients `a`, `b`, `c`
+  (Many other references such as Wikipedia assume $`\operatorname{char} R ≠ 2` therefore one can
+  complete the square and WLOG assume $`b = 0`.)
 * `Quaternion R`, `ℍ[R]` : the space of quaternions, a.k.a.
   `QuaternionAlgebra R (-1) (0) (-1)`;
 * `Quaternion.normSq` : square of the norm of a quaternion;
@@ -58,9 +61,11 @@ quaternion
 
 open Module
 
-/-- Quaternion algebra over a type with fixed coefficients where $i^2 = a + bi$ and $j^2 = c$,
+/--
+Quaternion algebra over a type with fixed coefficients where $`i^2 = a + bi` and $`j^2 = c`,
 denoted as `ℍ[R,a,b]`.
-Implemented as a structure with four fields: `re`, `imI`, `imJ`, and `imK`. -/
+Implemented as a structure with four fields: `re`, `imI`, `imJ`, and `imK`.
+-/
 @[ext]
 structure QuaternionAlgebra (R : Type*) (a b c : R) where
   /-- Real part of a quaternion. -/

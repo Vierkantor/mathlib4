@@ -13,6 +13,9 @@ public import Mathlib.Data.SetLike.Basic
 public import Mathlib.Data.Sigma.Basic
 public import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Additively-graded multiplicative structures
 
@@ -108,7 +111,9 @@ instance {A : ι → Type*} [Inhabited ι] [Inhabited (A default)] : Inhabited (
 def mk {A : ι → Type*} : ∀ i, A i → GradedMonoid A :=
   Sigma.mk
 
-/-! ### Actions -/
+/-!
+# Actions
+-/
 
 section actions
 variable {α β} {A : ι → Type*}
@@ -144,7 +149,9 @@ instance [Monoid α] [∀ i, MulAction α (A i)] :
 
 end actions
 
-/-! ### Typeclasses -/
+/-!
+# Typeclasses
+-/
 
 section Defs
 
@@ -263,7 +270,8 @@ instance GCommMonoid.toCommMonoid [AddCommMonoid ι] [GCommMonoid A] :
 
 end Defs
 
-/-! ### Instances for `A 0`
+/-!
+# Instances for `A 0`
 
 The various `g*` instances are enough to promote the `AddCommMonoid (A 0)` structure to various
 types of multiplicative structure.
@@ -363,7 +371,9 @@ end GradeZero
 
 end GradedMonoid
 
-/-! ### Dependent products of graded elements -/
+/-!
+# Dependent products of graded elements
+-/
 
 
 section DProd
@@ -431,7 +441,9 @@ theorem GradedMonoid.list_prod_ofFn_eq_dProd {n : ℕ} (f : Fin n → GradedMono
 
 end DProd
 
-/-! ### Concrete instances -/
+/-!
+# Concrete instances
+-/
 
 
 section
@@ -475,7 +487,9 @@ theorem List.dProd_monoid {α} [AddMonoid ι] [Monoid R] (l : List α) (fι : α
 
 end
 
-/-! ### Shorthands for creating instance of the above typeclasses for collections of subobjects -/
+/-!
+# Shorthands for creating instance of the above typeclasses for collections of subobjects
+-/
 
 
 section Subobjects

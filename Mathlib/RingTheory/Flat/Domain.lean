@@ -8,6 +8,9 @@ module
 public import Mathlib.LinearAlgebra.Basis.VectorSpace
 public import Mathlib.RingTheory.Flat.Localization
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Flat modules in domains
 

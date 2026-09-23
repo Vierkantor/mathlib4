@@ -9,6 +9,9 @@ public import Mathlib.Order.Category.Lat
 public import Mathlib.Order.Hom.CompleteLattice
 public import Mathlib.CategoryTheory.ConcreteCategory.Bundled
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The category of frames
 
@@ -16,7 +19,7 @@ This file defines `Frm`, the category of frames.
 
 ## References
 
-* [nLab, *Frm*](https://ncatlab.org/nlab/show/Frm)
+* [nLab, _Frm_](https://ncatlab.org/nlab/show/Frm)
 -/
 
 @[expose] public section

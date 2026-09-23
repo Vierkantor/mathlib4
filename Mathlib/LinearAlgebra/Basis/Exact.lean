@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Exact.Basic
 public import Mathlib.LinearAlgebra.Basis.Basic
 public import Mathlib.LinearAlgebra.Projection
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Basis from a split exact sequence
 

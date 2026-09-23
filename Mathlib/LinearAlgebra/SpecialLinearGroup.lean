@@ -11,6 +11,9 @@ public import Mathlib.LinearAlgebra.Matrix.Dual
 public import Mathlib.LinearAlgebra.GeneralLinearGroup.Basic
 public import Mathlib.LinearAlgebra.Charpoly.BaseChange
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The special linear group of a module
 
@@ -28,6 +31,7 @@ We provide `SpecialLinearGroup.toLinearEquiv`: the canonical map
 from `SpecialLinearGroup R V` to `V ≃ₗ[R] V`, as a monoid hom.
 
 When `V` is free and finite over `R`, we define
+
 * `SpecialLinearGroup.dualMap`
 * `SpecialLinearGroup.baseChange`
 
@@ -37,7 +41,6 @@ and its variant
 `Matrix.SpecialLinearGroup.toLin_equiv`,
 from `Matrix.SpecialLinearGroup n R` to `SpecialLinearGroup R V`,
 associated with a finite basis of `V`.
-
 -/
 
 @[expose] public section

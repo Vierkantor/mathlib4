@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 public import Mathlib.Topology.Order.ProjIcc
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Inverse trigonometric functions.
 
@@ -477,7 +480,7 @@ end Real
 open Real
 
 /-!
-### Convenience dot notation lemmas
+# Convenience dot notation lemmas
 -/
 
 namespace Filter.Tendsto

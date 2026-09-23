@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.Sym.Sym2
 public import Mathlib.Order.Lattice
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Sorting the elements of `Sym2`
 

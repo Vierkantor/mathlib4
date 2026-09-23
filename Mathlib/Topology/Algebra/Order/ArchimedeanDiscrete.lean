@@ -11,6 +11,9 @@ public import Mathlib.Topology.Algebra.OpenSubgroup
 public import Mathlib.Topology.Algebra.Order.Archimedean
 public import Mathlib.Topology.Order.DenselyOrdered
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Discreteness of subgroups in archimedean ordered groups
 

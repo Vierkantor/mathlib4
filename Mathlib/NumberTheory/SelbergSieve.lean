@@ -9,6 +9,9 @@ public import Mathlib.Basic.Real.Basic
 public import Mathlib.NumberTheory.ArithmeticFunction.Moebius
 public import Mathlib.Tactic.FieldSimp
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The Selberg Sieve
 
@@ -18,9 +21,10 @@ define the Λ² sieve and prove that Λ² sieves are upper bound sieves. We then
 term of the Λ² sieve.
 
 We mostly follow the treatment outlined by Heath-Brown in the notes to an old graduate course. One
-minor notational difference is that we write $\nu(n)$ in place of $\frac{\omega(n)}{n}$.
+minor notational difference is that we write $`\nu(n)` in place of $`\frac{\omega(n)}{n}`.
 
 ## Results
+
 * `siftedSum_le_mainSum_errSum_of_UpperBoundSieve` - Every upper bound sieve gives an upper bound
   on the size of the sifted set in terms of `mainSum` and `errSum`
 * `upperMoebius_of_lambda_sq` - Lambda squared weights produce upper bound sieves
@@ -28,9 +32,8 @@ minor notational difference is that we write $\nu(n)$ in place of $\frac{\omega(
 
 ## References
 
-* [Heath-Brown, *Lectures on sieves*][heathbrown2002lecturessieves]
-* [Koukoulopoulos, *The Distribution of Prime Numbers*][MR3971232]
-
+* ‍\[Heath-Brown, _Lectures on sieves_\]\[heathbrown2002lecturessieves\]
+* ‍\[Koukoulopoulos, _The Distribution of Prime Numbers_\]\[MR3971232\]
 -/
 
 @[expose] public section
@@ -119,7 +122,9 @@ theorem squarefree_of_mem_divisors_prodPrimes {d : ℕ} (hd : d ∈ divisors s.p
   simp only [Nat.mem_divisors] at hd
   exact Squarefree.squarefree_of_dvd hd.left s.prodPrimes_squarefree
 
-/-! Lemmas about $\nu$. -/
+/-!
+Lemmas about $`\nu`.
+-/
 
 theorem prod_primeFactors_nu {d : ℕ} (hd : d ∣ s.prodPrimes) :
     ∏ p ∈ d.primeFactors, s.nu p = s.nu d := by
@@ -162,8 +167,10 @@ theorem nu_lt_one_of_dvd_prodPrimes {d : ℕ} (hdP : d ∣ s.prodPrimes) (hd_ne_
 def multSum (d : ℕ) : ℝ := ∑ n ∈ s.support, if d ∣ n then s.weights n else 0
 
 
-/-- The remainder term in the approximation A_d = ν (d) X + R_d. This is the degree to which `nu`
-  fails to approximate the proportion of the weight that is a multiple of `d`. -/
+/--
+The remainder term in the approximation A\_d = ν (d) X + R\_d. This is the degree to which `nu`
+fails to approximate the proportion of the weight that is a multiple of `d`.
+-/
 @[simp]
 def rem (d : ℕ) : ℝ := s.multSum d - s.nu d * s.totalMass
 
@@ -186,8 +193,10 @@ theorem siftedSum_eq_sum_support_mul_ite :
   simp_rw [mul_ite, mul_one, mul_zero]
 
 omit s in
-/-- A sequence of coefficients $\mu^{+}$ is upper Moebius if $\mu * \zeta ≤ \mu^{+} * \zeta$. These
-  coefficients then yield an upper bound on the sifted sum. -/
+/--
+A sequence of coefficients $`\mu^{+}` is upper Moebius if $`\mu * \zeta ≤ \mu^{+} * \zeta`. These
+coefficients then yield an upper bound on the sifted sum.
+-/
 def IsUpperMoebius (muPlus : ℕ → ℝ) : Prop :=
   ∀ n : ℕ, (if n = 1 then 1 else 0) ≤ ∑ d ∈ n.divisors, muPlus d
 
@@ -270,9 +279,11 @@ section SelbergTerms
 
 variable {s : BoundingSieve}
 
-/-- These are the terms that appear in the sum `S` in the main term of the fundamental theorem.
+/--
+These are the terms that appear in the sum `S` in the main term of the fundamental theorem.
 
-$$S = \sum_{l \mid P, l \le \sqrt{y}} g(l)$$ -/
+$$`S = \sum_{l \mid P, l \le \sqrt{y}} g(l)`
+-/
 def selbergTerms : ArithmeticFunction ℝ :=
   s.nu.pmul (.prodPrimeFactors fun p ↦  (1 - s.nu p)⁻¹)
 

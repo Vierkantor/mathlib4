@@ -7,6 +7,9 @@ module
 
 public import Mathlib.MeasureTheory.Covering.Differentiation
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Besicovitch covering theorems
 
@@ -50,6 +53,7 @@ context to make them more easily usable.
 
 We also restate the following specialized versions of general theorems on differentiation of
 measures:
+
 * `Besicovitch.ae_tendsto_rnDeriv` ensures that `ρ (closedBall x r) / μ (closedBall x r)` tends
   almost surely to the Radon-Nikodym derivative of `ρ` with respect to `μ` at `x`.
 * `Besicovitch.ae_tendsto_measure_inter_div` states that almost every point in an arbitrary set `s`
@@ -59,7 +63,7 @@ measures:
 
 ## Implementation
 
-#### Sketch of proof of the topological Besicovitch theorem:
+### Sketch of proof of the topological Besicovitch theorem:
 
 We choose balls in a greedy way. First choose a ball with maximal radius (or rather, since there
 is no guarantee the maximal radius is realized, a ball with radius within a factor `τ` of the
@@ -78,7 +82,7 @@ controlled: they form a satellite configuration with `N + 1` balls (essentially 
 satellite configurations). Since we assume that there are no such configurations, this is a
 contradiction.
 
-#### Sketch of proof of the measurable Besicovitch theorem:
+### Sketch of proof of the measurable Besicovitch theorem:
 
 From the topological Besicovitch theorem, one can find a disjoint countable family of balls
 covering a proportion `> 1 / (N + 1)` of the space. Taking a large enough finite subset of these
@@ -103,7 +107,7 @@ open Metric Set Filter Fin MeasureTheory TopologicalSpace
 open scoped Topology ENNReal MeasureTheory NNReal
 
 /-!
-### Satellite configurations
+# Satellite configurations
 -/
 
 
@@ -189,7 +193,9 @@ theorem hlast' (i : Fin N.succ) (h : 1 ≤ τ) : a.r (last N) ≤ τ * a.r i := 
 
 end SatelliteConfig
 
-/-! ### Extracting disjoint subfamilies from a ball covering -/
+/-!
+# Extracting disjoint subfamilies from a ball covering
+-/
 
 
 /-- A ball package is a family of balls in a metric space with positive bounded radii. -/
@@ -514,7 +520,7 @@ theorem exist_disjoint_covering_families {N : ℕ} {τ : ℝ} (hτ : 1 < τ)
     exact ⟨⟨p.color a, p.color_lt ha.1 hN⟩, a, rfl, ha⟩
 
 /-!
-### The measurable Besicovitch covering theorem
+# The measurable Besicovitch covering theorem
 -/
 
 
@@ -1014,7 +1020,9 @@ theorem exists_closedBall_covering_tsum_measure_le (μ : Measure α) [SFinite μ
         simp only [Finset.card_fin, Finset.sum_const, nsmul_eq_mul, ENNReal.mul_div_le]
       _ = μ s + ε := by rw [add_assoc, ENNReal.add_halves]
 
-/-! ### Consequences on differentiation of measures -/
+/-!
+# Consequences on differentiation of measures
+-/
 
 /-- In a space with the Besicovitch covering property, the set of closed balls with positive radius
 forms a Vitali family. This is essentially a restatement of the measurable Besicovitch theorem. -/

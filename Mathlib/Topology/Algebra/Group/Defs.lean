@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Topology.Algebra.Monoid.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Definitions about topological groups
 
@@ -15,10 +18,10 @@ as well as their additive versions.
 
 These classes say that the corresponding operations are continuous:
 
-- `ContinuousInv G` says that `(·⁻¹)` is continuous on `G`;
-- `IsTopologicalGroup G` says that `(· * ·)` is continuous on `G × G`
+* `ContinuousInv G` says that `(·⁻¹)` is continuous on `G`;
+* `IsTopologicalGroup G` says that `(· * ·)` is continuous on `G × G`
   and `(·⁻¹)` is continuous on `G`;
-- `ContinuousDiv G` says that `(· / ·)` is continuous on `G`.
+* `ContinuousDiv G` says that `(· / ·)` is continuous on `G`.
 
 For groups, `ContinuousDiv G` is equivalent to `IsTopologicalGroup G`,
 but we use the additive version `ContinuousSub` for types like `NNReal`,

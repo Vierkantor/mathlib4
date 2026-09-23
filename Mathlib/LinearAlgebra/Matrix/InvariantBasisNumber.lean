@@ -10,6 +10,9 @@ public import Mathlib.LinearAlgebra.Matrix.ToLin
 public import Mathlib.LinearAlgebra.Matrix.SemiringInverse
 public import Mathlib.LinearAlgebra.InvariantBasisNumber
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Invertible matrices over a ring with invariant basis number are square.
 -/
@@ -53,8 +56,10 @@ theorem invariantBasisNumber_iff_matrix : InvariantBasisNumber R ↔ ∀ n m
       h (toLinearEquivRight'OfInv hfg hgf).symm) fun h n m e ↦ h n m (toMatrixRight' e)
     (toMatrixRight' e.symm) (by simp [← toMatrixRight'_comp]) (by simp [← toMatrixRight'_comp])
 
-/-- The rank condition is left-right symmetric. Note that the strong rank condition
-is not left-right symmetric, see Remark (1.32) in §1.1D of [lam_1999]. -/
+/--
+The rank condition is left-right symmetric. Note that the strong rank condition
+is not left-right symmetric, see Remark (1.32) in §1.1D of \[lam\_1999\].
+-/
 protected theorem MulOpposite.rankCondition_iff : RankCondition Rᵐᵒᵖ ↔ RankCondition R := by
   simp_rw [rankCondition_iff_matrix, ← opEquiv.mapMatrix.forall_congr_right,
     ← opEquiv.mapMatrix.symm.injective.eq_iff]

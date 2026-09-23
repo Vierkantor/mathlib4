@@ -7,6 +7,9 @@ module
 
 public import Mathlib.LinearAlgebra.CliffordAlgebra.Conjugation
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Recursive computation rules for the Clifford algebra
 
@@ -154,7 +157,9 @@ theorem left_induction {P : CliffordAlgebra Q → Prop} (algebraMap : ∀ r : R,
   | add _ _ hx hy => simpa only [map_add] using add _ _ hx hy
   | mul_ι _ _ hx => simpa only [reverse.map_mul, reverse_ι] using ι_mul _ _ hx
 
-/-! ### Versions with extra state -/
+/-!
+# Versions with extra state
+-/
 
 
 /-- Auxiliary definition for `CliffordAlgebra.foldr'` -/

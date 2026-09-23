@@ -8,6 +8,9 @@ module
 public import Mathlib.AlgebraicGeometry.Cover.Directed
 public import Mathlib.AlgebraicGeometry.Morphisms.UniversallyInjective
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Relative gluing
 

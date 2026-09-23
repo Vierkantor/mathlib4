@@ -9,6 +9,9 @@ public import Mathlib.Init
 public import ImportGraph.Lean.Environment  -- shake: keep (Environment.getModuleFor? is used from public meta code), cf. lean#14427
 meta import ImportGraph.Lean.Environment
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # A tool for finding duplicate declarations
 
@@ -21,6 +24,7 @@ For theorems, it is completely redundant to have multiple of the same type.
 For instances, we typically also don't want to have multiple of the same type.
 
 To use it, simply run the following command in a file that does not use the module system:
+
 ```
 open Lean Mathlib.Tactic.DuplicateDecls
 run_meta do logInfo m!"{← lintDuplicateDeclarations .theorems}"

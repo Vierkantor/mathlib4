@@ -11,6 +11,9 @@ public import Mathlib.Analysis.Normed.Group.AddTorsor
 public import Mathlib.Geometry.Euclidean.Angle.Unoriented.Affine
 public import Mathlib.Geometry.Euclidean.Triangle
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Triangle congruence
 
@@ -28,8 +31,7 @@ then reduces to ASA.
 
 ## References
 
-* https://en.wikipedia.org/wiki/Congruence_(geometry)
-
+* https://en.wikipedia.org/wiki/Congruence\_(geometry)
 -/
 
 public section

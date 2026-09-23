@@ -8,7 +8,11 @@ module
 public import Mathlib.Analysis.Distribution.TemperedDistribution
 public import Mathlib.Analysis.Distribution.Distribution
 
-/-! # Support of distributions
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Support of distributions
 
 We define the support of a distribution, `dsupport u`, as the intersection of all closed sets for
 which `u` vanishes on the complement.
@@ -19,15 +23,16 @@ These definitions work independently of a specific class of distributions (class
 compactly supported) and all basic properties are proved in an abstract setting using `FunLike`.
 
 ## Main definitions
+
 * `IsVanishingOn`: A distribution vanishes on a set if it acts trivially on all test functions
   supported in that subset.
 * `dsupport`: The support of a distribution is the intersection of all closed sets for which that
   distribution vanishes on the complement of the set.
 
 ## Main statements
+
 * `dsupport_delta`: The support of the delta distribution is a single point. Available for tempered
   and classical distributions.
-
 -/
 
 @[expose] public noncomputable section
@@ -44,7 +49,9 @@ variable [FunLike F α β] [TopologicalSpace α] [Zero β]
 
 variable {f : F → V} {s s₁ s₂ : Set α}
 
-/-! ### Vanishing of distributions -/
+/-!
+# Vanishing of distributions
+-/
 
 section Zero
 
@@ -78,7 +85,9 @@ end IsVanishingOn
 
 section dsupport
 
-/-! ### Support -/
+/-!
+# Support
+-/
 
 section Zero
 
@@ -159,7 +168,9 @@ variable [FunLike F α β] [PseudoMetricSpace α] [Zero β] [Zero V]
 
 variable {f : F → V}
 
-/-- The complement of the support is given by all *bounded* open sets on which `f` vanishes. -/
+/--
+The complement of the support is given by all _bounded_ open sets on which `f` vanishes.
+-/
 theorem compl_dsupport_eq_sUnion_isBounded :
     (dsupport f)ᶜ = ⋃₀ { a | IsVanishingOn f a ∧ IsOpen a ∧ Bornology.IsBounded a } := by
   ext x
@@ -167,7 +178,9 @@ theorem compl_dsupport_eq_sUnion_isBounded :
 
 end normed
 
-/-! ## Tempered distributions -/
+/-!
+# Tempered distributions
+-/
 
 open SchwartzMap Distribution TemperedDistribution
 
@@ -257,7 +270,9 @@ end Support
 
 end TemperedDistribution
 
-/-! ## Classical distributions -/
+/-!
+# Classical distributions
+-/
 
 open TopologicalSpace
 

@@ -7,6 +7,9 @@ module
 
 public import Mathlib.MeasureTheory.Measure.Haar.Unique
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Modular character of a locally compact group
 
@@ -23,7 +26,7 @@ TODO: Show that the character is continuous.
   and `g : G`, the measure `A ↦ μ (A g⁻¹)` is also a left Haar measure, so by uniqueness is of the
   form `Δ(g) μ`, for `Δ(g) ∈ ℝ≥0`. This `Δ` is the modular character. The result that this does not
   depend on the measure chosen is `modularCharacterFun_eq_haarScalarFactor`.
-* `modularCharacter`: The homomorphism G →* ℝ≥0 whose toFun is `modularCharacterFun`.
+* `modularCharacter`: The homomorphism G →\* ℝ≥0 whose toFun is `modularCharacterFun`.
 -/
 
 @[expose] public section

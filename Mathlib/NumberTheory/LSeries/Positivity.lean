@@ -10,6 +10,9 @@ public import Mathlib.Analysis.Complex.Positivity
 public import Mathlib.NumberTheory.ArithmeticFunction.Defs
 public import Mathlib.NumberTheory.LSeries.Deriv
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Positivity of values of L-series
 
@@ -18,7 +21,6 @@ The main results of this file are as follows.
 * If `a : ℕ → ℂ` takes nonnegative real values and `a 1 > 0`, then `L a x > 0`
   when `x : ℝ` is in the open half-plane of absolute convergence; see
   `LSeries.positive` and `ArithmeticFunction.LSeries_positive`.
-
 * If in addition the L-series of `a` agrees on some open right half-plane where it
   converges with an entire function `f`, then `f` is positive on the real axis;
   see `LSeries.positive_of_eq_differentiable` and

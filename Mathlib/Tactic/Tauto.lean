@@ -15,6 +15,9 @@ public import Lean.Elab.ConfigEval
 public meta import Lean.Elab.ConfigEval
 public import Qq
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 The `tauto` tactic.
 -/

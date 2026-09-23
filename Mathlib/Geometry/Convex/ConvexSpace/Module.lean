@@ -13,6 +13,9 @@ public import Mathlib.Tactic.NormNum.Basic
 
 import Mathlib.LinearAlgebra.Prod
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Modules are convex spaces
 

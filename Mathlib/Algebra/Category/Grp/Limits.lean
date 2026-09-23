@@ -13,12 +13,14 @@ public import Mathlib.Algebra.Group.Subgroup.Ker
 public import Mathlib.CategoryTheory.ConcreteCategory.ReflectsIso
 public import Mathlib.CategoryTheory.Limits.ConcreteCategory.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The category of (commutative) (additive) groups has all limits
 
 Further, these limits are preserved by the forgetful functor --- that is,
 the underlying types are just the limits in the category of types.
-
 -/
 
 @[expose] public section

@@ -12,8 +12,10 @@ public import Mathlib.GroupTheory.QuotientGroup.Simple
 public import Mathlib.GroupTheory.Solvable
 public import Mathlib.GroupTheory.Sylow
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Nilpotent groups
 
 An API for nilpotent groups, that is, groups for which the upper central series
@@ -26,33 +28,34 @@ by the commutators `hkh⁻¹k⁻¹`. Recall also Lean's conventions that `⊤` d
 subgroup `G` of `G`, and `⊥` denotes the trivial subgroup `{1}`.
 
 * `Subgroup.upperCentralSeries G : ℕ → Subgroup G` : the upper central series of a group `G`.
-     This is an increasing sequence of characteristic subgroups `H n` of `G` with `H 0 = ⊥` and
-     `H (n + 1) / H n` is the centre of `G / H n`.
+  This is an increasing sequence of characteristic subgroups `H n` of `G` with `H 0 = ⊥` and
+  `H (n + 1) / H n` is the centre of `G / H n`.
 * `Subgroup.lowerCentralSeries (S : Subgroup G) : ℕ → Subgroup G` : the lower central series of `S`,
-     computed in the ambient group `G`. This is the iterated commutator
-     `S, ⁅S, S⁆, ⁅⁅S, S⁆, S⁆, …`. The classical lower central series of `G` is the case
-     `S = ⊤`.
+  computed in the ambient group `G`. This is the iterated commutator
+  `S, ⁅S, S⁆, ⁅⁅S, S⁆, S⁆, …`. The classical lower central series of `G` is the case
+  `S = ⊤`.
 * `IsNilpotent` : A group G is nilpotent if its upper central series reaches `⊤`, or
-    equivalently if its lower central series reaches `⊥`.
+  equivalently if its lower central series reaches `⊥`.
 * `Group.nilpotencyClass` : the length of the upper central series of a nilpotent group.
 * `IsAscendingCentralSeries (H : ℕ → Subgroup G) : Prop` and
 * `IsDescendingCentralSeries (H : ℕ → Subgroup G) : Prop` : Note that in the literature
-    a "central series" for a group is usually defined to be a *finite* sequence of normal subgroups
-    `H 0`, `H 1`, ..., starting at `⊤`, finishing at `⊥`, and with each `H n / H (n + 1)`
-    central in `G / H (n + 1)`. In this formalisation it is convenient to have two weaker predicates
-    on an infinite sequence of subgroups `H n` of `G`: we say a sequence is a *descending central
-    series* if it starts at `G` and `⁅H n, ⊤⁆ ⊆ H (n + 1)` for all `n`. Note that this series
-    may not terminate at `⊥`, and the `H i` need not be normal. Similarly a sequence is an
-    *ascending central series* if `H 0 = ⊥` and `⁅H (n + 1), ⊤⁆ ⊆ H n` for all `n`, again with no
-    requirement that the series reaches `⊤` or that the `H i` are normal.
+  a "central series" for a group is usually defined to be a _finite_ sequence of normal subgroups
+  `H 0`, `H 1`, ..., starting at `⊤`, finishing at `⊥`, and with each `H n / H (n + 1)`
+  central in `G / H (n + 1)`. In this formalisation it is convenient to have two weaker predicates
+  on an infinite sequence of subgroups `H n` of `G`: we say a sequence is a _descending central
+  series_ if it starts at `G` and `⁅H n, ⊤⁆ ⊆ H (n + 1)` for all `n`. Note that this series
+  may not terminate at `⊥`, and the `H i` need not be normal. Similarly a sequence is an
+  _ascending central series_ if `H 0 = ⊥` and `⁅H (n + 1), ⊤⁆ ⊆ H n` for all `n`, again with no
+  requirement that the series reaches `⊤` or that the `H i` are normal.
 
 ## Main theorems
 
-`G` is *defined* to be nilpotent if the upper central series reaches `⊤`.
+`G` is _defined_ to be nilpotent if the upper central series reaches `⊤`.
+
 * `nilpotent_iff_finite_ascending_central_series` : `G` is nilpotent iff some ascending central
-    series reaches `⊤`.
+  series reaches `⊤`.
 * `nilpotent_iff_finite_descending_central_series` : `G` is nilpotent iff some descending central
-    series reaches `⊥`.
+  series reaches `⊥`.
 * `nilpotent_iff_lower` : `G` is nilpotent iff the lower central series reaches `⊥`.
 * The `Group.nilpotencyClass` can likewise be obtained from these equivalent
   definitions, see `least_ascending_central_series_length_eq_nilpotencyClass`,
@@ -65,9 +68,8 @@ subgroup `G` of `G`, and `⊥` denotes the trivial subgroup `{1}`.
 * The `Group.nilpotencyClass` of `G ⧸ center G` is given explicitly, and an induction principle
   is derived from that.
 * `IsNilpotent.to_isSolvable`: If `G` is nilpotent, it is solvable.
-*  `IsNilpotent.commute_of_orderOf_coprime` : In a nilpotent group, two elements commute when their
+* `IsNilpotent.commute_of_orderOf_coprime` : In a nilpotent group, two elements commute when their
   orders are coprime.
-
 
 ## Warning
 
@@ -78,7 +80,6 @@ none of what we have called `upperCentralSeries G`, `(⊤ : Subgroup G).lowerCen
 the sequences satisfying `IsAscendingCentralSeries` or `IsDescendingCentralSeries`
 are actually central series. Note that the fact that the upper and lower central series
 are not central series if `G` is not nilpotent is a standard abuse of notation.
-
 -/
 
 @[expose] public section

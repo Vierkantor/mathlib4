@@ -9,6 +9,9 @@ public import Mathlib.Topology.Algebra.Constructions
 public import Mathlib.Topology.ContinuousMap.Defs
 public import Mathlib.Algebra.Star.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Continuity of `star`
 

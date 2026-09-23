@@ -8,6 +8,9 @@ module
 public import Mathlib.Combinatorics.SimpleGraph.Connectivity.Finite
 public import Mathlib.Data.Set.Card
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Representation of components by a set of vertices
 

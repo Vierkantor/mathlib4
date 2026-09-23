@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Lie.AdjointAction.Basic
 public import Mathlib.Algebra.Lie.Nilpotent
 public import Mathlib.Algebra.Lie.Normalizer
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Engel's theorem
 
@@ -60,11 +63,10 @@ into a single statement about nilpotency of Lie modules. This is not usually emp
 
 ## Main definitions
 
-  * `LieAlgebra.IsEngelian`
-  * `LieAlgebra.isEngelian_of_isNoetherian`
-  * `LieModule.isNilpotent_iff_forall`
-  * `LieAlgebra.isNilpotent_iff_forall`
-
+* `LieAlgebra.IsEngelian`
+* `LieAlgebra.isEngelian_of_isNoetherian`
+* `LieModule.isNilpotent_iff_forall`
+* `LieAlgebra.isNilpotent_iff_forall`
 -/
 
 @[expose] public section
@@ -214,11 +216,13 @@ theorem LieAlgebra.exists_engelian_lieSubalgebra_of_lt_normalizer {K : LieSubalg
 attribute [local instance] LieSubalgebra.subsingleton_bot
 attribute [local instance 100] LieRing.ofAssociativeRing
 
-/-- *Engel's theorem*.
+/--
+_Engel's theorem_.
 
 Note that this implies all traditional forms of Engel's theorem via
 `LieModule.nontrivial_max_triv_of_isNilpotent`, `LieModule.isNilpotent_iff_forall`,
-`LieAlgebra.isNilpotent_iff_forall`. -/
+`LieAlgebra.isNilpotent_iff_forall`.
+-/
 theorem LieAlgebra.isEngelian_of_isNoetherian [IsNoetherian R L] : LieAlgebra.IsEngelian R L := by
   intro M _i1 _i2 _i3 _i4 h
   rw [← isNilpotent_range_toEnd_iff R]

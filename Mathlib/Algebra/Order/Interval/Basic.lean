@@ -12,6 +12,9 @@ public import Mathlib.Order.Interval.Basic
 public import Mathlib.Tactic.Positivity.Core
 public import Mathlib.Algebra.Group.Pointwise.Set.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Interval arithmetic
 
@@ -31,7 +34,9 @@ universe u
 
 variable {ι α : Type*}
 
-/-! ### One/zero -/
+/-!
+# One/zero
+-/
 
 
 section One
@@ -119,7 +124,7 @@ end PartialOrder
 end One
 
 /-!
-### Addition/multiplication
+# Addition/multiplication
 
 Note that this multiplication does not apply to `ℚ` or `ℝ`.
 -/
@@ -182,7 +187,9 @@ end Interval
 
 end Mul
 
-/-! ### Powers -/
+/-!
+# Powers
+-/
 
 section Pow
 
@@ -269,7 +276,7 @@ theorem bot_pow : ∀ {n : ℕ}, n ≠ 0 → (⊥ : Interval α) ^ n = ⊥
 end Interval
 
 /-!
-### Semiring structure
+# Semiring structure
 
 When `α` is a canonically `OrderedCommSemiring`, the previous `+` and `*` on `NonemptyInterval α`
 form a `CommSemiring`.
@@ -304,7 +311,7 @@ instance [CommSemiring α] [PartialOrder α] [CanonicallyOrderedAdd α] :
 end NonemptyInterval
 
 /-!
-### Subtraction
+# Subtraction
 
 Subtraction is defined more generally than division so that it applies to `ℕ` (and `OrderedDiv`
 is not a thing and probably should not become one).
@@ -365,7 +372,7 @@ end Interval
 end Sub
 
 /-!
-### Division in ordered groups
+# Division in ordered groups
 
 Note that this division does not apply to `ℚ` or `ℝ`.
 -/
@@ -422,7 +429,9 @@ end Interval
 
 end Div
 
-/-! ### Negation/inversion -/
+/-!
+# Negation/inversion
+-/
 
 
 section Inv

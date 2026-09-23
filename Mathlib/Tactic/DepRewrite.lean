@@ -15,7 +15,12 @@ meta import Lean.Elab.ConfigEval.DeriveEvalExpr
 meta import Lean.Elab.ConfigEval.DeriveEvalTerm
 meta import Lean.Elab.ConfigEval.MetaInstances
 
-/-! ## Dependent rewrite tactic -/
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Dependent rewrite tactic
+-/
 
 public meta section
 
@@ -56,9 +61,11 @@ initialize
 
 /-- See `Config.castMode`. -/
 inductive CastMode where
-  /-- Only insert casts on proofs.
+  /--
+  Only insert casts on proofs.
 
-  In this mode, it is *not* permitted to cast subterms of proofs that are not themselves proofs. -/
+  In this mode, it is _not_ permitted to cast subterms of proofs that are not themselves proofs.
+  -/
   -- TODO: should we relax this restriction and switch `castMode` when visiting a proof?
   | proofs
   /- TODO: `proofs` plus "good" user-defined casts such as `Fin.cast`.
@@ -112,18 +119,22 @@ structure Context where
   x : Expr
   /-- A proof of `p = x`. Must be an fvar. -/
   h : Expr
-  /-- The list of *value-less* binders (`cdecl`s and nondependent `ldecl`s)
-  that we have introduced.
-  Together with each binder, we store its type abstracted over `x` and `h`,
-  and with all occurrences of previous entries in `Δ`
-  casted along the abstracting equation.
+  /--
+  The list of _value-less_ binders (`cdecl`s and nondependent `ldecl`s)
+that we have introduced.
+Together with each binder, we store its type abstracted over `x` and `h`,
+and with all occurrences of previous entries in `Δ`
+casted along the abstracting equation.
 
   E.g., if the local context is `a : T, b : U`,
-  we store `(a, Ma)` where `Ma := fun (x' : α) (h' : x = x') => T[x'/x, h'/h]`
-  and `(b, fun (x' : α) (h' : x = x') => U[x'/x, h'/h, (Eq.rec (motive := Ma) a h)/a])`
-  See the docstring on `visitAndCast`. -/
+we store `(a, Ma)` where `Ma := fun (x' : α) (h' : x = x') => T[x'/x, h'/h]`
+and `(b, fun (x' : α) (h' : x = x') => U[x'/x, h'/h, (Eq.rec (motive := Ma) a h)/a])`
+See the docstring on `visitAndCast`.
+  -/
   Δ : Array (FVarId × Expr)
-  /-- The set of all *dependent* `ldecl`s that we have introduced. -/
+  /--
+  The set of all _dependent_ `ldecl`s that we have introduced.
+  -/
   δ : Std.HashSet FVarId
   -- TODO: use `@[computed_field]`s below when `structure` supports that
   /-- Cached `p.toHeadIndex`. -/

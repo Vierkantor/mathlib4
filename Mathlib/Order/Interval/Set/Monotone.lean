@@ -9,6 +9,9 @@ public import Mathlib.Data.Set.Monotone
 public import Mathlib.Order.Interval.Set.Disjoint
 public import Mathlib.Order.SuccPred.Archimedean
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Monotonicity on intervals
 

@@ -11,6 +11,9 @@ public import Mathlib.CategoryTheory.MorphismProperty.CommaSites
 public import Mathlib.CategoryTheory.Sites.DenseSubsite.InducedTopology
 public import Mathlib.CategoryTheory.Sites.Over
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Small sites
 
@@ -19,17 +22,16 @@ generating pretopologies.
 
 ## Main definitions
 
-- `AlgebraicGeometry.Scheme.overGrothendieckTopology`: the Grothendieck topology on `Over S`
+* `AlgebraicGeometry.Scheme.overGrothendieckTopology`: the Grothendieck topology on `Over S`
   obtained by localizing the topology on `Scheme` induced by `P` at `S`.
-- `AlgebraicGeometry.Scheme.overPretopology`: the pretopology on `Over S` defined by
+* `AlgebraicGeometry.Scheme.overPretopology`: the pretopology on `Over S` defined by
   `P`-coverings of `S`-schemes. The induced topology agrees with
   `AlgebraicGeometry.Scheme.overGrothendieckTopology`.
-- `AlgebraicGeometry.Scheme.smallGrothendieckTopology`: the by the inclusion
+* `AlgebraicGeometry.Scheme.smallGrothendieckTopology`: the by the inclusion
   `P.Over ⊤ S ⥤ Over S` induced topology on `P.Over ⊤ S`.
-- `AlgebraicGeometry.Scheme.smallPretopology`: the pretopology on `P.Over ⊤ S` defined by
+* `AlgebraicGeometry.Scheme.smallPretopology`: the pretopology on `P.Over ⊤ S` defined by
   `P`-coverings of `S`-schemes with `P`. The induced topology agrees
   with `AlgebraicGeometry.Scheme.smallGrothendieckTopology`.
-
 -/
 
 @[expose] public section

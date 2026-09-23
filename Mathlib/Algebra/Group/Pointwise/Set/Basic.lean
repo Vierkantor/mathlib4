@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Group.Prod
 public import Mathlib.Algebra.Order.Monoid.Unbundled.Pow
 public import Mathlib.Data.Set.NAry
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Pointwise operations of sets
 
@@ -18,6 +21,7 @@ This file defines pointwise algebraic operations on sets.
 ## Main declarations
 
 For sets `s` and `t` and scalar `a`:
+
 * `s * t`: Multiplication, set of all `x * y` where `x ∈ s` and `y ∈ t`.
 * `s + t`: Addition, set of all `x + y` where `x ∈ s` and `y ∈ t`.
 * `s⁻¹`: Inversion, set of all `x⁻¹` where `x ∈ s`.
@@ -28,7 +32,7 @@ For sets `s` and `t` and scalar `a`:
 For `α` a semigroup/monoid, `Set α` is a semigroup/monoid.
 As an unfortunate side effect, this means that `n • s`, where `n : ℕ`, is ambiguous between
 pointwise scaling and repeated pointwise addition; the former has `(2 : ℕ) • {1, 2} = {2, 4}`, while
-the latter has `(2 : ℕ) • {1, 2} = {2, 3, 4}`. See note [pointwise nat action].
+the latter has `(2 : ℕ) • {1, 2} = {2, 3, 4}`. See note \[pointwise nat action\].
 
 Appropriate definitions and results are also transported to the additive theory via `to_additive`.
 
@@ -39,7 +43,8 @@ Appropriate definitions and results are also transported to the additive theory 
   `(fun h ↦ g⁻¹ * h) ⁻¹' s`, `s * t`, `s⁻¹`, `(1 : Set _)` (and similarly for additive variants).
   Expressions equal to one of these will be simplified.
 * We put all instances in the scope `Pointwise`, so that these instances are not available by
-  default. Note that we do not mark them as reducible (as argued by note [reducible non-instances])
+  default. Note that we do not mark them as reducible (as argued by note \[reducible
+  non-instances\])
   since we expect the scope to be open whenever the instances are actually used (and making the
   instances reducible changes the behavior of `simp`).
 
@@ -71,7 +76,9 @@ variable {F α β : Type*}
 
 namespace Set
 
-/-! ### `0`/`1` as sets -/
+/-!
+# `0`/`1` as sets
+-/
 
 section One
 
@@ -137,7 +144,9 @@ lemma one_prod_one [One β] : (1 ×ˢ 1 : Set (α × β)) = 1 := by ext; simp [P
 
 end One
 
-/-! ### Set negation/inversion -/
+/-!
+# Set negation/inversion
+-/
 
 
 section Inv
@@ -284,7 +293,9 @@ end Inv
 
 open scoped Pointwise
 
-/-! ### Set addition/multiplication -/
+/-!
+# Set addition/multiplication
+-/
 
 
 section Mul
@@ -426,7 +437,9 @@ lemma prod_mul_prod_comm [Mul β] (s₁ s₂ : Set α) (t₁ t₂ : Set β) :
 
 end Mul
 
-/-! ### Set subtraction/division -/
+/-!
+# Set subtraction/division
+-/
 
 
 section Div
@@ -546,19 +559,27 @@ lemma prod_div_prod_comm [Div β] (s₁ s₂ : Set α) (t₁ t₂ : Set β) :
 end Div
 
 -- TODO: rename `NPow` to `npow` and `ZPow` to `zpow`.
-/-- Repeated pointwise multiplication (not the same as pointwise repeated multiplication!) of a
-`Set`. See note [pointwise nat action]. -/
+/--
+Repeated pointwise multiplication (not the same as pointwise repeated multiplication!) of a
+`Set`. See note \[pointwise nat action\].
+-/
 @[to_additive (attr := instance_reducible)
-/-- Repeated pointwise addition (not the same as pointwise repeated addition!) of a `Set`. See
-note [pointwise nat action]. -/]
+/--
+Repeated pointwise addition (not the same as pointwise repeated addition!) of a `Set`. See
+note \[pointwise nat action\].
+-/]
 protected def NPow [One α] [Mul α] : Pow (Set α) ℕ :=
   ⟨fun s n => npowRec n s⟩
 
-/-- Repeated pointwise multiplication/division (not the same as pointwise repeated
-multiplication/division!) of a `Set`. See note [pointwise nat action]. -/
+/--
+Repeated pointwise multiplication/division (not the same as pointwise repeated
+multiplication/division!) of a `Set`. See note \[pointwise nat action\].
+-/
 @[to_additive (attr := instance_reducible)
-/-- Repeated pointwise addition/subtraction (not the same as pointwise repeated
-addition/subtraction!) of a `Set`. See note [pointwise nat action]. -/]
+/--
+Repeated pointwise addition/subtraction (not the same as pointwise repeated
+addition/subtraction!) of a `Set`. See note \[pointwise nat action\].
+-/]
 protected def ZPow [One α] [Mul α] [Inv α] : Pow (Set α) ℤ :=
   ⟨fun s n => zpowRec npowRec n s⟩
 

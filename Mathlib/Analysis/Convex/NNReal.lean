@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Order.Module.Field
 public import Mathlib.Analysis.Convex.Basic
 public import Mathlib.Basic.NNReal.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Specific lemmas about convexity over `ℝ≥0`
 

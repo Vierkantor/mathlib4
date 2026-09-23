@@ -10,6 +10,9 @@ public import Mathlib.Order.Category.Preord
 public import Mathlib.CategoryTheory.Adjunction.Basic
 public import Mathlib.CategoryTheory.ConcreteCategory.Forget
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Category of partial orders
 

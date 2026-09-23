@@ -8,6 +8,9 @@ module
 public import Mathlib.Geometry.Euclidean.Projection
 public import Mathlib.Analysis.Normed.Module.Normalize
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Signed distance to an affine subspace in a Euclidean space.
 
@@ -24,8 +27,7 @@ reference point.
 
 ## References
 
-* https://en.wikipedia.org/wiki/Trilinear_coordinates
-
+* https://en.wikipedia.org/wiki/Trilinear\_coordinates
 -/
 
 @[expose] public section

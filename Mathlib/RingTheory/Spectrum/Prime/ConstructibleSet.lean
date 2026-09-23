@@ -8,11 +8,13 @@ module
 public import Mathlib.Order.SuccPred.WithBot
 public import Mathlib.RingTheory.Spectrum.Prime.Topology
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Constructible sets in the prime spectrum
 
 This file provides tooling for manipulating constructible sets in the prime spectrum of a ring.
-
 -/
 
 @[expose] public section

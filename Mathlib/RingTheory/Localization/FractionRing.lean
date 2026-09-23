@@ -14,6 +14,9 @@ public import Mathlib.GroupTheory.GroupAction.FixingSubgroup
 public import Mathlib.RingTheory.Localization.Basic
 public import Mathlib.RingTheory.SimpleRing.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Fraction ring / fraction field Frac(R) as localization
 
@@ -33,6 +36,7 @@ public import Mathlib.RingTheory.SimpleRing.Basic
 See `Mathlib/RingTheory/Localization/Basic.lean` for a design overview.
 
 ## Tags
+
 localization, ring localization, commutative ring localization, characteristic predicate,
 commutative ring, field of fractions
 -/
@@ -220,8 +224,10 @@ protected theorem mul_inv_cancel (x : K) (hx : x ≠ 0) : x * IsFractionRing.inv
   rw [mk'_spec, ← eq_mk'_iff_mul_eq]
   exact (mk'_sec _ x).symm
 
-/-- A `CommRing` `K` which is the localization of an integral domain `R` at `R - {0}` is a field.
-See note [reducible non-instances]. -/
+/--
+A `CommRing` `K` which is the localization of an integral domain `R` at `R - {0}` is a field.
+See note \[reducible non-instances\].
+-/
 @[stacks 09FJ]
 noncomputable abbrev toField : Field K where
   __ := IsFractionRing.isDomain A
@@ -721,12 +727,13 @@ end algebraMap_injective
 
 variable (A)
 
-/-- The fraction ring of a commutative ring `R` as a quotient type.
+/--
+The fraction ring of a commutative ring `R` as a quotient type.
 
 We instantiate this definition as generally as possible, and assume that the
 commutative ring `R` is an integral domain only when this is needed for proving.
 
-In this generality, this construction is also known as the *total fraction ring* of `R`.
+In this generality, this construction is also known as the _total fraction ring_ of `R`.
 -/
 abbrev FractionRing :=
   Localization (nonZeroDivisors R)
@@ -761,9 +768,11 @@ section liftAlgebra
 
 variable [Field K] [Algebra R K] [FaithfulSMul R K]
 
-/-- This is not an instance because it creates a diamond when `K = FractionRing R`.
+/--
+This is not an instance because it creates a diamond when `K = FractionRing R`.
 Should usually be introduced locally along with `isScalarTower_liftAlgebra`
-See note [reducible non-instances]. -/
+See note \[reducible non-instances\].
+-/
 noncomputable abbrev liftAlgebra : Algebra (FractionRing R) K :=
   have := IsDomain.of_faithfulSMul R K
   RingHom.toAlgebra (IsFractionRing.lift (FaithfulSMul.algebraMap_injective R K))

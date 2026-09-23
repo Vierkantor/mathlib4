@@ -6,6 +6,9 @@ Authors: Sébastien Gouëzel
 module
 
 public import Mathlib.Topology.OpenPartialHomeomorph.Continuity
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Partial homeomorphisms: Images of sets
 
@@ -44,7 +47,7 @@ variable (e : OpenPartialHomeomorph X Y)
 section IsImage
 
 /-!
-## `OpenPartialHomeomorph.IsImage` relation
+# `OpenPartialHomeomorph.IsImage` relation
 
 We say that `t : Set Y` is an image of `s : Set X` under an open partial homeomorphism `e` if any of
 the following equivalent conditions hold:
@@ -207,7 +210,7 @@ end IsImage
 
 section restrOpen
 /-!
-## Restriction
+# Restriction
 -/
 
 /-- Restricting an open partial homeomorphism `e` to `e.source ∩ s` when `s` is open.
@@ -269,7 +272,7 @@ theorem restr_source_inter (s : Set X) : e.restr (e.source ∩ s) = e.restr s :=
 end restrOpen
 
 /-!
-## ofSet
+# ofSet
 
 The identity on a set `s`
 -/

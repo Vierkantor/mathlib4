@@ -8,6 +8,9 @@ module
 public import Mathlib.Topology.VectorBundle.Basic
 public import Mathlib.Analysis.Normed.Module.Alternating.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The vector bundle of continuous alternating multilinear maps
 
@@ -33,7 +36,7 @@ open Bundle Set Topology
 open scoped Bundle
 
 /-!
-### Continuous alternating map between fibers written in coordinates
+# Continuous alternating map between fibers written in coordinates
 -/
 
 namespace ContinuousAlternatingMap
@@ -94,7 +97,7 @@ end ContinuousAlternatingMap
 open ContinuousAlternatingMap (inCoordinates)
 
 /-!
-### Pretrivialization of the bundle of continuous alternating maps
+# Pretrivialization of the bundle of continuous alternating maps
 -/
 
 namespace Bundle.Pretrivialization
@@ -221,7 +224,7 @@ theorem continuousAlternatingMapCoordChange_apply (b : B)
 end Bundle.Pretrivialization
 
 /-!
-### Vector (pre)bundle structure
+# Vector (pre)bundle structure
 -/
 
 namespace Bundle.ContinuousAlternatingMap
@@ -298,7 +301,7 @@ instance instVectorBundle : VectorBundle 𝕜 (F₁ [⋀^ι]→L[𝕜] F₂) (fu
 end Bundle.ContinuousAlternatingMap
 
 /-!
-### Trivialization of the bundle of continuous alternating maps
+# Trivialization of the bundle of continuous alternating maps
 -/
 
 namespace Bundle.Trivialization
@@ -349,7 +352,7 @@ theorem continuousAlternatingMap_apply
 end Bundle.Trivialization
 
 /-!
-### Lemmas about `trivializationAt` for the bundle of continuous alternating maps
+# Lemmas about `trivializationAt` for the bundle of continuous alternating maps
 -/
 
 namespace FiberBundle
@@ -400,7 +403,7 @@ theorem trivializationAt_continuousAlternatingMap_baseSet (x₀ : B) :
 end FiberBundle
 
 /-!
-### Continuity of maps to the total space of the bundle of continuous alternating maps
+# Continuity of maps to the total space of the bundle of continuous alternating maps
 -/
 
 section Continuity

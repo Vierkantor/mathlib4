@@ -12,6 +12,9 @@ public import Mathlib.Algebra.Order.BigOperators.Group.Finset
 public import Mathlib.Tactic.Linarith
 public import Mathlib.Tactic.Ring
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Sums of binomial coefficients
 

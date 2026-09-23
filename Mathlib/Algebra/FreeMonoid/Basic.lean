@@ -15,6 +15,9 @@ public import Mathlib.Data.List.Basic
 public import Mathlib.Tactic.ToDual
 public import Mathlib.Util.CompileInductive
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Free monoid over a given alphabet
 
@@ -154,12 +157,16 @@ theorem toList_of_mul (x : α) (xs : FreeMonoid α) : toList (of x * xs) = x :: 
 @[to_additive]
 theorem of_injective : Function.Injective (@of α) := List.singleton_injective
 
-/-! ### Length -/
+/-!
+# Length
+-/
 
 section Length
 variable {a : FreeMonoid α}
 
-/-- The length of a free monoid element: 1.length = 0 and (a * b).length = a.length + b.length -/
+/--
+The length of a free monoid element: 1.length = 0 and (a \* b).length = a.length + b.length
+-/
 @[to_additive /-- The length of an additive free monoid element: 1.length = 0 and (a + b).length =
   a.length + b.length -/]
 def length (a : FreeMonoid α) : ℕ := a.toList.length
@@ -251,7 +258,9 @@ theorem recOn_of_mul {motive : FreeMonoid α → Sort*} (x : α) (xs : FreeMonoi
     @recOn α motive (of x * xs) one of_mul = of_mul x xs (recOn xs one of_mul) :=
   rfl
 
-/-! ### Induction -/
+/-!
+# Induction
+-/
 
 section induction_principles
 
@@ -372,7 +381,9 @@ theorem of_smul (f : α → β → β) (x : α) (y : β) :
     (haveI := mkMulAction f
     of x • y) = f x y := rfl
 
-/-! ### map -/
+/-!
+# map
+-/
 
 section Map
 variable {f : α → β} {a b : FreeMonoid α}
@@ -456,7 +467,9 @@ theorem map_surjective {f : α → β} : Function.Surjective (map f) ↔ Functio
 
 end Map
 
-/-! ### reverse -/
+/-!
+# reverse
+-/
 
 section Reverse
 /-- reverses the symbols in a free monoid element -/

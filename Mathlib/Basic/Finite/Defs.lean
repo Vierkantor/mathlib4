@@ -9,6 +9,9 @@ public import Mathlib.Data.Set.CoeSort
 public import Mathlib.Logic.Equiv.Defs
 public import Mathlib.Data.Nat.Notation
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Definition of the `Finite` typeclass
 
@@ -51,7 +54,7 @@ construction. This gives a way to actually compute a `Finset` that represents th
 may be accessed using `Set.toFinset`. This gets the `Finset` in the correct form, since otherwise
 `Finset.univ : Finset s` is a `Finset` for the subtype for `s`. The second component is
 "constructors" for `Set.Finite` that give proofs that `Fintype` instances exist classically given
-other `Set.Finite` proofs. Unlike the `Fintype` instances, these *do not* use any decidability
+other `Set.Finite` proofs. Unlike the `Fintype` instances, these _do not_ use any decidability
 instances since they do not compute anything.
 
 ## Tags
@@ -69,6 +72,8 @@ open Function
 
 variable {α β : Sort*}
 
+
+set_option doc.verso false
 /-- A type is `Finite` if it is in bijective correspondence to some `Fin n`.
 
 This is similar to `Fintype`, but `Finite` is a proposition rather than data.
@@ -101,6 +106,8 @@ are meant to be computable in the reduction or `#eval` sense.
 class inductive Finite (α : Sort*) : Prop
   | intro {n : ℕ} : α ≃ Fin n → Finite _
 
+
+set_option doc.verso true
 theorem finite_iff_exists_equiv_fin {α : Sort*} : Finite α ↔ ∃ n, Nonempty (α ≃ Fin n) :=
   ⟨fun ⟨e⟩ => ⟨_, ⟨e⟩⟩, fun ⟨_, ⟨e⟩⟩ => ⟨e⟩⟩
 
@@ -173,7 +180,7 @@ instance Prop.instFinite : Finite Prop := .of_equiv _ Equiv.propEquivBool.symm
 section Set
 
 /-!
-### Finite sets
+# Finite sets
 -/
 
 variable {α : Type u} {β : Type v}
@@ -232,7 +239,9 @@ theorem Equiv.set_finite_iff {s : Set α} {t : Set β} (hst : s ≃ t) : s.Finit
 
 namespace Set
 
-/-! ### Infinite sets -/
+/-!
+# Infinite sets
+-/
 
 variable {s : Set α}
 

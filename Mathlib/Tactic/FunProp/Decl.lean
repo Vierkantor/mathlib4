@@ -7,8 +7,11 @@ module
 
 public import Mathlib.Init
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
-## `funProp` environment extension that stores all registered function properties
+# `funProp` environment extension that stores all registered function properties
 -/
 
 public meta section

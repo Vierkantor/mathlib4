@@ -12,6 +12,9 @@ public import Mathlib.Combinatorics.SimpleGraph.Hasse
 public import Mathlib.Data.Fin.Parity
 public import Mathlib.Combinatorics.SimpleGraph.CycleGraph
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Concrete colorings of common graphs
 
@@ -20,7 +23,6 @@ This file defines colorings for some common graphs.
 ## Main declarations
 
 * `SimpleGraph.pathGraph.bicoloring`: Bicoloring of a path graph.
-
 -/
 
 @[expose] public section

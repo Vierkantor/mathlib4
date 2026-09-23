@@ -9,13 +9,15 @@ public import Mathlib.CategoryTheory.ObjectProperty.FullSubcategory
 public import Mathlib.CategoryTheory.Equivalence
 public import Mathlib.Order.BooleanAlgebra.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Equivalence of full subcategories
 
 The inclusion functor `P.FullSubcategory ⥤ Q.FullSubcategory` induced
 by an inequality `P ≤ Q` in `ObjectProperty C` is an equivalence iff
 `Q ≤ P.isoClosure`.
-
 -/
 
 @[expose] public section

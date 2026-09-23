@@ -8,6 +8,9 @@ module
 public import Mathlib.CategoryTheory.ObjectProperty.CompleteLattice
 public import Mathlib.CategoryTheory.Sites.Hypercover.Zero
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Locality conditions on object properties
 
@@ -16,7 +19,7 @@ precoverage in a category `C` and `P` be an object property that is closed under
 
 We say that
 
-- `P` is local if for every `X : C`, `P` holds for `X` if and only if it holds for `Uᵢ` for a
+* `P` is local if for every `X : C`, `P` holds for `X` if and only if it holds for `Uᵢ` for a
   `K`-cover `{Uᵢ}` of `X`.
 
 ## Implementation details

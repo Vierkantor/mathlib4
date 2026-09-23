@@ -11,8 +11,10 @@ public import Mathlib.RingTheory.PowerSeries.CoeffMulMem
 public import Mathlib.RingTheory.PowerSeries.Inverse
 public import Mathlib.RingTheory.PowerSeries.Trunc
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Weierstrass preparation theorem for power series over a complete local ring
 
 In this file we define Weierstrass division, Weierstrass factorization, and prove
@@ -24,69 +26,57 @@ such ring has only one maximal ideal, and hence it is a complete local ring.
 
 ## Main definitions
 
-- `PowerSeries.IsWeierstrassDivisionAt f g q r I`: let `f` and `g` be power series over `A`, `I` be
+* `PowerSeries.IsWeierstrassDivisionAt f g q r I`: let `f` and `g` be power series over `A`, `I` be
   an ideal of `A`, this is a `Prop` which asserts that a power series
   `q` and a polynomial `r` of degree `< n` satisfy `f = g * q + r`, where `n` is the order of the
   image of `g` in `(A / I)⟦X⟧` (defined to be zero if such image is zero, in which case
   it's mathematically not considered).
-
-- `PowerSeries.IsWeierstrassDivision`: version of `PowerSeries.IsWeierstrassDivisionAt`
+* `PowerSeries.IsWeierstrassDivision`: version of `PowerSeries.IsWeierstrassDivisionAt`
   for local rings with respect to its maximal ideal.
-
-- `PowerSeries.IsWeierstrassDivisorAt g I`: let `g` be a power series over `A`, `I` be an ideal of
+* `PowerSeries.IsWeierstrassDivisorAt g I`: let `g` be a power series over `A`, `I` be an ideal of
   `A`, this is a `Prop` which asserts that the `n`-th coefficient
   of `g` is a unit, where `n` is the order of the image of `g` in `(A / I)⟦X⟧`
   (defined to be zero if such image is zero, in which case it's mathematically not considered).
 
   This property guarantees that if the `A` is `I`-adic complete, then `g` can be used as a divisor
   in Weierstrass division (`PowerSeries.IsWeierstrassDivisorAt.isWeierstrassDivisionAt_div_mod`).
-
-- `PowerSeries.IsWeierstrassDivisor`: version of `PowerSeries.IsWeierstrassDivisorAt` for
+* `PowerSeries.IsWeierstrassDivisor`: version of `PowerSeries.IsWeierstrassDivisorAt` for
   local rings with respect to its maximal ideal.
-
-- `PowerSeries.IsWeierstrassFactorizationAt g f h I`: for a power series `g` over `A` and
+* `PowerSeries.IsWeierstrassFactorizationAt g f h I`: for a power series `g` over `A` and
   an ideal `I` of `A`, this is a `Prop` which asserts that `f` is a distinguished polynomial at `I`,
   `h` is a formal power series over `A` that is a unit and such that `g = f * h`.
-
-- `PowerSeries.IsWeierstrassFactorization`: version of `PowerSeries.IsWeierstrassFactorizationAt`
+* `PowerSeries.IsWeierstrassFactorization`: version of `PowerSeries.IsWeierstrassFactorizationAt`
   for local rings with respect to its maximal ideal.
 
 ## Main results
 
-- `PowerSeries.exists_isWeierstrassDivision`: **Weierstrass division**
-  ([washington_cyclotomic], Proposition 7.2): let `f`, `g` be power series
+* `PowerSeries.exists_isWeierstrassDivision`: *Weierstrass division*
+  (\[washington\_cyclotomic\], Proposition 7.2): let `f`, `g` be power series
   over a complete local ring, such that the image of `g` in the residue field is not zero.
   Let `n` be the order of the image of `g` in the residue field. Then there exists a power series
   `q` and a polynomial `r` of degree `< n`, such that `f = g * q + r`.
-
-- `PowerSeries.IsWeierstrassDivision.elim`,
+* `PowerSeries.IsWeierstrassDivision.elim`,
   `PowerSeries.IsWeierstrassDivision.unique`: `q` and `r` in the Weierstrass division are unique.
-
-- `PowerSeries.exists_isWeierstrassFactorization`: **Weierstrass preparation theorem**
-  ([washington_cyclotomic], Theorem 7.3): let `g` be a power series
+* `PowerSeries.exists_isWeierstrassFactorization`: *Weierstrass preparation theorem*
+  (\[washington\_cyclotomic\], Theorem 7.3): let `g` be a power series
   over a complete local ring, such that its image in the residue field is
   not zero. Then there exists a distinguished polynomial `f` and a power series `h`
   which is a unit, such that `g = f * h`.
-
-- `PowerSeries.IsWeierstrassFactorization.elim`,
+* `PowerSeries.IsWeierstrassFactorization.elim`,
   `PowerSeries.IsWeierstrassFactorization.unique`: `f` and `h` in Weierstrass preparation
   theorem are unique.
-
-- `Polynomial.IsDistinguishedAt.algEquivQuotient`: a distinguished polynomial `g` induces a
+* `Polynomial.IsDistinguishedAt.algEquivQuotient`: a distinguished polynomial `g` induces a
   natural isomorphism `A[X] / (g) ≃ₐ[A] A⟦X⟧ / (g)`.
-
-- `PowerSeries.IsWeierstrassFactorizationAt.algEquivQuotient`: a Weierstrass factorization
+* `PowerSeries.IsWeierstrassFactorizationAt.algEquivQuotient`: a Weierstrass factorization
   `g = f * h` induces a natural isomorphism `A[X] / (f) ≃ₐ[A] A⟦X⟧ / (g)`.
-
-- `PowerSeries.algEquivQuotientWeierstrassDistinguished`:
+* `PowerSeries.algEquivQuotientWeierstrassDistinguished`:
   if `g` is a power series over a complete local ring,
   such that its image in the residue field is not zero, then there is a natural isomorphism
   `A[X] / (f) ≃ₐ[A] A⟦X⟧ / (g)` where `f` is `PowerSeries.weierstrassDistinguished g`.
 
 ## References
 
-- [Washington, Lawrence C. *Introduction to cyclotomic fields.*][washington_cyclotomic]
-
+* ‍\[Washington, Lawrence C. _Introduction to cyclotomic fields._\]\[washington\_cyclotomic\]
 -/
 
 @[expose] public section
@@ -98,9 +88,7 @@ namespace PowerSeries
 variable {A : Type*} [CommRing A]
 
 /-!
-
-## Weierstrass division
-
+# Weierstrass division
 -/
 
 section IsWeierstrassDivisionAt
@@ -496,11 +484,13 @@ section IsLocalRing
 variable [IsLocalRing A] (a : A) (f f' g : A⟦X⟧)
 
 variable {g} in
-/-- **Weierstrass division** ([washington_cyclotomic], Proposition 7.2): let `f`, `g` be
+/--
+*Weierstrass division* (\[washington\_cyclotomic\], Proposition 7.2): let `f`, `g` be
 power series over a complete local ring, such that
 the image of `g` in the residue field is not zero. Let `n` be the order of the image of `g` in the
 residue field. Then there exists a power series `q` and a polynomial `r` of degree `< n`, such that
-`f = g * q + r`. -/
+`f = g * q + r`.
+-/
 theorem exists_isWeierstrassDivision [IsAdicComplete (IsLocalRing.maximalIdeal A) A]
     (hg : g.map (IsLocalRing.residue A) ≠ 0) : ∃ q r, f.IsWeierstrassDivision g q r :=
   ⟨_, _, (IsWeierstrassDivisor.of_map_ne_zero hg).isWeierstrassDivisionAt_div_mod f⟩
@@ -639,9 +629,7 @@ alias zero_weierstrassMod := weierstrassMod_zero_left
 end IsLocalRing
 
 /-!
-
-## Weierstrass preparation theorem
-
+# Weierstrass preparation theorem
 -/
 
 /-- If `f` is a polynomial over `A`, `g` and `h` are power series over `A`,
@@ -806,10 +794,12 @@ section IsAdicComplete
 
 variable [IsAdicComplete (IsLocalRing.maximalIdeal A) A] {a : A} {g g' : A⟦X⟧} {f : A[X]} {h : A⟦X⟧}
 
-/-- **Weierstrass preparation theorem** ([washington_cyclotomic], Theorem 7.3):
+/--
+*Weierstrass preparation theorem* (\[washington\_cyclotomic\], Theorem 7.3):
 let `g` be a power series over a complete local ring,
 such that its image in the residue field is not zero. Then there exists a distinguished
-polynomial `f` and a power series `h` which is a unit, such that `g = f * h`. -/
+polynomial `f` and a power series `h` which is a unit, such that `g = f * h`.
+-/
 theorem exists_isWeierstrassFactorization (hg : g.map (IsLocalRing.residue A) ≠ 0) :
     ∃ f h, g.IsWeierstrassFactorization f h := by
   obtain ⟨q, r, H⟩ :=

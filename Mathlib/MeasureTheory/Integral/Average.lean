@@ -7,6 +7,9 @@ module
 
 public import Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Integral average of a function
 
@@ -22,6 +25,7 @@ Both have a version for the Lebesgue integral rather than Bochner.
 
 We prove several versions of the first moment method: An integrable function is below/above its
 average on a set of positive measure:
+
 * `measure_le_setLAverage_pos` for the Lebesgue integral
 * `measure_le_setAverage_pos` for the Bochner integral
 
@@ -48,7 +52,7 @@ variable {α E F : Type*} {m0 : MeasurableSpace α} [NormedAddCommGroup E] [Norm
   {s t : Set α}
 
 /-!
-### Average value of a function w.r.t. a measure
+# Average value of a function w.r.t. a measure
 
 The (Bochner, Lebesgue) average value of a function `f` w.r.t. a measure `μ` (notation:
 `⨍ x, f x ∂μ`, `⨍⁻ x, f x ∂μ`) is defined as the (Bochner, Lebesgue) integral divided by the total
@@ -554,7 +558,9 @@ theorem toReal_setLAverage {f : α → ℝ≥0∞} (hf : AEMeasurable f (μ.rest
     (⨍⁻ x in s, f x ∂μ).toReal = ⨍ x in s, (f x).toReal ∂μ := by
   simpa [laverage_eq] using toReal_laverage hf hf'
 
-/-! ### First moment method -/
+/-!
+# First moment method
+-/
 
 section FirstMomentReal
 variable {N : Set α} {f : α → ℝ}

@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds
 public import Mathlib.Geometry.Euclidean.Angle.Unoriented.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Angle between complex numbers
 
@@ -71,7 +74,7 @@ lemma angle_exp_one (x : ℝ) : angle (exp (x * I)) 1 = |toIocMod Real.two_pi_po
   simpa using angle_exp_exp x 0
 
 /-!
-### Arc-length and chord-length are equivalent
+# Arc-length and chord-length are equivalent
 
 This section shows that the arc and chord distances between two unit complex numbers are equivalent
 up to a factor of `π / 2`.

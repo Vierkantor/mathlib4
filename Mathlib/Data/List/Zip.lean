@@ -10,6 +10,9 @@ public import Mathlib.Data.Nat.Basic
 public import Mathlib.Data.List.Basic
 public import Mathlib.Logic.OpClass
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # zip & unzip
 

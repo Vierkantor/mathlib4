@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.Calculus.Deriv.Add
 public import Mathlib.Analysis.Calculus.Deriv.Linear
 public import Mathlib.LinearAlgebra.AffineSpace.AffineMap
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Derivatives of affine maps
 
@@ -56,7 +59,7 @@ protected theorem differentiableWithinAt : DifferentiableWithinAt 𝕜 f s x :=
 protected theorem differentiableOn : DifferentiableOn 𝕜 f s := fun _ _ ↦ f.differentiableWithinAt
 
 /-!
-### Line map
+# Line map
 
 In this section we specialize some lemmas to `AffineMap.lineMap` because this map is very useful to
 deduce higher-dimensional lemmas from one-dimensional versions.

@@ -15,6 +15,9 @@ public import Mathlib.CategoryTheory.Limits.Types.Equalizers
 public import Mathlib.CategoryTheory.SingleObj
 public import Mathlib.SetTheory.Cardinal.NatCard
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Definition and basic properties of Galois categories
 
@@ -27,7 +30,7 @@ the definitions in Lenstra's notes (see below for a reference).
 * `FiberFunctor`      : a fiber functor from a `PreGaloisCategory` to `FintypeCat`
 * `GaloisCategory`    : a `PreGaloisCategory` that admits a `FiberFunctor`
 * `IsConnected`       : an object of a category is connected if it is not initial
-                        and does not have non-trivial subobjects
+  and does not have non-trivial subobjects
 
 Any fiber functor `F` induces an equivalence with the category of finite, discrete `Aut F`-types.
 This is proven in `Mathlib/CategoryTheory/Galois/Equivalence.lean`.
@@ -41,8 +44,7 @@ as this is not needed for the proof of the fundamental theorem on Galois categor
 
 ## References
 
-* [lenstraGSchemes]: H. W. Lenstra. Galois theory for schemes.
-
+* ‍\[lenstraGSchemes\]: H. W. Lenstra. Galois theory for schemes.
 -/
 
 @[expose] public section

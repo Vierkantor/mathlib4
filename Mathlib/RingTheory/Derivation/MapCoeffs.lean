@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Polynomial.Module.Basic
 public import Mathlib.Algebra.Polynomial.Derivation
 public import Mathlib.FieldTheory.Separable
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Coefficient-wise derivation on polynomials
 

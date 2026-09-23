@@ -8,6 +8,9 @@ module
 public import Mathlib.Topology.Defs.Sequences
 public import Mathlib.Topology.Metrizable.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Sequences in topological spaces
 
@@ -20,6 +23,7 @@ The following notions are defined in `Topology/Defs/Sequences`.
 We build theory about these definitions here, so we remind the definitions.
 
 ### Set operation
+
 * `seqClosure s`: sequential closure of a set, the set of limits of sequences of points of `s`;
 
 ### Predicates
@@ -33,9 +37,9 @@ We build theory about these definitions here, so we remind the definitions.
 
 ### Type classes
 
-* `FrechetUrysohnSpace X`: a typeclass saying that a topological space is a *Fréchet-Urysohn
-  space*, i.e., the sequential closure of any set is equal to its closure.
-* `SequentialSpace X`: a typeclass saying that a topological space is a *sequential space*, i.e.,
+* `FrechetUrysohnSpace X`: a typeclass saying that a topological space is a _Fréchet-Urysohn
+  space_, i.e., the sequential closure of any set is equal to its closure.
+* `SequentialSpace X`: a typeclass saying that a topological space is a _sequential space_, i.e.,
   any sequentially closed set in this space is closed. This condition is weaker than being a
   Fréchet-Urysohn space.
 * `SeqCompactSpace X`: a typeclass saying that a topological space is sequentially compact, i.e.,
@@ -70,7 +74,9 @@ open scoped Uniformity
 
 variable {X Y : Type*}
 
-/-! ### Sequential closures, sequential continuity, and sequential spaces. -/
+/-!
+# Sequential closures, sequential continuity, and sequential spaces.
+-/
 
 section TopologicalSpace
 

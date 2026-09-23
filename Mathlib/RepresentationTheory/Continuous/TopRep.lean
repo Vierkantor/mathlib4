@@ -10,6 +10,9 @@ public import Mathlib.CategoryTheory.Linear.LinearFunctor
 public import Mathlib.RepresentationTheory.Continuous.Basic
 public import Mathlib.Algebra.Category.ModuleCat.Topology.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Topological representations
 

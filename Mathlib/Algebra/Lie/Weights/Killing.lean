@@ -12,6 +12,9 @@ public import Mathlib.Algebra.Lie.Weights.Chain
 public import Mathlib.LinearAlgebra.Eigenspace.Semisimple
 public import Mathlib.LinearAlgebra.JordanChevalley
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Roots of Lie algebras with non-degenerate Killing forms
 
@@ -19,6 +22,7 @@ The file contains definitions and results about roots of Lie algebras with non-d
 forms.
 
 ## Main definitions
+
 * `LieAlgebra.IsKilling.ker_restrict_eq_bot_of_isCartanSubalgebra`: if the Killing form of
   a Lie algebra is non-singular, it remains non-singular when restricted to a Cartan subalgebra.
 * `LieAlgebra.IsKilling.instIsLieAbelianOfIsCartanSubalgebra`: if the Killing form of a Lie
@@ -35,7 +39,6 @@ forms.
 * `LieAlgebra.IsKilling.finrank_rootSpace_eq_one`: root spaces are one-dimensional.
 * `LieAlgebra.IsKilling.lieIdeal_eq_inf_cartan_sup_biSup_rootSpace`: a Lie ideal decomposes as its
   intersection with the Cartan subalgebra plus a sum of root spaces.
-
 -/
 
 @[expose] public section
@@ -269,9 +272,11 @@ lemma lie_eq_killingForm_smul_of_mem_rootSpace_of_mem_rootSpace_neg_aux
       LinearMap.BilinForm.apply_toDual_symm_apply (hB := traceForm_cartan_nondegenerate K L H) _ _
     simp [traceForm_comm K L L ⁅e, f⁆, ← traceForm_apply_lie_apply, he, mul_comm _ (α ⟨z, hz⟩), hαz]
 
-/-- This is Proposition 4.18 from [carter2005] except that we use
+/--
+This is Proposition 4.18 from \[carter2005\] except that we use
 `LieModule.exists_forall_lie_eq_smul` instead of Lie's theorem (and so avoid
-assuming `K` has characteristic zero). -/
+assuming `K` has characteristic zero).
+-/
 lemma cartanEquivDual_symm_apply_mem_corootSpace (α : Weight K H L) :
     (cartanEquivDual H).symm α ∈ corootSpace α := by
   obtain ⟨e : L, he₀ : e ≠ 0, he : ∀ x, ⁅x, e⁆ = α x • e⟩ := exists_forall_lie_eq_smul K H L α

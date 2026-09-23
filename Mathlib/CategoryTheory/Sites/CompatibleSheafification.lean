@@ -8,12 +8,14 @@ module
 public import Mathlib.CategoryTheory.Sites.CompatiblePlus
 public import Mathlib.CategoryTheory.Sites.ConcreteSheafification
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Compatibility of sheafification with functors
 
 In this file, we prove that sheafification is compatible with functors which
 preserve the correct limits and colimits.
-
 -/
 
 @[expose] public section

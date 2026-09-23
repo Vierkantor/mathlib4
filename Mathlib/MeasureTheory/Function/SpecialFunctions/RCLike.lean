@@ -8,9 +8,11 @@ module
 public import Mathlib.Analysis.RCLike.Lemmas
 public import Mathlib.MeasureTheory.Constructions.BorelSpace.Complex
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Measurability of the basic `RCLike` functions
-
 -/
 
 public section

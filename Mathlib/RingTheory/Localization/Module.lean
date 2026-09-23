@@ -10,6 +10,9 @@ public import Mathlib.LinearAlgebra.Basis.Basic
 public import Mathlib.RingTheory.Localization.FractionRing
 public import Mathlib.RingTheory.Localization.Integer
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Modules / vector spaces over localizations / fraction fields
 

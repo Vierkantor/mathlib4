@@ -8,13 +8,17 @@ module
 public import Mathlib.Init
 public meta import Mathlib.Lean.MessageData.Trace
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The `#defeq_abuse` tactic and command combinators
 
-**WARNING:** `#defeq_abuse` is an experimental tool intended to assist with breaking changes to
+*WARNING:* `#defeq_abuse` is an experimental tool intended to assist with breaking changes to
 transparency handling (associated with `backward.isDefEq.respectTransparency`). Its syntax may
 change at any time, and it may not behave as expected. Please report unexpected behavior
-[on Zulip](https://leanprover.zulipchat.com/#narrow/channel/113488-general/topic/backward.2EisDefEq.2ErespectTransparency/with/575685551).
+[on
+Zulip](https://leanprover.zulipchat.com/#narrow/channel/113488-general/topic/backward.2EisDefEq.2ErespectTransparency/with/575685551).
 
 `#defeq_abuse in tac` runs `tac` with `backward.isDefEq.respectTransparency` both `true` and
 `false`. If the tactic succeeds with `false` but fails with `true`, it identifies the specific
@@ -29,11 +33,13 @@ application that triggered them.
 ## Usage
 
 ### Tactic mode
+
 ```
 #defeq_abuse in rw [Set.disjoint_singleton_right]
 ```
 
 will report something like:
+
 ```
 Tactic fails with `backward.isDefEq.respectTransparency true` but succeeds with `false`.
 The following isDefEq checks are the root causes of the failure:
@@ -41,6 +47,7 @@ The following isDefEq checks are the root causes of the failure:
 ```
 
 ### Command mode
+
 ```
 #defeq_abuse in
 instance {V : Type} [AddCommGroup V] [Module ℝ V] {l : Submodule ℝ V} :

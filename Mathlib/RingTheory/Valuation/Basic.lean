@@ -12,16 +12,19 @@ public import Mathlib.Algebra.Ring.Torsion
 public import Mathlib.RingTheory.Ideal.Maps
 public import Mathlib.Tactic.TFAE
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # The basics of valuation theory.
 
 The basic theory of valuations (non-archimedean norms) on a commutative ring,
-following T. Wedhorn's unpublished notes “Adic Spaces” ([wedhorn_adic]).
+following T. Wedhorn's unpublished notes “Adic Spaces” (\[wedhorn\_adic\]).
 
-The definition of a valuation we use here is Definition 1.22 of [wedhorn_adic].
+The definition of a valuation we use here is Definition 1.22 of \[wedhorn\_adic\].
 A valuation on a ring `R` is a monoid homomorphism `v` to a linearly ordered
 commutative monoid with zero, that in addition satisfies the following two axioms:
+
 * `v 0 = 0`
 * `∀ x y, v (x + y) ≤ max (v x) (v y)`
 
@@ -29,12 +32,13 @@ commutative monoid with zero, that in addition satisfies the following two axiom
 function. If `v` is a valuation from `R` to `Γ₀` then the induced group
 homomorphism `Units(R) → Γ₀` is called `unit_map v`.
 
-The equivalence "relation" `IsEquiv v₁ v₂ : Prop` defined in 1.27 of [wedhorn_adic] is not strictly
+The equivalence "relation" `IsEquiv v₁ v₂ : Prop` defined in 1.27 of \[wedhorn\_adic\] is not
+strictly
 speaking a relation, because `v₁ : Valuation R Γ₁` and `v₂ : Valuation R Γ₂` might
 not have the same type. This corresponds in ZFC to the set-theoretic difficulty
 that the class of all valuations (as `Γ₀` varies) on a ring `R` is not a set.
 The "relation" is however reflexive, symmetric and transitive in the obvious
-sense. Note that we use 1.27(iii) of [wedhorn_adic] as the definition of equivalence.
+sense. Note that we use 1.27(iii) of \[wedhorn\_adic\] as the definition of equivalence.
 
 ## Main definitions
 
@@ -44,7 +48,6 @@ sense. Note that we use 1.27(iii) of [wedhorn_adic] as the definition of equival
 * `Valuation.IsEquiv`, the heterogeneous equivalence relation on valuations
 * `Valuation.supp`, the support of a valuation
 * `orderMonoidIso` is the ordered isomorphism between the value groups of two equivalent valuations.
-
 * `AddValuation R Γ₀`, the type of additive valuations on `R` with values in a
   linearly ordered additive commutative group with a top element, `Γ₀`.
 

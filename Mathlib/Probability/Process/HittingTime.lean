@@ -8,6 +8,9 @@ module
 public import Mathlib.Probability.Process.Stopping
 public import Mathlib.Tactic.AdaptationNote
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Hitting times
 
@@ -29,7 +32,6 @@ we have only proved it for the discrete case so far).
   is a stopping time
 * `MeasureTheory.Adapted.isStoppingTime_hittingAfter`: a discrete hitting time of a adapted process
   is a stopping time
-
 -/
 
 @[expose] public section

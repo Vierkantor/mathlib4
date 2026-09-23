@@ -12,6 +12,9 @@ public import Mathlib.MeasureTheory.Topology
 
 import Mathlib.Algebra.Order.Interval.Set.Group
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Integral over an interval
 
@@ -41,7 +44,7 @@ three possible intervals with the same endpoints for two reasons:
   `f` is integrable on each interval; in particular, it works even if the measure `μ` has an atom
   at `b`; this rules out `Set.Ioo` and `Set.Icc` intervals;
 * with this definition for a probability measure `μ`, the integral `∫ x in a..b, 1 ∂μ` equals
-  the difference $F_μ(b)-F_μ(a)$, where $F_μ(a)=μ(-∞, a]$ is the
+  the difference $`F_μ(b)-F_μ(a)`, where $`F_μ(a)=μ(-∞, a]` is the
   [cumulative distribution function](https://en.wikipedia.org/wiki/Cumulative_distribution_function)
   of `μ`.
 
@@ -63,19 +66,21 @@ variable {ι 𝕜 ε ε' E F A : Type*} [NormedAddCommGroup E]
   [TopologicalSpace ε] [ENormedAddMonoid ε] [TopologicalSpace ε'] [ENormedAddMonoid ε']
 
 /-!
-### Integrability on an interval
+# Integrability on an interval
 -/
 
 
-/-- A function `f` is called *interval integrable* with respect to a measure `μ` on an unordered
+/--
+A function `f` is called _interval integrable_ with respect to a measure `μ` on an unordered
 interval `a..b` if it is integrable on both intervals `(a, b]` and `(b, a]`. One of these
 intervals is always empty, so this property is equivalent to `f` being integrable on
-`(min a b, max a b]`. -/
+`(min a b, max a b]`.
+-/
 def IntervalIntegrable (f : ℝ → ε) (μ : Measure ℝ) (a b : ℝ) : Prop :=
   IntegrableOn f (Ioc a b) μ ∧ IntegrableOn f (Ioc b a) μ
 
 /-!
-## Basic iff's for `IntervalIntegrable`
+# Basic iff's for `IntervalIntegrable`
 -/
 section
 
@@ -183,11 +188,12 @@ protected theorem IntervalIntegrable.zero : IntervalIntegrable (0 : ℝ → E) �
 end
 
 /-!
-## Basic properties of interval integrability
-- interval integrability is symmetric, reflexive, transitive
-- monotonicity and strong measurability of the interval integral
-- if `f` is interval integrable, so are its absolute value and norm
-- arithmetic properties
+# Basic properties of interval integrability
+
+* interval integrability is symmetric, reflexive, transitive
+* monotonicity and strong measurability of the interval integral
+* if `f` is interval integrable, so are its absolute value and norm
+* arithmetic properties
 -/
 namespace IntervalIntegrable
 
@@ -495,7 +501,7 @@ theorem comp_sub_left_iff {f : ℝ → E} (c : ℝ) (h : ‖f (min a b)‖ₑ �
 end IntervalIntegrable
 
 /-!
-## Continuous functions are interval integrable
+# Continuous functions are interval integrable
 -/
 section
 
@@ -518,7 +524,7 @@ theorem Continuous.intervalIntegrable {u : ℝ → E} (hu : Continuous u) (a b :
 end
 
 /-!
-## Monotone and antitone functions are integral integrable
+# Monotone and antitone functions are integral integrable
 -/
 section
 
@@ -545,7 +551,7 @@ theorem Antitone.intervalIntegrable {u : ℝ → E} {a b : ℝ} (hu : Antitone u
 end
 
 /-!
-## Interval integrability of functions with even or odd parity
+# Interval integrability of functions with even or odd parity
 -/
 section
 
@@ -608,7 +614,7 @@ theorem intervalIntegrable_of_odd
 end
 
 /-!
-## Limits of intervals
+# Limits of intervals
 -/
 
 /-- Let `l'` be a measurably generated filter; let `l` be a of filter such that each `s ∈ l'`
@@ -644,7 +650,7 @@ theorem Filter.Tendsto.eventually_intervalIntegrable {f : ℝ → E} {μ : Measu
   (hf.mono_left inf_le_left).eventually_intervalIntegrable_ae hfm hμ hu hv
 
 /-!
-### Interval integral: definition and basic properties
+# Interval integral: definition and basic properties
 
 In this section we define `∫ x in a..b, f x ∂μ` as `∫ x in Ioc a b, f x ∂μ - ∫ x in Ioc b a, f x ∂μ`
 and prove some basic properties.
@@ -906,7 +912,8 @@ theorem intervalIntegral_conj : ∫ x in a..b, conj (f x) ∂μ = conj (∫ x in
 end RCLike
 
 /-!
-## Basic arithmetic
+# Basic arithmetic
+
 Includes addition, scalar multiplication and affine transformations.
 -/
 section Comp
@@ -1062,12 +1069,11 @@ theorem integral_comp_neg : (∫ x in a..b, f (-x)) = ∫ x in -b..-a, f x := by
 end Comp
 
 /-!
-### Integral is an additive function of the interval
+# Integral is an additive function of the interval
 
 In this section we prove that `∫ x in a..b, f x ∂μ + ∫ x in b..c, f x ∂μ = ∫ x in a..c, f x ∂μ`
 as well as a few other identities trivially equivalent to this one. We also prove that
 `∫ x in a..b, f x ∂μ = ∫ x, f x ∂μ` provided that `support f ⊆ Ioc a b`.
-
 -/
 
 section OrderClosedTopology

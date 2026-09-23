@@ -8,6 +8,9 @@ module
 public import Mathlib.Order.Hom.Bounded
 public import Mathlib.Topology.Order.Hom.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Esakia morphisms
 
@@ -29,7 +32,7 @@ be satisfied by itself and all stricter types.
 
 ## References
 
-* [Wikipedia, *Esakia space*](https://en.wikipedia.org/wiki/Esakia_space)
+* [Wikipedia, _Esakia space_](https://en.wikipedia.org/wiki/Esakia_space)
 -/
 
 @[expose] public section
@@ -103,7 +106,9 @@ instance (priority := 100) OrderIsoClass.toPseudoEpimorphismClass [Preorder α] 
   exists_map_eq_of_map_le f _a b h :=
     ⟨EquivLike.inv f b, (le_map_inv_iff f).2 h, EquivLike.right_inv _ _⟩
 
-/-! ### Pseudo-epimorphisms -/
+/-!
+# Pseudo-epimorphisms
+-/
 
 
 namespace PseudoEpimorphism
@@ -205,7 +210,9 @@ theorem cancel_left {g : PseudoEpimorphism β γ} {f₁ f₂ : PseudoEpimorphism
 
 end PseudoEpimorphism
 
-/-! ### Esakia morphisms -/
+/-!
+# Esakia morphisms
+-/
 
 
 namespace EsakiaHom

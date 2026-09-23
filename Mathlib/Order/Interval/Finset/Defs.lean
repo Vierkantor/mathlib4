@@ -10,6 +10,10 @@ public import Mathlib.Data.Finset.Prod
 public import Mathlib.Order.Hom.WithTopBot
 public import Mathlib.Order.Interval.Set.UnorderedInterval
 
+set_option doc.verso true
+set_option doc.verso.module false
+set_option doc.verso.suggestions false
+
 /-!
 # Locally finite orders
 
@@ -274,25 +278,33 @@ section LocallyFiniteOrder
 
 variable [LocallyFiniteOrder α] {a b x : α}
 
-/-- The finset $[a, b]$ of elements `x` such that `a ≤ x` and `x ≤ b`. Basically `Set.Icc a b` as a
-finset. -/
+/--
+The finset $`[a, b]` of elements `x` such that `a ≤ x` and `x ≤ b`. Basically `Set.Icc a b` as a
+finset.
+-/
 @[to_dual self (reorder := a b)]
 def Icc (a b : α) : Finset α :=
   LocallyFiniteOrder.finsetIcc a b
 
-/-- The finset $[a, b)$ of elements `x` such that `a ≤ x` and `x < b`. Basically `Set.Ico a b` as a
-finset. -/
+/--
+The finset $`[a, b)` of elements `x` such that `a ≤ x` and `x < b`. Basically `Set.Ico a b` as a
+finset.
+-/
 def Ico (a b : α) : Finset α :=
   LocallyFiniteOrder.finsetIco a b
 
-/-- The finset $(a, b]$ of elements `x` such that `a < x` and `x ≤ b`. Basically `Set.Ioc a b` as a
-finset. -/
+/--
+The finset $`(a, b]` of elements `x` such that `a < x` and `x ≤ b`. Basically `Set.Ioc a b` as a
+finset.
+-/
 @[to_dual existing (reorder := a b)]
 def Ioc (a b : α) : Finset α :=
   LocallyFiniteOrder.finsetIoc a b
 
-/-- The finset $(a, b)$ of elements `x` such that `a < x` and `x < b`. Basically `Set.Ioo a b` as a
-finset. -/
+/--
+The finset $`(a, b)` of elements `x` such that `a < x` and `x < b`. Basically `Set.Ioo a b` as a
+finset.
+-/
 @[to_dual self (reorder := a b)]
 def Ioo (a b : α) : Finset α :=
   LocallyFiniteOrder.finsetIoo a b
@@ -351,15 +363,23 @@ section LocallyFiniteOrderTop
 
 variable [LocallyFiniteOrderTop α] {a x : α}
 
-/-- The finset $[a, ∞)$ of elements `x` such that `a ≤ x`. Basically `Set.Ici a` as a finset. -/
+/--
+The finset $`[a, ∞)` of elements `x` such that `a ≤ x`. Basically `Set.Ici a` as a finset.
+-/
 @[to_dual
-/-- The finset $(-∞, b]$ of elements `x` such that `x ≤ b`. Basically `Set.Iic b` as a finset. -/]
+/--
+The finset $`(-∞, b]` of elements `x` such that `x ≤ b`. Basically `Set.Iic b` as a finset.
+-/]
 def Ici (a : α) : Finset α :=
   LocallyFiniteOrderTop.finsetIci a
 
-/-- The finset $(a, ∞)$ of elements `x` such that `a < x`. Basically `Set.Ioi a` as a finset. -/
+/--
+The finset $`(a, ∞)` of elements `x` such that `a < x`. Basically `Set.Ioi a` as a finset.
+-/
 @[to_dual
-/-- The finset $(-∞, b)$ of elements `x` such that `x < b`. Basically `Set.Iio b` as a finset. -/]
+/--
+The finset $`(-∞, b)` of elements `x` such that `x < b`. Basically `Set.Iio b` as a finset.
+-/]
 def Ioi (a : α) : Finset α :=
   LocallyFiniteOrderTop.finsetIoi a
 

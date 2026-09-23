@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Notation.Indicator
 public import Mathlib.Topology.Piecewise
 public import Mathlib.Topology.Clopen
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Continuity of indicator functions
 -/

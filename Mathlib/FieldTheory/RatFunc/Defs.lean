@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Polynomial.Basic
 public import Mathlib.RingTheory.Localization.FractionRing
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The field of rational functions
 
@@ -18,12 +21,14 @@ the basic definition.
 For connections with Laurent Series, see `Mathlib/RingTheory/LaurentSeries.lean`.
 
 ## Main definitions
+
 We provide a set of recursion and induction principles:
-- `RatFunc.liftOn`: define a function by mapping a fraction of polynomials `p/q` to `f p q`,
+
+* `RatFunc.liftOn`: define a function by mapping a fraction of polynomials `p/q` to `f p q`,
   if `f` is well-defined in the sense that `p/q = p'/q' → f p q = f p' q'`.
-- `RatFunc.liftOn'`: define a function by mapping a fraction of polynomials `p/q` to `f p q`,
+* `RatFunc.liftOn'`: define a function by mapping a fraction of polynomials `p/q` to `f p q`,
   if `f` is well-defined in the sense that `f (a * p) (a * q) = f p' q'`.
-- `RatFunc.induction_on`: if `P` holds on `p / q` for all polynomials `p q`, then `P` holds on all
+* `RatFunc.induction_on`: if `P` holds on `p / q` for all polynomials `p q`, then `P` holds on all
   rational functions
 
 ## Implementation notes
@@ -42,10 +47,9 @@ the codomain is not a field or even an integral domain.
 
 ## References
 
-* [Kleiman, *Misconceptions about $K_X$*][kleiman1979]
+* ‍\[Kleiman, _Misconceptions about $`K_X`_\]\[kleiman1979\]
 * https://freedommathdance.blogspot.com/2012/11/misconceptions-about-kx.html
 * https://stacks.math.columbia.edu/tag/01X1
-
 -/
 
 @[expose] public section
@@ -79,7 +83,9 @@ variable [CommRing K]
 
 section Rec
 
-/-! ### Constructing `RatFunc`s and their induction principles -/
+/-!
+# Constructing `RatFunc`s and their induction principles
+-/
 
 theorem ofFractionRing_injective : Function.Injective (ofFractionRing : _ → K⟮X⟯) :=
   fun _ _ => ofFractionRing.inj

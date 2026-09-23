@@ -8,6 +8,9 @@ module
 public import Mathlib.RingTheory.Derivation.MapCoeffs
 public import Mathlib.FieldTheory.PrimitiveElement
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Differential Fields
 

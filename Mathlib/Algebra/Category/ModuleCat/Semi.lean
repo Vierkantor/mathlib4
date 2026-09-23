@@ -13,6 +13,9 @@ public import Mathlib.Algebra.Module.PUnit
 public import Mathlib.CategoryTheory.Conj
 public import Mathlib.CategoryTheory.Limits.Shapes.ZeroMorphisms
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The category of `R`-modules
 

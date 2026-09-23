@@ -9,6 +9,9 @@ public import Mathlib.Combinatorics.SimpleGraph.Dart
 public import Mathlib.Data.FunLike.Fintype
 public import Mathlib.Logic.Embedding.Set
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Maps between graphs
 
@@ -47,7 +50,9 @@ namespace SimpleGraph
 
 variable {V W X Y : Type*} (G : SimpleGraph V) (G' : SimpleGraph W) {u v : V}
 
-/-! ## Map and comap -/
+/-!
+# Map and comap
+-/
 
 
 /-- Given a function, there is a covariant induced map on graphs by pushing forward
@@ -215,7 +220,9 @@ protected def _root_.Equiv.simpleGraph (e : V ≃ W) : SimpleGraph V ≃ SimpleG
 @[simp]
 lemma _root_.Equiv.symm_simpleGraph (e : V ≃ W) : e.simpleGraph.symm = e.symm.simpleGraph := rfl
 
-/-! ## Induced graphs -/
+/-!
+# Induced graphs
+-/
 
 
 /- Given a set `s` of vertices, we can restrict a graph to those vertices by restricting its
@@ -284,7 +291,9 @@ theorem IsCompleteBetween.induce {s t : Set V} (h : G.IsCompleteBetween s t) (u 
   rw [comap_adj, Embedding.coe_subtype]
   exact h hs ht
 
-/-! ## Homomorphisms, embeddings and isomorphisms -/
+/-!
+# Homomorphisms, embeddings and isomorphisms
+-/
 
 
 /-- A graph homomorphism is a map on vertex sets that respects adjacency relations.

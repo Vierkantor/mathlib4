@@ -15,6 +15,9 @@ public import Mathlib.LinearAlgebra.Finsupp.Supported
 
 import Mathlib.LinearAlgebra.Span.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Module structure on monoid algebras
 
@@ -39,7 +42,9 @@ open Module
 
 variable {R S M N O G : Type*}
 
-/-! ### Multiplicative monoids -/
+/-!
+# Multiplicative monoids
+-/
 
 namespace MonoidAlgebra
 
@@ -216,7 +221,9 @@ lemma single_mem_span_single [Semiring R] [Nontrivial R] {m : M} {s : Set M} :
 
 end SMul
 
-/-! #### Copies of `ext` lemmas and bundled `single`s from `Finsupp` -/
+/-!
+# Copies of `ext` lemmas and bundled `single`s from `Finsupp`
+-/
 
 section ExtLemmas
 variable [Semiring S]
@@ -283,7 +290,9 @@ theorem liftNC_smul (f : S →+* R) (g : M →* R) (c : S) (φ : S[M]) :
 
 end MiscTheorems
 
-/-! #### Non-unital, non-associative algebra structure -/
+/-!
+# Non-unital, non-associative algebra structure
+-/
 section NonUnitalNonAssocAlgebra
 
 variable (S) [Semiring S] [DistribSMul R S] [Mul M]
@@ -329,7 +338,9 @@ end Submodule
 
 end MonoidAlgebra
 
-/-! ### Additive monoids -/
+/-!
+# Additive monoids
+-/
 
 namespace AddMonoidAlgebra
 section Semiring

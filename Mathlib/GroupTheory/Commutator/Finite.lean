@@ -10,6 +10,9 @@ public import Mathlib.GroupTheory.Commutator.Basic
 public import Mathlib.GroupTheory.Rank
 public import Mathlib.GroupTheory.Index
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Commutators of finite direct products
 

@@ -8,6 +8,9 @@ module
 public import Mathlib.Topology.Algebra.Order.Field
 public import Mathlib.Topology.MetricSpace.Lipschitz
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lipschitz continuous functions
 

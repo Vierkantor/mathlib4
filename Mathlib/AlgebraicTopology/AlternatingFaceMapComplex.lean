@@ -12,8 +12,10 @@ public import Mathlib.CategoryTheory.Idempotents.FunctorCategories
 public import Mathlib.CategoryTheory.Limits.FunctorCategory.EpiMono
 public import Mathlib.CategoryTheory.Preadditive.Opposite
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # The alternating face map complex of a simplicial object in a preadditive category
 
 We construct the alternating face map complex, as a
@@ -30,9 +32,9 @@ We also construct the natural transformation
 when `A` is an abelian category.
 
 ## References
+
 * https://stacks.math.columbia.edu/tag/0194
 * https://ncatlab.org/nlab/show/Moore+complex
-
 -/
 
 @[expose] public section
@@ -53,7 +55,7 @@ namespace AlgebraicTopology
 namespace AlternatingFaceMapComplex
 
 /-!
-## Construction of the alternating face map complex
+# Construction of the alternating face map complex
 -/
 
 
@@ -68,7 +70,7 @@ def objD (n : ℕ) : X _⦋n + 1⦌ ⟶ X _⦋n⦌ :=
   ∑ i : Fin (n + 2), (-1 : ℤ) ^ (i : ℕ) • X.δ i
 
 /-!
-## The chain complex relation `d ≫ d`
+# The chain complex relation `d ≫ d`
 -/
 
 theorem d_squared (n : ℕ) : objD X (n + 1) ≫ objD X n = 0 := by
@@ -115,7 +117,7 @@ theorem d_squared (n : ℕ) : objD X (n + 1) ≫ objD X n = 0 := by
       simpa [S] using! hij
 
 /-!
-## Construction of the alternating face map complex functor
+# Construction of the alternating face map complex functor
 -/
 
 
@@ -254,7 +256,7 @@ lemma ε_app_f_succ [Limits.HasZeroObject C] (X : SimplicialObject.Augmented C) 
 end AlternatingFaceMapComplex
 
 /-!
-## Construction of the natural inclusion of the normalized Moore complex
+# Construction of the natural inclusion of the normalized Moore complex
 -/
 
 variable {A : Type*} [Category* A] [Abelian A]

@@ -12,6 +12,9 @@ public import Mathlib.Order.Interval.Set.Defs
 public import Mathlib.Tactic.Common
 public import Mathlib.Tactic.SetLike
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Extra lemmas about canonically ordered monoids
 -/

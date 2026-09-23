@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Polynomial.Degree.Lemmas
 public import Mathlib.RingTheory.Polynomial.ScaleRoots
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Theory of monic polynomials
 

@@ -8,11 +8,13 @@ module
 public import Mathlib.Data.Nat.Find
 public import Mathlib.Data.PNat.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Explicit least witnesses to existentials on positive natural numbers
 
 Implemented via calling out to `Nat.find`.
-
 -/
 
 @[expose] public section

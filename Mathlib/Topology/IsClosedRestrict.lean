@@ -7,7 +7,11 @@ module
 
 public import Mathlib.Topology.Maps.Proper.Basic
 
-/-! # Restriction of a closed compact set in a product space to a set of coordinates
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Restriction of a closed compact set in a product space to a set of coordinates
 
 We show that the image of a compact closed set `s` in a product `Π i : ι, α i` by
 the restriction to a subset of coordinates `S : Set ι` is a closed set.
@@ -20,7 +24,6 @@ a homeomorphism
 `Sᶜ.domRestrict ⁻¹' Sᶜ.domRestrict '' s ≃ₜ Sᶜ.domRestrict '' s × Π i : S, α i`.
 `Sᶜ.domRestrict '' s` is a compact space since `s` is compact, and the lemma applies,
 with `X = Sᶜ.domRestrict '' s` and `Y = Π i : S, α i`.
-
 -/
 
 @[expose] public section

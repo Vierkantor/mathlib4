@@ -13,6 +13,9 @@ public import Mathlib.Data.Nat.ModEq
 public import Mathlib.Order.Filter.AtTopBot.Basic
 public import Mathlib.Order.Filter.AtTopBot.Monoid
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Numbers are frequently ModEq to fixed numbers
 

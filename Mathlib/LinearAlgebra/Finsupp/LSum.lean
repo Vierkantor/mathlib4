@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Module.Submodule.LinearMap
 public import Mathlib.LinearAlgebra.Finsupp.Defs
 public import Mathlib.Tactic.ApplyFun
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Sums as a linear map
 
@@ -89,10 +92,11 @@ variable (S)
 variable [Module S N] [SMulCommClass R₂ S N]
 
 set_option backward.isDefEq.respectTransparency false in
-/-- Lift a family of linear maps `M →ₗ[R] N` indexed by `x : α` to a linear map from `α →₀ M` to
+/--
+Lift a family of linear maps `M →ₗ[R] N` indexed by `x : α` to a linear map from `α →₀ M` to
 `N` using `Finsupp.sum`. This is an upgraded version of `Finsupp.liftAddHom`.
 
-See note [bundled maps over different rings] for why separate `R` and `S` semirings are used.
+See note \[bundled maps over different rings\] for why separate `R` and `S` semirings are used.
 -/
 def lsum : (α → M →ₛₗ[σ] N) ≃ₗ[S] (α →₀ M) →ₛₗ[σ] N where
   toFun F :=

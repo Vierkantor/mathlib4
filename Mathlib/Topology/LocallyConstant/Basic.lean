@@ -10,6 +10,9 @@ public import Mathlib.Order.Filter.EventuallyConst
 public import Mathlib.Topology.Connected.LocallyConnected
 public import Mathlib.Topology.Sets.Closeds
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Locally constant functions
 
@@ -18,7 +21,7 @@ This file sets up the theory of locally constant function from a topological spa
 ## Main definitions and constructions
 
 * `IsLocallyConstant f` : a map `f : X → Y` where `X` is a topological space is locally
-                            constant if every set in `Y` has an open preimage.
+  constant if every set in `Y` has an open preimage.
 * `LocallyConstant X Y` : the type of locally constant maps from `X` to `Y`
 * `LocallyConstant.map` : push-forward of locally constant maps
 * `LocallyConstant.comap` : pull-back of locally constant maps
@@ -226,7 +229,9 @@ instance : FunLike (LocallyConstant X Y) X Y where
   coe := LocallyConstant.toFun
   coe_injective := by rintro ⟨_, _⟩ ⟨_, _⟩ _; congr
 
-/-- See Note [custom simps projections]. -/
+/--
+See Note \[custom simps projections\].
+-/
 def Simps.apply (f : LocallyConstant X Y) : X → Y := f
 
 initialize_simps_projections LocallyConstant (toFun → apply)

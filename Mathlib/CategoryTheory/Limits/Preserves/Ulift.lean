@@ -10,16 +10,17 @@ public import Mathlib.CategoryTheory.Limits.Types.Limits
 public import Mathlib.CategoryTheory.Limits.Types.Colimits
 public import Mathlib.Data.Set.Subsingleton
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `ULift` creates small (co)limits
-
 
 This file shows that `uliftFunctor.{v, u}` preserves all limits and colimits, including those
 potentially too big to exist in `Type u`.
 
 As this functor is fully faithful, we also deduce that it creates `u`-small limits and
 colimits.
-
 -/
 
 @[expose] public section

@@ -10,6 +10,9 @@ public import Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Basic
 public import Mathlib.Data.Fin.Tuple.Reflection
 public import Mathlib.Tactic.Ring.NamePolyVars
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Weierstrass equations and the nonsingular condition in projective coordinates
 
@@ -18,9 +21,9 @@ A point on the unweighted projective plane over a commutative ring `R` is an equ
 `(x, y, z) ∼ (x', y', z')` if there is some unit `u` in `Rˣ` with `(x, y, z) = (ux', uy', uz')`.
 
 Let `W` be a Weierstrass curve over a commutative ring `R` with coefficients `aᵢ`. A
-*projective point* is a point on the unweighted projective plane over `R` satisfying the
-*homogeneous Weierstrass equation* `W(X, Y, Z) = 0` in *projective coordinates*, where
-`W(X, Y, Z) := Y²Z + a₁XYZ + a₃YZ² - (X³ + a₂X²Z + a₄XZ² + a₆Z³)`. It is *nonsingular* if its
+_projective point_ is a point on the unweighted projective plane over `R` satisfying the
+_homogeneous Weierstrass equation_ `W(X, Y, Z) = 0` in _projective coordinates_, where
+`W(X, Y, Z) := Y²Z + a₁XYZ + a₃YZ² - (X³ + a₂X²Z + a₄XZ² + a₆Z³)`. It is _nonsingular_ if its
 partial derivatives `W_X(x, y, z)`, `W_Y(x, y, z)`, and `W_Z(x, y, z)` do not vanish simultaneously.
 
 This file gives an explicit implementation of equivalence classes of triples up to scaling by units,
@@ -62,7 +65,7 @@ mirrored in `Mathlib/AlgebraicGeometry/EllipticCurve/Jacobian/Basic.lean`.
 
 ## References
 
-[J Silverman, *The Arithmetic of Elliptic Curves*][silverman2009]
+‍\[J Silverman, _The Arithmetic of Elliptic Curves_\]\[silverman2009\]
 
 ## Tags
 
@@ -104,7 +107,9 @@ name_poly_vars X, Y, Z over R
 
 namespace WeierstrassCurve
 
-/-! ## Projective coordinates -/
+/-!
+# Projective coordinates
+-/
 
 variable (R) in
 /-- An abbreviation for a Weierstrass curve in projective coordinates. -/
@@ -221,7 +226,9 @@ lemma Y_eq_iff {P Q : Fin 3 → F} (hPz : P z ≠ 0) (hQz : Q z ≠ 0) :
     P y * Q z = Q y * P z ↔ P y / P z = Q y / Q z :=
   (div_eq_div_iff hPz hQz).symm
 
-/-! ## Weierstrass equations in projective coordinates -/
+/-!
+# Weierstrass equations in projective coordinates
+-/
 
 variable (W') in
 /-- The polynomial `W(X, Y, Z) := Y²Z + a₁XYZ + a₃YZ² - (X³ + a₂X²Z + a₄XZ² + a₆Z³)` associated to a
@@ -287,7 +294,9 @@ lemma X_eq_zero_of_Z_eq_zero [NoZeroDivisors R] {P : Fin 3 → R} (hP : W'.Equat
     (hPz : P z = 0) : P x = 0 :=
   eq_zero_of_pow_eq_zero <| (equation_of_Z_eq_zero hPz).mp hP
 
-/-! ## The nonsingular condition in projective coordinates -/
+/-!
+# The nonsingular condition in projective coordinates
+-/
 
 variable (W') in
 /-- The partial derivative `W_X(X, Y, Z)` with respect to `X` of the polynomial `W(X, Y, Z)`
@@ -476,7 +485,9 @@ lemma nonsingularLift_some (a b : R) :
     W'.NonsingularLift ⟦![a, b, 1]⟧ ↔ W'.toAffine.Nonsingular a b :=
   nonsingular_some a b
 
-/-! ## Maps and base changes -/
+/-!
+# Maps and base changes
+-/
 
 variable (W') (f : R →+* S)
 

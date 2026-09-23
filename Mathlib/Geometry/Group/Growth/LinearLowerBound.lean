@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Group.Action.Pointwise.Finset
 public import Mathlib.Algebra.Group.Subgroup.Pointwise
 public import Mathlib.Data.Nat.SuccPred
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Linear lower bound on the growth of a generating set
 

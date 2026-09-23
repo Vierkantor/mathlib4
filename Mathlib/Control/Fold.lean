@@ -14,8 +14,10 @@ public import Mathlib.Control.Traversable.Instances
 public import Mathlib.Control.Traversable.Lemmas
 public import Mathlib.Tactic.AdaptationNote
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # List folds generalized to `Traversable`
 
 Informally, we can think of `foldl` as a special case of `traverse` where we do not care about the
@@ -66,7 +68,8 @@ namespace Monoid
 variable {m : Type u → Type u} [Monad m]
 variable {α β : Type u}
 
-/-- For a list, foldl f x [y₀,y₁] reduces as follows:
+/--
+For a list, foldl f x \[y₀,y₁\] reduces as follows:
 
 ```
 calc  foldl f x [y₀,y₁]
@@ -74,7 +77,9 @@ calc  foldl f x [y₀,y₁]
 ... = foldl f (f (f x y₀) y₁) [] : rfl
 ... = f (f x y₀) y₁              : rfl
 ```
+
 with
+
 ```
 f : α → β → α
 x : α
@@ -82,6 +87,7 @@ x : α
 ```
 
 We can view the above as a composition of functions:
+
 ```
 ... = f (f x y₀) y₁              : rfl
 ... = flip f y₁ (flip f y₀ x)    : rfl
@@ -89,6 +95,7 @@ We can view the above as a composition of functions:
 ```
 
 We can use traverse and const to construct this composition:
+
 ```
 calc   const.run (traverse (fun y ↦ const.mk' (flip f y)) [y₀,y₁]) x
      = const.run ((::) <$> const.mk' (flip f y₀) <*>

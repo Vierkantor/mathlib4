@@ -14,6 +14,10 @@ public import Mathlib.Tactic.Relation.Rfl
 public import Lean.Elab.ConfigEval
 public import Mathlib.Basic.Logic.Basic
 
+set_option doc.verso true
+set_option doc.verso.module false
+set_option doc.verso.suggestions false
+
 /-!
 # The `congr!` tactic
 
@@ -156,28 +160,30 @@ structure Congr!.Config where
   do congruence on a single argument at a time. This can be used in conjunction with the
   iteration limit to control exactly how many arguments are to be processed by congruence. -/
   maxArgs : Option Nat := none
-  /-- For type arguments that are implicit or have forward dependencies, whether or not `congr!`
-  should generate equalities even if the types do not look plausibly equal.
+  /--
+  For type arguments that are implicit or have forward dependencies, whether or not `congr!`
+should generate equalities even if the types do not look plausibly equal.
 
   We have a heuristic in the main congruence generator that types
-  `α` and `β` are *plausibly equal* according to the following algorithm:
+`α` and `β` are _plausibly equal_ according to the following algorithm:
 
-  - If the types are both propositions, they are plausibly equal (`Iff`s are plausible).
-  - If the types are from different universes, they are not plausibly equal.
-  - Suppose in whnf we have `α = f a₁ ... aₘ` and `β = g b₁ ... bₘ`. If `f` is not definitionally
-    equal to `g` or `m ≠ n`, then `α` and `β` are not plausibly equal.
-  - If there is some `i` such that `aᵢ` and `bᵢ` are not plausibly equal, then `α` and `β` are
-    not plausibly equal.
-  - Otherwise, `α` and `β` are plausibly equal.
+  * If the types are both propositions, they are plausibly equal (`Iff`s are plausible).
+* If the types are from different universes, they are not plausibly equal.
+* Suppose in whnf we have `α = f a₁ ... aₘ` and `β = g b₁ ... bₘ`. If `f` is not definitionally
+  equal to `g` or `m ≠ n`, then `α` and `β` are not plausibly equal.
+* If there is some `i` such that `aᵢ` and `bᵢ` are not plausibly equal, then `α` and `β` are
+  not plausibly equal.
+* Otherwise, `α` and `β` are plausibly equal.
 
   The purpose of this is to prevent considering equalities like `ℕ = ℤ` while allowing equalities
-  such as `Fin n = Fin m` or `Subtype p = Subtype q` (so long as these are subtypes of the
-  same type).
+such as `Fin n = Fin m` or `Subtype p = Subtype q` (so long as these are subtypes of the
+same type).
 
   The way this is implemented is that when the congruence generator is comparing arguments when
-  looking at an equality of function applications, it marks a function parameter as "fixed" if the
-  provided arguments are types that are not plausibly equal. The effect of this is that congruence
-  succeeds only if those arguments are defeq at `transparency` transparency. -/
+looking at an equality of function applications, it marks a function parameter as "fixed" if the
+provided arguments are types that are not plausibly equal. The effect of this is that congruence
+succeeds only if those arguments are defeq at `transparency` transparency.
+  -/
   typeEqs : Bool := false
   /-- As a last pass, perform eta expansion of both sides of an equality. For example,
   this transforms a bare `HAdd.hAdd` into `fun x y => x + y`. -/

@@ -12,6 +12,9 @@ import Mathlib.MeasureTheory.Measure.Decomposition.IntegralRNDeriv
 import Mathlib.MeasureTheory.Function.ConditionalExpectation.LebesgueBochner
 import Mathlib.MeasureTheory.Measure.Decomposition.RadonNikodym
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Radon-Nikodym derivatives and conditional expectations
 
@@ -32,7 +35,6 @@ In all statements, `μ` and `ν` are measures with `μ ≪ ν`.
 We have two versions of the above statements, one with a.e. equality to the conditional expectation
 `condLExp` built from the Lebesgue integral, and one with a.e. equality to the
 conditional expectation `condExp` built from the Bochner integral.
-
 -/
 
 public section

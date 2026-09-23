@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Complex
 import Mathlib.Topology.Order.AtTopBotIxx
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The `arctan` function.
 

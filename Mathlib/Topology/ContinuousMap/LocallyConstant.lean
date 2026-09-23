@@ -9,9 +9,11 @@ public import Mathlib.Topology.LocallyConstant.Algebra
 public import Mathlib.Topology.ContinuousMap.Basic
 public import Mathlib.Topology.ContinuousMap.Algebra
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The algebra morphism from locally constant functions to continuous functions.
-
 -/
 
 @[expose] public section

@@ -9,16 +9,18 @@ public import Mathlib.Algebra.Algebra.Tower
 public meta import Mathlib.Tactic.Attr.Core
 public meta import Mathlib.Tactic.ToAdditive
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
-## Algebraize tactic
+/-!
+# Algebraize tactic
 
 This file defines the `algebraize` tactic. The basic functionality of this tactic is to
 automatically add `Algebra` instances given `RingHom`s. For example, `algebraize [f, g]` where
 `f : A →+* B` and `g : B →+* C` are `RingHom`s, will add the instances `Algebra A B` and
 `Algebra B C` corresponding to these `RingHom`s.
 
-## Further functionality
+# Further functionality
 
 When given a composition of `RingHom`s, e.g. `algebraize [g.comp f]`, the tactic will also try to
 add the instance `IsScalarTower A B C` if possible.
@@ -30,7 +32,7 @@ the instance `Algebra A B` and the corresponding property `Algebra.FiniteType A 
 which `RingHom` properties have a corresponding `Algebra` property through the `algebraize`
 attribute.
 
-## Algebraize attribute
+# Algebraize attribute
 
 The `algebraize` attribute is used to tag `RingHom` properties that can be converted to `Algebra`
 properties. It assumes that the tagged declaration has a name of the form `RingHom.Property` and
@@ -50,26 +52,31 @@ specified declaration should be one of the following:
    constructor.
 
 Here are three examples of properties tagged with the `algebraize` attribute:
+
 ```
 @[algebraize]
 def RingHom.FiniteType (f : A →+* B) : Prop :=
   @Algebra.FiniteType A B _ _ f.toAlgebra
 ```
+
 An example when the `Name` is provided (as the `Algebra` does not have the expected name):
+
 ```
 @[algebraize Module.Finite]
 def RingHom.Finite (f : A →+* B) : Prop :=
   letI : Algebra A B := f.toAlgebra
   Module.Finite A B
 ```
+
 An example with a constructor as parameter (as the two properties are not definitionally the same):
+
 ```
 @[algebraize Algebra.Flat.out]
 class RingHom.Flat {R : Type u} {S : Type v} [CommRing R] [CommRing S] (f : R →+* S) : Prop where
   out : f.toAlgebra.Flat := by infer_instance
 ```
 
-## `algebraize_only`
+# `algebraize_only`
 
 To avoid searching through the local context and adding corresponding `Algebra` properties, use
 `algebraize_only` which only adds `Algebra` and `IsScalarTower` instances.

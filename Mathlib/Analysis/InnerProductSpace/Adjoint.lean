@@ -12,6 +12,9 @@ public import Mathlib.Analysis.LocallyConvex.SeparatingDual
 public import Mathlib.Tactic.CrossRefAttribute
 
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Adjoint of operators on Hilbert spaces
 
@@ -40,12 +43,11 @@ finite-dimensional spaces.
 
 ## References
 
-* [Sheldon Axler, *Linear Algebra Done Right*][axler2024]
+* ‍\[Sheldon Axler, _Linear Algebra Done Right_\]\[axler2024\]
 
 ## Tags
 
 adjoint
-
 -/
 
 noncomputable section
@@ -60,7 +62,9 @@ variable [InnerProductSpace 𝕜 E] [InnerProductSpace 𝕜 F] [InnerProductSpac
 
 local notation "⟪" x ", " y "⟫" => inner 𝕜 x y
 
-/-! ### Adjoint operator -/
+/-!
+# Adjoint operator
+-/
 
 
 open InnerProductSpace
@@ -227,7 +231,9 @@ theorem ker_le_ker_iff_range_le_range [FiniteDimensional 𝕜 E] {T U : E →L[�
   have := FiniteDimensional.complete 𝕜 E
   simpa [orthogonal_ker, hT, hU] using Submodule.orthogonal_le h
 
-/-- Infinite-dimensional version of 7.64(b) in [axler2024]. -/
+/--
+Infinite-dimensional version of 7.64(b) in \[axler2024\].
+-/
 theorem ker_adjoint_comp_self (T : E →L[𝕜] F) : (T† ∘L T).ker = T.ker := by
   refine le_antisymm (fun _ _ ↦ ?_) fun _ _ ↦ by simp_all
   rw [LinearMap.mem_ker, ← inner_self_eq_zero (𝕜 := 𝕜), coe_coe, ← adjoint_inner_left]
@@ -352,7 +358,9 @@ end ContinuousLinearMap
 
 @[expose] public section
 
-/-! ### Self-adjoint operators -/
+/-!
+# Self-adjoint operators
+-/
 
 
 namespace IsSelfAdjoint
@@ -629,21 +637,27 @@ theorem IsSymmetric.adjoint_eq {A : E →ₗ[𝕜] E} (hA : A.IsSymmetric) :
 lemma adjoint_id : (.id : E →ₗ[𝕜] E).adjoint = .id := by simp
 lemma adjoint_one : (1 : E →ₗ[𝕜] E).adjoint = 1 := by simp
 
-/-- 7.6(b) from [axler2024].
-See `ContinuousLinearMap.orthogonal_ker` for the infinite-dimensional version. -/
+/--
+7.6(b) from \[axler2024\].
+See `ContinuousLinearMap.orthogonal_ker` for the infinite-dimensional version.
+-/
 lemma orthogonal_ker (A : E →ₗ[𝕜] F) : A.kerᗮ = A.adjoint.range := by
   have := FiniteDimensional.complete 𝕜 E
   have := FiniteDimensional.complete 𝕜 F
   simpa using! A.toContinuousLinearMap.orthogonal_ker
 
-/-- 7.6(a) from [axler2024].
-See `ContinuousLinearMap.orthogonal_range` for the infinite-dimensional version. -/
+/--
+7.6(a) from \[axler2024\].
+See `ContinuousLinearMap.orthogonal_range` for the infinite-dimensional version.
+-/
 lemma orthogonal_range (A : E →ₗ[𝕜] F) : A.rangeᗮ = A.adjoint.ker := by
   have := FiniteDimensional.complete 𝕜 E
   have := FiniteDimensional.complete 𝕜 F
   simpa using! A.toContinuousLinearMap.orthogonal_range
 
-/-- 7.64(b) in [axler2024] -/
+/--
+7.64(b) in \[axler2024\]
+-/
 lemma ker_adjoint_comp_self (A : E →ₗ[𝕜] F) : (A.adjoint ∘ₗ A).ker = A.ker := by
   have := FiniteDimensional.complete 𝕜 E
   have := FiniteDimensional.complete 𝕜 F
@@ -670,7 +684,9 @@ lemma self_comp_adjoint_injective_iff (A : E →ₗ[𝕜] F) :
     Function.Injective (A ∘ A.adjoint) ↔ Function.Injective A.adjoint := by
   simpa using A.adjoint.adjoint_comp_self_injective_iff
 
-/-- 7.64(c) in [axler2024]. -/
+/--
+7.64(c) in \[axler2024\].
+-/
 lemma range_adjoint_comp_self (A : E →ₗ[𝕜] F) : (A.adjoint ∘ₗ A).range = A.adjoint.range :=
   calc
     (A.adjoint ∘ₗ A).range = (A.adjoint ∘ₗ A).kerᗮ := by simp [orthogonal_ker]
@@ -679,7 +695,9 @@ lemma range_adjoint_comp_self (A : E →ₗ[𝕜] F) : (A.adjoint ∘ₗ A).rang
 lemma range_self_comp_adjoint (A : E →ₗ[𝕜] F) : (A ∘ₗ A.adjoint).range = A.range := by
   simpa using A.adjoint.range_adjoint_comp_self
 
-/-- Part of 7.64(d) in [axler2024]. -/
+/--
+Part of 7.64(d) in \[axler2024\].
+-/
 theorem finrank_range_adjoint (A : E →ₗ[𝕜] F) :
     Module.finrank 𝕜 A.adjoint.range = Module.finrank 𝕜 A.range := calc
   _ = Module.finrank 𝕜 F - Module.finrank 𝕜 A.adjoint.ker := by

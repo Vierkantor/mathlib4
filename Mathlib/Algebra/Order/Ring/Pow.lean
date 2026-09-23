@@ -9,7 +9,11 @@ public import Mathlib.Data.Nat.Cast.Commute
 public import Mathlib.Data.Nat.Cast.Order.Ring
 public import Mathlib.Tactic.Abel
 
-/-! # Bernoulli's inequality
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Bernoulli's inequality
 
 In this file we prove several versions of Bernoulli's inequality.
 Besides the standard version `1 + n * a ≤ (1 + a) ^ n`,

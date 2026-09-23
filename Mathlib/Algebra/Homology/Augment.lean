@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Algebra.Homology.Single
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Augmentation and truncation of `ℕ`-indexed (co)chain complexes.
 -/

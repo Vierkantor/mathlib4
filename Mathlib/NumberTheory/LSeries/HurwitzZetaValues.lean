@@ -8,6 +8,9 @@ module
 public import Mathlib.NumberTheory.ZetaValues
 public import Mathlib.NumberTheory.LSeries.RiemannZeta
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Special values of Hurwitz and Riemann zeta functions
 
@@ -22,11 +25,11 @@ sums in the convergence range.)
 
 ## Main results
 
-- `hurwitzZeta_neg_nat`: for `k : ℕ` with `k ≠ 0`, and any `x ∈ ℝ / ℤ`, the special value
+* `hurwitzZeta_neg_nat`: for `k : ℕ` with `k ≠ 0`, and any `x ∈ ℝ / ℤ`, the special value
   `hurwitzZeta x (-k)` is equal to `-(Polynomial.bernoulli (k + 1) x) / (k + 1)`.
-- `riemannZeta_neg_nat_eq_bernoulli` : for any `k ∈ ℕ` we have the formula
+* `riemannZeta_neg_nat_eq_bernoulli` : for any `k ∈ ℕ` we have the formula
   `riemannZeta (-k) = (-1) ^ k * bernoulli (k + 1) / (k + 1)`
-- `riemannZeta_two_mul_nat`: formula for `ζ(2 * k)` for `k ∈ ℕ, k ≠ 0` in terms of Bernoulli
+* `riemannZeta_two_mul_nat`: formula for `ζ(2 * k)` for `k ∈ ℕ, k ≠ 0` in terms of Bernoulli
   numbers
 
 ## TODO

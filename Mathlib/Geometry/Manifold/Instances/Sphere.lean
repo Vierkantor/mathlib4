@@ -17,6 +17,9 @@ public import Mathlib.Geometry.Manifold.MFDeriv.NormedSpace
 public import Mathlib.LinearAlgebra.Complex.FiniteDimensional
 public import Mathlib.Tactic.Module
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Manifold structure on the sphere
 
@@ -34,22 +37,23 @@ charts here are obtained by composing the open partial homeomorphisms `stereogra
 isometries from `(ℝ ∙ v)ᗮ` to Euclidean space.
 
 We prove two lemmas about `C^n` maps:
+
 * `contMDiff_coe_sphere` states that the coercion map from the sphere into `E` is analytic;
-  this is a useful tool for constructing smooth maps *from* the sphere.
+  this is a useful tool for constructing smooth maps _from_ the sphere.
 * `contMDiff.codRestrict_sphere` states that a map from a manifold into the sphere is
   `C^m` if its lift to a map to `E` is `C^m`; this is a useful tool for constructing `C^m` maps
-  *to* the sphere.
+  _to_ the sphere.
 
 As an application we prove `contMDiffNegSphere`, that the antipodal map is analytic.
 
 Finally, we equip the `Circle` (defined in `Analysis.Complex.Circle` to be the sphere in `ℂ`
 centred at `0` of radius `1`) with the following structure:
+
 * a charted space with model space `EuclideanSpace ℝ (Fin 1)` (inherited from `Metric.Sphere`)
 * an analytic Lie group with model with corners `𝓡 1`
 
 We furthermore show that `Circle.exp` (defined in `Analysis.Complex.Circle` to be the natural
 map `fun t ↦ exp (t * I)` from `ℝ` to `Circle`) is analytic.
-
 
 ## Implementation notes
 
@@ -81,7 +85,9 @@ section StereographicProjection
 
 variable (v : E)
 
-/-! ### Construction of the stereographic projection -/
+/-!
+# Construction of the stereographic projection
+-/
 
 
 /-- Stereographic projection, forward direction. This is a map from an inner product space `E` to
@@ -313,7 +319,7 @@ end StereographicProjection
 section ChartedSpace
 
 /-!
-### Charted space structure on the sphere
+# Charted space structure on the sphere
 
 In this section we construct a charted space structure on the unit sphere in a finite-dimensional
 real inner product space `E`; that is, we show that it is locally homeomorphic to the Euclidean
@@ -380,7 +386,9 @@ theorem stereographic'_symm_apply {n : ℕ} [Fact (finrank ℝ E = n + 1)] (v : 
         (‖(U.symm x : E)‖ ^ 2 + 4)⁻¹ • (‖(U.symm x : E)‖ ^ 2 - 4) • v.val := by
   simp [stereographic, stereographic', Submodule.norm_coe]
 
-/-! ### Analytic manifold structure on the sphere -/
+/-!
+# Analytic manifold structure on the sphere
+-/
 
 /-- The unit sphere in an `n + 1`-dimensional inner product space `E` is an analytic manifold,
 modelled on the Euclidean space of dimension `n`. -/

@@ -9,6 +9,9 @@ public import Mathlib.Combinatorics.SimpleGraph.Walk.Maps
 public import Mathlib.Combinatorics.SimpleGraph.Walk.Operations
 public import Mathlib.Combinatorics.SimpleGraph.Maps
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Subwalks
 
@@ -20,6 +23,7 @@ We define a relation on walks stating that one walk is the subwalk of another.
   subwalk of the second walk.
 
 ## Tags
+
 walks, subwalks
 -/
 

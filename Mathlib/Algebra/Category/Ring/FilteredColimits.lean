@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Category.Ring.Basic
 public import Mathlib.Algebra.Category.Grp.FilteredColimits
 public import Mathlib.Algebra.Ring.ULift
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The forgetful functor from (commutative) (semi-) rings preserves filtered colimits.
 
@@ -21,7 +24,6 @@ carries the structure of a semiring, thereby showing that the forgetful functor
 `forget₂ SemiRingCat MonCat` preserves filtered colimits.
 In particular, this implies that `forget SemiRingCat` preserves filtered colimits.
 Similarly for `CommSemiRingCat`, `RingCat` and `CommRingCat`.
-
 -/
 
 @[expose] public section

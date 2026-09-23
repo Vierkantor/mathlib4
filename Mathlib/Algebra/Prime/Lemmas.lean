@@ -11,6 +11,9 @@ public import Mathlib.Algebra.GroupWithZero.Equiv
 public import Mathlib.Algebra.Prime.Defs
 public import Mathlib.Order.Monotone.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Associated, prime, and irreducible elements.
 

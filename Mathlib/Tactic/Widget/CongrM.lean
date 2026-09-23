@@ -10,7 +10,11 @@ public import ProofWidgets.Component.Basic
 public import ProofWidgets.Component.OfRpcMethod
 public meta import ProofWidgets.Component.Basic
 
-/-! # CongrM widget
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# CongrM widget
 
 This file defines a `congrm?` tactic that displays a widget panel allowing to generate
 a `congrm` call with holes specified by selecting subexpressions in the goal.
@@ -21,7 +25,9 @@ public meta section
 open Lean Meta Server ProofWidgets
 
 
-/-! ### CongrM widget -/
+/-!
+# CongrM widget
+-/
 
 /-- Return the link text and inserted text above and below of the congrm widget. -/
 @[nolint unusedArguments]

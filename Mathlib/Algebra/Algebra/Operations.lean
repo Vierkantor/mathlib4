@@ -15,6 +15,9 @@ public import Mathlib.Algebra.Ring.Submonoid.Pointwise
 public import Mathlib.Data.Set.Semiring
 public import Mathlib.GroupTheory.GroupAction.SubMulAction.Pointwise
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Multiplication and division of submodules of an algebra.
 
@@ -26,9 +29,9 @@ Let `R` be a commutative ring (or semiring) and let `A` be an `R`-algebra.
 
 * `1 : Submodule R A`   : the R-submodule R of the R-algebra A
 * `Mul (Submodule R A)` : multiplication of two sub-R-modules M and N of A is defined to be
-                              the smallest submodule containing all the products `m * n`.
+  the smallest submodule containing all the products `m * n`.
 * `Div (Submodule R A)` : `I / J` is defined to be the submodule consisting of all `a : A` such
-                              that `a • J ⊆ I`
+  that `a • J ⊆ I`
 
 It is proved that `Submodule R A` is a semiring, and also an algebra over `Set A`.
 
@@ -755,8 +758,10 @@ theorem mker_spanSingleton :
   ext; simp_rw [Submonoid.mem_map, IsUnit.mem_submonoid_iff, IsUnit, existsAndEq, true_and, eq_comm]
   exact span_singleton_eq_one_iff
 
-/-- Exactness of the sequence `1 → Rˣ → Aˣ → (Submodule R A)ˣ → Pic R → Pic A` at `Aˣ`.
-See Exercise I.3.7(iv) in [Weibel2013] or Theorem 2.4 in [RobertsSingh1993]. -/
+/--
+Exactness of the sequence `1 → Rˣ → Aˣ → (Submodule R A)ˣ → Pic R → Pic A` at `Aˣ`.
+See Exercise I.3.7(iv) in \[Weibel2013\] or Theorem 2.4 in \[RobertsSingh1993\].
+-/
 /- Note: `assert_not_exists Submodule.hasQuotient` in `Mathlib.RingTheory.Ideal.Operations`
 forbids importing `Function.MulExact` into this file. -/
 theorem ker_unitsMap_spanSingleton :
@@ -852,12 +857,13 @@ theorem singleton_smul (a : A) (M : Submodule R A) :
 
 section Quotient
 
-/-- The elements of `I / J` are the `x` such that `x • J ⊆ I`.
+/--
+The elements of `I / J` are the `x` such that `x • J ⊆ I`.
 
 In fact, we define `x ∈ I / J` to be `∀ y ∈ J, x * y ∈ I` (see `mem_div_iff_forall_mul_mem`),
 which is equivalent to `x • J ⊆ I` (see `mem_div_iff_smul_subset`), but nicer to use in proofs.
 
-This is the general form of the ideal quotient, traditionally written $I : J$.
+This is the general form of the ideal quotient, traditionally written $`I : J`.
 -/
 instance : Div (Submodule R A) :=
   ⟨fun I J =>

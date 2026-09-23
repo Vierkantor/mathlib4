@@ -10,6 +10,9 @@ public import Mathlib.Topology.MetricSpace.Isometry
 public import Mathlib.Topology.MetricSpace.Lipschitz
 public import Mathlib.Data.FunLike.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Dilations
 
@@ -28,7 +31,7 @@ infinite distance.
 
 ## Notation
 
-- `α →ᵈ β`: notation for `Dilation α β`.
+* `α →ᵈ β`: notation for `Dilation α β`.
 
 ## Implementation notes
 
@@ -41,13 +44,13 @@ needed.
 
 ## TODO
 
-- Introduce dilation equivs.
-- Refactor the `Isometry` API to match the `*HomClass` API below.
+* Introduce dilation equivs.
+* Refactor the `Isometry` API to match the `*HomClass` API below.
 
 ## References
 
-- https://en.wikipedia.org/wiki/Dilation_(metric_space)
-- [Marcel Berger, *Geometry*][berger1987]
+* https://en.wikipedia.org/wiki/Dilation\_(metric\_space)
+* ‍\[Marcel Berger, _Geometry_\]\[berger1987\]
 -/
 
 @[expose] public section

@@ -11,9 +11,11 @@ public import Mathlib.Tactic.AdaptationNote
 public import Mathlib.Topology.Algebra.Monoid.Defs
 public import Mathlib.Data.Vector.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Topology on lists and vectors
-
 -/
 
 @[expose] public section

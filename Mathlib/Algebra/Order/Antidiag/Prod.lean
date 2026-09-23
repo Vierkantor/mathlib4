@@ -11,6 +11,10 @@ public import Mathlib.Algebra.Order.Sub.Defs
 public import Mathlib.Data.Finset.Basic
 public import Mathlib.Order.Interval.Finset.Defs
 
+set_option doc.verso true
+set_option doc.verso.module false
+set_option doc.verso.suggestions false
+
 /-! # Antidiagonal with values in general types
 
 We define a type class `Finset.HasAntidiagonal A` which contains a function

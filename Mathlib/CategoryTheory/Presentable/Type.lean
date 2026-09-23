@@ -9,13 +9,15 @@ public import Mathlib.CategoryTheory.Generator.Type
 public import Mathlib.CategoryTheory.Presentable.StrongGenerator
 public import Mathlib.CategoryTheory.Types.Set
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Presentable objects in Type
 
 In this file, we show that if `κ : Cardinal.{u}` is a regular cardinal,
 then `X : Type u` is `κ`-presentable in the category of types iff
 `HasCardinalLT X κ` holds, i.e. the cardinal number of `X` is less than `κ`.
-
 -/
 
 @[expose] public section

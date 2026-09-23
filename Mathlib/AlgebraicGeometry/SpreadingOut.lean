@@ -10,6 +10,9 @@ public import Mathlib.AlgebraicGeometry.Noetherian
 public import Mathlib.AlgebraicGeometry.Stalk
 public import Mathlib.AlgebraicGeometry.Properties
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Spreading out morphisms
 
@@ -17,8 +20,10 @@ Under certain conditions, a morphism on stalks `Spec 𝒪_{X, x} ⟶ Spec 𝒪_{
 out into a neighborhood of `x`.
 
 ## Main result
+
 Given `S`-schemes `X Y` and points `x : X` `y : Y` over `s : S`.
 Suppose we have the following diagram of `S`-schemes
+
 ```
 Spec 𝒪_{X, x} ⟶ X
     |
@@ -26,7 +31,9 @@ Spec 𝒪_{X, x} ⟶ X
     ↓
 Spec 𝒪_{Y, y} ⟶ Y
 ```
+
 We would like to spread `Spec(φ)` out to an `S`-morphism on an open subscheme `U ⊆ X`
+
 ```
 Spec 𝒪_{X, x} ⟶ U ⊆ X
     |             |
@@ -34,15 +41,15 @@ Spec 𝒪_{X, x} ⟶ U ⊆ X
     ↓             ↓
 Spec 𝒪_{Y, y} ⟶ Y
 ```
-- `AlgebraicGeometry.spread_out_unique_of_isGermInjective`:
+
+* `AlgebraicGeometry.spread_out_unique_of_isGermInjective`:
   The lift is "unique" if the germ map is injective at `x`.
-- `AlgebraicGeometry.spread_out_of_isGermInjective`:
+* `AlgebraicGeometry.spread_out_of_isGermInjective`:
   The lift exists if `Y` is locally of finite type and the germ map is injective at `x`.
 
 ## TODO
 
 Show that certain morphism properties can also be spread out.
-
 -/
 
 public section

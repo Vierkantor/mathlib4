@@ -16,6 +16,9 @@ public import Mathlib.Algebra.Module.LinearMap.End
 public import Mathlib.Algebra.Module.Pi
 public import Mathlib.Algebra.Module.Prod
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Further results on (semi)linear equivalences.
 -/
@@ -347,13 +350,14 @@ theorem piApply_apply_apply {V : M → Type*}
 variable (R S M)
 variable [Semiring R] [Semiring S] [AddCommMonoid M] [Module R M]
 
-/-- The equivalence between R-linear maps from `R` to `M`, and points of `M` itself.
+/--
+The equivalence between R-linear maps from `R` to `M`, and points of `M` itself.
 This says that the forgetful functor from `R`-modules to types is representable, by `R`.
 
 This is an `S`-linear equivalence, under the assumption that `S` acts on `M` commuting with `R`.
 When `R` is commutative, we can take this to be the usual action with `S = R`.
 Otherwise, `S = ℕ` shows that the equivalence is additive.
-See note [bundled maps over different rings].
+See note \[bundled maps over different rings\].
 -/
 @[simps]
 def ringLmapEquivSelf [Module S M] [SMulCommClass R S M] : (R →ₗ[R] M) ≃ₗ[S] M :=

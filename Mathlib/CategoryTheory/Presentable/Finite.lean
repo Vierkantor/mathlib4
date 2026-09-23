@@ -11,12 +11,14 @@ public import Mathlib.CategoryTheory.Limits.Types.Filtered
 public import Mathlib.CategoryTheory.MorphismProperty.Basic
 public import Mathlib.CategoryTheory.Presentable.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Finitely Presentable Objects
 
 We define finitely presentable objects as a synonym for `ℵ₀`-presentable objects,
 and link this definition with the preservation of filtered colimits.
-
 -/
 
 @[expose] public section

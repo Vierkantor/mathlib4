@@ -8,13 +8,15 @@ module
 public import Mathlib.LinearAlgebra.Quotient.Basic
 public import Mathlib.LinearAlgebra.Quotient.Card
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Isomorphism theorems for modules.
 
 * The Noether's first, second, and third isomorphism theorems for modules are proved as
   `LinearMap.quotKerEquivRange`, `LinearMap.quotientInfEquivSupQuotient` and
   `Submodule.quotientQuotientEquivQuotient`.
-
 -/
 
 @[expose] public section

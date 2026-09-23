@@ -9,6 +9,9 @@ public import Mathlib.Data.Fintype.EquivFin
 public import Mathlib.Data.Fintype.Sigma
 public import Mathlib.Logic.Equiv.Sigma
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Finiteness of sigma types
 -/

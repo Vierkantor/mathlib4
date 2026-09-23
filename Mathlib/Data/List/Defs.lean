@@ -12,6 +12,9 @@ public import Batteries.Tactic.Lint.Basic
 public import Batteries.Data.List.Basic
 public import Batteries.Logic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Definitions on lists
 

@@ -10,6 +10,9 @@ public import Mathlib.Topology.Compactification.StoneCech
 public import Mathlib.CategoryTheory.Preadditive.Projective.Basic
 public import Mathlib.CategoryTheory.ConcreteCategory.EpiMono
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # CompHaus has enough projectives
 
@@ -25,8 +28,7 @@ Let `X` be a compact Hausdorff space.
 
 ## Reference
 
-See [miraglia2006introduction] Chapter 21 for a proof that `CompHaus` has enough projectives.
-
+See \[miraglia2006introduction\] Chapter 21 for a proof that `CompHaus` has enough projectives.
 -/
 
 @[expose] public section

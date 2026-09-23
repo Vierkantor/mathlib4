@@ -8,6 +8,9 @@ module
 public import Mathlib.RingTheory.Idempotents
 public import Mathlib.Algebra.DirectSum.Decomposition
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Decomposition of the identity of a semiring into orthogonal idempotents
 

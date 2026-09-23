@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Init
 public import Batteries.Control.AlternativeMonad
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Monad instances for `List`
 -/

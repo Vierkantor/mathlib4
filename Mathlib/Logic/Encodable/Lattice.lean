@@ -9,6 +9,9 @@ public import Mathlib.Logic.Encodable.Basic
 public import Mathlib.Logic.Pairwise
 public import Mathlib.Data.Set.Subsingleton
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lattice operations on encodable types
 

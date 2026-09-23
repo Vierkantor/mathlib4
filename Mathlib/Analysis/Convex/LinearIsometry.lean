@@ -9,6 +9,9 @@ public import Mathlib.Analysis.Convex.ContinuousLinearEquiv
 public import Mathlib.Analysis.Convex.StrictConvexSpace
 public import Mathlib.Analysis.Normed.Operator.LinearIsometry
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # (Strict) convexity and linear isometries
 

@@ -11,6 +11,9 @@ public import Mathlib.Analysis.Normed.Operator.Mul
 public import Mathlib.Analysis.Normed.Ring.Units
 public import Mathlib.Analysis.Analytic.OfScalars
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Various ways to combine analytic functions
 
@@ -38,7 +41,7 @@ variable {A : Type*} [NormedRing A] [NormedAlgebra 𝕜 A]
 variable {𝕝 : Type*} [NormedDivisionRing 𝕝] [NormedAlgebra 𝕜 𝕝]
 
 /-!
-### Constants are analytic
+# Constants are analytic
 -/
 
 theorem hasFPowerSeriesOnBall_const {c : F} {e : E} :
@@ -69,7 +72,7 @@ theorem analyticOn_const {v : F} {s : Set E} : AnalyticOn 𝕜 (fun _ => v) s :=
   analyticOnNhd_const.analyticOn
 
 /-!
-### Addition, negation, subtraction, scalar multiplication
+# Addition, negation, subtraction, scalar multiplication
 -/
 
 section
@@ -265,7 +268,7 @@ lemma AnalyticOnNhd.div_const {f : E → 𝕝} (hf : AnalyticOnNhd 𝕜 f s) {c 
 end
 
 /-!
-### Cartesian products are analytic
+# Cartesian products are analytic
 -/
 
 /-- The radius of the Cartesian product of two formal series is the minimum of their radii. -/
@@ -448,7 +451,7 @@ theorem AnalyticOn.curry_right
   fun y m ↦ (fa (x, y) m).curry_right
 
 /-!
-### Analyticity in Pi spaces
+# Analyticity in Pi spaces
 
 In this section, `f : Π i, E → Fm i` is a family of functions, i.e., each `f i` is a function,
 from `E` to a space `Fm i`. We discuss whether the family as a whole is analytic as a function
@@ -596,7 +599,7 @@ lemma analyticOnNhd_pi_iff :
 end
 
 /-!
-### Arithmetic on analytic functions
+# Arithmetic on analytic functions
 -/
 
 /-- Scalar multiplication is analytic (jointly in both variables). The statement is a little
@@ -729,7 +732,7 @@ lemma AnalyticOnNhd.zpow_nonneg {f : E → 𝕝} {s : Set E} {n : ℤ} (hf : Ana
   apply pow hf
 
 /-!
-### Composition with a linear map
+# Composition with a linear map
 -/
 
 section compContinuousLinearMap
@@ -794,7 +797,7 @@ theorem AnalyticOnNhd.compContinuousLinearMap (hf : AnalyticOnNhd 𝕜 f s) :
 end compContinuousLinearMap
 
 /-!
-### Restriction of scalars
+# Restriction of scalars
 -/
 
 section
@@ -844,7 +847,7 @@ end
 
 
 /-!
-### Inversion is analytic
+# Inversion is analytic
 -/
 
 section Geometric
@@ -1143,7 +1146,7 @@ theorem AnalyticOnNhd.div {f g : E → 𝕝} {s : Set E}
   (fa x m).div (ga x m) (g0 x m)
 
 /-!
-### Finite sums and products of analytic functions
+# Finite sums and products of analytic functions
 -/
 
 /-- Finite sums of analytic functions are analytic -/
@@ -1257,7 +1260,7 @@ theorem analyticAt_finprod {α : Type*} {A : Type*} [NormedCommRing A] [NormedAl
     apply analyticAt_const
 
 /-!
-### Unshifting
+# Unshifting
 -/
 
 section

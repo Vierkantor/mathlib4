@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.Finset.Option
 public import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lemmas about products and sums over finite sets in `Option α`
 

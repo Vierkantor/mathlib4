@@ -9,10 +9,14 @@ public import Mathlib.CategoryTheory.Bicategory.Functor.Prelax
 public import Mathlib.Tactic.CategoryTheory.Slice
 public import Mathlib.Tactic.CategoryTheory.ToApp
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lax functors
 
 A lax functor `F` between bicategories `B` and `C` consists of
+
 * a function between objects `F.obj : B → C`,
 * a family of functions between 1-morphisms `F.map : (a ⟶ b) → (F.obj a ⟶ F.obj b)`,
 * a family of functions between 2-morphisms `F.map₂ : (f ⟶ g) → (F.map f ⟶ F.map g)`,
@@ -33,7 +37,6 @@ A lax functor `F` between bicategories `B` and `C` consists of
 Some constructions in the bicategory library have only been done in terms of oplax functors,
 since lax functors had not yet been added (e.g `FunctorBicategory.lean`). A possible project would
 be to mirror these constructions for lax functors.
-
 -/
 
 @[expose] public section

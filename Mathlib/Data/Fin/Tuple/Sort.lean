@@ -11,8 +11,10 @@ public import Mathlib.Data.Prod.Lex
 public import Mathlib.Order.Interval.Finset.Fin
 public import Mathlib.Data.Fintype.Fin
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Sorting tuples by their values
 
 Given an `n`-tuple `f : Fin n → α` where `α` is ordered,
@@ -24,7 +26,6 @@ This file provides an API for doing so, with the sorted `n`-tuple given by
 
 * `Tuple.sort`: given `f : Fin n → α`, produces a permutation on `Fin n`
 * `Tuple.monotone_sort`: `f ∘ Tuple.sort f` is `Monotone`
-
 -/
 
 @[expose] public section

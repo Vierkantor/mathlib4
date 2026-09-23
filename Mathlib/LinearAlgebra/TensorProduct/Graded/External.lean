@@ -11,15 +11,19 @@ public import Mathlib.RingTheory.TensorProduct.Basic
 public import Mathlib.LinearAlgebra.DirectSum.TensorProduct
 public import Mathlib.Algebra.DirectSum.Algebra
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Graded tensor products over graded algebras
 
-The graded tensor product $A \hat\otimes_R B$ is imbued with a multiplication defined on homogeneous
+The graded tensor product $`A \hat\otimes_R B` is imbued with a multiplication defined on
+homogeneous
 tensors by:
 
-$$(a \otimes b) \cdot (a' \otimes b') = (-1)^{\deg a' \deg b} (a \cdot a') \otimes (b \cdot b')$$
+$$`(a \otimes b) \cdot (a' \otimes b') = (-1)^{\deg a' \deg b} (a \cdot a') \otimes (b \cdot b')`
 
-where $A$ and $B$ are algebras graded by `ℕ`, `ℤ`, or `ZMod 2` (or more generally, any index
+where $`A` and $`B` are algebras graded by `ℕ`, `ℤ`, or `ZMod 2` (or more generally, any index
 that satisfies `Module ι (Additive ℤˣ)`).
 
 The results for internally-graded algebras (via `GradedAlgebra`) are elsewhere, as is the type
@@ -35,14 +39,13 @@ The results for internally-graded algebras (via `GradedAlgebra`) are elsewhere, 
 ## Implementation notes
 
 Rather than implementing the multiplication directly as above, we first implement the canonical
-non-trivial braiding sending $a \otimes b$ to $(-1)^{\deg a' \deg b} (b \otimes a)$, as the
+non-trivial braiding sending $`a \otimes b` to $`(-1)^{\deg a' \deg b} (b \otimes a)`, as the
 multiplication follows trivially from this after some point-free nonsense.
 
 ## References
 
 * https://math.stackexchange.com/q/202718/1896
-* [*Algebra I*, Bourbaki : Chapter III, §4.7, example (2)][bourbaki1989]
-
+* ‍\[_Algebra I_, Bourbaki : Chapter III, §4.7, example (2)\]\[bourbaki1989\]
 -/
 
 @[expose] public section
@@ -97,9 +100,11 @@ theorem gradedCommAux_comp_gradedCommAux :
   rw [gradedCommAux_lof_tmul, LinearMap.map_smul_of_tower, gradedCommAux_lof_tmul, smul_smul,
     mul_comm i.2 i.1, Int.units_mul_self, one_smul]
 
-/-- The braiding operation for tensor products of externally `ι`-graded algebras.
+/--
+The braiding operation for tensor products of externally `ι`-graded algebras.
 
-This sends $a ⊗ b$ to $(-1)^{\deg a' \deg b} (b ⊗ a)$. -/
+This sends $`a ⊗ b` to $`(-1)^{\deg a' \deg b} (b ⊗ a)`.
+-/
 def gradedComm :
     (⨁ i, 𝒜 i) ⊗[R] (⨁ i, ℬ i) ≃ₗ[R] (⨁ i, ℬ i) ⊗[R] (⨁ i, 𝒜 i) := by
   refine TensorProduct.directSum R R 𝒜 ℬ ≪≫ₗ ?_ ≪≫ₗ (TensorProduct.directSum R R ℬ 𝒜).symm

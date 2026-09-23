@@ -8,6 +8,9 @@ module
 public import Mathlib.CategoryTheory.Category.Preorder
 public import Mathlib.CategoryTheory.EqToHom
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Functors from the category of the ordered set `ℕ`
 
@@ -21,7 +24,6 @@ the naturality condition only for morphisms `n ⟶ n + 1`.
 
 The duals of the above for functors `ℕᵒᵖ ⥤ C` are given by `Functor.ofOpSequence` and
 `NatTrans.ofOpSequence`.
-
 -/
 
 @[expose] public section

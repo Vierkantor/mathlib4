@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Group.Nat.Defs
 public import Mathlib.Tactic.Push
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `lrat_proof` command
 
@@ -26,12 +29,15 @@ as a standard propositional theorem.
 The input to the `lrat_proof` command is the name of the theorem to define,
 and the statement (written in CNF format) and the proof (in LRAT format).
 For example:
+
 ```
 lrat_proof foo
   "p cnf 2 4  1 2 0  -1 2 0  1 -2 0  -1 -2 0"
   "5 -2 0 4 3 0  5 d 3 4 0  6 1 0 5 1 0  6 d 1 0  7 0 5 2 6 0"
 ```
+
 produces a theorem:
+
 ```
 foo : ∀ (a a_1 : Prop), (¬a ∧ ¬a_1 ∨ a ∧ ¬a_1) ∨ ¬a ∧ a_1 ∨ a ∧ a_1
 ```

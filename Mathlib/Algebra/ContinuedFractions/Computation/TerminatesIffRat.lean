@@ -9,6 +9,10 @@ public import Mathlib.Algebra.ContinuedFractions.Computation.Approximations
 public import Mathlib.Algebra.ContinuedFractions.Computation.CorrectnessTerminating
 public import Mathlib.Data.Rat.Floor
 
+set_option doc.verso true
+set_option doc.verso.module false
+set_option doc.verso.suggestions false
+
 /-!
 # Termination of Continued Fraction Computations (`GenContFract.of`)
 

@@ -7,22 +7,25 @@ module
 
 public import Mathlib.Analysis.SpecialFunctions.Gamma.Beta
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Deligne's archimedean Gamma-factors
 
 In the theory of L-series one frequently encounters the following functions (of a complex variable
-`s`) introduced in Deligne's landmark paper *Valeurs de fonctions L et périodes d'intégrales*:
+`s`) introduced in Deligne's landmark paper _Valeurs de fonctions L et périodes d'intégrales_:
 
-$$ \Gamma_{\mathbb{R}}(s) = \pi ^ {-s / 2} \Gamma (s / 2) $$
+$$`  \Gamma_{\mathbb{R}}(s) = \pi ^ {-s / 2} \Gamma (s / 2)  `
 
 and
 
-$$ \Gamma_{\mathbb{C}}(s) = 2 (2 \pi) ^ {-s} \Gamma (s). $$
+$$`  \Gamma_{\mathbb{C}}(s) = 2 (2 \pi) ^ {-s} \Gamma (s).  `
 
 These are the factors that need to be included in the Dedekind zeta function of a number field
 for each real, resp. complex, infinite place.
 
-(Note that these are *not* the same as Mathlib's `Real.Gamma` vs. `Complex.Gamma`; Deligne's
+(Note that these are _not_ the same as Mathlib's `Real.Gamma` vs. `Complex.Gamma`; Deligne's
 functions both take a complex variable as input.)
 
 This file defines these functions, and proves some elementary properties, including a reflection

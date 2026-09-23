@@ -11,6 +11,9 @@ public import Mathlib.Analysis.Normed.Module.Ball.Pointwise
 public import Mathlib.Analysis.Real.Sqrt
 public import Mathlib.Tactic.Module
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # (Local) homeomorphism between a normed space and a ball
 
@@ -18,8 +21,8 @@ In this file we show that a real (semi)normed vector space is homeomorphic to th
 
 We formalize it in two ways:
 
-- as a `Homeomorph`, see `Homeomorph.unitBall`;
-- as an `OpenPartialHomeomorph` with `source = Set.univ` and `target = Metric.ball (0 : E) 1`.
+* as a `Homeomorph`, see `Homeomorph.unitBall`;
+* as an `OpenPartialHomeomorph` with `source = Set.univ` and `target = Metric.ball (0 : E) 1`.
 
 While the former approach is more natural, the latter approach provides us
 with a globally defined inverse function which makes it easier to say

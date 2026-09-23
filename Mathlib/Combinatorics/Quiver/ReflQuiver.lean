@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.Set.Function
 public import Mathlib.CategoryTheory.Category.Cat
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Reflexive Quivers
 

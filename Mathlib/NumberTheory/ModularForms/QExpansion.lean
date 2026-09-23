@@ -12,6 +12,9 @@ public import Mathlib.NumberTheory.ModularForms.Identities
 public import Mathlib.RingTheory.PowerSeries.Basic
 public import Mathlib.RingTheory.MvPowerSeries.NoZeroDivisors
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # q-expansions of functions on the upper half plane
 
@@ -49,7 +52,6 @@ and bounded at infinity.
 * Lemmas relating q-expansion coefficents to Fourier series, such as
   `UpperHalfPlane.qExpansion_coeff_eq_exp_mul_fourierCoeffOn`, are placed in `Bounds.lean`, since
   the present file does not import Fourier theory.
-
 -/
 
 assert_not_exists fourierCoeffOn -- guard against import creep

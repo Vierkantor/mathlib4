@@ -11,6 +11,9 @@ public import Mathlib.Data.Multiset.Antidiagonal
 
 import Mathlib.Data.Finsupp.Order
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The `Finsupp` counterpart of `Multiset.antidiagonal`.
 

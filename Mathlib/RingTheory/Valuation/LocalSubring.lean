@@ -15,15 +15,16 @@ public import Mathlib.RingTheory.Valuation.ValuationSubring
 
 -- The copyright notice exceeds the maximum column width, but the `linter.style.header` linter
 -- flags the copyright notice if "All rights reserved." is not on the same line as "Copyright".
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 set_option linter.style.header false
 
 /-!
-
 # Valuation subrings are exactly the maximal local subrings
 
 See `LocalSubring.isMax_iff`.
 Note that the order on local subrings is not merely inclusion but domination.
-
 -/
 
 @[expose] public section

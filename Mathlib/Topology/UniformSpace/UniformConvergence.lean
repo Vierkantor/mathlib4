@@ -8,6 +8,9 @@ module
 public import Mathlib.Tactic.CrossRefAttribute
 public import Mathlib.Topology.UniformSpace.Cauchy
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Uniform convergence
 
@@ -64,7 +67,7 @@ variable {α β γ ι : Type*} [UniformSpace β]
 variable {F : ι → α → β} {f : α → β} {s s' : Set α} {x : α} {p : Filter ι} {p' : Filter α}
 
 /-!
-### Different notions of uniform convergence
+# Different notions of uniform convergence
 
 We define uniform convergence, on a set or in the whole space.
 -/

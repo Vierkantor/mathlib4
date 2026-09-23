@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Probability.Kernel.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Notation for the composition of a measure and a kernel
 

@@ -11,6 +11,9 @@ public import Mathlib.Topology.Homotopy.Contractible
 public import Mathlib.CategoryTheory.PUnit
 public import Mathlib.AlgebraicTopology.FundamentalGroupoid.PUnit
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Simply connected spaces
 
@@ -20,10 +23,10 @@ A topological space is simply connected if its fundamental groupoid is equivalen
 We also define the corresponding predicate for sets.
 
 ## Main theorems
-  - `simply_connected_iff_unique_homotopic` - A space is simply connected if and only if it is
-    nonempty and there is a unique path up to homotopy between any two points
 
-  - `SimplyConnectedSpace.ofContractible` - A contractible space is simply connected
+* `simply_connected_iff_unique_homotopic` - A space is simply connected if and only if it is
+  nonempty and there is a unique path up to homotopy between any two points
+* `SimplyConnectedSpace.ofContractible` - A contractible space is simply connected
 -/
 
 @[expose] public section
@@ -126,7 +129,7 @@ theorem simply_connected_iff_loops_nullhomotopic :
       _ = ⟦p₂⟧ := by grind
 
 /-!
-### Simply connected sets
+# Simply connected sets
 -/
 
 /-- We say that a set is simply connected if it's a simply connected topological space

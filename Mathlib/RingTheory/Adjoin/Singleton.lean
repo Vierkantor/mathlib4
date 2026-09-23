@@ -7,6 +7,9 @@ module
 
 public import Mathlib.RingTheory.Adjoin.Polynomial.Basic
 public import Mathlib.RingTheory.Polynomial.Tower
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Adjoin one single element
 
@@ -15,7 +18,6 @@ This file contains basic results on `Algebra.adjoin`, specifically on adjoining 
 ## Tags
 
 adjoin, algebra, ringhom
-
 -/
 
 @[expose] public section
@@ -51,7 +53,9 @@ instance : Algebra A[b] A[(algebraMap B C) b] :=
 instance : IsScalarTower A[b] A[(algebraMap B C) b] C :=
   IsScalarTower.of_algebraMap_eq' rfl
 
-/-- If the `algebraMap` injective then we have a Ring isomorphism between A[b] and A[↑b]. -/
+/--
+If the `algebraMap` injective then we have a Ring isomorphism between A\[b\] and A\[↑b\].
+-/
 noncomputable def RingHom.adjoinAlgebraMapEquiv [FaithfulSMul B C] :
     A[b] ≃+* A[(algebraMap B C) b] := by
   apply RingEquiv.ofBijective (RingHom.adjoinAlgebraMap b)

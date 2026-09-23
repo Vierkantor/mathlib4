@@ -9,13 +9,15 @@ public import Mathlib.CategoryTheory.MorphismProperty.Basic
 public import Mathlib.Data.Finset.Attr
 public import Mathlib.Tactic.SetLike
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Morphism properties from object properties
 
 Given two object properties `P` and `Q`, we introduce a morphism property
 `ofObjectProperty P Q`, given by all morphisms whose source satisfies `P` and
 target satisfies `Q`.
-
 -/
 
 @[expose] public section

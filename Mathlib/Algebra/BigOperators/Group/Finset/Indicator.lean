@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Group.Indicator
 public import Mathlib.Data.Set.Lattice.Disjoint
 public import Mathlib.Order.CompleteLattice.Finset
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Interaction of big operators with indicator functions
 -/

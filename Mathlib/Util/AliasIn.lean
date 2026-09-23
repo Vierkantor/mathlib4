@@ -10,7 +10,12 @@ public import Batteries.Tactic.Alias
 public import Lean.Exception
 public import Mathlib.Tactic.Core
 
-/-! # The `@[alias_in]` attribute -/
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# The `@[alias_in]` attribute
+-/
 
 public meta section
 

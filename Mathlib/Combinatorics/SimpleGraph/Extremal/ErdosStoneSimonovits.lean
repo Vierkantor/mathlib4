@@ -10,15 +10,18 @@ public import Mathlib.Combinatorics.SimpleGraph.Bipartite
 public import Mathlib.Combinatorics.SimpleGraph.CompleteMultipartite
 public import Mathlib.Analysis.Real.Sqrt
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The Erdős-Stone-Simonovits theorem
 
-This file proves the **Erdős-Stone-Simonovits theorem** for simple graphs.
+This file proves the *Erdős-Stone-Simonovits theorem* for simple graphs.
 
 ## Main definitions
 
 * `SimpleGraph.eventually_completeEquipartiteGraph_isContained_of_minDegree` is the proof of the
-  minimal degree version of the **Erdős-Stone theorem** for simple graphs.
+  minimal degree version of the *Erdős-Stone theorem* for simple graphs.
 -/
 
 open Filter Finset Fintype Real

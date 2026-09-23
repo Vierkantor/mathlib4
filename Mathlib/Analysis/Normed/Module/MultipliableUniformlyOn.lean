@@ -10,6 +10,9 @@ public import Mathlib.Analysis.SpecialFunctions.Log.Summable
 public import Mathlib.Topology.Algebra.InfiniteSum.UniformOn
 public import Mathlib.Topology.Algebra.IsUniformGroup.Order
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Uniform convergence of products of functions
 

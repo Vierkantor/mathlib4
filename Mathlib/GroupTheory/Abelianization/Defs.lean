@@ -7,6 +7,9 @@ module
 
 public import Mathlib.GroupTheory.Commutator.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The abelianization of a group
 
@@ -20,7 +23,6 @@ groups, which can be found in `Mathlib/Algebra/Category/Grp/Adjunctions.lean`.
   commutator subgroup.
 * `Abelianization.map`: lifts a group homomorphism to a homomorphism between the abelianizations
 * `MulEquiv.abelianizationCongr`: Equivalent groups have equivalent abelianizations
-
 -/
 
 @[expose] public section
@@ -104,7 +106,9 @@ end lift
 
 variable {A : Type v} [Monoid A]
 
-/-- See note [partially-applied ext lemmas]. -/
+/--
+See note \[partially-applied ext lemmas\].
+-/
 @[ext]
 theorem hom_ext (φ ψ : Abelianization G →* A) (h : φ.comp of = ψ.comp of) : φ = ψ :=
   MonoidHom.ext fun x => QuotientGroup.induction_on x <| DFunLike.congr_fun h

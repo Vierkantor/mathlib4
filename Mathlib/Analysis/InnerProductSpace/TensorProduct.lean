@@ -11,8 +11,10 @@ import Mathlib.Analysis.InnerProductSpace.GramMatrix
 import Mathlib.Analysis.InnerProductSpace.Positive
 import Mathlib.Algebra.Order.Star.Real
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Inner product space structure on tensor product spaces
 
 This file provides the inner product space structure on tensor product spaces.
@@ -44,7 +46,6 @@ inner product spaces.
 
 * Define the normed space without needing inner products, this should be analogous to
   `Mathlib/Analysis/NormedSpace/PiTensorProduct/InjectiveSeminorm.lean`.
-
 -/
 
 @[expose] public section

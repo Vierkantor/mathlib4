@@ -9,6 +9,9 @@ public import Mathlib.Logic.Small.Set
 public import Mathlib.CategoryTheory.Filtered.Final
 public import Mathlib.CategoryTheory.Comma.StructuredArrow.Small
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Finally small categories
 

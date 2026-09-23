@@ -12,6 +12,9 @@ public import Mathlib.RingTheory.Localization.Submodule
 public import Mathlib.RingTheory.LocalProperties.Submodule
 public import Mathlib.RingTheory.RingHomProperties
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Local properties of commutative rings
 
@@ -41,7 +44,6 @@ In this file, we define local properties in general.
 
 * The triviality of an ideal or an element:
   `ideal_eq_bot_of_localization`, `eq_zero_of_localization`
-
 -/
 
 @[expose] public section

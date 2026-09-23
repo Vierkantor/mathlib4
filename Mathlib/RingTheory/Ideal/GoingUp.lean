@@ -9,6 +9,9 @@ public import Mathlib.RingTheory.Ideal.Over
 public import Mathlib.RingTheory.Localization.AtPrime.Basic
 public import Mathlib.RingTheory.Localization.Integral
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Ideals over/under ideals in integral extensions
 

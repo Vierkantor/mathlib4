@@ -11,7 +11,12 @@ public import Mathlib.RingTheory.Ideal.Quotient.Operations
 public import Mathlib.RingTheory.Noetherian.Nilpotent
 public import Mathlib.RingTheory.TensorProduct.Finite
 
-/-! # Descend finiteness along quotients by nilpotent ideals -/
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Descend finiteness along quotients by nilpotent ideals
+-/
 
 public section
 

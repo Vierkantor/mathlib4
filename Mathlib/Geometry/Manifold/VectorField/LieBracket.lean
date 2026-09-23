@@ -11,6 +11,9 @@ public import Mathlib.Geometry.Manifold.MFDeriv.NormedSpace
 public import Mathlib.Geometry.Manifold.VectorBundle.MDifferentiable
 public import Mathlib.Geometry.Manifold.VectorField.Pullback
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lie brackets of vector fields on manifolds
 
@@ -19,11 +22,11 @@ We define the Lie bracket of two vector fields, denoted with
 in the model space (through `extChartAt I x`).
 
 The main results are the following:
+
 * `VectorField.mpullback_mlieBracket` states that the pullback of the Lie bracket
   is the Lie bracket of the pullbacks.
 * `VectorField.leibniz_identity_mlieBracket` is the Leibniz (or Jacobi)
   identity `[U, [V, W]] = [[U, V], W] + [V, [U, W]]`.
-
 -/
 
 public section
@@ -54,7 +57,9 @@ namespace VectorField
 
 section LieBracket
 
-/-! ### The Lie bracket of vector fields in manifolds -/
+/-!
+# The Lie bracket of vector fields in manifolds
+-/
 
 variable {V W V₁ W₁ : Π (x : M), TangentSpace I x}
 

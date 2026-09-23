@@ -11,11 +11,14 @@ public meta import Lean.Elab.Command
 public meta import Mathlib.Tactic.Linter.Header  -- shake: keep
 public import Lean.Parser.Term
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The "multiGoal" linter
 
 The "multiGoal" linter emits a warning where there is more than a single goal in scope.
-There is an exception: a tactic that closes *all* remaining goals is allowed.
+There is an exception: a tactic that closes _all_ remaining goals is allowed.
 
 There are a few tactics, such as `skip`, `swap` or the `try` combinator, that are intended to work
 specifically in such a situation.
@@ -26,12 +29,15 @@ Typically, the focusing is achieved by the `cdot`: `·`, but, e.g., `focus` or `
 also serve a similar purpose.
 
 TODO:
+
 * Should the linter flag unnecessary scoping as well?
   For instance, should
+
   ```lean
   example : True := by
     · · exact .intro
   ```
+
   raise a warning?
 * Custom support for "accumulating side-goals", so that once they are all in scope
   they can be solved in bulk via `all_goals` or a similar tactic.
@@ -121,11 +127,13 @@ abbrev exclusions : Std.HashSet SyntaxNodeKind := .ofArray #[
     `tacticSleep_heartbeats_
   ]
 
-/-- The `SyntaxNodeKind`s in `ignoreBranch` correspond to tactics that disable the linter from
+/--
+The `SyntaxNodeKind`s in `ignoreBranch` correspond to tactics that disable the linter from
 their first application until the corresponding proof branch is closed.
 Reasons for ignoring these tactics include
+
 * the linter gets confused by the proof management, e.g. `conv`;
-* the tactics are *intended* to act on multiple goals, e.g. `repeat`, `any_goals`, `all_goals`, ...
+* the tactics are _intended_ to act on multiple goals, e.g. `repeat`, `any_goals`, `all_goals`, ...
 
 There is some overlap in scope between `exclusions` and `ignoreBranch`.
 -/

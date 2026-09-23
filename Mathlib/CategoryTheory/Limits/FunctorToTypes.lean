@@ -8,6 +8,9 @@ module
 public import Mathlib.CategoryTheory.Limits.FunctorCategory.Basic
 public import Mathlib.CategoryTheory.Limits.Types.Colimits
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Concrete description of (co)limits in functor categories
 

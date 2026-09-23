@@ -15,6 +15,9 @@ public import Mathlib.Logic.Pairwise
 import Mathlib.Util.Delaborators
 public import Mathlib.Util.Delaborators
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Extra lemmas about products of monoids and groups
 

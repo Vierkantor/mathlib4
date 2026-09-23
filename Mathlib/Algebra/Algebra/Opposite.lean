@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Algebra.Equiv
 public import Mathlib.Algebra.Module.Opposite
 public import Mathlib.Algebra.Ring.Opposite
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Algebra structures on the multiplicative opposite
 

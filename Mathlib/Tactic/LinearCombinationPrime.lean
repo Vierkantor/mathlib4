@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Tactic.Ring
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `linear_combination'` Tactic
 
@@ -27,14 +30,14 @@ Lastly, calls a normalization tactic on this target.
 
 This file contains the `linear_combination'` tactic (note the '): the original
 Lean 4 implementation of the "linear combination" idea, written at the time of
-the port from Lean 3.  Notably, its scope includes certain *nonlinear*
+the port from Lean 3.  Notably, its scope includes certain _nonlinear_
 operations.  The `linear_combination` tactic (in a separate file) is a variant
 implementation, but this version is provided for backward-compatibility.
 
 ## References
 
-* <https://leanprover.zulipchat.com/#narrow/stream/239415-metaprogramming-.2F.20tactics/topic/Linear.20algebra.20tactic/near/213928196>
-
+* [
+  https://leanprover.zulipchat.com/#narrow/stream/239415-metaprogramming-.2F.20tactics/topic/Linear.20algebra.20tactic/near/213928196](https://leanprover.zulipchat.com/#narrow/stream/239415-metaprogramming-.2F.20tactics/topic/Linear.20algebra.20tactic/near/213928196)
 -/
 
 public meta section

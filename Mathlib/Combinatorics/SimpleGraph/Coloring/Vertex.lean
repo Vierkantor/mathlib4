@@ -14,6 +14,9 @@ public import Mathlib.Data.Setoid.Partition
 public import Mathlib.Order.Antichain
 public import Mathlib.Order.Lattice.Nat
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Graph Coloring
 
@@ -29,32 +32,25 @@ the colors.
   with `α` being the set of available colors. The type is defined to
   be homomorphisms from `G` into the complete graph on `α`, and
   colorings have a coercion to `V → α`.
-
 * `G.Colorable n` is the proposition that `G` is `n`-colorable, which
-  is whether there exists a coloring with at most *n* colors.
-
+  is whether there exists a coloring with at most _n_ colors.
 * `G.chromaticNumber` is the minimal `n` such that `G` is `n`-colorable,
   or `⊤` if it cannot be colored with finitely many colors.
   (Cardinal-valued chromatic numbers are more niche, so we stick to `ℕ∞`.)
   We write `G.chromaticNumber ≠ ⊤` to mean a graph is colorable with finitely many colors.
-
 * `C.colorClass c` is the set of vertices colored by `c : α` in the coloring `C : G.Coloring α`.
-
 * `C.colorClasses` is the set containing all color classes.
 
 ## TODO
 
-  * Gather material from:
-    * https://github.com/leanprover-community/mathlib/blob/simple_graph_matching/src/combinatorics/simple_graph/coloring.lean
-    * https://github.com/kmill/lean-graphcoloring/blob/master/src/graph.lean
+* Gather material from:
 
-  * Trees
-
-  * Planar graphs
-
-  * Chromatic polynomials
-
-  * develop API for partial colorings, likely as colorings of subgraphs (`H.coe.Coloring α`)
+  * https://github.com/leanprover-community/mathlib/blob/simple\_graph\_matching/src/combinatorics/simple\_graph/coloring.lean
+  * https://github.com/kmill/lean-graphcoloring/blob/master/src/graph.lean
+* Trees
+* Planar graphs
+* Chromatic polynomials
+* develop API for partial colorings, likely as colorings of subgraphs (`H.coe.Coloring α`)
 -/
 
 @[expose] public section
@@ -539,7 +535,9 @@ theorem CompleteBipartiteGraph.chromaticNumber {V W : Type*} [Nonempty V] [Nonem
   · exact ⟨_, he'⟩
   · simpa using two_lt_card_iff.2 ⟨_, _, _, C.valid h, he, he'⟩
 
-/-! ### Cliques -/
+/-!
+# Cliques
+-/
 
 theorem IsClique.card_le_of_colorable {s : Finset V} (h : G.IsClique s) (hc : G.Colorable n) :
     s.card ≤ n := by
@@ -622,7 +620,9 @@ theorem free_of_colorable (nhc : ¬H.Colorable n) (hc : G.Colorable n) : H.Free 
   contrapose nhc with hc'
   exact hc.of_hom hc'.some.toHom
 
-/-! ### Isomorphisms -/
+/-!
+# Isomorphisms
+-/
 
 /-- Equivalence of colorings induced by isomorphisms of graphs and equivalence of colors. -/
 def coloringCongr (f : G ≃g H) (g : α ≃ β) : G.Coloring α ≃ H.Coloring β :=

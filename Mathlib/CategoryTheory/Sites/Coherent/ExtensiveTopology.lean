@@ -8,6 +8,9 @@ module
 public import Mathlib.Basic.Finite.Sigma
 public import Mathlib.CategoryTheory.Sites.Coherent.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Description of the covering sieves of the extensive topology
 

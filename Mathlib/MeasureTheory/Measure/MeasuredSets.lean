@@ -9,6 +9,9 @@ public import Mathlib.MeasureTheory.Measure.Typeclasses.Finite
 public import Mathlib.MeasureTheory.SetSemiring
 import Mathlib.Topology.MetricSpace.Lipschitz
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Measured sets
 

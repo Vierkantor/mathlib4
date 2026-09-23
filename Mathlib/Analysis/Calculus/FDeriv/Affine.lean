@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Order.Field.Power
 public import Mathlib.Analysis.Calculus.FDeriv.Basic
 
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The derivative of continuous affine maps
 
@@ -31,7 +34,7 @@ variable {𝕜 : Type*} [NontriviallyNormedField 𝕜]
 namespace ContinuousAffineMap
 
 /-!
-### Continuous affine maps
+# Continuous affine maps
 -/
 
 protected theorem hasFDerivAtFilter : HasFDerivAtFilter f f.contLinear L := by

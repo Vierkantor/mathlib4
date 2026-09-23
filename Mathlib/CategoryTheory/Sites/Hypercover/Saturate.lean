@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Sites.Hypercover.Homotopy
 public import Mathlib.CategoryTheory.Limits.Shapes.Diagonal
 public import Mathlib.CategoryTheory.Limits.Types.Multiequalizer
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Saturation of a `0`-hypercover
 

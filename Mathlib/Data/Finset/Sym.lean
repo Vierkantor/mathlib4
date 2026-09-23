@@ -10,6 +10,9 @@ public import Mathlib.Data.Fintype.Vector
 public import Mathlib.Data.Multiset.Sym
 public import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Symmetric powers of a finset
 

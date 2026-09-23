@@ -12,6 +12,9 @@ public import Mathlib.Probability.Distributions.Gaussian.CharFun
 import Mathlib.Probability.Distributions.Gaussian.Fernique
 import Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Rpow.Measurable
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Multivariate Gaussian distributions
 
@@ -28,13 +31,12 @@ Gaussian distributions over `EuclideanSpace ℝ ι`.
 
 ## TODO
 
-- Generalize `multivariateGaussian μ S` when `S` is a symmetric trace class operator over a
+* Generalize `multivariateGaussian μ S` when `S` is a symmetric trace class operator over a
   Hilbert space.
 
 ## Tags
 
 multivariate Gaussian distribution
-
 -/
 
 @[expose] public section
@@ -49,7 +51,9 @@ variable {ι : Type*} [Fintype ι]
 
 section stdGaussian
 
-/-! ### Standard Gaussian measure over a Euclidean space -/
+/-!
+# Standard Gaussian measure over a Euclidean space
+-/
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
   [MeasurableSpace E]
@@ -154,7 +158,9 @@ end stdGaussian
 
 section multivariateGaussian
 
-/-! ### Multivariate Gaussian measures over `ℝⁿ` -/
+/-!
+# Multivariate Gaussian measures over `ℝⁿ`
+-/
 
 variable [DecidableEq ι]
 

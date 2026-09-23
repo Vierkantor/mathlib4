@@ -10,6 +10,9 @@ public import Mathlib.Topology.Compactification.StoneCech
 public import Mathlib.CategoryTheory.Preadditive.Projective.Basic
 public import Mathlib.CategoryTheory.ConcreteCategory.EpiMono
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Profinite sets have enough projectives
 
@@ -22,7 +25,6 @@ Let `X` be a profinite set.
 * `Profinite.projective_ultrafilter`: the space `Ultrafilter X` is a projective object
 * `Profinite.projectivePresentation`: the natural map `Ultrafilter X → X`
   is a projective presentation
-
 -/
 
 @[expose] public section

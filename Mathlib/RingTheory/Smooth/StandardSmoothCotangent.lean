@@ -11,17 +11,20 @@ public import Mathlib.RingTheory.Smooth.StandardSmooth
 public import Mathlib.RingTheory.Smooth.Kaehler
 public import Mathlib.RingTheory.Etale.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cotangent complex of a submersive presentation
 
 Let `P` be a submersive presentation of `S` as an `R`-algebra and
 denote by `I` the kernel `R[X] → S`. We show
 
-- `SubmersivePresentation.free_cotangent`: `I ⧸ I ^ 2` is `S`-free on the classes of `P.relation i`.
-- `SubmersivePresentation.subsingleton_h1Cotangent`: `H¹(L_{S/R}) = 0`.
-- `SubmersivePresentation.free_kaehlerDifferential`: `Ω[S⁄R]` is `S`-free on the images of `dxᵢ`
+* `SubmersivePresentation.free_cotangent`: `I ⧸ I ^ 2` is `S`-free on the classes of `P.relation i`.
+* `SubmersivePresentation.subsingleton_h1Cotangent`: `H¹(L_{S/R}) = 0`.
+* `SubmersivePresentation.free_kaehlerDifferential`: `Ω[S⁄R]` is `S`-free on the images of `dxᵢ`
   where `i ∉ Set.range P.map`.
-- `SubmersivePresentation.rank_kaehlerDifferential`: If `S` is non-trivial, the rank of
+* `SubmersivePresentation.rank_kaehlerDifferential`: If `S` is non-trivial, the rank of
   `Ω[S⁄R]` is the dimension of `P`.
 
 We also provide the corresponding instances for standard smooth algebras as corollaries.

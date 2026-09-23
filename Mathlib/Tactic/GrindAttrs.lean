@@ -9,6 +9,9 @@ module
 public import Lean.Meta.Tactic.Grind.RegisterCommand
 public import Mathlib.Init
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Custom grind-sets
 
@@ -21,6 +24,7 @@ Currently, this implements the `compactness` and `closedness` grind attribute an
 ## Usage Notes
 
 These tactics can be useful for various purposes:
+
 * directly as a tactic: `by compactness`
 * as auto-params for lemmas: `(h : IsCompact K := by compactness)`
 * as discharger for other tactics, e.g. `fun_prop (disch := compactness)`
@@ -40,6 +44,7 @@ these would slow down these tactics. We could have alternatively used a tactic s
 `apply_rules` here, but we think that the efficient implementation of `grind` is helpful even for
 these simpler tactics. For example, we can safely tag both the following lemmas, and `grind` will
 add both pairs of hypotheses to the whiteboard without having to backtrack.
+
 ```
 IsCompact.inter_left : IsClosed s → IsCompact t → IsCompact (s ∩ t)
 IsCompact.inter_right : IsCompact s → IsClosed t → IsCompact (s ∩ t)
@@ -54,7 +59,6 @@ that involve other properties, e.g. `IsCompact.inter_left`
 ## To do
 
 * Implement other grind sets, e.g. `boundedness`, `countability`, `connectedness`, ...
-
 -/
 
 open Lean Parser Tactic

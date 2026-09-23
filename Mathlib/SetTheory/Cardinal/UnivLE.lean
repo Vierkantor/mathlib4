@@ -8,6 +8,9 @@ module
 public import Mathlib.Basic.UnivLE
 public import Mathlib.SetTheory.Ordinal.Univ
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # UnivLE and cardinals
 -/

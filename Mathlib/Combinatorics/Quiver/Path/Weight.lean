@@ -9,6 +9,9 @@ public import Mathlib.Combinatorics.Quiver.Path
 public import Mathlib.Algebra.Order.Ring.Defs
 
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Path weights in a Quiver
 

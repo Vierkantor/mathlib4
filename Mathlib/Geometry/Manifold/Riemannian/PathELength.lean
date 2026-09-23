@@ -12,7 +12,11 @@ public import Mathlib.Geometry.Manifold.Instances.Icc
 public import Mathlib.MeasureTheory.Constructions.UnitInterval
 public import Mathlib.MeasureTheory.Function.JacobianOneDim
 
-/-! # Lengths of paths in manifolds
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Lengths of paths in manifolds
 
 Consider a manifold in which the tangent spaces have an enormed structure. Then one defines
 `pathELength γ a b` as the length of the path `γ : ℝ → M` between `a` and `b`, i.e., the integral

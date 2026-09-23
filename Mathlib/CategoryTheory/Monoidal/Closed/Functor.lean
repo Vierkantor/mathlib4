@@ -10,6 +10,9 @@ public import Mathlib.CategoryTheory.Adjunction.FullyFaithful
 public import Mathlib.CategoryTheory.Monoidal.Cartesian.Basic
 public import Mathlib.CategoryTheory.Monoidal.Closed.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cartesian closed functors
 
@@ -20,16 +23,18 @@ Define the Frobenius morphism, and show it is an isomorphism iff the exponential
 isomorphism.
 
 ## TODO
+
 Some of the results here are true more generally for closed objects and for closed monoidal
 categories, and these could be generalised.
 
 ## References
+
 https://ncatlab.org/nlab/show/cartesian+closed+functor
 https://ncatlab.org/nlab/show/Frobenius+reciprocity
 
 ## Tags
-Frobenius reciprocity, Cartesian closed functor
 
+Frobenius reciprocity, Cartesian closed functor
 -/
 
 @[expose] public section
@@ -48,9 +53,12 @@ variable {D : Type u'} [Category.{v} D]
 variable [CartesianMonoidalCategory C] [CartesianMonoidalCategory D]
 variable (F : C ⥤ D) {L : D ⥤ C}
 
-/-- The Frobenius morphism for an adjunction `L ⊣ F` at `A` is given by the morphism
+/--
+The Frobenius morphism for an adjunction `L ⊣ F` at `A` is given by the morphism
 
-    L(FA ⨯ B) ⟶ LFA ⨯ LB ⟶ A ⨯ LB
+```
+L(FA ⨯ B) ⟶ LFA ⨯ LB ⟶ A ⨯ LB
+```
 
 natural in `B`, where the first morphism is the product comparison and the latter uses the counit
 of the adjunction.

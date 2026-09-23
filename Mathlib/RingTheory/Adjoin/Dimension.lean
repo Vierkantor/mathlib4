@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Group.Pointwise.Set.Card
 public import Mathlib.LinearAlgebra.Dimension.Constructions
 public import Mathlib.RingTheory.Adjoin.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Some results on dimensions of algebra adjoin
 

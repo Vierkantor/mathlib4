@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Probability.Kernel.Disintegration.Integral
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Uniqueness of the conditional kernel
 
@@ -38,9 +41,11 @@ section Measure
 
 variable {ρ : Measure (α × Ω)} [IsFiniteMeasure ρ]
 
-/-! ### Uniqueness of `Measure.condKernel`
+/-!
+# Uniqueness of `Measure.condKernel`
 
-The conditional kernel of a measure is unique almost everywhere. -/
+The conditional kernel of a measure is unique almost everywhere.
+-/
 
 /-- An s-finite kernel which satisfies the disintegration property of the given measure `ρ` is
 almost everywhere equal to the disintegration kernel of `ρ` when evaluated on a measurable set.
@@ -166,9 +171,11 @@ end KernelAndMeasure
 
 section Kernel
 
-/-! ### Uniqueness of `Kernel.condKernel`
+/-!
+# Uniqueness of `Kernel.condKernel`
 
-The conditional kernel is unique almost everywhere. -/
+The conditional kernel is unique almost everywhere.
+-/
 
 /-- A finite kernel which satisfies the disintegration property is almost everywhere equal to the
 disintegration kernel. -/

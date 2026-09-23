@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Localization.HomEquiv
 public import Mathlib.CategoryTheory.Localization.Opposite
 public import Mathlib.CategoryTheory.Comma.StructuredArrow.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Induction principles for structured and costructured arrows
 
@@ -21,7 +24,6 @@ and if `P` is stable by post-composition with the inverse of `L.map w` when `W w
 
 We obtain a similar lemma `Localization.induction_costructuredArrow` for
 costructured arrows.
-
 -/
 
 @[expose] public section

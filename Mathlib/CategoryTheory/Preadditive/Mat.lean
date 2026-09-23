@@ -17,6 +17,9 @@ public import Mathlib.CategoryTheory.Preadditive.SingleObj
 public import Mathlib.Data.Matrix.DMatrix
 public import Mathlib.Data.Matrix.Mul
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Matrices over a category.
 
@@ -47,7 +50,6 @@ as a category with objects `n : FinType`,
 and whose morphisms are matrices with components in `R`.
 
 Ideally this would conveniently interact with both `Mat_` and `Matrix`.
-
 -/
 
 @[expose] public section

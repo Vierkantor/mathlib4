@@ -11,6 +11,9 @@ public import Mathlib.CategoryTheory.Limits.Shapes.Pullback.Equalizer
 public import Mathlib.Topology.QuasiSeparated
 public import Mathlib.Topology.Sheaves.CommRingCat
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Quasi-separated morphisms
 
@@ -26,9 +29,9 @@ We also show that this property is local at the target,
 and is stable under compositions and base-changes.
 
 ## Main result
-- `AlgebraicGeometry.isLocalization_basicOpen_of_qcqs` (**Qcqs lemma**):
-  If `U` is qcqs, then `Γ(X, D(f)) ≃ Γ(X, U)_f` for every `f : Γ(X, U)`.
 
+* `AlgebraicGeometry.isLocalization_basicOpen_of_qcqs` (*Qcqs lemma*):
+  If `U` is qcqs, then `Γ(X, D(f)) ≃ Γ(X, U)_f` for every `f : Γ(X, U)`.
 -/
 
 public section
@@ -396,8 +399,10 @@ theorem exists_eq_pow_mul_of_isCompact_of_isQuasiSeparated (X : Scheme.{u}) (U :
       simp only [pow_add, map_pow, map_mul, hy₂, ← CommRingCat.comp_apply, ← mul_assoc,
         ← Functor.map_comp, ← op_comp, homOfLE_comp]
 
-/-- If `U` is qcqs, then `Γ(X, D(f)) ≃ Γ(X, U)_f` for every `f : Γ(X, U)`.
-This is known as the **Qcqs lemma** in [R. Vakil, *The rising sea*][RisingSea]. -/
+/--
+If `U` is qcqs, then `Γ(X, D(f)) ≃ Γ(X, U)_f` for every `f : Γ(X, U)`.
+This is known as the *Qcqs lemma* in \[R. Vakil, _The rising sea_\]\[RisingSea\].
+-/
 theorem isLocalization_basicOpen_of_qcqs {X : Scheme} {U : X.Opens} (hU : IsCompact U.1)
     (hU' : IsQuasiSeparated U.1) (f : Γ(X, U)) :
     IsLocalization.Away f (Γ(X, X.basicOpen f)) := by
@@ -445,8 +450,10 @@ lemma exists_of_res_zero_of_qcqs_of_top {X : Scheme} [CompactSpace X] [QuasiSepa
   exists_of_res_zero_of_qcqs (U := ⊤) CompactSpace.isCompact_univ isQuasiSeparated_univ hf
 
 set_option backward.isDefEq.respectTransparency false in
-/-- If `U` is qcqs, then `Γ(X, D(f)) ≃ Γ(X, U)_f` for every `f : Γ(X, U)`.
-This is known as the **Qcqs lemma** in [R. Vakil, *The rising sea*][RisingSea]. -/
+/--
+If `U` is qcqs, then `Γ(X, D(f)) ≃ Γ(X, U)_f` for every `f : Γ(X, U)`.
+This is known as the *Qcqs lemma* in \[R. Vakil, _The rising sea_\]\[RisingSea\].
+-/
 instance isIso_ΓSpec_adjunction_unit_app_basicOpen
     [CompactSpace X] [QuasiSeparatedSpace X] (f : Γ(X, ⊤)) :
     IsIso (X.toSpecΓ.app (PrimeSpectrum.basicOpen f)) := by

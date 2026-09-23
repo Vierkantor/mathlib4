@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.Normed.Operator.BoundedLinearMaps
 public import Mathlib.Topology.FiberBundle.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Vector bundles
 
@@ -53,6 +56,7 @@ The implementation choices in the vector bundle definition are discussed in the 
 notes" section of `Mathlib/Topology/FiberBundle/Basic.lean`.
 
 ## Tags
+
 Vector bundle
 -/
 
@@ -548,7 +552,9 @@ lemma VectorBundle.completeSpace [CompleteSpace F]
   let e := VectorBundle.continuousLinearEquivAt R F E b
   rwa [completeSpace_congr (e := e.toEquiv) e.isUniformEmbedding]
 
-/-! ### Constructing vector bundles -/
+/-!
+# Constructing vector bundles
+-/
 
 variable (B F)
 
@@ -802,7 +808,9 @@ end VectorBundleCore
 
 end
 
-/-! ### Vector prebundle -/
+/-!
+# Vector prebundle
+-/
 
 section
 

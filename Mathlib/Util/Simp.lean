@@ -9,10 +9,13 @@ public meta import Lean.Meta.Tactic.Simp.Types
 public import Mathlib.Init
 public import Qq
 
-/-! # Additional simp utilities
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Additional simp utilities
 
 This file adds additional tools for metaprogramming with the `simp` tactic
-
 -/
 
 public meta section

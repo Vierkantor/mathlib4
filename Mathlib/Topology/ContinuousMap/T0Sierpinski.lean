@@ -9,6 +9,9 @@ public import Mathlib.Topology.Order
 public import Mathlib.Topology.Sets.Opens
 public import Mathlib.Topology.ContinuousMap.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Any T0 space embeds in a product of copies of the Sierpinski space.
 

@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Topology.Sheaves.SheafCondition.Sites
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Another version of the sheaf condition.
 
@@ -29,7 +32,8 @@ sheaf condition. This result will be used to further connect to other sheaf cond
 like `pairwise_intersections` and `equalizer_products`.
 
 ## References
-* This is the definition Lurie uses in [Spectral Algebraic Geometry][LurieSAG].
+
+* This is the definition Lurie uses in \[Spectral Algebraic Geometry\]\[LurieSAG\].
 -/
 
 @[expose] public section

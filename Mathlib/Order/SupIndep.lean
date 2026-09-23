@@ -14,6 +14,9 @@ public import Mathlib.Order.CompleteLatticeIntervals
 public import Mathlib.Order.ModularLattice
 public import Mathlib.Tactic.FinCases
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Supremum independence
 
@@ -29,10 +32,12 @@ sup-independent if, for all `a`, `f a` and the supremum of the rest are disjoint
 ## Main statements
 
 * In a distributive lattice, supremum independence is equivalent to pairwise disjointness:
+
   * `Finset.supIndep_iff_pairwiseDisjoint`
   * `CompleteLattice.sSupIndep_iff_pairwiseDisjoint`
   * `CompleteLattice.iSupIndep_iff_pairwiseDisjoint`
 * Otherwise, supremum independence is stronger than pairwise disjointness:
+
   * `Finset.SupIndep.pairwiseDisjoint`
   * `sSupIndep.pairwiseDisjoint`
   * `iSupIndep.pairwiseDisjoint`
@@ -49,7 +54,9 @@ For the finite version, we avoid the "obvious" definition
 
 variable {α β ι ι' : Type*}
 
-/-! ### On lattices with a bottom element, via `Finset.sup` -/
+/-!
+# On lattices with a bottom element, via `Finset.sup`
+-/
 
 
 namespace Finset
@@ -267,7 +274,9 @@ end DistribLattice
 
 end Finset
 
-/-! ### On complete lattices via `sSup` -/
+/-!
+# On complete lattices via `sSup`
+-/
 
 section CompleteLattice
 variable [CompleteLattice α]

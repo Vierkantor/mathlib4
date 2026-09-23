@@ -13,13 +13,15 @@ public import Batteries.Tactic.Init
 public import Mathlib.Basic.Logic.Basic  -- shake: keep (Qq output dependency)
 public import Mathlib.Util.AtomM
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Intuitionistic tautology (`itauto`) decision procedure
 
 The `itauto` tactic will prove any intuitionistic tautology. It implements the well-known
 `G4ip` algorithm:
-[Dyckhoff, *Contraction-free sequent calculi for intuitionistic logic*][dyckhoff_1992].
+‍\[Dyckhoff, _Contraction-free sequent calculi for intuitionistic logic_\]\[dyckhoff\_1992\].
 
 All built in propositional connectives are supported: `True`, `False`, `And`, `Or`, `→`,
 `Not`, `Iff`, `Xor`, as well as `Eq` and `Ne` on propositions. Anything else, including definitions
@@ -48,7 +50,9 @@ The intuitionistic logic rules are separated into three groups:
 
 * level 1: No splitting, validity preserving: apply whenever you can.
   Left rules in `Context.add`, right rules in `prove`.
+
   * `Context.add`:
+
     * simplify `Γ, ⊤ ⊢ B` to `Γ ⊢ B`
     * `Γ, ⊥ ⊢ B` is true
     * simplify `Γ, A ∧ B ⊢ C` to `Γ, A, B ⊢ C`
@@ -57,16 +61,20 @@ The intuitionistic logic rules are separated into three groups:
     * simplify `Γ, A ∧ B → C ⊢ D` to `Γ, A → B → C ⊢ D`
     * simplify `Γ, A ∨ B → C ⊢ D` to `Γ, A → C, B → C ⊢ D`
   * `prove`:
+
     * `Γ ⊢ ⊤` is true
     * simplify `Γ ⊢ A → B` to `Γ, A ⊢ B`
   * `search`:
+
     * `Γ, P ⊢ P` is true
     * simplify `Γ, P, P → A ⊢ B` to `Γ, P, A ⊢ B`
 * level 2: Splitting rules, validity preserving: apply after level 1 rules. Done in `prove`
+
   * simplify `Γ ⊢ A ∧ B` to `Γ ⊢ A` and `Γ ⊢ B`
   * simplify `Γ, A ∨ B ⊢ C` to `Γ, A ⊢ C` and `Γ, B ⊢ C`
 * level 3: Splitting rules, not validity preserving: apply only if nothing else applies.
   Done in `search`
+
   * `Γ ⊢ A ∨ B` follows from `Γ ⊢ A`
   * `Γ ⊢ A ∨ B` follows from `Γ ⊢ B`
   * `Γ, (A₁ → A₂) → C ⊢ B` follows from `Γ, A₂ → C, A₁ ⊢ A₂` and `Γ, C ⊢ B`
@@ -700,6 +708,8 @@ def itautoCore (g : MVarId)
 
 open Elab Tactic
 
+
+set_option doc.verso false
 /-- `itauto` solves the main goal when it is a tautology of intuitionistic propositional logic.
 Unlike `grind` and `tauto!` this tactic never uses the law of excluded middle (without the `!`
 option), and the proof search is tailored for this use case. `itauto` is complete for intuitionistic
@@ -720,6 +730,8 @@ example (p : Prop) : ¬ (p ↔ ¬ p) := by itauto
 -/
 syntax (name := itauto) "itauto" "!"? (" *" <|> (" [" term,* "]"))? : tactic
 
+
+set_option doc.verso true
 elab_rules : tactic
   | `(tactic| itauto $[!%$cl]?) => liftMetaTactic (itautoCore · false cl.isSome #[] *> pure [])
   | `(tactic| itauto $[!%$cl]? *) => liftMetaTactic (itautoCore · true cl.isSome #[] *> pure [])

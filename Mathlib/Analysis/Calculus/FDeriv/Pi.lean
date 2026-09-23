@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.Calculus.FDeriv.Prod
 public import Mathlib.Analysis.Calculus.FDeriv.Const
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Derivatives on pi-types.
 -/

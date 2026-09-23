@@ -11,6 +11,9 @@ public import Mathlib.Order.Interval.Finset.Fin
 public import Mathlib.Algebra.Group.Pointwise.Set.Scalar
 public import Mathlib.Algebra.Group.Action.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Sets without arithmetic progressions of length three and Roth numbers
 
@@ -39,7 +42,7 @@ the size of the biggest 3AP-free subset of `{0, ..., n - 1}`.
 
 ## References
 
-* [Wikipedia, *Salem-Spencer set*](https://en.wikipedia.org/wiki/Salem–Spencer_set)
+* [Wikipedia, _Salem-Spencer set_](https://en.wikipedia.org/wiki/Salem–Spencer_set)
 
 ## Tags
 

@@ -11,6 +11,9 @@ import Mathlib.Data.List.Nodup
 import Mathlib.Data.List.Perm.Basic
 public import Mathlib.Data.Nat.Notation
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Definition and basic properties of `List.offDiag`
 

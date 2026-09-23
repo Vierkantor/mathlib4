@@ -9,6 +9,9 @@ public import Aesop
 public import Mathlib.Logic.Function.Iterate
 public import Mathlib.Order.Monotone.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Inequalities on iterates
 
@@ -30,14 +33,15 @@ namespace Monotone
 variable {α : Type*} [Preorder α] {f : α → α} {x y : ℕ → α}
 
 /-!
-### Comparison of two sequences
+# Comparison of two sequences
 
-If $f$ is a monotone function, then $∀ k, x_{k+1} ≤ f(x_k)$ implies that $x_k$ grows slower than
-$f^k(x_0)$, and similarly for the reversed inequalities. If $x_k$ and $y_k$ are two sequences such
-that $x_{k+1} ≤ f(x_k)$ and $y_{k+1} ≥ f(y_k)$ for all $k < n$, then $x_0 ≤ y_0$ implies
-$x_n ≤ y_n$, see `Monotone.seq_le_seq`.
+If $`f` is a monotone function, then $`∀ k, x_{k+1} ≤ f(x_k)` implies that $`x_k` grows slower than
+$`f^k(x_0)`, and similarly for the reversed inequalities. If $`x_k` and $`y_k` are two sequences
+such
+that $`x_{k+1} ≤ f(x_k)` and $`y_{k+1} ≥ f(y_k)` for all $`k < n`, then $`x_0 ≤ y_0` implies
+$`x_n ≤ y_n`, see `Monotone.seq_le_seq`.
 
-If some of the inequalities in this lemma are strict, then we have $x_n < y_n$. The rest of the
+If some of the inequalities in this lemma are strict, then we have $`x_n < y_n`. The rest of the
 lemmas in this section formalize this fact for different inequalities made strict.
 -/
 
@@ -78,7 +82,7 @@ theorem seq_lt_seq_of_le_of_lt (hf : Monotone f) (n : ℕ) (h₀ : x 0 < y 0)
   hf.dual.seq_lt_seq_of_lt_of_le n h₀ hy hx
 
 /-!
-### Iterates of two functions
+# Iterates of two functions
 
 In this section we compare the iterates of a monotone function `f : α → α` to iterates of any
 function `g : β → β`. If `h : β → α` satisfies `h ∘ g ≤ f ∘ h`, then `h (g^[n] x)` grows slower
@@ -106,10 +110,10 @@ theorem iterate_le_of_le {g : α → α} (hf : Monotone f) (h : f ≤ g) (n : �
 end Monotone
 
 /-!
-### Comparison of iterations and the identity function
+# Comparison of iterations and the identity function
 
-If $f(x) ≤ x$ for all $x$ (we express this as `f ≤ id` in the code), then the same is true for
-any iterate of $f$, and similarly for the reversed inequality.
+If $`f(x) ≤ x` for all $`x` (we express this as `f ≤ id` in the code), then the same is true for
+any iterate of $`f`, and similarly for the reversed inequality.
 -/
 
 
@@ -119,8 +123,10 @@ section Preorder
 
 variable {α : Type*} [Preorder α] {f : α → α}
 
-/-- If $x ≤ f x$ for all $x$ (we write this as `id ≤ f`), then the same is true for any iterate
-`f^[n]` of `f`. -/
+/--
+If $`x ≤ f x` for all $`x` (we write this as `id ≤ f`), then the same is true for any iterate
+`f^[n]` of `f`.
+-/
 @[to_dual iterate_le_id_of_le_id]
 theorem id_le_iterate_of_id_le (h : id ≤ f) (n : ℕ) : id ≤ f^[n] := by
   simpa only [iterate_id] using monotone_id.iterate_le_of_le h n
@@ -136,7 +142,7 @@ theorem antitone_iterate_of_le_id (h : f ≤ id) : Antitone fun m => f^[m] := fu
 end Preorder
 
 /-!
-### Iterates of commuting functions
+# Iterates of commuting functions
 
 If `f` and `g` are monotone and commute, then `f x ≤ g x` implies `f^[n] x ≤ g^[n] x`, see
 `Function.Commute.iterate_le_of_map_le`. We also prove two strict inequality versions of this lemma,

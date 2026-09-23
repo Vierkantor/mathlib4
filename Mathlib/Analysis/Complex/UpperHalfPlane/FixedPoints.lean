@@ -9,21 +9,25 @@ public import Mathlib.Analysis.Complex.UpperHalfPlane.MoebiusAction
 public import Mathlib.LinearAlgebra.Matrix.GeneralLinearGroup.FinTwo
 import Mathlib.Algebra.QuadraticDiscriminant
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Fixed points of isometries of the upper half-plane
 
 In this file we show that the scalar multiplication by an element `g : GL (Fin 2) ℝ`
 has the following set of fixed points, depending on `g`.
 
-- if `g` preserves orientation (i.e., has positive determinant) and is an elliptic matrix,
+* if `g` preserves orientation (i.e., has positive determinant) and is an elliptic matrix,
   then `z ↦ g • z` has a unique fixed point;
-- if `g` is a scalar matrix, then it acts by the identity map (proved upstream of this file);
-- if `g` preserves orientation, and is a parabolic or a hyperbolic matrix,
+* if `g` is a scalar matrix, then it acts by the identity map (proved upstream of this file);
+* if `g` preserves orientation, and is a parabolic or a hyperbolic matrix,
   then it has no fixed points;
-- if `g` reverses orientation and has zero trace, then it has a geodesic line of fixed points;
-  - if `g 1 0 = 0`, then this is the vertical line `re z = g 0 1 / (2 * g 1 1)`;
-  - otherwise, it's a half-circle with its center on the real axis;
-- if `g` reverses orientation and has nonzero trace, then it has no fixed points.
+* if `g` reverses orientation and has zero trace, then it has a geodesic line of fixed points;
+
+  * if `g 1 0 = 0`, then this is the vertical line `re z = g 0 1 / (2 * g 1 1)`;
+  * otherwise, it's a half-circle with its center on the real axis;
+* if `g` reverses orientation and has nonzero trace, then it has no fixed points.
 
 As a corollary of this classification, we conclude that `PSL(2, ℝ)` acts faithfully
 on the upper half-plane.

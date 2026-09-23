@@ -12,6 +12,9 @@ public import Mathlib.FieldTheory.IsAlgClosed.Basic
 public import Mathlib.RingTheory.Algebraic.Cardinality
 public import Mathlib.RingTheory.AlgebraicIndependent.TranscendenceBasis
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Classification of Algebraically closed fields
 

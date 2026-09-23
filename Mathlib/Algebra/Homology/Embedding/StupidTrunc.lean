@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Homology.Embedding.Extend
 public import Mathlib.Algebra.Homology.Embedding.IsSupported
 public import Mathlib.Algebra.Homology.Embedding.Restriction
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The stupid truncation of homological complexes
 
@@ -17,9 +20,9 @@ a functor `stupidTruncFunctor : HomologicalComplex C c' ⥤ HomologicalComplex C
 which sends `K` to `K.stupidTrunc e` which is defined as `(K.restriction e).extend e`.
 
 ## TODO (@joelriou)
+
 * define the inclusion `e.stupidTruncFunctor C ⟶ 𝟭 _` when `[e.IsTruncGE]`;
 * define the projection `𝟭 _ ⟶ e.stupidTruncFunctor C` when `[e.IsTruncLE]`.
-
 -/
 
 @[expose] public section

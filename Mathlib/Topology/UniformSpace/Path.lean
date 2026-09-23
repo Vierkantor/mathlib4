@@ -11,6 +11,9 @@ public import Mathlib.Topology.UniformSpace.HeineCantor
 public import Mathlib.Topology.MetricSpace.Lipschitz
 public import Mathlib.Topology.ContinuousMap.Interval
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Paths in uniform spaces
 

@@ -8,12 +8,14 @@ module
 public import Mathlib.Analysis.SpecialFunctions.Complex.LogBounds
 public import Mathlib.Topology.Algebra.InfiniteSum.Field
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Summability of logarithms
 
 We give conditions under which the logarithms of a summable sequence are summable. We also use this
 to relate summability of `f` to multipliability of `1 + f`.
-
 -/
 
 public section

@@ -12,6 +12,9 @@ public import Mathlib.Data.Bool.Basic
 public import Mathlib.MeasureTheory.Measure.Real
 public import Mathlib.Topology.UniformSpace.Compact
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Integrals of Riemann, Henstock-Kurzweil, and McShane
 
@@ -23,7 +26,7 @@ box `(l, u]` in `ℝⁿ` is defined to be the set `{x : ι → ℝ | ∀ i, l i 
 `BoxIntegral.Box`.
 
 Let `vol` be a box-additive function on boxes in `ℝⁿ` with codomain `E →L[ℝ] F`. Given a function
-`f : ℝⁿ → E`, a box `I` and a tagged partition `π` of this box, the *integral sum* of `f` over `π`
+`f : ℝⁿ → E`, a box `I` and a tagged partition `π` of this box, the _integral sum_ of `f` over `π`
 with respect to the volume `vol` is the sum of `vol J (f (π.tag J))` over all boxes of `π`. Here
 `π.tag J` is the point (tag) in `ℝⁿ` associated with the box `J`.
 
@@ -46,7 +49,7 @@ non-Riemann filter (e.g., Henstock-Kurzweil and McShane).
 
 ## Notation
 
-- `ℝⁿ`: local notation for `ι → ℝ`
+* `ℝⁿ`: local notation for `ι → ℝ`
 
 ## Tags
 
@@ -73,7 +76,7 @@ open TaggedPrepartition
 local notation "ℝⁿ" => ι → ℝ
 
 /-!
-### Integral sum and its basic properties
+# Integral sum and its basic properties
 -/
 
 /-- The integral sum of `f : ℝⁿ → E` over a tagged prepartition `π` w.r.t. box-additive volume `vol`
@@ -155,7 +158,7 @@ theorem integralSum_smul (c : ℝ) (f : ℝⁿ → E) (vol : ι →ᵇᵃ E →L
 variable [Fintype ι]
 
 /-!
-### Basic integrability theory
+# Basic integrability theory
 -/
 
 /-- The predicate `HasIntegral I l f vol y` says that `y` is the integral of `f` over `I` along `l`
@@ -375,7 +378,7 @@ theorem norm_integral_le_of_le_const {c : ℝ}
   simpa only [integral_const] using! norm_integral_le_of_norm_le hc μ (integrable_const c)
 
 /-!
-### Henstock-Sacks inequality and integrability on subboxes
+# Henstock-Sacks inequality and integrability on subboxes
 
 Henstock-Sacks inequality for Henstock-Kurzweil integral says the following. Let `f` be a function
 integrable on a box `I`; let `r : ℝⁿ → (0, ∞)` be a function such that for any tagged partition of
@@ -392,14 +395,13 @@ Instead of using predicate assumptions on `r`, we define
 `BoxIntegral.Integrable.convergenceR (h : integrable I l f vol) (ε : ℝ) (c : ℝ≥0) : ℝⁿ → (0, ∞)`
 to be a function `r` such that
 
-- if `l.bRiemann`, then `r` is a constant;
-- if `ε > 0`, then for any tagged partition `π` of `I` subordinate to `r` (more precisely,
+* if `l.bRiemann`, then `r` is a constant;
+* if `ε > 0`, then for any tagged partition `π` of `I` subordinate to `r` (more precisely,
   satisfying the predicate `l.mem_base_set I c r`), the integral sum of `f` over `π` differs from
   the integral of `f` over `I` by at most `ε`.
 
 The proof is mostly based on
-[Russel A. Gordon, *The integrals of Lebesgue, Denjoy, Perron, and Henstock*][Gordon55].
-
+‍\[Russel A. Gordon, _The integrals of Lebesgue, Denjoy, Perron, and Henstock_\]\[Gordon55\].
 -/
 namespace Integrable
 
@@ -427,16 +429,17 @@ theorem dist_integralSum_integral_le_of_memBaseSet (h : Integrable I l f vol) (h
   rw [convergenceR, dite_eq_left h₀] at hπ
   exact (hasIntegral_iff.1 h.hasIntegral ε h₀).choose_spec.2 c _ hπ hπp
 
-/-- **Henstock-Sacks inequality**. Let `r₁ r₂ : ℝⁿ → (0, ∞)` be a function such that for any tagged
-*partition* of `I` subordinate to `rₖ`, `k=1,2`, the integral sum of `f` over this partition differs
-from the integral of `f` by at most `εₖ`. Then for any two tagged *prepartition* `π₁ π₂` subordinate
+/--
+*Henstock-Sacks inequality*. Let `r₁ r₂ : ℝⁿ → (0, ∞)` be a function such that for any tagged
+_partition_ of `I` subordinate to `rₖ`, `k=1,2`, the integral sum of `f` over this partition differs
+from the integral of `f` by at most `εₖ`. Then for any two tagged _prepartition_ `π₁ π₂` subordinate
 to `r₁` and `r₂` respectively and covering the same part of `I`, the integral sums of `f` over these
 prepartitions differ from each other by at most `ε₁ + ε₂`.
 
 The actual statement
 
-- uses `BoxIntegral.Integrable.convergenceR` instead of a predicate assumption on `r`;
-- uses `BoxIntegral.IntegrationParams.MemBaseSet` instead of “subordinate to `r`” to
+* uses `BoxIntegral.Integrable.convergenceR` instead of a predicate assumption on `r`;
+* uses `BoxIntegral.IntegrationParams.MemBaseSet` instead of “subordinate to `r`” to
   account for additional requirements like being a Henstock partition or having a bounded
   distortion.
 
@@ -511,19 +514,20 @@ theorem tendsto_integralSum_toFilteriUnion_single (h : Integrable I l f vol) (hJ
   let ⟨_y, h₁, h₂⟩ := h.to_subbox_aux hJ
   h₁.integral_eq.symm ▸ h₂
 
-/-- **Henstock-Sacks inequality**. Let `r : ℝⁿ → (0, ∞)` be a function such that for any tagged
-*partition* of `I` subordinate to `r`, the integral sum of `f` over this partition differs from the
-integral of `f` by at most `ε`. Then for any tagged *prepartition* `π` subordinate to `r`, the
+/--
+*Henstock-Sacks inequality*. Let `r : ℝⁿ → (0, ∞)` be a function such that for any tagged
+_partition_ of `I` subordinate to `r`, the integral sum of `f` over this partition differs from the
+integral of `f` by at most `ε`. Then for any tagged _prepartition_ `π` subordinate to `r`, the
 integral sum of `f` over this prepartition differs from the integral of `f` over the part of `I`
 covered by `π` by at most `ε`.
 
 The actual statement
 
-- uses `BoxIntegral.Integrable.convergenceR` instead of a predicate assumption on `r`;
-- uses `BoxIntegral.IntegrationParams.MemBaseSet` instead of “subordinate to `r`” to
+* uses `BoxIntegral.Integrable.convergenceR` instead of a predicate assumption on `r`;
+* uses `BoxIntegral.IntegrationParams.MemBaseSet` instead of “subordinate to `r`” to
   account for additional requirements like being a Henstock partition or having a bounded
   distortion;
-- takes an extra argument `π₀ : prepartition I` and an assumption `π.Union = π₀.Union` instead of
+* takes an extra argument `π₀ : prepartition I` and an assumption `π.Union = π₀.Union` instead of
   using `π.to_prepartition`.
 -/
 theorem dist_integralSum_sum_integral_le_of_memBaseSet_of_iUnion_eq (h : Integrable I l f vol)
@@ -571,16 +575,17 @@ theorem dist_integralSum_sum_integral_le_of_memBaseSet_of_iUnion_eq (h : Integra
     _ ≤ ε + δ' + ∑ _J ∈ π₀.boxes, δ' := add_le_add this (dist_sum_sum_le_of_le _ hπiδ')
     _ = ε + δ := by simp [field, δ']; ring
 
-/-- **Henstock-Sacks inequality**. Let `r : ℝⁿ → (0, ∞)` be a function such that for any tagged
-*partition* of `I` subordinate to `r`, the integral sum of `f` over this partition differs from the
-integral of `f` by at most `ε`. Then for any tagged *prepartition* `π` subordinate to `r`, the
+/--
+*Henstock-Sacks inequality*. Let `r : ℝⁿ → (0, ∞)` be a function such that for any tagged
+_partition_ of `I` subordinate to `r`, the integral sum of `f` over this partition differs from the
+integral of `f` by at most `ε`. Then for any tagged _prepartition_ `π` subordinate to `r`, the
 integral sum of `f` over this prepartition differs from the integral of `f` over the part of `I`
 covered by `π` by at most `ε`.
 
 The actual statement
 
-- uses `BoxIntegral.Integrable.convergenceR` instead of a predicate assumption on `r`;
-- uses `BoxIntegral.IntegrationParams.MemBaseSet` instead of “subordinate to `r`” to
+* uses `BoxIntegral.Integrable.convergenceR` instead of a predicate assumption on `r`;
+* uses `BoxIntegral.IntegrationParams.MemBaseSet` instead of “subordinate to `r`” to
   account for additional requirements like being a Henstock partition or having a bounded
   distortion;
 -/
@@ -630,7 +635,7 @@ end Integrable
 open MeasureTheory
 
 /-!
-### Integrability conditions
+# Integrability conditions
 -/
 
 open Prepartition EMetric ENNReal BoxAdditiveMap Finset Metric TaggedPrepartition

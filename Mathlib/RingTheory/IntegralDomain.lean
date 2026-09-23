@@ -11,6 +11,9 @@ public import Mathlib.Data.Fintype.Inv
 public import Mathlib.GroupTheory.SpecificGroups.Cyclic
 public import Mathlib.Tactic.FieldSimp
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Integral domains
 

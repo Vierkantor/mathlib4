@@ -9,6 +9,9 @@ public import Mathlib.Analysis.CStarAlgebra.ContinuousFunctionalCalculus.Unique
 public import Mathlib.Analysis.Matrix.Spectrum
 public import Mathlib.Topology.ContinuousMap.Units
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Continuous Functional Calculus for Hermitian Matrices
 
@@ -17,13 +20,11 @@ This file defines an instance of the continuous functional calculus for Hermitia
 
 ## Main Results
 
-- `Matrix.IsHermitian.cfc` : Realization of the functional calculus for a Hermitian matrix
+* `Matrix.IsHermitian.cfc` : Realization of the functional calculus for a Hermitian matrix
   as the triple product `U * diagonal (RCLike.ofReal ∘ f ∘ hA.eigenvalues) * star U` with
   `U = eigenvectorUnitary hA`.
-
-- `cfc_eq` : Proof that the above agrees with the continuous functional calculus.
-
-- `Matrix.IsHermitian.instContinuousFunctionalCalculus` : Instance of the continuous functional
+* `cfc_eq` : Proof that the above agrees with the continuous functional calculus.
+* `Matrix.IsHermitian.instContinuousFunctionalCalculus` : Instance of the continuous functional
   calculus for a Hermitian matrix `A` over `𝕜`.
 
 ## Tags

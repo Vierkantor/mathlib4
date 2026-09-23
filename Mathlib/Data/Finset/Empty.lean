@@ -9,19 +9,22 @@ public import Mathlib.Data.Finset.Defs
 public import Mathlib.Data.Multiset.ZeroCons
 public import Aesop
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Empty and nonempty finite sets
 
 This file defines the empty finite set ∅ and a predicate for nonempty `Finset`s.
 
 ## Main declarations
+
 * `Finset.Nonempty`: A finset is nonempty if it has elements. This is equivalent to saying `s ≠ ∅`.
 * `Finset.empty`: Denoted by `∅`. The finset associated to any type consisting of no elements.
 
 ## Tags
 
 finite sets, finset
-
 -/
 
 @[expose] public section
@@ -38,7 +41,9 @@ variable {α : Type*}
 
 namespace Finset
 
-/-! ### Nonempty -/
+/-!
+# Nonempty
+-/
 
 
 /-- The property `s.Nonempty` expresses the fact that the finset `s` is not empty. It should be used
@@ -83,7 +88,9 @@ theorem Nonempty.to_subtype {s : Finset α} : s.Nonempty → Nonempty s :=
 
 theorem Nonempty.to_type {s : Finset α} : s.Nonempty → Nonempty α := fun ⟨x, _hx⟩ => ⟨x⟩
 
-/-! ### empty -/
+/-!
+# empty
+-/
 
 
 section Empty

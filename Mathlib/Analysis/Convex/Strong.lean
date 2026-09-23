@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.Convex.Function
 public import Mathlib.Analysis.InnerProductSpace.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Uniformly and strongly convex functions
 

@@ -19,8 +19,11 @@ public import Mathlib.Data.List.Sigma
 public import Mathlib.Data.PNat.Notation
 public import Mathlib.Tactic.Bound.Init
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
-## `Plausible`: generators for functions
+# `Plausible`: generators for functions
 
 This file defines `Sampleable` instances for `ℤ → ℤ` injective functions.
 

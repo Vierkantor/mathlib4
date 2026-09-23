@@ -11,6 +11,9 @@ public import Mathlib.Tactic.ByCases
 public import Mathlib.Tactic.Finiteness.Attr
 import Mathlib.Tactic.Basify.Attr
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # ⊤ and ⊥, bounded lattices and variants
 
@@ -23,7 +26,6 @@ instances for `Prop` and `fun`.
 * `<Top/Bot> α`: Typeclasses to declare the `⊤`/`⊥` notation.
 * `Order<Top/Bot> α`: Order with a top/bottom element.
 * `BoundedOrder α`: Order with a top and bottom element.
-
 -/
 
 @[expose] public section
@@ -34,7 +36,9 @@ universe u v
 
 variable {α : Type u} {β : Type v}
 
-/-! ### Top, bottom element -/
+/-!
+# Top, bottom element
+-/
 
 /-- An order is an `OrderTop` if it has a greatest element.
 We state this using a data mixin, holding the value of `⊤` and the greatest element constraint. -/
@@ -248,7 +252,9 @@ instance [LE α] [h : OrderBot α] : OrderTop αᵒᵈ where
 end OrderDual
 
 
-/-! ### Bounded order -/
+/-!
+# Bounded order
+-/
 
 
 /-- A bounded order describes an order `(≤)` with a top and bottom element,
@@ -272,7 +278,9 @@ instance BoundedOrder.instSubsingleton : Subsingleton (BoundedOrder α) where
 
 end PartialOrder
 
-/-! ### Function lattices -/
+/-!
+# Function lattices
+-/
 
 namespace Pi
 
@@ -362,7 +370,9 @@ abbrev BoundedOrder.lift [LE α] [Top α] [Bot α] [LE β] [BoundedOrder β] (f 
 
 end lift
 
-/-! ### Subtype, order dual, product lattices -/
+/-!
+# Subtype, order dual, product lattices
+-/
 
 
 namespace Subtype

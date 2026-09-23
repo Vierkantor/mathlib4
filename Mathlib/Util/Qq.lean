@@ -9,6 +9,9 @@ public import Mathlib.Init
 public import Qq
 public import Qq.Typ
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Extra `Qq` helpers
 
@@ -54,6 +57,8 @@ def findLocalDeclWithTypeQ? {u : Level} (sort : Q(Sort u)) : MetaM (Option Q($so
 This is a Qq version of `Lean.Meta.mkDecideProof`. -/
 def mkDecideProofQ (p : Q(Prop)) : MetaM Q($p) := mkDecideProof p
 
+
+set_option doc.verso false
 /-- Join a list of elements of type `α` into a container `β`.
 
 Usually `β` is `q(Multiset α)` or `q(Finset α)` or `q(Set α)`.
@@ -75,6 +80,8 @@ def mkSetLiteralQ {u v : Level} {α : Q(Type u)} (β : Q(Type v))
   | [x] => q({$x})
   | x :: xs => q(Insert.insert $x $(mkSetLiteralQ β xs))
 
+
+set_option doc.verso true
 /-- Returns the natural number literal `n` as used in the frontend. It is a `OfNat.ofNat`
 application. Recall that all theorems and definitions containing numeric literals are encoded using
 `OfNat.ofNat` applications in the frontend.

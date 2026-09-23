@@ -11,11 +11,13 @@ public import Mathlib.CategoryTheory.Types.Basic
 public import Mathlib.Tactic.Simps
 public import Mathlib.Control.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Convert from `Applicative` to `CategoryTheory.Functor.LaxMonoidal`
 
 This allows us to use Lean's `Type`-based applicative functors in category theory.
-
 -/
 
 public section

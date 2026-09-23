@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Limits.Cones
 public import Mathlib.CategoryTheory.FinCategory.Basic
 public import Mathlib.Data.Finset.Lattice.Lemmas
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Bicones
 

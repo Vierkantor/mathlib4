@@ -11,6 +11,9 @@ public import Mathlib.Algebra.MonoidAlgebra.Support
 public import Mathlib.LinearAlgebra.Finsupp.SumProd
 public import Mathlib.RingTheory.GradedAlgebra.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Internal grading of an `AddMonoidAlgebra`
 

@@ -12,8 +12,10 @@ public import Mathlib.Topology.Algebra.InfiniteSum.Module
 public import Mathlib.Topology.Algebra.InfiniteSum.Order
 public import Mathlib.Topology.Metrizable.Uniformity
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Basic API for vector measures
 
 This file develops the basic consequences of countable additivity for vector measures, equips

@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Category.Grp.Limits
 public import Mathlib.Algebra.Colimit.Module
 public import Mathlib.Algebra.Module.Shrink -- shake: keep (Module R (Shrink.{w, max v w} ↥(sectionsSubmodule F))), cf. lean#13417
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The category of R-modules has all limits
 

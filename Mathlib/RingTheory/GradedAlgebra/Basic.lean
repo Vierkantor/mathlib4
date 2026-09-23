@@ -10,6 +10,9 @@ public import Mathlib.Algebra.DirectSum.Decomposition
 public import Mathlib.Algebra.DirectSum.Internal
 public import Mathlib.Algebra.DirectSum.Ring
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Internally-graded rings and algebras
 
@@ -170,11 +173,13 @@ can avoid typeclass search, and because it provides a more concise name. -/
 abbrev GradedAlgebra :=
   GradedRing 𝒜
 
-/-- A helper to construct a `GradedAlgebra` when the `SetLike.GradedMonoid` structure is already
+/--
+A helper to construct a `GradedAlgebra` when the `SetLike.GradedMonoid` structure is already
 available. This makes the `left_inv` condition easier to prove, and phrases the `right_inv`
 condition in a way that allows custom `@[ext]` lemmas to apply.
 
-See note [reducible non-instances]. -/
+See note \[reducible non-instances\].
+-/
 abbrev GradedAlgebra.ofAlgHom [SetLike.GradedMonoid 𝒜] (decompose : A →ₐ[R] ⨁ i, 𝒜 i)
     (right_inv : (DirectSum.coeAlgHom 𝒜).comp decompose = AlgHom.id R A)
     (left_inv : ∀ i (x : 𝒜 i), decompose (x : A) = DirectSum.of (fun i => ↥(𝒜 i)) i x) :
@@ -357,12 +362,14 @@ noncomputable def coeAlgEquiv (hM : DirectSum.IsInternal M) :
     (DirectSum ι fun i => ↥(M i)) ≃ₐ[R] A :=
   { RingEquiv.ofBijective (DirectSum.coeAlgHom M) hM with commutes' := fun r => by simp }
 
-/-- Given an `R`-algebra `A` and a family `ι → Submodule R A` of submodules
+/--
+Given an `R`-algebra `A` and a family `ι → Submodule R A` of submodules
 parameterized by an additive monoid `ι`
 and satisfying `SetLike.GradedMonoid M` (essentially, is multiplicative)
 such that `DirectSum.IsInternal M` (`A` is the direct sum of the `M i`),
 we endow `A` with the structure of a graded algebra.
-The submodules are the *homogeneous* parts. -/
+The submodules are the _homogeneous_ parts.
+-/
 @[instance_reducible]
 noncomputable def gradedAlgebra (hM : DirectSum.IsInternal M) : GradedAlgebra M :=
   { (inferInstance : SetLike.GradedMonoid M) with

@@ -12,6 +12,9 @@ public import Mathlib.Algebra.Module.RingHom
 public import Mathlib.Algebra.Ring.CompTypeclasses
 public import Mathlib.GroupTheory.GroupAction.Hom
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # (Semi)linear maps
 
@@ -21,7 +24,6 @@ In this file we define
   `σ` is a `RingHom` from `R` to `R₂` and an `f : M →ₛₗ[σ] M₂` satisfies
   `f (c • x) = (σ c) • (f x)`. We recover plain linear maps by choosing `σ` to be `RingHom.id R`.
   This is denoted by `M →ₗ[R] M₂`. We also add the notation `M →ₗ⋆[R] M₂` for star-linear maps.
-
 * `IsLinearMap R f` : predicate saying that `f : M → M₂` is a linear map. (Note that this
   was not generalized to semilinear maps.)
 
@@ -762,7 +764,9 @@ instance [DistribSMul Sᵐᵒᵖ M₂] [SMulCommClass R₂ Sᵐᵒᵖ M₂] [IsC
 
 end SMul
 
-/-! ### Arithmetic on the codomain -/
+/-!
+# Arithmetic on the codomain
+-/
 
 section Arithmetic
 

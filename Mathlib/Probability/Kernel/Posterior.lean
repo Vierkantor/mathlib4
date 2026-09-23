@@ -10,8 +10,10 @@ public import Mathlib.Probability.Kernel.Composition.Lemmas
 public import Mathlib.Probability.Kernel.Disintegration.StandardBorel
 public import Mathlib.Probability.Kernel.Deterministic
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Posterior kernel
 
 For `μ : Measure Ω` (called prior measure), seen as a measure on a parameter, and a kernel
@@ -35,7 +37,6 @@ and data can be recovered from the distribution of the data and the posterior.
 * `posterior_comp_self`: `κ†μ ∘ₘ κ ∘ₘ μ = μ`
 * `posterior_posterior`: `(κ†μ)†(κ ∘ₘ μ) =ᵐ[μ] κ`
 * `posterior_comp`: `(η ∘ₖ κ)†μ =ᵐ[η ∘ₘ κ ∘ₘ μ] κ†μ ∘ₖ η†(κ ∘ₘ μ)`
-
 * `posterior_eq_withDensity`: If `κ ω ≪ κ ∘ₘ μ` for `μ`-almost every `ω`,
   then for `κ ∘ₘ μ`-almost every `x`,
   `κ†μ x = μ.withDensity (fun ω ↦ κ.rnDeriv (Kernel.const _ (κ ∘ₘ μ)) ω x)`.
@@ -48,7 +49,6 @@ and data can be recovered from the distribution of the data and the posterior.
 
 This notation emphasizes that the posterior is a kind of inverse of `κ`, which we would want to
 denote `κ†`, but we have to also specify the measure `μ`.
-
 -/
 
 @[expose] public section

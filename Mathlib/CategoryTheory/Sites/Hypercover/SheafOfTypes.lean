@@ -8,23 +8,24 @@ module
 public import Mathlib.CategoryTheory.Sites.Hypercover.One
 public import Mathlib.CategoryTheory.Limits.Types.Multiequalizer
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # `1`-hypercovers and (pre)sheaves of types
 
 In this file we provide some API for working with `1`-hypercovers for sheaves of types.
 
 ## Main declarations
 
-- `CategoryTheory.PreOneHypercover.IsStronglySheafFor`: A pre-`1`-hypercover `E`
+* `CategoryTheory.PreOneHypercover.IsStronglySheafFor`: A pre-`1`-hypercover `E`
   satisfies the strong sheaf condition for a presheaf of types `F` if
   `F` is a sheaf for the `0`-covering and separated for the `1`-coverings.
-- `CategoryTheory.PreOneHypercover.IsStronglySheafFor.amalgamate`: Glue
+* `CategoryTheory.PreOneHypercover.IsStronglySheafFor.amalgamate`: Glue
   a family of compatible sections along `E` if `E` satisfies the strong sheaf condition.
-- `CategoryTheory.PreOneHypercover.IsStronglySheafFor.isLimitMultifork`: If `E`
+* `CategoryTheory.PreOneHypercover.IsStronglySheafFor.isLimitMultifork`: If `E`
   satisfies the strong sheaf condition for `F`, then the multiequalizer diagram
   for `E` is limiting.
-
 -/
 
 universe w

@@ -7,18 +7,19 @@ module
 
 public import Mathlib.CategoryTheory.FiberedCategory.Cartesian
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Fibered categories
 
 This file defines what it means for a functor `p : 𝒳 ⥤ 𝒮` to be (pre)fibered.
 
 ## Main definitions
 
-- `IsPreFibered p` expresses `𝒳` is fibered over `𝒮` via a functor `p : 𝒳 ⥤ 𝒮`, as in SGA VI.6.1.
+* `IsPreFibered p` expresses `𝒳` is fibered over `𝒮` via a functor `p : 𝒳 ⥤ 𝒮`, as in SGA VI.6.1.
   This means that any morphism in the base `𝒮` can be lifted to a Cartesian morphism in `𝒳`.
-
-- `IsFibered p` expresses `𝒳` is fibered over `𝒮` via a functor `p : 𝒳 ⥤ 𝒮`, as in SGA VI.6.1.
+* `IsFibered p` expresses `𝒳` is fibered over `𝒮` via a functor `p : 𝒳 ⥤ 𝒮`, as in SGA VI.6.1.
   This means that it is prefibered, and that the composition of any two Cartesian morphisms is
   Cartesian.
 
@@ -35,8 +36,8 @@ when wanting to apply this condition, it is recommended to instead use the lemma
 equalities.
 
 ## References
-* [A. Grothendieck, M. Raynaud, *SGA 1*](https://arxiv.org/abs/math/0206203)
 
+* [A. Grothendieck, M. Raynaud, _SGA 1_](https://arxiv.org/abs/math/0206203)
 -/
 
 @[expose] public section

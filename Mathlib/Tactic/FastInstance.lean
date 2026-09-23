@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Init
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The `fast_instance%` and `inferInstanceAs%` term elaborators
 -/
@@ -115,6 +118,8 @@ partial def makeFastInstance (inst expectedType : Expr) (root := true) (trace : 
           mkLambdaFVars xs (← whnfI (mkAppN arg xs))
     return mkAppN f (← mvars.mapM instantiateMVars)
 
+
+set_option doc.verso false
 /--
 `fast_instance% inst` takes an expression for a typeclass instance `inst`, and unfolds it into
 constructor applications that leverage existing instances. It uses the expected type to fill in
@@ -132,6 +137,8 @@ rather than having to break it down into smaller pieces.
 -/
 syntax (name := fastInstance) "fast_instance% " term : term
 
+
+set_option doc.verso true
 @[term_elab fastInstance, inherit_doc fastInstance]
 public def elabFastInstance : TermElab
   | `(term| fast_instance% $arg), expectedType? => do

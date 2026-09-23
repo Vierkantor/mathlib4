@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Order.SupClosed
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Sublattices
 
@@ -46,7 +49,9 @@ instance instSetLike : SetLike (Sublattice α) α where
 
 instance : PartialOrder (Sublattice α) := .ofSetLike (Sublattice α)
 
-/-- See Note [custom simps projection]. -/
+/--
+See Note \[custom simps projection\].
+-/
 def Simps.coe (L : Sublattice α) : Set α := L
 
 initialize_simps_projections Sublattice (carrier → coe, as_prefix coe)

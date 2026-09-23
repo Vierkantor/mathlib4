@@ -11,6 +11,9 @@ public import Mathlib.Order.Interval.Set.OrdConnected
 public import Mathlib.Order.Nat
 public import Mathlib.Order.UpperLower.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Images of intervals under `Nat.cast : ℕ → ℤ`
 

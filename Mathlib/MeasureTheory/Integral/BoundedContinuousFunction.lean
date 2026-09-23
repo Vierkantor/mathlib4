@@ -9,6 +9,9 @@ public import Mathlib.MeasureTheory.Integral.Bochner.Basic
 public import Mathlib.Topology.ContinuousMap.Bounded.Normed
 public import Mathlib.Topology.Algebra.Order.LiminfLimsup
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Integration of bounded continuous functions
 

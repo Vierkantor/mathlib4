@@ -9,6 +9,9 @@ public import Mathlib.Algebra.BigOperators.Group.Finset.Defs
 public import Mathlib.Data.Finset.Prod
 public import Mathlib.Data.Finset.Sum
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Big operators
 
@@ -248,7 +251,9 @@ variable [DecidableEq κ]
 lemma prod_fiberwise_eq_prod_filter (s : Finset ι) (t : Finset κ) (g : ι → κ) (f : ι → M) :
     ∏ j ∈ t, ∏ i ∈ s with g i = j, f i = ∏ i ∈ s with g i ∈ t, f i := by
   rw [← prod_disjiUnion, disjiUnion_filter_eq]
-  #adaptation_note /-- 2025-09-12 (kmill) copied from private lemma pairwiseDisjoint_fibers -/
+  #adaptation_note /--
+                   2025-09-12 (kmill) copied from private lemma pairwiseDisjoint\_fibers
+                   -/
   intro x' hx y' hy hne
   simp_rw [disjoint_left, mem_filter]; rintro i ⟨_, rfl⟩ ⟨_, rfl⟩; exact hne rfl
 
@@ -264,7 +269,9 @@ lemma prod_fiberwise_eq_prod_filter' (s : Finset ι) (t : Finset κ) (g : ι →
 lemma prod_fiberwise_of_maps_to {g : ι → κ} (h : ∀ i ∈ s, g i ∈ t) (f : ι → M) :
     ∏ j ∈ t, ∏ i ∈ s with g i = j, f i = ∏ i ∈ s, f i := by
   rw [← prod_disjiUnion, disjiUnion_filter_eq_of_maps_to h]
-  #adaptation_note /-- 2025-09-12 (kmill) copied from private lemma pairwiseDisjoint_fibers -/
+  #adaptation_note /--
+                   2025-09-12 (kmill) copied from private lemma pairwiseDisjoint\_fibers
+                   -/
   intro x' hx y' hy hne
   simp_rw [disjoint_left, mem_filter]; rintro i ⟨_, rfl⟩ ⟨_, rfl⟩; exact hne rfl
 

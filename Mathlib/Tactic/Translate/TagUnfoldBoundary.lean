@@ -8,6 +8,9 @@ module
 public import Mathlib.Tactic.Translate.Core
 public meta import Mathlib.Tactic.Translate.Core
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Tagging of unfold boundaries for translation attributes
 

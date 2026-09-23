@@ -8,11 +8,13 @@ module
 
 public import Mathlib.Topology.Sheaves.Abelian
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Sheaves of abelian groups.
 
 Results for sheaves of abelian groups on topological spaces.
-
 -/
 
 public section

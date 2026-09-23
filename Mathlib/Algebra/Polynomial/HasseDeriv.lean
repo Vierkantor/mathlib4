@@ -12,6 +12,9 @@ public import Mathlib.Data.Nat.Choose.Vandermonde
 public import Mathlib.Tactic.Field
 public import Mathlib.Tactic.Positivity
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Hasse derivative of polynomials
 
@@ -38,7 +41,6 @@ in `Mathlib/Algebra/Polynomial/Taylor.lean`.
 ## Reference
 
 https://math.fontein.de/2009/08/12/the-hasse-derivative/
-
 -/
 
 @[expose] public section

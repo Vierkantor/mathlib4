@@ -9,6 +9,9 @@ public import Mathlib.Order.Hom.Bounded
 public import Mathlib.Order.Hom.Lattice
 public import Mathlib.Order.SymmDiff
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Bounded lattice homomorphisms
 
@@ -188,7 +191,9 @@ instance [Lattice α] [Lattice β] [BoundedOrder α] [BoundedOrder β] [BoundedL
       map_top' := map_top f
       map_bot' := map_bot f }⟩
 
-/-! ### Finitary supremum homomorphisms -/
+/-!
+# Finitary supremum homomorphisms
+-/
 
 namespace SupBotHom
 
@@ -351,7 +356,9 @@ lemma subtypeVal_coe {P : β → Prop}
 
 end SupBotHom
 
-/-! ### Bounded lattice homomorphisms -/
+/-!
+# Bounded lattice homomorphisms
+-/
 
 namespace BoundedLatticeHom
 
@@ -496,7 +503,9 @@ lemma subtypeVal_coe {P : β → Prop} (Pbot : P ⊥) (Ptop : P ⊤)
 
 end BoundedLatticeHom
 
-/-! ### Dual homs -/
+/-!
+# Dual homs
+-/
 
 namespace SupBotHom
 

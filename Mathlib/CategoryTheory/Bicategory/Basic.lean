@@ -7,12 +7,16 @@ module
 
 public import Mathlib.CategoryTheory.NatIso
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Bicategories
 
 In this file we define typeclass for bicategories.
 
 A bicategory `B` consists of
+
 * objects `a : B`,
 * 1-morphisms `f : a ⟶ b` between objects `a b : B`, and
 * 2-morphisms `η : f ⟶ g` between 1-morphisms `f g : a ⟶ b` between objects `a b : B`.
@@ -22,6 +26,7 @@ respectively.
 
 A typeclass for bicategories extends `CategoryTheory.CategoryStruct` typeclass. This means that
 we have
+
 * a composition `f ≫ g : a ⟶ c` for each 1-morphisms `f : a ⟶ b` and `g : b ⟶ c`, and
 * an identity `𝟙 a : a ⟶ a` for each object `a : B`.
 
@@ -137,7 +142,7 @@ namespace Bicategory
 @[inherit_doc] scoped notation "ρ_" => Bicategory.rightUnitor
 
 /-!
-### Simp-normal form for 2-morphisms
+# Simp-normal form for 2-morphisms
 
 Rewriting involving associators and unitors could be very complicated. We try to ease this
 complexity by putting carefully chosen simp lemmas that rewrite any 2-morphisms into simp-normal
@@ -146,12 +151,13 @@ form defined below. Rewriting into simp-normal form is also useful when applying
 
 The simp-normal form of 2-morphisms is defined to be an expression that has the minimal number of
 parentheses. More precisely,
+
 1. it is a composition of 2-morphisms like `η₁ ≫ η₂ ≫ η₃ ≫ η₄ ≫ η₅` such that each `ηᵢ` is
-  either a structural 2-morphisms (2-morphisms made up only of identities, associators, unitors)
-  or non-structural 2-morphisms, and
+   either a structural 2-morphisms (2-morphisms made up only of identities, associators, unitors)
+   or non-structural 2-morphisms, and
 2. each non-structural 2-morphism in the composition is of the form `f₁ ◁ f₂ ◁ f₃ ◁ η ▷ f₄ ▷ f₅`,
-  where each `fᵢ` is a 1-morphism that is not the identity or a composite and `η` is a
-  non-structural 2-morphisms that is also not the identity or a composite.
+   where each `fᵢ` is a 1-morphism that is not the identity or a composite and `η` is a
+   non-structural 2-morphisms that is also not the identity or a composite.
 
 Note that `f₁ ◁ f₂ ◁ f₃ ◁ η ▷ f₄ ▷ f₅` is actually `f₁ ◁ (f₂ ◁ (f₃ ◁ ((η ▷ f₄) ▷ f₅)))`.
 -/

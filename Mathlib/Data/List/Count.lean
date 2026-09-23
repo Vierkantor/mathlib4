@@ -10,6 +10,9 @@ public import Mathlib.Tactic.Common
 public import Batteries.Data.List.Lemmas
 public import Mathlib.Tactic.Attr.Core
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Counting in lists
 

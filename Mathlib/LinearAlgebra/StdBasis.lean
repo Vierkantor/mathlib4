@@ -10,6 +10,9 @@ public import Mathlib.LinearAlgebra.Finsupp.VectorSpace
 public import Mathlib.LinearAlgebra.FreeModule.Basic
 public import Mathlib.LinearAlgebra.LinearIndependent.Lemmas
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The standard basis
 
@@ -25,12 +28,11 @@ this is a basis over `Fin 3 → R`.
 
 ## Main definitions
 
-- `Pi.basis s`: given a basis `s i` for each `M i`, the standard basis on `Π i, M i`
-- `Pi.basisFun R η`: the standard basis on `R^η`, i.e. `η → R`, given by
+* `Pi.basis s`: given a basis `s i` for each `M i`, the standard basis on `Π i, M i`
+* `Pi.basisFun R η`: the standard basis on `R^η`, i.e. `η → R`, given by
   `Pi.basisFun R η i j = Pi.single i 1 j = if i = j then 1 else 0`.
-- `Matrix.stdBasis R n m`: the standard basis on `Matrix n m R`, given by
+* `Matrix.stdBasis R n m`: the standard basis on `Matrix n m R`, given by
   `Matrix.stdBasis R n m (i, j) i' j' = if (i, j) = (i', j') then 1 else 0`.
-
 -/
 
 @[expose] public section

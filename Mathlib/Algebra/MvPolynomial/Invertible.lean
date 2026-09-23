@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.MvPolynomial.Basic
 public import Mathlib.RingTheory.AlgebraTower
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Invertible polynomials
 

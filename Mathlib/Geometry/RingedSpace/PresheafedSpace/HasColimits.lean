@@ -10,6 +10,9 @@ public import Mathlib.Topology.Category.TopCat.Limits.Basic
 public import Mathlib.Topology.Sheaves.Limits
 public import Mathlib.CategoryTheory.ConcreteCategory.Elementwise
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `PresheafedSpace C` has colimits.
 

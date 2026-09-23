@@ -11,6 +11,9 @@ public meta import Batteries.Lean.Expr
 import all Lean.Elab.Tactic.Induction -- for `getElimNameInfo`
 public import Mathlib.Init
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Backward compatible implementation of lean 3 `cases` tactic
 

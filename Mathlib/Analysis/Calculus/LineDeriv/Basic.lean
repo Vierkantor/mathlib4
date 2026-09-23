@@ -10,6 +10,9 @@ public import Mathlib.Analysis.Calculus.Deriv.Mul
 public import Mathlib.Analysis.Calculus.Deriv.Pow
 public import Mathlib.Analysis.Calculus.Deriv.Slope
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Line derivatives
 
@@ -43,6 +46,7 @@ and develop about them a basic API inspired by the one for the Fréchet derivati
 
 We depart from the Fréchet derivative in two places, as the dependence of the following predicates
 on the direction would make them barely usable:
+
 * We do not define an analogue of the predicate `UniqueDiffOn`;
 * We do not define `LineDifferentiableOn` nor `LineDifferentiable`.
 -/

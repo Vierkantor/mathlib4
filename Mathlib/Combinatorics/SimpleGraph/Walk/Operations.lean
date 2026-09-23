@@ -8,6 +8,9 @@ module
 public import Mathlib.Combinatorics.SimpleGraph.Walk.Traversal
 public import Mathlib.Data.List.Zip
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Operations on walks
 
@@ -25,6 +28,7 @@ Operations on walks that produce a new walk in the same graph.
 * `SimpleGraph.Walk.dropLast`: Remove the last dart of a walk
 
 ## Tags
+
 walks
 -/
 

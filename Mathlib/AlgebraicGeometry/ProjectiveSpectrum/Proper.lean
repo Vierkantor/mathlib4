@@ -10,14 +10,17 @@ public import Mathlib.Algebra.Order.BigOperators.Ring.Finset
 public import Mathlib.AlgebraicGeometry.ProjectiveSpectrum.Basic
 public import Mathlib.AlgebraicGeometry.ValuativeCriterion
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Properness of `Proj A`
 
 We show that `Proj 𝒜` is proper over `Spec 𝒜₀`.
 
 ## Notes
-This contribution was created as part of the Durham Computational Algebraic Geometry Workshop
 
+This contribution was created as part of the Durham Computational Algebraic Geometry Workshop
 -/
 
 public section

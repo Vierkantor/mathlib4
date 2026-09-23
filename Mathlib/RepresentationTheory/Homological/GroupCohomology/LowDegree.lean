@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Homology.ShortComplex.ModuleCat
 public import Mathlib.RepresentationTheory.Homological.GroupCohomology.Basic
 public import Mathlib.RepresentationTheory.Invariants
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The low-degree cohomology of a `k`-linear `G`-representation
 
@@ -49,7 +52,6 @@ The file also contains an identification between the definitions in
 
 * The relationship between `H2` and group extensions
 * Nonabelian group cohomology
-
 -/
 
 @[expose] public section

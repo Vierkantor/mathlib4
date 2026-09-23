@@ -15,6 +15,9 @@ public import Mathlib.Data.ULift
 public import Mathlib.Order.Interval.Set.Defs
 public import Mathlib.Algebra.Ring.GrindInstances
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Characteristic of semirings
 

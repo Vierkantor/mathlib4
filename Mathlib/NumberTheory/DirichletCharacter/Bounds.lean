@@ -13,6 +13,9 @@ public import Mathlib.Tactic.ContinuousFunctionalCalculus
 public import Mathlib.Tactic.NormNum.GCD
 public import Mathlib.Tactic.Positivity
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Bounds for values of Dirichlet characters
 

@@ -11,6 +11,9 @@ public import Mathlib.Order.Fin.Basic
 public import Mathlib.Order.PiLex
 public import Mathlib.Order.Interval.Set.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Order properties on tuples
 -/

@@ -10,6 +10,9 @@ public import Mathlib.Data.Finsupp.Pointwise
 public import Mathlib.Data.Sym.Sym2.Finsupp
 public import Mathlib.LinearAlgebra.QuadraticForm.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Constructing a bilinear map from a quadratic map, given a basis
 

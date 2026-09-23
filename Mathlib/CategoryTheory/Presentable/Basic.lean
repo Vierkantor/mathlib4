@@ -8,7 +8,11 @@ module
 public import Mathlib.CategoryTheory.Limits.Constructions.EventuallyConstant
 public import Mathlib.CategoryTheory.Presentable.IsCardinalFiltered
 
-/-! # Presentable objects
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Presentable objects
 
 A functor `F : C ⥤ D` is `κ`-accessible (`Functor.IsCardinalAccessible`)
 if it commutes with colimits of shape `J` where `J` is any `κ`-filtered category
@@ -21,8 +25,9 @@ if the functor `Hom(X, _)` (i.e. `coyoneda.obj (op X)`) is `κ`-accessible.
 Similarly as for accessible functors, we define a type class `IsPresentable`.
 
 ## References
-* [Adámek, J. and Rosický, J., *Locally presentable and accessible categories*][Adamek_Rosicky_1994]
 
+* ‍\[Adámek, J. and Rosický, J., _Locally presentable and accessible
+  categories_\]\[Adamek\_Rosicky\_1994\]
 -/
 
 @[expose] public section

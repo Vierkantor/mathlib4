@@ -8,10 +8,14 @@ module
 public import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 public import Mathlib.Geometry.Manifold.VectorBundle.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Unique derivative sets in manifolds
 
 In this file, we prove various properties of unique derivative sets in manifolds.
+
 * `image_denseRange`: suppose `f` is differentiable on `s` and its derivative at every point of `s`
   has dense range. If `s` has the unique differential property, then so does `f '' s`.
 * `uniqueMDiffOn_preimage`: the unique differential property is preserved by local diffeomorphisms
@@ -28,7 +32,9 @@ noncomputable section
 open scoped Manifold
 open Set
 
-/-! ### Unique derivative sets in manifolds -/
+/-!
+# Unique derivative sets in manifolds
+-/
 
 section UniqueMDiff
 

@@ -10,12 +10,14 @@ public import Mathlib.CategoryTheory.ObjectProperty.EpiMono
 public import Mathlib.CategoryTheory.ObjectProperty.FiniteLimits
 public import Mathlib.CategoryTheory.Limits.FullSubcategory
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Full subcategories of Galois categories
 
 Given a Galois category `C`, we introduce a typeclass `P.IsGaloisSubcategory`
 which allows to show that `P.FullSubcategory` is also a Galois category.
-
 -/
 
 universe w v u

@@ -8,6 +8,9 @@ module
 public import Mathlib.CategoryTheory.MorphismProperty.Factorization
 public import Mathlib.CategoryTheory.MorphismProperty.LiftingProperty
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The retract argument
 
@@ -20,8 +23,8 @@ then `W₂.llp = W₁` if `W₁` is stable under retracts,
 and `W₁.rlp = W₂` if `W₂` is.
 
 ## Reference
-- https://ncatlab.org/nlab/show/weak+factorization+system#retract_argument
 
+* https://ncatlab.org/nlab/show/weak+factorization+system#retract\_argument
 -/
 
 @[expose] public section

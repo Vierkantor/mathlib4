@@ -15,6 +15,9 @@ public import Mathlib.Analysis.Normed.Operator.LinearIsometry
 public import Mathlib.Basic.Real.Star
 public import Mathlib.Topology.Algebra.Module.Star
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Normed star rings and algebras
 
@@ -29,9 +32,8 @@ Note that the type classes corresponding to C⋆-algebras are defined in
 
 ## TODO
 
-- Show that `‖x⋆ * x‖ = ‖x‖^2` is equivalent to `‖x⋆ * x‖ = ‖x⋆‖ * ‖x‖`, which is used as the
+* Show that `‖x⋆ * x‖ = ‖x‖^2` is equivalent to `‖x⋆ * x‖ = ‖x⋆‖ * ‖x‖`, which is used as the
   definition of C⋆-algebras in some sources (e.g. Wikipedia).
-
 -/
 
 @[expose] public section

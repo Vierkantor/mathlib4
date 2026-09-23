@@ -12,6 +12,9 @@ public import Mathlib.Algebra.Lie.Weights.IsSimple
 public import Mathlib.LinearAlgebra.RootSystem.GeckConstruction.Semisimple
 public import Mathlib.LinearAlgebra.RootSystem.GeckConstruction.Relations
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Geck's construction is complete
 
@@ -26,7 +29,6 @@ this construction yields all finite-dimensional simple Lie algebras up to isomor
   `LieAlgebra.IsKilling.rootSystem` is left inverse to `RootPairing.GeckConstruction.lieAlgebra`.
 * `RootPairing.GeckConstruction.equivLieAlgebra`: up to equivalence,
   `LieAlgebra.IsKilling.rootSystem` is right inverse to `RootPairing.GeckConstruction.lieAlgebra`.
-
 -/
 
 @[expose] public section

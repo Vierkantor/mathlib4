@@ -8,6 +8,9 @@ module
 public import Mathlib.RingTheory.Coalgebra.Basic
 public import Mathlib.RingTheory.TensorProduct.Maps
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Bialgebras
 
@@ -38,7 +41,7 @@ homomorphisms that satisfy the coalgebra axioms to define a bialgebra structure 
 
 ## References
 
-* <https://en.wikipedia.org/wiki/Bialgebra>
+* [https://en.wikipedia.org/wiki/Bialgebra](https://en.wikipedia.org/wiki/Bialgebra)
 
 ## Tags
 

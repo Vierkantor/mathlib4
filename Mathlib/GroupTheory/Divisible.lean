@@ -12,6 +12,9 @@ public import Mathlib.GroupTheory.QuotientGroup.Defs
 public import Mathlib.Tactic.NormNum.Eq
 public import Mathlib.Algebra.Field.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Divisible Group and rootable group
 

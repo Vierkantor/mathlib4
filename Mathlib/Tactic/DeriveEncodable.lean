@@ -11,6 +11,10 @@ import Mathlib.Logic.Encodable.Basic
 import Mathlib.Data.Nat.Pairing
 import Aesop.BuiltinRules
 
+set_option doc.verso true
+set_option doc.verso.module false
+set_option doc.verso.suggestions false
+
 /-!
 # `Encodable` deriving handler
 

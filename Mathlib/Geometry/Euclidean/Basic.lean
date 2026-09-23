@@ -8,6 +8,9 @@ module
 public import Mathlib.Geometry.Euclidean.PerpBisector
 public import Mathlib.Algebra.QuadraticDiscriminant
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Euclidean spaces
 
@@ -33,8 +36,7 @@ theorems that need it.
 
 ## References
 
-* https://en.wikipedia.org/wiki/Euclidean_space
-
+* https://en.wikipedia.org/wiki/Euclidean\_space
 -/
 
 public section
@@ -46,7 +48,7 @@ open scoped RealInnerProductSpace
 namespace EuclideanGeometry
 
 /-!
-### Geometrical results on Euclidean affine spaces
+# Geometrical results on Euclidean affine spaces
 
 This section develops some geometrical definitions and results on
 Euclidean affine spaces.

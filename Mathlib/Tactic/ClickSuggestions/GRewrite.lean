@@ -9,6 +9,9 @@ public import Mathlib.Tactic.ClickSuggestions.SectionState
 public meta import Lean.Meta.ExprLens
 public meta import Mathlib.Tactic.ClickSuggestions.Util
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Support for `grw` suggestions in `#click_suggestions`
 -/

@@ -10,6 +10,9 @@ public import Mathlib.Data.List.OfFn
 public import Mathlib.Data.List.Nodup
 public import Mathlib.Order.Fin.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Sorting algorithms on lists
 
@@ -34,7 +37,9 @@ variable [DecidableRel r] [DecidableRel s]
 local infixl:50 " ≼ " => r
 local infixl:50 " ≼ " => s
 
-/-! ### Insertion sort -/
+/-!
+# Insertion sort
+-/
 
 section InsertionSort
 
@@ -280,7 +285,8 @@ end Correctness
 
 end InsertionSort
 
-/-! ### Merge sort
+/-!
+# Merge sort
 
 We provide some wrapper functions around the theorems for `mergeSort` provided in Lean,
 which rather than using explicit hypotheses for transitivity and totality,
@@ -363,7 +369,7 @@ section Sorted
 variable {α : Type*} {l : List α}
 
 /-!
-### The predicates `List.SortedLE`, `List.SortedGE`, `List.SortedLT` and `List.SortedGT`
+# The predicates `List.SortedLE`, `List.SortedGE`, `List.SortedLT` and `List.SortedGT`
 -/
 
 section Preorder

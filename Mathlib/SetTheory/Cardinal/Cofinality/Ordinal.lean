@@ -9,6 +9,9 @@ public import Mathlib.SetTheory.Cardinal.Arithmetic
 public import Mathlib.SetTheory.Cardinal.Cofinality.Basic
 public import Mathlib.SetTheory.Ordinal.FixedPoint
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cofinality of an ordinal
 
@@ -37,7 +40,9 @@ variable {α γ : Type u} {β : Type v}
 
 theorem Order.cof_int : cof ℤ = ℵ₀ := by simp
 
-/-! ### Cofinality of ordinals -/
+/-!
+# Cofinality of ordinals
+-/
 
 -- TODO: generalize to `OrderType`
 namespace Ordinal
@@ -178,7 +183,9 @@ theorem cof_ord_cof (o : Ordinal) : o.cof.ord.cof = o.cof := by
 
 @[deprecated (since := "2026-03-21")] alias cof_cof := cof_ord_cof
 
-/-! ### Cofinalities and suprema -/
+/-!
+# Cofinalities and suprema
+-/
 
 section LinearOrder
 variable [LinearOrder β] [LinearOrder γ]
@@ -488,7 +495,9 @@ theorem bsup_lt_ord {o : Ordinal} {f : ∀ a < o, Ordinal} {c : Ordinal} (ho : o
     (∀ i hi, f i hi < c) → bsup.{u, u} o f < c :=
   bsup_lt_ord_lift (by rwa [o.card.lift_id])
 
-/-! ### Cofinality arithmetic -/
+/-!
+# Cofinality arithmetic
+-/
 
 @[simp]
 theorem cof_add (a : Ordinal) {b : Ordinal} (hb : b ≠ 0) : cof (a + b) = cof b := by
@@ -532,7 +541,9 @@ end Ordinal
 namespace Cardinal
 open Ordinal
 
-/-! ### Results on sets -/
+/-!
+# Results on sets
+-/
 
 -- TODO: re-state this for a bundled well-order
 theorem mk_bounded_subset {α : Type*} (h : IsStrongPrelimit #α) {r : α → α → Prop}
@@ -587,7 +598,9 @@ theorem mk_subset_mk_lt_cof {α : Type*} (h : IsStrongPrelimit #α) :
     · intro a b hab
       simpa [singleton_eq_singleton_iff] using hab
 
-/-! ### Consequences of König's lemma -/
+/-!
+# Consequences of König's lemma
+-/
 
 theorem lt_power_cof_ord {c : Cardinal} (hc : ℵ₀ ≤ c) : c < c ^ c.ord.cof := by
   induction c using Cardinal.inductionOn with | mk α

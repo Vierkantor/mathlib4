@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Group.Submonoid.Operations
 public import Mathlib.Algebra.Group.Subgroup.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lattice structure of subgroups
 
@@ -23,16 +26,13 @@ Special thanks goes to Amelia Livingston and Yury Kudryashov for their help and 
 
 Notation used here:
 
-- `G` is a `Group`
-
-- `k` is a set of elements of type `G`
+* `G` is a `Group`
+* `k` is a set of elements of type `G`
 
 Definitions in the file:
 
 * `CompleteLattice (Subgroup G)` : the subgroups of `G` form a complete lattice
-
 * `Subgroup.closure k` : the minimal subgroup that includes the set `k`
-
 * `Subgroup.gi` : `closure` forms a Galois insertion with the coercion to set
 
 ## Implementation notes
@@ -41,6 +41,7 @@ Subgroup inclusion is denoted `≤` rather than `⊆`, although `∈` is defined
 membership of a subgroup's underlying set.
 
 ## Tags
+
 subgroup, subgroups
 -/
 
@@ -54,7 +55,7 @@ open scoped Int
 variable {G : Type*} [Group G]
 
 /-!
-### Conversion to/from `Additive`/`Multiplicative`
+# Conversion to/from `Additive`/`Multiplicative`
 -/
 
 section mul_add

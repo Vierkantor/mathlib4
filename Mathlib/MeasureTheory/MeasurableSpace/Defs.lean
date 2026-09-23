@@ -10,6 +10,9 @@ public import Mathlib.Tactic.CrossRefAttribute
 public import Mathlib.Tactic.FunProp.Attr
 public import Mathlib.Tactic.Measurability
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Measurable spaces and measurable functions
 
@@ -28,9 +31,9 @@ contains all of them.
 
 ## References
 
-* <https://en.wikipedia.org/wiki/Measurable_space>
-* <https://en.wikipedia.org/wiki/Sigma-algebra>
-* <https://en.wikipedia.org/wiki/Dynkin_system>
+* [https://en.wikipedia.org/wiki/Measurable\_space](https://en.wikipedia.org/wiki/Measurable_space)
+* [https://en.wikipedia.org/wiki/Sigma-algebra](https://en.wikipedia.org/wiki/Sigma-algebra)
+* [https://en.wikipedia.org/wiki/Dynkin\_system](https://en.wikipedia.org/wiki/Dynkin_system)
 
 ## Tags
 

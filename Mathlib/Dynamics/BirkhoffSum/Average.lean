@@ -8,13 +8,14 @@ module
 public import Mathlib.Dynamics.BirkhoffSum.Basic
 public import Mathlib.Algebra.Module.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Birkhoff average
 
 In this file we define `birkhoffAverage f g n x` to be
-$$
-\frac{1}{n}\sum_{k=0}^{n-1}g(f^{[k]}(x)),
-$$
+$$`  \frac{1}{n}\sum_{k=0}^{n-1}g(f^{[k]}(x)),  `
 where `f : α → α` is a self-map on some type `α`,
 `g : α → M` is a function from `α` to a module over a division semiring `R`,
 and `R` is used to formalize division by `n` as `(n : R)⁻¹ • _`.
@@ -22,7 +23,6 @@ and `R` is used to formalize division by `n` as `(n : R)⁻¹ • _`.
 While we need an auxiliary division semiring `R` to define `birkhoffAverage`,
 the definition does not depend on the choice of `R`,
 see `birkhoffAverage_congr_ring`.
-
 -/
 
 @[expose] public section

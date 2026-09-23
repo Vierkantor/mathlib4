@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Lie.Sl2
 public import Mathlib.Algebra.Lie.Weights.Cartan
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Bases of semisimple Lie algebras
 
@@ -15,6 +18,7 @@ In this file we define bases of semisimple Lie algebras. Given an indexing type 
 Lie algebra consists of a non-degenerate matrix of integers `A` indexed by `ι × ι` and generators
 `h i`, `e i`, `f i` indexed by `ι`, each forming an `sl₂` triple, and satisfying the Chevalley-Serre
 relations:
+
 * `⁅h i, h j⁆ = 0`
 * `⁅h j, e i⁆ =  A i j • e i`
 * `⁅h j, f i⁆ = -A i j • f i`
@@ -23,7 +27,7 @@ relations:
 This concept appears not to have a name in the informal literature and so we call it simply a basis.
 With further axioms (constraining the structure constants which appear in products of the form
 `⁅e i, e j⁆`, `⁅f i, f j⁆`) one obtains the concept of a Weyl or Chevalley basis.
-See e.g., [serre1965](Ch. V, §4, §6).
+See e.g., \[serre1965\](Ch. V, §4, §6).
 
 ## Main definitions / results:
 
@@ -35,7 +39,6 @@ See e.g., [serre1965](Ch. V, §4, §6).
 
 * Show that every semisimple Lie algebra has a basis.
 * Define Weyl, Chevalley bases.
-
 -/
 
 @[expose] public section

@@ -10,6 +10,9 @@ public import Mathlib.Data.Nat.Factorial.Basic
 public import Mathlib.Data.Nat.Choose.Basic
 public import Mathlib.Algebra.GroupWithZero.Nat
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Stirling Numbers
 
@@ -41,7 +44,7 @@ The Stirling numbers of the second kind, represent the number of ways to partiti
 
 ## References
 
-* [Knuth, *The Art of Computer Programming*, Volume 1, §1.2.6][knuth1997]
+* ‍\[Knuth, _The Art of Computer Programming_, Volume 1, §1.2.6\]\[knuth1997\]
 -/
 
 @[expose] public section

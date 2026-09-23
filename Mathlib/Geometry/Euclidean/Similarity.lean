@@ -9,12 +9,14 @@ public import Mathlib.Geometry.Euclidean.Triangle
 public import Mathlib.Topology.MetricSpace.Similarity
 import Mathlib.Geometry.Euclidean.Angle.Unoriented.RightAngle
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Triangle Similarity
 
 This file contains theorems about similarity of triangles, including conditions
 for similarity based on sides and angles.
-
 -/
 
 public section

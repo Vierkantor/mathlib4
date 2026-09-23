@@ -9,12 +9,16 @@ public import Mathlib.Order.Filter.AtTopBot.CompleteLattice
 public import Mathlib.Order.Filter.AtTopBot.Group
 public import Mathlib.Topology.Order.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Neighborhoods to the left and to the right on an `OrderTopology`
 
 We've seen some properties of left and right neighborhood of a point in an `OrderClosedTopology`.
 In an `OrderTopology`, such neighborhoods can be characterized as the sets containing suitable
-intervals to the right or to the left of `a`. We give now these characterizations. -/
+intervals to the right or to the left of `a`. We give now these characterizations.
+-/
 
 public section
 

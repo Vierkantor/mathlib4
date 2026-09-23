@@ -8,6 +8,9 @@ module
 public import Mathlib.LinearAlgebra.RootSystem.Basic
 public import Mathlib.LinearAlgebra.RootSystem.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Morphisms of root pairings
 
@@ -15,6 +18,7 @@ This file defines morphisms of root pairings, following the definition of morphi
 given in SGA III Exp. 21 Section 6.
 
 ## Main definitions:
+
 * `Hom`: A morphism of root pairings is a linear map of weight spaces, its transverse on coweight
   spaces, and a bijection on the set that indexes roots and coroots.
 * `Hom.id`: The identity morphism.
@@ -43,9 +47,9 @@ given in SGA III Exp. 21 Section 6.
   coreflection in the corresponding coroot.
 
 ## TODO
+
 * Special types of morphisms: Isogenies, weight/coweight space embeddings
 * Weyl group reimplementation?
-
 -/
 
 @[expose] public section

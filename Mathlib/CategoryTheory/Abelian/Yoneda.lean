@@ -11,6 +11,9 @@ public import Mathlib.CategoryTheory.Abelian.Projective.Basic
 public import Mathlib.CategoryTheory.Generator.Preadditive
 public import Mathlib.CategoryTheory.Limits.Preserves.Opposites
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Fullness of restrictions of `preadditiveCoyonedaObj`
 

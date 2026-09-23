@@ -9,6 +9,9 @@ public import Mathlib.Data.Finsupp.Order
 public import Mathlib.Data.DFinsupp.Lex
 public import Mathlib.Data.Finsupp.ToDFinsupp
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lexicographic order on finitely supported functions
 
@@ -169,12 +172,14 @@ section Covariants
 
 variable [LinearOrder α] [AddMonoid N] [LinearOrder N]
 
-/-!  We are about to sneak in a hypothesis that might appear to be too strong.
-We assume `AddLeftStrictMono` (covariant with *strict* inequality `<`) also when proving the one
-with the *weak* inequality `≤`.  This is actually necessary: addition on `Lex (α →₀ N)` may fail to
+/-!
+We are about to sneak in a hypothesis that might appear to be too strong.
+We assume `AddLeftStrictMono` (covariant with _strict_ inequality `<`) also when proving the one
+with the _weak_ inequality `≤`.  This is actually necessary: addition on `Lex (α →₀ N)` may fail to
 be monotone, when it is "just" monotone on `N`.
 
-See `Counterexamples/ZeroDivisorsInAddMonoidAlgebras.lean` for a counterexample. -/
+See `Counterexamples/ZeroDivisorsInAddMonoidAlgebras.lean` for a counterexample.
+-/
 
 
 section Left

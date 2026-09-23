@@ -11,6 +11,9 @@ public import Mathlib.RingTheory.Flat.Localization
 public import Mathlib.RingTheory.Flat.Tensor
 public import Mathlib.RingTheory.Ideal.IsPrincipal
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Relationships between flatness and torsionfreeness.
 

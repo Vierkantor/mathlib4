@@ -9,6 +9,9 @@ public import Mathlib.Combinatorics.SimpleGraph.Finite
 public import Mathlib.Data.Finset.Sym
 public import Mathlib.Data.Matrix.Mul
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Incidence matrix of a simple graph
 

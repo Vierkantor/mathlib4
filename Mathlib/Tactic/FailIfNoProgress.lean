@@ -9,6 +9,9 @@ public import Mathlib.Init
 public meta import Lean.Elab.Tactic.Basic
 public meta import Lean.Meta.Tactic.Util
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Fail if no progress
 
@@ -21,13 +24,13 @@ in the context or the type of the goal is no longer definitionally equal to what
 reducible transparency.
 
 This means that, for example, `1 - 1` changing to `0` does not count as actual progress, since
+
 ```lean
 example : (1 - 1 = 0) := by with_reducible rfl
 ```
 
 This tactic is useful in situations where we want to stop iterating some tactics if they're not
 having any effect, e.g. `repeat (fail_if_no_progress simp <;> ring_nf)`.
-
 -/
 
 public meta section

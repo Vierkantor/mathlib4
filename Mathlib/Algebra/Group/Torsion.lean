@@ -9,11 +9,14 @@ public import Mathlib.Algebra.Group.Basic
 public import Mathlib.Algebra.Group.SelfInv
 public import Mathlib.Tactic.MkIffOfInductiveProp
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Torsion-free monoids and groups
 
 This file proves lemmas about torsion-free monoids.
-A monoid `M` is *torsion-free* if `n • · : M → M` is injective for all non-zero natural numbers `n`.
+A monoid `M` is _torsion-free_ if `n • · : M → M` is injective for all non-zero natural numbers `n`.
 -/
 
 public section

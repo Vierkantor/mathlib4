@@ -10,6 +10,9 @@ public import Mathlib.CategoryTheory.ObjectProperty.Comma
 public import Mathlib.CategoryTheory.Presentable.IsDiscrete
 public import Mathlib.CategoryTheory.Presentable.Uniformization
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Comma categories are accessible
 
@@ -41,8 +44,9 @@ and similarly the colimit of those `g.right` for `g ⟶ f` in `J κ f`
 identify to `f.right`.
 
 ## References
-* [Adámek, J. and Rosický, J., *Locally presentable and accessible categories*][Adamek_Rosicky_1994]
 
+* ‍\[Adámek, J. and Rosický, J., _Locally presentable and accessible
+  categories_\]\[Adamek\_Rosicky\_1994\]
 -/
 
 universe w

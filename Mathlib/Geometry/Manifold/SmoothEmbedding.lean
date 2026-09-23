@@ -8,7 +8,11 @@ module
 public import Mathlib.Geometry.Manifold.Immersion
 public import Mathlib.Geometry.Manifold.ContMDiff.Defs
 
-/-! # Smooth embeddings
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Smooth embeddings
 
 In this file, we define `C^n` embeddings between `C^n` manifolds.
 This will be useful to define embedded submanifolds.
@@ -37,11 +41,11 @@ This will be useful to define embedded submanifolds.
   https://math.stackexchange.com/a/3769328 for counterexamples.
 
 ## TODO
+
 * `IsSmoothEmbedding.comp`: the composition of smooth embeddings (between Banach manifolds)
   is a smooth embedding
 * `IsLocalDiffeomorph.isSmoothEmbedding`, `Diffeomorph.isSmoothEmbedding`:
   a local diffeomorphism (and in particular, a diffeomorphism) is a smooth embedding
-
 -/
 
 open scoped ContDiff

@@ -7,15 +7,18 @@ module
 
 public import Mathlib.Topology.Homeomorph.Lemmas
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Infinite Hausdorff topological spaces
 
 In this file we prove several properties of infinite Hausdorff topological spaces.
 
-- `exists_seq_infinite_isOpen_pairwise_disjoint`: there exists a sequence
+* `exists_seq_infinite_isOpen_pairwise_disjoint`: there exists a sequence
   of pairwise disjoint infinite open sets;
-- `exists_topology_isEmbedding_nat`: there exists a topological embedding of `ℕ` into the space;
-- `exists_infinite_discreteTopology`: there exists an infinite subset with discrete topology.
+* `exists_topology_isEmbedding_nat`: there exists a topological embedding of `ℕ` into the space;
+* `exists_infinite_discreteTopology`: there exists an infinite subset with discrete topology.
 -/
 
 public section

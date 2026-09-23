@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Algebra.MonoidAlgebra.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Maps of monoid algebras
 
@@ -468,7 +471,7 @@ end Ring
 end MonoidAlgebra
 
 /-!
-#### Conversions between `AddMonoidAlgebra` and `MonoidAlgebra`
+# Conversions between `AddMonoidAlgebra` and `MonoidAlgebra`
 -/
 
 namespace AddMonoidAlgebra

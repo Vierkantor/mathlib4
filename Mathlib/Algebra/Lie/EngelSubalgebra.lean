@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Lie.OfAssociative
 public import Mathlib.Algebra.Lie.Subalgebra
 public import Mathlib.Data.Finset.NatAntidiagonal
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Engel subalgebras
 

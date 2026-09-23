@@ -12,6 +12,9 @@ public import Mathlib.Tactic.FinCases
 public import Mathlib.Algebra.BigOperators.Fin
 public meta import Mathlib.LinearAlgebra.Matrix.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Matrix and vector notation
 

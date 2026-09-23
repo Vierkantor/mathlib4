@@ -8,8 +8,10 @@ module
 public import Mathlib.CategoryTheory.Preadditive.Projective.Internal
 public import Mathlib.Condensed.Light.Epi
 public import Mathlib.Condensed.Light.Monoidal
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Characterization of internal projectivity in light condensed modules
 
 This file gives an explicit condition on light condensed modules over a ring `R` to be internally
@@ -19,12 +21,14 @@ projective, namely the following:
 only if, for all `A B : LightCondMod R`, for all epimorphisms `e : A ⟶ B`, for all
 `S : LightProfinite` and all morphisms `g : P ⊗ R[S] ⟶ B`, there exists a `S' : LightProfinite`
 with a surjection `π : S' ⟶ S` and a morphism `g' : P ⊗ R[S'] ⟶ A`, making the diagram
+
 ```
 P ⊗ R[S'] --> A
   |           |
   v           v
 P ⊗ R[S]  --> B
 ```
+
 commute.
 
 We also provide the analogous characterization with the tensor product commuted the other way around

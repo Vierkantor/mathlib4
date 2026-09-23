@@ -14,9 +14,11 @@ public import Mathlib.Algebra.MonoidAlgebra.Module
 public import Mathlib.Data.Finsupp.SMul
 public import Mathlib.LinearAlgebra.Finsupp.LSum
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Algebra structure on monoid algebras
-
 -/
 
 @[expose] public noncomputable section
@@ -27,11 +29,15 @@ open Finsupp hiding single mapDomain
 
 variable {R S T A B C M N O : Type*}
 
-/-! ### Multiplicative monoids -/
+/-!
+# Multiplicative monoids
+-/
 
 namespace MonoidAlgebra
 
-/-! #### Non-unital, non-associative algebra structure -/
+/-!
+# Non-unital, non-associative algebra structure
+-/
 
 
 section NonUnitalNonAssocAlgebra
@@ -48,7 +54,9 @@ theorem nonUnitalAlgHom_ext [DistribMulAction R A] {φ₁ φ₂ : R[M] →ₙₐ
   NonUnitalAlgHom.to_distribMulActionHom_injective <|
     MonoidAlgebra.distribMulActionHom_ext' fun a => DistribMulActionHom.ext_ring (h a)
 
-/-- See note [partially-applied ext lemmas]. -/
+/--
+See note \[partially-applied ext lemmas\].
+-/
 @[ext high]
 theorem nonUnitalAlgHom_ext' [DistribMulAction R A] {φ₁ φ₂ : R[M] →ₙₐ[R] A}
     (h : φ₁.toMulHom.comp (ofMagma R M) = φ₂.toMulHom.comp (ofMagma R M)) : φ₁ = φ₂ :=
@@ -74,7 +82,9 @@ def liftMagma [Module R A] [IsScalarTower R A A] [SMulCommClass R A A] :
 
 end NonUnitalNonAssocAlgebra
 
-/-! #### Algebra structure -/
+/-!
+# Algebra structure
+-/
 
 section Algebra
 variable [CommSemiring R] [Semiring A] [Algebra R A] [Monoid M] [Monoid N]
@@ -205,17 +215,25 @@ def liftNCAlgHom (f : A →ₐ[R] B) (g : M →* B) (h_comm : ∀ x y, Commute (
     ⇑(liftNCAlgHom f g h_comm) = liftNC f g := rfl
 
 -- The priority must be `high`.
-/-- A `R`-algebra homomorphism from `A[M]` is uniquely defined by its
-values on the functions `single m 1` and `single 1 a`.
-
-See note [partially-applied ext lemmas]. Note that the first assumption isn't written as an
-equality of `MonoidHom`s because `of` doesn't additivise. -/
-@[to_additive (dont_translate := R A B) (attr := ext high) /--
+/--
 A `R`-algebra homomorphism from `A[M]` is uniquely defined by its
 values on the functions `single m 1` and `single 1 a`.
 
-See note [partially-applied ext lemmas]. Note that the first assumption isn't written as an
-equality of `AddMonoidHom`s because `of` doesn't multiplicativise. -/]
+See note \[partially-applied ext lemmas\]. Note that the first assumption isn't written as an
+equality of `MonoidHom`s because `of` doesn't additivise.
+-/
+@[to_additive (dont_translate := R A B) (attr := ext high) /--
+                                                           A `R`-algebra homomorphism from `A[M]` is
+uniquely defined by its
+values on the functions `single m 1` and
+`single 1 a`.
+
+                                                           See note \[partially-applied ext
+lemmas\]. Note that the first assumption
+isn't written as an
+equality of `AddMonoidHom`s because `of`
+doesn't multiplicativise.
+                                                           -/]
 lemma algHom_ext ⦃φ₁ φ₂ : A[M] →ₐ[R] B⦄ (single_one_right : ∀ m, φ₁ (single m 1) = φ₂ (single m 1))
     (single_one_left : φ₁.comp singleOneAlgHom = φ₂.comp singleOneAlgHom) :
     φ₁ = φ₂ := by
@@ -541,13 +559,17 @@ end MonoidAlgebra
 
 namespace AddMonoidAlgebra
 
-/-! #### Non-unital, non-associative algebra structure -/
+/-!
+# Non-unital, non-associative algebra structure
+-/
 
 section NonUnitalNonAssocAlgebra
 
 variable (R) [Semiring R] [Add M] [NonUnitalNonAssocSemiring A]
 
-/-- See note [partially-applied ext lemmas]. -/
+/--
+See note \[partially-applied ext lemmas\].
+-/
 @[ext high]
 theorem nonUnitalAlgHom_ext' [DistribMulAction R A] {φ₁ φ₂ : R[M] →ₙₐ[R] A}
     (h : φ₁.toMulHom.comp (ofMagma R M) = φ₂.toMulHom.comp (ofMagma R M)) : φ₁ = φ₂ :=
@@ -574,7 +596,9 @@ def liftMagma [Module R A] [IsScalarTower R A A] [SMulCommClass R A A] :
 
 end NonUnitalNonAssocAlgebra
 
-/-! #### Algebra structure -/
+/-!
+# Algebra structure
+-/
 
 section lift
 

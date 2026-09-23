@@ -11,6 +11,9 @@ public import Mathlib.Data.Nat.BinaryRec
 public import Mathlib.Data.Nat.Notation
 public import Mathlib.Tactic.Push.Attr
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Monoids
 
@@ -206,7 +209,7 @@ analysis](https://hal.inria.fr/hal-02463336).
 
 
 /-!
-### Design note on `AddMonoid` and `Monoid`
+# Design note on `AddMonoid` and `Monoid`
 
 An `AddMonoid` has a natural `ℕ`-action, defined by `n • a = a + ... + a`, that we want to declare
 as an instance as it makes it possible to use the language of linear algebra. However, there are
@@ -217,7 +220,7 @@ goes for linear maps, tensor products, and so on (and even for `ℕ` itself).
 
 To solve this issue, we embed an `ℕ`-action in the definition of an `AddMonoid` (which is by
 default equal to the naive action `a + ... + a`, but can be adjusted when needed), and declare
-a `SMul ℕ α` instance using this action. See Note [forgetful inheritance] for more
+a `SMul ℕ α` instance using this action. See Note \[forgetful inheritance\] for more
 explanations on this pattern.
 
 For example, when we define `Polynomial R`, then we declare the `ℕ`-action to be by multiplication
@@ -601,11 +604,13 @@ instance (priority := 100) CancelMonoid.toIsCancelMul (M : Type*) [CancelMonoid 
 
 end CancelMonoid
 
-/-! We initialize the projections for the monoid structures for `@[simps]` here.
+/-!
+We initialize the projections for the monoid structures for `@[simps]` here.
 
-The lemmas generated for the `npow`/`zpow` projections will *not* apply to `x ^ y`, since the
+The lemmas generated for the `npow`/`zpow` projections will _not_ apply to `x ^ y`, since the
 argument order of these projections does not match the argument order of `^`. The `nsmul`/`zsmul`
-lemmas are correct. -/
+lemmas are correct.
+-/
 initialize_simps_projections Monoid
 initialize_simps_projections AddMonoid
 initialize_simps_projections CommMonoid

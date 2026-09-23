@@ -11,6 +11,9 @@ public import Mathlib.CategoryTheory.Linear.Basic
 public import Mathlib.CategoryTheory.Endomorphism
 public import Mathlib.FieldTheory.IsAlgClosed.Spectrum
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Schur's lemma
 

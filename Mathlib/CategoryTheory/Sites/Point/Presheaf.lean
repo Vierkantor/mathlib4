@@ -7,6 +7,9 @@ module
 
 public import Mathlib.CategoryTheory.Sites.Point.Conservative
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Points of presheaf toposes
 
@@ -15,7 +18,6 @@ that the category of sheaves with values in `A` identifies to `Cᵒᵖ ⥤ A`
 (see `sheafBotEquivalence` in the file `Mathlib/CategoryTheory/Sites/Sheaf.lean`).
 In this file, we show that any `X : C` defines a point for this site, and that
 these points form a conservative family of points.
-
 -/
 
 @[expose] public section

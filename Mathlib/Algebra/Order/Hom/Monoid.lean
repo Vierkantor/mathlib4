@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Group.Hom.Basic
 public import Mathlib.Algebra.Order.Group.Unbundled.Basic
 public import Mathlib.Algebra.Order.Monoid.OrderDual
 public import Mathlib.Order.Hom.Basic
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Ordered monoid and group homomorphisms
 
@@ -636,13 +639,21 @@ theorem toOrderIso_eq_coe (f : α ≃*o β) : f.toOrderIso = f :=
 def symm (f : α ≃*o β) : β ≃*o α :=
   ⟨f.toMulEquiv.symm, f.toOrderIso.symm.map_rel_iff⟩
 
-/-- See Note [custom simps projection]. -/
-@[to_additive /-- See Note [custom simps projection]. -/]
+/--
+See Note \[custom simps projection\].
+-/
+@[to_additive /--
+              See Note \[custom simps projection\].
+              -/]
 def Simps.apply (h : α ≃*o β) : α → β :=
   h
 
-/-- See Note [custom simps projection] -/
-@[to_additive /-- See Note [custom simps projection]. -/]
+/--
+See Note \[custom simps projection\]
+-/
+@[to_additive /--
+              See Note \[custom simps projection\].
+              -/]
 def Simps.symm_apply (h : α ≃*o β) : β → α :=
   h.symm
 

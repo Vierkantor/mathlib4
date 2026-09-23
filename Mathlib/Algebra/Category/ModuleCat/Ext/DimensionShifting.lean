@@ -12,10 +12,11 @@ public import Mathlib.Data.Nat.Totient
 public import Mathlib.Data.Rat.Floor
 public import Mathlib.Tactic.Continuity
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
-
 # Dimension Shifting
-
 -/
 
 public section

@@ -12,6 +12,9 @@ public import Mathlib.LinearAlgebra.Matrix.Charpoly.Univ
 public import Mathlib.RingTheory.TensorProduct.Finite
 public import Mathlib.RingTheory.TensorProduct.Free
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Characteristic polynomials of linear families of endomorphisms
 
@@ -43,7 +46,7 @@ that evaluates on elements `x` of `L` to the characteristic polynomial of `φ x`
   are homogeneous polynomials in the parameters.
 * `LinearMap.nilRank`: the smallest index at which `polyCharpoly` has a non-zero coefficient,
   which is independent of the choice of basis for `L`.
-* `LinearMap.IsNilRegular`: an element `x` of `L` is *nil-regular* with respect to `φ`
+* `LinearMap.IsNilRegular`: an element `x` of `L` is _nil-regular_ with respect to `φ`
   if the `n`-th coefficient of the characteristic polynomial of `φ x` is non-zero,
   where `n` denotes the nil-rank of `φ`.
 
@@ -60,8 +63,7 @@ The proof concludes because characteristic polynomials are independent of the ch
 
 ## References
 
-* [barnes1967]: "On Cartan subalgebras of Lie algebras" by D.W. Barnes.
-
+* ‍\[barnes1967\]: "On Cartan subalgebras of Lie algebras" by D.W. Barnes.
 -/
 
 @[expose] public section
@@ -500,12 +502,14 @@ lemma nilRank_le_natTrailingDegree_charpoly (x : L) :
 
 end
 
-/-- Let `L` and `M` be finite free modules over `R`,
+/--
+Let `L` and `M` be finite free modules over `R`,
 and let `φ : L →ₗ[R] Module.End R M` be a linear family of endomorphisms,
 and denote `n := nilRank φ`.
 
-An element `x : L` is *nil-regular* with respect to `φ`
-if the `n`-th coefficient of the characteristic polynomial of `φ x` is non-zero. -/
+An element `x : L` is _nil-regular_ with respect to `φ`
+if the `n`-th coefficient of the characteristic polynomial of `φ x` is non-zero.
+-/
 def IsNilRegular (x : L) : Prop :=
   Polynomial.coeff (φ x).charpoly (nilRank φ) ≠ 0
 

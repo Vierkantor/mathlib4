@@ -11,6 +11,9 @@ public import Mathlib.RingTheory.UniqueFactorizationDomain.NormalizedFactors
 
 import Mathlib.Algebra.FiniteSupport.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Unique factorization and multiplicity
 

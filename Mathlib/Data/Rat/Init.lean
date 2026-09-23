@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.Nat.Notation
 public import Batteries.Classes.RatCast
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Basic definitions around the rational numbers
 
@@ -26,7 +29,7 @@ def NNRat := {q : ℚ // 0 ≤ q}
 @[inherit_doc] notation "ℚ≥0" => NNRat
 
 /-!
-### Cast from `NNRat`
+# Cast from `NNRat`
 
 This section sets up the typeclasses necessary to declare the canonical embedding `ℚ≥0` to any
 semifield.
@@ -59,7 +62,9 @@ instance NNRatCast.toCoeHTCT : CoeHTCT ℚ≥0 K where coe := NNRat.cast
 
 instance Rat.instNNRatCast : NNRatCast ℚ := ⟨Subtype.val⟩
 
-/-! ### Numerator and denominator of a nonnegative rational -/
+/-!
+# Numerator and denominator of a nonnegative rational
+-/
 
 namespace NNRat
 

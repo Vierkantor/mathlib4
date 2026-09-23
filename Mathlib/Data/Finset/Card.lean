@@ -9,6 +9,9 @@ public import Mathlib.Data.Finset.Basic
 public import Mathlib.Data.Finset.Image
 public import Mathlib.Data.Finset.Lattice.Lemmas
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cardinality of a finite set
 
@@ -147,7 +150,9 @@ distinct. -/
 theorem card_triple_eq_three_iff : #{a, b, c} = 3 ↔ a ≠ b ∧ a ≠ c ∧ b ≠ c := by
   aesop (add simp card_insert_eq_ite)
 
-/-- $\#(s \setminus \{a\}) = \#s - 1$ if $a \in s$. -/
+/--
+$`\#(s \setminus \{a\}) = \#s - 1` if $`a \in s`.
+-/
 @[simp, grind =]
 theorem card_erase_of_mem : a ∈ s → #(s.erase a) = #s - 1 :=
   Multiset.card_erase_of_mem
@@ -559,7 +564,9 @@ end bij
 theorem card_disjUnion (s t : Finset α) (h) : #(s.disjUnion t h) = #s + #t :=
   Multiset.card_add _ _
 
-/-! ### Lattice structure -/
+/-!
+# Lattice structure
+-/
 
 -- This pattern is unreasonable to use generally, but it's convenient in this file.
 -- (Note that we've already turned it on earlier in this file, but need to redo it now.)
@@ -688,7 +695,9 @@ theorem exists_subset_or_subset_of_two_mul_lt_card [DecidableEq α] {X Y : Finse
     have : #(X ∪ Y) = #X + #(Y \ X)
     finish
 
-/-! ### Explicit description of a finset from its card -/
+/-!
+# Explicit description of a finset from its card
+-/
 
 
 theorem card_eq_one : #s = 1 ↔ ∃ a, s = {a} := by
@@ -848,7 +857,9 @@ theorem three_lt_card : 3 < #s ↔ ∃ a ∈ s, ∃ b ∈ s, ∃ c ∈ s, ∃ d 
     a ≠ b ∧ a ≠ c ∧ a ≠ d ∧ b ≠ c ∧ b ≠ d ∧ c ≠ d := by
   simp_rw [three_lt_card_iff, exists_and_left]
 
-/-! ### Inductions -/
+/-!
+# Inductions
+-/
 
 
 /-- Suppose that, given objects defined on all strict subsets of any finset `s`, one knows how to

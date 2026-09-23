@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Lean.Expr.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `Ineq` datatype
 
@@ -21,7 +24,9 @@ open Lean Meta
 
 namespace Mathlib
 
-/-! ### Inequalities -/
+/-!
+# Inequalities
+-/
 
 /-- The three-element type `Ineq` is used to represent the strength of a comparison between
 terms. -/
@@ -63,7 +68,9 @@ instance : ToFormat Ineq := ⟨fun i => Ineq.toString i⟩
 
 end Mathlib.Ineq
 
-/-! ### Parsing inequalities -/
+/-!
+# Parsing inequalities
+-/
 
 namespace Lean.Expr
 open Mathlib

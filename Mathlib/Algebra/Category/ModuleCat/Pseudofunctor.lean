@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Category.Ring.Basic
 public import Mathlib.CategoryTheory.Bicategory.Functor.LocallyDiscrete
 public import Mathlib.CategoryTheory.Adjunction.Mates
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The pseudofunctors which send a commutative ring to its category of modules
 
@@ -22,7 +25,6 @@ by the restriction of scalars functors.
 We also define a pseudofunctor
 `CommRingCat.moduleCatExtendScalarsPseudofunctor`: the covariant functoriality
 is given by the extension of scalars functors.
-
 -/
 
 @[expose] public section

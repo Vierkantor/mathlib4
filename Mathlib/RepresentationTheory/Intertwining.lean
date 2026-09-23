@@ -7,11 +7,13 @@ module
 
 public import Mathlib.RepresentationTheory.Subrepresentation
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Intertwining maps
 
 This file gives defines intertwining maps of representations (aka equivariant linear maps).
-
 -/
 
 @[expose] public section
@@ -513,7 +515,7 @@ instance-implicit arguments would otherwise receive.
 
 With no `CompatibleSMul` instance found, the rewrite does not fire and `simp` makes no progress.
 
-Potential fix: mark `asModule` implicit-reducible *at its definition site*. Then
+Potential fix: mark `asModule` implicit-reducible _at its definition site_. Then
 `respectTransparency false` becomes obsolete, and once it is removed, `instanceSearchTypes false`
 can go as well: `asModule` being implicit-reducible, the `instModuleAsModule._aux_1` constant
 becomes implicit-reducible as well. The reason for this is that `instModuleAsModule`'s definition

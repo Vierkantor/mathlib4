@@ -13,6 +13,9 @@ public import Mathlib.Algebra.Order.BigOperators.Group.Multiset
 public import Mathlib.Algebra.Order.Group.Nat
 public import Mathlib.Data.ZMod.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Freiman homomorphisms
 
@@ -53,7 +56,7 @@ an `AddMonoid`/`Monoid` instead of the `AddMonoid`/`Monoid` itself.
 
 ## References
 
-[Yufei Zhao, *18.225: Graph Theory and Additive Combinatorics*](https://yufeizhao.com/gtac/)
+[Yufei Zhao, _18.225: Graph Theory and Additive Combinatorics_](https://yufeizhao.com/gtac/)
 
 ## TODO
 

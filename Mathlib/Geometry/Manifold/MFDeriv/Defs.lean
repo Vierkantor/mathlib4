@@ -8,6 +8,9 @@ module
 public import Mathlib.Geometry.Manifold.IsManifold.ExtChartAt
 public import Mathlib.Geometry.Manifold.LocalInvariantProperties
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The derivative of functions between manifolds
 
@@ -44,13 +47,14 @@ Let `f` be a map between manifolds. The following definitions follow the `fderiv
   tangent bundle of `M'`.
 
 Various related results are proven in separate files: see
-- `Basic.lean` for basic properties of the `mfderiv`, mimicking the API of the Fréchet derivative,
-- `FDeriv.lean` for the equivalence of the manifold notions with the usual Fréchet derivative
+
+* `Basic.lean` for basic properties of the `mfderiv`, mimicking the API of the Fréchet derivative,
+* `FDeriv.lean` for the equivalence of the manifold notions with the usual Fréchet derivative
   for functions between vector spaces,
-- `SpecificFunctions.lean` for results on the differential of the identity, constant functions,
+* `SpecificFunctions.lean` for results on the differential of the identity, constant functions,
   products and arithmetic operators (like addition or scalar multiplication),
-- `Atlas.lean` for differentiability of charts, models with corners and extended charts,
-- `UniqueDifferential.lean` for various properties of unique differentiability sets in manifolds.
+* `Atlas.lean` for differentiability of charts, models with corners and extended charts,
+* `UniqueDifferential.lean` for various properties of unique differentiability sets in manifolds.
 
 ## Implementation notes
 
@@ -78,7 +82,7 @@ of a small open set around `x` will not be contained in the source of the prefer
 we include continuity in the definition of differentiability (which is reasonable since with any
 definition, differentiability implies continuity).
 
-*Warning*: the derivative (even within a subset) is a linear map on the whole tangent space. Suppose
+_Warning_: the derivative (even within a subset) is a linear map on the whole tangent space. Suppose
 that one is given a smooth submanifold `N`, and a function which is smooth on `N` (i.e., its
 restriction to the subtype `N` is smooth). Then, in the whole manifold `M`, the property
 `MDifferentiableOn I I' f N` holds. However, `mfderivWithin I I' f N` is not uniquely defined
@@ -96,6 +100,7 @@ copy of the vector space, instead of more usual definitions such as the space of
 the space of equivalence classes of smooth curves in the manifold.
 
 ## Tags
+
 derivative, manifold
 -/
 
@@ -109,7 +114,7 @@ open Set ChartedSpace
 section DerivativesDefinitions
 
 /-!
-### Derivative of maps between manifolds
+# Derivative of maps between manifolds
 
 The derivative of a map `f` between manifolds `M` and `M'` at `x` is a bounded linear
 map from the tangent space to `M` at `x`, to the tangent space to `M'` at `f x`. Since we defined

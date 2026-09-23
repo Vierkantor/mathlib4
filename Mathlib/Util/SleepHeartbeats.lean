@@ -8,6 +8,9 @@ module
 public import Mathlib.Init
 public meta import Lean.Elab.Tactic.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Defines `sleep_heartbeats` tactic.
 

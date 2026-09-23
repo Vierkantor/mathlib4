@@ -11,12 +11,16 @@ public import Mathlib.Algebra.Group.Submonoid.Finite
 public import Mathlib.Data.Set.Finite.Range
 public import Mathlib.SetTheory.Cardinal.NatCard
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Subgroups
 
 This file provides some result on multiplicative and additive subgroups in the finite context.
 
 ## Tags
+
 subgroup, subgroups
 -/
 
@@ -39,7 +43,7 @@ instance (K : Subgroup G) [Finite G] : Finite K :=
 end Subgroup
 
 /-!
-### Conversion to/from `Additive`/`Multiplicative`
+# Conversion to/from `Additive`/`Multiplicative`
 -/
 
 

@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Order.GroupWithZero.Basic
 public import Mathlib.Order.Bounds.Basic
 public import Mathlib.Order.Bounds.Image
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lemmas about `BddAbove`
 -/

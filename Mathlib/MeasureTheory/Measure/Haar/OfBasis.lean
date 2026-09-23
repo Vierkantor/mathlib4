@@ -8,6 +8,9 @@ module
 public import Mathlib.MeasureTheory.Measure.Haar.Basic
 public import Mathlib.Analysis.InnerProductSpace.PiL2
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Additive Haar measure constructed from a basis
 

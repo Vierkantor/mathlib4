@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Polynomial.Degree.Lemmas
 public import Mathlib.Tactic.ComputeDegree
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cancel the leading terms of two polynomials
 
@@ -17,6 +20,7 @@ public import Mathlib.Tactic.ComputeDegree
   have the same leading term, and then subtracting.
 
 ## Main Results
+
 The degree of `cancelLeads` is less than that of the larger of the two polynomials being cancelled.
 Thus it is useful for induction or minimal-degree arguments.
 -/

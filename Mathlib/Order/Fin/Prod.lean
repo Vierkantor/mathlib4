@@ -8,9 +8,11 @@ module
 public import Mathlib.Algebra.Order.Group.Nat
 public import Mathlib.Order.Fin.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Properties of the order on a binary product of `Fin` types
-
 -/
 
 namespace Fin

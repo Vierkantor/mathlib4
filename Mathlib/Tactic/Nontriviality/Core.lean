@@ -14,7 +14,12 @@ public meta import Qq.MetaM
 public import Mathlib.Basic.Nontrivial.Basic -- shake: keep (tactic dependency)
 public import Mathlib.Tactic.Attr.Register -- shake: keep (tactic dependency)
 
-/-! # The `nontriviality` tactic. -/
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# The `nontriviality` tactic.
+-/
 
 public meta section
 

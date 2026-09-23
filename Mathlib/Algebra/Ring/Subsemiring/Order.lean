@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Ring.Subsemiring.Defs
 public import Mathlib.Order.Interval.Set.Defs
 public import Mathlib.Tactic.FastInstance
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `Order`ed instances for `SubsemiringClass` and `Subsemiring`.
 -/

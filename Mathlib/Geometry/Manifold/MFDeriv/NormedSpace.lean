@@ -8,7 +8,12 @@ module
 public import Mathlib.Geometry.Manifold.Algebra.SMul
 public import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 
-/-! # Equivalence of manifold differentiability with the basic definition for functions between
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Equivalence of manifold differentiability with the basic definition for functions between
+
 vector spaces
 
 The API in this file is mostly copied from `Mathlib/Geometry/Manifold/ContMDiff/NormedSpace.lean`,
@@ -18,6 +23,7 @@ differentiability.
 ## Main definitions
 
 In addition to the above, this file provides two important definitions.
+
 * `mvfderiv I f x` is the manifold Fréchet derivative at `x : M` of a vector-valued function
   `f : M → V`, but taking values in the target normed space `V` instead of `TangentSpace% (f x) V`.
   Mathematically, this uses the global trivialization `T V ≅ V × V`, yielding an identification
@@ -32,11 +38,11 @@ In addition to the above, this file provides two important definitions.
 ## Main results
 
 This file contains
+
 * results about the differentiability of scalar multiplication (`mfderiv_smul` and friends),
 * basic lemmas about `mvfderiv` (such as addition, subtraction, multiplication and constants),
 * analogous lemmas about `mvfderivWithin`,
 * composition lemmas about `mvfderivWithin` and `mvfderiv`.
-
 -/
 
 public section
@@ -122,7 +128,9 @@ theorem DifferentiableWithinAt.mdifferentiableWithinAt_of_comp_extChartAt_symm [
 
 end extChartAt
 
-/-! ### Linear maps between normed spaces are differentiable -/
+/-!
+# Linear maps between normed spaces are differentiable
+-/
 
 theorem MDifferentiableWithinAt.clm_precomp {f : M → F₁ →L[𝕜] F₂} {s : Set M} {x : M}
     (hf : MDiffAt[s] f x) :
@@ -266,7 +274,9 @@ theorem MDifferentiable.clm_prodMap {g : M → F₁ →L[𝕜] F₃} {f : M → 
     (hg : MDiff g) (hf : MDiff f) : MDiff fun x ↦ (g x).prodMap (f x) :=
   fun x ↦ (hg x).clm_prodMap (hf x)
 
-/-! ### Differentiability of scalar multiplication -/
+/-!
+# Differentiability of scalar multiplication
+-/
 
 section smul
 
@@ -423,7 +433,9 @@ private lemma fromTangentSpace_mfderiv_smul_apply' (hf : MDiffAt f x) (hg : MDif
 
 end smul
 
-/-! ### Exterior derivative of a vector-valued function -/
+/-!
+# Exterior derivative of a vector-valued function
+-/
 
 variable (I) in
 /-- `mvfderivWithin I J f s x` is the `mfderiv` of a vector-valued function `f` on `M` at `x`
@@ -642,7 +654,9 @@ theorem mfderiv_eq_fderiv :
 
 end
 
-/-! ## Composition lemmas for `mvfderiv(Within)` -/
+/-!
+# Composition lemmas for `mvfderiv(Within)`
+-/
 section
 
 variable {f : M' → M} {g : M → F} {x : M'} {y : M} {u : Set M} {s : Set M'}

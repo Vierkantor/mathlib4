@@ -10,12 +10,14 @@ public import Mathlib.LinearAlgebra.FreeModule.PID
 public import Mathlib.LinearAlgebra.Eigenspace.Basic
 public import Mathlib.LinearAlgebra.Trace
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Linear maps between direct sums
 
 This file contains results about linear maps which respect direct sum decompositions of their
 domain and codomain.
-
 -/
 
 public section

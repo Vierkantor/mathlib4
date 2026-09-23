@@ -11,6 +11,9 @@ public import Mathlib.Order.RelIso.Set
 public import Mathlib.Order.UpperLower.Basic
 public import Mathlib.Order.WellFounded
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Initial and principal segments
 
@@ -45,7 +48,9 @@ These notations belong to the `InitialSeg` locale.
 
 @[expose] public section
 
-/-! ### Initial segment embeddings -/
+/-!
+# Initial segment embeddings
+-/
 
 universe u
 
@@ -237,7 +242,9 @@ protected theorem acc (f : r ≼i s) (a : α) : Acc r a ↔ Acc s (f a) :=
 
 end InitialSeg
 
-/-! ### Principal segments -/
+/-!
+# Principal segments
+-/
 
 /-- If `r` is a relation on `α` and `s` in a relation on `β`, then `f : r ≺i s` is an initial
 segment embedding whose range is `Set.Iio x` for some element `x`. If `β` is a well order, this is
@@ -468,7 +475,9 @@ theorem wellFounded_iff_principalSeg {β : Type u} {s : β → β → Prop} [IsT
   ⟨fun wf _ _ f => RelHomClass.wellFounded f.toRelEmbedding wf, fun h =>
     wellFounded_iff_wellFounded_subrel.mpr fun b => h _ _ (PrincipalSeg.ofElement s b)⟩
 
-/-! ### Properties of initial and principal segments -/
+/-!
+# Properties of initial and principal segments
+-/
 
 namespace InitialSeg
 
@@ -570,7 +579,9 @@ noncomputable def PrincipalSeg.trichotomy (r s) [IsWellOrder α r] [IsWellOrder 
   | .inl f => f.principalSumRelIso.elim .inl (.inr ∘ .inl)
   | .inr g => g.principalSumRelIso.elim (.inr ∘ .inr) (.inr ∘ .inl ∘ .symm)
 
-/-! ### Initial or principal segments with `<` -/
+/-!
+# Initial or principal segments with `<`
+-/
 
 namespace InitialSeg
 

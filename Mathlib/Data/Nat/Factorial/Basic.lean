@@ -11,6 +11,9 @@ public import Mathlib.Tactic.CrossRefAttribute
 public import Mathlib.Tactic.Monotonicity.Attr
 public import Mathlib.Tactic.Attr.Core
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Factorial and variants
 
@@ -190,7 +193,9 @@ lemma factorial_le_pow : ∀ n, n ! ≤ n ^ n
 
 end Factorial
 
-/-! ### Ascending and descending factorials -/
+/-!
+# Ascending and descending factorials
+-/
 
 
 section AscFactorial
@@ -493,7 +498,7 @@ lemma two_pow_mul_factorial_le_factorial_two_mul (n : ℕ) : 2 ^ n * n ! ≤ (2 
 
 
 /-!
-### Factorial via binary splitting.
+# Factorial via binary splitting.
 
 We prove this is equal to the standard factorial and mark it `@[csimp]`.
 

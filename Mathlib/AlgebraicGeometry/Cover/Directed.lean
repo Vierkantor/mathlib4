@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.LocallyDirected
 public import Mathlib.AlgebraicGeometry.PullbackCarrier
 public import Mathlib.AlgebraicGeometry.Gluing
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Locally directed covers
 

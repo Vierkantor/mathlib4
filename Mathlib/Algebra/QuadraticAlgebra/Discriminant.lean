@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.QuadraticAlgebra.AlgHom
 public import Mathlib.Data.Nat.Prime.Int
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Discriminant of a quadratic algebra
 

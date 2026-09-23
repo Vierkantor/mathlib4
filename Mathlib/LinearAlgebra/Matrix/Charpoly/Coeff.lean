@@ -13,6 +13,9 @@ public import Mathlib.LinearAlgebra.Matrix.Reindex
 public import Mathlib.LinearAlgebra.Matrix.SchurComplement
 public import Mathlib.RingTheory.Polynomial.Nilpotent
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Characteristic polynomials
 
@@ -20,20 +23,19 @@ We give methods for computing coefficients of the characteristic polynomial.
 
 ## Main definitions
 
-- `Matrix.charpoly_degree_eq_dim` proves that the degree of the characteristic polynomial
+* `Matrix.charpoly_degree_eq_dim` proves that the degree of the characteristic polynomial
   over a nonzero ring is the dimension of the matrix
-- `Matrix.det_eq_sign_charpoly_coeff` proves that the determinant is the constant term of the
+* `Matrix.det_eq_sign_charpoly_coeff` proves that the determinant is the constant term of the
   characteristic polynomial, up to sign.
-- `Matrix.trace_eq_neg_charpoly_coeff` proves that the trace is the negative of the (d-1)th
+* `Matrix.trace_eq_neg_charpoly_coeff` proves that the trace is the negative of the (d-1)th
   coefficient of the characteristic polynomial, where d is the dimension of the matrix.
   For a nonzero ring, this is the second-highest coefficient.
-- `Matrix.coeff_det_one_add_X_smul_eq_sum_minors` proves that the k-th coefficient of
+* `Matrix.coeff_det_one_add_X_smul_eq_sum_minors` proves that the k-th coefficient of
   `det (1 + X • M)` equals the sum of all k×k principal minors of M.
-- `Matrix.charpoly_coeff_eq_sum_minors` expresses the coefficients of the characteristic
+* `Matrix.charpoly_coeff_eq_sum_minors` expresses the coefficients of the characteristic
   polynomial as signed sums of principal minors.
-- `Matrix.charpolyRev` the reverse of the characteristic polynomial.
-- `Matrix.reverse_charpoly` characterises the reverse of the characteristic polynomial.
-
+* `Matrix.charpolyRev` the reverse of the characteristic polynomial.
+* `Matrix.reverse_charpoly` characterises the reverse of the characteristic polynomial.
 -/
 
 @[expose] public section

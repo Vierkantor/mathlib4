@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Module.Submodule.Basic
 public import Mathlib.Analysis.Complex.UpperHalfPlane.Topology
 public import Mathlib.Order.Filter.ZeroAndBoundedAtFilter
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Bounded at infinity
 

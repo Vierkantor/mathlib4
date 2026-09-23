@@ -10,6 +10,9 @@ public import Mathlib.RingTheory.Localization.Ideal
 public import Mathlib.RingTheory.Noetherian.Defs
 public import Mathlib.RingTheory.EssentialFiniteness
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Submodules in localizations of commutative rings
 
@@ -18,6 +21,7 @@ public import Mathlib.RingTheory.EssentialFiniteness
 See `Mathlib/RingTheory/Localization/Basic.lean` for a design overview.
 
 ## Tags
+
 localization, ring localization, commutative ring localization, characteristic predicate,
 commutative ring, field of fractions
 -/

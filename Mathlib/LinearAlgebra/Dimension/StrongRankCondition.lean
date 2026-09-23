@@ -11,6 +11,9 @@ public import Mathlib.LinearAlgebra.Dimension.Finrank
 public import Mathlib.LinearAlgebra.InvariantBasisNumber
 public import Mathlib.LinearAlgebra.Dimension.Subsingleton
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lemmas about rank and `finrank` in rings satisfying strong rank condition.
 
@@ -42,7 +45,6 @@ For modules over rings with invariant basis number
 
 * `Algebra.IsQuadraticExtension`: An extension of rings `R ⊆ S` is quadratic if `S` is a
   free `R`-algebra of rank `2`.
-
 -/
 
 @[expose] public section
@@ -305,12 +307,13 @@ theorem Basis.card_le_card_of_linearIndependent_aux {R : Type*} [Semiring R] [St
   simpa using linearIndependent_le_basis (Pi.basisFun R (Fin n)) v h
 
 -- When the basis is not infinite this need not be true!
-/-- Over any ring `R` satisfying the strong rank condition,
+/--
+Over any ring `R` satisfying the strong rank condition,
 if `b` is an infinite basis for a module `M`,
 then every maximal linearly independent set has the same cardinality as `b`.
 
 This proof (along with some of the lemmas above) comes from
-[Les familles libres maximales d'un module ont-elles le meme cardinal?][lazarus1973]
+‍\[Les familles libres maximales d'un module ont-elles le meme cardinal?\]\[lazarus1973\]
 -/
 theorem maximal_linearIndependent_eq_infinite_basis {ι : Type w} (b : Basis ι R M) [Infinite ι]
     {κ : Type w} (v : κ → M) (i : LinearIndependent R v) (m : i.Maximal) : #κ = #ι := by

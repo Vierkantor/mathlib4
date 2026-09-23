@@ -9,13 +9,16 @@ public import Mathlib.Algebra.Group.Subgroup.Lattice
 
 public import Mathlib.Algebra.Group.Submonoid.Pointwise
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Supports of submonoids
 
 Let `G` be an (additive) group, and let `M` be a submonoid of `G`.
-The *support* of `M` is `M ∩ -M`, the largest subgroup of `G` contained in `M`.
-A submonoid `C` is *pointed*, or a *positive cone*, if it has zero support.
-A submonoid `C` is *spanning* if the subgroup it generates is `G` itself.
+The _support_ of `M` is `M ∩ -M`, the largest subgroup of `G` contained in `M`.
+A submonoid `C` is _pointed_, or a _positive cone_, if it has zero support.
+A submonoid `C` is _spanning_ if the subgroup it generates is `G` itself.
 
 The names for these concepts are taken from the theory of convex cones.
 
@@ -24,7 +27,6 @@ The names for these concepts are taken from the theory of convex cones.
 * `AddSubmonoid.support`: the support of a submonoid.
 * `AddSubmonoid.IsPointed`: typeclass for submonoids with zero support.
 * `AddSubmonoid.IsSpanning`: typeclass for submonoids generating the whole group.
-
 -/
 
 @[expose] public section

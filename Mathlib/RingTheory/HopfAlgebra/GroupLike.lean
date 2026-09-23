@@ -8,6 +8,9 @@ module
 public import Mathlib.RingTheory.HopfAlgebra.Basic
 public import Mathlib.RingTheory.Bialgebra.GroupLike
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Group-like elements in a Hopf algebra
 

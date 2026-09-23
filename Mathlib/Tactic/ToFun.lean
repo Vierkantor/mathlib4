@@ -10,6 +10,9 @@ public import Mathlib.Util.AddRelatedDecl
 public import Mathlib.Tactic.Push
 public import Mathlib.Tactic.Translate.Attributes
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The `to_fun` attribute
 

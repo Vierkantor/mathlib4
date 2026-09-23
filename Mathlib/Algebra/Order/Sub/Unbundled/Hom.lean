@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Group.Equiv.Defs
 public import Mathlib.Algebra.Order.Sub.Unbundled.Basic
 public import Mathlib.Algebra.Ring.Basic
 public import Mathlib.Order.Hom.Basic
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lemmas about subtraction in unbundled canonically ordered monoids
 -/
@@ -54,7 +57,9 @@ theorem OrderIso.map_tsub {M N : Type*} [Preorder M] [Add M] [Sub M] [OrderedSub
   suffices e (e.symm (e a) - e.symm (e b)) ≤ e (e.symm (e a - e b)) by simpa
   exact e.monotone (e_add.symm.toAddHom.le_map_tsub e.symm.monotone _ _)
 
-/-! ### Preorder -/
+/-!
+# Preorder
+-/
 
 
 section Preorder

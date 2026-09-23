@@ -9,6 +9,9 @@ public import Mathlib.Analysis.InnerProductSpace.Dual
 public import Mathlib.Analysis.Calculus.FDeriv.Basic
 public import Mathlib.Analysis.Calculus.Deriv.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Gradient
 
@@ -17,16 +20,17 @@ public import Mathlib.Analysis.Calculus.Deriv.Basic
 Let `f` be a function from a Hilbert Space `F` to `𝕜` (`𝕜` is `ℝ` or `ℂ`), `x` be a point in `F`
 and `f'` be a vector in F. Then
 
-  `HasGradientWithinAt f f' s x`
+`HasGradientWithinAt f f' s x`
 
 says that `f` has a gradient `f'` at `x`, where the domain of interest
 is restricted to `s`. We also have
 
-  `HasGradientAt f f' x := HasGradientWithinAt f f' x univ`
+`HasGradientAt f f' x := HasGradientWithinAt f f' x univ`
 
 ## Main results
 
 This file develops the following aspects of the theory of gradients:
+
 * definitions of gradients, both within a set and on the whole space.
 * translating between `HasGradientAtFilter` and `HasFDerivAtFilter`,
   `HasGradientWithinAt` and `HasFDerivWithinAt`, `HasGradientAt` and `HasFDerivAt`,
@@ -306,7 +310,9 @@ end Inner
 
 section congr
 
-/-! ### Congruence properties of the Gradient -/
+/-!
+# Congruence properties of the Gradient
+-/
 
 variable {f₀ f₁ : F → 𝕜} {f₀' f₁' : F} {t : Set F}
 
@@ -351,7 +357,9 @@ protected theorem Filter.EventuallyEq.gradient (h : f₁ =ᶠ[𝓝 x] f) : ∇ f
 
 end congr
 
-/-! ### The Gradient of constant functions -/
+/-!
+# The Gradient of constant functions
+-/
 
 section Const
 
@@ -381,7 +389,9 @@ end Const
 
 section Continuous
 
-/-! ### Continuity of a function admitting a gradient -/
+/-!
+# Continuity of a function admitting a gradient
+-/
 
 nonrec theorem HasGradientAtFilter.tendsto_nhds (hL : L ≤ 𝓝 x) (h : HasGradientAtFilter f f' x L) :
     Tendsto f L (𝓝 (f x)) :=

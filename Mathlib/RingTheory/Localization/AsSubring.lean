@@ -9,14 +9,15 @@ public import Mathlib.RingTheory.Localization.LocalizationLocalization
 public import Mathlib.LinearAlgebra.FreeModule.Basic
 public import Mathlib.Algebra.Algebra.Subalgebra.Tower
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Localizations of domains as subalgebras of the fraction field.
 
 Given a domain `A` with fraction field `K`, and a submonoid `S` of `A` which
 does not contain zero, this file constructs the localization of `A` at `S`
 as a subalgebra of the field `K` over `A`.
-
 -/
 
 @[expose] public section

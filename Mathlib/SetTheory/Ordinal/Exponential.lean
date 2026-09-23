@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.Nat.Log
 public import Mathlib.SetTheory.Ordinal.Family
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Ordinal exponential
 
@@ -274,7 +277,9 @@ theorem opow_mul_add_lt_opow {b u v w x : Ordinal} (hv : v < b) (hw : w < b ^ u)
 theorem opow_mul_lt_opow {b u v x : Ordinal} (hv : v < b) (hu : u < x) : b ^ u * v < b ^ x := by
   simpa using opow_mul_add_lt_opow hv (opow_pos _ hv.pos) hu
 
-/-! ### Ordinal logarithm -/
+/-!
+# Ordinal logarithm
+-/
 
 /-- The ordinal logarithm is the solution `u` to the equation `x = b ^ u * v + w` where `v < b` and
 `w < b ^ u`.
@@ -519,7 +524,9 @@ theorem lt_omega0_omega0_opow {a b : Ordinal} (hb : b ≠ 0) :
     · simp [mul_lt_mul_iff_right₀, opow_pos]
     · simpa
 
-/-! ### Interaction with `Nat.cast` -/
+/-!
+# Interaction with `Nat.cast`
+-/
 
 @[simp, norm_cast]
 theorem natCast_pow (m : ℕ) : ∀ n : ℕ, ↑(m ^ n : ℕ) = (m : Ordinal) ^ n

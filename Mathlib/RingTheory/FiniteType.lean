@@ -11,6 +11,9 @@ public import Mathlib.RingTheory.Adjoin.Tower
 public import Mathlib.RingTheory.Ideal.Quotient.Operations
 public import Mathlib.RingTheory.Noetherian.Orzech
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Finiteness conditions in commutative algebra
 
@@ -18,9 +21,8 @@ In this file we define a notion of finiteness that is common in commutative alge
 
 ## Main declarations
 
-- `Algebra.FiniteType`, `RingHom.FiniteType`, `AlgHom.FiniteType`
-  all of these express that some object is finitely generated *as an algebra* over some base ring.
-
+* `Algebra.FiniteType`, `RingHom.FiniteType`, `AlgHom.FiniteType`
+  all of these express that some object is finitely generated _as an algebra_ over some base ring.
 -/
 
 @[expose] public section
@@ -604,7 +606,8 @@ is injective.
 This is a consequence of Noetherian case
 (`IsNoetherian.injective_of_surjective_of_injective`), which requires that `M` is a
 Noetherian module, but allows `R` to be non-commutative. The reduction of this result to
-Noetherian case is adapted from <https://math.stackexchange.com/a/1066110>:
+Noetherian case is adapted from [
+https://math.stackexchange.com/a/1066110](https://math.stackexchange.com/a/1066110):
 suppose `{ m_j }` is a finite set of generators of `M`, for any `n : N` one can write
 `i n = ∑ j, b_j * m_j` for `{ b_j }` in `R`, here `i : N →ₗ[R] M` is the standard inclusion.
 We can choose `{ n_j }` which are preimages of `{ m_j }` under `f`, and can choose
@@ -616,7 +619,7 @@ then it's easy to see that `i` and `f` restrict to `N' →ₗ[A] M'`,
 and the restricted version of `f` is surjective, hence by Noetherian case,
 it is also injective, in particular, if `f n = 0`, then `n = 0`.
 
-See also Orzech's original paper: *Onto endomorphisms are isomorphisms* [orzech1971].
+See also Orzech's original paper: _Onto endomorphisms are isomorphisms_ \[orzech1971\].
 
 This implies that nontrivial commutative rings satisfy the strong rank condition:
 see `strongRankCondition_of_orzechProperty` in `Mathlib.LinearAlgebra.InvariantBasisNumber`.

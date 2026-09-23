@@ -19,6 +19,9 @@ public import Mathlib.GroupTheory.Submonoid.Center
 public import Mathlib.GroupTheory.Subsemigroup.Centralizer
 public import Mathlib.RingTheory.NonUnitalSubsemiring.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Bundled non-unital subsemirings
 
@@ -131,8 +134,10 @@ open NonUnitalSubsemiring
 
 variable [NonUnitalNonAssocSemiring S] [NonUnitalNonAssocSemiring T] (f : R →ₙ+* S)
 
-/-- The range of a non-unital ring homomorphism is a non-unital subsemiring.
-See note [range copy pattern]. -/
+/--
+The range of a non-unital ring homomorphism is a non-unital subsemiring.
+See note \[range copy pattern\].
+-/
 def srange : NonUnitalSubsemiring S :=
   ((⊤ : NonUnitalSubsemiring R).map (f : R →ₙ+* S)).copy (Set.range f) Set.image_univ.symm
 

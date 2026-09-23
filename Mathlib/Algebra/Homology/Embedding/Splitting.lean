@@ -9,9 +9,11 @@ public import Mathlib.Algebra.Homology.Homotopy
 public import Mathlib.Algebra.Homology.ShortComplex.Exact
 public import Mathlib.Algebra.Homology.Embedding.Extend
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Extension of degreewise splittings
-
 -/
 
 @[expose] public section

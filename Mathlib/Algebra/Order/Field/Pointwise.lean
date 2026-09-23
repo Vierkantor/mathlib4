@@ -12,6 +12,9 @@ public import Mathlib.Algebra.Order.Ring.Defs
 public import Mathlib.Order.Interval.Set.OrderIso
 public import Mathlib.Algebra.Group.Action.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Pointwise operations on ordered algebraic objects
 

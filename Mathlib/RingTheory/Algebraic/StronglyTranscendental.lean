@@ -8,6 +8,9 @@ module
 public import Mathlib.RingTheory.KrullDimension.Zero
 public import Mathlib.RingTheory.LocalProperties.Reduced
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Strongly transcendental elements
 
@@ -15,8 +18,8 @@ In this file, we provide basic properties for strongly transcendental elements i
 This is a relatively niche notion, but is useful for proving Zariski's main theorem.
 
 ## Reference
-- https://stacks.math.columbia.edu/tag/00PZ
 
+* https://stacks.math.columbia.edu/tag/00PZ
 -/
 
 @[expose] public section

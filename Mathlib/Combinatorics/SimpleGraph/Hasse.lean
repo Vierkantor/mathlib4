@@ -12,6 +12,9 @@ public import Mathlib.Data.Fin.SuccPredOrder
 public import Mathlib.Order.SuccPred.Relation
 public import Mathlib.Tactic.FinCases
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The Hasse diagram as a graph
 

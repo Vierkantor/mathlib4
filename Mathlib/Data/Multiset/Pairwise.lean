@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.List.Pairwise
 public import Mathlib.Data.Multiset.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Pairwise relations on a multiset
 

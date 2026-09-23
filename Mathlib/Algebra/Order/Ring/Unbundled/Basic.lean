@@ -15,6 +15,9 @@ public import Mathlib.Algebra.Order.Monoid.Unbundled.MinMax
 public import Mathlib.Algebra.Ring.Defs
 public import Mathlib.Tactic.Tauto
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Basic facts for ordered rings and semirings
 
@@ -638,7 +641,9 @@ instance (priority := 100) [ExistsAddOfLE R] [PosMulMono R] [AddLeftMono R] :
 section SumOfSquares
 
 variable [NoZeroDivisors R] [ExistsAddOfLE R] [PosMulMono R] [AddLeftMono R]
-/-- The sum of two terms of the form x * x is zero iff both elements are zero. -/
+/--
+The sum of two terms of the form x \* x is zero iff both elements are zero.
+-/
 lemma mul_self_add_mul_self_eq_zero :
     a * a + b * b = 0 ↔ a = 0 ∧ b = 0 := by
   rw [add_eq_zero_iff_of_nonneg, mul_self_eq_zero (M₀ := R), mul_self_eq_zero (M₀ := R)] <;>

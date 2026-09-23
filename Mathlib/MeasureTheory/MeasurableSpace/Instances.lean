@@ -10,6 +10,9 @@ public import Mathlib.GroupTheory.GroupAction.IterateAct
 public import Mathlib.Data.Rat.Init
 public import Mathlib.Data.ZMod.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Measurable-space typeclass instances
 

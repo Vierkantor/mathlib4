@@ -9,6 +9,9 @@ public import Mathlib.Topology.Sheaves.Presheaf
 public import Mathlib.CategoryTheory.Sites.Sheaf
 public import Mathlib.CategoryTheory.Sites.Spaces
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Sheaves
 
@@ -24,7 +27,6 @@ of equivalent conditions.
 
 We provide the instance `CategoryTheory.Category (TopCat.Sheaf C X)` as the full subcategory of
 presheaves, and the fully faithful functor `Sheaf.forget : TopCat.Sheaf C X ⥤ TopCat.Presheaf C X`.
-
 -/
 
 @[expose] public section

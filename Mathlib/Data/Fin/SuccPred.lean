@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.Fin.Basic
 public import Mathlib.Data.Set.Operations
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Successors and predecessor operations of `Fin n`
 
@@ -19,7 +22,6 @@ related to `Fin.succ`, `Fin.pred`, and related operations on `Fin n`.
 * `finCongr` : `Fin.cast` as an `Equiv`, equivalence between `Fin n` and `Fin m` when `n = m`;
 * `Fin.succAbove` : embeds `Fin n` into `Fin (n + 1)` skipping `p`.
 * `Fin.predAbove` : the (partial) inverse of `Fin.succAbove`.
-
 -/
 
 @[expose] public section
@@ -37,7 +39,7 @@ variable {n m : ℕ}
 section Succ
 
 /-!
-### succ and casts into larger Fin types
+# succ and casts into larger Fin types
 -/
 
 lemma succ_injective (n : ℕ) : Injective (@Fin.succ n) := fun a b ↦ by simp [Fin.ext_iff]
@@ -264,7 +266,7 @@ end Succ
 section Pred
 
 /-!
-### pred
+# pred
 -/
 
 theorem pred_one' [NeZero n] (h := (zero_ne_one' (n := n)).symm) :

@@ -10,15 +10,18 @@ public import Mathlib.Order.Atoms
 public import Mathlib.Order.Interval.Finset.Defs
 public import Mathlib.Order.Preorder.Finite
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Atoms, Coatoms, Simple Lattices, and Finiteness
 
 This module contains some results on atoms and simple lattices in the finite context.
 
 ## Main results
+
 * `Finite.to_isAtomic`, `Finite.to_isCoatomic`: Finite partial orders with bottom resp. top
   are atomic resp. coatomic.
-
 -/
 
 public section

@@ -12,6 +12,9 @@ public import Mathlib.Data.Nat.GCD.BigOperators
 public import Mathlib.Data.Nat.Squarefree
 public import Mathlib.Tactic.ArithMult
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Arithmetic Functions and Dirichlet Convolution
 

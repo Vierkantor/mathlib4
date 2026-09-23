@@ -12,12 +12,13 @@ public import Mathlib.LinearAlgebra.TensorProduct.Pi
 public import Mathlib.RingTheory.Localization.Module
 public import Mathlib.Tactic.NormNum
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Base change for linear independence
 
 This file is a place to collect base change results for linear independence.
-
 -/
 
 public section

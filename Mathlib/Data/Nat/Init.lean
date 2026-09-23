@@ -10,12 +10,17 @@ public import Batteries.Util.LibraryNote
 public import Mathlib.Data.Int.Notation
 public import Mathlib.Data.Nat.Notation
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Basic operations on the natural numbers
 
 This file contains:
+
 * some basic lemmas about natural numbers
 * extra recursors:
+
   * `leRecOn`, `le_induction`: recursion and induction principles starting at non-zero numbers
   * `decreasing_induction`: recursion growing downwards
   * `le_rec_on'`, `decreasing_induction'`: versions with slightly weaker assumptions
@@ -25,7 +30,7 @@ This file contains:
 This file should not depend on anything defined in Mathlib (except for notation), so that it can be
 upstreamed to Batteries or the Lean standard library easily.
 
-See note [foundational algebra order theory].
+See note \[foundational algebra order theory\].
 -/
 
 @[expose] public section
@@ -57,7 +62,9 @@ assert_not_exists Monoid
 namespace Nat
 variable {a b m n k : ℕ} {p : ℕ → Prop}
 
-/-! ### `succ`, `pred` -/
+/-!
+# `succ`, `pred`
+-/
 
 lemma succ_pos' : 0 < succ n := succ_pos n
 
@@ -76,11 +83,17 @@ lemma two_le_iff : ∀ n, 2 ≤ n ↔ n ≠ 0 ∧ n ≠ 1
   | 1 => by simp
   | n + 2 => by simp
 
-/-! ### `add` -/
+/-!
+# `add`
+-/
 
-/-! ### `sub` -/
+/-!
+# `sub`
+-/
 
-/-! ### `mul` -/
+/-!
+# `mul`
+-/
 
 lemma mul_def : Nat.mul m n = m * n := mul_eq
 
@@ -88,7 +101,9 @@ lemma two_mul_ne_two_mul_add_one : 2 * n ≠ 2 * m + 1 :=
   mt (congrArg (· % 2))
     (by rw [Nat.add_comm, add_mul_mod_self_left, mul_mod_right, mod_eq_of_lt] <;> simp)
 
-/-! ### `div` -/
+/-!
+# `div`
+-/
 
 lemma le_div_two_iff_mul_two_le {n m : ℕ} : m ≤ n / 2 ↔ (m : ℤ) * 2 ≤ n := by
   rw [Nat.le_div_iff_mul_le Nat.zero_lt_two, ← Int.ofNat_le, Int.natCast_mul, Int.ofNat_two]
@@ -100,14 +115,16 @@ lemma div_lt_self' (a b : ℕ) : (a + 1) / (b + 2) < a + 1 :=
 lemma two_mul_odd_div_two (hn : n % 2 = 1) : 2 * (n / 2) = n - 1 := by
   lia
 
-/-! ### `pow` -/
+/-!
+# `pow`
+-/
 
 lemma one_le_pow' (n m : ℕ) : 1 ≤ (m + 1) ^ n := one_le_pow n (m + 1) (succ_pos m)
 
 alias sq_sub_sq := pow_two_sub_pow_two
 
 /-!
-### Recursion and induction principles
+# Recursion and induction principles
 
 This section is here due to dependencies -- the lemmas here require some of the lemmas
 proved above, and some of the results in later sections depend on the definitions in this section.
@@ -363,7 +380,9 @@ theorem diag_induction (P : ℕ → ℕ → Prop) (ha : ∀ a, P (a + 1) (a + 1)
     apply diag_induction P ha hb hd a (b + 1)
     apply Nat.lt_of_le_of_lt (Nat.le_succ _) h
 
-/-! ### `mod`, `dvd` -/
+/-!
+# `mod`, `dvd`
+-/
 
 lemma not_pos_pow_dvd {a n : ℕ} (ha : 1 < a) (hn : 1 < n) : ¬ a ^ n ∣ a :=
   not_dvd_of_pos_of_lt (Nat.lt_trans Nat.zero_lt_one ha)
@@ -389,7 +408,9 @@ lemma dvd_left_iff_eq : (∀ a : ℕ, a ∣ m ↔ a ∣ n) ↔ m = n :=
   ⟨fun h => Nat.dvd_antisymm ((h _).mp (Nat.dvd_refl _)) ((h _).mpr (Nat.dvd_refl _)),
     fun h n => by rw [h]⟩
 
-/-! ### Decidability of predicates -/
+/-!
+# Decidability of predicates
+-/
 
 instance decidableLoHi (lo hi : ℕ) (P : ℕ → Prop) [DecidablePred P] :
     Decidable (∀ x, lo ≤ x → x < hi → P x) :=
@@ -407,7 +428,9 @@ instance decidableLoHiLe (lo hi : ℕ) (P : ℕ → Prop) [DecidablePred P] :
 instance (n : ℤ) [NeZero n] : NeZero n.natAbs where
   out := n.natAbs_ne_zero.mpr (NeZero.ne n)
 
-/-! ### `Nat.AtLeastTwo` -/
+/-!
+# `Nat.AtLeastTwo`
+-/
 
 /-- A type class for natural numbers which are greater than or equal to `2`.
 

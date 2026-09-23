@@ -11,6 +11,9 @@ public import Mathlib.AlgebraicTopology.SimplicialSet.SubcomplexEvaluation
 public import Mathlib.CategoryTheory.MorphismProperty.FunctorCategory
 public import Mathlib.CategoryTheory.Types.Monomorphisms
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The skeleton of a simplicial set
 
@@ -27,8 +30,8 @@ with basic cells given by boundary inclusions `∂Δ[d] ⟶ Δ[d]` for all
 nondegenerate `d`-simplices of `Y` which do not belong to the range of `i`.
 
 ## TODO
-* show that `(SSet.sk n).obj X` is isomorphic to `X.skeleton (n + 1)`
 
+* show that `(SSet.sk n).obj X` is isomorphic to `X.skeleton (n + 1)`
 -/
 
 @[expose] public section

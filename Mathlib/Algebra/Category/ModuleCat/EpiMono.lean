@@ -9,6 +9,9 @@ public import Mathlib.LinearAlgebra.Quotient.Basic
 public import Mathlib.Algebra.Category.ModuleCat.Basic
 public import Mathlib.CategoryTheory.ConcreteCategory.EpiMono
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Monomorphisms in `Module R`
 

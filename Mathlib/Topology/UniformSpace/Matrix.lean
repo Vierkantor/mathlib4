@@ -10,6 +10,9 @@ public import Mathlib.Topology.Instances.Matrix
 public import Mathlib.Topology.UniformSpace.Pi
 public import Mathlib.Topology.Algebra.IsUniformGroup.Constructions
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Uniform space structure on matrices
 -/

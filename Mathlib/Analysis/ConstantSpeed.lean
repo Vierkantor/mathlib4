@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Order.BigOperators.Expect
 public import Mathlib.Analysis.Real.Sqrt
 public import Mathlib.Tactic.ContinuousFunctionalCalculus
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Constant speed
 

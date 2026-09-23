@@ -10,6 +10,9 @@ public import Batteries.Tactic.Alias
 public import Mathlib.Tactic.ExtendDoc
 
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Orders
 
@@ -19,7 +22,9 @@ and proves some basic lemmas about them.
 
 @[expose] public section
 
-/-! ### Unbundled classes -/
+/-!
+# Unbundled classes
+-/
 
 /-- `IsTrans X r` means the binary relation `r` on `X` is transitive. -/
 class IsTrans (α : Sort*) (r : α → α → Prop) : Prop where
@@ -223,7 +228,9 @@ end
 
 end
 
-/-! ### Minimal and maximal -/
+/-!
+# Minimal and maximal
+-/
 
 section LE
 
@@ -259,7 +266,9 @@ lemma MinimalFor.le_of_le (h : MinimalFor P f i) (hj : P j) (hji : f j ≤ f i) 
 
 end LE
 
-/-! ### Upper and lower sets -/
+/-!
+# Upper and lower sets
+-/
 
 /-- An upper set in an order `α` is a set such that any element greater than one of its members is
 also a member. Also called up-set, upward-closed set. -/

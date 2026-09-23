@@ -12,6 +12,9 @@ public import Mathlib.Topology.Algebra.Order.Archimedean
 public import Mathlib.Topology.Algebra.Ring.Real
 public import Mathlib.Topology.Instances.Nat
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Topology on the rational numbers
 

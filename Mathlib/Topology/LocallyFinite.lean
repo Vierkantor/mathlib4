@@ -8,10 +8,13 @@ module
 public import Mathlib.Order.Filter.SmallSets
 public import Mathlib.Topology.ContinuousOn
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Locally finite families of sets
 
-We say that a family of sets in a topological space is *locally finite* if at every point `x : X`,
+We say that a family of sets in a topological space is _locally finite_ if at every point `x : X`,
 there is a neighborhood of `x` which meets only finitely many sets in the family.
 
 In this file we give the definition and prove basic properties of locally finite families of sets.

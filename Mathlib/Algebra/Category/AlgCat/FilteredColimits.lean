@@ -11,8 +11,10 @@ public import Mathlib.Algebra.Category.Ring.FilteredColimits
 public import Mathlib.CategoryTheory.Limits.ConcreteCategory.Basic
 public import Mathlib.CategoryTheory.ConcreteCategory.ReflectsIso
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Filtered colimits in the category of `R`-algebras
 
 In this file we show that the forgetful functor from `R`-algebras to rings

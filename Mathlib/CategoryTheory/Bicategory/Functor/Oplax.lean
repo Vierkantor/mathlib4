@@ -8,10 +8,14 @@ module
 public import Mathlib.CategoryTheory.Bicategory.Functor.Prelax
 public import Mathlib.Tactic.CategoryTheory.ToApp
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Oplax functors
 
 An oplax functor `F` between bicategories `B` and `C` consists of
+
 * a function between objects `F.obj : B → C`,
 * a family of functions between 1-morphisms `F.map : (a ⟶ b) → (F.obj a ⟶ F.obj b)`,
 * a family of functions between 2-morphisms `F.map₂ : (f ⟶ g) → (F.map f ⟶ F.map g)`,
@@ -24,7 +28,6 @@ An oplax functor `F` between bicategories `B` and `C` consists of
 * `CategoryTheory.OplaxFunctor B C` : an oplax functor between bicategories `B` and `C`, which we
   denote by `B ⥤ᵒᵖᴸ C`.
 * `CategoryTheory.OplaxFunctor.comp F G` : the composition of oplax functors
-
 -/
 
 @[expose] public section

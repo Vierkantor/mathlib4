@@ -9,6 +9,9 @@ public import Mathlib.Combinatorics.Enumerative.DoubleCounting
 public import Mathlib.Combinatorics.SimpleGraph.AdjMatrix
 public import Mathlib.Combinatorics.SimpleGraph.Diam
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Strongly regular graphs
 
@@ -16,6 +19,7 @@ public import Mathlib.Combinatorics.SimpleGraph.Diam
 
 * `G.IsSRGWith n k ℓ μ` (see `SimpleGraph.IsSRGWith`) is a structure for
   a `SimpleGraph` satisfying the following conditions:
+
   * The cardinality of the vertex set is `n`
   * `G` is a regular graph with degree `k`
   * The number of common neighbors between any two adjacent vertices in `G` is `ℓ`

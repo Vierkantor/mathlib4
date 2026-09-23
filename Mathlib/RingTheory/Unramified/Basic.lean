@@ -14,8 +14,10 @@ public import Mathlib.RingTheory.Localization.Away.AdjoinRoot
 public import Mathlib.RingTheory.TensorProduct.Quotient
 public import Mathlib.Algebra.Algebra.Shrink
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Unramified morphisms
 
 An `R`-algebra `A` is formally unramified if `Ω[A⁄R]` is trivial.
@@ -33,7 +35,6 @@ under `R`-algebra homomorphisms and compositions.
 
 We show that unramified is stable under algebra isomorphisms, composition and
 localization at an element.
-
 -/
 
 public section

@@ -12,6 +12,9 @@ import Mathlib.Data.Fintype.Order
 import all Mathlib.NumberTheory.Height.Basic
 public import Mathlib.RingTheory.MvPolynomial.Homogeneous
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Height bounds for linear and polynomial maps
 
@@ -64,7 +67,7 @@ end IsNonarchimedean
 end aux
 
 /-!
-### Upper bound for the height of the image under a linear map
+# Upper bound for the height of the image under a linear map
 -/
 
 variable {K : Type*} [Field K] {ι ι' : Type*} [Fintype ι] [Finite ι']
@@ -173,7 +176,7 @@ theorem logHeight_linearMap_apply_le (A : ι' × ι → K) (x : ι → K) :
 end Height
 
 /-!
-### Upper bound for the height of the image under a polynomial map
+# Upper bound for the height of the image under a polynomial map
 
 If `p : ι' → MvPolynomial ι K` is a family of homogeneous polynomials of the same degree `N`
 and `x : ι → K`, then the multiplicative height of `fun j ↦ (p j).eval x` is bounded above by
@@ -387,9 +390,10 @@ theorem logHeight_eval_le' {N : ℕ} {p : ι' → MvPolynomial ι K} (hp : ∀ i
 end Height
 
 /-!
-### Lower bound for the height of the image under a polynomial map
+# Lower bound for the height of the image under a polynomial map
 
 If
+
 * `p : ι' → MvPolynomial ι K` is a family of homogeneous polynomials of the same degree `N`,
 * `q : ι × ι' → MvPolynomial ι K` is a family of homogeneous polynomials of the same degree `M`,
 * `x : ι → K` is such that for all `k : ι`,
@@ -522,7 +526,7 @@ theorem logHeight_eval_ge' {M N : ℕ} {q : ι × ι' → MvPolynomial ι K}
 end Height
 
 /-!
-### Bounds for the height of ![x*y, x+y, 1]
+# Bounds for the height of !\[x\*y, x+y, 1\]
 
 We show that the multiplicative height of `![a*c, a*d + b*c, b*d]` is bounded from above and from
 below by a positive constant times the product of the multiplicative heights of `![a, b]` and

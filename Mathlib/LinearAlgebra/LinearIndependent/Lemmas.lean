@@ -19,6 +19,9 @@ public import Mathlib.Tactic.NormNum.Ineq
 
 import Mathlib.Algebra.Module.Torsion.Field
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Linear independence
 
@@ -49,7 +52,6 @@ Rework proofs to hold in semirings, by avoiding the path through
 ## Tags
 
 linearly dependent, linear dependence, linearly independent, linear independence
-
 -/
 
 @[expose] public section
@@ -393,7 +395,9 @@ end Pair
 
 end Module
 
-/-! ### Properties which require `Ring R` -/
+/-!
+# Properties which require `Ring R`
+-/
 
 
 section Module
@@ -559,7 +563,7 @@ lemma LinearIndependent.update [DecidableEq ι] [CommRing R] [AddCommGroup M] [M
   grind [mem_nonZeroDivisors_iff]
 
 /-!
-### Properties which require `DivisionRing K`
+# Properties which require `DivisionRing K`
 
 These can be considered generalizations of properties of linear independence in vector spaces.
 -/

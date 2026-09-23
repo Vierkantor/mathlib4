@@ -9,6 +9,9 @@ public import Mathlib.Order.Filter.Pointwise
 public import Mathlib.Analysis.Normed.Group.Basic
 public import Mathlib.LinearAlgebra.Span.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Tangent cone
 

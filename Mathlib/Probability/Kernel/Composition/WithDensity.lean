@@ -10,12 +10,14 @@ public import Mathlib.Probability.Kernel.WithDensity
 
 public import Mathlib.Probability.Kernel.Composition.CompNotation
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Composition of kernels and measures with density
 
 We prove lemmas about `Kernel.withDensity` and `Measure.withDensity` in relation with the
 composition of kernels and measures.
-
 -/
 
 public section

@@ -12,6 +12,9 @@ public import Mathlib.Topology.MetricSpace.Bounded
 public import Mathlib.Topology.MetricSpace.Basic
 public import Mathlib.Topology.Order.Bornology
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Topology on the integers
 

@@ -9,6 +9,9 @@ public import Mathlib.GroupTheory.GroupAction.Iwasawa
 public import Mathlib.GroupTheory.IsPerfect
 public import Mathlib.LinearAlgebra.Projectivization.PSL.Stabilizer
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 -/
 

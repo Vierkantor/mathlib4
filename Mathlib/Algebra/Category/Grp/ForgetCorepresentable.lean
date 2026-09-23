@@ -9,13 +9,15 @@ public import Mathlib.Algebra.Category.Grp.Basic
 public import Mathlib.CategoryTheory.Yoneda
 public import Mathlib.Algebra.Category.Grp.Preadditive
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The forget functor is corepresentable
 
 It is shown that the forget functor `AddCommGrpCat.{u} ⥤ Type u` is corepresentable
 by `ULift ℤ`. Similar results are obtained for the variants `CommGrpCat`, `AddGrpCat`
 and `GrpCat`.
-
 -/
 
 @[expose] public section
@@ -25,7 +27,7 @@ universe u
 open CategoryTheory Opposite
 
 /-!
-### `(ULift ℤ →+ G) ≃ G`
+# `(ULift ℤ →+ G) ≃ G`
 
 These universe-monomorphic variants of `zmultiplesHom`/`zpowersHom` are put here since they
 shouldn't be useful outside of category theory.

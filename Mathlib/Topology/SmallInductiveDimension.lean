@@ -11,6 +11,9 @@ public import Mathlib.Topology.Clopen
 
 import Mathlib.Data.Nat.Cast.Order.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Small inductive dimension
 
@@ -30,7 +33,7 @@ In this file we formalize this notion, and characterize the cases `n = 0` and `n
 
 ## References
 
-* https://en.wikipedia.org/wiki/Inductive_dimension
+* https://en.wikipedia.org/wiki/Inductive\_dimension
 -/
 
 public section
@@ -100,7 +103,9 @@ theorem HasSmallInductiveDimensionLT.hasSmallInductiveDimensionLE {n : ℕ}
 instance (n : ℕ) [IsEmpty X] : HasSmallInductiveDimensionLT X n :=
   .mono zero_le <| hasSmallInductiveDimensionLT_zero_iff.2 ‹_›
 
-/-! ### Small inductive dimension -/
+/-!
+# Small inductive dimension
+-/
 
 variable (X) in
 /-- The small inductive dimension of a topological space. -/

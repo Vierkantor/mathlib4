@@ -9,6 +9,9 @@ public import Mathlib.LinearAlgebra.PiTensorProduct.Basic
 public import Mathlib.Logic.Equiv.Fin.Basic
 public import Mathlib.Algebra.DirectSum.Algebra
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Tensor power of a semimodule over a commutative semiring
 
@@ -33,8 +36,10 @@ tensor powers. Elsewhere, using `1` and `*` on `GradedMonoid` should be preferre
 
 open scoped TensorProduct
 
-/-- Homogeneous tensor powers $M^{\otimes n}$. `⨂[R]^n M` is a shorthand for
-`⨂[R] (i : Fin n), M`. -/
+/--
+Homogeneous tensor powers $`M^{\otimes n}`. `⨂[R]^n M` is a shorthand for
+`⨂[R] (i : Fin n), M`.
+-/
 abbrev TensorPower (R : Type*) (n : ℕ) (M : Type*) [CommSemiring R] [AddCommMonoid M]
     [Module R M] : Type _ :=
   ⨂[R] _ : Fin n, M

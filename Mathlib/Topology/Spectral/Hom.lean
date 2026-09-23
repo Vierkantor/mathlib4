@@ -9,6 +9,9 @@ public import Mathlib.Topology.ContinuousMap.Basic
 public import Mathlib.Topology.Maps.Proper.Basic
 public import Mathlib.Tactic.CrossRefAttribute
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Spectral maps
 
@@ -98,7 +101,9 @@ instance [TopologicalSpace α] [TopologicalSpace β] [FunLike F α β] [Spectral
     CoeTC F (SpectralMap α β) :=
   ⟨fun f => ⟨_, map_spectral f⟩⟩
 
-/-! ### Spectral maps -/
+/-!
+# Spectral maps
+-/
 
 
 namespace SpectralMap

@@ -10,6 +10,9 @@ public import Mathlib.Data.Finset.Image
 public import Mathlib.Data.Multiset.Fold
 public import Mathlib.Data.Finset.Lattice.Lemmas
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The fold operation for a commutative associative operation over a finset.
 -/
@@ -24,7 +27,9 @@ open Multiset
 
 variable {α β γ : Type*}
 
-/-! ### fold -/
+/-!
+# fold
+-/
 
 
 section Fold

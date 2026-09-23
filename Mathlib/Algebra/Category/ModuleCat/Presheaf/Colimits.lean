@@ -8,11 +8,14 @@ module
 public import Mathlib.Algebra.Category.ModuleCat.Presheaf
 public import Mathlib.Algebra.Category.ModuleCat.Colimits
 
-/-! # Colimits in categories of presheaves of modules
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Colimits in categories of presheaves of modules
 
 In this file, it is shown that under suitable assumptions,
 colimits exist in the category `PresheafOfModules R`.
-
 -/
 
 @[expose] public section

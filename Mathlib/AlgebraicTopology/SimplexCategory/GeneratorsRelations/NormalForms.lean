@@ -6,7 +6,11 @@ Authors: Robin Carlier
 module
 
 public import Mathlib.AlgebraicTopology.SimplexCategory.GeneratorsRelations.EpiMono
-/-! # Normal forms for morphisms in `SimplexCategoryGenRel`.
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Normal forms for morphisms in `SimplexCategoryGenRel`.
 
 In this file, we establish that `P_δ` and `P_σ` morphisms in `SimplexCategoryGenRel`
 each admits a normal form.
@@ -27,11 +31,13 @@ stones towards proving that the canonical functor
 `toSimplexCategory : SimplexCategoryGenRel ⥤ SimplexCategory` is an equivalence.
 
 ## References:
+
 * [Kerodon Tag 04FQ](https://kerodon.net/tag/04FQ)
 * [Kerodon Tag 04FT](https://kerodon.net/tag/04FT)
 
 ## TODOs:
-- Show that every `P_δ` admits a unique normal form.
+
+* Show that every `P_δ` admits a unique normal form.
 -/
 
 @[expose] public section

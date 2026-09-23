@@ -9,6 +9,9 @@ public import Mathlib.LinearAlgebra.Matrix.Transvection
 public import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
 public import Mathlib.Tactic.FinCases
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Block matrices and their determinant
 
@@ -33,7 +36,6 @@ matrices built out of blocks.
 ## Tags
 
 matrix, diagonal, det, block triangular
-
 -/
 
 @[expose] public section
@@ -295,7 +297,9 @@ theorem upper_two_blockTriangular [Zero R] [Preorder α] (A : Matrix m m R) (B :
     BlockTriangular (fromBlocks A B 0 D) (Sum.elim (fun _ => a) fun _ => b) := by
   rintro (c | c) (d | d) hcd <;> first | simp [hab.not_gt] at hcd ⊢
 
-/-! ### Determinant -/
+/-!
+# Determinant
+-/
 
 
 variable [CommRing R] [DecidableEq m] [Fintype m] [DecidableEq n] [Fintype n]
@@ -420,7 +424,9 @@ theorem det_matrixOfPolynomials {n : ℕ} (p : Fin n → R[X])
   convert! prod_const_one with x _
   rw [Matrix.of_apply, ← h_deg, coeff_natDegree, (h_monic x).leadingCoeff]
 
-/-! ### Invertible -/
+/-!
+# Invertible
+-/
 
 
 theorem BlockTriangular.toBlock_inverse_mul_toBlock_eq_one [LinearOrder α] [Invertible M]

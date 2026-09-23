@@ -9,6 +9,9 @@ public import Mathlib.Algebra.MvPolynomial.Monad
 public import Mathlib.Algebra.MvPolynomial.Nilpotent
 public import Mathlib.Algebra.Order.Ring.Finset
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Expand multivariate polynomials
 

@@ -11,6 +11,9 @@ public import Mathlib.Basic.Nontrivial.Basic
 public import Mathlib.Tactic.CrossRefAttribute
 public import Mathlib.Tactic.Attr.Core
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Matrices
 

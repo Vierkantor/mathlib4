@@ -9,6 +9,9 @@ public import Mathlib.Algebra.BigOperators.Group.Finset.Piecewise
 public import Mathlib.Algebra.Order.BigOperators.Group.Finset
 public import Mathlib.Data.Int.Interval
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Sharp bounds for sums of bounded finsets of integers
 

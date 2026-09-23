@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.Complex.UpperHalfPlane.Topology
 public import Mathlib.NumberTheory.ModularForms.QExpansion
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The Petersson scalar product
 

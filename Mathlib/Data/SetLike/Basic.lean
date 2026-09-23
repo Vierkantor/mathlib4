@@ -9,6 +9,9 @@ public import Mathlib.Tactic.Monotonicity.Attr
 public import Mathlib.Tactic.SetLike
 public import Mathlib.Data.Set.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Typeclass for types with a set-like extensionality property
 
@@ -33,6 +36,7 @@ an instance is automatically available when defining a `PartialOrder` as
 `.ofSetLike (MySubobject X)`.
 
 A typical subobject should be declared as:
+
 ```
 structure MySubobject (X : Type*) [ObjectTypeclass X] where
   (carrier : Set X)
@@ -67,10 +71,12 @@ end MySubobject
 ```
 
 An alternative to `SetLike` could have been an extensional `Membership` typeclass:
+
 ```
 class ExtMembership (α : out_param <| Type u) (β : Type v) extends Membership α β where
   (ext_iff : ∀ {s t : β}, s = t ↔ ∀ (x : α), x ∈ s ↔ x ∈ t)
 ```
+
 While this is equivalent, `SetLike` conveniently uses a carrier set projection directly.
 
 ## Tags
@@ -82,23 +88,28 @@ subobjects
 
 assert_not_exists RelIso
 
-/-- A class to indicate that there is a canonical injection between `A` and `Set B`.
+/--
+A class to indicate that there is a canonical injection between `A` and `Set B`.
 
 This has the effect of giving terms of `A` elements of type `B` (through a `Membership`
 instance) and a compatible coercion to `Type*` as a subtype.
 
 Note: if `SetLike.coe` is a projection, implementers should create a simp lemma such as
+
 ```
 @[simp] lemma mem_carrier {p : MySubobject X} : x ∈ p.carrier ↔ x ∈ (p : Set X) := Iff.rfl
 ```
+
 to normalize terms.
 
 If you declare an unbundled subclass of `SetLike`, for example:
+
 ```
 class MulMemClass (S : Type*) (M : Type*) [Mul M] [SetLike S M] where
   ...
 ```
-Then you should *not* repeat the `outParam` declaration so `SetLike` will supply the value instead.
+
+Then you should _not_ repeat the `outParam` declaration so `SetLike` will supply the value instead.
 This ensures your subclass will not have issues with synthesis of the `[Mul M]` parameter starting
 before the value of `M` is known.
 -/

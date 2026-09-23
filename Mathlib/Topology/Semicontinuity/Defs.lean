@@ -9,16 +9,19 @@ public import Mathlib.Topology.Defs.Induced
 public import Mathlib.Topology.Constructions.SumProd
 import Mathlib.Topology.ContinuousOn
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Semicontinuous maps
 
-A function `f` from a topological space `α` to an ordered space `β` is *lower semicontinuous* at a
+A function `f` from a topological space `α` to an ordered space `β` is _lower semicontinuous_ at a
 point `x` if, for any `y < f x`, for any `x'` close enough to `x`, one has `f x' > y`. In other
 words, `f` can jump up, but it cannot jump down.
 
-*Upper semicontinuous* functions are defined similarly. Upper and lower hemicontinuity (of
+_Upper semicontinuous_ functions are defined similarly. Upper and lower hemicontinuity (of
 functions `f : α → Set β`) are often defined in terms of sequential characterizations, but
-here we take an equivalent approach. `f : α → Set β` is *upper hemicontinuous* at `x` if for any
+here we take an equivalent approach. `f : α → Set β` is _upper hemicontinuous_ at `x` if for any
 neighborhood of `f x`, `f x'` is included in this neighborhood for all `x'` close enough to `x`.
 
 Of course, one can see a superficial similarity between upper semicontinuity and upper
@@ -32,12 +35,14 @@ functions.
 ## Main definitions and results
 
 We introduce 4 generic definitions related to semicontinuity:
+
 * `SemicontinuousWithinAt r s x`
 * `SemicontinuousAt r x`
 * `SemicontinuousOn r s`
 * `Semicontinuous r`
 
 We build a basic API using dot notation around these notions, and we prove that
+
 * constant functions are semicontinuous;
 * right composition with continuous functions preserves semicontinuity;
 
@@ -54,9 +59,8 @@ We also define variants of these two notions for `On`/`At`/`WithinAt`.
 
 ## References
 
-* <https://en.wikipedia.org/wiki/Semi-continuity>
-* <https://en.wikipedia.org/wiki/Hemicontinuity>
-
+* [https://en.wikipedia.org/wiki/Semi-continuity](https://en.wikipedia.org/wiki/Semi-continuity)
+* [https://en.wikipedia.org/wiki/Hemicontinuity](https://en.wikipedia.org/wiki/Hemicontinuity)
 -/
 
 @[expose] public section
@@ -67,7 +71,9 @@ open Set Function Filter
 
 variable {α β γ : Type*} [TopologicalSpace α] [TopologicalSpace γ]
 
-/-! ## Main definitions -/
+/-!
+# Main definitions
+-/
 
 section Semicontinuous
 
@@ -211,7 +217,9 @@ theorem Semicontinuous.inf {r' : α → β → Prop} (h : Semicontinuous r) (h' 
 theorem Semicontinuous.sup {r' : α → β → Prop} (h : Semicontinuous r) (h' : Semicontinuous r') :
     Semicontinuous (r ⊔ r') := fun a ↦ (h a).sup (h' a)
 
-/-! #### Constants -/
+/-!
+# Constants
+-/
 
 theorem SemicontinuousWithinAt.const {f : β → Prop} : SemicontinuousWithinAt (fun _x => f) s x :=
   fun _y hy => Filter.Eventually.of_forall fun _x => hy
@@ -225,7 +233,9 @@ theorem SemicontinuousOn.const {f : β → Prop} : SemicontinuousOn (fun _x => f
 theorem Semicontinuous.const {f : β → Prop} : Semicontinuous fun _x : α => f := fun _x =>
   SemicontinuousAt.const
 
-/-! ### Precomposition with a continuous map -/
+/-!
+# Precomposition with a continuous map
+-/
 
 variable {x : γ} {g : γ → α} {s : Set γ} {t : Set α}
 
@@ -255,7 +265,9 @@ end Semicontinuous
 
 section Preorder
 
-/-! ## Lower and Upper Semicontinuity -/
+/-!
+# Lower and Upper Semicontinuity
+-/
 
 variable [Preorder β] {f g : α → β} {x : α} {s t : Set α} {y z : β}
 
@@ -352,10 +364,12 @@ lemma upperSemicontinuous_iff {f : α → β} :
 end Definitions
 
 /-!
-### Lower semicontinuous functions
+# Lower semicontinuous functions
 -/
 
-/-! #### Basic dot notation interface for lower semicontinuity -/
+/-!
+# Basic dot notation interface for lower semicontinuity
+-/
 
 theorem LowerSemicontinuousWithinAt.mono (h : LowerSemicontinuousWithinAt f s x) (hst : t ⊆ s) :
     LowerSemicontinuousWithinAt f t x :=
@@ -404,7 +418,9 @@ theorem LowerSemicontinuous.lowerSemicontinuousOn (h : LowerSemicontinuous f) (s
     LowerSemicontinuousOn f s :=
   h.semicontinuousOn s
 
-/-! #### Constants -/
+/-!
+# Constants
+-/
 
 theorem lowerSemicontinuousWithinAt_const : LowerSemicontinuousWithinAt (fun _x => z) s x :=
   SemicontinuousWithinAt.const
@@ -418,7 +434,9 @@ theorem lowerSemicontinuousOn_const : LowerSemicontinuousOn (fun _x => z) s :=
 theorem lowerSemicontinuous_const : LowerSemicontinuous fun _x : α => z :=
   Semicontinuous.const
 
-/-! #### Composition -/
+/-!
+# Composition
+-/
 section
 
 variable {g : γ → α} {x : γ} {t : Set γ}
@@ -446,11 +464,13 @@ theorem LowerSemicontinuous.comp
 end
 
 /-!
-### Upper semicontinuous functions
+# Upper semicontinuous functions
 -/
 
 
-/-! #### Basic dot notation interface for upper semicontinuity -/
+/-!
+# Basic dot notation interface for upper semicontinuity
+-/
 
 
 theorem UpperSemicontinuousWithinAt.mono (h : UpperSemicontinuousWithinAt f s x) (hst : t ⊆ s) :
@@ -498,7 +518,9 @@ theorem UpperSemicontinuous.upperSemicontinuousOn (h : UpperSemicontinuous f) (s
     UpperSemicontinuousOn f s :=
   h.semicontinuousOn s
 
-/-! #### Constants -/
+/-!
+# Constants
+-/
 
 theorem upperSemicontinuousWithinAt_const : UpperSemicontinuousWithinAt (fun _x => z) s x :=
   SemicontinuousWithinAt.const
@@ -512,7 +534,9 @@ theorem upperSemicontinuousOn_const : UpperSemicontinuousOn (fun _x => z) s :=
 theorem upperSemicontinuous_const : UpperSemicontinuous fun _x : α => z :=
   Semicontinuous.const
 
-/-! #### Composition -/
+/-!
+# Composition
+-/
 
 section
 
@@ -606,7 +630,9 @@ end LinearOrder
 
 section Hemi
 
-/-! ## Lower and Upper Hemicontinuity -/
+/-!
+# Lower and Upper Hemicontinuity
+-/
 
 variable [TopologicalSpace β]
 
@@ -696,10 +722,12 @@ lemma upperHemicontinuous_iff {f : α → Set β} :
 end Definitions
 
 /-!
-### Lower hemicontinuous functions
+# Lower hemicontinuous functions
 -/
 
-/-! #### Basic dot notation interface for lower hemicontinuity -/
+/-!
+# Basic dot notation interface for lower hemicontinuity
+-/
 
 variable {f g : α → Set β} {x : α} {s t : Set α} {y z : Set β}
 
@@ -785,7 +813,9 @@ lemma lowerHemicontinuous_iff_frequently :
 alias ⟨LowerHemicontinuous.frequently, LowerHemicontinuous.of_frequently⟩ :=
   lowerHemicontinuous_iff_frequently
 
-/-! #### Constants -/
+/-!
+# Constants
+-/
 
 theorem LowerHemicontinuousWithinAt.const : LowerHemicontinuousWithinAt (fun _x => z) s x :=
   SemicontinuousWithinAt.const
@@ -799,7 +829,9 @@ theorem LowerHemicontinuousOn.const : LowerHemicontinuousOn (fun _x => z) s :=
 theorem LowerHemicontinuous.const : LowerHemicontinuous fun _x : α => z :=
   Semicontinuous.const
 
-/-! #### Composition -/
+/-!
+# Composition
+-/
 section
 
 variable {g : γ → α} {x : γ} {t : Set γ}
@@ -827,10 +859,12 @@ theorem LowerHemicontinuous.comp
 end
 
 /-!
-### Upper hemicontinuous functions
+# Upper hemicontinuous functions
 -/
 
-/-! #### Basic dot notation interface for upper hemicontinuity -/
+/-!
+# Basic dot notation interface for upper hemicontinuity
+-/
 
 theorem UpperHemicontinuousWithinAt.mono (h : UpperHemicontinuousWithinAt f s x) (hst : t ⊆ s) :
     UpperHemicontinuousWithinAt f t x :=
@@ -913,7 +947,9 @@ lemma upperHemicontinuous_iff_frequently :
 alias ⟨UpperHemicontinuous.frequently, UpperHemicontinuous.of_frequently⟩ :=
   upperHemicontinuous_iff_frequently
 
-/-! #### Constants -/
+/-!
+# Constants
+-/
 
 theorem UpperHemicontinuousWithinAt.const : UpperHemicontinuousWithinAt (fun _x => z) s x :=
   SemicontinuousWithinAt.const
@@ -927,7 +963,9 @@ theorem UpperHemicontinuousOn.const : UpperHemicontinuousOn (fun _x => z) s :=
 theorem UpperHemicontinuous.const : UpperHemicontinuous fun _x : α => z :=
   Semicontinuous.const
 
-/-! #### Composition -/
+/-!
+# Composition
+-/
 
 section
 
@@ -960,9 +998,13 @@ end Hemi
 
 section Sections
 
-/-! ## Open lower sections -/
+/-!
+# Open lower sections
+-/
 
-/-! ### Definitions -/
+/-!
+# Definitions
+-/
 
 /-- A function `f : α → Set β` has open lower sections on `s` if it has open lower sections within
 `s` at every `x ∈ s`. -/
@@ -980,7 +1022,9 @@ variable {f g : α → Set β} {x : α} {s t : Set α} {z : Set β}
 theorem hasOpenLowerSections_iff_isOpen : HasOpenLowerSections f ↔ ∀ b, IsOpen {x | b ∈ f x} := by
   simp [semicontinuous_iff_isOpen]
 
-/-! ### Basic dot notation interface -/
+/-!
+# Basic dot notation interface
+-/
 
 theorem HasOpenLowerSectionsOn.mono (h : HasOpenLowerSectionsOn f s) (hst : t ⊆ s) :
     HasOpenLowerSectionsOn f t :=
@@ -998,7 +1042,9 @@ theorem HasOpenLowerSections.hasOpenLowerSectionsOn (h : HasOpenLowerSections f)
     HasOpenLowerSectionsOn f s :=
   h.semicontinuousOn s
 
-/-! ### Constants -/
+/-!
+# Constants
+-/
 
 theorem HasOpenLowerSectionsOn.const : HasOpenLowerSectionsOn (fun _x => z) s :=
   SemicontinuousOn.const
@@ -1006,7 +1052,9 @@ theorem HasOpenLowerSectionsOn.const : HasOpenLowerSectionsOn (fun _x => z) s :=
 theorem HasOpenLowerSections.const : HasOpenLowerSections fun _x : α => z :=
   Semicontinuous.const
 
-/-! ### Intersection and Union -/
+/-!
+# Intersection and Union
+-/
 
 theorem HasOpenLowerSectionsOn.inter {f g : α → Set β} {s : Set α} (hf : HasOpenLowerSectionsOn f s)
   (hg : HasOpenLowerSectionsOn g s) : HasOpenLowerSectionsOn (fun x ↦ f x ∩ g x) s := hf.inf hg
@@ -1020,7 +1068,9 @@ theorem HasOpenLowerSections.inter {f g : α → Set β} (hf : HasOpenLowerSecti
 theorem HasOpenLowerSections.union {f g : α → Set β} (hf : HasOpenLowerSections f)
   (hg : HasOpenLowerSections g) : HasOpenLowerSections (fun x ↦ f x ∪ g x) := hf.sup hg
 
-/-! ### Composition -/
+/-!
+# Composition
+-/
 
 section
 
@@ -1041,7 +1091,8 @@ end Sections
 
 section Graph
 
-/-! ## Correspondence Graphs (CGraph)
+/-!
+# Correspondence Graphs (CGraph)
 
 We define the graph of a correspondence `f : α → Set β` to be the set of all pairs
 `(x, y) : α × β` such that `y ∈ f x`. We use the term `CGraph` to refer to this construct.
@@ -1074,7 +1125,8 @@ theorem HasOpenCGraph.comp {f : α → Set β} (hf : HasOpenCGraph f) (hg : Cont
 
 end
 
-/-! ### Implications
+/-!
+# Implications
 
 A correspondence with an open graph has open lower sections. And a correspondence
 with open lower sections is lower hemicontinuous.

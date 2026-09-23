@@ -10,6 +10,9 @@ public import Mathlib.Lean.Meta.Simp
 public import Mathlib.Util.AddRelatedDecl
 public import Qq
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The `map` attribute
 

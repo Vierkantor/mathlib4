@@ -12,6 +12,9 @@ public import Mathlib.Data.Finset.Basic
 public import Mathlib.Algebra.Group.Action.Basic
 public import Mathlib.Algebra.Group.Units.Equiv
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lemmas about group actions on big operators
 

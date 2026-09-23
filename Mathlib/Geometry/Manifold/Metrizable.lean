@@ -10,6 +10,9 @@ public import Mathlib.Geometry.Manifold.IsManifold.Basic
 public import Mathlib.Topology.Compactness.Paracompact
 public import Mathlib.Topology.Metrizable.Urysohn
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Metrizability of a σ-compact manifold
 

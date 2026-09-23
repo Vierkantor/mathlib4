@@ -12,6 +12,9 @@ public import Mathlib.Order.Filter.AtTopBot.Basic
 public import Mathlib.Tactic.FieldSimp
 public import Mathlib.Tactic.Ring
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Correctness of Terminating Continued Fraction Computations (`GenContFract.of`)
 
@@ -31,15 +34,15 @@ information about the computation process, refer to `Algebra.ContinuedFractions.
 
 ## Main definitions
 
-- `GenContFract.compExactValue` can be used to compute the exact value approximated by the
+* `GenContFract.compExactValue` can be used to compute the exact value approximated by the
   continued fraction `GenContFract.of v` by adding a residual term as described in the summary.
 
 ## Main Theorems
 
-- `GenContFract.compExactValue_correctness_of_stream_eq_some` shows that
+* `GenContFract.compExactValue_correctness_of_stream_eq_some` shows that
   `GenContFract.compExactValue` indeed returns the value `v` when given the convergent and
   fractional part as described in the summary.
-- `GenContFract.of_correctness_of_terminatedAt` shows the equality
+* `GenContFract.of_correctness_of_terminatedAt` shows the equality
   `v = (GenContFract.of v).convs n` if `GenContFract.of v` terminated at position `n`.
 -/
 

@@ -9,6 +9,9 @@ public import Mathlib.Data.Set.BooleanAlgebra
 public import Mathlib.Data.SetLike.Basic
 public import Mathlib.Order.Hom.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Closure operators between preorders
 
@@ -43,14 +46,16 @@ place when using concrete closure operators such as `ConvexHull`.
 
 ## References
 
-* https://en.wikipedia.org/wiki/Closure_operator#Closure_operators_on_partially_ordered_sets
+* https://en.wikipedia.org/wiki/Closure\_operator#Closure\_operators\_on\_partially\_ordered\_sets
 -/
 
 @[expose] public section
 
 open Set
 
-/-! ### Closure operator -/
+/-!
+# Closure operator
+-/
 
 
 variable (α : Type*) {ι : Sort*} {κ : ι → Sort*}
@@ -318,7 +323,9 @@ def OrderIso.equivClosureOperator {α β} [Preorder α] [Preorder β] (e : α �
   right_inv c := Eq.trans (c.conjBy_trans _ _).symm
                  <| Eq.trans (congrArg _ e.symm_trans_self) c.conjBy_refl
 
-/-! ### Lower adjoint -/
+/-!
+# Lower adjoint
+-/
 
 
 variable {α} {β : Type*}
@@ -531,7 +538,9 @@ end CoeToSet
 
 end LowerAdjoint
 
-/-! ### Translations between `GaloisConnection`, `LowerAdjoint`, `ClosureOperator` -/
+/-!
+# Translations between `GaloisConnection`, `LowerAdjoint`, `ClosureOperator`
+-/
 
 /-- Every Galois connection induces a lower adjoint. -/
 @[simps]

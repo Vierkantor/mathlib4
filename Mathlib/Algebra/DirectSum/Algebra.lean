@@ -9,7 +9,11 @@ public import Mathlib.Algebra.Algebra.Defs
 public import Mathlib.Algebra.DirectSum.Module
 public import Mathlib.Algebra.DirectSum.Ring
 
-/-! # Additively-graded algebra structures on `⨁ i, A i`
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Additively-graded algebra structures on `⨁ i, A i`
 
 This file provides `R`-algebra structures on external direct sums of `R`-modules.
 
@@ -23,7 +27,6 @@ where all `A i` are `R`-modules. This is the extra structure needed to promote `
 
 * `DirectSum.GAlgebra R A`, the typeclass.
 * `DirectSum.toAlgebra` extends `DirectSum.toSemiring` to produce an `AlgHom`.
-
 -/
 
 @[expose] public section
@@ -124,9 +127,11 @@ def toAlgebra (f : ∀ i, A i →ₗ[R] B) (hone : f _ GradedMonoid.GOne.one = 1
       rw [Algebra.algebraMap_eq_smul_one, Algebra.algebraMap_eq_smul_one, map_smul, one_def,
         ← lof_eq_of R, toModule_lof, hone] }
 
-/-- Two `AlgHom`s out of a direct sum are equal if they agree on the generators.
+/--
+Two `AlgHom`s out of a direct sum are equal if they agree on the generators.
 
-See note [partially-applied ext lemmas]. -/
+See note \[partially-applied ext lemmas\].
+-/
 @[ext]
 theorem algHom_ext' ⦃f g : (⨁ i, A i) →ₐ[R] B⦄
     (h : ∀ i, f.toLinearMap.comp (lof _ _ A i) = g.toLinearMap.comp (lof _ _ A i)) : f = g :=
@@ -151,7 +156,9 @@ def gMulLHom {i j} : A i →ₗ[R] A j →ₗ[R] A (i + j) where
 
 end DirectSum
 
-/-! ### Concrete instances -/
+/-!
+# Concrete instances
+-/
 
 
 /-- A direct sum of copies of an `Algebra` inherits the algebra structure. -/

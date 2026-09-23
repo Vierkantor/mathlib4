@@ -9,13 +9,17 @@ public import Mathlib.Analysis.CStarAlgebra.ContinuousFunctionalCalculus.Order
 public import Mathlib.Analysis.CStarAlgebra.ContinuousFunctionalCalculus.Unitary
 public import Mathlib.Analysis.Normed.Module.Normalize
 
-/-! # Unitary elements span C⋆-algebras
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Unitary elements span C⋆-algebras
 
 ## Main results
 
-+ `CStarAlgebra.exists_sum_four_unitary`: every element `x` in a unital C⋆-algebra is a linear
+* `CStarAlgebra.exists_sum_four_unitary`: every element `x` in a unital C⋆-algebra is a linear
   combination of four unitary elements, and the norm of each coefficient does not exceed `‖x‖ / 2`.
-+ `CStarAlgebra.span_unitary`: a unital C⋆-algebra is spanned by its unitary elements.
+* `CStarAlgebra.span_unitary`: a unital C⋆-algebra is spanned by its unitary elements.
 -/
 
 @[expose] public section

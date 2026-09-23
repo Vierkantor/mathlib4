@@ -10,6 +10,9 @@ public import Mathlib.CategoryTheory.Limits.Presheaf
 public import Mathlib.CategoryTheory.Monoidal.Cartesian.FunctorCategory
 public import Mathlib.CategoryTheory.Monoidal.Types.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cartesian closure of Type
 

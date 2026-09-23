@@ -9,6 +9,10 @@ public import Mathlib.Algebra.Group.Basic
 public import Mathlib.Order.Basic
 public import Mathlib.Order.Monotone.Defs
 
+set_option doc.verso true
+set_option doc.verso.module false
+set_option doc.verso.suggestions false
+
 /-!
 
 # Covariants and contravariants

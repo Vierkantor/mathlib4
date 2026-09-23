@@ -13,6 +13,9 @@ public import Mathlib.RingTheory.Localization.Ideal
 public import Mathlib.RingTheory.Ideal.MinimalPrime.Basic
 public import Mathlib.RingTheory.Ideal.Quotient.Nilpotent
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Localizations of commutative rings at the complement of a prime ideal
 
@@ -32,6 +35,7 @@ public import Mathlib.RingTheory.Ideal.Quotient.Nilpotent
 See `RingTheory.Localization.Basic` for a design overview.
 
 ## Tags
+
 localization, ring localization, commutative ring localization, characteristic predicate,
 commutative ring, field of fractions
 -/
@@ -147,8 +151,10 @@ def orderIsoOfPrime : { p : Ideal S // p.IsPrime } ≃o { p : Ideal R // p.IsPri
     show Set.ofPred _ = Set.ofPred _
     by ext; simp [Ideal.primeCompl, ← le_compl_iff_disjoint_left]
 
-/-- The prime spectrum of the localization of a commutative ring R at a prime ideal I are in
-order-preserving bijection with the interval $(-∞, I]$ in the prime spectrum of R. -/
+/--
+The prime spectrum of the localization of a commutative ring R at a prime ideal I are in
+order-preserving bijection with the interval $`(-∞, I]` in the prime spectrum of R.
+-/
 @[simps!] def primeSpectrumOrderIso : PrimeSpectrum S ≃o Set.Iic (⟨I, hI⟩ : PrimeSpectrum R) :=
   (PrimeSpectrum.equivSubtype S).trans <| (orderIsoOfPrime S I).trans
     ⟨⟨fun p ↦ ⟨⟨p, p.2.1⟩, p.2.2⟩, fun p ↦ ⟨p.1.1, p.1.2, p.2⟩, fun _ ↦ rfl, fun _ ↦ rfl⟩, .rfl⟩

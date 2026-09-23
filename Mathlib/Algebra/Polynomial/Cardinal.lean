@@ -9,6 +9,9 @@ public import Mathlib.Algebra.MonoidAlgebra.Cardinal
 public import Mathlib.Algebra.Polynomial.Basic
 public import Mathlib.SetTheory.Cardinal.Finsupp
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cardinality of Polynomial Ring
 

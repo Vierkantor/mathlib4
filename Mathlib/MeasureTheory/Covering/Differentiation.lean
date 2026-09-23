@@ -10,6 +10,9 @@ public import Mathlib.MeasureTheory.Function.AEMeasurableOrder
 public import Mathlib.MeasureTheory.Integral.Average
 public import Mathlib.MeasureTheory.Measure.Decomposition.Lebesgue
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Differentiation of measures
 
@@ -29,6 +32,7 @@ by `Besicovitch.vitaliFamily` (for balls) or by `Vitali.vitaliFamily` (for doubl
 
 Specific applications to Lebesgue density points and the Lebesgue differentiation theorem are also
 derived:
+
 * `VitaliFamily.ae_tendsto_measure_inter_div` states that, for almost every point `x ∈ s`,
   then `μ (s ∩ a) / μ a` tends to `1` as `a` shrinks to `x` along a Vitali family.
 * `VitaliFamily.ae_tendsto_average_norm_sub` states that, for almost every point `x`, then the
@@ -71,7 +75,7 @@ make no sense. However, the measure is not globally zero if the space is big eno
 
 ## References
 
-* [Herbert Federer, Geometric Measure Theory, Chapter 2.9][Federer1996]
+* ‍\[Herbert Federer, Geometric Measure Theory, Chapter 2.9\]\[Federer1996\]
 -/
 
 @[expose] public section
@@ -86,9 +90,11 @@ variable {α : Type*} [PseudoMetricSpace α] {m0 : MeasurableSpace α} {μ : Mea
 
 namespace VitaliFamily
 
-/-- The limit along a Vitali family of `ρ a / μ a` where it makes sense, and garbage otherwise.
-Do *not* use this definition: it is only a temporary device to show that this ratio tends almost
-everywhere to the Radon-Nikodym derivative. -/
+/--
+The limit along a Vitali family of `ρ a / μ a` where it makes sense, and garbage otherwise.
+Do _not_ use this definition: it is only a temporary device to show that this ratio tends almost
+everywhere to the Radon-Nikodym derivative.
+-/
 noncomputable def limRatio (ρ : Measure α) (x : α) : ℝ≥0∞ :=
   limUnder (v.filterAt x) fun a => ρ a / μ a
 
@@ -411,8 +417,10 @@ theorem aemeasurable_limRatio : AEMeasurable (v.limRatio ρ) μ := by
   apply ENNReal.aemeasurable_of_exist_almost_disjoint_supersets _ _ fun p q hpq => ?_
   exact v.exists_measurable_supersets_limRatio hρ hpq
 
-/-- A measurable version of `v.limRatio ρ`. Do *not* use this definition: it is only a temporary
-device to show that `v.limRatio` is almost everywhere equal to the Radon-Nikodym derivative. -/
+/--
+A measurable version of `v.limRatio ρ`. Do _not_ use this definition: it is only a temporary
+device to show that `v.limRatio` is almost everywhere equal to the Radon-Nikodym derivative.
+-/
 noncomputable def limRatioMeas : α → ℝ≥0∞ :=
   (v.aemeasurable_limRatio hρ).mk _
 
@@ -699,7 +707,9 @@ theorem ae_tendsto_rnDeriv :
     simp only [Pi.add_apply, coe_add, ENNReal.add_div]
   · simp only [Bx, zero_add]
 
-/-! ### Lebesgue density points -/
+/-!
+# Lebesgue density points
+-/
 
 
 /-- Given a measurable set `s`, then `μ (s ∩ a) / μ a` converges when `a` shrinks to a typical
@@ -738,7 +748,9 @@ theorem ae_tendsto_measure_inter_div (s : Set α) :
   congr 1
   exact measure_toMeasurable_inter_of_sFinite ha _
 
-/-! ### Lebesgue differentiation theorem -/
+/-!
+# Lebesgue differentiation theorem
+-/
 
 theorem ae_tendsto_lintegral_div' {f : α → ℝ≥0∞} (hf : Measurable f) (h'f : (∫⁻ y, f y ∂μ) ≠ ∞) :
     ∀ᵐ x ∂μ, Tendsto (fun a => (∫⁻ y in a, f y ∂μ) / μ a) (v.filterAt x) (𝓝 (f x)) := by
@@ -862,8 +874,10 @@ theorem ae_tendsto_lintegral_enorm_sub_div {f : α → E} (hf : LocallyIntegrabl
   refine setLIntegral_congr_fun h'a (fun y hy ↦ ?_)
   rw [indicator_of_mem (ha hy) f, indicator_of_mem hn f]
 
-/-- *Lebesgue differentiation theorem*: for almost every point `x`, the
-average of `‖f y - f x‖` on `a` tends to `0` as `a` shrinks to `x` along a Vitali family. -/
+/--
+_Lebesgue differentiation theorem_: for almost every point `x`, the
+average of `‖f y - f x‖` on `a` tends to `0` as `a` shrinks to `x` along a Vitali family.
+-/
 theorem ae_tendsto_average_norm_sub {f : α → E} (hf : LocallyIntegrable f μ) :
     ∀ᵐ x ∂μ, Tendsto (fun a => ⨍ y in a, ‖f y - f x‖ ∂μ) (v.filterAt x) (𝓝 0) := by
   filter_upwards [v.ae_tendsto_lintegral_enorm_sub_div hf] with x hx
@@ -880,8 +894,10 @@ theorem ae_tendsto_average_norm_sub {f : α → E} (hf : LocallyIntegrable f μ)
   rw [lintegral_coe_eq_integral _ A, ENNReal.toReal_ofReal (by positivity)]
   simp only [coe_nnnorm, measureReal_def]
 
-/-- *Lebesgue differentiation theorem*: for almost every point `x`, the
-average of `f` on `a` tends to `f x` as `a` shrinks to `x` along a Vitali family. -/
+/--
+_Lebesgue differentiation theorem_: for almost every point `x`, the
+average of `f` on `a` tends to `f x` as `a` shrinks to `x` along a Vitali family.
+-/
 theorem ae_tendsto_average [NormedSpace ℝ E] [CompleteSpace E] {f : α → E}
     (hf : LocallyIntegrable f μ) :
     ∀ᵐ x ∂μ, Tendsto (fun a => ⨍ y in a, f y ∂μ) (v.filterAt x) (𝓝 (f x)) := by

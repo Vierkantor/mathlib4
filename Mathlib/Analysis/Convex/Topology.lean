@@ -11,6 +11,9 @@ public import Mathlib.Geometry.Convex.ConvexSpace.ModuleTopology
 public import Mathlib.LinearAlgebra.AffineSpace.Simplex.Basic
 public import Mathlib.Topology.Algebra.Affine
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Topological properties of convex sets
 
@@ -48,7 +51,9 @@ end Real
 
 alias ⟨_, IsPreconnected.convex⟩ := Real.convex_iff_isPreconnected
 
-/-! ### Topological vector spaces -/
+/-!
+# Topological vector spaces
+-/
 section TopologicalSpace
 
 variable [Ring 𝕜] [LinearOrder 𝕜] [IsStrictOrderedRing 𝕜] [DenselyOrdered 𝕜]

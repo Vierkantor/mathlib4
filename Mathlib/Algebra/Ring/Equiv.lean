@@ -15,6 +15,9 @@ public import Mathlib.Util.Delaborators
 
 import Mathlib.Tactic.DSimpPercent
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # (Semi)ring equivs
 
@@ -323,7 +326,9 @@ end symm
 
 section simps
 
-/-- See Note [custom simps projection] -/
+/--
+See Note \[custom simps projection\]
+-/
 def Simps.symm_apply (e : R ≃+* S) : S → R :=
   e.symm
 

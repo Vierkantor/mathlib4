@@ -8,8 +8,10 @@ module
 public import Mathlib.Init
 public meta import Lean.Elab.Tactic.ElabTerm
 public meta import Lean.Meta.Tactic.TryThis
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Tactic `change? term`
 
 This tactic is used to suggest a replacement of the goal by a definitionally equal term.
@@ -22,6 +24,8 @@ This is helpful after tactics like `dsimp`, which can then be deleted.
 
 public meta section
 
+
+set_option doc.verso false
 /-- `change? term` unifies `term` with the current goal, then suggests explicit `change` syntax
 that uses the resulting unified term.
 
@@ -35,6 +39,8 @@ example : (fun x : Nat => x) 0 = 1 := by
 -/
 syntax (name := change?) "change?" (ppSpace colGt term)? : tactic
 
+
+set_option doc.verso true
 open Lean Meta Elab.Tactic Meta.Tactic.TryThis in
 elab_rules : tactic
 | `(tactic|change?%$tk $[$sop:term]?) => withMainContext do

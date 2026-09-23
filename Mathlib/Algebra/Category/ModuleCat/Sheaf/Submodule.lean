@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Category.ModuleCat.Sheaf
 public import Mathlib.CategoryTheory.Sites.Subsheaf
 public import Mathlib.CategoryTheory.Sites.Whiskering
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Submodules of sheaves of modules
 
@@ -19,9 +22,9 @@ presheaf of modules whose membership condition is local.
 
 ## Main definitions
 
-- `SheafOfModules.Submodule`: a submodule of (the underlying presheaf of modules of) a sheaf of
+* `SheafOfModules.Submodule`: a submodule of (the underlying presheaf of modules of) a sheaf of
   modules whose membership is local.
-- `SheafOfModules.Submodule.toSheafOfModules`: the associated sheaf of modules.
+* `SheafOfModules.Submodule.toSheafOfModules`: the associated sheaf of modules.
 -/
 
 @[expose] public section

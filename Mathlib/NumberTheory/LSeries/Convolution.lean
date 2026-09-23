@@ -10,10 +10,13 @@ public import Mathlib.Analysis.Normed.Ring.InfiniteSum
 public import Mathlib.NumberTheory.ArithmeticFunction.Defs
 public import Mathlib.NumberTheory.LSeries.Convergence
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Dirichlet convolution of sequences and products of L-series
 
-We define the *Dirichlet convolution* `f ⍟ g` of two sequences `f g : ℕ → R` with values in a
+We define the _Dirichlet convolution_ `f ⍟ g` of two sequences `f g : ℕ → R` with values in a
 semiring `R` by `(f ⍟ g) n = ∑ (k * m = n), f k * g m` when `n ≠ 0` and `(f ⍟ g) 0 = 0`.
 Technically, this is done by transporting the existing definition for `ArithmeticFunction R`;
 see `LSeries.convolution`. We show that these definitions agree (`LSeries.convolution_def`).
@@ -30,7 +33,7 @@ open scoped LSeries.notation
 open Complex LSeries
 
 /-!
-### Dirichlet convolution of two functions
+# Dirichlet convolution of two functions
 -/
 
 open Nat
@@ -91,7 +94,7 @@ lemma convolution_map_zero {R : Type*} [Semiring R] (f g : ℕ → R) : (f ⍟ g
 
 
 /-!
-### Multiplication of L-series
+# Multiplication of L-series
 -/
 
 /-- We give an expression of the `LSeries.term` of the convolution of two functions
@@ -175,7 +178,7 @@ lemma LSeries.abscissaOfAbsConv_convolution_le (f g : ℕ → ℂ) :
 namespace ArithmeticFunction
 
 /-!
-### Versions for arithmetic functions
+# Versions for arithmetic functions
 -/
 
 /-- The L-series of the (convolution) product of two `ℂ`-valued arithmetic functions `f` and `g`

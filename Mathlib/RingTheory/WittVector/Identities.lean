@@ -9,22 +9,24 @@ public import Mathlib.RingTheory.WittVector.Frobenius
 public import Mathlib.RingTheory.WittVector.Verschiebung
 public import Mathlib.RingTheory.WittVector.MulP
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
-## Identities between operations on the ring of Witt vectors
+# Identities between operations on the ring of Witt vectors
 
 In this file we derive common identities between the Frobenius and Verschiebung operators.
 
-## Main declarations
+# Main declarations
 
 * `frobenius_verschiebung`: the composition of Frobenius and Verschiebung is multiplication by `p`
 * `verschiebung_mul_frobenius`: the “projection formula”: `V(x * F y) = V x * y`
-* `iterate_verschiebung_mul_coeff`: an identity from [Haze09] 6.2
+* `iterate_verschiebung_mul_coeff`: an identity from \[Haze09\] 6.2
 
-## References
+# References
 
-* [Hazewinkel, *Witt Vectors*][Haze09]
-
-* [Commelin and Lewis, *Formalizing the Ring of Witt Vectors*][CL21]
+* ‍\[Hazewinkel, _Witt Vectors_\]\[Haze09\]
+* ‍\[Commelin and Lewis, _Formalizing the Ring of Witt Vectors_\]\[CL21\]
 -/
 
 public section
@@ -145,7 +147,7 @@ theorem verschiebung_frobenius_comm [CharP R p] :
   rw [verschiebung_frobenius, frobenius_verschiebung]
 
 /-!
-## Iteration lemmas
+# Iteration lemmas
 -/
 
 
@@ -204,7 +206,9 @@ theorem iterate_frobenius_coeff (x : 𝕎 R) (i k : ℕ) :
   | zero => simp
   | succ i ih => rw [iterate_succ_apply', coeff_frobenius_charP, ih]; ring_nf
 
-/-- This is a slightly specialized form of [Hazewinkel, *Witt Vectors*][Haze09] 6.2 equation 5. -/
+/--
+This is a slightly specialized form of \[Hazewinkel, _Witt Vectors_\]\[Haze09\] 6.2 equation 5.
+-/
 theorem iterate_verschiebung_mul_coeff (x y : 𝕎 R) (i j : ℕ) :
     (verschiebung^[i] x * verschiebung^[j] y).coeff (i + j) =
       x.coeff 0 ^ p ^ j * y.coeff 0 ^ p ^ i := by

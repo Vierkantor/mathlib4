@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Ring.Action.Basic
 public import Mathlib.GroupTheory.Congruence.Basic
 public import Mathlib.RingTheory.Congruence.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Congruence relations on rings
 
@@ -39,7 +42,8 @@ section Quotient
 
 section Algebraic
 
-/-! ### Scalar multiplication
+/-!
+# Scalar multiplication
 
 The operation of scalar multiplication `•` descends naturally to the quotient.
 -/
@@ -124,7 +128,8 @@ end Algebraic
 
 end Quotient
 
-/-! ### Lattice structure
+/-!
+# Lattice structure
 
 The API in this section is copied from `Mathlib/GroupTheory/Congruence/Defs.lean`
 -/

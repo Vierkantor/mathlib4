@@ -13,10 +13,13 @@ public import Batteries.Tactic.Unreachable
 public import Lean.Parser.Syntax
 public import Mathlib.Tactic.Linter.UnusedTacticExtension
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The unused tactic linter
 
-The unused linter makes sure that every tactic call actually changes *something*.
+The unused linter makes sure that every tactic call actually changes _something_.
 
 The inner workings of the linter are as follows.
 
@@ -24,6 +27,7 @@ The linter inspects the goals before and after each tactic execution.
 If they are not identical, the linter is happy.
 If they are identical, then the linter checks if the tactic is whitelisted.
 Possible reason for whitelisting are
+
 * tactics that emit messages, such as `have?`, `extract_goal`, or `says`;
 * tactics that are in place to assert something, such as `guard`;
 * tactics that allow to work on a specific goal, such as `on_goal`;
@@ -40,13 +44,13 @@ before and after and see if there is some change.
   the linter assumes that the tactic is doing something and does not recurse into each
   `tac1, tac2, ...`.
   This is just for lack of an implementation: it may not be hard to do this.
-
 * The tactic does not check the discharger for `linear_combination`,
   but checks `linear_combination` itself.
   The main reason is that `skip` is a common discharger tactic and the linter would
   then always fail whenever the user explicitly chose to pass `skip` as a discharger tactic.
 
 ## TODO
+
 * The linter seems to be silenced by `set_option ... in`: maybe it should enter `in`s?
 
 ## Implementation notes
@@ -60,7 +64,9 @@ open Lean Elab Std Linter
 
 namespace Mathlib.Linter
 
-/-- The unused tactic linter makes sure that every tactic call actually changes *something*. -/
+/--
+The unused tactic linter makes sure that every tactic call actually changes _something_.
+-/
 public register_option linter.unusedTactic : Bool := {
   defValue := true
   descr := "enable the unused tactic linter"

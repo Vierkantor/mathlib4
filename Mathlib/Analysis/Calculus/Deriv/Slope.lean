@@ -9,6 +9,9 @@ public import Mathlib.Analysis.Calculus.Deriv.Add
 public import Mathlib.LinearAlgebra.AffineSpace.Slope
 public import Mathlib.Topology.Algebra.Module.PerfectSpace
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Derivative as the limit of the slope
 
@@ -219,7 +222,9 @@ end Order
 
 end NormedField
 
-/-! ### Upper estimates on liminf and limsup -/
+/-!
+# Upper estimates on liminf and limsup
+-/
 
 section Real
 

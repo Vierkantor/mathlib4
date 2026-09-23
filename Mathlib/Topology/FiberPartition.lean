@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Topology.LocallyConstant.Basic
 public import Mathlib.Logic.Function.FiberPartition
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Fibers of a map from a topological space
 

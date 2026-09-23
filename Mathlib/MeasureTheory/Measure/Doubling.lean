@@ -7,6 +7,9 @@ module
 
 public import Mathlib.MeasureTheory.Measure.MeasureSpaceDef
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Uniformly locally doubling measures
 
@@ -18,10 +21,10 @@ This file records basic facts about uniformly locally doubling measures.
 
 ## Main definitions
 
-  * `IsUnifLocDoublingMeasure`: the definition of a uniformly locally doubling measure (as a
-    typeclass).
-  * `IsUnifLocDoublingMeasure.doublingConstant`: a function yielding the doubling constant `C`
-    appearing in the definition of a uniformly locally doubling measure.
+* `IsUnifLocDoublingMeasure`: the definition of a uniformly locally doubling measure (as a
+  typeclass).
+* `IsUnifLocDoublingMeasure.doublingConstant`: a function yielding the doubling constant `C`
+  appearing in the definition of a uniformly locally doubling measure.
 -/
 
 @[expose] public section

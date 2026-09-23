@@ -9,6 +9,9 @@ public import Mathlib.GroupTheory.OrderOfElement
 public import Mathlib.Data.Nat.GCD.BigOperators
 public import Mathlib.Order.SupIndep
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Canonical homomorphism from a finite family of monoids
 
@@ -38,7 +41,6 @@ images of different morphisms commute, we obtain a canonical morphism
   of the `ϕ` are independent.
 * `Subgroup.independent_of_coprime_order`: If commuting normal subgroups `H i` have coprime orders,
   they are independent.
-
 -/
 
 @[expose] public section

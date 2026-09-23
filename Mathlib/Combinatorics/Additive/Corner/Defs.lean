@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Combinatorics.Additive.FreimanHom
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Corners
 
@@ -15,8 +18,8 @@ property of being corner-free.
 
 ## References
 
-* [Yaël Dillies, Bhavik Mehta, *Formalising Szemerédi’s Regularity Lemma in Lean*][srl_itp]
-* [Wikipedia, *Corners theorem*](https://en.wikipedia.org/wiki/Corners_theorem)
+* ‍\[Yaël Dillies, Bhavik Mehta, _Formalising Szemerédi’s Regularity Lemma in Lean_\]\[srl\_itp\]
+* [Wikipedia, _Corners theorem_](https://en.wikipedia.org/wiki/Corners_theorem)
 -/
 
 @[expose] public section

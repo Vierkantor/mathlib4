@@ -8,6 +8,9 @@ module
 
 public import Mathlib.CategoryTheory.ObjectProperty.FullSubcategory
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Concrete categories
 
@@ -31,7 +34,7 @@ or `RingHomClass` respectively.
 
 ## References
 
-See [Ahrens and Lumsdaine, *Displayed Categories*][ahrens2017] for
+See \[Ahrens and Lumsdaine, _Displayed Categories_\]\[ahrens2017\] for
 related work.
 -/
 

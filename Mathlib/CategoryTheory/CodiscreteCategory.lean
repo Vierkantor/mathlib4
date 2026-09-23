@@ -11,6 +11,9 @@ public import Mathlib.Data.ULift
 public import Mathlib.CategoryTheory.Category.Cat
 public import Mathlib.CategoryTheory.Adjunction.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Codiscrete categories
 

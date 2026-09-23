@@ -9,6 +9,9 @@ public import Mathlib.Tactic.CategoryTheory.Monoidal.Basic
 public import Mathlib.CategoryTheory.Monoidal.Closed.Basic
 public import Mathlib.Tactic.ApplyFun
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Rigid (autonomous) monoidal categories
 
@@ -51,12 +54,12 @@ and `ExactPairing X Y` is in bijection with adjunctions compatible with this rig
 
 ## References
 
-* <https://ncatlab.org/nlab/show/rigid+monoidal+category>
+* [
+  https://ncatlab.org/nlab/show/rigid+monoidal+category](https://ncatlab.org/nlab/show/rigid+monoidal+category)
 
 ## Tags
 
 rigid category, monoidal category
-
 -/
 
 @[expose] public section

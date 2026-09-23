@@ -9,7 +9,12 @@ public meta import Lean.Elab.Tactic.Simp
 public import Mathlib.Init
 public import Lean.Elab.Tactic.Simp
 
-/-! # `simp_intro` tactic -/
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# `simp_intro` tactic
+-/
 
 public meta section
 

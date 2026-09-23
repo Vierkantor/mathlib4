@@ -7,27 +7,32 @@ module
 
 public import Mathlib.RingTheory.TensorProduct.Maps
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The characteristic predicate of tensor product
 
 ## Main definitions
 
-- `IsTensorProduct`: A predicate on `f : M₁ →ₗ[R] M₂ →ₗ[R] M` expressing that `f` realizes `M` as
+* `IsTensorProduct`: A predicate on `f : M₁ →ₗ[R] M₂ →ₗ[R] M` expressing that `f` realizes `M` as
   the tensor product of `M₁ ⊗[R] M₂`. This is defined by requiring the lift `M₁ ⊗[R] M₂ → M` to be
   bijective.
-- `IsBaseChange`: A predicate on an `R`-algebra `S` and a map `f : M →ₗ[R] N` with `N` being an
+* `IsBaseChange`: A predicate on an `R`-algebra `S` and a map `f : M →ₗ[R] N` with `N` being an
   `S`-module, expressing that `f` realizes `N` as the base change of `M` along `R → S`.
-- `Algebra.IsPushout`: A predicate on the following diagram of scalar towers
+* `Algebra.IsPushout`: A predicate on the following diagram of scalar towers
+
   ```
     R  →  S
     ↓     ↓
     R' →  S'
   ```
+
   asserting that is a pushout diagram (i.e. `S' = S ⊗[R] R'`)
 
 ## Main results
-- `TensorProduct.isBaseChange`: `S ⊗[R] M` is the base change of `M` along `R → S`.
 
+* `TensorProduct.isBaseChange`: `S ⊗[R] M` is the base change of `M` along `R → S`.
 -/
 
 @[expose] public section

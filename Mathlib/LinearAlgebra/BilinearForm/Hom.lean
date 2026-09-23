@@ -10,6 +10,9 @@ public import Mathlib.LinearAlgebra.Basis.Defs
 public import Mathlib.LinearAlgebra.BilinearForm.Basic
 public import Mathlib.LinearAlgebra.BilinearMap
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Bilinear form and linear maps
 
@@ -27,13 +30,14 @@ Given any term `B` of type `BilinForm`, due to a coercion, can use
 the notation `B x y` to refer to the function field, i.e. `B x y = B.bilin x y`.
 
 In this file we use the following type variables:
-- `M`, `M'`, ... are modules over the commutative semiring `R`,
-- `M₁`, `M₁'`, ... are modules over the commutative ring `R₁`,
-- `V`, ... is a vector space over the field `K`.
+
+* `M`, `M'`, ... are modules over the commutative semiring `R`,
+* `M₁`, `M₁'`, ... are modules over the commutative ring `R₁`,
+* `V`, ... is a vector space over the field `K`.
 
 ## References
 
-* <https://en.wikipedia.org/wiki/Bilinear_form>
+* [https://en.wikipedia.org/wiki/Bilinear\_form](https://en.wikipedia.org/wiki/Bilinear_form)
 
 ## Tags
 

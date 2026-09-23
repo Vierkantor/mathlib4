@@ -13,11 +13,13 @@ public import Mathlib.RingTheory.EuclideanDomain
 public import Mathlib.RingTheory.UniqueFactorizationDomain.NormalizedFactors
 public import Mathlib.Algebra.NoZeroSMulDivisors.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Theory of univariate polynomials
 
-This file starts looking like the ring theory of $R[X]$
-
+This file starts looking like the ring theory of $`R[X]`
 -/
 
 @[expose] public section

@@ -10,6 +10,9 @@ public import Mathlib.Data.Nat.PSub
 public import Mathlib.Data.Tree.Basic
 public import Batteries.Data.List.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Ordered sets
 
@@ -50,7 +53,7 @@ Based on weight balanced trees:
 
 * Stephen Adams, "Efficient sets: a balancing act",
   Journal of Functional Programming 3(4):553-562, October 1993,
-  <http://www.swiss.ai.mit.edu/~adams/BB/>.
+  [http://www.swiss.ai.mit.edu/~adams/BB/](http://www.swiss.ai.mit.edu/~adams/BB/).
 * J. Nievergelt and E.M. Reingold,
   "Binary search trees of bounded balance",
   SIAM journal of computing 2(1), March 1973.
@@ -60,7 +63,6 @@ Ported from Haskell's `Data.Set`.
 ## Tags
 
 ordered map, ordered set, data structure
-
 -/
 
 @[expose] public section
@@ -688,11 +690,13 @@ powerset {1, 2, 3} = {∅, {1}, {2}, {3}, {1,2}, {1,3}, {2,3}, {1,2,3}}
 def powerset (t : Ordnode α) : Ordnode (Ordnode α) :=
   insertMin nil <| foldr (fun x ts => glue (insertMin (ι x) (map (insertMin x) ts)) ts) t nil
 
-/-- O(m * n). The Cartesian product of two sets: `(a, b) ∈ s.prod t` iff `a ∈ s` and `b ∈ t`.
+/--
+O(m \* n). The Cartesian product of two sets: `(a, b) ∈ s.prod t` iff `a ∈ s` and `b ∈ t`.
 
 ```
 prod {1, 2} {2, 3} = {(1, 2), (1, 3), (2, 2), (2, 3)}
-``` -/
+```
+-/
 protected def prod {β} (t₁ : Ordnode α) (t₂ : Ordnode β) : Ordnode (α × β) :=
   fold nil (fun s₁ a s₂ => merge s₁ <| merge (map (Prod.mk a) t₂) s₂) t₁
 
@@ -1306,8 +1310,9 @@ def disjoint : Ordnode α → Ordnode α → Bool
     let (lt, found, gt) := split3 x t
     found.isNone && disjoint l lt && disjoint r gt
 
-/-- O(m * log(|m ∪ n| + 1)), m ≤ n. The union of two sets, preferring members of
-  `t₁` over those of `t₂` when equivalent elements are encountered.
+/--
+O(m \* log(|m ∪ n| + 1)), m ≤ n. The union of two sets, preferring members of
+`t₁` over those of `t₂` when equivalent elements are encountered.
 
 ```
 union {1, 2} {2, 3} = {1, 2, 3}
@@ -1318,7 +1323,8 @@ Using a preorder on `ℕ × ℕ` that only compares the first coordinate:
 
 ```
 union {(1, 1)} {(0, 1), (1, 2)} = {(0, 1), (1, 1)}
-``` -/
+```
+-/
 def union : Ordnode α → Ordnode α → Ordnode α
   | t₁, nil => t₁
   | nil, t₂ => t₂
@@ -1330,12 +1336,14 @@ def union : Ordnode α → Ordnode α → Ordnode α
         let (l₂', r₂') := split x₁ t₂
         link (union l₁ l₂') x₁ (union r₁ r₂')
 
-/-- O(m * log(|m ∪ n| + 1)), m ≤ n. Difference of two sets.
+/--
+O(m \* log(|m ∪ n| + 1)), m ≤ n. Difference of two sets.
 
 ```
 diff {1, 2} {2, 3} = {1}
 diff {1, 2, 3} {2} = {1, 3}
-``` -/
+```
+-/
 def diff : Ordnode α → Ordnode α → Ordnode α
   | t₁, nil => t₁
   | t₁, t₂@(node _ l₂ x r₂) =>
@@ -1345,13 +1353,15 @@ def diff : Ordnode α → Ordnode α → Ordnode α
       let r₁₂ := diff r₁ r₂
       if size l₁₂ + size r₁₂ = size t₁ then t₁ else merge l₁₂ r₁₂
 
-/-- O(m * log(|m ∪ n| + 1)), m ≤ n. Intersection of two sets, preferring members of
+/--
+O(m \* log(|m ∪ n| + 1)), m ≤ n. Intersection of two sets, preferring members of
 `t₁` over those of `t₂` when equivalent elements are encountered.
 
 ```
 inter {1, 2} {2, 3} = {2}
 inter {1, 3} {2} = ∅
-``` -/
+```
+-/
 def inter : Ordnode α → Ordnode α → Ordnode α
   | nil, _ => nil
   | t₁@(node _ l₁ x r₁), t₂ =>
@@ -1361,7 +1371,8 @@ def inter : Ordnode α → Ordnode α → Ordnode α
       let r₁₂ := inter r₁ r₂
       cond y.isSome (link l₁₂ x r₁₂) (merge l₁₂ r₁₂)
 
-/-- O(n * log n). Build a set from a list, preferring elements that appear earlier in the list
+/--
+O(n \* log n). Build a set from a list, preferring elements that appear earlier in the list
 in the case of equivalent elements.
 
 ```
@@ -1373,29 +1384,34 @@ Using a preorder on `ℕ × ℕ` that only compares the first coordinate:
 
 ```
 ofList [(1, 1), (0, 1), (1, 2)] = {(0, 1), (1, 1)}
-``` -/
+```
+-/
 def ofList (l : List α) : Ordnode α :=
   l.foldr insert nil
 
-/-- O(n * log n). Adaptively chooses between the linear and log-linear algorithm depending
-  on whether the input list is already sorted.
+/--
+O(n \* log n). Adaptively chooses between the linear and log-linear algorithm depending
+on whether the input list is already sorted.
 
 ```
 ofList' [1, 2, 3] = {1, 2, 3}
 ofList' [2, 1, 1, 3] = {1, 2, 3}
-``` -/
+```
+-/
 def ofList' : List α → Ordnode α
   | [] => nil
   | l@(_ :: _) => if List.IsChain (fun a b => ¬b ≤ a) l then ofAscList l else ofList l
 
-/-- O(n * log n). Map a function on a set. Unlike `map` this has no requirements on
+/--
+O(n \* log n). Map a function on a set. Unlike `map` this has no requirements on
 `f`, and the resulting set may be smaller than the input if `f` is noninjective.
 Equivalent elements are selected with a preference for smaller source elements.
 
 ```
 image (fun x ↦ x + 2) {1, 2, 4} = {3, 4, 6}
 image (fun x : ℕ ↦ x - 2) {1, 2, 4} = {0, 2}
-``` -/
+```
+-/
 def image {α β} [LE β] [DecidableLE β] (f : α → β) (t : Ordnode α) : Ordnode β :=
   ofList (t.toList.map f)
 

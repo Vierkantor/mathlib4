@@ -8,6 +8,9 @@ module
 public import Mathlib.Tactic.NormNum.Ineq
 public import Mathlib.Tactic.Ring.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Automation for proving inequalities in commutative (semi)rings
 

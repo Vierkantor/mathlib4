@@ -11,6 +11,9 @@ public import Mathlib.Data.List.Pairwise
 public import Mathlib.Data.Multiset.Sort
 public import Mathlib.Order.RelIso.Set
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Construct a sorted list from a finset.
 -/
@@ -23,7 +26,9 @@ open Multiset Nat
 
 variable {α β : Type*}
 
-/-! ### sort -/
+/-!
+# sort
+-/
 
 
 section sort

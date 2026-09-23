@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Algebra.TrivSqZeroExt.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Dual numbers
 
@@ -33,7 +36,7 @@ Rather than duplicating the API of `TrivSqZeroExt`, this file reuses the functio
 
 ## References
 
-* https://en.wikipedia.org/wiki/Dual_number
+* https://en.wikipedia.org/wiki/Dual\_number
 -/
 
 @[expose] public section
@@ -41,12 +44,16 @@ Rather than duplicating the API of `TrivSqZeroExt`, this file reuses the functio
 
 variable {R A B : Type*}
 
-/-- The type of dual numbers, numbers of the form $a + bε$ where $ε^2 = 0$.
-`R[ε]` is notation for `DualNumber R`. -/
+/--
+The type of dual numbers, numbers of the form $`a + bε` where $`ε^2 = 0`.
+`R[ε]` is notation for `DualNumber R`.
+-/
 abbrev DualNumber (R : Type*) : Type _ :=
   TrivSqZeroExt R R
 
-/-- The unit element $ε$ that squares to zero, with notation `ε`. -/
+/--
+The unit element $`ε` that squares to zero, with notation `ε`.
+-/
 def DualNumber.eps [Zero R] [One R] : DualNumber R :=
   TrivSqZeroExt.inr 1
 

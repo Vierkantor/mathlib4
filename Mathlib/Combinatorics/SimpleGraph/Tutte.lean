@@ -11,6 +11,9 @@ public import Mathlib.Combinatorics.SimpleGraph.Operations
 public import Mathlib.Combinatorics.SimpleGraph.UniversalVerts
 public import Mathlib.Data.Fintype.Card
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Tutte's theorem
 

@@ -8,6 +8,9 @@ module
 public import Mathlib.CategoryTheory.Comma.CatCommSq
 public import Mathlib.CategoryTheory.Localization.LocalizerMorphism
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Resolutions for a morphism of localizers
 
@@ -32,8 +35,8 @@ Similar definitions are done for left resolutions.
 * formalize dual results
 
 ## References
-* [Bruno Kahn and Georges Maltsiniotis, *Structures de dérivabilité*][KahnMaltsiniotis2008]
 
+* ‍\[Bruno Kahn and Georges Maltsiniotis, _Structures de dérivabilité_\]\[KahnMaltsiniotis2008\]
 -/
 
 @[expose] public section

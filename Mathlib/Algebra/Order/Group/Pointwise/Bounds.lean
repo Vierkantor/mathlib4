@@ -11,6 +11,9 @@ public import Mathlib.Order.Bounds.OrderIso
 public import Mathlib.Order.GaloisConnection.Basic
 public import Mathlib.Algebra.Group.Pointwise.Set.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Upper/lower bounds in ordered monoids and groups
 

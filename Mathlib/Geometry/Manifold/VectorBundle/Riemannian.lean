@@ -9,7 +9,11 @@ public import Mathlib.Geometry.Manifold.VectorBundle.Hom
 public import Mathlib.Geometry.Manifold.VectorBundle.MDifferentiable
 public import Mathlib.Topology.VectorBundle.Riemannian
 
-/-! # Riemannian vector bundles
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Riemannian vector bundles
 
 Given a vector bundle over a manifold whose fibers are all endowed with a scalar product, we
 say that this bundle is Riemannian if the scalar product depends smoothly on the base point.
@@ -27,6 +31,7 @@ automatically `[IsContMDiffRiemannianBundle IB n F E]`.
 
 The following code block is the standard way to say "Let `E` be a smooth vector bundle equipped with
 a `C^n` Riemannian structure over a `C^n` manifold `B`":
+
 ```
 variable
   {EB : Type*} [NormedAddCommGroup EB] [NormedSpace ℝ EB]

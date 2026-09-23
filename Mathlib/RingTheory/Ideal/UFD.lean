@@ -10,13 +10,16 @@ public import Mathlib.RingTheory.Ideal.KrullsHeightTheorem
 public import Mathlib.RingTheory.Localization.Away.Lemmas
 public import Mathlib.RingTheory.UniqueFactorizationDomain.Kaplansky
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # UFD criteria via height `1` prime ideals and localization
 
 ## Main results
+
 * `UniqueFactorizationMonoid.iff_forall_isPrincipal_of_height_eq_one` : Let `R` be a
   Noetherian domain. Then `R` is a UFD if and only if every height `1` prime ideal is principal.
-
 * `UniqueFactorizationMonoid.iff_localizationAway_of_prime` : Let `R` be a Noetherian domain,
   `x ∈ R` be a prime element. Then `R` is a UFD if and only if `Rₓ` is a UFD.
 -/

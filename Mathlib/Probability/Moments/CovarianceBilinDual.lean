@@ -10,6 +10,9 @@ public import Mathlib.LinearAlgebra.BilinearForm.Properties
 public import Mathlib.MeasureTheory.Constructions.BorelSpace.ContinuousLinearMap
 public import Mathlib.Probability.Moments.Variance
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Covariance in Banach spaces
 
@@ -36,7 +39,6 @@ Let `μ` be a finite measure on a normed space `E` with the Borel σ-algebra. We
 ## Implementation notes
 
 The hypothesis that `μ` has a second moment is written as `MemLp id 2 μ` in the code.
-
 -/
 
 @[expose] public section

@@ -8,6 +8,9 @@ module
 public import Mathlib.LinearAlgebra.Finsupp.LinearCombination
 public import Mathlib.Tactic.CrossRefAttribute
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Bases
 
@@ -23,20 +26,15 @@ vector space and `ι : Type*` is an arbitrary indexing type.
 * `Basis ι R M` is the type of `ι`-indexed `R`-bases for a module `M`,
   represented by a linear equiv `M ≃ₗ[R] ι →₀ R`.
 * the basis vectors of a basis `b : Basis ι R M` are available as `b i`, where `i : ι`
-
 * `Basis.repr` is the isomorphism sending `x : M` to its coordinates `Basis.repr x : ι →₀ R`.
   The converse, turning this isomorphism into a basis, is called `Basis.ofRepr`.
 * If `ι` is finite, there is a variant of `repr` called `Basis.equivFun b : M ≃ₗ[R] ι → R`
   (saving you from having to work with `Finsupp`). The converse, turning this isomorphism into
   a basis, is called `Basis.ofEquivFun`.
-
 * `Basis.reindex` uses an equiv to map a basis to a different indexing set.
-
 * `Basis.map` uses a linear equiv to map a basis to a different module.
-
 * `Basis.constr`: given `b : Basis ι R M` and `f : ι → M`, construct a linear map `g` so that
   `g (b i) = f i`.
-
 * `Basis.coord`: `b.coord i x` is the `i`-th coordinate of a vector `x` with respect to the basis
   `b`.
 
@@ -55,7 +53,6 @@ ordered index type `ι`.
 ## Tags
 
 basis, bases
-
 -/
 
 @[expose] public section
@@ -495,7 +492,8 @@ section Constr
 variable (S : Type*) [Semiring S] [Module S M']
 variable [SMulCommClass R S M']
 
-/-- Construct a linear map given the value at the basis, called `Basis.constr b S f` where `b` is
+/--
+Construct a linear map given the value at the basis, called `Basis.constr b S f` where `b` is
 a basis, `f` is the value of the linear map over the elements of the basis, and `S` is an
 extra semiring (typically `S = R` or `S = ℕ`).
 
@@ -503,7 +501,7 @@ This definition is parameterized over an extra `Semiring S`,
 such that `SMulCommClass R S M'` holds.
 If `R` is commutative, you can set `S := R`; if `R` is not commutative,
 you can recover an `AddEquiv` by setting `S := ℕ`.
-See library note [bundled maps over different rings].
+See library note \[bundled maps over different rings\].
 -/
 def constr : (ι → M') ≃ₗ[S] M →ₗ[R] M' where
   toFun f := (Finsupp.linearCombination R id).comp <| Finsupp.lmapDomain R R f ∘ₗ ↑b.repr

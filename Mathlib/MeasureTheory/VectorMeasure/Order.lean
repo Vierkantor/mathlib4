@@ -7,8 +7,10 @@ module
 
 public import Mathlib.MeasureTheory.VectorMeasure.Operations
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Order structure on vector measures
 
 This file defines the pointwise order on vector measures, comparison after restriction to a set,

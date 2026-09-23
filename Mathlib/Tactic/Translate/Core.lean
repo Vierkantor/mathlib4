@@ -25,6 +25,9 @@ public import Mathlib.Tactic.Translate.GuessName
 public import Mathlib.Tactic.Translate.Reorder
 public import Mathlib.Tactic.Translate.UnfoldBoundary
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The translation attribute.
 
@@ -881,9 +884,11 @@ partial def transformDeclRec (t : TranslateData) (cfg : Config) (rootSrc rootTgt
   -- necessary so that e.g. match equations can be generated for `tgt`
   enableRealizationsForConst tgt
 
-/-- Copy the instance attribute in a `to_additive`
+/--
+Copy the instance attribute in a `to_additive`
 
-[todo] it seems not to work when the `to_additive` is added as an attribute later. -/
+‍\[todo\] it seems not to work when the `to_additive` is added as an attribute later.
+-/
 def copyInstanceAttribute (src tgt : Name) : CoreM Unit := do
   if let some prio ← getInstancePriority? src then
     let attr_kind := (← getInstanceAttrKind? src).getD .global

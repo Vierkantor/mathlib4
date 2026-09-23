@@ -9,15 +9,19 @@ public import Mathlib.LinearAlgebra.TensorProduct.Graded.External
 public import Mathlib.RingTheory.GradedAlgebra.Basic
 public import Mathlib.Tactic.SuppressCompilation
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Graded tensor products over graded algebras
 
-The graded tensor product $A \hat\otimes_R B$ is imbued with a multiplication defined on homogeneous
+The graded tensor product $`A \hat\otimes_R B` is imbued with a multiplication defined on
+homogeneous
 tensors by:
 
-$$(a \otimes b) \cdot (a' \otimes b') = (-1)^{\deg a' \deg b} (a \cdot a') \otimes (b \cdot b')$$
+$$`(a \otimes b) \cdot (a' \otimes b') = (-1)^{\deg a' \deg b} (a \cdot a') \otimes (b \cdot b')`
 
-where $A$ and $B$ are algebras graded by `ℕ`, `ℤ`, or `ι` (or more generally, any index
+where $`A` and $`B` are algebras graded by `ℕ`, `ℤ`, or `ι` (or more generally, any index
 that satisfies `Module ι (Additive ℤˣ)`).
 
 ## Main results
@@ -35,12 +39,12 @@ that satisfies `Module ι (Additive ℤˣ)`).
 ## References
 
 * https://math.stackexchange.com/q/202718/1896
-* [*Algebra I*, Bourbaki : Chapter III, §4.7, example (2)][bourbaki1989]
+* ‍\[_Algebra I_, Bourbaki : Chapter III, §4.7, example (2)\]\[bourbaki1989\]
 
 ## Implementation notes
 
 We cannot put the multiplication on `A ⊗[R] B` directly as it would conflict with the existing
-multiplication defined without the $(-1)^{\deg a' \deg b}$ term. Furthermore, the ring `A` may not
+multiplication defined without the $`(-1)^{\deg a' \deg b}` term. Furthermore, the ring `A` may not
 have a unique graduation, and so we need the chosen graduation `𝒜` to appear explicitly in the
 type.
 
@@ -356,8 +360,10 @@ lemma algHom_ext ⦃f g : (𝒜 ᵍ⊗[R] ℬ) →ₐ[R] C⦄
     (hb : f.comp (includeRight 𝒜 ℬ) = g.comp (includeRight 𝒜 ℬ)) : f = g :=
   (liftEquiv 𝒜 ℬ).symm.injective <| Subtype.ext <| Prod.ext ha hb
 
-/-- The non-trivial symmetric braiding, sending $a \otimes b$ to
-$(-1)^{\deg a' \deg b} (b \otimes a)$. -/
+/--
+The non-trivial symmetric braiding, sending $`a \otimes b` to
+$`(-1)^{\deg a' \deg b} (b \otimes a)`.
+-/
 def comm : (𝒜 ᵍ⊗[R] ℬ) ≃ₐ[R] (ℬ ᵍ⊗[R] 𝒜) :=
   AlgEquiv.ofLinearEquiv
     (auxEquiv R 𝒜 ℬ ≪≫ₗ gradedComm R _ _ ≪≫ₗ (auxEquiv R ℬ 𝒜).symm)

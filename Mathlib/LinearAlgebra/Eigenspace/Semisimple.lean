@@ -9,6 +9,9 @@ public import Mathlib.LinearAlgebra.Eigenspace.Basic
 public import Mathlib.LinearAlgebra.Eigenspace.Triangularizable
 public import Mathlib.LinearAlgebra.Semisimple
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Eigenspaces of semisimple linear endomorphisms
 
@@ -25,7 +28,6 @@ endomorphisms.
   the eigenspaces of a semisimple endomorphism span the whole space.
 * `Module.End.IsSemisimple.eq_zero_iff_forall_eigenvalue`: a semisimple endomorphism over
   an algebraically closed field is zero iff all eigenvalues are zero.
-
 -/
 
 public section

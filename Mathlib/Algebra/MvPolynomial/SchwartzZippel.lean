@@ -15,6 +15,9 @@ public import Mathlib.Data.Fin.Tuple.Finset
 public import Mathlib.Tactic.Positivity.Finset
 public import Mathlib.Tactic.GCongr
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The Schwartz-Zippel lemma
 
@@ -29,13 +32,13 @@ of the field. This lemma is useful as a probabilistic polynomial identity test.
 
 ## Main results
 
-- `MvPolynomial.schwartz_zippel_sup_sum`:
+* `MvPolynomial.schwartz_zippel_sup_sum`:
   Sharper version of Schwartz-Zippel for a dependent product of sets `S i`, with the RHS being
   the supremum of `∑ i, degᵢ s / #(S i)` ranging over monomials `s` of the polynomial.
-- `MvPolynomial.schwartz_zippel_sum_degreeOf`:
+* `MvPolynomial.schwartz_zippel_sum_degreeOf`:
   Schwartz-Zippel for a dependent product of sets `S i`,
   with the RHS being the sum of `degᵢ p / #(S i)`.
-- `MvPolynomial.schwartz_zippel_totalDegree`:
+* `MvPolynomial.schwartz_zippel_totalDegree`:
   Nondependent version of `schwartz_zippel_sup_sum`, with the RHS being `p.totalDegree / #S`.
 
 ## TODO
@@ -47,9 +50,9 @@ of the field. This lemma is useful as a probabilistic polynomial identity test.
 
 ## References
 
-* [demillo_lipton_1978]
-* [schwartz_1980]
-* [zippel_1979]
+* ‍\[demillo\_lipton\_1978\]
+* ‍\[schwartz\_1980\]
+* ‍\[zippel\_1979\]
 -/
 
 public section

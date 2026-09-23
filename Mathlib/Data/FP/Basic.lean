@@ -12,6 +12,9 @@ public import Mathlib.Data.Rat.Init
 public import Mathlib.Algebra.Ring.Int.Defs
 public import Mathlib.Algebra.Order.Group.Unbundled.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Implementation of floating-point numbers (experimental).
 -/

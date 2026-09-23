@@ -12,6 +12,9 @@ public import Mathlib.Analysis.Normed.Module.Extr
 public import Mathlib.LinearAlgebra.Complex.FiniteDimensional
 public import Mathlib.Topology.Order.ExtrClosure
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Maximum modulus principle
 
@@ -28,20 +31,16 @@ conclusion (either equality of norms or of the values of the function).
 Consider a function `f : E → F` that is complex differentiable on a set `s`, is continuous on its
 closure, and `‖f x‖` has a maximum on `s` at `c`. We prove the following theorems.
 
-- `Complex.norm_eqOn_closedBall_of_isMaxOn`: if `s = Metric.ball c r`, then `‖f x‖ = ‖f c‖` for
+* `Complex.norm_eqOn_closedBall_of_isMaxOn`: if `s = Metric.ball c r`, then `‖f x‖ = ‖f c‖` for
   any `x` from the corresponding closed ball;
-
-- `Complex.norm_eq_norm_of_isMaxOn_of_ball_subset`: if `Metric.ball c (dist w c) ⊆ s`, then
+* `Complex.norm_eq_norm_of_isMaxOn_of_ball_subset`: if `Metric.ball c (dist w c) ⊆ s`, then
   `‖f w‖ = ‖f c‖`;
-
-- `Complex.norm_eqOn_of_isPreconnected_of_isMaxOn`: if `U` is an open (pre)connected set, `f` is
+* `Complex.norm_eqOn_of_isPreconnected_of_isMaxOn`: if `U` is an open (pre)connected set, `f` is
   complex differentiable on `U`, and `‖f x‖` has a maximum on `U` at `c ∈ U`, then `‖f x‖ = ‖f c‖`
   for all `x ∈ U`;
-
-- `Complex.norm_eqOn_closure_of_isPreconnected_of_isMaxOn`: if `s` is open and (pre)connected
+* `Complex.norm_eqOn_closure_of_isPreconnected_of_isMaxOn`: if `s` is open and (pre)connected
   and `c ∈ s`, then `‖f x‖ = ‖f c‖` for all `x ∈ closure s`;
-
-- `Complex.norm_eventually_eq_of_isLocalMax`: if `f` is complex differentiable in a neighborhood
+* `Complex.norm_eventually_eq_of_isLocalMax`: if `f` is complex differentiable in a neighborhood
   of `c` and `‖f x‖` has a local maximum at `c`, then `‖f x‖` is locally a constant in a
   neighborhood of `c`.
 
@@ -61,18 +60,15 @@ its values on the frontier of the set. All these lemmas assume that `E` is a non
 this section `f g : E → F` are functions that are complex differentiable on a bounded set `s` and
 are continuous on its closure. We prove the following theorems.
 
-- `Complex.exists_mem_frontier_isMaxOn_norm`: If `E` is a finite-dimensional space and `s` is a
+* `Complex.exists_mem_frontier_isMaxOn_norm`: If `E` is a finite-dimensional space and `s` is a
   nonempty bounded set, then there exists a point `z ∈ frontier s` such that `(‖f ·‖)` takes it
   maximum value on `closure s` at `z`.
-
-- `Complex.norm_le_of_forall_mem_frontier_norm_le`: if `‖f z‖ ≤ C` for all `z ∈ frontier s`, then
+* `Complex.norm_le_of_forall_mem_frontier_norm_le`: if `‖f z‖ ≤ C` for all `z ∈ frontier s`, then
   `‖f z‖ ≤ C` for all `z ∈ s`; note that this theorem does not require `E` to be a
   finite-dimensional space.
-
-- `Complex.eqOn_closure_of_eqOn_frontier`: if `f x = g x` on the frontier of `s`, then `f x = g x`
+* `Complex.eqOn_closure_of_eqOn_frontier`: if `f x = g x` on the frontier of `s`, then `f x = g x`
   on `closure s`;
-
-- `Complex.eqOn_of_eqOn_frontier`: if `f x = g x` on the frontier of `s`, then `f x = g x`
+* `Complex.eqOn_of_eqOn_frontier`: if `f x = g x` on the frontier of `s`, then `f x = g x`
   on `s`.
 
 ## Tags
@@ -97,7 +93,7 @@ local postfix:100 "̂" => UniformSpace.Completion
 namespace Complex
 
 /-!
-### Auxiliary lemmas
+# Auxiliary lemmas
 
 We split the proof into a series of lemmas. First we prove the principle for a function `f : ℂ → F`
 with an additional assumption that `F` is a complete space, then drop unneeded assumptions one by
@@ -167,10 +163,10 @@ theorem norm_max_aux₃ {f : ℂ → F} {z w : ℂ} {r : ℝ} (hr : dist w z = r
   exact norm_max_aux₂ hd (closure_ball z hne ▸ hz.closure hd.continuousOn.norm)
 
 /-!
-### Maximum modulus principle for any codomain
+# Maximum modulus principle for any codomain
 
 If we do not assume that the codomain is a strictly convex space, then we can only claim that the
-**norm** `‖f x‖` is locally constant.
+*norm* `‖f x‖` is locally constant.
 -/
 
 /-!
@@ -261,7 +257,7 @@ theorem norm_eqOn_closure_of_isPreconnected_of_isMaxOn {f : E → F} {U : Set E}
 section StrictConvex
 
 /-!
-### The case of a strictly convex codomain
+# The case of a strictly convex codomain
 
 If the codomain `F` is a strictly convex space, then we can claim equalities like `f w = f z`
 instead of `‖f w‖ = ‖f z‖`.
@@ -371,7 +367,7 @@ theorem eventually_eq_or_eq_zero_of_isLocalMin_norm {f : E → ℂ} {c : E}
 end StrictConvex
 
 /-!
-### Maximum on a set vs maximum on its frontier
+# Maximum on a set vs maximum on its frontier
 
 In this section we prove corollaries of the maximum modulus principle that relate the values of a
 function on a set to its values on the frontier of this set.

@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Topology.Algebra.Group.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Subgroups of topological groups
 
@@ -120,15 +123,19 @@ instance Subgroup.isMulCommutative_topologicalClosure [T2Space G] (s : Subgroup 
   s.toSubmonoid.isMulCommutative_topologicalClosure
 
 open scoped IsMulCommutative in
-/-- If a subgroup of a topological group is commutative, then so is its topological closure.
+/--
+If a subgroup of a topological group is commutative, then so is its topological closure.
 
-See note [reducible non-instances]. -/
+See note \[reducible non-instances\].
+-/
 @[to_additive (attr := deprecated Subgroup.isMulCommutative_topologicalClosure
   +typeChanged (since := "2026-07-29"))
-  /-- If a subgroup of an additive topological group is commutative, then so is its
+  /--
+  If a subgroup of an additive topological group is commutative, then so is its
 topological closure.
 
-See note [reducible non-instances]. -/]
+  See note \[reducible non-instances\].
+  -/]
 abbrev Subgroup.commGroupTopologicalClosure [T2Space G] (s : Subgroup G)
     (hs : ∀ x y : s, x * y = y * x) : CommGroup s.topologicalClosure :=
   haveI : IsMulCommutative s := ⟨⟨hs⟩⟩

@@ -9,27 +9,28 @@ public import Mathlib.Combinatorics.SimpleGraph.Paths
 public import Mathlib.Combinatorics.SimpleGraph.Subgraph
 public import Mathlib.Combinatorics.SimpleGraph.Operations
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
-## Main definitions
+# Main definitions
 
 * `SimpleGraph.Reachable` for the relation of whether there exists
   a walk between a given pair of vertices
-
 * `SimpleGraph.Preconnected` and `SimpleGraph.Connected` are predicates
   on simple graphs for whether every vertex can be reached from every other,
   and in the latter case, whether the vertex type is nonempty.
-
 * `SimpleGraph.ConnectedComponent` is the type of connected components of
   a given graph.
-
 * `SimpleGraph.IsBridge` for whether an edge is a bridge edge
 
-## Main statements
+# Main statements
 
 * `SimpleGraph.isBridge_iff_forall_cycle_notMem` characterizes bridges as the edges not
   contained in any cycle.
 
-## Tags
+# Tags
+
 trails, paths, cycles, bridge edges
 -/
 
@@ -44,11 +45,15 @@ namespace SimpleGraph
 variable {V : Type u} {V' : Type v} {V'' : Type w}
 variable (G : SimpleGraph V) (G' : SimpleGraph V') (G'' : SimpleGraph V'')
 
-/-! ## `Reachable` and `Connected` -/
+/-!
+# `Reachable` and `Connected`
+-/
 
-/-- Two vertices are *reachable* if there is a walk between them.
+/--
+Two vertices are _reachable_ if there is a walk between them.
 This is equivalent to `Relation.ReflTransGen` of `G.Adj`.
-See `SimpleGraph.reachable_iff_reflTransGen`. -/
+See `SimpleGraph.reachable_iff_reflTransGen`.
+-/
 def Reachable (u v : V) : Prop := Nonempty (G.Walk u v)
 
 variable {G}
@@ -749,13 +754,17 @@ lemma Preconnected.exists_adj_of_nontrivial [Nontrivial V] {G : SimpleGraph V} (
   have ⟨w⟩ := h v u
   exact ⟨_, w.adj_snd <| w.not_nil_of_ne huv.symm⟩
 
-/-! ### Bridge edges -/
+/-!
+# Bridge edges
+-/
 
 section BridgeEdges
 variable {u v : V} {e : Sym2 V}
 
-/-- An edge of a graph is a *bridge* if without it, its incident vertices
-are not reachable from one another. -/
+/--
+An edge of a graph is a _bridge_ if without it, its incident vertices
+are not reachable from one another.
+-/
 def IsBridge (G : SimpleGraph V) (e : Sym2 V) : Prop :=
   Sym2.lift ⟨fun v w ↦ ¬ (G.deleteEdges {e}).Reachable v w, by simp [reachable_comm]⟩ e
 
@@ -921,7 +930,7 @@ alias IsBridge.sup_fromEdgeSet_of_not_reachable_of_isBridge :=
 end BridgeEdges
 
 /-!
-### 2-reachability
+# 2-reachability
 
 In this section, we prove results about 2-connected components of a graph, but without naming them.
 -/

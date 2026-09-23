@@ -11,6 +11,9 @@ public import Mathlib.Topology.MetricSpace.Ultra.Basic
 public import Mathlib.Topology.Algebra.InfiniteSum.Group
 public import Mathlib.Topology.Order.LiminfLimsup
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Ultrametric norms
 

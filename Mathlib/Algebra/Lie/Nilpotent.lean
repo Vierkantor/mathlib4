@@ -13,6 +13,9 @@ public import Mathlib.LinearAlgebra.Eigenspace.Basic
 public import Mathlib.RingTheory.Artinian.Module
 public import Mathlib.RingTheory.Nilpotent.Lemmas
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Nilpotent Lie algebras
 
@@ -21,10 +24,10 @@ carries a natural concept of nilpotency. We define these here via the lower cent
 
 ## Main definitions
 
-  * `LieModule.lowerCentralSeries`
-  * `LieModule.IsNilpotent`
-  * `LieModule.maxNilpotentSubmodule`
-  * `LieAlgebra.maxNilpotentIdeal`
+* `LieModule.lowerCentralSeries`
+* `LieModule.IsNilpotent`
+* `LieModule.maxNilpotentSubmodule`
+* `LieAlgebra.maxNilpotentIdeal`
 
 ## Tags
 

@@ -10,6 +10,9 @@ import Mathlib.Algebra.Group.Torsion
 import Mathlib.Tactic.TermCongr
 import Mathlib.Tactic.Use
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Equality modulo an element
 
@@ -29,8 +32,8 @@ and it is given with the use case of natural numbers in mind.
 
 ## TODO
 
-- Delete `Nat.ModEq` and `Int.ModEq` in favour of `AddCommGroup.ModEq`.
-- Relate to `SModEq`.
+* Delete `Nat.ModEq` and `Int.ModEq` in favour of `AddCommGroup.ModEq`.
+* Relate to `SModEq`.
 -/
 
 public section

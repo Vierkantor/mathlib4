@@ -9,6 +9,9 @@ public import Mathlib.Init
 public meta import Lean.Elab.Exception
 public meta import Batteries.Lean.NameMapAttribute
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `@[notation_class]` attribute for `@[simps]`
 
@@ -100,8 +103,10 @@ structure AutomaticProjectionData where
   findArgs : Name := `Simps.defaultfindArgs
 deriving Inhabited
 
-/-- `@[notation_class]` attribute. Note: this is *not* a `NameMapAttribute` because we key on the
-argument of the attribute, not the declaration name. -/
+/--
+`@[notation_class]` attribute. Note: this is _not_ a `NameMapAttribute` because we key on the
+argument of the attribute, not the declaration name.
+-/
 initialize notationClassAttr : NameMapExtension AutomaticProjectionData ← do
   let ext ← registerNameMapExtension AutomaticProjectionData
   registerBuiltinAttribute {

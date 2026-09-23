@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Ring.Defs
 public import Mathlib.Order.RelClasses
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Euclidean domains
 
@@ -50,11 +53,11 @@ value of `j`.
 
 ## References
 
-* [Th. Motzkin, *The Euclidean algorithm*][MR32592]
-* [J.-J. Hiblot, *Des anneaux euclidiens dont le plus petit algorithme n'est pas à valeurs finies*]
-  [MR399081]
-* [M. Nagata, *On Euclid algorithm*][MR541021]
-
+* ‍\[Th. Motzkin, _The Euclidean algorithm_\]\[MR32592\]
+* ‍\[J.-J. Hiblot, _Des anneaux euclidiens dont le plus petit algorithme n'est pas à valeurs
+  finies_\]
+  ‍\[MR399081\]
+* ‍\[M. Nagata, _On Euclid algorithm_\]\[MR541021\]
 
 ## Tags
 

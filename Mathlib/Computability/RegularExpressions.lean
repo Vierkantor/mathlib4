@@ -8,6 +8,9 @@ module
 public import Mathlib.Computability.Language
 public import Mathlib.Tactic.AdaptationNote
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Regular Expressions
 
@@ -19,7 +22,8 @@ computer science such as the POSIX standard.
 
 Currently, we do not show that regular expressions and DFAs/NFAs are equivalent.
 Multiple competing PRs towards that goal are in review.
-See https://leanprover.zulipchat.com/#narrow/channel/287929-mathlib4/topic/Regular.20languages.3A.20the.20review.20queue
+See
+https://leanprover.zulipchat.com/#narrow/channel/287929-mathlib4/topic/Regular.20languages.3A.20the.20review.20queue
 -/
 
 @[expose] public section

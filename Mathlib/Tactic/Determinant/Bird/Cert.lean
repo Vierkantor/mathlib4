@@ -9,8 +9,10 @@ public meta import Mathlib.Tactic.Determinant.Bird.Meta
 public meta import Mathlib.Tactic.Ring
 public import Mathlib.Tactic.Determinant.Bird.Meta
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Certificate-chain evaluator for `BirdDet.birdDet`
 
 This file contains an evaluator that computes the ring tactic normal form of
@@ -64,12 +66,12 @@ improve performance.
 
 ## Main definitions
 
-- `certEntry` certifies `BirdDet.get`.
-- `certSumFromStop` and `certSumFromStep` certify `BirdDet.sumFrom_stop` and
+* `certEntry` certifies `BirdDet.get`.
+* `certSumFromStop` and `certSumFromStep` certify `BirdDet.sumFrom_stop` and
   `BirdDet.sumFrom_step`.
-- `certIterStepEntry` certifies entries of
+* `certIterStepEntry` certifies entries of
   `(BirdDet.stepEntry n A)^[t] (BirdDet.get n A)`.
-- `certBirdDet` certifies `BirdDet.birdDet_zero` and `BirdDet.birdDet_eq`.
+* `certBirdDet` certifies `BirdDet.birdDet_zero` and `BirdDet.birdDet_eq`.
 -/
 
 public meta section

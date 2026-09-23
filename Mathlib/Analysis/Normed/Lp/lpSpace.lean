@@ -12,6 +12,9 @@ public import Mathlib.Data.Set.Image
 public import Mathlib.Topology.Algebra.ContinuousMonoidHom
 public import Mathlib.Algebra.Order.Group.Pointwise.Bounds
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # ℓp space
 
@@ -54,7 +57,6 @@ say that `‖-f‖ = ‖f‖`, instead of the non-working `f.norm_neg`.
 * More versions of Hölder's inequality (for example: the case `p = 1`, `q = ∞`; a version for normed
   rings which has `‖∑' i, f i * g i‖` rather than `∑' i, ‖f i‖ * g i‖` on the RHS; a version for
   three exponents satisfying `1 / r = 1 / p + 1 / q`)
-
 -/
 
 @[expose] public section
@@ -66,8 +68,7 @@ open scoped NNReal ENNReal Function
 variable {𝕜 𝕜' : Type*} {α : Type*} {E : α → Type*} {p q : ℝ≥0∞} [∀ i, NormedAddCommGroup (E i)]
 
 /-!
-### `Memℓp` predicate
-
+# `Memℓp` predicate
 -/
 
 
@@ -327,7 +328,7 @@ end IsBoundedSMul
 end Memℓp
 
 /-!
-### lp space
+# lp space
 
 The space of elements of `∀ i, E i` satisfying the predicate `Memℓp`.
 -/
@@ -379,8 +380,10 @@ def lp (E : α → Type*) [∀ i, NormedAddCommGroup (E i)] (p : ℝ≥0∞) : A
 be used outside of the context of `ℓ^p(ι, E)` spaces, and one should instead prefer `Finsupp`
 in other situations. -/
 scoped[lp] notation "ℓ⁰(" ι ", " E ")" => lp (fun _ : ι ↦ E) 0
-/-- `ℓ¹(ι, E)` is the space of summable functions `ι → E`. To be more precise, it is the space
-of functions whose *norms* are summable, but when `E` is complete these coincide. -/
+/--
+`ℓ¹(ι, E)` is the space of summable functions `ι → E`. To be more precise, it is the space
+of functions whose _norms_ are summable, but when `E` is complete these coincide.
+-/
 scoped[lp] notation "ℓ¹(" ι ", " E ")" => lp (fun _ : ι ↦ E) 1
 /-- `ℓ²(ι, E)` is the space of square-summable functions `ι → E`. When `E := 𝕜`, with `RCLike 𝕜`,
 this is a Hilbert space. -/
@@ -1192,9 +1195,11 @@ protected theorem hasSum_single [Fact (1 ≤ p)] (hp : p ≠ ⊤) (f : lp E p) :
     simp only [Real.abs_rpow_of_nonneg (norm_nonneg _), abs_norm]
   exact this ▸ hs
 
-/-- Two continuous additive maps from `lp E p` agree if they agree on `lp.single`.
+/--
+Two continuous additive maps from `lp E p` agree if they agree on `lp.single`.
 
-See note [partially-applied ext lemmas]. -/
+See note \[partially-applied ext lemmas\].
+-/
 @[local ext] -- not globally `ext` due to `hp`
 theorem ext_continuousAddMonoidHom
     {F : Type*} [AddCommMonoid F] [TopologicalSpace F] [T2Space F]
@@ -1208,9 +1213,11 @@ theorem ext_continuousAddMonoidHom
   congr! 2 with i
   exact DFunLike.congr_fun (h i) (x i)
 
-/-- Two continuous linear maps from `lp E p` agree if they agree on `lp.single`.
+/--
+Two continuous linear maps from `lp E p` agree if they agree on `lp.single`.
 
-See note [partially-applied ext lemmas]. -/
+See note \[partially-applied ext lemmas\].
+-/
 @[local ext] -- not globally `ext` due to `hp`
 theorem ext_continuousLinearMap
     {F : Type*} [AddCommMonoid F] [Module 𝕜 F] [TopologicalSpace F] [T2Space F]

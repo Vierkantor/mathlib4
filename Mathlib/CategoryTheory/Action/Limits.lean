@@ -12,6 +12,9 @@ public import Mathlib.CategoryTheory.Linear.FunctorCategory
 public import Mathlib.CategoryTheory.Preadditive.AdditiveFunctor
 public import Mathlib.CategoryTheory.Action.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Categorical properties of `Action V G`
 

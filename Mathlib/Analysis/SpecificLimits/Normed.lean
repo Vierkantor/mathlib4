@@ -20,6 +20,9 @@ public import Mathlib.Data.Nat.Choose.Sum
 public import Mathlib.Order.Filter.AtTopBot.ModEq
 public import Mathlib.Tactic.NoncommRing
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # A collection of specific limit computations
 
@@ -62,7 +65,9 @@ theorem tendsto_intCast_atTop_cobounded
     Tendsto Int.cast atTop (Bornology.cobounded α) :=
   tendsto_intCast_atBot_sup_atTop_cobounded.mono_left le_sup_right
 
-/-! ### Powers -/
+/-!
+# Powers
+-/
 
 theorem isLittleO_pow_pow_of_lt_left {r₁ r₂ : ℝ} (h₁ : 0 ≤ r₁) (h₂ : r₁ < r₂) :
     (fun n : ℕ ↦ r₁ ^ n) =o[atTop] fun n ↦ r₂ ^ n :=
@@ -81,20 +86,22 @@ theorem isLittleO_pow_pow_of_abs_lt_left {r₁ r₂ : ℝ} (h : |r₁| < |r₂|)
   exact (isLittleO_pow_pow_of_lt_left (abs_nonneg r₁) h).congr (pow_abs r₁) (pow_abs r₂)
 
 open List in
-/-- Various statements equivalent to the fact that `f n` grows exponentially slower than `R ^ n`.
+/--
+Various statements equivalent to the fact that `f n` grows exponentially slower than `R ^ n`.
 
-* 0: $f n = o(a ^ n)$ for some $-R < a < R$;
-* 1: $f n = o(a ^ n)$ for some $0 < a < R$;
-* 2: $f n = O(a ^ n)$ for some $-R < a < R$;
-* 3: $f n = O(a ^ n)$ for some $0 < a < R$;
-* 4: there exist `a < R` and `C` such that one of `C` and `R` is positive and $|f n| ≤ Ca^n$
+* 0: $`f n = o(a ^ n)` for some $`-R < a < R`;
+* 1: $`f n = o(a ^ n)` for some $`0 < a < R`;
+* 2: $`f n = O(a ^ n)` for some $`-R < a < R`;
+* 3: $`f n = O(a ^ n)` for some $`0 < a < R`;
+* 4: there exist `a < R` and `C` such that one of `C` and `R` is positive and $`|f n| ≤ Ca^n`
   for all `n`;
-* 5: there exists `0 < a < R` and a positive `C` such that $|f n| ≤ Ca^n$ for all `n`;
-* 6: there exists `a < R` such that $|f n| ≤ a ^ n$ for sufficiently large `n`;
-* 7: there exists `0 < a < R` such that $|f n| ≤ a ^ n$ for sufficiently large `n`.
+* 5: there exists `0 < a < R` and a positive `C` such that $`|f n| ≤ Ca^n` for all `n`;
+* 6: there exists `a < R` such that $`|f n| ≤ a ^ n` for sufficiently large `n`;
+* 7: there exists `0 < a < R` such that $`|f n| ≤ a ^ n` for sufficiently large `n`.
 
 NB: For backwards compatibility, if you add more items to the list, please append them at the end of
-the list. -/
+the list.
+-/
 theorem TFAE_exists_lt_isLittleO_pow (f : ℕ → ℝ) (R : ℝ) :
     TFAE
       [∃ a ∈ Ioo (-R) R, f =o[atTop] (a ^ ·), ∃ a ∈ Ioo 0 R, f =o[atTop] (a ^ ·),
@@ -266,7 +273,9 @@ theorem AbsoluteValue.tendsto_div_one_add_pow_nhds_zero {v : AbsoluteValue R S} 
   simpa using (tendsto_atTop_add_right_of_le _ _ (tendsto_pow_atTop_atTop_of_one_lt ha)
     (fun _ ↦ le_rfl)).congr fun n ↦ (sub_eq_add_neg (v a ^ n) 1).symm
 
-/-! ### Geometric series -/
+/-!
+# Geometric series
+-/
 
 /-- A non-unital normed ring has summable geometric series if, for all `ξ` of norm `< 1`, the
 geometric series `∑' n, ξ ^ (n + 1)` converges. This holds both in non-unital complete normed rings
@@ -815,7 +824,9 @@ lemma exists_norm_le_of_cauchySeq (h : CauchySeq fun n ↦ ∑ k ∈ range n, f 
 
 end SummableLeGeometric
 
-/-! ### Summability tests based on comparison with geometric series -/
+/-!
+# Summability tests based on comparison with geometric series
+-/
 
 theorem summable_of_ratio_norm_eventually_le {α : Type*} [SeminormedAddCommGroup α]
     [CompleteSpace α] {f : ℕ → α} {r : ℝ} (hr₁ : r < 1)
@@ -901,7 +912,9 @@ end NormedDivisionRing
 
 section
 
-/-! ### Dirichlet and alternating series tests -/
+/-!
+# Dirichlet and alternating series tests
+-/
 
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -968,7 +981,9 @@ theorem Antitone.tendsto_alternating_series_of_tendsto_zero (hfa : Antitone f)
 
 end
 
-/-! ### Partial sum bounds on alternating convergent series -/
+/-!
+# Partial sum bounds on alternating convergent series
+-/
 
 section
 
@@ -1075,7 +1090,7 @@ theorem alternating_series_error_bound
 end
 
 /-!
-### Factorial
+# Factorial
 -/
 
 /-- The series `∑' n, x ^ n / n!` is summable of any `x : ℝ`. See also `expSeries_div_summable`

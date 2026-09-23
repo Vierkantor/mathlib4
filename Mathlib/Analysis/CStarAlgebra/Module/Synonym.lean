@@ -11,7 +11,11 @@ public import Mathlib.Topology.UniformSpace.Equiv
 public import Mathlib.Topology.Algebra.Module.Equiv
 public import Mathlib.Topology.Algebra.IsUniformGroup.Constructions
 
-/-! # Type synonym for types with a `CStarModule` structure
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Type synonym for types with a `CStarModule` structure
 
 It is often the case that we want to construct a `CStarModule` instance on a type that is already
 endowed with a norm, but this norm is not the one associated to its `CStarModule` structure. For
@@ -20,22 +24,22 @@ this reason, we create a type synonym `WithCStarModule` which is endowed with th
 
 The common use cases are, when `A` is a C⋆-algebra:
 
-+ `E × F` where `E` and `F` are `CStarModule`s over `A`
-+ `Π i, E i` where `E i` is a `CStarModule` over `A` and `i : ι` with `ι` a `Fintype`
+* `E × F` where `E` and `F` are `CStarModule`s over `A`
+* `Π i, E i` where `E i` is a `CStarModule` over `A` and `i : ι` with `ι` a `Fintype`
 
 In this way, the set up is very similar to the `WithLp` type synonym, although there is no way to
-reuse `WithLp` because the norms *do not* coincide in general.
+reuse `WithLp` because the norms _do not_ coincide in general.
 
 The `WithCStarModule` synonym is of vital importance, especially because the `CStarModule` class
 marks `A` as an `outParam`. Indeed, we want to infer `A` from the type of `E`, but, as with modules,
 a type `E` can be a `CStarModule` over different C⋆-algebras. For example, note that if `A` is a
 C⋆-algebra, then so is `A × A`, and therefore we may consider both `A` and `A × A` as `CStarModule`s
-over themselves, respectively. However, we may *also* consider `A × A` as a `CStarModule` over `A`.
-However, by utilizing the type synonym, these actually correspond to *different types*, namely:
+over themselves, respectively. However, we may _also_ consider `A × A` as a `CStarModule` over `A`.
+However, by utilizing the type synonym, these actually correspond to _different types_, namely:
 
-+ `A` as a `CStarModule` over `A` corresponds to `A`
-+ `A × A` as a `CStarModule` over `A × A` corresponds to `A × A`
-+ `A × A` as a `CStarModule` over `A` corresponds to `C⋆ᵐᵒᵈ (A × A)`
+* `A` as a `CStarModule` over `A` corresponds to `A`
+* `A × A` as a `CStarModule` over `A × A` corresponds to `A × A`
+* `A × A` as a `CStarModule` over `A` corresponds to `C⋆ᵐᵒᵈ (A × A)`
 
 ## Main definitions
 
@@ -76,7 +80,9 @@ instance instInhabited [Inhabited E] : Inhabited C⋆ᵐᵒᵈ(A, E) := ‹Inhab
 instance instNonempty [Nonempty E] : Nonempty C⋆ᵐᵒᵈ(A, E) := ‹Nonempty E›
 instance instUnique [Unique E] : Unique C⋆ᵐᵒᵈ(A, E) := ‹Unique E›
 
-/-! ## `C⋆ᵐᵒᵈ(A, E)` inherits various module-adjacent structures from `E`. -/
+/-!
+# `C⋆ᵐᵒᵈ(A, E)` inherits various module-adjacent structures from `E`.
+-/
 
 instance instZero [Zero E] : Zero C⋆ᵐᵒᵈ(A, E) := ‹Zero E›
 instance instAdd [Add E] : Add C⋆ᵐᵒᵈ(A, E) := ‹Add E›
@@ -180,7 +186,9 @@ lemma map_top_submodule {R : Type*} [Semiring R] [AddCommGroup E] [Module R E] :
 instance instModuleFinite [Semiring R] [AddCommGroup E] [Module R E] [Module.Finite R E] :
     Module.Finite R C⋆ᵐᵒᵈ(A, E) := ‹Module.Finite R E›
 
-/-! ## `C⋆ᵐᵒᵈ(A, E)` inherits the uniformity and bornology from `E`. -/
+/-!
+# `C⋆ᵐᵒᵈ(A, E)` inherits the uniformity and bornology from `E`.
+-/
 
 variable {A E}
 
@@ -215,10 +223,12 @@ instance [Semiring R] [TopologicalSpace R] [AddCommGroup E] [UniformSpace E] [Mo
 
 end Basic
 
-/-! ## Prod
+/-!
+# Prod
 
 Register simplification lemmas for the applications of `WithCStarModule (E × F)` elements, as
-the usual lemmas for `Prod` will not trigger. -/
+the usual lemmas for `Prod` will not trigger.
+-/
 
 section Prod
 
@@ -293,12 +303,14 @@ theorem equiv_symm_snd (x : E × F) : ((equiv A (E × F)).symm x).snd = x.snd :=
 
 end Prod
 
-/-! ## Pi
+/-!
+# Pi
 
 Register simplification lemmas for the applications of `WithCStarModule (Π i, E i)` elements, as
 the usual lemmas for `Pi` will not trigger.
 
-We also provide a `CoeFun` instance for `WithCStarModule (Π i, E i)`. -/
+We also provide a `CoeFun` instance for `WithCStarModule (Π i, E i)`.
+-/
 
 section Pi
 

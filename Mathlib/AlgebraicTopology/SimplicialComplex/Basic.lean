@@ -12,6 +12,9 @@ public import Mathlib.Order.BourbakiWitt
 public import Mathlib.Tactic.NormNum.Ineq
 public import Mathlib.Tactic.NormNum.Pow
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Abstract Simplicial complexes
 
@@ -34,7 +37,6 @@ name `Geometry.SimplicialComplex` using affine combinations in another file.
 
 * `s ∈ K` means that `s` is a face of `K`. This notation arises from a `SetLike` instance.
 * `K ≤ L` means that the faces of `K` are faces of `L`.
-
 -/
 
 @[expose] public section

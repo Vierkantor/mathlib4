@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Ring.InjSurj
 public import Mathlib.Algebra.Group.Submonoid.Defs
 public import Mathlib.Tactic.FastInstance
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Bundled non-unital subsemirings
 

@@ -10,8 +10,10 @@ public import Mathlib.Algebra.Ring.GeomSum
 public import Mathlib.RingTheory.Ideal.Quotient.Operations
 public import Mathlib.Tactic.LinearCombination
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Idempotents in rings
 
 The predicate `IsIdempotentElem` is defined for general monoids in
@@ -21,21 +23,21 @@ In this file we provide various results regarding idempotent elements in rings.
 
 ## Main definitions
 
-- `OrthogonalIdempotents`:
+* `OrthogonalIdempotents`:
   A family `{ eᵢ }` of idempotent elements is orthogonal if `eᵢ * eⱼ = 0` for all `i ≠ j`.
-- `CompleteOrthogonalIdempotents`:
+* `CompleteOrthogonalIdempotents`:
   A family `{ eᵢ }` of orthogonal idempotent elements is complete if `∑ eᵢ = 1`.
 
 ## Main results
 
-- `CompleteOrthogonalIdempotents.lift_of_isNilpotent_ker`:
+* `CompleteOrthogonalIdempotents.lift_of_isNilpotent_ker`:
   If the kernel of `f : R →+* S` consists of nilpotent elements, and `{ eᵢ }` is a family of
   complete orthogonal idempotents in the range of `f`, then `{ eᵢ }` is the image of some
   complete orthogonal idempotents in `R`.
-- `existsUnique_isIdempotentElem_eq_of_ker_isNilpotent`:
+* `existsUnique_isIdempotentElem_eq_of_ker_isNilpotent`:
   If `R` is commutative and the kernel of `f : R →+* S` consists of nilpotent elements,
   then every idempotent in the range of `f` lifts to a unique idempotent in `R`.
-- `CompleteOrthogonalIdempotents.bijective_pi`:
+* `CompleteOrthogonalIdempotents.bijective_pi`:
   If `R` is commutative, then a family `{ eᵢ }` of complete orthogonal idempotent elements induces
   a ring isomorphism `R ≃ ∏ R ⧸ ⟨1 - eᵢ⟩`.
 -/

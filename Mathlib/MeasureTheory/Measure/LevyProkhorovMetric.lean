@@ -9,6 +9,9 @@ public import Mathlib.MeasureTheory.Measure.Portmanteau
 public import Mathlib.MeasureTheory.Integral.DominatedConvergence
 public import Mathlib.MeasureTheory.Integral.Layercake
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The Lévy-Prokhorov distance on spaces of finite measures and probability measures
 
@@ -44,7 +47,9 @@ open scoped Topology ENNReal NNReal BoundedContinuousFunction
 
 section Levy_Prokhorov
 
-/-! ### Lévy-Prokhorov metric -/
+/-!
+# Lévy-Prokhorov metric
+-/
 
 variable {Ω : Type*} [MeasurableSpace Ω] [PseudoEMetricSpace Ω]
 
@@ -252,7 +257,9 @@ lemma levyProkhorovDist_le_of_forall_le
   convert! h ε.toReal B ε_gt' B_mble
   exact (ENNReal.ofReal_toReal ε_lt_top.ne).symm
 
-/-! ### Equipping measures with the Lévy-Prokhorov metric -/
+/-!
+# Equipping measures with the Lévy-Prokhorov metric
+-/
 
 /-- A type synonym, to be used for `Measure α`, `FiniteMeasure α`, or `ProbabilityMeasure α`,
 when they are to be equipped with the Lévy-Prokhorov distance. -/
@@ -350,7 +357,9 @@ end Levy_Prokhorov --section
 
 section Levy_Prokhorov_is_finer
 
-/-! ### The Lévy-Prokhorov topology is at least as fine as convergence in distribution -/
+/-!
+# The Lévy-Prokhorov topology is at least as fine as convergence in distribution
+-/
 
 open BoundedContinuousFunction
 
@@ -507,7 +516,9 @@ end Levy_Prokhorov_is_finer
 
 section Levy_Prokhorov_metrizes_convergence_in_distribution
 
-/-! ### On separable spaces the Lévy-Prokhorov distance metrizes convergence in distribution -/
+/-!
+# On separable spaces the Lévy-Prokhorov distance metrizes convergence in distribution
+-/
 
 open TopologicalSpace
 

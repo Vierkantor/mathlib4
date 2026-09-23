@@ -9,6 +9,9 @@ public import Mathlib.Algebra.BigOperators.Option
 public import Mathlib.Analysis.BoxIntegral.Box.Basic
 public import Mathlib.Data.Set.Pairwise.Lattice
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Partitions of rectangular boxes in `ℝⁿ`
 

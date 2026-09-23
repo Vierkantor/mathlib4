@@ -7,6 +7,9 @@ module
 
 public import Mathlib.CategoryTheory.Limits.Shapes.Equalizers
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Wide equalizers and wide coequalizers
 
@@ -22,6 +25,7 @@ nonempty.
 * `WalkingParallelFamily` is the indexing category used for wide (co)equalizer diagrams
 * `parallelFamily` is a functor from `WalkingParallelFamily` to our category `C`.
 * a `Trident` is a cone over a parallel family.
+
   * there is really only one interesting morphism in a trident: the arrow from the vertex of the
     trident to the domain of f and g. It is called `Trident.ι`.
 * a `wideEqualizer` is now just a `limit (parallelFamily f)`
@@ -33,13 +37,14 @@ Each of these has a dual.
 * `wideEqualizer.ι_mono` states that every wideEqualizer map is a monomorphism
 
 ## Implementation notes
+
 As with the other special shapes in the limits library, all the definitions here are given as
 `abbrev`s of the general statements for limits, so all the `simp` lemmas and theorems about
 general limits can be used.
 
 ## References
 
-* [F. Borceux, *Handbook of Categorical Algebra 1*][borceux-vol1]
+* ‍\[F. Borceux, _Handbook of Categorical Algebra 1_\]\[borceux-vol1\]
 -/
 
 @[expose] public section

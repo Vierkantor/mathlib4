@@ -9,6 +9,9 @@ public import Mathlib.LinearAlgebra.CliffordAlgebra.Grading
 public import Mathlib.LinearAlgebra.TensorProduct.Graded.Internal
 public import Mathlib.LinearAlgebra.QuadraticForm.Prod
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Clifford algebras of a direct sum of two vector spaces
 
@@ -23,7 +26,6 @@ algebras, as `CliffordAlgebra.equivProd`.
 
 Introduce morphisms and equivalences of graded algebras, and upgrade `CliffordAlgebra.equivProd`
 to a graded algebra equivalence.
-
 -/
 
 @[expose] public section

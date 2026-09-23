@@ -7,12 +7,16 @@ module
 
 public import Mathlib.Lean.Meta.RefinedDiscrTree.Encode
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Matching with a RefinedDiscrTree
 
 This file defines the matching procedure for the `RefinedDiscrTree`.
 
 The main definitions are
+
 * The structure `MatchResult`, which contains the match results, ordered by matching score.
 * The (private) function `evalNode` which evaluates a node of the `RefinedDiscrTree`
 * The (private) function `getMatchLoop`, which is the main function that computes the matches.
@@ -27,7 +31,6 @@ expression to be assigned.
 We use a simple unification algorithm. For all star/metavariable patterns in the
 `RefinedDiscrTree` (and in the target if `unify == true`), we store the assignment,
 and when it is attempted to be assigned again, we check that it is the same assignment.
-
 -/
 
 public section

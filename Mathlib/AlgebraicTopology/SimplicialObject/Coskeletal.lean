@@ -9,13 +9,16 @@ public import Mathlib.AlgebraicTopology.SimplicialObject.Basic
 public import Mathlib.CategoryTheory.Functor.KanExtension.Adjunction
 public import Mathlib.CategoryTheory.Functor.KanExtension.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Coskeletal simplicial objects
 
 The identity natural transformation exhibits a simplicial object `X` as a right extension of its
 restriction along `(Truncated.inclusion n).op` recorded by `rightExtensionInclusion X n`.
 
-The simplicial object `X` is *n-coskeletal* if `rightExtensionInclusion X n` is a right Kan
+The simplicial object `X` is _n-coskeletal_ if `rightExtensionInclusion X n` is a right Kan
 extension.
 
 When the ambient category admits right Kan extensions along `(Truncated.inclusion n).op`,

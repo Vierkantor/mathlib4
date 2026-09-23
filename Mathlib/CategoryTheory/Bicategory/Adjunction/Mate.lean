@@ -8,6 +8,9 @@ module
 public import Mathlib.CategoryTheory.Bicategory.Adjunction.Basic
 public import Mathlib.CategoryTheory.HomCongr
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Mates in bicategories
 
@@ -27,7 +30,6 @@ For the bicategory `Cat`, the definitions in this file are provided in
 `Mathlib/CategoryTheory/Adjunction/Mates.lean`, where you can find more detailed documentation
 about mates.
 
-
 ## Implementation
 
 The correspondence between mates is obtained by combining
@@ -41,7 +43,6 @@ by using the first bijection applied to `l₁ ⊣ r₁`.
 
 To be precise, the definitions in `Mathlib/CategoryTheory/Adjunction/Mates.lean` are universe
 polymorphic, so they are not simple specializations of the definitions in this file.
-
 -/
 
 @[expose] public section

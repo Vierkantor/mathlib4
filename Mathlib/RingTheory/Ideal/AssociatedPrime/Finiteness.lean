@@ -12,8 +12,10 @@ public import Mathlib.RingTheory.Noetherian.Basic
 public import Mathlib.RingTheory.Spectrum.Prime.Defs
 public import Mathlib.RingTheory.Spectrum.Maximal.Basic
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Finitely generated module over Noetherian ring have finitely many associated primes.
 
 In this file we proved that any finitely generated module over a Noetherian ring have finitely many
@@ -25,19 +27,16 @@ associated primes.
   and `M` is a finitely generated `A`-module, then there exists a chain of submodules
   `0 = M₀ ≤ M₁ ≤ M₂ ≤ ... ≤ Mₙ = M` of `M`, such that for each `0 ≤ i < n`,
   `Mᵢ₊₁ / Mᵢ` is isomorphic to `A / pᵢ` for some prime ideal `pᵢ` of `A`.
-
 * `IsNoetherianRing.induction_on_isQuotientEquivQuotientPrime`: If a property on
   finitely generated modules over a Noetherian ring satisfies that:
 
-  - it holds for zero module,
-  - it holds for any module isomorphic to some `A ⧸ p` where `p` is a prime ideal of `A`,
-  - it is stable by short exact sequences,
+  * it holds for zero module,
+  * it holds for any module isomorphic to some `A ⧸ p` where `p` is a prime ideal of `A`,
+  * it is stable by short exact sequences,
 
   then the property holds for every finitely generated modules.
-
 * `associatedPrimes.finite`: There are only finitely many associated primes of a
   finitely generated module over a Noetherian ring.
-
 -/
 
 @[expose] public section

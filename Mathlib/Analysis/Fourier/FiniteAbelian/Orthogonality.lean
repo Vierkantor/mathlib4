@@ -9,6 +9,9 @@ public import Mathlib.Algebra.BigOperators.Expect
 public import Mathlib.Algebra.Group.AddChar
 public import Mathlib.Analysis.RCLike.Inner
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Orthogonality of characters of a finite abelian group
 

@@ -11,6 +11,9 @@ public import Mathlib.Algebra.GCDMonoid.Nat
 public import Mathlib.Algebra.Order.Ring.Abs
 public import Mathlib.RingTheory.PrincipalIdealDomain
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Statement of Fermat's Last Theorem
 
@@ -25,11 +28,9 @@ specific exponent, along with the usual statement over the naturals.
   Note that this statement can certainly be false for certain values of `R` and `n`.
   For example `FermatLastTheoremWith ℝ 3` is false as `1^3 + 1^3 = (2^{1/3})^3`, and
   `FermatLastTheoremWith ℕ 2` is false, as 3^2 + 4^2 = 5^2.
-
 * `FermatLastTheoremFor n` : The statement that the only solutions to `a^n + b^n = c^n` in `ℕ`
   have `a = 0`, `b = 0` or `c = 0`. Again, this statement is not always true, for
   example `FermatLastTheoremFor 1` is false because `2^1 + 2^1 = 4^1`.
-
 * `FermatLastTheorem` : The statement of Fermat's Last Theorem, namely that the only solutions to
   `a^n + b^n = c^n` in `ℕ` when `n ≥ 3` have `a = 0`, `b = 0` or `c = 0`.
 
@@ -37,11 +38,11 @@ specific exponent, along with the usual statement over the naturals.
 
 Fermat's Last Theorem was an open problem in number theory for hundreds of years, until it was
 finally solved by Andrew Wiles, assisted by Richard Taylor, in 1994 (see
-[A. Wiles, *Modular elliptic curves and Fermat's last theorem*][Wiles-FLT] and
-[R. Taylor and A. Wiles, *Ring-theoretic properties of certain Hecke algebras*][Taylor-Wiles-FLT]).
+‍\[A. Wiles, _Modular elliptic curves and Fermat's last theorem_\]\[Wiles-FLT\] and
+‍\[R. Taylor and A. Wiles, _Ring-theoretic properties of certain Hecke
+algebras_\]\[Taylor-Wiles-FLT\]).
 An ongoing Lean formalisation of the proof, using mathlib as a dependency, is taking place at
 https://github.com/ImperialCollegeLondon/FLT .
-
 -/
 
 @[expose] public section

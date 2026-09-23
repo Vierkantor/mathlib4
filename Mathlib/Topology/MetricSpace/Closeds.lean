@@ -9,6 +9,9 @@ public import Mathlib.Analysis.SpecificLimits.Basic
 public import Mathlib.Topology.MetricSpace.HausdorffDistance
 public import Mathlib.Topology.UniformSpace.Closeds
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Closed subsets
 
@@ -60,8 +63,10 @@ theorem hausdorffEDist_le_of_mem_hausdorffEntourage {s t : Set α} {δ : ℝ≥0
     exact iInf₂_le_of_le y hy hxy
   exact ⟨this h.1, this h.2⟩
 
-/-- The Hausdorff pseudo emetric on the powerset of a pseudo emetric space.
-See note [reducible non-instances]. -/
+/--
+The Hausdorff pseudo emetric on the powerset of a pseudo emetric space.
+See note \[reducible non-instances\].
+-/
 protected abbrev _root_.PseudoEMetricSpace.hausdorff : PseudoEMetricSpace (Set α) where
   edist s t := hausdorffEDist s t
   edist_self _ := hausdorffEDist_self

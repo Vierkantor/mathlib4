@@ -13,6 +13,9 @@ public import Mathlib.RingTheory.Ideal.Quotient.Defs
 public import Mathlib.RingTheory.LocalRing.Defs
 import Mathlib.Algebra.CharP.LocalRing
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Equal and mixed characteristic
 
@@ -27,25 +30,25 @@ Examples of mixed characteristic rings are `ℤ` or the `p`-adic integers/number
 This file provides the main theorem `split_by_characteristic` that splits any proposition `P` into
 the following three cases:
 
-1) Positive characteristic: `CharP R p` (where `p ≠ 0`)
-2) Equal characteristic zero: `Algebra ℚ R`
-3) Mixed characteristic: `MixedCharZero R p` (where `p` is prime)
+1. Positive characteristic: `CharP R p` (where `p ≠ 0`)
+2. Equal characteristic zero: `Algebra ℚ R`
+3. Mixed characteristic: `MixedCharZero R p` (where `p` is prime)
 
 ## Main definitions
 
-- `MixedCharZero` : A ring has mixed characteristic `(0, p)` if it has characteristic zero
+* `MixedCharZero` : A ring has mixed characteristic `(0, p)` if it has characteristic zero
   and there exists an ideal such that the quotient `R ⧸ I` has characteristic `p`.
 
 ## Main results
 
-- `split_equalCharZero_mixedCharZero` : Split a statement into equal/mixed characteristic zero.
+* `split_equalCharZero_mixedCharZero` : Split a statement into equal/mixed characteristic zero.
 
 This main theorem has the following three corollaries which include the positive
 characteristic case for convenience:
 
-- `split_by_characteristic` : Generally consider positive char `p ≠ 0`.
-- `split_by_characteristic_domain` : In a domain we can assume that `p` is prime.
-- `split_by_characteristic_localRing` : In a local ring we can assume that `p` is a prime power.
+* `split_by_characteristic` : Generally consider positive char `p ≠ 0`.
+* `split_by_characteristic_domain` : In a domain we can assume that `p` is prime.
+* `split_by_characteristic_localRing` : In a local ring we can assume that `p` is a prime power.
 
 ## Implementation Notes
 
@@ -57,7 +60,7 @@ equivalent conditions.
 
 ## TODO
 
-- Relate mixed characteristic in a local ring to p-adic numbers [NumberTheory.PAdics].
+* Relate mixed characteristic in a local ring to p-adic numbers \[NumberTheory.PAdics\].
 -/
 
 public section
@@ -65,7 +68,7 @@ public section
 variable (R : Type*) [CommRing R]
 
 /-!
-### Mixed characteristic
+# Mixed characteristic
 -/
 
 /--
@@ -140,14 +143,14 @@ lemma reduce_to_maximal_ideal {p : ℕ} (hp : Nat.Prime p) :
 end MixedCharZero
 
 /-!
-### Equal characteristic zero
+# Equal characteristic zero
 
 A commutative ring `R` has "equal characteristic zero" if it satisfies one of the following
 equivalent properties:
 
-1) `R` is a `ℚ`-algebra.
-2) The quotient `R ⧸ I` has characteristic zero for any proper ideal `I ⊂ R`.
-3) `R` has characteristic zero and does not have mixed characteristic for any prime `p`.
+1. `R` is a `ℚ`-algebra.
+2. The quotient `R ⧸ I` has characteristic zero for any proper ideal `I ⊂ R`.
+3. `R` has characteristic zero and does not have mixed characteristic for any prime `p`.
 
 We show `(1) ↔ (2) ↔ (3)`, and most of the following is concerned with constructing
 an explicit algebra map `ℚ →+* R` (given by `x ↦ (x.num : R) /ₚ ↑x.pnatDen`)
@@ -296,7 +299,7 @@ lemma isEmpty_algebraRat_iff_mixedCharZero [CharZero R] :
   apply EqualCharZero.nonempty_algebraRat_iff
 
 /-!
-### Splitting statements into different characteristic
+# Splitting statements into different characteristic
 
 Statements to split a proof by characteristic. There are 3 theorems here that are very
 similar. They only differ in the assumptions we can make on the positive characteristic
@@ -339,9 +342,10 @@ theorem split_by_characteristic (h_pos : ∀ p : ℕ, p ≠ 0 → CharP R p → 
 
 /--
 In an `IsDomain R`, split any `Prop` over `R` into the three cases:
-- *prime* characteristic.
-- equal characteristic zero.
-- mixed characteristic `(0, p)`.
+
+* _prime_ characteristic.
+* equal characteristic zero.
+* mixed characteristic `(0, p)`.
 -/
 theorem split_by_characteristic_domain [IsDomain R]
     (h_pos : ∀ p : ℕ, Nat.Prime p → CharP R p → P)
@@ -353,9 +357,10 @@ theorem split_by_characteristic_domain [IsDomain R]
 
 /--
 In a local ring `R`, split any predicate over `R` into the three cases:
-- *prime power* characteristic.
-- equal characteristic zero.
-- mixed characteristic `(0, p)`.
+
+* _prime power_ characteristic.
+* equal characteristic zero.
+* mixed characteristic `(0, p)`.
 -/
 theorem split_by_characteristic_localRing [IsLocalRing R]
     (h_pos : ∀ p : ℕ, IsPrimePow p → CharP R p → P) (h_equal : Algebra ℚ R → P)

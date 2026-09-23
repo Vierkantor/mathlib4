@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Order.GroupWithZero.Canonical
 public import Mathlib.Algebra.Order.Monoid.Unbundled.TypeTags
 public import Mathlib.Algebra.Order.Monoid.Unbundled.WithTop
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `WithZero (Multiplicative α)` is equivalent to `Multiplicative (WithBot α)`
 

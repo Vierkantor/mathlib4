@@ -9,6 +9,9 @@ public import Mathlib.Basic.UnivLE
 public import Mathlib.SetTheory.Ordinal.Rank
 public import Mathlib.SetTheory.ZFC.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Ordinal ranks of PSet and ZFSet
 
@@ -28,7 +31,9 @@ universe u v
 
 open Ordinal Order
 
-/-! ### PSet rank -/
+/-!
+# PSet rank
+-/
 
 namespace PSet
 
@@ -129,7 +134,9 @@ theorem rank_eq_wfRank : lift.{u + 1, u} (rank x) = WellFounded.rank (α := PSet
 
 end PSet
 
-/-! ### ZFSet rank -/
+/-!
+# ZFSet rank
+-/
 
 namespace ZFSet
 

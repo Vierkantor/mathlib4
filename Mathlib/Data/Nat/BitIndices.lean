@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Order.Sub.Basic
 public import Mathlib.Algebra.Ring.Nat
 public import Mathlib.Data.List.Sort
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Bit Indices
 

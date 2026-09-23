@@ -15,6 +15,9 @@ public import Mathlib.Order.Nat
 public import Mathlib.Order.SuccPred.Archimedean
 public import Mathlib.Order.SuccPred.WithBot
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Successors and predecessors of naturals
 

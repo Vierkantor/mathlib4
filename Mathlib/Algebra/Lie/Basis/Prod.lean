@@ -9,12 +9,14 @@ public import Mathlib.Algebra.Lie.Basis.Basic
 public import Mathlib.Algebra.Lie.Prod
 public import Mathlib.Algebra.Lie.Semisimple.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Products of bases Lie algebras
 
 Given two finite-dimensional simple Lie algebras, if they admit bases with matching Cartan matrices,
 they must be isomorphic. This file provides a proof of this as `LieAlgebra.Basis.equivOfReindex`.
-
 -/
 
 noncomputable section

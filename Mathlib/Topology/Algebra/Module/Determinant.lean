@@ -9,6 +9,9 @@ module
 public import Mathlib.Topology.Algebra.Module.Equiv
 public import Mathlib.LinearAlgebra.Determinant
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The determinant of a continuous linear map.
 -/

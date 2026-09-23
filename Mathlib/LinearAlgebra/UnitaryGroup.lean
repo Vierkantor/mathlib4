@@ -11,6 +11,9 @@ public import Mathlib.LinearAlgebra.GeneralLinearGroup.Basic
 public import Mathlib.LinearAlgebra.Matrix.ToLin
 public import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The Unitary Group
 
@@ -32,12 +35,11 @@ We also define the orthogonal group `Matrix.orthogonalGroup n R`, where `R` is a
 
 ## References
 
-* https://en.wikipedia.org/wiki/Unitary_group
+* https://en.wikipedia.org/wiki/Unitary\_group
 
 ## Tags
 
 matrix group, group, unitary group, orthogonal group
-
 -/
 
 @[expose] public section

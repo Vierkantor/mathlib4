@@ -8,8 +8,10 @@ module
 public import Mathlib.LinearAlgebra.TensorProduct.Submodule
 public import Mathlib.RingTheory.TensorProduct.Maps
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Some results on tensor product of subalgebras
 
 ## Linear maps induced by multiplication for subalgebras
@@ -19,19 +21,16 @@ Let `A` and `B` be `R`-subalgebras in `S` (`Subalgebra R S`). We define some lin
 induced by the multiplication in `S`, which are
 mainly used in the definition of linearly disjointness.
 
-- `Subalgebra.mulMap`: the natural `R`-algebra homomorphism `A ⊗[R] B →ₐ[R] S`
+* `Subalgebra.mulMap`: the natural `R`-algebra homomorphism `A ⊗[R] B →ₐ[R] S`
   induced by the multiplication in `S`, whose image is `A ⊔ B` (`Subalgebra.mulMap_range`).
-
-- `Subalgebra.mulMap'`: the natural `R`-algebra homomorphism `A ⊗[R] B →ₗ[R] A ⊔ B`
+* `Subalgebra.mulMap'`: the natural `R`-algebra homomorphism `A ⊗[R] B →ₗ[R] A ⊔ B`
   induced by multiplication in `S`, which is surjective (`Subalgebra.mulMap'_surjective`).
-
-- `Subalgebra.lTensorBot`, `Subalgebra.rTensorBot`: the natural isomorphism of `R`-algebras between
+* `Subalgebra.lTensorBot`, `Subalgebra.rTensorBot`: the natural isomorphism of `R`-algebras between
   `i(R) ⊗[R] A` and `A`, resp. `A ⊗[R] i(R)` and `A`, induced by multiplication in `S`,
   here `i : R → S` is the structure map. They generalize `Algebra.TensorProduct.lid`
   and `Algebra.TensorProduct.rid`, as `i(R)` is not necessarily isomorphic to `R`.
 
   They are `Subalgebra` versions of `Submodule.lTensorOne` and `Submodule.rTensorOne`.
-
 -/
 
 @[expose] public section

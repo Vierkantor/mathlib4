@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Category.MonCat.Basic
 public import Mathlib.CategoryTheory.ShrinkYoneda
 public import Mathlib.Algebra.Group.Shrink
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Shrinking a functor to `MonCat`
 

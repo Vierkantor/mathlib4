@@ -10,6 +10,9 @@ public import Mathlib.Analysis.SpecialFunctions.Exponential
 public import Mathlib.Combinatorics.Derangements.Finite
 public import Mathlib.Data.Nat.Cast.Field
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Derangement exponential series
 

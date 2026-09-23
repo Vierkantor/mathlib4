@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Group.Subgroup.Finite
 public import Mathlib.Basic.Finite.Prod
 public import Mathlib.GroupTheory.QuotientGroup.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Deducing finiteness of a group.
 -/

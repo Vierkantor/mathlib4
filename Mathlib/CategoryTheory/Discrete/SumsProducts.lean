@@ -9,7 +9,11 @@ public import Mathlib.CategoryTheory.Discrete.Basic
 public import Mathlib.CategoryTheory.Sums.Basic
 public import Mathlib.CategoryTheory.Products.Basic
 
-/-! # Sums and products of discrete categories.
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Sums and products of discrete categories.
 
 This file shows that binary products and binary sums of discrete categories
 are also discrete, both in the form of explicit equivalences and through the
@@ -23,7 +27,6 @@ are also discrete, both in the form of explicit equivalences and through the
   and `Discrete J ⊕ Discrete K`.
 * `IsDiscrete.prod`: an `IsDiscrete` instance on the product of two discrete categories.
 * `IsDiscrete.sum`: an `IsDiscrete` instance on the sum of two discrete categories.
-
 -/
 
 @[expose] public section

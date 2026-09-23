@@ -8,6 +8,9 @@ module
 public import Mathlib.MeasureTheory.Integral.Asymptotics
 public import Mathlib.MeasureTheory.Integral.IntegralEqImproper
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Integrals with exponential decay at ∞
 

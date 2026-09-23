@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Data.Matrix.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Matrices with a single non-zero element.
 
@@ -221,9 +224,11 @@ def singleLinearMap [Semiring R] [AddCommMonoid α] [Module R α] (i : m) (j : n
 
 section ext
 
-/-- Additive maps from finite matrices are equal if they agree on the standard basis.
+/--
+Additive maps from finite matrices are equal if they agree on the standard basis.
 
-See note [partially-applied ext lemmas]. -/
+See note \[partially-applied ext lemmas\].
+-/
 @[local ext]
 theorem ext_addMonoidHom
     [Finite m] [Finite n] [AddCommMonoid α] [AddCommMonoid β] ⦃f g : Matrix m n α →+ β⦄
@@ -237,9 +242,11 @@ theorem ext_addMonoidHom
   congr! 2
   exact DFunLike.congr_fun (h _ _) _
 
-/-- Linear maps from finite matrices are equal if they agree on the standard basis.
+/--
+Linear maps from finite matrices are equal if they agree on the standard basis.
 
-See note [partially-applied ext lemmas]. -/
+See note \[partially-applied ext lemmas\].
+-/
 @[local ext]
 theorem ext_linearMap
     [Finite m] [Finite n] [Semiring R] [AddCommMonoid α] [AddCommMonoid β] [Module R α] [Module R β]

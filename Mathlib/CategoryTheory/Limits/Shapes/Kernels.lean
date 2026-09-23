@@ -7,6 +7,9 @@ module
 
 public import Mathlib.CategoryTheory.Limits.Preserves.Shapes.Zero
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Kernels and cokernels
 
@@ -14,8 +17,8 @@ In a category with zero morphisms, the kernel of a morphism `f : X ⟶ Y` is
 the equalizer of `f` and `0 : X ⟶ Y`. (Similarly the cokernel is the coequalizer.)
 
 The basic definitions are
-* `kernel : (X ⟶ Y) → C`
 
+* `kernel : (X ⟶ Y) → C`
 * `kernel.ι : kernel f ⟶ X`
 * `kernel.condition : kernel.ι f ≫ f = 0` and
 * `kernel.lift (k : W ⟶ X) (h : k ≫ f = 0) : W ⟶ kernel f` (as well as the dual versions)
@@ -23,6 +26,7 @@ The basic definitions are
 ## Main statements
 
 Besides the definition and lifts, we prove
+
 * `kernel.ιZeroIsIso`: a kernel map of a zero morphism is an isomorphism
 * `kernel.eq_zero_of_epi_kernel`: if `kernel.ι f` is an epimorphism, then `f = 0`
 * `kernel.ofMono`: the kernel of a monomorphism is the zero object
@@ -35,16 +39,18 @@ Besides the definition and lifts, we prove
 and the corresponding dual statements.
 
 ## Future work
+
 * TODO: connect this with existing work in the group theory and ring theory libraries.
 
 ## Implementation notes
+
 As with the other special shapes in the limits library, all the definitions here are given as
 `abbrev`s of the general statements for limits, so all the `simp` lemmas and theorems about
 general limits can be used.
 
 ## References
 
-* [F. Borceux, *Handbook of Categorical Algebra 2*][borceux-vol2]
+* ‍\[F. Borceux, _Handbook of Categorical Algebra 2_\]\[borceux-vol2\]
 -/
 
 @[expose] public section

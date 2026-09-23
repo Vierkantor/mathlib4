@@ -8,6 +8,9 @@ module
 public import Mathlib.CategoryTheory.Sites.DenseSubsite.SheafEquiv
 public import Mathlib.CategoryTheory.Sites.InducedTopology
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Induced Topology
 
@@ -26,10 +29,9 @@ Given a fully faithful cover-dense functor `G : C ⥤ (D, K)` between small site
 
 ## References
 
-* [Elephant]: *Sketches of an Elephant*, P. T. Johnstone: C2.2.
+* ‍\[Elephant\]: _Sketches of an Elephant_, P. T. Johnstone: C2.2.
 * https://ncatlab.org/nlab/show/dense+sub-site
 * https://ncatlab.org/nlab/show/comparison+lemma
-
 -/
 
 @[expose] public section

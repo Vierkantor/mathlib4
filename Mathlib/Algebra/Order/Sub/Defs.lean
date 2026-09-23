@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Group.Basic
 public import Mathlib.Algebra.Order.Monoid.Unbundled.Basic
 public import Mathlib.Order.Lattice
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Ordered Subtraction
 
@@ -39,7 +42,7 @@ TODO: maybe we should make a multiplicative version of this, so that we can repl
 lemmas about subtraction/division in `Ordered[Add]CommGroup` with these.
 
 TODO: generalize `Nat.le_of_le_of_sub_le_sub_right`, `Nat.sub_le_sub_right_iff`,
-  `Nat.mul_self_sub_mul_self_eq`
+`Nat.mul_self_sub_mul_self_eq`
 -/
 
 public section
@@ -75,7 +78,9 @@ theorem le_tsub_add : b ≤ b - a + a :=
 
 end Add
 
-/-! ### Preorder -/
+/-!
+# Preorder
+-/
 
 
 section OrderedAddCommSemigroup
@@ -165,7 +170,9 @@ theorem add_tsub_add_le_tsub_right : a + c - (b + c) ≤ a - b := by
 
 end Cov
 
-/-! #### Lemmas that assume that an element is `AddLECancellable` -/
+/-!
+# Lemmas that assume that an element is `AddLECancellable`
+-/
 
 
 namespace AddLECancellable
@@ -185,7 +192,9 @@ protected theorem le_tsub_of_add_le_right (hb : AddLECancellable b) (h : a + b �
 
 end AddLECancellable
 
-/-! ### Lemmas where addition is order-reflecting -/
+/-!
+# Lemmas where addition is order-reflecting
+-/
 
 
 section Contra
@@ -216,7 +225,9 @@ alias ⟨_, tsub_nonpos_of_le⟩ := tsub_nonpos
 
 end Preorder
 
-/-! ### Partial order -/
+/-!
+# Partial order
+-/
 
 
 variable [PartialOrder α] [AddCommSemigroup α] [Sub α] [OrderedSub α] {a b c d : α}
@@ -236,7 +247,9 @@ theorem tsub_add_eq_tsub_tsub_swap (a b c : α) : a - (b + c) = a - c - b := by
 theorem tsub_right_comm : a - b - c = a - c - b := by
   rw [← tsub_add_eq_tsub_tsub, tsub_add_eq_tsub_tsub_swap]
 
-/-! ### Lemmas that assume that an element is `AddLECancellable`. -/
+/-!
+# Lemmas that assume that an element is `AddLECancellable`.
+-/
 
 
 namespace AddLECancellable
@@ -305,7 +318,9 @@ protected theorem lt_tsub_of_add_lt_left (ha : AddLECancellable a) (h : a + c < 
 
 end AddLECancellable
 
-/-! #### Lemmas where addition is order-reflecting. -/
+/-!
+# Lemmas where addition is order-reflecting.
+-/
 
 
 section Contra
@@ -368,7 +383,9 @@ end Both
 
 end OrderedAddCommSemigroup
 
-/-! ### Lemmas in a linearly ordered monoid. -/
+/-!
+# Lemmas in a linearly ordered monoid.
+-/
 
 
 section LinearOrder

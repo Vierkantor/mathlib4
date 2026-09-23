@@ -8,6 +8,9 @@ module
 
 public import Mathlib.Analysis.Complex.Schwarz
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Borel-Carathéodory theorem
 

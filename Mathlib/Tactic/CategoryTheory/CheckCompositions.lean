@@ -9,6 +9,9 @@ public import Aesop
 public import Mathlib.CategoryTheory.Category.Basic
 public meta import Mathlib.Tactic.ToDual
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 The `check_compositions` tactic,
 which checks the typing of categorical compositions in the goal,

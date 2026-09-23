@@ -12,6 +12,9 @@ public import Mathlib.Topology.Category.TopCat.Basic
 public import Mathlib.Topology.Connected.PathConnected
 public import Mathlib.Topology.Homotopy.Path
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Fundamental group of a space
 

@@ -10,7 +10,11 @@ public import Mathlib.RingTheory.Congruence.Hom
 public import Mathlib.RingTheory.FiniteType
 public import Mathlib.RingTheory.TensorProduct.DirectLimitFG
 
-/-! # Polynomial laws on modules
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Polynomial laws on modules
 
 Let `M` and `N` be a modules over a commutative ring `R`.
 A polynomial law `f : PolynomialLaw R M N`, with notation `f : M →ₚₗₗ[R] N`,
@@ -40,7 +44,6 @@ or establish appropriate generalizations.
 ## Main definitions/lemmas
 
 * Instance : `Module R (M →ₚₗ[R] N)` shows that polynomial laws form an `R`-module.
-
 * `PolynomialLaw.ground f` is the map `M → N` corresponding to `PolynomialLaw.toFun' f R` under
   the isomorphisms `R ⊗[R] M ≃ₗ[R] M`, and similarly for `N`.
 
@@ -56,7 +59,6 @@ only assumes `R` is a commutative semiring.
 
 * [Roby, Norbert. 1963. «Lois polynomes et lois formelles en théorie des modules».
   Annales scientifiques de l’École Normale Supérieure 80 (3): 213‑348](Roby-1963)
-
 -/
 
 @[expose] public section

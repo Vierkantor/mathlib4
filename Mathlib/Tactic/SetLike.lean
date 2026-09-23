@@ -11,6 +11,9 @@ public import Mathlib.Init
 public import Aesop.Frontend.Basic
 public import Batteries.Util.LibraryNote
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # SetLike Rule Set
 

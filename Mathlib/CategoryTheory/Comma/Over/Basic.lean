@@ -8,10 +8,14 @@ module
 public import Mathlib.CategoryTheory.Comma.StructuredArrow.Basic
 public import Mathlib.CategoryTheory.Category.Cat
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Over and under categories
 
 Over (and under) categories are special cases of comma categories.
+
 * If `L` is the identity functor and `R` is a constant functor, then `Comma L R` is the "slice" or
   "over" category over the object `R` maps to.
 * Conversely, if `L` is a constant functor and `R` is the identity functor, then `Comma L R` is the

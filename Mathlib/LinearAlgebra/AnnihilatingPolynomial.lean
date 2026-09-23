@@ -9,6 +9,9 @@ public import Mathlib.FieldTheory.Minpoly.Field
 public import Mathlib.RingTheory.PrincipalIdealDomain
 public import Mathlib.Algebra.Polynomial.Module.AEval
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Annihilating Ideal
 
@@ -30,6 +33,7 @@ as defined in `FieldTheory.Minpoly`.
 
 Given an `R`-module `M` (`[AddCommGroup M] [Module R M]`)
 there are some common specializations which may be more familiar.
+
 * Example 1: `A = M →ₗ[R] M`, the endomorphism algebra of an `R`-module M.
 * Example 2: `A = n × n` matrices with entries in `R`.
 -/
@@ -46,12 +50,14 @@ section Semiring
 variable {R A : Type*} [CommSemiring R] [Semiring A] [Algebra R A]
 
 variable (R) in
-/-- `annIdeal R a` is the *annihilating ideal* of all `p : R[X]` such that `p(a) = 0`.
+/--
+`annIdeal R a` is the _annihilating ideal_ of all `p : R[X]` such that `p(a) = 0`.
 
 The informal notation `p(a)` stands for `Polynomial.aeval a p`.
 Again informally, the annihilating ideal of `a` is
 `{ p ∈ R[X] | p(a) = 0 }`. This is an ideal in `R[X]`.
-The formal definition uses the kernel of the aeval map. -/
+The formal definition uses the kernel of the aeval map.
+-/
 noncomputable def annIdeal (a : A) : Ideal R[X] :=
   RingHom.ker ((aeval a).toRingHom : R[X] →+* A)
 

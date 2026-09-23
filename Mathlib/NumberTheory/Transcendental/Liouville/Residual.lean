@@ -10,6 +10,9 @@ public import Mathlib.Topology.Baire.Lemmas
 public import Mathlib.Topology.Baire.LocallyCompactRegular
 public import Mathlib.Topology.Instances.Irrational
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Density of Liouville numbers
 

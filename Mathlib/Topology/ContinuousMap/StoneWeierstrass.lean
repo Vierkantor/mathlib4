@@ -15,6 +15,9 @@ public import Mathlib.Topology.ContinuousMap.Lattice
 public import Mathlib.Topology.ContinuousMap.Weierstrass
 public import Mathlib.Algebra.Order.Module.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The Stone-Weierstrass theorem
 
@@ -46,7 +49,6 @@ the real and imaginary parts using the real subalgebra of real-valued functions 
 
 Extend to cover the case of subalgebras of the continuous functions vanishing at infinity,
 on non-compact spaces.
-
 -/
 
 @[expose] public section
@@ -529,7 +531,9 @@ theorem ContinuousMap.starAlgHom_ext_map_X {𝕜 A : Type*} [RCLike 𝕜] [Ring 
 
 end PolynomialFunctions
 
-/-! ### Continuous maps sending zero to zero -/
+/-!
+# Continuous maps sending zero to zero
+-/
 
 section ContinuousMapZero
 

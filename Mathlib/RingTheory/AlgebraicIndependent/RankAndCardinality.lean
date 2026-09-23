@@ -12,6 +12,9 @@ public import Mathlib.RingTheory.AlgebraicIndependent.Adjoin
 public import Mathlib.RingTheory.AlgebraicIndependent.Transcendental
 public import Mathlib.RingTheory.AlgebraicIndependent.TranscendenceBasis
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cardinality of a transcendence basis
 
@@ -22,8 +25,8 @@ This file concerns the cardinality of a transcendence basis.
 * [Stacks: Transcendence](https://stacks.math.columbia.edu/tag/030D)
 
 ## Tags
-transcendence basis, transcendence degree, transcendence
 
+transcendence basis, transcendence degree, transcendence
 -/
 
 public section

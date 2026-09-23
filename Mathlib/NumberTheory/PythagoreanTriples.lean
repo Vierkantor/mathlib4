@@ -10,6 +10,9 @@ public import Mathlib.Data.ZMod.Basic
 public import Mathlib.RingTheory.Int.Basic
 public import Mathlib.Tactic.Field
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Pythagorean Triples
 
@@ -229,7 +232,7 @@ end PythagoreanTriple
 section circleEquivGen
 
 /-!
-### A parametrization of the unit circle
+# A parametrization of the unit circle
 
 For the classification of Pythagorean triples, we will use a parametrization of the unit circle.
 -/

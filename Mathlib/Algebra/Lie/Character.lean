@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Lie.Abelian
 public import Mathlib.Algebra.Lie.Solvable
 public import Mathlib.LinearAlgebra.Dual.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Characters of Lie algebras
 
@@ -18,8 +21,8 @@ algebra (e.g., a Cartan subalgebra of a semisimple Lie algebra) a character is j
 
 ## Main definitions
 
-  * `LieAlgebra.LieCharacter`
-  * `LieAlgebra.lieCharacterEquivLinearDual`
+* `LieAlgebra.LieCharacter`
+* `LieAlgebra.lieCharacterEquivLinearDual`
 
 ## Tags
 

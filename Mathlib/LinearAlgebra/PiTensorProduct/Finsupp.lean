@@ -9,6 +9,9 @@ public import Mathlib.Data.Finsupp.ToDFinsupp
 public import Mathlib.LinearAlgebra.PiTensorProduct.DFinsupp
 public import Mathlib.RingTheory.PiTensorProduct
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Results on finitely supported functions.
 

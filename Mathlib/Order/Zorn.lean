@@ -8,6 +8,10 @@ module
 public import Mathlib.Order.CompleteLattice.Chain
 public import Mathlib.Order.Minimal
 
+set_option doc.verso true
+set_option doc.verso.module false
+set_option doc.verso.suggestions false
+
 /-!
 # Zorn's lemmas
 

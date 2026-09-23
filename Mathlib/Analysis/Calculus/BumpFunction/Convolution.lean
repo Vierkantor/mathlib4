@@ -13,6 +13,9 @@ public import Mathlib.MeasureTheory.Covering.Differentiation
 public import Mathlib.MeasureTheory.Covering.BesicovitchVectorSpace
 public import Mathlib.MeasureTheory.Measure.Haar.Unique
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Convolution with a bump function
 
@@ -25,12 +28,12 @@ We also provide estimates in the case if `g x` is close to `g x₀` on this ball
 
 ## Main results
 
-- `ContDiffBump.convolution_tendsto_right_of_continuous`:
+* `ContDiffBump.convolution_tendsto_right_of_continuous`:
   Let `g` be a continuous function; let `φ i` be a family of `ContDiffBump 0` functions with.
   If `(φ i).rOut` tends to zero along a filter `l`,
   then `((φ i).normed μ ⋆[lsmul ℝ ℝ, μ] g) x₀` tends to `g x₀` along the same filter.
-- `ContDiffBump.convolution_tendsto_right`: generalization of the above lemma.
-- `ContDiffBump.ae_convolution_tendsto_right_of_locallyIntegrable`: let `g` be a locally
+* `ContDiffBump.convolution_tendsto_right`: generalization of the above lemma.
+* `ContDiffBump.ae_convolution_tendsto_right_of_locallyIntegrable`: let `g` be a locally
   integrable function. Then the convolution of `g` with a family of bump functions with
   support tending to `0` converges almost everywhere to `g`.
 

@@ -8,14 +8,17 @@ module
 public import Mathlib.FieldTheory.KummerPolynomial
 public import Mathlib.FieldTheory.Separable
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Perfect fields and rings
 
 In this file we define perfect fields, together with a generalisation to (commutative) rings in
 prime characteristic.
 
 ## Main definitions / statements:
+
 * `PerfectRing`: a ring of characteristic `p` (prime) is said to be perfect in the sense of Serre,
   if its absolute Frobenius map `x ↦ xᵖ` is bijective.
 * `PerfectField`: a field `K` is said to be perfect if every irreducible polynomial over `K` is
@@ -30,7 +33,6 @@ prime characteristic.
 * `Algebra.IsAlgebraic.isSeparable_of_perfectField`, `Algebra.IsAlgebraic.perfectField`:
   if `L / K` is an algebraic extension, `K` is a perfect field, then `L / K` is separable,
   and `L` is also a perfect field.
-
 -/
 
 @[expose] public section

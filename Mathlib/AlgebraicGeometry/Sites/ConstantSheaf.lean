@@ -8,6 +8,9 @@ module
 public import Mathlib.AlgebraicGeometry.Sites.Fpqc
 public import Mathlib.CategoryTheory.Limits.FunctorCategory.Shapes.Terminal
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Sheaf of continuous maps associated to topological space
 
@@ -17,13 +20,13 @@ When `T` is discrete, this is the constant sheaf associated to `T` (TODO).
 
 ## Main declarations
 
-- `AlgebraicGeometry.continuousMapPresheaf`: The sheaf `U ↦ C(U, T)` for a topological space `T`.
-- `AlgebraicGeometry.continuousMapPresheafAb`: For a topological abelian group `A`, this is
+* `AlgebraicGeometry.continuousMapPresheaf`: The sheaf `U ↦ C(U, T)` for a topological space `T`.
+* `AlgebraicGeometry.continuousMapPresheafAb`: For a topological abelian group `A`, this is
   `continuousMapPresheaf A` viewed as a sheaf of abelian groups.
 
 ## TODOs
 
-- Show that `continuousMapPresheaf` is a sheaf for the fpqc topology (@chrisflav).
+* Show that `continuousMapPresheaf` is a sheaf for the fpqc topology (@chrisflav).
 -/
 
 @[expose] public section

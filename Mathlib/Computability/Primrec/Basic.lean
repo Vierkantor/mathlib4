@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Order.Ring.Nat
 public import Mathlib.Basic.Denumerable
 public import Mathlib.Logic.Function.Iterate
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The primitive recursive functions
 
@@ -26,21 +29,22 @@ for this.)
 
 In the above, the pairing function is primitive recursive by definition.
 This deviates from the textbook definition of primitive recursive functions,
-which instead work with *`n`-ary* functions. We formalize the textbook
+which instead work with _`n`-ary_ functions. We formalize the textbook
 definition in `Nat.Primrec'`. `Nat.Primrec'.prim_iff` then proves it is
 equivalent to our chosen formulation. For more discussion of this and
-other design choices in this formalization, see [carneiro2019].
+other design choices in this formalization, see \[carneiro2019\].
 
 ## Main definitions
 
-- `Nat.Primrec f`: `f` is primitive recursive, for functions `f : ℕ → ℕ`
-- `Primrec f`: `f` is primitive recursive, for functions between `Primcodable` types
-- `Primcodable α`: well-behaved encoding of `α` into `ℕ`, i.e. one such that roundtripping through
+* `Nat.Primrec f`: `f` is primitive recursive, for functions `f : ℕ → ℕ`
+* `Primrec f`: `f` is primitive recursive, for functions between `Primcodable` types
+* `Primcodable α`: well-behaved encoding of `α` into `ℕ`, i.e. one such that roundtripping through
   the encoding functions adds no computational power
 
 ## References
 
-* [Mario Carneiro, *Formalizing computability theory via partial recursive functions*][carneiro2019]
+* ‍\[Mario Carneiro, _Formalizing computability theory via partial recursive
+  functions_\]\[carneiro2019\]
 -/
 
 @[expose] public section

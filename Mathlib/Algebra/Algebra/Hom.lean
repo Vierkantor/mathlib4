@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Algebra.Algebra.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Homomorphisms of `R`-algebras
 
@@ -107,7 +110,9 @@ instance algHomClass : AlgHomClass (A →ₐ[R] B) R A B where
 @[deprecated (since := "2026-09-08")] alias
 _root_.AlgHomClass.toLinearMap_toAlgHom := AlgHomClass.linearMapOfClass_ofClass
 
-/-- See Note [custom simps projection] -/
+/--
+See Note \[custom simps projection\]
+-/
 def Simps.apply {R : Type u} {α : Type v} {β : Type w} [CommSemiring R]
     [Semiring α] [Semiring β] [Algebra R α] [Algebra R β] (f : α →ₐ[R] β) : α → β := f
 

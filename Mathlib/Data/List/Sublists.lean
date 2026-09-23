@@ -13,7 +13,11 @@ public import Mathlib.Data.List.Nodup
 public import Mathlib.Data.Prod.Basic
 public import Mathlib.Tactic.Finiteness.Attr
 
-/-! # sublists
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# sublists
 
 `List.Sublists` gives a list of all (not necessarily contiguous) sublists of a list.
 
@@ -30,7 +34,9 @@ open Nat
 
 namespace List
 
-/-! ### sublists -/
+/-!
+# sublists
+-/
 
 @[simp]
 theorem sublists'_nil : sublists' (@nil α) = [[]] :=
@@ -178,7 +184,9 @@ theorem map_pure_sublist_sublists (l : List α) : map pure l <+ sublists l := by
               singleton_sublist.2 <| mem_map.2 ⟨[], mem_sublists.2 (nil_sublist _), by rfl⟩).trans
           ((append_sublist_append_right _).2 ih)
 
-/-! ### sublistsLen -/
+/-!
+# sublistsLen
+-/
 
 /-- Auxiliary function to construct the list of all sublists of a given length. Given an
 integer `n`, a list `l`, a function `f` and an auxiliary list `L`, it returns the list made of

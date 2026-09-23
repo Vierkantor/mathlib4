@@ -14,6 +14,9 @@ public import Mathlib.Tactic.AdaptationNote
 public import Mathlib.Util.CompileInductive
 
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Free constructions
 

@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.DirectSum.Module
 public import Mathlib.Data.Finsupp.ToDFinsupp
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Results on direct sums and finitely supported functions.
 

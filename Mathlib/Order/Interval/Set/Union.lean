@@ -9,6 +9,9 @@ public import Mathlib.Data.Finset.Range
 public import Mathlib.Data.Set.Lattice.Indexed
 public import Mathlib.Order.Interval.Set.LinearOrder
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Extra lemmas about unions of intervals
 

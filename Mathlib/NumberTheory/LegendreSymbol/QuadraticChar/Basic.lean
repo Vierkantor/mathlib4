@@ -9,6 +9,9 @@ public import Mathlib.Data.Fintype.Parity
 public import Mathlib.NumberTheory.LegendreSymbol.ZModChar
 public import Mathlib.FieldTheory.Finite.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Quadratic characters of finite fields
 
@@ -24,7 +27,7 @@ quadratic character
 
 
 /-!
-### Definition of the quadratic character
+# Definition of the quadratic character
 
 We define the quadratic character of a finite field `F` with values in ℤ.
 -/
@@ -49,7 +52,7 @@ def quadraticCharFun (α : Type*) [MonoidWithZero α] [DecidableEq α]
 end Define
 
 /-!
-### Basic properties of the quadratic character
+# Basic properties of the quadratic character
 
 We prove some properties of the quadratic character.
 We work with a finite field `F` here.
@@ -242,7 +245,7 @@ theorem quadraticChar_sum_zero (hF : ringChar F ≠ 2) : ∑ a : F, quadraticCha
 end quadraticChar
 
 /-!
-### Special values of the quadratic character
+# Special values of the quadratic character
 
 We express `quadraticChar F (-1)` in terms of `χ₄`.
 -/

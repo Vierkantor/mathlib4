@@ -10,6 +10,9 @@ public import Mathlib.CategoryTheory.Preadditive.Transfer
 public import Mathlib.CategoryTheory.Preadditive.Opposite
 public import Mathlib.Algebra.Category.Grp.LeftExactFunctor
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The category of ind-objects is preadditive
 -/

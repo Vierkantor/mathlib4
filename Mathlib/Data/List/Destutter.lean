@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.List.Chain
 public import Mathlib.Data.List.Dedup
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Destuttering of Lists
 

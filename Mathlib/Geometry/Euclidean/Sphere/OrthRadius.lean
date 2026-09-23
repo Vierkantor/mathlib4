@@ -9,6 +9,9 @@ public import Mathlib.Analysis.InnerProductSpace.Projection.FiniteDimensional
 public import Mathlib.Geometry.Euclidean.Projection
 public import Mathlib.Geometry.Euclidean.Sphere.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Spaces orthogonal to the radius vector in spheres.
 
@@ -19,7 +22,6 @@ This file defines the affine subspace orthogonal to the radius vector at a point
 * `EuclideanGeometry.Sphere.orthRadius`: the affine subspace orthogonal to the radius vector at
   a point (the tangent space, if that point lies in the sphere; more generally, the polar of the
   inversion of that point in the sphere).
-
 -/
 
 @[expose] public section

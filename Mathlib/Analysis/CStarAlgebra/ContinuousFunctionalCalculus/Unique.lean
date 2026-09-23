@@ -9,6 +9,9 @@ public import Mathlib.Analysis.Complex.Basic
 public import Mathlib.Analysis.CStarAlgebra.ContinuousFunctionalCalculus.NonUnital
 public import Mathlib.Topology.ContinuousMap.StoneWeierstrass
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Uniqueness of the continuous functional calculus
 

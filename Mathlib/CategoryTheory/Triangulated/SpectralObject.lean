@@ -10,6 +10,9 @@ public import Mathlib.CategoryTheory.ComposableArrows.Two
 public import Mathlib.CategoryTheory.Triangulated.HomologicalFunctor
 public import Mathlib.Algebra.Homology.SpectralObject.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Spectral objects in triangulated categories
 
@@ -17,12 +20,13 @@ In this file, we introduce the category `SpectralObject C ι` of spectral
 objects in a pretriangulated category `C` indexed by the category `ι`.
 
 ## TODO (@joelriou)
+
 * construct the spectral sequence attached to a spectral object in an abelian category
- (the spectral sequence is already constructed: it remains to study convergence)
+  (the spectral sequence is already constructed: it remains to study convergence)
 
 ## References
-* [Jean-Louis Verdier, *Des catégories dérivées des catégories abéliennes*, II.4][verdier1996]
 
+* ‍\[Jean-Louis Verdier, _Des catégories dérivées des catégories abéliennes_, II.4\]\[verdier1996\]
 -/
 
 @[expose] public section

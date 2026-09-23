@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Order.Group.Pointwise.Interval
 public import Mathlib.Topology.Algebra.Group.ContinuousDiv
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Ordered topological groups
 

@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Group.Subgroup.Lattice
 public import Mathlib.Algebra.Group.TypeTags.Hom
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `map` and `comap` for subgroups
 
@@ -20,21 +23,16 @@ Special thanks goes to Amelia Livingston and Yury Kudryashov for their help and 
 
 Notation used here:
 
-- `G N` are `Group`s
-
-- `H` is a `Subgroup` of `G`
-
-- `x` is an element of type `G` or type `A`
-
-- `f g : N →* G` are group homomorphisms
-
-- `s k` are sets of elements of type `G`
+* `G N` are `Group`s
+* `H` is a `Subgroup` of `G`
+* `x` is an element of type `G` or type `A`
+* `f g : N →* G` are group homomorphisms
+* `s k` are sets of elements of type `G`
 
 Definitions in the file:
 
 * `Subgroup.comap H f` : the preimage of a subgroup `H` along the group homomorphism `f` is also a
   subgroup
-
 * `Subgroup.map f H` : the image of a subgroup `H` along the group homomorphism `f` is also a
   subgroup
 
@@ -44,6 +42,7 @@ Subgroup inclusion is denoted `≤` rather than `⊆`, although `∈` is defined
 membership of a subgroup's underlying set.
 
 ## Tags
+
 subgroup, subgroups
 -/
 

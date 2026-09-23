@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Localization.Bifunctor
 public import Mathlib.CategoryTheory.Functor.CurryingThree
 public import Mathlib.CategoryTheory.Products.Associator
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lifting of trifunctors
 
@@ -17,7 +20,6 @@ of lifting of functors to the case of trifunctors
 (see also the file `Localization.Bifunctor` for the case of bifunctors).
 The main result in this file is that we can localize "associator" isomorphisms
 (see the definition `Localization.associator`).
-
 -/
 
 @[expose] public section

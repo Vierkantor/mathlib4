@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.Complex.Basic
 public import Mathlib.Analysis.Asymptotics.Theta
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lemmas about asymptotics and the natural embedding `ℝ → ℂ`
 

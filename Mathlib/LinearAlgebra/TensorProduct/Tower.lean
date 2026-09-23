@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Algebra.Tower
 public import Mathlib.LinearAlgebra.TensorProduct.Associator
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The `A`-module structure on `M ⊗[R] N`
 
@@ -89,10 +92,12 @@ theorem restrictScalars_curry (f : M ⊗[R] N →ₗ[A] P) :
     restrictScalars R (curry f) = TensorProduct.curry (f.restrictScalars R) :=
   rfl
 
-/-- Just as `TensorProduct.ext` is marked `ext` instead of `TensorProduct.ext'`, this is
+/--
+Just as `TensorProduct.ext` is marked `ext` instead of `TensorProduct.ext'`, this is
 a better `ext` lemma than `TensorProduct.AlgebraTensorModule.ext` below.
 
-See note [partially-applied ext lemmas]. -/
+See note \[partially-applied ext lemmas\].
+-/
 @[ext high]
 nonrec theorem curry_injective : Function.Injective (curry : (M ⊗ N →ₗ[A] P) → M →ₗ[A] N →ₗ[R] P) :=
   fun _ _ h =>
@@ -639,7 +644,7 @@ namespace LinearMap
 open TensorProduct
 
 /-!
-### The base-change of a linear map of `R`-modules to a linear map of `A`-modules
+# The base-change of a linear map of `R`-modules to a linear map of `A`-modules
 -/
 
 

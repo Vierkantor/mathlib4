@@ -10,13 +10,16 @@ public import Mathlib.Geometry.Manifold.ContMDiffMap
 public import Mathlib.Geometry.Manifold.VectorBundle.Hom
 public import Mathlib.Geometry.Manifold.Notation
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
-### Interactions between differentiability, smoothness and manifold derivatives
+# Interactions between differentiability, smoothness and manifold derivatives
 
 We give the relation between `MDifferentiable`, `ContMDiff`, `mfderiv`, `tangentMap`
 and related notions.
 
-## Main statements
+# Main statements
 
 * `ContMDiffOn.contMDiffOn_tangentMapWithin` states that the bundled derivative
   of a `Cⁿ` function in a domain is `Cᵐ` when `m + 1 ≤ n`.
@@ -30,7 +33,9 @@ open Set Function Filter ChartedSpace IsManifold Bundle
 
 open scoped Topology Manifold Bundle
 
-/-! ### Definition of `C^n` functions between manifolds -/
+/-!
+# Definition of `C^n` functions between manifolds
+-/
 
 
 variable {𝕜 : Type*} [NontriviallyNormedField 𝕜] {m n : WithTop ℕ∞}
@@ -54,7 +59,9 @@ variable {𝕜 : Type*} [NontriviallyNormedField 𝕜] {m n : WithTop ℕ∞}
   -- declare functions, sets
   {f : M → M'} {s : Set M}
 
-/-! ### The derivative of a `C^(n+1)` function is `C^n` -/
+/-!
+# The derivative of a `C^(n+1)` function is `C^n`
+-/
 
 section mfderiv
 variable [Is : IsManifold I 1 M] [I's : IsManifold I' 1 M']
@@ -263,7 +270,9 @@ theorem ContMDiffAt.mfderiv_apply {x₀ : N'} (f : N → M → M') (g : N → M)
 
 end mfderiv
 
-/-! ### The tangent map of a `C^(n+1)` function is `C^n` -/
+/-!
+# The tangent map of a `C^(n+1)` function is `C^n`
+-/
 
 section tangentMap
 

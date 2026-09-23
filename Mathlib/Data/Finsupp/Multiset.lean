@@ -10,13 +10,15 @@ public import Mathlib.Data.Finsupp.Basic
 public import Mathlib.Data.Sym.Basic
 public import Mathlib.Order.Preorder.Finsupp
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Equivalence between `Multiset` and `ℕ`-valued finitely supported functions
 
 This defines `Finsupp.toMultiset` the equivalence between `α →₀ ℕ` and `Multiset α`, along
 with `Multiset.toFinsupp` the reverse equivalence and `Finsupp.orderIsoMultiset` (the equivalence
 promoted to an order isomorphism).
-
 -/
 
 @[expose] public section
@@ -191,7 +193,9 @@ theorem Finsupp.toMultiset_eq_iff [DecidableEq α] {f : α →₀ ℕ} {s : Mult
     Finsupp.toMultiset f = s ↔ f = Multiset.toFinsupp s :=
   Multiset.toFinsupp.symm_apply_eq
 
-/-! ### As an order isomorphism -/
+/-!
+# As an order isomorphism
+-/
 
 namespace Finsupp
 /-- `Finsupp.toMultiset` as an order isomorphism. -/

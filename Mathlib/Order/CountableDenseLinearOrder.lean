@@ -8,6 +8,9 @@ module
 public import Mathlib.Order.Ideal
 public import Mathlib.Data.Finset.Max
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The back and forth method and countable dense linear orders
 
@@ -23,7 +26,7 @@ can extend `f` to include `a` in its domain.
 
 ## References
 
-https://en.wikipedia.org/wiki/Back-and-forth_method
+https://en.wikipedia.org/wiki/Back-and-forth\_method
 
 ## Tags
 

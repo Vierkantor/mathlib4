@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Order.Module.Field
 public import Mathlib.Topology.MetricSpace.Pseudo.Defs
 public import Mathlib.Topology.Metrizable.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Metrizability of `C(X, Y)`
 

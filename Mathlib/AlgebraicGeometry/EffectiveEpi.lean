@@ -10,6 +10,9 @@ public import Mathlib.AlgebraicGeometry.Morphisms.Flat
 public import Mathlib.Topology.Category.TopCat.EffectiveEpi
 public import Mathlib.CategoryTheory.EffectiveEpi.Preserves
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Effective epimorphisms in the category of schemes
 
@@ -18,6 +21,7 @@ We collect results about effective epimorphisms in the category of schemes.
 ## Main results
 
 For a surjective and flat morphism `π : X ⟶ Y` between affine schemes, we prove the following.
+
 * `exists_comp_eq_of_flat_of_isAffine`: Any morphism `f : X ⟶ S` of schemes whose two pullbacks to
   `X ×[Y] X` agree descends to a morphism `u : Y ⟶ S` with `π ≫ u = f`.
 * `isRegularEpi_of_flat_of_surjective_of_isAffine`: The map `π : X ⟶ Y` is a regular epimorphism
@@ -29,7 +33,6 @@ epimorphism, see the file `Mathlib.AlgebraicGeometry.Sites.Fpqc`.
 ## Reference
 
 * https://stacks.math.columbia.edu/tag/023Q
-
 -/
 
 public section

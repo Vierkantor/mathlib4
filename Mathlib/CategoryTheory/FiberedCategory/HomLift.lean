@@ -8,8 +8,10 @@ module
 public import Mathlib.CategoryTheory.Functor.Category
 public import Mathlib.CategoryTheory.CommSq
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # HomLift
 
 Given a functor `p : 𝒳 ⥤ 𝒮`, this file provides API for expressing the fact that `p(φ) = f`
@@ -26,10 +28,10 @@ goal, this tactic is just short for `obtain ⟨⟩ := (inferInstance : p.IsHomLi
 it is used to make the code more readable.
 
 ## Implementation
+
 The class `IsHomLift` is defined as an inductive with the single constructor
 `.map (φ : a ⟶ b) : IsHomLift p (p.map φ) φ`, similar to how `Eq a b` has the single constructor
 `.rfl (a : α) : Eq a a`.
-
 -/
 
 @[expose] public section

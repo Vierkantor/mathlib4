@@ -7,6 +7,9 @@ module
 
 public import Mathlib.LinearAlgebra.RootSystem.IsValuedIn
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Reduced root pairings
 
@@ -29,7 +32,6 @@ provide both `RootPairing.linearIndependent_iff_coxeterWeight_ne_four` and
 Several ways to avoid this duplication exist. We leave explorations of this for future work. One
 possible solution is to drop `RootPairing.pairing` and `RootPairing.coxeterWeight` entirely and rely
 solely on `RootPairing.pairingIn` and `RootPairing.coxeterWeightIn`.
-
 -/
 
 public section

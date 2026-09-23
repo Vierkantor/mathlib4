@@ -9,13 +9,16 @@ public import Mathlib.Analysis.Distribution.AEEqOfIntegralContDiff
 public import Mathlib.Analysis.Distribution.TestFunction
 public import Mathlib.Topology.Algebra.Module.Spaces.CompactConvergenceCLM
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Distributions
 
-Let `E` be a real **finite-dimensional normed space**, `Ω` an open subset of `E`,
-and `F` a real **locally convex topological vector space**.
+Let `E` be a real *finite-dimensional normed space*, `Ω` an open subset of `E`,
+and `F` a real *locally convex topological vector space*.
 
-An **`F`-valued distribution on `Ω`** is a continuous `ℝ`-linear map `T : 𝓓(Ω, ℝ) →L[ℝ] F`,
+An *`F`-valued distribution on `Ω`* is a continuous `ℝ`-linear map `T : 𝓓(Ω, ℝ) →L[ℝ] F`,
 defined on the space `𝓓(Ω, ℝ)` of real-valued test functions, and taking values in `F`.
 In particular, if `𝕜` is an `RCLike` field, `𝓓'(Ω, 𝕜)` is the usual notion of real or complex
 distribution on `Ω`.
@@ -44,6 +47,7 @@ The theory will be expanded in future PRs.
 ## Notation
 
 In the `Distributions` scope, we introduce the following notations:
+
 * `𝓓'^{n}(Ω, F)`: the space of `F`-valued distributions on the open set `Ω` with order at most
   `n : ℕ∞`.
 * `𝓓'(Ω, F)`: the space of `F`-valued distributions on the open set `Ω`, i.e `𝓓'^{⊤}(Ω, F)`.
@@ -69,10 +73,11 @@ do not hesitate to refactor to a `def` instead.
 
 The theory of vector-valued distributions is not as well-known as its scalar-valued analog. The
 definition we choose is studied in
-[L. Schwartz, *Théorie des distributions à valeurs vectorielles*][schwartz1957].
+‍\[L. Schwartz, _Théorie des distributions à valeurs vectorielles_\]\[schwartz1957\].
 
 Let us give two examples of how we plan to use this level of generality:
-* In the short term, this will allow us to define the *Fréchet derivative* of a distribution,
+
+* In the short term, this will allow us to define the _Fréchet derivative_ of a distribution,
   as a continuous linear map `𝓓'(Ω, F) →L[ℝ] 𝓓'(Ω, E →L[ℝ] F)`. Note that, even if `F = ℝ`,
   the derivative is naturally vector-valued.
 * On a longer timescale, we should aim to prove the
@@ -84,7 +89,7 @@ Let us give two examples of how we plan to use this level of generality:
 
 In the literature, it is common to define complex-valued distributions as continuous `ℂ`-linear
 forms `T : 𝓓(Ω, ℂ) →L[ℂ] ℂ`. We use `𝓓(Ω, ℝ) →L[ℝ] ℂ` instead, that is, we only ever test
-against *real-valued* test functions.
+against _real-valued_ test functions.
 
 This makes no difference mathematically, since `𝓓(Ω, ℂ)` is the complexification of `𝓓(Ω, ℝ)`,
 hence there is a topological isomorphism between `𝓓(Ω, ℝ) →L[ℝ] F` and `𝓓(Ω, ℂ) →L[ℂ] F`
@@ -105,12 +110,13 @@ This is not incompatible with the predicate approach: in fact, we think that suc
 should eventually become the primary interface for the order of a distribution. However, we believe
 that being able to talk about the space `𝓓'^{n}(Ω, F)` is also quite important, for the following
 reasons:
+
 * if `T : 𝓓'(Ω,F)` is a distribution whose order is at most `n`, it is natural to test it against
   a `C^n` test function (especially if `n = 0`). This means that we naturally want to consider its
   extension `T'` as an element of `𝓓'^{n}(Ω, F)`.
-* it is often quite easy to keep track of the regularities while *defining* an operation on
+* it is often quite easy to keep track of the regularities while _defining_ an operation on
   distributions (e. g. differentiation). On the other hand, once you have defined an operation on
-  `𝓓'^(Ω, F)`, it can be quite painful to study its relation to order *a posteriori*.
+  `𝓓'^(Ω, F)`, it can be quite painful to study its relation to order _a posteriori_.
 
 Note that the topology on `𝓓'^{n}(Ω, F)` has no reason to be the subspace topology coming from
 `𝓓'(Ω, F)`.
@@ -118,31 +124,31 @@ Note that the topology on `𝓓'^{n}(Ω, F)` has no reason to be the subspace to
 ### Choice of topology
 
 Our choice of the compact convergence topology on `𝓓'^{n}(Ω, F)` follows
-[L. Schwartz, *Théorie des distributions à valeurs vectorielles*, §2, p. 49][schwartz1957].
+‍\[L. Schwartz, _Théorie des distributions à valeurs vectorielles_, §2, p. 49\]\[schwartz1957\].
 
 Note that, since `𝓓(Ω, ℝ)` is a Montel space, the topology on `𝓓'(Ω, F)` is also that of
 bounded convergence. Hence, our definition also agrees with
-[L. Schwartz, *Théorie des distributions*, Chapitre III, §3][schwartz1950].
+‍\[L. Schwartz, _Théorie des distributions_, Chapitre III, §3\]\[schwartz1950\].
 
 When `n` is finite, however, `𝓓^{n}(Ω, ℝ)` is no longer a Montel space
-(see [L. Schwartz, *Théorie des distributions*, Chapitre III, §2, p. 71][schwartz1950]), hence
+(see \[L. Schwartz, _Théorie des distributions_, Chapitre III, §2, p. 71\]\[schwartz1950\]), hence
 these two topologies have no reason to be the same. Schwartz uses compact convergence as a default
-(see [L. Schwartz, *Théorie des distributions à valeurs vectorielles*, §2, p. 50][schwartz1957]),
+(see \[L. Schwartz, _Théorie des distributions à valeurs vectorielles_, §2, p.
+50\]\[schwartz1957\]),
 which we follow here.
 
-Finally, note that a **sequence** of distributions converges in `𝓓'(Ω, F)` if and only if it
+Finally, note that a *sequence* of distributions converges in `𝓓'(Ω, F)` if and only if it
 converges pointwise
-(see [L. Schwartz, *Théorie des distributions*, Chapitre III, §3, Théorème XIII][schwartz1950]).
+(see \[L. Schwartz, _Théorie des distributions_, Chapitre III, §3, Théorème XIII\]\[schwartz1950\]).
 Due to this fact, some texts endow `𝓓'(Ω, F)` with the pointwise convergence topology. While this
 gives the same converging sequences as the topology of bounded/compact convergence, this is no
 longer true for general filters.
 
 ## References
 
-* [L. Schwartz, *Théorie des distributions*][schwartz1950]
-* [L. Schwartz, *Théorie des distributions à valeurs vectorielles*][schwartz1957]
-* [L. Hörmander, *The Analysis of Linear Partial Differential Operators I*][hormander2003]
-
+* ‍\[L. Schwartz, _Théorie des distributions_\]\[schwartz1950\]
+* ‍\[L. Schwartz, _Théorie des distributions à valeurs vectorielles_\]\[schwartz1957\]
+* ‍\[L. Hörmander, _The Analysis of Linear Partial Differential Operators I_\]\[hormander2003\]
 -/
 
 @[expose] public section

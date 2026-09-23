@@ -10,6 +10,9 @@ public import Mathlib.RingTheory.DedekindDomain.AdicValuation
 public import Mathlib.RingTheory.Int.Basic
 public import Mathlib.Topology.Algebra.Algebra.Equiv
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Isomorphisms between `adicCompletion ℚ` and `ℚ_[p]`
 
@@ -21,6 +24,7 @@ to the `p`-adic norm using the completion of Cauchy sequences. This file constru
 respective rings of integers.
 
 Isomorphisms are provided in both directions, allowing traversal of the following diagram:
+
 ```
 HeightOneSpectrum R <----------->  Nat.Primes
           |                               |
@@ -34,15 +38,16 @@ v.adicCompletion ℚ  <--------------->   ℚ_[p]
 ```
 
 ## Main definitions
-- `Rat.HeightOneSpectrum.primesEquiv` : the equivalence between height-one prime ideals of
+
+* `Rat.HeightOneSpectrum.primesEquiv` : the equivalence between height-one prime ideals of
   `R` and prime numbers in `ℕ`.
-- `Rat.HeightOneSpectrum.padicEquiv v` : the continuous `ℚ`-algebra isomorphism
+* `Rat.HeightOneSpectrum.padicEquiv v` : the continuous `ℚ`-algebra isomorphism
   `v.adicCompletion ℚ ≃A[ℚ] ℚ_[primesEquiv v]`.
-- `Padic.adicCompletionEquiv p` : the continuous `ℚ`-algebra isomorphism
+* `Padic.adicCompletionEquiv p` : the continuous `ℚ`-algebra isomorphism
   `ℚ_[p] ≃A[ℚ] (primesEquiv.symm p).adicCompletion ℚ`.
-- `Rat.HeightOneSpectrum.adicCompletionIntegers.padicIntEquiv v` : the continuous `ℤ`-algebra
+* `Rat.HeightOneSpectrum.adicCompletionIntegers.padicIntEquiv v` : the continuous `ℤ`-algebra
   isomorphism `v.adicCompletionIntegers ℚ ≃A[ℤ] ℤ_[natGenerator v]`.
-- `PadicInt.adicCompletionIntegersEquiv p` : the continuous `ℤ`-algebra isomorphism
+* `PadicInt.adicCompletionIntegersEquiv p` : the continuous `ℤ`-algebra isomorphism
   `ℤ_[p] ≃A[ℤ] (primesEquiv.symm p).adicCompletionIntegers ℚ`.
 
 TODO : Abstract the isomorphisms in this file using a universal predicate on adic completions,

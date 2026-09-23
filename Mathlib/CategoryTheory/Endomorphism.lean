@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Group.Opposite
 public import Mathlib.Algebra.Group.Units.Hom
 public import Mathlib.CategoryTheory.Groupoid
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Endomorphisms
 

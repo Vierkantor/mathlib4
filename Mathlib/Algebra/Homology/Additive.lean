@@ -9,12 +9,14 @@ public import Mathlib.Algebra.Group.Pi.Basic
 public import Mathlib.Algebra.Homology.Single
 public import Mathlib.CategoryTheory.Preadditive.AdditiveFunctor
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Homology is an additive functor
 
 When `V` is preadditive, `HomologicalComplex V c` is also preadditive,
 and `homologyFunctor` is additive.
-
 -/
 
 @[expose] public section

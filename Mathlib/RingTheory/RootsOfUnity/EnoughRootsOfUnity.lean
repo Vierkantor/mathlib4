@@ -7,6 +7,9 @@ module
 
 public import Mathlib.RingTheory.RootsOfUnity.PrimitiveRoots
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Commutative monoids with enough roots of unity
 

@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Group.Center
 public import Mathlib.Algebra.Module.Equiv.Opposite
 public import Mathlib.Algebra.Module.Torsion.Free
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Endomorphisms of a module
 
@@ -37,7 +40,7 @@ variable {R R₂ S M M₁ M₂ M₃ N₁ : Type*}
 open Function LinearMap
 
 /-!
-## Monoid structure of endomorphisms
+# Monoid structure of endomorphisms
 -/
 
 namespace Module.End
@@ -190,7 +193,9 @@ theorem surjective_of_iterate_surjective {n : ℕ} (hn : n ≠ 0) (h : Surjectiv
 
 end
 
-/-! ## Action by a module endomorphism. -/
+/-!
+# Action by a module endomorphism.
+-/
 
 
 /-- The tautological action by `Module.End R M` (aka `M →ₗ[R] M`) on `M`.
@@ -229,7 +234,9 @@ end Module.End
 
 section
 
-/-! ## Actions as module endomorphisms -/
+/-!
+# Actions as module endomorphisms
+-/
 
 variable (R M) [Semiring R] [AddCommMonoid M] [Module R M]
 variable [Monoid S]

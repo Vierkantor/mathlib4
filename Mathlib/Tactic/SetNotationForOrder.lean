@@ -11,6 +11,9 @@ public meta import Mathlib.Lean.PrettyPrinter.Delaborator
 public import Mathlib.Tactic.Translate.GuessName
 public import Mathlib.Util.AddRelatedDecl
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Set notation for order operations
 
@@ -68,7 +71,9 @@ initialize
 def useSetNotationFor (type : Expr) : MetaM Bool := do
   return (← trySynthInstance (← mkAppM ``UsesSetNotationForOrder #[type])) matches .some _
 
-/-! ## Delaboration -/
+/-!
+# Delaboration
+-/
 
 /-- Delaborate `x ≤ y` into `x ⊆ y` if the type is tagged with `@[use_set_notation_for_order]`. -/
 @[app_delab LE.le]
@@ -110,7 +115,9 @@ public def delabGt : Delab := whenNotPPOption getPPExplicit <| whenPPOption getP
   let stx ← `($x ⊃ $y)
   annotateGoToDef stx decl_name%
 
-/-! ## Elaboration -/
+/-!
+# Elaboration
+-/
 
 /-- Linter for ambiguous use of subset notation notation. -/
 register_option linter.setNotationForOrder : Bool := {
@@ -224,7 +231,9 @@ binder_predicate (priority := high) x " ⊇ " y:term => `($x ⊇ $y)
 `∃ x, x ⊃ y ∧ ...` -/
 binder_predicate (priority := high) x " ⊃ " y:term => `($x ⊃ $y)
 
-/-! ## Dot-notation namespace linter -/
+/-!
+# Dot-notation namespace linter
+-/
 
 /-- A temporary linter to help adapt to `@[set_notation_for_order]`.
 It gives a warning when a lemma is in the wrong namespace for dot-notation. -/
@@ -249,7 +258,9 @@ public def subsetDotNotationLinter : Batteries.Tactic.Lint.Linter where
           return some m!"`{n}` should be named `{otherStart ++ rest}` in order to use dot-notation."
     return none
 
-/-! ## Lemma translation -/
+/-!
+# Lemma translation
+-/
 
 @[inherit_doc GuessName.GuessNameData.nameDict]
 def nameDict : Std.HashMap String (List String) := .ofList [

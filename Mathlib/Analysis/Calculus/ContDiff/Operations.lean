@@ -10,6 +10,9 @@ public import Mathlib.Analysis.Calculus.Deriv.Inverse
 public import Mathlib.Topology.OpenPartialHomeomorph.IsImage
 import Mathlib.Analysis.Calculus.FDeriv.OfCompLeft
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Higher differentiability of usual operations
 
@@ -48,7 +51,7 @@ variable {𝕜 : Type*} [NontriviallyNormedField 𝕜]
   {g : F → G} {x x₀ : E} {b : E × F → G} {m n : ℕ∞ω} {p : E → FormalMultilinearSeries 𝕜 E F}
 
 /-!
-### Smoothness of functions `f : E → Π i, F' i`
+# Smoothness of functions `f : E → Π i, F' i`
 -/
 
 section Pi
@@ -158,7 +161,9 @@ theorem contDiff_apply_apply (i : ι) (j : ι') : ContDiff 𝕜 n fun f : ι →
 
 end Pi
 
-/-! ### Sum of two functions -/
+/-!
+# Sum of two functions
+-/
 
 section Add
 
@@ -231,7 +236,9 @@ The iterated derivative of the sum of two functions is the sum of the iterated d
 
 end Add
 
-/-! ### Negative -/
+/-!
+# Negative
+-/
 
 section Neg
 
@@ -293,7 +300,9 @@ theorem iteratedFDeriv_neg {i : ℕ} {f : E → F} :
 
 end Neg
 
-/-! ### Subtraction -/
+/-!
+# Subtraction
+-/
 
 /-- The difference of two `C^n` functions within a set at a point is `C^n` within this set
 at this point. -/
@@ -351,7 +360,9 @@ derivatives.
     iteratedFDeriv 𝕜 i (f - g) = iteratedFDeriv 𝕜 i f - iteratedFDeriv 𝕜 i g :=
   funext fun _ ↦ iteratedFDeriv_sub_apply (ContDiff.contDiffAt hf) (ContDiff.contDiffAt hg)
 
-/-! ### Sum of finitely many functions -/
+/-!
+# Sum of finitely many functions
+-/
 
 @[fun_prop]
 theorem ContDiffWithinAt.sum {ι : Type*} {f : ι → E → F} {s : Finset ι} {t : Set E} {x : E}
@@ -420,7 +431,9 @@ theorem iteratedFDeriv_sum {ι : Type*} {f : ι → E → F} {u : Finset ι} {i 
   funext fun x ↦ by simpa [iteratedFDerivWithin_univ] using
     iteratedFDerivWithin_fun_sum_apply uniqueDiffOn_univ (mem_univ x) (h · · |>.contDiffWithinAt)
 
-/-! ### Product of two functions -/
+/-!
+# Product of two functions
+-/
 
 section MulProd
 
@@ -537,7 +550,9 @@ theorem ContDiff.div_const {f : E → 𝕜'} {n} (hf : ContDiff 𝕜 n f) (c : �
 
 end MulProd
 
-/-! ### Scalar multiplication -/
+/-!
+# Scalar multiplication
+-/
 
 section SMul
 
@@ -576,7 +591,8 @@ theorem ContDiffOn.smul {s : Set E} {f : E → 𝕜'} {g : E → F} (hf : ContDi
 
 end SMul
 
-/-! ### Constant scalar multiplication
+/-!
+# Constant scalar multiplication
 
 TODO: generalize results in this section -- if `c` is a unit (or `R` is a group), then one can
 drop `ContDiff*` assumptions in some lemmas about `iteratedFDeriv` and `iteratedFDerivWithin`.
@@ -693,7 +709,9 @@ theorem iteratedFDeriv_comp_const_smul (a : 𝕜) (hf : ContDiff 𝕜 i f) :
 
 end ConstSMul
 
-/-! ### Cartesian product of two functions -/
+/-!
+# Cartesian product of two functions
+-/
 
 section prodMap
 
@@ -756,7 +774,7 @@ theorem contDiff_prodMk_right (e₀ : E) : ContDiff 𝕜 n fun f : F => (e₀, f
 end prodMap
 
 /-!
-### Inversion in a complete normed algebra (or more generally with summable geometric series)
+# Inversion in a complete normed algebra (or more generally with summable geometric series)
 -/
 
 section AlgebraInverse
@@ -832,7 +850,9 @@ theorem ContDiff.div {f g : E → 𝕜} {n} (hf : ContDiff 𝕜 n f) (hg : ContD
 
 end AlgebraInverse
 
-/-! ### Inversion of continuous linear maps between Banach spaces -/
+/-!
+# Inversion of continuous linear maps between Banach spaces
+-/
 
 section MapInverse
 
@@ -1002,7 +1022,7 @@ end FunctionInverse
 section RestrictScalars
 
 /-!
-### Restricting from `ℂ` to `ℝ`, or generally from `𝕜'` to `𝕜`
+# Restricting from `ℂ` to `ℝ`, or generally from `𝕜'` to `𝕜`
 
 If a function is `n` times continuously differentiable over `ℂ`, then it is `n` times continuously
 differentiable over `ℝ`. In this paragraph, we give variants of this statement, in the general

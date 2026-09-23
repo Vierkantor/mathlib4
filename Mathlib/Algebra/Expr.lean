@@ -9,7 +9,11 @@ public import Mathlib.Init
 public import Qq
 public import Qq.Typ
 
-/-! # Helpers to invoke functions involving algebra at tactic time
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Helpers to invoke functions involving algebra at tactic time
 
 This file provides instances on `x y : Q($α)` such that `x + y = q($x + $y)`.
 -/

@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Combinatorics.Matroid.Closure
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Matroid IsCircuits
 
@@ -140,7 +143,9 @@ lemma isCircuit_iff_dep_forall_sdiff_singleton_indep :
 alias isCircuit_iff_dep_forall_diff_singleton_indep :=
   isCircuit_iff_dep_forall_sdiff_singleton_indep
 
-/-! ### Independence and bases -/
+/-!
+# Independence and bases
+-/
 
 lemma Indep.insert_isCircuit_of_forall (hI : M.Indep I) (heI : e ∉ I) (he : e ∈ M.closure I)
     (h : ∀ f ∈ I, e ∉ M.closure (I \ {f})) : M.IsCircuit (insert e I) := by
@@ -188,7 +193,9 @@ lemma IsCircuit.isBasis_iff_insert_eq (hC : M.IsCircuit C) :
   · rw [hI, insert_sdiff_singleton, insert_eq_of_mem he]
   rw [hC, insert_sdiff_self_of_notMem he.2]
 
-/-! ### Restriction -/
+/-!
+# Restriction
+-/
 
 lemma IsCircuit.isCircuit_restrict_of_subset (hC : M.IsCircuit C) (hCR : C ⊆ R) :
     (M ↾ R).IsCircuit C := by
@@ -201,7 +208,9 @@ lemma restrict_isCircuit_iff (hR : R ⊆ M.E := by aesop_mat) :
   simp_rw [isCircuit_iff, restrict_dep_iff, and_imp, dep_iff]
   exact fun hC hCR h ↦ ⟨⟨⟨hC,hCR.trans hR⟩,fun I hI hIC ↦ h hI.1 (hIC.trans hCR) hIC⟩,hCR⟩
 
-/-! ### Fundamental IsCircuits -/
+/-!
+# Fundamental IsCircuits
+-/
 
 /-- For an independent set `I` and some `e ∈ M.closure I \ I`,
 `M.fundCircuit e I` is the unique circuit contained in `insert e I`.
@@ -311,7 +320,9 @@ lemma fundCircuit_restrict {R : Set α} (hIR : I ⊆ R) (heR : e ∈ R) (hR : R 
     simp [union_inter_distrib_right]
   simp [fundCircuit, aux]
 
-/-! ### Dependence -/
+/-!
+# Dependence
+-/
 
 lemma Dep.exists_isCircuit_subset (hX : M.Dep X) : ∃ C, C ⊆ X ∧ M.IsCircuit C := by
   obtain ⟨I, hI⟩ := M.exists_isBasis X
@@ -341,7 +352,9 @@ lemma indep_iff_forall_subset_not_isCircuit (hI : I ⊆ M.E := by aesop_mat) :
     M.Indep I ↔ ∀ C, C ⊆ I → ¬M.IsCircuit C := by
   rw [indep_iff_forall_subset_not_isCircuit', and_iff_left hI]
 
-/-! ### Closure -/
+/-!
+# Closure
+-/
 
 lemma IsCircuit.closure_sdiff_singleton_eq (hC : M.IsCircuit C) (e : α) :
     M.closure (C \ {e}) = M.closure C :=
@@ -379,7 +392,9 @@ lemma mem_closure_iff_exists_isCircuit (he : e ∉ X) :
   ⟨fun h ↦ exists_isCircuit_of_mem_closure h he, fun ⟨C, hCX, hC, heC⟩ ↦ mem_of_mem_of_subset
     (hC.mem_closure_sdiff_singleton_of_mem heC) (M.closure_subset_closure (by simpa))⟩
 
-/-! ### Extensionality -/
+/-!
+# Extensionality
+-/
 
 lemma ext_isCircuit {M₁ M₂ : Matroid α} (hE : M₁.E = M₂.E)
     (h : ∀ ⦃C⦄, C ⊆ M₁.E → (M₁.IsCircuit C ↔ M₂.IsCircuit C)) : M₁ = M₂ := by
@@ -407,7 +422,9 @@ lemma ext_iff_isCircuit {M₁ M₂ : Matroid α} :
 
 section Elimination
 
-/-! ### Circuit Elimination -/
+/-!
+# Circuit Elimination
+-/
 
 variable {ι : Type*} {J C₀ C₁ C₂ : Set α}
 
@@ -516,7 +533,9 @@ lemma IsCircuit.elimination (hC₁ : M.IsCircuit C₁) (hC₂ : M.IsCircuit C₂
 
 end Elimination
 
-/-! ### Finitary Matroids -/
+/-!
+# Finitary Matroids
+-/
 section Finitary
 
 lemma IsCircuit.finite [Finitary M] (hC : M.IsCircuit C) : C.Finite := by
@@ -559,7 +578,9 @@ lemma exists_subset_finite_closure_of_subset_closure [M.Finitary] (hX : X.Finite
 
 end Finitary
 
-/-! ### IsCocircuits -/
+/-!
+# IsCocircuits
+-/
 section IsCocircuit
 
 variable {K B : Set α}

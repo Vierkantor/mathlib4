@@ -8,9 +8,11 @@ module
 public import Mathlib.Topology.Algebra.Monoid
 public import Mathlib.LinearAlgebra.Finsupp.Pi
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Continuity of the functoriality of `X → M` when `X` is finite
-
 -/
 
 public section

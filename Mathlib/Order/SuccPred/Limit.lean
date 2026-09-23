@@ -8,6 +8,9 @@ module
 public import Mathlib.Order.SuccPred.Archimedean
 public import Mathlib.Order.BoundedOrder.Lattice
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Successor and predecessor limits
 
@@ -28,7 +31,9 @@ namespace Order
 
 open Function Set OrderDual
 
-/-! ### Successor and predecessor limits -/
+/-!
+# Successor and predecessor limits
+-/
 
 section LT
 
@@ -595,7 +600,9 @@ end LinearOrder
 
 end Order
 
-/-! ### Induction principles -/
+/-!
+# Induction principles
+-/
 
 variable {motive : α → Sort*}
 

@@ -8,7 +8,12 @@ module
 public import Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.PosPart.Isometric
 public import Mathlib.Analysis.CStarAlgebra.ContinuousFunctionalCalculus.Basic
 
-/-! # C⋆-algebraic facts about `a⁺` and `a⁻`. -/
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# C⋆-algebraic facts about `a⁺` and `a⁻`.
+-/
 
 public section
 

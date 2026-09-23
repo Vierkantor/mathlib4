@@ -8,40 +8,41 @@ module
 public import Mathlib.Algebra.Module.TransferInstance
 public import Mathlib.RingTheory.Finiteness.Cardinality
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Orzech property of rings
 
 In this file we define the following property of rings:
 
-- `OrzechProperty R` is a type class stating that `R` satisfies the following property:
+* `OrzechProperty R` is a type class stating that `R` satisfies the following property:
   for any finitely generated `R`-module `M`, any surjective homomorphism `f : N → M`
   from a submodule `N` of `M` to `M` is injective.
-  It was introduced in papers by Orzech [orzech1971], Djoković [djokovic1973] and
-  Ribenboim [ribenboim1971], under the names `Π`-ring or `Π₁`-ring.
+  It was introduced in papers by Orzech \[orzech1971\], Djoković \[djokovic1973\] and
+  Ribenboim \[ribenboim1971\], under the names `Π`-ring or `Π₁`-ring.
   It implies the strong rank condition (that is, the existence of an injective linear map
   `(Fin n → R) →ₗ[R] (Fin m → R)` implies `n ≤ m`)
   if the ring is nontrivial (see `Mathlib/LinearAlgebra/InvariantBasisNumber.lean`).
 
 It's proved in the above papers that
 
-- a left-Noetherian ring (not necessarily commutative) satisfies the `OrzechProperty`,
+* a left-Noetherian ring (not necessarily commutative) satisfies the `OrzechProperty`,
   which in particular includes the division ring case
   (see `Mathlib/RingTheory/Noetherian/Orzech.lean`);
-- a commutative ring satisfies the `OrzechProperty`
+* a commutative ring satisfies the `OrzechProperty`
   (see `Mathlib/RingTheory/FiniteType.lean`).
 
 ## References
 
-* [Orzech, Morris. *Onto endomorphisms are isomorphisms*][orzech1971]
-* [Djoković, D. Ž. *Epimorphisms of modules which must be isomorphisms*][djokovic1973]
-* [Ribenboim, Paulo.
-  *Épimorphismes de modules qui sont nécessairement des isomorphismes*][ribenboim1971]
+* ‍\[Orzech, Morris. _Onto endomorphisms are isomorphisms_\]\[orzech1971\]
+* ‍\[Djoković, D. Ž. _Epimorphisms of modules which must be isomorphisms_\]\[djokovic1973\]
+* ‍\[Ribenboim, Paulo.
+  _Épimorphismes de modules qui sont nécessairement des isomorphismes_\]\[ribenboim1971\]
 
 ## Tags
 
 free module, rank, Orzech property, (strong) rank condition, invariant basis number, IBN
-
 -/
 
 public section

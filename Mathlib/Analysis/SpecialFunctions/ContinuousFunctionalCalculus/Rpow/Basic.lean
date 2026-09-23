@@ -14,6 +14,9 @@ public import Mathlib.Analysis.SpecialFunctions.Pow.Continuity
 public import Mathlib.Analysis.SpecialFunctions.Pow.Real
 public import Mathlib.Topology.ContinuousMap.ContinuousSqrt
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Real powers defined via the continuous functional calculus
 
@@ -23,10 +26,10 @@ square root is also defined via the non-unital CFC.
 
 ## Main declarations
 
-+ `CFC.nnrpow`: the `ℝ≥0` power function based on the non-unital CFC, i.e. `cfcₙ NNReal.rpow`
+* `CFC.nnrpow`: the `ℝ≥0` power function based on the non-unital CFC, i.e. `cfcₙ NNReal.rpow`
   composed with `(↑) : ℝ≥0 → ℝ`.
-+ `CFC.sqrt`: the square root function based on the non-unital CFC, i.e. `cfcₙ NNReal.sqrt`
-+ `CFC.rpow`: the real power function based on the unital CFC, i.e. `cfc NNReal.rpow`
+* `CFC.sqrt`: the square root function based on the non-unital CFC, i.e. `cfcₙ NNReal.sqrt`
+* `CFC.rpow`: the real power function based on the unital CFC, i.e. `cfc NNReal.rpow`
 
 ## Implementation notes
 
@@ -38,16 +41,16 @@ only makes sense for nonnegative exponents, and hence we define it such that the
 
 ## Notation
 
-+ We define a `Pow A ℝ` instance for `CFC.rpow`, i.e `a ^ y` with `A` an operator and `y : ℝ` works
+* We define a `Pow A ℝ` instance for `CFC.rpow`, i.e `a ^ y` with `A` an operator and `y : ℝ` works
   as expected. Likewise, we define a `Pow A ℝ≥0` instance for `CFC.nnrpow`. Note that these are
   low-priority instances, in order to avoid overriding instances such as `Pow ℝ ℝ`,
   `Pow (A × B) ℝ` or `Pow (∀ i, A i) ℝ`.
 
 ## TODO
 
-+ Relate these to the log and exp functions
-+ Lemmas about how these functions interact with commuting `a` and `b`.
-+ Prove the order properties (operator monotonicity and concavity/convexity)
+* Relate these to the log and exp functions
+* Lemmas about how these functions interact with commuting `a` and `b`.
+* Prove the order properties (operator monotonicity and concavity/convexity)
 -/
 
 @[expose] public section

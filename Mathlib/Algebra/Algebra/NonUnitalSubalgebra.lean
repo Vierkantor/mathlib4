@@ -10,6 +10,9 @@ public import Mathlib.Data.Set.UnionLift
 public import Mathlib.LinearAlgebra.Span.Basic
 public import Mathlib.RingTheory.NonUnitalSubring.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Non-unital Subalgebras over Commutative Semirings
 
@@ -267,7 +270,9 @@ variable {S : NonUnitalSubalgebra R A}
 
 section
 
-/-! ### `NonUnitalSubalgebra`s inherit structure from their `Submodule` coercions. -/
+/-!
+# `NonUnitalSubalgebra`s inherit structure from their `Submodule` coercions.
+-/
 
 instance instModule' [Semiring R'] [SMul R' R] [Module R' A] [IsScalarTower R' R A] : Module R' S :=
   SMulMemClass.toModule' _ R' R A S
@@ -1226,10 +1231,12 @@ instance isMulCommutative_adjoin_singleton (x : A) :
 
 open scoped IsMulCommutative in
 variable (R) in
-/-- If all elements of `s : Set A` commute pairwise, then `adjoin R s` is a non-unital commutative
+/--
+If all elements of `s : Set A` commute pairwise, then `adjoin R s` is a non-unital commutative
 semiring.
 
-See note [reducible non-instances]. -/
+See note \[reducible non-instances\].
+-/
 @[deprecated isMulCommutative_adjoin +typeChanged (since := "2026-03-11")]
 abbrev adjoinNonUnitalCommSemiringOfComm {s : Set A} (hcomm : s.Pairwise Commute) :
     NonUnitalCommSemiring (adjoin R s) :=
@@ -1241,10 +1248,12 @@ instance instIsMulCommutative_adjoin {S : Type*} [SetLike S A] [MulMemClass S A]
   isMulCommutative_adjoin R fun _ h₁ _ h₂ _ => setLike_mul_comm h₁ h₂
 
 open scoped IsMulCommutative in
-/-- If all elements of `s : Set A` commute pairwise, then `adjoin R s` is a non-unital commutative
+/--
+If all elements of `s : Set A` commute pairwise, then `adjoin R s` is a non-unital commutative
 ring.
 
-See note [reducible non-instances]. -/
+See note \[reducible non-instances\].
+-/
 @[deprecated isMulCommutative_adjoin +typeChanged (since := "2026-03-11")]
 abbrev adjoinNonUnitalCommRingOfComm (R : Type*) {A : Type*} [CommRing R] [NonUnitalRing A]
     [Module R A] [IsScalarTower R A A] [SMulCommClass R A A] {s : Set A}

@@ -9,6 +9,9 @@ public import Aesop
 public import Mathlib.Tactic.Bound.Init
 public import Qq
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The `bound` attribute
 

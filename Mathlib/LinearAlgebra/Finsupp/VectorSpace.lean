@@ -14,12 +14,14 @@ public import Mathlib.LinearAlgebra.FreeModule.Basic
 public import Mathlib.LinearAlgebra.Finsupp.Span
 public import Mathlib.LinearAlgebra.Projection
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Linear structures on function with finite support `ι →₀ M`
 
 This file contains results on the `R`-module structure on functions of finite support from a type
 `ι` to an `R`-module `M`, in particular in the case that `R` is a field.
-
 -/
 
 @[expose] public section

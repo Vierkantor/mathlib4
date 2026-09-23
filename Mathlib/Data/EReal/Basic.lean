@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Basic.ENNReal.Operations
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The extended real numbers
 
@@ -207,7 +210,9 @@ instance : MulZeroOneClass EReal where
   zero_mul := EReal.zero_mul
   mul_zero := fun x => by rw [EReal.mul_comm, EReal.zero_mul]
 
-/-! ### Real coercion -/
+/-!
+# Real coercion
+-/
 
 instance canLift : CanLift EReal ℝ (↑) fun r => r ≠ ⊤ ∧ r ≠ ⊥ where
   prf x hx := by
@@ -435,7 +440,9 @@ theorem eq_bot_iff_forall_lt (x : EReal) : x = ⊥ ↔ ∀ y : ℝ, x < (y : ERe
     intro h
     exact ⟨x.toReal, coe_toReal_le h⟩
 
-/-! ### Intervals and coercion from reals -/
+/-!
+# Intervals and coercion from reals
+-/
 
 lemma exists_between_coe_real {x z : EReal} (h : x < z) : ∃ y : ℝ, x < y ∧ y < z := by
   obtain ⟨a, ha₁, ha₂⟩ := exists_between h
@@ -573,7 +580,9 @@ lemma preimage_coe_Ioo_bot_top : Real.toEReal ⁻¹' Ioo ⊥ ⊤ = univ := by
   rw [← Ioi_inter_Iio]
   simp
 
-/-! ### ennreal coercion -/
+/-!
+# ennreal coercion
+-/
 
 @[simp]
 theorem toReal_coe_ennreal : ∀ {x : ℝ≥0∞}, toReal (x : EReal) = ENNReal.toReal x
@@ -698,7 +707,9 @@ theorem coe_ennreal_mul : ∀ x y : ℝ≥0∞, ((x * y : ℝ≥0∞) : EReal) =
 theorem coe_ennreal_nsmul (n : ℕ) (x : ℝ≥0∞) : (↑(n • x) : EReal) = n • (x : EReal) :=
   map_nsmul (⟨⟨(↑), coe_ennreal_zero⟩, coe_ennreal_add⟩ : ℝ≥0∞ →+ EReal) _ _
 
-/-! ### toENNReal -/
+/-!
+# toENNReal
+-/
 
 /-- `x.toENNReal` returns `x` if it is nonnegative, `0` otherwise. -/
 noncomputable def toENNReal (x : EReal) : ℝ≥0∞ :=
@@ -786,7 +797,9 @@ lemma toENNReal_lt_toENNReal {x y : EReal} (hx : 0 ≤ x) (hxy : x < y) :
   lt_of_le_of_ne (toENNReal_le_toENNReal hxy.le)
     fun h ↦ hxy.ne <| (toENNReal_eq_toENNReal hx (hx.trans_lt hxy).le).mp h
 
-/-! ### nat coercion -/
+/-!
+# nat coercion
+-/
 
 theorem coe_coe_eq_natCast (n : ℕ) : (n : ℝ) = (n : EReal) := rfl
 
@@ -816,7 +829,9 @@ theorem natCast_mul (m n : ℕ) :
     (m * n : ℕ) = (m : EReal) * (n : EReal) := by
   rw [← coe_coe_eq_natCast, ← coe_coe_eq_natCast, ← coe_coe_eq_natCast, Nat.cast_mul, EReal.coe_mul]
 
-/-! ### Miscellaneous lemmas -/
+/-!
+# Miscellaneous lemmas
+-/
 
 theorem exists_rat_btwn_of_lt :
     ∀ {a b : EReal}, a < b → ∃ x : ℚ, a < (x : ℝ) ∧ ((x : ℝ) : EReal) < b

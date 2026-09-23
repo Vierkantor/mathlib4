@@ -9,6 +9,9 @@ public import Mathlib.Order.Circular
 public import Mathlib.Order.Fin.Basic
 public import Mathlib.Data.ZMod.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The circular order on `ZMod n`
 

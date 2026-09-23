@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.Calculus.ImplicitFunction.ProdDomain
 public import Mathlib.Analysis.Calculus.FDeriv.Partial
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Implicit function theorem — curried bivariate
 

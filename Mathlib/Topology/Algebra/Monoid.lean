@@ -14,6 +14,9 @@ public import Mathlib.Topology.Algebra.MulAction
 public import Mathlib.Topology.ContinuousMap.Basic
 public import Mathlib.Topology.Algebra.Monoid.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Theory of topological monoids
 
@@ -656,16 +659,20 @@ instance Subsemigroup.isMulCommutative_topologicalClosure [T2Space M] (s : Subse
   all_goals fun_prop
 
 open scoped IsMulCommutative in
-/-- If a subsemigroup of a topological semigroup is commutative, then so is its topological
+/--
+If a subsemigroup of a topological semigroup is commutative, then so is its topological
 closure.
 
-See note [reducible non-instances] -/
+See note \[reducible non-instances\]
+-/
 @[to_additive (attr := deprecated Subsemigroup.isMulCommutative_topologicalClosure
   +typeChanged (since := "2026-07-29"))
-/-- If a subsemigroup of an additive topological semigroup is commutative, then so is its
+/--
+If a subsemigroup of an additive topological semigroup is commutative, then so is its
 topological closure.
 
-See note [reducible non-instances] -/]
+See note \[reducible non-instances\]
+-/]
 abbrev Subsemigroup.commSemigroupTopologicalClosure [T2Space M] (s : Subsemigroup M)
     (hs : ∀ x y : s, x * y = y * x) : CommSemigroup s.topologicalClosure :=
   haveI : IsMulCommutative s := ⟨⟨hs⟩⟩
@@ -739,10 +746,12 @@ open scoped IsMulCommutative in
 /-- If a submonoid of a topological monoid is commutative, then so is its topological closure. -/
 @[to_additive (attr := deprecated Submonoid.isMulCommutative_topologicalClosure
   +typeChanged (since := "2026-07-29"))
-/-- If a submonoid of an additive topological monoid is commutative, then so is its
+/--
+If a submonoid of an additive topological monoid is commutative, then so is its
 topological closure.
 
-See note [reducible non-instances]. -/]
+See note \[reducible non-instances\].
+-/]
 abbrev Submonoid.commMonoidTopologicalClosure [T2Space M] (s : Submonoid M)
     (hs : ∀ x y : s, x * y = y * x) : CommMonoid s.topologicalClosure :=
   haveI : IsMulCommutative s := ⟨⟨hs⟩⟩

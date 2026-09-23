@@ -8,11 +8,14 @@ module
 public import Mathlib.Algebra.Group.Action.Pointwise.Set.Basic
 public import Mathlib.LinearAlgebra.AffineSpace.AffineSubspace.Basic
 
-/-! # Pointwise instances on `AffineSubspace`s
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Pointwise instances on `AffineSubspace`s
 
 This file provides the additive action `AffineSubspace.pointwiseAddAction` in the
 `Pointwise` locale.
-
 -/
 
 @[expose] public section

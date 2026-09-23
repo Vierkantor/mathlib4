@@ -9,6 +9,9 @@ public import Mathlib.MeasureTheory.MeasurableSpace.PreorderRestrict
 public import Mathlib.Probability.Kernel.Composition.Prod
 public import Mathlib.Probability.Kernel.IonescuTulcea.Maps
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Consecutive composition of kernels
 
@@ -83,7 +86,9 @@ variable {X : ℕ → Type*} {mX : ∀ n, MeasurableSpace (X n)} {a b c : ℕ}
 
 section partialTraj
 
-/-! ### Definition of `partialTraj` -/
+/-!
+# Definition of `partialTraj`
+-/
 
 namespace ProbabilityTheory.Kernel
 
@@ -296,7 +301,9 @@ end Basic
 
 section lmarginalPartialTraj
 
-/-! ### Integrating against `partialTraj` -/
+/-!
+# Integrating against `partialTraj`
+-/
 
 variable (κ)
 
@@ -384,7 +391,9 @@ open ProbabilityTheory Kernel
 
 namespace DependsOn
 
-/-! ### Lemmas about `lmarginalPartialTraj` and `DependsOn` -/
+/-!
+# Lemmas about `lmarginalPartialTraj` and `DependsOn`
+-/
 
 /-- If `f` only depends on the variables up to rank `a` and `a ≤ b`, integrating `f` against
 `partialTraj κ b c` does nothing. -/

@@ -12,7 +12,11 @@ public import Mathlib.Algebra.Order.Monoid.Unbundled.ExistsOfLE
 public import Mathlib.Algebra.Order.ZeroLEOne
 public import Mathlib.Order.WithBot
 
-/-! # Adjoining top/bottom elements to ordered monoids.
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Adjoining top/bottom elements to ordered monoids.
 -/
 
 @[expose] public section

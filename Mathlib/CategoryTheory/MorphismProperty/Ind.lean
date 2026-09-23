@@ -11,6 +11,9 @@ public import Mathlib.CategoryTheory.MorphismProperty.Comma
 public import Mathlib.CategoryTheory.MorphismProperty.Limits
 public import Mathlib.CategoryTheory.ObjectProperty.Ind
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Ind and pro-properties
 
@@ -21,18 +24,18 @@ We show that `ind P` inherits stability properties from `P`.
 
 ## Main definitions
 
-- `CategoryTheory.MorphismProperty.ind`: `f` satisfies `ind P` if `f` is a filtered colimit of
+* `CategoryTheory.MorphismProperty.ind`: `f` satisfies `ind P` if `f` is a filtered colimit of
   morphisms in `P`.
 
 ## Main results:
 
-- `CategoryTheory.MorphismProperty.ind_ind`: If `P` implies finitely presentable, then
+* `CategoryTheory.MorphismProperty.ind_ind`: If `P` implies finitely presentable, then
   `P.ind.ind = P.ind`.
 
 ## TODOs:
 
-- Dualise to obtain `pro P`.
-- Show `ind P` is stable under composition if `P` spreads out (Christian).
+* Dualise to obtain `pro P`.
+* Show `ind P` is stable under composition if `P` spreads out (Christian).
 -/
 
 @[expose] public section

@@ -12,6 +12,9 @@ public import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
 public import Mathlib.Topology.Algebra.Field
 public import Mathlib.Topology.Algebra.UniformRing
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Some results about the topology of ℂ
 -/

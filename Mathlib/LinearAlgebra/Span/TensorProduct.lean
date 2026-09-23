@@ -18,6 +18,9 @@ public import Mathlib.LinearAlgebra.FreeModule.StrongRankCondition
 public import Mathlib.Tactic.NormNum.GCD
 public import Mathlib.Tactic.Positivity
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The interaction of linear span and tensor product for mixed scalars.
 -/

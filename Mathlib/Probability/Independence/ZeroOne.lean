@@ -8,6 +8,9 @@ module
 public import Mathlib.Probability.Independence.Basic
 public import Mathlib.Probability.Independence.Conditional
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Kolmogorov's 0-1 law
 

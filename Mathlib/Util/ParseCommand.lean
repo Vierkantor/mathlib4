@@ -11,6 +11,9 @@ public meta import Lean.Elab.Command
 public meta import Mathlib.Tactic.Linter.Header  -- shake: keep
 public import Lean.Parser.Term
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `#parse` -- a command to parse text and log outputs
 -/
@@ -50,6 +53,8 @@ def parseAsTacticSeq (env : Environment) (input : String) (fileName := "<input>"
   else
     .error ((s.mkError "end of input").toErrorMsg ictx)
 
+
+set_option doc.verso false
 /-- `#parse parserFnId => str` allows to capture parsing exceptions.
 `parserFnId` is the identifier of a `ParserFn` and `str` is the string that
 `parserFnId` should parse.
@@ -67,6 +72,8 @@ For instance, `#parse` can be used as follows
 -/
 syntax (name := parseCmd) "#parse " ident " => " str : command
 
+
+set_option doc.verso true
 @[inherit_doc parseCmd]
 elab_rules : command
   | `(command| #parse $parserFnId => $str) => do

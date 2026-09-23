@@ -10,6 +10,9 @@ public import Mathlib.RingTheory.WittVector.Truncated
 public import Mathlib.RingTheory.WittVector.Teichmuller
 public import Mathlib.RingTheory.AdicCompletion.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The ring of Witt vectors is p-torsion free and p-adically complete
 

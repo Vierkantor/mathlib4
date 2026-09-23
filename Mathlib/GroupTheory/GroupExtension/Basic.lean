@@ -10,6 +10,9 @@ public import Mathlib.GroupTheory.SemidirectProduct
 public import Mathlib.GroupTheory.QuotientGroup.Basic
 public import Mathlib.Tactic.Group
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Basic lemmas about group extensions
 

@@ -11,6 +11,9 @@ public import Mathlib.Tactic.CrossRefAttribute
 public import Mathlib.Tactic.PPWithUniv
 public import Mathlib.Util.Delaborators
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cardinal Numbers
 
@@ -43,7 +46,7 @@ We define cardinal numbers as a quotient of types under the equivalence relation
 
 ## References
 
-* <https://en.wikipedia.org/wiki/Cardinal_number>
+* [https://en.wikipedia.org/wiki/Cardinal\_number](https://en.wikipedia.org/wiki/Cardinal_number)
 
 ## Tags
 
@@ -63,7 +66,9 @@ universe u v w v' w'
 
 variable {α β : Type u}
 
-/-! ### Definition of cardinals -/
+/-!
+# Definition of cardinals
+-/
 
 /-- The equivalence relation on types given by equivalence (bijective correspondence) of types.
   Quotienting by this equivalence relation gives the cardinal numbers.
@@ -142,7 +147,9 @@ def map₂ (f : Type u → Type v → Type w) (hf : ∀ α β γ δ, α ≃ β �
     Cardinal.{u} → Cardinal.{v} → Cardinal.{w} :=
   Quotient.map₂ f fun α β ⟨e₁⟩ γ δ ⟨e₂⟩ => ⟨hf α β γ δ e₁ e₂⟩
 
-/-! ### Lifting cardinals to a higher universe -/
+/-!
+# Lifting cardinals to a higher universe
+-/
 
 /-- The universe lift operation on cardinals. You can specify the universes explicitly with
   `lift.{u v} : Cardinal.{v} → Cardinal.{max v u}` -/
@@ -206,7 +213,9 @@ theorem mk_congr_lift {α : Type u} {β : Type v} (e : α ≃ β) : lift.{v} #α
 
 alias _root_.Equiv.lift_cardinal_eq := mk_congr_lift
 
-/-! ### Basic cardinals -/
+/-!
+# Basic cardinals
+-/
 
 instance : Zero Cardinal.{u} :=
   -- `PEmpty` might be more canonical, but this is convenient for defeq with natCast
@@ -333,7 +342,9 @@ theorem lift_add (a b : Cardinal.{u}) : lift.{v} (a + b) = lift.{v} a + lift.{v}
   inductionOn₂ a b fun _ _ =>
     mk_congr <| Equiv.ulift.trans (Equiv.sumCongr Equiv.ulift Equiv.ulift).symm
 
-/-! ### Indexed cardinal `sum` -/
+/-!
+# Indexed cardinal `sum`
+-/
 
 /-- The indexed sum of cardinals is the cardinality of the
   indexed disjoint union, i.e. sigma type. -/
@@ -400,7 +411,9 @@ theorem sum_nat_eq_add_sum_succ (f : ℕ → Cardinal.{u}) :
   refine (Equiv.sigmaNatSucc fun i => Quotient.out (f i)).cardinal_eq.trans ?_
   simp only [mk_sum, mk_out, lift_id, mk_sigma]
 
-/-! ### Indexed cardinal `prod` -/
+/-!
+# Indexed cardinal `prod`
+-/
 
 /-- The indexed product of cardinals is the cardinality of the Pi type
   (dependent product). -/
@@ -477,7 +490,9 @@ theorem lift_prod {ι : Type u} (c : ι → Cardinal.{v}) :
   simp only [← mk_pi, ← mk_uLift]
   exact mk_congr (Equiv.ulift.trans <| Equiv.piCongrRight fun i => Equiv.ulift.symm)
 
-/-! ### The first infinite cardinal `aleph0` -/
+/-!
+# The first infinite cardinal `aleph0`
+-/
 
 /-- `ℵ₀` is the smallest infinite cardinal. -/
 def aleph0 : Cardinal.{u} :=
@@ -498,7 +513,9 @@ theorem lift_aleph0 : lift ℵ₀ = ℵ₀ :=
 
 theorem lift_mk_fin (n : ℕ) : lift #(Fin n) = n := rfl
 
-/-! ### Cardinalities of basic sets and types -/
+/-!
+# Cardinalities of basic sets and types
+-/
 
 theorem mk_empty : #Empty = 0 :=
   mk_eq_zero _

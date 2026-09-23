@@ -14,6 +14,9 @@ public import Mathlib.CategoryTheory.Localization.DerivabilityStructure.Derives
 public import Mathlib.CategoryTheory.Localization.DerivabilityStructure.OfLocalizedEquivalences
 public import Mathlib.CategoryTheory.Preadditive.Injective.InjectiveObject
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The injective derivability structure
 
@@ -34,7 +37,6 @@ The consequence is that any functor from the category `HomotopyCategory.Plus C`
 has a right derived functor, and we show that the unit natural transformation for
 such a derived functor is an isomorphism on objects coming from
 `HomotopyCategory.Plus (InjectiveObject C)`.
-
 -/
 
 @[expose] public section

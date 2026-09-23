@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Group.Submonoid.Pointwise
 public import Mathlib.Algebra.Module.Defs
 public import Mathlib.Data.Nat.Cast.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Elementwise monoid structure of additive submonoids
 
@@ -22,6 +25,7 @@ and when `R = A` it is definitionally equal to the multiplication on `AddSubmono
 These are all available in the `Pointwise` locale.
 
 Additionally, it provides various degrees of monoid structure:
+
 * `AddSubmonoid.one`
 * `AddSubmonoid.mul`
 * `AddSubmonoid.mulOneClass`

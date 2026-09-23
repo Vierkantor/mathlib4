@@ -9,6 +9,9 @@ public import Mathlib.Analysis.Normed.Operator.NormedSpace
 public import Mathlib.Analysis.LocallyConvex.Barrelled
 public import Mathlib.Topology.Baire.CompleteMetrizable
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The Banach-Steinhaus theorem: Uniform Boundedness Principle
 

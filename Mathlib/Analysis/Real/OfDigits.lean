@@ -10,6 +10,9 @@ public import Mathlib.Analysis.SpecificLimits.Normed
 public import Mathlib.Tactic.Rify
 public import Mathlib.Tactic.Qify
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Representation of reals in positional system
 
@@ -20,7 +23,7 @@ representations of reals as sequences of digits in positional system.
 
 * `ofDigits`: takes a sequence of digits `(d₀, d₁, ...)` (as an `ℕ → Fin b`),
   and returns the real number `0.d₀d₁d₂...`.
-* `digits`: takes a real number in $[0,1)$ and returns the sequence of its digits.
+* `digits`: takes a real number in $`[0,1)` and returns the sequence of its digits.
 
 ## Main Statements
 

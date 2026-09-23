@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Homology.ShortComplex.Basic
 public import Mathlib.CategoryTheory.Limits.Constructions.FiniteProductsOfBinaryProducts
 public import Mathlib.CategoryTheory.Triangulated.TriangleShift
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Pretriangulated Categories
 

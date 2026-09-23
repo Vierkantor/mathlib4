@@ -16,9 +16,11 @@ public import Mathlib.Algebra.Order.Ring.Synonym
 
 import Mathlib.Tactic.Tauto
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lemmas about division (semi)rings and (semi)fields
-
 -/
 
 public section
@@ -293,7 +295,9 @@ protected abbrev field [Field L] (zero : f 0 = 0) (one : f 1 = 1)
 
 end Function.Injective
 
-/-! ### Order dual -/
+/-!
+# Order dual
+-/
 
 namespace OrderDual
 
@@ -310,7 +314,9 @@ end OrderDual
 
 @[simp] lemma ofDual_ratCast [RatCast K] (n : ℚ) : (ofDual n : K) = n := rfl
 
-/-! ### Lexicographic order -/
+/-!
+# Lexicographic order
+-/
 
 namespace Lex
 

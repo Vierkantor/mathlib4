@@ -8,11 +8,15 @@ module
 public import Mathlib.Tactic.Ring
 public import Mathlib.Data.PNat.Prime
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Euclidean algorithm for ℕ
 
 This file sets up a version of the Euclidean algorithm that only works with natural numbers.
 Given `0 < a, b`, it computes the unique `(w, x, y, z, d)` such that the following identities hold:
+
 * `a = (w + x) d`
 * `b = (y + z) d`
 * `w * z = x * y + 1`

@@ -11,6 +11,9 @@ public import Mathlib.Algebra.CharP.CharAndCard
 
 import Mathlib.NumberTheory.MulChar.Lemmas
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Gauss sums
 
@@ -22,7 +25,7 @@ character of a finite field and prove some results about them.
 Let `R` be a finite commutative ring and let `R'` be another commutative ring.
 If `χ` is a multiplicative character `R → R'` (type `MulChar R R'`) and `ψ`
 is an additive character `R → R'` (type `AddChar R R'`, which abbreviates
-`(Multiplicative R) →* R'`), then the *Gauss sum* of `χ` and `ψ` is `∑ a, χ a * ψ a`.
+`(Multiplicative R) →* R'`), then the _Gauss sum_ of `χ` and `ψ` is `∑ a, χ a * ψ a`.
 
 ## Main results
 
@@ -65,7 +68,7 @@ variable {R : Type u} [CommRing R] [Fintype R]
 variable {R' : Type v} [CommRing R']
 
 /-!
-### Definition and first properties
+# Definition and first properties
 -/
 
 /-- Definition of the Gauss sum associated to a multiplicative and an additive character. -/
@@ -96,7 +99,7 @@ lemma star_gaussSum_eq (χ : MulChar R ℂ) (ψ : AddChar R ℂ) :
 end GaussSumDef
 
 /-!
-### Gauss sums of trivial characters
+# Gauss sums of trivial characters
 -/
 
 section GaussSumTrivial
@@ -139,7 +142,7 @@ theorem gaussSum_one_left {ψ : AddChar R R'} (hψ : ψ ≠ 1) :
 end GaussSumTrivialField
 
 /-!
-### The product of two Gauss sums
+# The product of two Gauss sums
 -/
 
 section GaussSumProd
@@ -230,7 +233,7 @@ theorem gaussSum_sq {χ : MulChar R R'} (hχ₁ : χ ≠ 1) (hχ₂ : IsQuadrati
 end GaussSumProd
 
 /-!
-### Gauss sums and Frobenius
+# Gauss sums and Frobenius
 -/
 
 section gaussSum_frob
@@ -273,7 +276,7 @@ theorem MulChar.IsQuadratic.gaussSum_frob_iter (n : ℕ) (hp : IsUnit (p : R)) {
 end gaussSum_frob
 
 /-!
-### Values of quadratic characters
+# Values of quadratic characters
 -/
 
 section GaussSumValues
@@ -323,7 +326,7 @@ end GaussSumValues
 section GaussSumTwo
 
 /-!
-### The quadratic character of 2
+# The quadratic character of 2
 
 This section proves the following result.
 

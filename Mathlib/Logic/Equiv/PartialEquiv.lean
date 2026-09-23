@@ -10,6 +10,9 @@ public import Mathlib.Logic.Equiv.Defs
 public import Mathlib.Tactic.Core
 public import Mathlib.Tactic.Attr.Core
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Partial equivalences
 
@@ -39,12 +42,14 @@ As for equivs, we register a coercion to functions and use it in our simp normal
 ## Implementation notes
 
 There are at least three possible implementations of partial equivalences:
+
 * equivs on subtypes
 * pairs of functions taking values in `Option α` and `Option β`, equal to none where the partial
   equivalence is not defined
 * pairs of functions defined everywhere, keeping the source and target as additional data
 
 Each of these implementations has pros and cons.
+
 * When dealing with subtypes, one still need to define additional API for composition and
   restriction of domains. Checking that one always belongs to the right subtype makes things very
   tedious, and leads quickly to DTT hell (as the subtype `u ∩ v` is not the "same" as `v ∩ u`, for
@@ -66,7 +71,6 @@ Each of these implementations has pros and cons.
 
 If a lemma deals with the intersection of a set with either source or target of a `PartialEquiv`,
 then it should use `e.source ∩ s` or `e.target ∩ t`, not `s ∩ e.source` or `t ∩ e.target`.
-
 -/
 
 @[expose] public section
@@ -157,7 +161,9 @@ protected def symm : PartialEquiv β α where
 instance : CoeFun (PartialEquiv α β) fun _ => α → β :=
   ⟨PartialEquiv.toFun⟩
 
-/-- See Note [custom simps projection] -/
+/--
+See Note \[custom simps projection\]
+-/
 def Simps.symm_apply (e : PartialEquiv α β) : β → α :=
   e.symm
 

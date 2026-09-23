@@ -11,6 +11,9 @@ public import Mathlib.Analysis.Convex.Function
 public import Mathlib.Analysis.LocallyConvex.Basic
 public import Mathlib.Basic.Real.Pointwise
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Seminorms
 
@@ -23,13 +26,14 @@ convex if and only if its topology is induced by a family of seminorms.
 ## Main declarations
 
 For a module over a normed ring:
+
 * `Seminorm`: A function to the reals that is positive-semidefinite, absolutely homogeneous, and
   subadditive.
 * `normSeminorm 𝕜 E`: The norm on `E` as a seminorm.
 
 ## References
 
-* [H. H. Schaefer, *Topological Vector Spaces*][schaefer1966]
+* ‍\[H. H. Schaefer, _Topological Vector Spaces_\]\[schaefer1966\]
 
 ## Tags
 
@@ -469,21 +473,24 @@ theorem smul_inf [SMul R ℝ] [SMul R ℝ≥0] [IsScalarTower R ℝ≥0 ℝ] (r 
 section Classical
 
 open scoped Classical in
-/-- We define the supremum of an arbitrary subset of `Seminorm 𝕜 E` as follows:
-* if `s` is `BddAbove` *as a set of functions `E → ℝ`* (that is, if `s` is pointwise bounded
+/--
+We define the supremum of an arbitrary subset of `Seminorm 𝕜 E` as follows:
+
+* if `s` is `BddAbove` _as a set of functions `E → ℝ`_ (that is, if `s` is pointwise bounded
   above), we take the pointwise supremum of all elements of `s`, and we prove that it is indeed a
   seminorm.
 * otherwise, we take the zero seminorm `⊥`.
 
 There are two things worth mentioning here:
-* First, it is not trivial at first that `s` being bounded above *by a function* implies
-  being bounded above *as a seminorm*. We show this in `Seminorm.bddAbove_iff` by using
+
+* First, it is not trivial at first that `s` being bounded above _by a function_ implies
+  being bounded above _as a seminorm_. We show this in `Seminorm.bddAbove_iff` by using
   that the `Sup s` as defined here is then a bounding seminorm for `s`. So it is important to make
   the case disjunction on `BddAbove ((↑) '' s : Set (E → ℝ))` and not `BddAbove s`.
 * Since the pointwise `Sup` already gives `0` at points where a family of functions is
   not bounded above, one could hope that just using the pointwise `Sup` would work here, without the
   need for an additional case disjunction. As discussed on Zulip, this doesn't work because this can
-  give a function which does *not* satisfy the seminorm axioms (typically sub-additivity).
+  give a function which does _not_ satisfy the seminorm axioms (typically sub-additivity).
 -/
 noncomputable instance instSupSet : SupSet (Seminorm 𝕜 E) where
   sSup s :=
@@ -588,7 +595,9 @@ end Classical
 
 end NormedField
 
-/-! ### Seminorm ball -/
+/-!
+# Seminorm ball
+-/
 
 
 section SeminormedRing
@@ -1058,7 +1067,9 @@ theorem restrictScalars_closedBall (p : Seminorm 𝕜' E) :
 
 end RestrictScalars
 
-/-! ### Continuity criteria for seminorms -/
+/-!
+# Continuity criteria for seminorms
+-/
 
 
 section Continuity
@@ -1066,9 +1077,11 @@ section Continuity
 variable [NontriviallyNormedField 𝕜] [SeminormedRing 𝕝] [AddCommGroup E] [Module 𝕜 E]
 variable [Module 𝕝 E]
 
-/-- A seminorm is continuous at `0` if `p.closedBall 0 r ∈ 𝓝 0` for *all* `r > 0`.
+/--
+A seminorm is continuous at `0` if `p.closedBall 0 r ∈ 𝓝 0` for _all_ `r > 0`.
 Over a `NontriviallyNormedField` it is actually enough to check that this is true
-for *some* `r`, see `Seminorm.continuousAt_zero'`. -/
+for _some_ `r`, see `Seminorm.continuousAt_zero'`.
+-/
 theorem continuousAt_zero_of_forall' [TopologicalSpace E] {p : Seminorm 𝕝 E}
     (hp : ∀ r > 0, p.closedBall 0 r ∈ (𝓝 0 : Filter E)) :
     ContinuousAt p 0 := by
@@ -1085,9 +1098,11 @@ theorem continuousAt_zero' [TopologicalSpace E] [ContinuousConstSMul 𝕜 E] {p 
   grw [← hk]
   rwa [← set_smul_mem_nhds_zero_iff (norm_pos_iff.1 hk₀), smul_closedBall_zero hk₀] at hp
 
-/-- A seminorm is continuous at `0` if `p.ball 0 r ∈ 𝓝 0` for *all* `r > 0`.
+/--
+A seminorm is continuous at `0` if `p.ball 0 r ∈ 𝓝 0` for _all_ `r > 0`.
 Over a `NontriviallyNormedField` it is actually enough to check that this is true
-for *some* `r`, see `Seminorm.continuousAt_zero'`. -/
+for _some_ `r`, see `Seminorm.continuousAt_zero'`.
+-/
 theorem continuousAt_zero_of_forall [TopologicalSpace E] {p : Seminorm 𝕝 E}
     (hp : ∀ r > 0, p.ball 0 r ∈ (𝓝 0 : Filter E)) :
     ContinuousAt p 0 :=
@@ -1113,9 +1128,11 @@ protected theorem continuous_of_continuousAt_zero [TopologicalSpace E] [IsTopolo
   have : IsUniformAddGroup E := isUniformAddGroup_of_addCommGroup
   exact (Seminorm.uniformContinuous_of_continuousAt_zero hp).continuous
 
-/-- A seminorm is uniformly continuous if `p.ball 0 r ∈ 𝓝 0` for *all* `r > 0`.
+/--
+A seminorm is uniformly continuous if `p.ball 0 r ∈ 𝓝 0` for _all_ `r > 0`.
 Over a `NontriviallyNormedField` it is actually enough to check that this is true
-for *some* `r`, see `Seminorm.uniformContinuous`. -/
+for _some_ `r`, see `Seminorm.uniformContinuous`.
+-/
 protected theorem uniformContinuous_of_forall [UniformSpace E] [IsUniformAddGroup E]
     {p : Seminorm 𝕝 E} (hp : ∀ r > 0, p.ball 0 r ∈ (𝓝 0 : Filter E)) :
     UniformContinuous p :=
@@ -1126,9 +1143,11 @@ protected theorem uniformContinuous [UniformSpace E] [IsUniformAddGroup E]
     UniformContinuous p :=
   Seminorm.uniformContinuous_of_continuousAt_zero (continuousAt_zero hp)
 
-/-- A seminorm is uniformly continuous if `p.closedBall 0 r ∈ 𝓝 0` for *all* `r > 0`.
+/--
+A seminorm is uniformly continuous if `p.closedBall 0 r ∈ 𝓝 0` for _all_ `r > 0`.
 Over a `NontriviallyNormedField` it is actually enough to check that this is true
-for *some* `r`, see `Seminorm.uniformContinuous'`. -/
+for _some_ `r`, see `Seminorm.uniformContinuous'`.
+-/
 protected theorem uniformContinuous_of_forall' [UniformSpace E] [IsUniformAddGroup E]
     {p : Seminorm 𝕝 E} (hp : ∀ r > 0, p.closedBall 0 r ∈ (𝓝 0 : Filter E)) :
     UniformContinuous p :=
@@ -1139,9 +1158,11 @@ protected theorem uniformContinuous' [UniformSpace E] [IsUniformAddGroup E]
     (hp : p.closedBall 0 r ∈ (𝓝 0 : Filter E)) : UniformContinuous p :=
   Seminorm.uniformContinuous_of_continuousAt_zero (continuousAt_zero' hp)
 
-/-- A seminorm is continuous if `p.ball 0 r ∈ 𝓝 0` for *all* `r > 0`.
+/--
+A seminorm is continuous if `p.ball 0 r ∈ 𝓝 0` for _all_ `r > 0`.
 Over a `NontriviallyNormedField` it is actually enough to check that this is true
-for *some* `r`, see `Seminorm.continuous`. -/
+for _some_ `r`, see `Seminorm.continuous`.
+-/
 protected theorem continuous_of_forall [TopologicalSpace E] [IsTopologicalAddGroup E]
     {p : Seminorm 𝕝 E} (hp : ∀ r > 0, p.ball 0 r ∈ (𝓝 0 : Filter E)) :
     Continuous p :=
@@ -1157,9 +1178,11 @@ protected theorem continuous_iff [TopologicalSpace E] [IsTopologicalAddGroup E]
     Continuous p ↔ p.ball 0 r ∈ 𝓝 0 :=
   ⟨fun H ↦ p.ball_zero_eq ▸ (H.tendsto' 0 0 (map_zero p)).eventually_lt_const hr, p.continuous⟩
 
-/-- A seminorm is continuous if `p.closedBall 0 r ∈ 𝓝 0` for *all* `r > 0`.
+/--
+A seminorm is continuous if `p.closedBall 0 r ∈ 𝓝 0` for _all_ `r > 0`.
 Over a `NontriviallyNormedField` it is actually enough to check that this is true
-for *some* `r`, see `Seminorm.continuous'`. -/
+for _some_ `r`, see `Seminorm.continuous'`.
+-/
 protected theorem continuous_of_forall' [TopologicalSpace E] [IsTopologicalAddGroup E]
     {p : Seminorm 𝕝 E} (hp : ∀ r > 0, p.closedBall 0 r ∈ (𝓝 0 : Filter E)) :
     Continuous p :=

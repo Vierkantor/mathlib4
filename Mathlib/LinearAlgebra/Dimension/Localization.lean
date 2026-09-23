@@ -12,13 +12,16 @@ public import Mathlib.LinearAlgebra.LinearIndependent.Algebra
 public import Mathlib.RingTheory.Localization.BaseChange
 public import Mathlib.RingTheory.OreLocalization.OreSet
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Rank of localization
 
 ## Main statements
 
-- `IsLocalizedModule.lift_rank_eq`: `rank_Rₚ Mₚ = rank R M`.
-- `rank_quotient_add_rank_of_isDomain`: The **rank-nullity theorem** for commutative domains.
+* `IsLocalizedModule.lift_rank_eq`: `rank_Rₚ Mₚ = rank R M`.
+* `rank_quotient_add_rank_of_isDomain`: The *rank-nullity theorem* for commutative domains.
 -/
 
 public section
@@ -265,8 +268,10 @@ section Ring
 
 variable {R} [Ring R] [IsDomain R]
 
-/-- A domain that is not (left) Ore is of infinite rank.
-See [cohn_1995] Proposition 1.3.6 -/
+/--
+A domain that is not (left) Ore is of infinite rank.
+See \[cohn\_1995\] Proposition 1.3.6
+-/
 lemma aleph0_le_rank_of_isEmpty_oreSet (hS : IsEmpty (OreLocalization.OreSet R⁰)) :
     ℵ₀ ≤ Module.rank R R := by
   rw [← not_nonempty_iff, OreLocalization.nonempty_oreSet_iff_of_noZeroDivisors] at hS

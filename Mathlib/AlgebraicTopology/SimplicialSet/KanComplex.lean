@@ -9,6 +9,9 @@ public import Mathlib.AlgebraicTopology.ModelCategory.IsCofibrant
 public import Mathlib.AlgebraicTopology.SimplicialSet.CategoryWithFibrations
 public import Mathlib.AlgebraicTopology.SimplicialSet.Subcomplex
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Kan complexes
 
@@ -21,8 +24,7 @@ we show that every Kan complex is a quasicategory.
 
 ## TODO
 
-- Show that the singular simplicial set of a topological space is a Kan complex.
-
+* Show that the singular simplicial set of a topological space is a Kan complex.
 -/
 
 public section

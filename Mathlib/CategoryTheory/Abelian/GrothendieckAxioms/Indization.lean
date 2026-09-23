@@ -12,6 +12,9 @@ public import Mathlib.CategoryTheory.Limits.Indization.Category
 public import Mathlib.CategoryTheory.Generator.Indization
 public import Mathlib.CategoryTheory.Abelian.GrothendieckCategory.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # AB axioms in the category of ind-objects
 

@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.Complex.Exponential
 public import Mathlib.Data.EReal.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Extended Nonnegative Real Exponential
 
@@ -16,14 +19,17 @@ to the extended reals `EReal`. The function takes values
 in the extended nonnegative reals `ℝ≥0∞`, with `exp ⊥ = 0` and `exp ⊤ = ⊤`.
 
 ## Main Definitions
-- `EReal.exp`: The extension of the real exponential to `EReal`.
+
+* `EReal.exp`: The extension of the real exponential to `EReal`.
 
 ## Main Results
-- `EReal.exp_strictMono`: `exp` is increasing;
-- `EReal.exp_neg`, `EReal.exp_add`: `exp` satisfies
+
+* `EReal.exp_strictMono`: `exp` is increasing;
+* `EReal.exp_neg`, `EReal.exp_add`: `exp` satisfies
   the identities `exp (-x) = (exp x)⁻¹` and `exp (x + y) = exp x * exp y`.
 
 ## Tags
+
 ENNReal, EReal, exponential
 -/
 
@@ -32,7 +38,9 @@ namespace EReal
 
 open scoped ENNReal
 
-/-! ### Definition -/
+/-!
+# Definition
+-/
 section Definition
 
 /-- Exponential as a function from `EReal` to `ℝ≥0∞`. -/
@@ -52,7 +60,9 @@ def exp (x : EReal) : ℝ≥0∞ := EReal.rec 0 (fun x => ENNReal.ofReal (Real.e
 
 end Definition
 
-/-! ### Monotonicity -/
+/-!
+# Monotonicity
+-/
 section Monotonicity
 
 @[gcongr]
@@ -89,7 +99,9 @@ lemma exp_monotone : Monotone exp := exp_strictMono.monotone
 
 end Monotonicity
 
-/-! ### Algebraic properties -/
+/-!
+# Algebraic properties
+-/
 
 section Morphism
 

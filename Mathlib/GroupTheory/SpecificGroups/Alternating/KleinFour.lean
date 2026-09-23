@@ -9,7 +9,11 @@ public import Mathlib.GroupTheory.SpecificGroups.Alternating.Centralizer
 public import Mathlib.GroupTheory.SpecificGroups.KleinFour
 public import Mathlib.GroupTheory.Sylow
 
-/-! # The Klein Four subgroup of an alternating group on 4 letters
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# The Klein Four subgroup of an alternating group on 4 letters
 
 Let `α` be a finite type such that `Nat.card α = 4`.
 
@@ -20,13 +24,10 @@ Let `α` be a finite type such that `Nat.card α = 4`.
 
 * `alternatingGroup.kleinFour_isKleinFour`: `alternatingGroup.kleinFour α` satisfies `IsKleinFour`.
   (When `4 < Nat.card α`, it is equal to `⊤`, when `Nat.card α < 4`, it is trivial.)
-
 * `alternatingGroup.two_sylow_eq_kleinFour_of_card_eq_four`:
   All `2`-sylow subgroups of `alternatingGroup α` are equal to `kleinFour α`.
-
 * `alternatingGroup.characteristic_kleinFour`:
   the subgroup `alternatingGroup.kleinFour α` is characteristic.
-
 * `alternatingGroup.kleinFour_eq_commutator`:
   the subgroup `alternatingGroup.kleinFour α` is the commutator subgroup of `alternatingGroup α`.
   (When `4 < Nat.card α`, the commutator subgroup of `alternatingGroup α` is equal to `⊤`;
@@ -48,7 +49,6 @@ and then characteristic.
 
 Prove `alternatingGroup.kleinFour α = commutator (alternatingGroup α)`
 without any assumption on `Nat.card α`.
-
 -/
 
 @[expose] public section

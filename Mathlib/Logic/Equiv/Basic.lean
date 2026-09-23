@@ -11,6 +11,9 @@ public import Mathlib.Logic.Function.Conjugate
 public import Mathlib.Tactic.Lift
 public import Mathlib.Data.Int.Notation
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Equivalence between types
 

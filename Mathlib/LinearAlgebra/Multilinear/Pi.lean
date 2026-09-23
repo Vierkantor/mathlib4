@@ -8,6 +8,9 @@ module
 public import Mathlib.LinearAlgebra.Pi
 public import Mathlib.LinearAlgebra.Multilinear.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Interactions between (dependent) functions and multilinear maps
 
@@ -18,8 +21,8 @@ public import Mathlib.LinearAlgebra.Multilinear.Basic
 
   This is useful because all the intermediate results are bundled:
 
-  - `MultilinearMap.piFamily f` is a `MultilinearMap` operating on functions `x`.
-  - `MultilinearMap.piFamilyₗ` is a `LinearMap`, linear in the family of multilinear maps `f`.
+  * `MultilinearMap.piFamily f` is a `MultilinearMap` operating on functions `x`.
+  * `MultilinearMap.piFamilyₗ` is a `LinearMap`, linear in the family of multilinear maps `f`.
 -/
 
 @[expose] public section

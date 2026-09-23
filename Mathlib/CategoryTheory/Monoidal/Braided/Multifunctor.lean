@@ -8,15 +8,16 @@ module
 public import Mathlib.CategoryTheory.Monoidal.Braided.Basic
 public import Mathlib.CategoryTheory.Functor.CurryingThree
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Constructing braided categories from natural transformations between multifunctors
 
 This file provides an alternative constructor for braided categories, given a braiding
 `β : -₁ ⊗ -₂ ≅ -₂ ⊗ -₁` as a natural isomorphism between bifunctors. The hexagon identities are
 phrased as equalities of natural transformations between trifunctors
 `(-₁ ⊗ -₂) ⊗ -₃ ⟶ -₂ ⊗ (-₃ ⊗ -₁)` and `-₁ ⊗ (-₂ ⊗ -₃) ⟶ (-₃ ⊗ -₁) ⊗ -₂`.
-
 -/
 
 set_option backward.defeqAttrib.useBackward true
@@ -97,8 +98,7 @@ example : (bifunctorComp₁₂ (curriedTensor C) (curriedTensor C)) =
 namespace Forward
 
 /-!
-
-### The forward hexagon identity
+# The forward hexagon identity
 
 Given a braiding in the form of a natural isomorphism of bifunctors
 `β : curriedTensor C ≅ (curriedTensor C).flip` (i.e. `(β.app X₁).app X₂ : X₁ ⊗ X₂ ≅ X₂ ⊗ X₁`),
@@ -159,8 +159,7 @@ end Forward
 namespace Reverse
 
 /-!
-
-### The reverse hexagon identity
+# The reverse hexagon identity
 
 Given a braiding in the form of a natural isomorphism of bifunctors
 `β : curriedTensor C ≅ (curriedTensor C).flip` (i.e. `(β.app X₁).app X₂ : X₁ ⊗ X₂ ≅ X₂ ⊗ X₁`),

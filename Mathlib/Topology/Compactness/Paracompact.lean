@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.Option.Basic
 public import Mathlib.Topology.Separation.Regular
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Paracompact topological spaces
 
@@ -15,7 +18,7 @@ A topological space `X` is said to be paracompact if every open covering of `X` 
 finite refinement.
 
 The definition requires that each set of the new covering is a subset of one of the sets of the
-initial covering. However, one can ensure that each open covering `s : ι → Set X` admits a *precise*
+initial covering. However, one can ensure that each open covering `s : ι → Set X` admits a _precise_
 locally finite refinement, i.e., an open covering `t : ι → Set X` with the same index set such that
 `∀ i, t i ⊆ s i`, see lemma `precise_refinement`. We also provide a convenience lemma
 `precise_refinement_set` that deals with open coverings of a closed subset of `X` instead of the
@@ -24,16 +27,13 @@ whole space.
 We also prove the following facts.
 
 * Every compact space is paracompact, see instance `paracompact_of_compact`.
-
 * A locally compact sigma compact Hausdorff space is paracompact, see instance
   `paracompact_of_locallyCompact_sigmaCompact`. Moreover, we can choose a locally finite
   refinement with sets in a given collection of filter bases of `𝓝 x`, `x : X`, see
   `refinement_of_locallyCompact_sigmaCompact_of_nhds_basis`. For example, in a proper metric space
   every open covering `⋃ i, s i` admits a refinement `⋃ i, Metric.ball (c i) (r i)`.
-
 * Every paracompact Hausdorff space is normal. This statement is not an instance to avoid loops in
   the instance graph.
-
 * Every `EMetricSpace` is a paracompact space, see instance `EMetric.instParacompactSpace` in
   `Topology/EMetricSpace/Paracompact`.
 
@@ -55,11 +55,13 @@ open Filter Topology
 
 universe u v w
 
-/-- A topological space is called paracompact, if every open covering of this space admits a locally
+/--
+A topological space is called paracompact, if every open covering of this space admits a locally
 finite refinement. We use the same universe for all types in the definition to avoid creating a
 class like `ParacompactSpace.{u v}`. Due to lemma `precise_refinement` below, every open covering
-`s : α → Set X` indexed on `α : Type v` has a *precise* locally finite refinement, i.e., a locally
-finite refinement `t : α → Set X` indexed on the same type such that each `∀ i, t i ⊆ s i`. -/
+`s : α → Set X` indexed on `α : Type v` has a _precise_ locally finite refinement, i.e., a locally
+finite refinement `t : α → Set X` indexed on the same type such that each `∀ i, t i ⊆ s i`.
+-/
 class ParacompactSpace (X : Type v) [TopologicalSpace X] : Prop where
   /-- Every open cover of a paracompact space assumes a locally finite refinement. -/
   locallyFinite_refinement :
@@ -69,8 +71,10 @@ class ParacompactSpace (X : Type v) [TopologicalSpace X] : Prop where
 
 variable {ι : Type u} {X : Type v} {Y : Type w} [TopologicalSpace X] [TopologicalSpace Y]
 
-/-- Any open cover of a paracompact space has a locally finite *precise* refinement, that is,
-one indexed on the same type with each open set contained in the corresponding original one. -/
+/--
+Any open cover of a paracompact space has a locally finite _precise_ refinement, that is,
+one indexed on the same type with each open set contained in the corresponding original one.
+-/
 theorem precise_refinement [ParacompactSpace X] (u : ι → Set X) (uo : ∀ a, IsOpen (u a))
     (uc : ⋃ i, u i = univ) : ∃ v : ι → Set X, (∀ a, IsOpen (v a)) ∧ ⋃ i, v i = univ ∧
     LocallyFinite v ∧ ∀ a, v a ⊆ u a := by

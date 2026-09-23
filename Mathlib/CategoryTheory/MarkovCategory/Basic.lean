@@ -8,6 +8,9 @@ module
 public import Mathlib.CategoryTheory.CopyDiscardCategory.Basic
 public import Mathlib.CategoryTheory.Limits.Shapes.IsTerminal
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Markov Categories
 
@@ -32,9 +35,10 @@ morphism, a distinguishing feature of Markov categories in categorical probabili
 
 ## References
 
-* [Cho and Jacobs, *Disintegration and Bayesian inversion via string diagrams*][cho_jacobs_2019]
-* [Fritz, *A synthetic approach to Markov kernels, conditional independence
-  and theorems on sufficient statistics*][fritz2020]
+* ‍\[Cho and Jacobs, _Disintegration and Bayesian inversion via string
+  diagrams_\]\[cho\_jacobs\_2019\]
+* ‍\[Fritz, _A synthetic approach to Markov kernels, conditional independence
+  and theorems on sufficient statistics_\]\[fritz2020\]
 
 ## Tags
 

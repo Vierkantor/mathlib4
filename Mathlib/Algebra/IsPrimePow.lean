@@ -12,6 +12,9 @@ public import Mathlib.Data.Nat.Log
 public import Mathlib.Data.Nat.Prime.Pow
 public import Mathlib.Tactic.CrossRefAttribute
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Prime powers
 

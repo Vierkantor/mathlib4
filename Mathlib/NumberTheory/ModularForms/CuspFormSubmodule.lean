@@ -13,6 +13,9 @@ public import Mathlib.Analysis.SpecialFunctions.Gamma.Basic
 public import Mathlib.Data.Nat.Choose.Multinomial
 public import Mathlib.NumberTheory.ArithmeticFunction.VonMangoldt
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cusp form submodule and IsCuspForm predicate
 

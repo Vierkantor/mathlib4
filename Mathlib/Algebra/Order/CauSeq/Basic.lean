@@ -14,6 +14,9 @@ public import Mathlib.Data.Setoid.Basic
 public import Mathlib.GroupTheory.GroupAction.Ring
 public import Mathlib.Tactic.GCongr
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cauchy sequences
 

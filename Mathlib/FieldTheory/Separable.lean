@@ -9,8 +9,10 @@ public import Mathlib.Algebra.Squarefree.Basic
 public import Mathlib.FieldTheory.IntermediateField.Basic
 public import Mathlib.RingTheory.PowerBasis
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Separable polynomials
 
 We define a polynomial to be separable if it is coprime with its derivative. We prove basic
@@ -23,7 +25,6 @@ properties about separable polynomials here.
   over `K` is separable.
 * `Algebra.IsSeparable K L`: `L` is separable over `K` iff every element in `L` is separable
   over `K`.
-
 -/
 
 @[expose] public section
@@ -531,7 +532,7 @@ variable (F L K : Type*) [CommRing F] [Ring K] [Algebra F K]
 
 variable {K} in
 /--
-An element `x` of an algebra `K` over a commutative ring `F` is said to be *separable*, if its
+An element `x` of an algebra `K` over a commutative ring `F` is said to be _separable_, if its
 minimal polynomial over `K` is separable. Note that the minimal polynomial of any element not
 integral over `F` is defined to be `0`, which is not a separable polynomial.
 -/

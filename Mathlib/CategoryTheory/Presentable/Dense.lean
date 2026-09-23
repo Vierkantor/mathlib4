@@ -10,6 +10,9 @@ public import Mathlib.CategoryTheory.Functor.KanExtension.Dense
 public import Mathlib.CategoryTheory.Presentable.LocallyPresentable
 public import Mathlib.CategoryTheory.Presentable.Finite
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `κ`-presentable objects form a dense subcategory
 
@@ -17,7 +20,6 @@ In a `κ`-accessible category `C`, the inclusion of the full subcategory
 of `κ`-presentable objects is a dense functor. This expresses canonically
 any object `X : C` as a colimit of `κ`-presentable objects, and we show
 that this is a `κ`-filtered colimit.
-
 -/
 
 public section

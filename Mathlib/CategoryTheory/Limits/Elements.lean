@@ -12,6 +12,9 @@ public import Mathlib.CategoryTheory.Limits.Preserves.Limits
 public import Mathlib.CategoryTheory.Limits.Shapes.Terminal
 public import Mathlib.CategoryTheory.ConcreteCategory.Elementwise
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Limits in the category of elements
 
@@ -21,8 +24,7 @@ the category of elements of `A` has limits of shape `I` and the forgetful functo
 
 ## Further results
 
-- If `A` is (co)representable, then `A.Elements` has an initial object.
-
+* If `A` is (co)representable, then `A.Elements` has an initial object.
 -/
 
 @[expose] public section

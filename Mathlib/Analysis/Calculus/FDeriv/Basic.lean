@@ -12,6 +12,10 @@ public import Mathlib.Analysis.Calculus.TangentCone.Basic
 import Mathlib.Analysis.Asymptotics.Lemmas
 import Mathlib.Analysis.Calculus.TangentCone.DimOne
 
+set_option doc.verso true
+set_option doc.verso.module false
+set_option doc.verso.suggestions false
+
 /-!
 # The Fréchet derivative: basic properties
 

@@ -14,6 +14,9 @@ public import Mathlib.Tactic.CategoryTheory.Elementwise
 public import Mathlib.Topology.Homeomorph.Lemmas
 public import Mathlib.Tactic.ApplyFun
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Products and coproducts in the category of topological spaces
 -/

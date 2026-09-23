@@ -12,6 +12,9 @@ public import Mathlib.Analysis.Calculus.LineDeriv.Basic
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Displacement is at most the integral of the speed
 
@@ -170,9 +173,11 @@ lemma norm_sub_le_mul_volume_of_norm_fderiv_le (hs : IsOpen s) (hf : DiffContOnC
     simp
   · simp +contextual [(hf.differentiableAt hs <| hmem_s _ ‹_›).lineDeriv_eq_fderiv]
 
-/-- Let `f : E → F` be a function differentiable in a neighborhood of `a`.
-If $Df(x) = O(‖x - a‖ ^ r)$ as `x → a`, where `r ≥ 0`,
-then $f(x) - f(a) = O(‖x - a‖ ^ {r + 1})$ as `x → a`. -/
+/--
+Let `f : E → F` be a function differentiable in a neighborhood of `a`.
+If $`Df(x) = O(‖x - a‖ ^ r)` as `x → a`, where `r ≥ 0`,
+then $`f(x) - f(a) = O(‖x - a‖ ^ {r + 1})` as `x → a`.
+-/
 theorem sub_isBigO_norm_rpow_add_one_of_fderiv (hr : 0 ≤ r)
     (hdf : ∀ᶠ x in 𝓝 a, DifferentiableAt ℝ f x) (hderiv : fderiv ℝ f =O[𝓝 a] (‖· - a‖ ^ r)) :
     (f · - f a) =O[𝓝 a] (‖· - a‖ ^ (r + 1)) := by
@@ -193,9 +198,11 @@ theorem sub_isBigO_norm_rpow_add_one_of_fderiv (hr : 0 ≤ r)
   · simp
   · simp [dist_eq_norm_sub]
 
-/-- Let `f : E → F` be a function differentiable in a neighborhood of `a`.
-If $Df(x) = O(‖x - a‖ ^ r)$ as `x → a`, where `r ≥ 0`, and `f a = 0`,
-then $f(x) = O(‖x - a‖ ^ {r + 1})$ as `x → a`. -/
+/--
+Let `f : E → F` be a function differentiable in a neighborhood of `a`.
+If $`Df(x) = O(‖x - a‖ ^ r)` as `x → a`, where `r ≥ 0`, and `f a = 0`,
+then $`f(x) = O(‖x - a‖ ^ {r + 1})` as `x → a`.
+-/
 theorem isBigO_norm_rpow_add_one_of_fderiv_of_apply_eq_zero (hr : 0 ≤ r)
     (hdf : ∀ᶠ x in 𝓝 a, DifferentiableAt ℝ f x) (hderiv : fderiv ℝ f =O[𝓝 a] (‖· - a‖ ^ r))
     (hf₀ : f a = 0) :

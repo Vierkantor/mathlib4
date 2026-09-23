@@ -15,7 +15,12 @@ public import Mathlib.RingTheory.Finiteness.Basic
 public import Mathlib.RingTheory.MvPolynomial.Basic
 public import Mathlib.Data.DFinsupp.Small
 
-/-! # Smallness properties of modules and algebras -/
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Smallness properties of modules and algebras
+-/
 
 public section
 

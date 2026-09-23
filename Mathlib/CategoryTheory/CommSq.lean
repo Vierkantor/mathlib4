@@ -7,6 +7,9 @@ module
 
 public import Mathlib.CategoryTheory.Comma.Arrow
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Commutative squares
 
@@ -22,7 +25,6 @@ as `IsPullback` and `IsPushout` in order to define pullback and pushout squares.
 ## Future work
 
 Refactor `LiftStruct` from `Arrow.lean` and lifting properties using `CommSq.lean`.
-
 -/
 
 @[expose] public section

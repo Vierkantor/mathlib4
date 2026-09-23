@@ -7,12 +7,13 @@ module
 
 public import Mathlib.Order.Disjoint
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # The order on `Prop`
 
 Instances on `Prop` such as `DistribLattice`, `BoundedOrder`, `LinearOrder`.
-
 -/
 
 public section

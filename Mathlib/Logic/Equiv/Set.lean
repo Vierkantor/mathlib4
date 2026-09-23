@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.Set.Function
 public import Mathlib.Logic.Equiv.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Equivalences and sets
 

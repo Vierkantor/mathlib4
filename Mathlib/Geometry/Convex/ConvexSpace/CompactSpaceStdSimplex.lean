@@ -9,9 +9,11 @@ public import Mathlib.Geometry.Convex.ConvexSpace.Topology
 public import Mathlib.Data.EReal.Operations
 public import Mathlib.Topology.MetricSpace.Bounded
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The standard simplex is compact
-
 -/
 
 public section

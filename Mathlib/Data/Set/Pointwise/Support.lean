@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.GroupWithZero.Action.Pointwise.Set
 public import Mathlib.Algebra.Notation.Support
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Support of a function composed with a scalar action
 
@@ -30,8 +33,10 @@ theorem mulSupport_comp_inv_smul [One γ] (c : α) (f : β → γ) :
   ext x
   simp only [mem_smul_set_iff_inv_smul_mem, mem_mulSupport]
 
-/-- Note: to_additive also automatically translates `SMul` to `VAdd`, so we give the additive
-version manually. -/
+/--
+Note: to\_additive also automatically translates `SMul` to `VAdd`, so we give the additive
+version manually.
+-/
 theorem support_comp_inv_smul [Zero γ] (c : α) (f : β → γ) :
     (support fun x ↦ f (c⁻¹ • x)) = c • support f := by
   ext x
@@ -48,8 +53,10 @@ theorem mulSupport_comp_inv_smul₀ [One γ] {c : α} (hc : c ≠ 0) (f : β →
   ext x
   simp only [mem_smul_set_iff_inv_smul_mem₀ hc, mem_mulSupport]
 
-/-- Note: to_additive also automatically translates `SMul` to `VAdd`, so we give the additive
-version manually. -/
+/--
+Note: to\_additive also automatically translates `SMul` to `VAdd`, so we give the additive
+version manually.
+-/
 theorem support_comp_inv_smul₀ [Zero γ] {c : α} (hc : c ≠ 0) (f : β → γ) :
     (support fun x ↦ f (c⁻¹ • x)) = c • support f := by
   ext x

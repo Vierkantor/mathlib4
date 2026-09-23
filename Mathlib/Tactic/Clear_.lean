@@ -9,7 +9,12 @@ public import Mathlib.Init
 public meta import Lean.Meta.Tactic.Clear
 public meta import Lean.Elab.Tactic.Basic
 
-/-! # `clear_` tactic -/
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# `clear_` tactic
+-/
 
 public meta section
 

@@ -12,6 +12,9 @@ public meta import Std.Data.Iterators.Combinators.Zip
 public import Lean.Parser.Command
 meta import Std.Data.Iterators.Producers.Range
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The "DocString" style linter
 

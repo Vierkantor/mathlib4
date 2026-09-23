@@ -7,14 +7,17 @@ module
 
 public import Mathlib.Topology.Separation.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Symbolic dynamics on cancellative monoids
 
 This file develops a minimal API for symbolic dynamics over a
-**left-cancellative monoid** `G`—formally, a structure carrying `[Monoid G]`
+*left-cancellative monoid* `G`—formally, a structure carrying `[Monoid G]`
 and `[IsLeftCancelMul G]` (which becomes `[AddMonoid G]` and
 `[IsLeftCancelAdd G]` in the additive form). Throughout the documentation we use the
-**additive** notations, which are the most common in symbolic dynamics, although
+*additive* notations, which are the most common in symbolic dynamics, although
 all the notions introduced are defined in the multiplicative notations and adapted
 to the additive notation.
 
@@ -36,7 +39,7 @@ specialization.
 
 Some constructions, such as translating a finite pattern to occur at a point `v`,
 require solving equations of the form `w + v = h`. For this to have a unique
-solution `w` given `h` and `v`, we assume **left-cancellation**:
+solution `w` given `h` and `v`, we assume *left-cancellation*:
 if `v + a = v + b` then `a = b`. This allows us to define
 `Pattern.shift` (which shifts a pattern) without using inverses,
 so that the theory works not only for groups but also for cancellative monoids.
@@ -44,27 +47,27 @@ so that the theory works not only for groups but also for cancellative monoids.
 ## Main definitions
 
 * `shift g x` — left translation: in additive notation `(shift v x) u = x (v + u)` (using the
-**left** action of `G` on configurations).
+  *left* action of `G` on configurations).
 * `cylinder U x` — configurations agreeing with `x` on a finite set `U ⊆ G`.
 * `Pattern A G` — a configuration which takes
-default value outside of a finite support, together with this support.
+  default value outside of a finite support, together with this support.
 * `Pattern.occursInAt p x g` — occurrence of `p` in `x` at translate `g`.
 * `forbidden F` — configurations avoiding every pattern in `F`.
 * `Subshift A G` — closed, shift-invariant subsets of the full shift.
 * `MulSubshift.ofForbidden F` — the subshift defined by forbidding a family of patterns.
 * `subshift_of_finite_type F` — a subshift of finite type defined by a finite set of
-forbidden patterns.
+  forbidden patterns.
 * `languageOn X U` — the set of patterns of shape `U` obtained by restricting some `x ∈ X`.
 
 ## Design choice: ambient vs. inner (subshift-relative) viewpoint
 
-All core notions (shift, cylinder, occurrence, language, …) are defined **in the
-ambient full shift** `G → A`. A subshift is then a closed, invariant subset,
+All core notions (shift, cylinder, occurrence, language, …) are defined *in the
+ambient full shift* `G → A`. A subshift is then a closed, invariant subset,
 bundled as `Subshift A G`. Working inside a subshift is done by restriction.
 
-**Motivation.**
+*Motivation.*
 
-If cylinders and shifts were defined only *inside* a subshift, local ergonomics
+If cylinders and shifts were defined only _inside_ a subshift, local ergonomics
 would improve but global operations would become awkward. For instance, to prove
 that for finite shape `U`:
 
@@ -75,16 +78,16 @@ arise for intersections, factors, and products. By contrast, with ambient
 definitions these set-theoretic identities are tautological.
 Thus the file develops the theory ambiently, and subshifts reuse it by restriction.
 
-**Working inside a subshift.**
+*Working inside a subshift.*
 
-For `Y : Subshift A G`, cylinders and occurrence sets *inside `Y`* are simply
+For `Y : Subshift A G`, cylinders and occurrence sets _inside `Y`_ are simply
 preimages of the ambient ones under the inclusion `Y → (G → A)`. For example:
 
 `{ y : Y | ∀ i ∈ U, (y : G → A) i = (x : G → A) i } = (Subtype.val) ⁻¹' (cylinder U (x : G → A)).`
 
 Shift invariance guarantees that the ambient shift restricts to `Y`.
 
-**Ergonomics.**
+*Ergonomics.*
 
 Thin wrappers (e.g. `Subshift.shift`, `Subshift.cylinder`, `Subshift.languageOn`)
 may be added for convenience. They introduce no new theory and unfold to the
@@ -113,15 +116,18 @@ namespace SymbolicDynamics
 
 namespace FullShift
 
-/-! ## Full shift and shift action -/
+/-!
+# Full shift and shift action
+-/
 
 section ShiftDefinition
 
 variable {A G : Type*} [Monoid G]
 
-/-- The **left-translation shift** on configurations.
+/--
+The *left-translation shift* on configurations.
 
-We call *configuration* an element of `G → A`.
+We call _configuration_ an element of `G → A`.
 
 Given a configuration `x : G → A` and an element `g : G` of the monoid, the shifted configuration
 `mulShift g x` is defined by `(mulShift g x) h = x (g * h)`.
@@ -132,21 +138,24 @@ at position `h` in the shifted configuration is the value that was at position
 
 For example, if `G = ℤ` (with addition) and `A = {0, 1}`, then
 `mulShift 1 x` is the sequence obtained from `x` by shifting every symbol one
-step to the left. -/
-@[to_additive /-- The **left-translation shift** on configurations, in additive notation.
+step to the left.
+-/
+@[to_additive /--
+              The *left-translation shift* on configurations, in additive notation.
 
-We call *configuration* an element of `G → A`.
+              We call _configuration_ an element of `G → A`.
 
-Given a configuration `x : G → A` and an element `g : G` of the additive monoid,
+              Given a configuration `x : G → A` and an element `g : G` of the additive monoid,
 the shifted configuration `shift g x` is defined by `(shift g x) h = x (g + h)`.
 
-Intuitively, this moves the whole configuration "in the direction of `g`": the value
+              Intuitively, this moves the whole configuration "in the direction of `g`": the value
 at position `h` in the shifted configuration is the value that was at position
 `g + h` in the original one.
 
-For example, if `G = ℤ` and `A = {0, 1}`, then
+              For example, if `G = ℤ` and `A = {0, 1}`, then
 `shift 1 x` is the sequence obtained from `x` by shifting every symbol one
-step to the left. -/]
+step to the left.
+              -/]
 def mulShift (g : G) (x : G → A) : G → A :=
   fun h => x (g * h)
 
@@ -176,16 +185,19 @@ lemma continuous_mulShift (g : G) :
 
 end ShiftDefinition
 
-/-! ## Cylinders -/
+/-!
+# Cylinders
+-/
 
 section Cylinders
 
 variable {A G : Type*}
 
-/-- A *cylinder set* is the set of all configurations that agree with a given
+/--
+A _cylinder set_ is the set of all configurations that agree with a given
 reference configuration `x` on a fixed finite subset `U` of the index set `G`.
 
-The set `U` is called the *support* of the cylinder.
+The set `U` is called the _support_ of the cylinder.
 
 Intuitively, cylinders specify the "letters" on finitely many coordinates, while
 leaving all other coordinates free. For example, in the full shift `{0, 1}^ℤ`,
@@ -194,7 +206,8 @@ bi-infinite sequences of `0`s and `1`s whose entries on positions `0` and `1`
 respectively are `1` and `0`.
 
 When `A` has the discrete topology, cylinder sets form a basis of clopen sets
-for the product topology on `G → A`. -/
+for the product topology on `G → A`.
+-/
 def cylinder (U : Finset G) (x : G → A) : Set (G → A) :=
   { y | ∀ i ∈ U, y i = x i }
 
@@ -222,14 +235,19 @@ lemma isClosed_cylinder [T1Space A] (U : Finset G) (x : G → A) :
 
 end Cylinders
 
-/-! ## Patterns and occurrences -/
+/-!
+# Patterns and occurrences
+-/
 
-/-- A *subshift* on an alphabet `A` is a closed, shift-invariant subset of `G → A`. Formally, it is
+/--
+A _subshift_ on an alphabet `A` is a closed, shift-invariant subset of `G → A`. Formally, it is
 composed of:
+
 * `carrier`: the underlying set of allowed configurations.
 * `isClosed`: the set is topologically closed in `A^G`.
 * `mapsTo`: the set is invariant under all left-translation shifts
-  `(shift g)`. -/
+  `(shift g)`.
+-/
 structure Subshift (A : Type*) [TopologicalSpace A] (G : Type*) [AddMonoid G] where
   /-- The underlying set of configurations (additive monoid version). -/
   carrier : Set (G → A)
@@ -242,13 +260,16 @@ section MulSubshiftDef
 variable (A : Type*) [TopologicalSpace A]
 variable (G : Type*) [Monoid G]
 
-/-- A *subshift* on an alphabet `A` over a multiplicative monoid `G` is a closed,
+/--
+A _subshift_ on an alphabet `A` over a multiplicative monoid `G` is a closed,
 shift-invariant subset of `G → A`, where the shift is given by left-multiplication.
 Formally, it is composed of:
+
 * `carrier`: the underlying set of allowed configurations.
 * `isClosed`: the set is topologically closed in `A^G`.
 * `mapsTo`: the set is invariant under all left-translation shifts
-  `(mulShift g)`. -/
+  `(mulShift g)`.
+-/
 @[to_additive existing]
 structure MulSubshift where
   /-- The underlying set of configurations. -/
@@ -274,9 +295,11 @@ def mulFullShift (A G) [TopologicalSpace A] [Monoid G] : MulSubshift A G where
   isClosed := isClosed_univ
   mapsTo := fun _ _ _ => trivial
 
-/-- A *pattern* is a finite configuration in the full shift `A^G`.
+/--
+A _pattern_ is a finite configuration in the full shift `A^G`.
 
 It consists of:
+
 * a full configuration `config : G → A` in the full shift;
 * a finite subset `support : Finset G` of coordinates, called the support of `p`;
 * a proof `condition` that outside `support`, `config` takes the default value of `A`.
@@ -285,7 +308,8 @@ Intuitively, a pattern is a "partial configuration" specifying finitely many val
 a configuration in `G → A` (the rest being `default`).
 Patterns are the basic building blocks used to define subshifts via forbidden configurations.
 Note that each pattern corresponds to a cylinder, which is the set of configurations
-which agree with this pattern on its support. -/
+which agree with this pattern on its support.
+-/
 structure Pattern (A : Type*) (G : Type*) [Inhabited A] where
   /-- The full configuration in the full shift `A^G`. -/
   config : G → A
@@ -321,23 +345,27 @@ notion of "pattern occurrence" used to define subshifts via forbidden patterns. 
 def Pattern.mulOccursInAt (p : Pattern A G) (x : G → A) (g : G) : Prop :=
   ∀ (h) (_ : h ∈ p.support), x (g * h) = p.config h
 
-/-- `mulForbidden F` is the set of configurations that avoid every pattern in `F`.
+/--
+`mulForbidden F` is the set of configurations that avoid every pattern in `F`.
 
 Formally: `x ∈ mulForbidden F` if and only if for every pattern `p ∈ F` and every
 monoid element `g : G`, the pattern `p` does not occur in `x` at position `g`.
 
 Intuitively, `mulForbidden F` is the shift space defined by declaring the finite set
-(or family) of patterns `F` to be *forbidden*. A configuration belongs to the subshift if and only
-it avoids all the forbidden patterns. -/
+(or family) of patterns `F` to be _forbidden_. A configuration belongs to the subshift if and only
+it avoids all the forbidden patterns.
+-/
 @[to_additive forbidden
-/-- `forbidden F` is the set of configurations that avoid every pattern in `F`.
+/--
+`forbidden F` is the set of configurations that avoid every pattern in `F`.
 
 Formally: `x ∈ forbidden F` if and only if for every pattern `p ∈ F` and every
 monoid element `g : G`, the pattern `p` does not occur in `x` at position `g`.
 
 Intuitively, `forbidden F` is the shift space defined by declaring the finite set
-(or family) of patterns `F` to be *forbidden*. A configuration belongs to the subshift if and only
-it avoids all the forbidden patterns. -/]
+(or family) of patterns `F` to be _forbidden_. A configuration belongs to the subshift if and only
+it avoids all the forbidden patterns.
+-/]
 def mulForbidden (F : Set (Pattern A G)) : Set (G → A) :=
   { x | ∀ p ∈ F, ∀ g : G, ¬ p.mulOccursInAt x g }
 
@@ -348,28 +376,32 @@ section OccursInAt
 variable {A : Type*} [Inhabited A]
 variable {G : Type*} [Monoid G] [IsLeftCancelMul G]
 
-/-- Translate a finite pattern `p` so that it occurs at the translate `v`, before completing into
+/--
+Translate a finite pattern `p` so that it occurs at the translate `v`, before completing into
 a configuration.
 
 On input `h : G`, we proceed as follows:
+
 * if `h` lies in the left-translate of the support, i.e. `h ∈ p.support.image (v * ·)`,
   choose (noncomputably) `w ∈ p.support` with `v * w = h` and return `p.config w`;
 * otherwise return `default`.
 
-This definition does not assume left-cancellation; it only *chooses* a preimage.
+This definition does not assume left-cancellation; it only _chooses_ a preimage.
 Uniqueness (and the usual equations such as `Pattern.mulShift p v (v * w) = p.config w`)
 require a left-cancellation hypothesis and are proved in separate lemmas.
 -/
 @[to_additive
-/-- Translate a finite pattern `p` so that it occurs at the translate `v`, before completing into
+/--
+Translate a finite pattern `p` so that it occurs at the translate `v`, before completing into
 a configuration.
 
 On input `h : G`, we proceed as follows:
+
 * if `h` lies in the left-translate of the support, i.e. `h ∈ p.support.image (v + ·)`,
   choose (noncomputably) `w ∈ p.support` with `v + w = h` and return `p.config w`;
 * otherwise return `default`.
 
-This definition does not assume left-cancellation; it only *chooses* a preimage.
+This definition does not assume left-cancellation; it only _chooses_ a preimage.
 Uniqueness (and the usual equations such as `Pattern.shift p v (v + w) = p.config w`)
 require a left-cancellation hypothesis and are proved in separate lemmas.
 -/]
@@ -466,7 +498,8 @@ lemma mapsTo_mulShift_mulForbidden {A G : Type*} [Inhabited A] [Monoid G]
 end Pattern
 
 open scoped Classical in
-/-- We call *occurrence set* for pattern `p` and position `g` the set of configurations
+/--
+We call _occurrence set_ for pattern `p` and position `g` the set of configurations
 in which a pattern `p` occurs at position `g`.
 
 This proves that it is exactly the cylinder corresponding to the
@@ -476,18 +509,21 @@ Equivalently, `p.mulOccursInAt x g` iff on every translated site
 `g * w` (with `w ∈ p.support`)
 the configuration `x` agrees with the translated pattern `Pattern.mulShift p g`.
 
-(This uses `[IsLeftCancelMul G]` to identify the preimage along left-multiplication by `g`.) -/
+(This uses `[IsLeftCancelMul G]` to identify the preimage along left-multiplication by `g`.)
+-/
 @[to_additive occursInAt_eq_cylinder
-  /-- We call *occurrence set* for pattern `p` and position `g` the set of configurations
+  /--
+  We call _occurrence set_ for pattern `p` and position `g` the set of configurations
 in which a pattern `p` occurs at position `g`.
 
-This proves that it is exactly the cylinder corresponding to the
+  This proves that it is exactly the cylinder corresponding to the
 pattern obtained by translating `p` by `g`.
 
-Equivalently, `p.occursInAt x g` iff on every translated site `g + w` (with `w ∈ p.support`)
+  Equivalently, `p.occursInAt x g` iff on every translated site `g + w` (with `w ∈ p.support`)
 the configuration `x` agrees with the translated pattern `Pattern.shift p g`.
 
-(This uses `[IsLeftCancelMul G]` to identify the preimage along left-multiplication by `g`.) -/]
+  (This uses `[IsLeftCancelMul G]` to identify the preimage along left-multiplication by `g`.)
+  -/]
 lemma mulOccursInAt_eq_cylinder
     (p : Pattern A G) (g : G) :
     { x | p.mulOccursInAt x g } = cylinder (p.support.image (g * ·)) (p.mulShift g) := by
@@ -507,7 +543,9 @@ lemma mulOccursInAt_eq_cylinder
     simpa [Pattern.mulShift_apply_mul_left_of_mem (p := p) (v := g) (w := u) hu] using hx
 end OccursInAt
 
-/-! ## Forbidden sets and subshifts -/
+/-!
+# Forbidden sets and subshifts
+-/
 
 section DefSubshiftByForbidden
 

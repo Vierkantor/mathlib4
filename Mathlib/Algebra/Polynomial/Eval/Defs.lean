@@ -9,10 +9,14 @@ public import Mathlib.Algebra.Group.Nat.Hom
 public import Mathlib.Algebra.Polynomial.Basic
 public import Mathlib.Algebra.GroupWithZero.Associated
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Evaluating a polynomial
 
 ## Main definitions
+
 * `Polynomial.eval₂`: evaluate `p : R[X]` in `S` given a ring hom `f : R →+* S` and `x : S`.
 * `Polynomial.eval`: evaluate `p : R[X]` given `x : R`.
 * `Polynomial.IsRoot`: `x : R` is a root of `p : R[X]`.
@@ -20,13 +24,13 @@ public import Mathlib.Algebra.GroupWithZero.Associated
 * `Polynomial.map`: apply `f : R →+* S` to the coefficients of `p : R[X]`.
 
 We also provide the following bundled versions:
+
 * `Polynomial.eval₂AddMonoidHom`, `Polynomial.eval₂RingHom`
 * `Polynomial.evalRingHom`
 * `Polynomial.compRingHom`
 * `Polynomial.mapRingHom`
 
 We include results on applying the definitions to `C`, `X` and ring operations.
-
 -/
 
 @[expose] public section

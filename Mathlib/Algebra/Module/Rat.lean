@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Module.Basic
 public import Mathlib.Algebra.Module.End
 public import Mathlib.Algebra.Field.Rat
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Basic results about modules over the rationals.
 -/

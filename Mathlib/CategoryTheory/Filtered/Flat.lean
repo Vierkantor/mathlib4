@@ -8,6 +8,9 @@ module
 public import Mathlib.CategoryTheory.Filtered.CostructuredArrow
 public import Mathlib.CategoryTheory.Functor.Flat
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Pulling back filteredness along representably flat functors
 
@@ -15,7 +18,7 @@ We show that if `F : C ⥤ D` is a representably coflat functor between two cate
 filteredness of `D` implies filteredness of `C`. Dually, if `F` is representably flat,
 cofilteredness of `D` implies cofilteredness of `C`.
 
-Transferring (co)filteredness *along* representably (co)flat functors is given by
+Transferring (co)filteredness _along_ representably (co)flat functors is given by
 `IsFiltered.of_final` and its dual, since every representably flat functor is final and every
 representably coflat functor is initial.
 -/

@@ -10,6 +10,9 @@ public import Mathlib.Data.DFinsupp.Order
 public import Mathlib.Data.DFinsupp.NeLocus
 public import Mathlib.Order.WellFoundedSet
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lexicographic order on finitely supported dependent functions
 
@@ -210,10 +213,12 @@ section Covariants
 
 variable [LinearOrder ι] [∀ i, AddMonoid (α i)] [∀ i, LinearOrder (α i)]
 
-/-!  We are about to sneak in a hypothesis that might appear to be too strong.
-We assume `AddLeftStrictMono` (covariant with *strict* inequality `<`) also when proving the one
-with the *weak* inequality `≤`. This is actually necessary: addition on `Lex (Π₀ i, α i)` may fail
-to be monotone, when it is "just" monotone on `α i`. -/
+/-!
+We are about to sneak in a hypothesis that might appear to be too strong.
+We assume `AddLeftStrictMono` (covariant with _strict_ inequality `<`) also when proving the one
+with the _weak_ inequality `≤`. This is actually necessary: addition on `Lex (Π₀ i, α i)` may fail
+to be monotone, when it is "just" monotone on `α i`.
+-/
 
 section Left
 

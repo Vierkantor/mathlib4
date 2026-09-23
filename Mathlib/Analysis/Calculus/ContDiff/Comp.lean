@@ -9,6 +9,9 @@ public import Mathlib.Analysis.Calculus.ContDiff.Basic
 public import Mathlib.Analysis.Calculus.ContDiff.FaaDiBruno
 public import Mathlib.Analysis.Calculus.FDeriv.CompCLM
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Higher differentiability of composition
 
@@ -49,7 +52,7 @@ variable {𝕜 E F G : Type*} [NontriviallyNormedField 𝕜] [NormedAddCommGroup
 section comp
 
 /-!
-### Composition of `C^n` functions
+# Composition of `C^n` functions
 
 We show that the composition of `C^n` functions is `C^n`. One way to do this would be to
 use the following simple inductive proof. Assume it is done for `n`.
@@ -279,7 +282,7 @@ theorem iteratedFDeriv_comp (hg : ContDiffAt 𝕜 n g (f x)) (hf : ContDiffAt �
 end comp
 
 /-!
-### Smoothness of projections
+# Smoothness of projections
 -/
 
 /-- The first projection in a product is `C^∞`. -/
@@ -569,7 +572,9 @@ theorem iteratedFDeriv_clm_apply_const_apply
 
 end ClmApplyConst
 
-/-! ### Bundled derivatives are smooth -/
+/-!
+# Bundled derivatives are smooth
+-/
 section bundled
 
 /-- One direction of `contDiffWithinAt_succ_iff_hasFDerivWithinAt`, but where all derivatives are

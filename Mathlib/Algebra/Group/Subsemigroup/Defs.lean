@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Group.InjSurj
 public import Mathlib.Data.SetLike.Basic
 public import Mathlib.Tactic.FastInstance
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Subsemigroups: definition
 
@@ -45,6 +48,7 @@ This file is designed to have very few dependencies. In particular, it should no
 numbers.
 
 ## Tags
+
 subsemigroup, subsemigroups
 -/
 

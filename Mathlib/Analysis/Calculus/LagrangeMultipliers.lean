@@ -9,6 +9,9 @@ public import Mathlib.Analysis.Calculus.FDeriv.Prod
 public import Mathlib.Analysis.Calculus.InverseFunctionTheorem.FDeriv
 public import Mathlib.LinearAlgebra.Dual.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lagrange multipliers
 
@@ -26,7 +29,6 @@ Formalize Karush-Kuhn-Tucker theorem
 ## Tags
 
 lagrange multiplier, local extremum
-
 -/
 
 public section

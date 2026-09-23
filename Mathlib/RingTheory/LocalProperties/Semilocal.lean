@@ -8,6 +8,9 @@ module
 public import Mathlib.RingTheory.DedekindDomain.PID
 public import Mathlib.RingTheory.KrullDimension.PID
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Local properties for semilocal rings
 

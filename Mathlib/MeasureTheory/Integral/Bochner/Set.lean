@@ -11,6 +11,9 @@ public import Mathlib.MeasureTheory.Integral.Bochner.SumMeasure
 public import Mathlib.Topology.ContinuousMap.Compact
 public import Mathlib.Topology.MetricSpace.ThickenedIndicator
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Set integral
 
@@ -32,6 +35,7 @@ some set `s ∈ l`.
 ## Notation
 
 We provide the following notations for expressing the integral of a function on a set :
+
 * `∫ x in s, f x ∂μ` is `MeasureTheory.integral (μ.restrict s) f`
 * `∫ x in s, f x` is `∫ x in s, f x ∂volume`
 
@@ -662,7 +666,8 @@ theorem setIntegral_trim {X} {m m0 : MeasurableSpace X} {μ : Measure X} (hm : m
     ∫ x in s, f x ∂μ = ∫ x in s, f x ∂μ.trim hm := by
   rwa [integral_trim hm hf_meas, restrict_trim hm μ]
 
-/-! ### Lemmas about adding and removing interval boundaries
+/-!
+# Lemmas about adding and removing interval boundaries
 
 The primed lemmas take explicit arguments about the endpoint having zero measure, while the
 unprimed ones use `[NullSingletonClass μ]`.
@@ -945,10 +950,12 @@ theorem integrable_of_summable_norm_restrict {f : C(X, E)} {s : ι → Compacts 
 
 end IntegrableUnion
 
-/-! ### Continuity of the set integral
+/-!
+# Continuity of the set integral
 
 We prove that for any set `s`, the function
-`fun f : X →₁[μ] E => ∫ x in s, f x ∂μ` is continuous. -/
+`fun f : X →₁[μ] E => ∫ x in s, f x ∂μ` is continuous.
+-/
 
 section ContinuousSetIntegral
 

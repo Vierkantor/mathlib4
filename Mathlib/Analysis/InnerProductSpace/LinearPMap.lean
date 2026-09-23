@@ -11,8 +11,10 @@ public import Mathlib.Topology.Algebra.Module.Equiv
 public import Mathlib.Topology.Algebra.Module.LinearPMap
 public import Mathlib.Topology.Algebra.Module.ContinuousLinearMap.Extend
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Partially defined linear operators on Hilbert spaces
 
 We will develop the basics of the theory of unbounded operators on Hilbert spaces.
@@ -45,7 +47,7 @@ We use the junk value pattern to define the adjoint for all `LinearPMap`s. In th
 
 ## References
 
-* [J. Weidmann, *Linear Operators in Hilbert Spaces*][weidmann_linear]
+* ‍\[J. Weidmann, _Linear Operators in Hilbert Spaces_\]\[weidmann\_linear\]
 
 ## Tags
 
@@ -255,7 +257,9 @@ end LinearPMap
 
 end Star
 
-/-! ### The graph of the adjoint -/
+/-!
+# The graph of the adjoint
+-/
 
 namespace Submodule
 
@@ -324,7 +328,9 @@ theorem _root_.LinearPMap.graph_adjoint_toLinearPMap_eq_adjoint (hT : Dense (T.d
 
 end Submodule
 
-/-! ### Closedness -/
+/-!
+# Closedness
+-/
 
 namespace LinearPMap
 

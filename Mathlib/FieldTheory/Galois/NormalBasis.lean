@@ -12,14 +12,16 @@ public import Mathlib.FieldTheory.Galois.Basic
 public import Mathlib.LinearAlgebra.AnnihilatingPolynomial
 public import Mathlib.LinearAlgebra.Dual.Lemmas
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The normal basis theorem
 
 We prove the normal basis theorem `IsGalois.normalBasis`:
 every finite Galois extension has a basis that is an orbit under the Galois group action.
 
-The proof follows [ConradLinearChar] Keith Conrad, *Linear Independence of Characters*.
-
+The proof follows \[ConradLinearChar\] Keith Conrad, _Linear Independence of Characters_.
 -/
 
 variable (K L : Type*) [Field K] [Field L] [Algebra K L]

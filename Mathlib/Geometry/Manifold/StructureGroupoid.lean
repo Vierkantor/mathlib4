@@ -9,6 +9,9 @@ public import Mathlib.Data.EReal.Operations
 public import Mathlib.Topology.MetricSpace.Bounded
 public import Mathlib.Topology.OpenPartialHomeomorph.Composition
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Structure groupoids
 
@@ -55,7 +58,9 @@ open Set OpenPartialHomeomorph
 
 open scoped Manifold
 
-/-! ### Structure groupoids -/
+/-!
+# Structure groupoids
+-/
 
 section Groupoid
 

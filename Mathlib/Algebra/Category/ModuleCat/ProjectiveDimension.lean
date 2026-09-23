@@ -10,8 +10,10 @@ public import Mathlib.Algebra.Category.ModuleCat.Projective
 public import Mathlib.Algebra.Homology.ShortComplex.ModuleCat
 public import Mathlib.CategoryTheory.Abelian.Projective.Dimension
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Projective Dimension in ModuleCat
 
 This file deals with preservation of `projectiveDimension` in (semi) linear equivalences.
@@ -23,17 +25,13 @@ all universe level where the ring `R` is small.
 * `ModuleCat.hasProjectiveDimensionLE_of_semiLinearEquiv`: a module `N` satisfy
   `HasProjectiveDimensionLE N n` if it is semi-linear equivalent to a module `M` that
   `HasProjectiveDimensionLE M n`.
-
 * `ModuleCat.projectiveDimension_eq_of_semiLinearEquiv`: `projectiveDimension` is preserved
   under arbitrary semi-linear equivalence.
-
 * `ModuleCat.hasProjectiveDimensionLE_of_linearEquiv`: a module `N` satisfy
   `HasProjectiveDimensionLE N n` if it is linear equivalent to a module `M` that
   `HasProjectiveDimensionLE M n`.
-
 * `ModuleCat.projectiveDimension_eq_of_linearEquiv`: `projectiveDimension` is preserved
   under arbitrary linear equivalence.
-
 -/
 
 public section

@@ -7,7 +7,11 @@ module
 
 public import Mathlib.Geometry.Manifold.IsManifold.Basic
 
-/-! # Local properties of smooth functions which depend on both the source and target
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Local properties of smooth functions which depend on both the source and target
 
 In this file, we consider local properties of functions between manifolds, which depend on both the
 source and the target: more precisely, properties `P` of functions `f : M → N` such that
@@ -35,7 +39,6 @@ local property of this form.
   and `g` equals `f` near `x`, then `g` also has property `P` at `x`.
 * `IsOpen.liftSourceTargetPropertyAt`: the set of points at which `LiftSourceTargetPropertyAt`
   holds is open
-
 -/
 
 public section

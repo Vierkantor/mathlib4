@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Module.LinearMap.Defs
 public import Mathlib.Algebra.Module.Submodule.Defs
 public import Mathlib.GroupTheory.Sylow
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The `ZMod n`-module structure on Abelian groups whose elements have order dividing `n`
 -/
@@ -19,9 +22,11 @@ assert_not_exists TwoSidedIdeal
 
 variable {n : ℕ} {M M₁ : Type*}
 
-/-- The `ZMod n`-module structure on commutative monoids whose elements have order dividing `n ≠ 0`.
+/--
+The `ZMod n`-module structure on commutative monoids whose elements have order dividing `n ≠ 0`.
 Also implies a group structure via `Module.addCommMonoidToAddCommGroup`.
-See note [reducible non-instances]. -/
+See note \[reducible non-instances\].
+-/
 abbrev AddCommMonoid.zmodModule [NeZero n] [AddCommMonoid M] (h : ∀ (x : M), n • x = 0) :
     Module (ZMod n) M := by
   have h_mod (c : ℕ) (x : M) : (c % n) • x = c • x := by
@@ -39,8 +44,10 @@ abbrev AddCommMonoid.zmodModule [NeZero n] [AddCommMonoid M] (h : ∀ (x : M), n
     mul_smul := fun _ _ _ ↦ (h_mod _ _).trans <| mul_nsmul' _ _ _
   }
 
-/-- The `ZMod n`-module structure on Abelian groups whose elements have order dividing `n`.
-See note [reducible non-instances]. -/
+/--
+The `ZMod n`-module structure on Abelian groups whose elements have order dividing `n`.
+See note \[reducible non-instances\].
+-/
 abbrev AddCommGroup.zmodModule {G : Type*} [AddCommGroup G] (h : ∀ (x : G), n • x = 0) :
     Module (ZMod n) G :=
   match n with

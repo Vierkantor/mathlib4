@@ -15,6 +15,9 @@ public import Mathlib.Order.Filter.Pi
 public import Mathlib.Order.Filter.Prod
 public import Mathlib.Order.Heyting.Boundary
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The cofinite filter
 

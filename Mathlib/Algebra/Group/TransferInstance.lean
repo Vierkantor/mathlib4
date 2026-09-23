@@ -9,16 +9,19 @@ public import Mathlib.Algebra.Group.Equiv.Defs
 public import Mathlib.Algebra.Group.InjSurj
 public import Mathlib.Data.Fintype.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Transfer algebraic structures across `Equiv`s
 
 In this file we prove lemmas of the following form: if `β` has a group structure and `α ≃ β`
 then `α` has a group structure, and similarly for monoids, semigroups and so on.
 
-### Implementation details
+## Implementation details
 
 When adding new definitions that transfer type-classes across an equivalence, please use
-`abbrev`. See note [reducible non-instances].
+`abbrev`. See note \[reducible non-instances\].
 -/
 
 @[expose] public section

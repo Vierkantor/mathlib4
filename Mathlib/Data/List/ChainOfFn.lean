@@ -10,6 +10,9 @@ public import Mathlib.Tactic.Common
 public import Mathlib.Tactic.Finiteness.Attr
 public import Mathlib.Tactic.ToDual
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lemmas about `IsChain` and `ofFn`
 

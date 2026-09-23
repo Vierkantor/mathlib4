@@ -8,6 +8,9 @@ module
 public import Mathlib.Topology.MetricSpace.Gluing
 public import Mathlib.Topology.Metrizable.Uniformity
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Completely (pseudo)metrizable spaces
 
@@ -25,7 +28,6 @@ hypothesis is not needed and the right assumption is then `IsCompletelyMetrizabl
   there exists a pseudometric space structure compatible with the topology which makes the space
   complete. To endow such a space with a compatible distance, use
   `letI := upgradeIsCompletelyPseudoMetrizable X`.
-
 * `IsCompletelyMetrizableSpace X`: A topological space is completely metrizable if
   there exists a metric space structure compatible with the topology which makes the space
   complete. To endow such a space with a compatible distance, use

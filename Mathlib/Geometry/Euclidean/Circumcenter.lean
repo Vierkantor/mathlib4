@@ -11,6 +11,9 @@ public import Mathlib.LinearAlgebra.AffineSpace.Simplex.Centroid
 public import Mathlib.LinearAlgebra.AffineSpace.FiniteDimensional
 public import Mathlib.Tactic.DeriveFintype
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Circumcenter and circumradius
 
@@ -27,8 +30,7 @@ the circumcenter.
 
 ## References
 
-* https://en.wikipedia.org/wiki/Circumscribed_circle
-
+* https://en.wikipedia.org/wiki/Circumscribed\_circle
 -/
 
 @[expose] public section

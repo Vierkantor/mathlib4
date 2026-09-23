@@ -9,10 +9,13 @@ public import Mathlib.MeasureTheory.Integral.Bochner.Basic
 public import Mathlib.Probability.HasLaw
 public import Mathlib.Topology.UnitInterval
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Bernoulli distribution
 
-We define the **Bernoulli distribution** over an arbitrary measurable space `X`. Given `x y : X`
+We define the *Bernoulli distribution* over an arbitrary measurable space `X`. Given `x y : X`
 and `p : I` (`I` is the `unitInterval`),
 `Ber(x, y, p) := toNNReal p • dirac x + toNNReal (σ p) • dirac y`.
 It is the measure which gives mass `p` to `{x}` and `1 - p` to `{y}`.
@@ -192,7 +195,9 @@ end Integral
 
 section HasLaw
 
-/-! ### Bernoulli random variables -/
+/-!
+# Bernoulli random variables
+-/
 
 variable {Ω : Type*} {mΩ : MeasurableSpace Ω} {P : Measure Ω}
 

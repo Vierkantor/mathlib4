@@ -9,6 +9,9 @@ public import Mathlib.Algebra.BigOperators.Fin
 public import Mathlib.Algebra.Polynomial.Degree.Lemmas
 public import Mathlib.Data.List.ToFinsupp
 public import Mathlib.LinearAlgebra.Pi
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `Polynomial.ofFn` and `Polynomial.toFn`
 
@@ -17,8 +20,8 @@ of its coefficients and vice versa. We prove some basic APIs for these functions
 
 ## Main definitions
 
-- `Polynomial.toFn n` associates to a polynomial the vector of its first `n` coefficients.
-- `Polynomial.ofFn n` associates to a vector of length `n` the polynomial that has the entries of
+* `Polynomial.toFn n` associates to a polynomial the vector of its first `n` coefficients.
+* `Polynomial.ofFn n` associates to a vector of length `n` the polynomial that has the entries of
   the vector as coefficients.
 -/
 

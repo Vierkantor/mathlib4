@@ -10,7 +10,11 @@ public import Mathlib.Order.Partition.Finpartition
 public import Mathlib.Order.SupClosed
 public import Mathlib.Order.SetAccumulate
 
-/-! # Semirings and rings of sets
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Semirings and rings of sets
 
 A semi-ring of sets `C` (in the sense of measure theory) is a family of sets containing `∅`,
 stable by intersection and such that for all `s, t ∈ C`, `t \ s` is equal to a disjoint union of
@@ -34,7 +38,6 @@ A ring of sets is a set of sets containing `∅`, stable by union, set differenc
   `s \ ⋃₀ I = ⋃₀ hC.disjointOfDiffUnion hs hI`.
 * `MeasureTheory.IsSetSemiring.disjointOfUnion hJ`: for `hJ ⊆ C`, this is a
   `Finset` of pairwise disjoint sets such that `⋃₀ J = ⋃₀ hC.disjointOfUnion hJ`.
-
 * `MeasureTheory.IsSetRing`: property of being a ring of sets.
 
 ## Main statements
@@ -44,10 +47,10 @@ A ring of sets is a set of sets containing `∅`, stable by union, set differenc
 * `MeasureTheory.IsSetSemiring.disjointOfUnion_props`: In a `hC : IsSetSemiring C`,
   for a `J : Finset (Set α)` with `J ⊆ C`, there is
   for every `x in J` some `K x ⊆ C` finite, such that
+
   * `⋃ x ∈ J, K x` are pairwise disjoint and do not contain ∅,
   * `⋃ s ∈ K x, s ⊆ x`,
   * `⋃ x ∈ J, x = ⋃ x ∈ J, ⋃ s ∈ K x, s`.
-
 -/
 
 public section

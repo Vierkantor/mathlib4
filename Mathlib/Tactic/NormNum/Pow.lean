@@ -9,8 +9,11 @@ public import Mathlib.Data.Int.Cast.Lemmas
 public import Mathlib.Tactic.NormNum.Basic
 public import Mathlib.Util.Qq
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
-## `norm_num` plugin for `^`.
+# `norm_num` plugin for `^`.
 -/
 
 public section

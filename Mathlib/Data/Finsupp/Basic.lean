@@ -10,6 +10,9 @@ public import Mathlib.Algebra.BigOperators.Group.Finset.Preimage
 public import Mathlib.Algebra.Group.Indicator
 public import Mathlib.Data.Rat.BigOperators
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Miscellaneous definitions, lemmas, and constructions using finsupp
 
@@ -32,7 +35,6 @@ This file is a `noncomputable theory` and uses classical logic throughout.
 ## TODO
 
 * Expand the list of definitions and important lemmas to the module docstring.
-
 -/
 
 @[expose] public section
@@ -46,7 +48,9 @@ variable {α β γ ι M N P G H R S : Type*}
 
 namespace Finsupp
 
-/-! ### Declarations about `graph` -/
+/-!
+# Declarations about `graph`
+-/
 
 
 section Graph
@@ -109,7 +113,9 @@ end Graph
 
 end Finsupp
 
-/-! ### Declarations about `mapRange` -/
+/-!
+# Declarations about `mapRange`
+-/
 
 
 section MapRange
@@ -132,7 +138,9 @@ end Finsupp
 
 end MapRange
 
-/-! ### Declarations about `equivCongrLeft` -/
+/-!
+# Declarations about `equivCongrLeft`
+-/
 
 
 section EquivCongrLeft
@@ -254,7 +262,9 @@ end Rat
 
 end CastFinsupp
 
-/-! ### Declarations about `mapDomain` -/
+/-!
+# Declarations about `mapDomain`
+-/
 
 
 namespace Finsupp
@@ -495,7 +505,9 @@ theorem equivMapDomain_eq_mapDomain {M} [AddCommMonoid M] (f : α ≃ β) (l : �
 
 end MapDomain
 
-/-! ### Declarations about `comapDomain` -/
+/-!
+# Declarations about `comapDomain`
+-/
 
 
 section ComapDomain
@@ -644,7 +656,9 @@ end FInjective
 end ComapDomain
 
 
-/-! ### Declarations about `Finsupp.filter` -/
+/-!
+# Declarations about `Finsupp.filter`
+-/
 
 
 section Filter
@@ -735,7 +749,9 @@ lemma filter_add_filter_not (f : α →₀ M) (p : α → Prop) [DecidablePred p
 end AddCommMonoid
 end Filter
 
-/-! ### Declarations about `frange` -/
+/-!
+# Declarations about `frange`
+-/
 
 
 section Frange
@@ -769,7 +785,9 @@ theorem finite_range (f : α →₀ M) : (Set.range f).Finite :=
 
 end Frange
 
-/-! ### Declarations about `Finsupp.subtypeDomain` -/
+/-!
+# Declarations about `Finsupp.subtypeDomain`
+-/
 
 
 section SubtypeDomain
@@ -924,7 +942,9 @@ theorem mem_support_finsetSum [AddCommMonoid M] {s : Finset ι} {h : ι → α �
 
 @[deprecated (since := "2026-04-08")] alias mem_support_finset_sum := mem_support_finsetSum
 
-/-! ### Declarations about `curry` and `uncurry` -/
+/-!
+# Declarations about `curry` and `uncurry`
+-/
 
 
 section Uncurry
@@ -1035,7 +1055,9 @@ noncomputable def curryAddEquiv : (α × β →₀ M) ≃+ (α →₀ β →₀ 
 
 end
 
-/-! ### Declarations about finitely supported functions whose support is a `Sum` type -/
+/-!
+# Declarations about finitely supported functions whose support is a `Sum` type
+-/
 
 
 section Sum
@@ -1315,7 +1337,9 @@ end Finsupp
 
 namespace Finsupp
 
-/-! ### Declarations about sigma types -/
+/-!
+# Declarations about sigma types
+-/
 
 
 section Sigma

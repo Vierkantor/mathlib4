@@ -8,16 +8,20 @@ module
 public import Mathlib.RingTheory.UniqueFactorizationDomain.Basic
 public import Mathlib.Tactic.Ring
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Set of factors
 
 ## Main definitions
+
 * `Associates.FactorSet`: multiset of factors of an element, unique up to propositional equality.
 * `Associates.factors`: determine the `FactorSet` for a given element.
 
 ## TODO
-* set up the complete lattice structure on `FactorSet`.
 
+* set up the complete lattice structure on `FactorSet`.
 -/
 
 @[expose] public section

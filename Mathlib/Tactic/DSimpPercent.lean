@@ -8,6 +8,9 @@ module
 public import Mathlib.Init
 public import Lean.Elab.Tactic.Simp
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 `dsimp% […] t` runs `dsimp […]` on term `t`.
 If `t` is a proof, then it runs `dsimp […]` on the type of `t` instead.

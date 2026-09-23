@@ -10,7 +10,12 @@ public import Mathlib.Analysis.Normed.Operator.NNNorm
 public import Mathlib.Analysis.RCLike.Basic
 public import Mathlib.Topology.ContinuousMap.Bounded.Star
 
-/-! # Results on bounded continuous functions with `RCLike` values -/
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Results on bounded continuous functions with `RCLike` values
+-/
 
 public section
 

@@ -11,6 +11,9 @@ public import Mathlib.Topology.Algebra.LinearMapCompletion
 public import Mathlib.Algebra.Order.Module.PositiveLinearMap
 public import Mathlib.Analysis.CStarAlgebra.ContinuousFunctionalCalculus.Order
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The GNS (Gelfand-Naimark-Segal) construction
 
@@ -20,20 +23,19 @@ space.
 
 ## Main results
 
-- `f.PreGNS` : a type synonym of `A` that bundles in a fixed positive linear functional `f` so that
+* `f.PreGNS` : a type synonym of `A` that bundles in a fixed positive linear functional `f` so that
   we can construct an inner product and inner product-induced norm.
-- `f.GNS` : the Hilbert space completion of `f.preGNS`.
-- `f.gnsNonUnitalStarAlgHom` : The non-unital ⋆-homomorphism from a non-unital `A` into the bounded
+* `f.GNS` : the Hilbert space completion of `f.preGNS`.
+* `f.gnsNonUnitalStarAlgHom` : The non-unital ⋆-homomorphism from a non-unital `A` into the bounded
   linear operators on `f.GNS`.
-- `f.gnsStarAlgHom` : The unital ⋆-homomorphism from a unital `A` into the bounded linear operators
+* `f.gnsStarAlgHom` : The unital ⋆-homomorphism from a unital `A` into the bounded linear operators
   on `f.GNS`.
 
 ## TODO
 
-- Explicitly construct a unit norm cyclic vector ζ such that
+* Explicitly construct a unit norm cyclic vector ζ such that
   a ↦ ⟨(f.gns(NonUnital)StarAlgHom a) \* ζ, ζ⟩ is a state on `A` for both unital and non-unital
   cases.
-
 -/
 
 @[expose] public section
@@ -176,7 +178,7 @@ lemma leftMulMapPreGNS_mul_eq_comp (a b : A) :
   ext c; simp [mul_assoc]
 
 /--
-This proves map_smul' of gnsNonUnitalStarAlgHom so that map_zero' can be proven as a direct
+This proves map\_smul' of gnsNonUnitalStarAlgHom so that map\_zero' can be proven as a direct
 consequence.
 -/
 @[simp]

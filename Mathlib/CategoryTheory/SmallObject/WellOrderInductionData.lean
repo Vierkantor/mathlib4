@@ -10,6 +10,9 @@ public import Mathlib.CategoryTheory.Functor.Category
 public import Mathlib.CategoryTheory.Types.Basic
 public import Mathlib.Order.SuccPred.Limit
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Limits of inverse systems indexed by well-ordered types
 
@@ -25,7 +28,6 @@ to the type of compatible families of elements in `F.obj (op i)` for `i < j`.
 In other words, from `val₀ : F.obj (op ⊥)`, a term `d : F.WellOrderInductionData`
 allows the construction, by transfinite induction, of a section of `F`
 which restricts to `val₀`.
-
 -/
 
 @[expose] public section

@@ -9,6 +9,9 @@ public import Mathlib.Algebra.QuadraticAlgebra.Basic
 public import Mathlib.LinearAlgebra.Matrix.Nonsingular
 public import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Algebra homomorphisms between quadratic algebras
 

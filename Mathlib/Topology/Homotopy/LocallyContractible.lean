@@ -10,6 +10,9 @@ public import Mathlib.Topology.Homotopy.Basic
 public import Mathlib.Topology.Connected.LocallyPathConnected
 public import Mathlib.Topology.Homeomorph.Lemmas
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Strongly locally contractible spaces
 
@@ -41,13 +44,14 @@ This file defines `LocallyContractibleSpace` and `StronglyLocallyContractibleSpa
 
 ## Notes
 
-**Terminology:** The classical definition of *locally contractible* (LC) requires that for every
+*Terminology:* The classical definition of _locally contractible_ (LC) requires that for every
 point `x` and neighborhood `U ∋ x`, there exists a neighborhood `V ∋ x` with `V ⊆ U` such that the
-inclusion `V ↪ U` is null-homotopic. The definition here is **strictly stronger**: we require
-contractible neighborhoods to form a neighborhood basis. This is often called **strongly locally
-contractible** (SLC).
+inclusion `V ↪ U` is null-homotopic. The definition here is *strictly stronger*: we require
+contractible neighborhoods to form a neighborhood basis. This is often called *strongly locally
+contractible* (SLC).
 
-**Hierarchy of notions:**
+*Hierarchy of notions:*
+
 * "Basis of open contractible neighborhoods" (strongest)
 * "Basis of contractible neighborhoods" (this file, SLC)
 * "Null-homotopic inclusions" (classical LC, weakest)
@@ -60,7 +64,7 @@ We've enquired at
 https://math.stackexchange.com/questions/5109428/terminology-for-local-contractibility-locally-contractible-vs-strongly-local
 in the hope of getting definitive naming advice.
 
-The Borsuk-Mazurkiewicz counterexample [borsuk_mazurkiewicz1934] shows that classical LC does not
+The Borsuk-Mazurkiewicz counterexample \[borsuk\_mazurkiewicz1934\] shows that classical LC does not
 imply SLC. Moreover, from a contractible neighborhood `S` one generally cannot shrink to an open
 `V ⊆ S` that remains contractible, so requiring neighborhoods to be open is potentially strictly
 stronger than SLC.
@@ -88,13 +92,15 @@ end LocallyContractible
 
 section StronglyLocallyContractibleSpace
 
-/-- A topological space is **strongly locally contractible** if, at every point, contractible
+/--
+A topological space is *strongly locally contractible* if, at every point, contractible
 neighborhoods form a neighborhood basis. Here "contractible" means contractible as a subspace.
 
 This is strictly stronger than the classical notion of locally contractible, which only requires
 null-homotopic inclusions.
-This distinction is witnessed by an example from Borsuk-Mazurkiewicz [borsuk_mazurkiewicz1934];
-see also [MO88628] for discussion and the Whitehead manifold example. -/
+This distinction is witnessed by an example from Borsuk-Mazurkiewicz \[borsuk\_mazurkiewicz1934\];
+see also \[MO88628\] for discussion and the Whitehead manifold example.
+-/
 class StronglyLocallyContractibleSpace (X : Type*) [TopologicalSpace X] : Prop where
   /-- Each neighborhood filter has a basis of contractible subspace neighborhoods. -/
   contractible_basis : ∀ x : X,
@@ -166,10 +172,12 @@ end Products
 
 section Implications
 
-/-- The strong notion (contractible neighborhood basis)
+/--
+The strong notion (contractible neighborhood basis)
 implies the classical notion (null-homotopic inclusions).
-The converse is false by the Borsuk-Mazurkiewicz counterexample [borsuk_mazurkiewicz1934];
-see also [MO88628] for discussion and the Whitehead manifold example. -/
+The converse is false by the Borsuk-Mazurkiewicz counterexample \[borsuk\_mazurkiewicz1934\];
+see also \[MO88628\] for discussion and the Whitehead manifold example.
+-/
 theorem StronglyLocallyContractibleSpace.locallyContractible [StronglyLocallyContractibleSpace X] :
     LocallyContractibleSpace X := by
   intro x U hU

@@ -12,6 +12,9 @@ public import Mathlib.CategoryTheory.Limits.Shapes.Terminal
 public import Mathlib.CategoryTheory.Limits.Shapes.Pullback.IsPullback.Basic
 public import Mathlib.CategoryTheory.Limits.Shapes.ZeroObjects
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Formal Coproducts
 
@@ -29,7 +32,6 @@ In this file we construct the category of formal coproducts given a category.
 ## TODO
 
 * `FormalCoproduct.incl C : C ⥤ FormalCoproduct.{w} C` probably preserves every limit?
-
 -/
 
 @[expose] public section

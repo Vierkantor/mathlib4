@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.DFinsupp.Module
 public import Mathlib.Data.Fintype.Quotient
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `DFinsupp` on `Sigma` types
 
@@ -19,7 +22,6 @@ public import Mathlib.Data.Fintype.Quotient
   `Sigma` type. Inverse of `DFinsupp.sigmaCurry`.
 * `DFinsupp.sigmaCurryEquiv`: `DFinsupp.sigmaCurry` and `DFinsupp.sigmaUncurry` bundled into a
   bijection.
-
 -/
 
 @[expose] public section

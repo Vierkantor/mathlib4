@@ -18,6 +18,9 @@ import Mathlib.Algebra.Field.Basic
 import Mathlib.Algebra.Module.Submodule.EqLocus
 import Mathlib.Algebra.Module.Torsion.Field
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The span of a set of vectors, as a submodule
 
@@ -27,7 +30,6 @@ import Mathlib.Algebra.Module.Torsion.Field
 
 * We introduce the notation `R ∙ v` for the span of a singleton, `Submodule.span R {v}`.  This is
   `\span`, not the same as the scalar multiplication `•`/`\bub`.
-
 -/
 
 @[expose] public section
@@ -888,8 +890,10 @@ variable (R M)
 variable [Ring R] [IsDomain R] [AddCommGroup M] [Module R M] [Module.IsTorsionFree R M] (x : M)
   (h : x ≠ 0)
 
-/-- Given a nonzero element `x` of a torsion-free module `M` over a ring `R`, the natural
-isomorphism from `R` to the span of `x` given by $r \mapsto r \cdot x$. -/
+/--
+Given a nonzero element `x` of a torsion-free module `M` over a ring `R`, the natural
+isomorphism from `R` to the span of `x` given by $`r \mapsto r \cdot x`.
+-/
 noncomputable
 def toSpanNonzeroSingleton : R ≃ₗ[R] R ∙ x :=
   LinearEquiv.trans
@@ -911,8 +915,10 @@ theorem toSpanNonzeroSingleton_one :
     LinearEquiv.toSpanNonzeroSingleton R M x h 1 =
       (⟨x, Submodule.mem_span_singleton_self x⟩ : R ∙ x) := by simp
 
-/-- Given a nonzero element `x` of a torsion-free module `M` over a ring `R`, the natural
-isomorphism from the span of `x` to `R` given by $r \cdot x \mapsto r$. -/
+/--
+Given a nonzero element `x` of a torsion-free module `M` over a ring `R`, the natural
+isomorphism from the span of `x` to `R` given by $`r \cdot x \mapsto r`.
+-/
 noncomputable
 abbrev coord : R ∙ x ≃ₗ[R] R :=
   (toSpanNonzeroSingleton R M x h).symm

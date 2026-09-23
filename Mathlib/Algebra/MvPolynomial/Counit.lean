@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Algebra.MvPolynomial.Eval
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Counit morphisms for multivariate polynomials
 
@@ -21,7 +24,6 @@ obtained by `X a ↦ a`.
   `MvPolynomial A R →ₐ[R] A` obtained by `X a ↦ a`
 * `MvPolynomial.counit` is an “absolute” variant with `R = ℤ`
 * `MvPolynomial.counitNat` is an “absolute” variant with `R = ℕ`
-
 -/
 
 @[expose] public section

@@ -8,6 +8,9 @@ module
 public import Mathlib.CategoryTheory.Functor.ReflectsIso.Basic
 public import Mathlib.CategoryTheory.Limits.Preserves.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Creating (co)limits
 
@@ -62,7 +65,8 @@ structure LiftableCocone (K : J ⥤ C) (F : C ⥤ D) (c : Cocone (K ⋙ F)) wher
   /-- the isomorphism expressing that `liftedCocone` lifts the given cocone -/
   validLift : F.mapCocone liftedCocone ≅ c
 
-/-- Definition 3.3.1 of [Riehl].
+/--
+Definition 3.3.1 of \[Riehl\].
 We say that `F` creates limits of `K` if, given any limit cone `c` for `K ⋙ F`
 (i.e. below) we can lift it to a cone "above", and further that `F` reflects
 limits for `K`.
@@ -96,7 +100,8 @@ class CreatesLimitsOfSize (F : C ⥤ D) where
 abbrev CreatesLimits (F : C ⥤ D) :=
   CreatesLimitsOfSize.{v₂, v₂} F
 
-/-- Dual of definition 3.3.1 of [Riehl].
+/--
+Dual of definition 3.3.1 of \[Riehl\].
 We say that `F` creates colimits of `K` if, given any limit cocone `c` for
 `K ⋙ F` (i.e. below) we can lift it to a cocone "above", and further that `F`
 reflects limits for `K`.

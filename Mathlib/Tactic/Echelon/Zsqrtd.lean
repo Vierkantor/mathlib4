@@ -11,6 +11,9 @@ public import Mathlib.Tactic.NormNum.Basic
 public meta import Mathlib.NumberTheory.Zsqrtd.Basic
 public import Mathlib.NumberTheory.Zsqrtd.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The `ℤ√d` model for the Bareiss elimination
 

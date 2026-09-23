@@ -11,6 +11,9 @@ public import Mathlib.Algebra.FreeMonoid.UniqueProds
 public import Mathlib.Algebra.MonoidAlgebra.Basic
 public import Mathlib.Algebra.MonoidAlgebra.NoZeroDivisors
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Free Algebras
 
@@ -39,6 +42,7 @@ Given a commutative semiring `R`, and a type `X`, we construct the free unital, 
 
 We construct the free algebra on `X` as a quotient of an inductive type `FreeAlgebra.Pre` by an
 inductively defined relation `FreeAlgebra.Rel`. Explicitly, the construction involves three steps:
+
 1. We construct an inductive type `FreeAlgebra.Pre R X`, the terms of which should be thought
    of as representatives for the elements of `FreeAlgebra R X`.
    It is the free type with maps from `R` and `X`, and with two binary operations `add` and `mul`.
@@ -443,7 +447,9 @@ theorem lift_comp_ι (g : FreeAlgebra R X →ₐ[R] A) :
   rw [← lift_symm_apply]
   exact (lift R).apply_symm_apply g
 
-/-- See note [partially-applied ext lemmas]. -/
+/--
+See note \[partially-applied ext lemmas\].
+-/
 @[ext high]
 theorem hom_ext {f g : FreeAlgebra R X →ₐ[R] A}
     (w : (f : FreeAlgebra R X → A) ∘ ι R = (g : FreeAlgebra R X → A) ∘ ι R) : f = g := by

@@ -10,6 +10,9 @@ public import Mathlib.MeasureTheory.Integral.DominatedConvergence
 public import Mathlib.MeasureTheory.Integral.Bochner.Set
 public import Mathlib.Analysis.LocallyConvex.SeparatingDual
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Derivatives of integrals depending on parameters
 
@@ -22,7 +25,6 @@ to guarantee that `f` is continuous using the dominated convergence theorem. In 
 we want to express the derivative of `f` as the integral of the derivative of `F` with respect
 to `x`.
 
-
 ## Main results
 
 As explained above, all results express the derivative of a parametric integral as the integral of
@@ -31,15 +33,15 @@ derivative, especially Fréchet derivatives vs elementary derivative of function
 variable.
 
 * `hasFDerivAt_integral_of_dominated_loc_of_lip`: this version assumes that
-  - `F x` is ae-measurable for x near `x₀`,
-  - `F x₀` is integrable,
-  - `fun x ↦ F x a` has derivative `F' a : H →L[ℝ] E` at `x₀` which is ae-measurable,
-  - `fun x ↦ F x a` is locally Lipschitz near `x₀` for almost every `a`,
+
+  * `F x` is ae-measurable for x near `x₀`,
+  * `F x₀` is integrable,
+  * `fun x ↦ F x a` has derivative `F' a : H →L[ℝ] E` at `x₀` which is ae-measurable,
+  * `fun x ↦ F x a` is locally Lipschitz near `x₀` for almost every `a`,
     with a Lipschitz bound which is integrable with respect to `a`.
 
   A subtle point is that the "near x₀" in the last condition has to be uniform in `a`. This is
   controlled by a positive number `ε`.
-
 * `hasFDerivAt_integral_of_dominated_of_fderiv_le`: this version assumes `fun x ↦ F x a` has
   derivative `F' x a` for `x` near `x₀` and `F' x` is bounded by an integrable function independent
   from `x` near `x₀`.
@@ -52,6 +54,7 @@ assume `H = ℝ` or `H = ℂ` and use the high-school derivative `deriv` instead
 We also provide versions of these theorems for set integrals.
 
 ## Tags
+
 integral, derivative
 -/
 

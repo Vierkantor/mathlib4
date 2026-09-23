@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Data.Set.Insert
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Definition of `ToSet` and basic API
 
@@ -15,8 +18,7 @@ This file defines the `ToSet` class and its API needed for the `inclusion` tacti
 ## Implimentation Notes
 
 * `Inclusion.IntervalBool` is nearly identical to `Lean.LBool` but with a seperate API and
-documentation which is catered to the needs of the inclusion tactic.
-
+  documentation which is catered to the needs of the inclusion tactic.
 -/
 
 @[expose] public section

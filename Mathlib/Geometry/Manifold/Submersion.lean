@@ -12,7 +12,11 @@ public import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 public import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 public import Mathlib.Geometry.Manifold.Notation
 
-/-! # Smooth submersions
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Smooth submersions
 
 In this file, we define `C^n` submersions between `C^n` manifolds.
 As in the case of immersions, the correct definition in the infinite-dimensional setting differs
@@ -56,11 +60,13 @@ if there exist charts near `x` and `f x` in which `f` looks like the standard pr
 
 The implementation strategy is identical to the one for immersions. See the implementation notes in
 `Mathlib/Geometry/Manifold/Immersion` for details on:
+
 * `IsSubmersionAt(OfComplement)`,
 * universe level issues for complements,
 * `small` and `smallEquiv` constructions.
 
 ## TODO
+
 * The converse to `IsSubmersionAtOfComplement.congr_F` also holds: any two complements are
   isomorphic, as they are isomorphic to the kernel of the differential `mfderiv I J f x`.
 * If `f` is a submersion at `x`, its differential `mfderiv I J f x` admits a continuous right
@@ -79,13 +85,12 @@ The implementation strategy is identical to the one for immersions. See the impl
 
 ## References
 
-* [Alexander Schmeding, *An introduction to infinite-dimensional differential geometry*]
-  [schmeding2023]
+* ‍\[Alexander Schmeding, _An introduction to infinite-dimensional differential geometry_\]
+  ‍\[schmeding2023\]
 * Note that Margelef-Roig and Dominguez have a slightly different definition of submersions.
 
-**Please talk** to Michael Rothgang before working on this file, to avoid duplicate work.
+*Please talk* to Michael Rothgang before working on this file, to avoid duplicate work.
 The above TODOs are the topic of Samantha Naranjo's master's thesis; it's nicer to coordinate.
-
 -/
 
 public noncomputable section
@@ -513,10 +518,12 @@ theorem prodMap {f : M → N} {g : M' → N'} {x' : M'}
   hf.isSubmersionAtOfComplement_complement.prodMap hg.isSubmersionAtOfComplement_complement
     |>.isSubmersionAt
 
-/-- If `f` is a submersion at `x`, then `f` is `C^n` on its domain chart's source,
-in particular on an open neighbourhood of `x`.`
+/--
+If `f` is a submersion at `x`, then `f` is `C^n` on its domain chart's source,
+in particular on an open neighbourhood of `x`.\`
 
-Prefer using `IsSubmersionAt.contMDiffAt` instead -/
+Prefer using `IsSubmersionAt.contMDiffAt` instead
+-/
 theorem contMDiffOn (h : IsSubmersionAt I J n f x) : CMDiff[h.domChart.source] n f :=
   h.isSubmersionAtOfComplement_complement.contMDiffOn
 

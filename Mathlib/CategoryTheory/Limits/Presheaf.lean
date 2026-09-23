@@ -11,12 +11,16 @@ public import Mathlib.CategoryTheory.Limits.Final
 public import Mathlib.CategoryTheory.Limits.Over
 public import Mathlib.CategoryTheory.ShrinkYoneda
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Colimit of representables
 
 In this file, We show that every presheaf of types on a category `C` (with `Category.{v₁} C`)
 is a colimit of representables. This result is also known as the density theorem,
 the co-Yoneda lemma and the Ninja Yoneda lemma. Three formulations are given:
+
 * `colimitOfRepresentable` uses the category of elements of a functor to types;
 * `isColimitTautologicalCocone` uses the category of costructured arrows
   for `yoneda : C ⥤ Cᵒᵖ ⥤ Type v₁`;
@@ -44,10 +48,12 @@ Given a functor `F : C ⥤ D`, we also show construct an isomorphism
 show that it makes `F.op.lan` a left Kan extension of `F ⋙ uliftYoneda`.
 
 ## Tags
+
 colimit, representable, presheaf, free cocompletion
 
 ## References
-* [S. MacLane, I. Moerdijk, *Sheaves in Geometry and Logic*][MM92]
+
+* ‍\[S. MacLane, I. Moerdijk, _Sheaves in Geometry and Logic_\]\[MM92\]
 * https://ncatlab.org/nlab/show/Yoneda+extension
 -/
 
@@ -72,7 +78,7 @@ to the homset `A.obj C ⟶ E` (considered in the higher universe `max w v₂`).
 Under the existence of a suitable pointwise left Kan extension, it is shown in
 `uliftYonedaAdjunction` that this functor has a left adjoint.
 
-Defined as in [MM92], Chapter I, Section 5, Theorem 2.
+Defined as in \[MM92\], Chapter I, Section 5, Theorem 2.
 -/
 @[simps! obj_map map_app]
 def restrictedULiftYoneda : ℰ ⥤ Cᵒᵖ ⥤ Type max w v₂ :=
@@ -252,11 +258,12 @@ def functorToRepresentables (P : Cᵒᵖ ⥤ Type max w v₁) :
   (Functor.Elements.π P).leftOp ⋙ uliftYoneda.{w}
 
 set_option backward.defeqAttrib.useBackward true in
-/-- This is a cocone with point `P` for the functor `functorToRepresentables P`. It is shown in
+/--
+This is a cocone with point `P` for the functor `functorToRepresentables P`. It is shown in
 `colimitOfRepresentable P` that this cocone is a colimit: that is, we have exhibited an arbitrary
 presheaf `P` as a colimit of representables.
 
-The construction of [MM92], Chapter I, Section 5, Corollary 3.
+The construction of \[MM92\], Chapter I, Section 5, Corollary 3.
 -/
 @[simps]
 def coconeOfRepresentable (P : Cᵒᵖ ⥤ Type max w v₁) :
@@ -280,10 +287,11 @@ theorem coconeOfRepresentable_naturality
 
 set_option backward.defeqAttrib.useBackward true in
 set_option backward.isDefEq.respectTransparency false in
-/-- The cocone with point `P` given by `coconeOfRepresentable` is a colimit:
+/--
+The cocone with point `P` given by `coconeOfRepresentable` is a colimit:
 that is, we have exhibited an arbitrary presheaf `P` as a colimit of representables.
 
-The result of [MM92], Chapter I, Section 5, Corollary 3.
+The result of \[MM92\], Chapter I, Section 5, Corollary 3.
 -/
 def colimitOfRepresentable (P : Cᵒᵖ ⥤ Type max w v₁) :
     IsColimit (coconeOfRepresentable P) where
@@ -365,10 +373,11 @@ lemma isLeftKanExtension_of_preservesColimits
 
 end
 
-/-- Show that `uliftYoneda.leftKanExtension A` is the unique colimit-preserving
+/--
+Show that `uliftYoneda.leftKanExtension A` is the unique colimit-preserving
 functor which extends `A` to the presheaf category.
 
-The second part of [MM92], Chapter I, Section 5, Corollary 4.
+The second part of \[MM92\], Chapter I, Section 5, Corollary 4.
 See Property 3 of https://ncatlab.org/nlab/show/Yoneda+extension#properties.
 -/
 noncomputable def uniqueExtensionAlongULiftYoneda (L : (Cᵒᵖ ⥤ Type max w v₁ v₂) ⥤ ℰ)
@@ -655,11 +664,13 @@ def tautologicalCocone' (P : Cᵒᵖ ⥤ Type max w v₁) :
   pt := P
   ι := { app X := X.hom }
 
-/-- The tautological cocone with point `P` is a colimit cocone, exhibiting `P` as a colimit of
-    representables. (In this version, we allow the presheaf `P` to have values in
-    a larger universe.)
+/--
+The tautological cocone with point `P` is a colimit cocone, exhibiting `P` as a colimit of
+representables. (In this version, we allow the presheaf `P` to have values in
+a larger universe.)
 
-    Proposition 2.6.3(i) in [Kashiwara2006] -/
+Proposition 2.6.3(i) in \[Kashiwara2006\]
+-/
 def isColimitTautologicalCocone' (P : Cᵒᵖ ⥤ Type max w v₁) :
     IsColimit (tautologicalCocone'.{w} P) :=
   (IsColimit.whiskerEquivalenceEquiv
@@ -678,10 +689,12 @@ def tautologicalCocone (P : Cᵒᵖ ⥤ Type v₁) :
   pt := P
   ι := { app X := X.hom }
 
-/-- The tautological cocone with point `P` is a colimit cocone, exhibiting `P` as a colimit of
-    representables.
+/--
+The tautological cocone with point `P` is a colimit cocone, exhibiting `P` as a colimit of
+representables.
 
-    Proposition 2.6.3(i) in [Kashiwara2006] -/
+Proposition 2.6.3(i) in \[Kashiwara2006\]
+-/
 def isColimitTautologicalCocone (P : Cᵒᵖ ⥤ Type v₁) :
     IsColimit (tautologicalCocone P) :=
   let e : functorToRepresentables.{v₁} P ≅
@@ -696,12 +709,14 @@ variable {I : Type v₁} [SmallCategory I] (F : I ⥤ C)
 
 set_option backward.defeqAttrib.useBackward true in
 set_option backward.isDefEq.respectTransparency false in
-/-- Given a functor `F : I ⥤ C`, a cocone `c` on `F ⋙ yoneda : I ⥤ Cᵒᵖ ⥤ Type v₁` induces a
-    functor `I ⥤ CostructuredArrow yoneda c.pt` which maps `i : I` to the leg
-    `yoneda.obj (F.obj i) ⟶ c.pt`. If `c` is a colimit cocone, then that functor is
-    final.
+/--
+Given a functor `F : I ⥤ C`, a cocone `c` on `F ⋙ yoneda : I ⥤ Cᵒᵖ ⥤ Type v₁` induces a
+functor `I ⥤ CostructuredArrow yoneda c.pt` which maps `i : I` to the leg
+`yoneda.obj (F.obj i) ⟶ c.pt`. If `c` is a colimit cocone, then that functor is
+final.
 
-    Proposition 2.6.3(ii) in [Kashiwara2006] -/
+Proposition 2.6.3(ii) in \[Kashiwara2006\]
+-/
 theorem final_toCostructuredArrow_comp_pre {c : Cocone (F ⋙ yoneda)} (hc : IsColimit c) :
     Functor.Final (c.toCostructuredArrow ⋙ CostructuredArrow.pre F yoneda c.pt) := by
   apply Functor.final_of_isTerminal_colimit_comp_yoneda

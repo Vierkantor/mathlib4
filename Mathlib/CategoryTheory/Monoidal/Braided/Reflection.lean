@@ -10,8 +10,10 @@ public import Mathlib.CategoryTheory.Monoidal.Closed.Basic
 public import Mathlib.CategoryTheory.Monad.Adjunction
 public import Mathlib.CategoryTheory.Monoidal.Braided.Basic
 public import Mathlib.Tactic.TFAE
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Day's reflection theorem
 
 Let `D` be a symmetric monoidal closed category and let `C` be a reflective subcategory. Day's
@@ -24,8 +26,8 @@ apply Day's reflection theorem to prove that `C` is also closed monoidal.
 
 ## References
 
-- We follow the proof on nLab, see https://ncatlab.org/nlab/show/Day%27s+reflection+theorem.
-- The original paper is [day1972] *A reflection theorem for closed categories*, by Day, 1972.
+* We follow the proof on nLab, see https://ncatlab.org/nlab/show/Day%27s+reflection+theorem.
+* The original paper is \[day1972\] _A reflection theorem for closed categories_, by Day, 1972.
 -/
 
 @[expose] public section

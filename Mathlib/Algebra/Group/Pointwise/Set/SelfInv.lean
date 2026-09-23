@@ -8,11 +8,13 @@ module
 public import Mathlib.Algebra.Group.SelfInv
 public import Mathlib.Algebra.Group.Pointwise.Set.Lattice
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Self-inverse sets
 
 This file specialises `IsSelfInv` to sets equipped with the pointwise inversion.
-
 -/
 
 public section

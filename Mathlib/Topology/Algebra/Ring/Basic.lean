@@ -15,8 +15,10 @@ public import Mathlib.Topology.Algebra.Group.GroupTopology
 public import Mathlib.Topology.Algebra.Group.Neighborhood
 public import Mathlib.Topology.Algebra.Group.Subgroup
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Topological (semi)rings
 
 A topological (semi)ring is a (semi)ring equipped with a topology such that all operations are
@@ -26,10 +28,10 @@ of topological (semi)rings.
 
 ## Main Results
 
-- `Subring.topologicalClosure`/`Subsemiring.topologicalClosure`: the topological closure of a
+* `Subring.topologicalClosure`/`Subsemiring.topologicalClosure`: the topological closure of a
   `Subring`/`Subsemiring` is itself a `Sub(semi)ring`.
-- The product of two topological (semi)rings is a topological (semi)ring.
-- The indexed product of topological (semi)rings is a topological (semi)ring.
+* The product of two topological (semi)rings is a topological (semi)ring.
+* The indexed product of topological (semi)rings is a topological (semi)ring.
 -/
 
 @[expose] public section
@@ -42,14 +44,16 @@ section IsTopologicalSemiring
 
 variable (R : Type*)
 
-/-- A topological semiring is a semiring `R` where addition and multiplication are continuous.
+/--
+A topological semiring is a semiring `R` where addition and multiplication are continuous.
 We allow for non-unital and non-associative semirings as well.
 
-The `IsTopologicalSemiring` class should *only* be instantiated in the presence of a
+The `IsTopologicalSemiring` class should _only_ be instantiated in the presence of a
 `NonUnitalNonAssocSemiring` instance; if there is an instance of `NonUnitalNonAssocRing`,
 then `IsTopologicalRing` should be used. Note: in the presence of `NonAssocRing`, these classes are
 mathematically equivalent (see `IsTopologicalSemiring.continuousNeg_of_mul` or
-`IsTopologicalSemiring.toIsTopologicalRing`). -/
+`IsTopologicalSemiring.toIsTopologicalRing`).
+-/
 class IsTopologicalSemiring [TopologicalSpace R] [NonUnitalNonAssocSemiring R] : Prop
     extends ContinuousAdd R, ContinuousMul R
 
@@ -61,15 +65,17 @@ and `IsTopologicalSemiring.toIsTopologicalRing`) -/
 class IsTopologicalRing [TopologicalSpace R] [NonUnitalNonAssocRing R] : Prop
     extends IsTopologicalSemiring R, ContinuousNeg R
 
-/-- A semitopological semiring is a semiring `R` where addition is jointly continuous and
+/--
+A semitopological semiring is a semiring `R` where addition is jointly continuous and
 multiplication is continuous in each variable separately.
 We allow for non-unital and non-associative semirings as well.
 
-The `IsSemitopologicalSemiring` class should *only* be instantiated in the presence of a
+The `IsSemitopologicalSemiring` class should _only_ be instantiated in the presence of a
 `NonUnitalNonAssocSemiring` instance; if there is an instance of `NonUnitalNonAssocRing`,
 then `IsSemitopologicalRing` should be used. Note: in the presence of `NonAssocRing`, these classes
 are mathematically equivalent (see `IsTopologicalSemiring.continuousNeg_of_mul` or
-`IsSemitopologicalSemiring.toIsTopologicalRing`). -/
+`IsSemitopologicalSemiring.toIsTopologicalRing`).
+-/
 class IsSemitopologicalSemiring (R : Type*) [TopologicalSpace R] [NonUnitalNonAssocSemiring R]
   extends ContinuousAdd R, SeparatelyContinuousMul R
 
@@ -182,10 +188,12 @@ instance isMulCommutative_topologicalClosure [T2Space R] (s : NonUnitalSubsemiri
   s.toSubsemigroup.isMulCommutative_topologicalClosure
 
 open scoped IsMulCommutative in
-/-- If a non-unital subsemiring of a non-unital topological semiring is commutative, then so is its
+/--
+If a non-unital subsemiring of a non-unital topological semiring is commutative, then so is its
 topological closure.
 
-See note [reducible non-instances] -/
+See note \[reducible non-instances\]
+-/
 @[deprecated isMulCommutative_topologicalClosure +typeChanged (since := "2026-07-29")]
 abbrev nonUnitalCommSemiringTopologicalClosure [T2Space R] (s : NonUnitalSubsemiring R)
     (hs : ∀ x y : s, x * y = y * x) : NonUnitalCommSemiring s.topologicalClosure :=
@@ -249,10 +257,12 @@ instance Subsemiring.isMulCommutative_topologicalClosure [T2Space R] (s : Subsem
   s.toSubmonoid.isMulCommutative_topologicalClosure
 
 open scoped IsMulCommutative in
-/-- If a subsemiring of a topological semiring is commutative, then so is its
+/--
+If a subsemiring of a topological semiring is commutative, then so is its
 topological closure.
 
-See note [reducible non-instances]. -/
+See note \[reducible non-instances\].
+-/
 @[deprecated isMulCommutative_topologicalClosure +typeChanged (since := "2026-07-29")]
 abbrev Subsemiring.commSemiringTopologicalClosure [T2Space R] (s : Subsemiring R)
     (hs : ∀ x y : s, x * y = y * x) : CommSemiring s.topologicalClosure :=
@@ -465,10 +475,12 @@ instance isMulCommutative_topologicalClosure [T2Space R] (s : NonUnitalSubring R
   s.toSubsemigroup.isMulCommutative_topologicalClosure
 
 open scoped IsMulCommutative in
-/-- If a non-unital subring of a non-unital topological ring is commutative, then so is its
+/--
+If a non-unital subring of a non-unital topological ring is commutative, then so is its
 topological closure.
 
-See note [reducible non-instances] -/
+See note \[reducible non-instances\]
+-/
 @[deprecated isMulCommutative_topologicalClosure +typeChanged (since := "2026-07-29")]
 abbrev nonUnitalCommRingTopologicalClosure [T2Space R] (s : NonUnitalSubring R)
     (hs : ∀ x y : s, x * y = y * x) : NonUnitalCommRing s.topologicalClosure :=
@@ -521,9 +533,11 @@ instance Subring.isMulCommutative_topologicalClosure [T2Space R] (s : Subring R)
   s.toSubsemigroup.isMulCommutative_topologicalClosure
 
 open scoped IsMulCommutative in
-/-- If a subring of a topological ring is commutative, then so is its topological closure.
+/--
+If a subring of a topological ring is commutative, then so is its topological closure.
 
-See note [reducible non-instances]. -/
+See note \[reducible non-instances\].
+-/
 @[deprecated isMulCommutative_topologicalClosure +typeChanged (since := "2026-07-29")]
 abbrev Subring.commRingTopologicalClosure [T2Space R] (s : Subring R)
     (hs : ∀ x y : s, x * y = y * x) : CommRing s.topologicalClosure :=
@@ -533,14 +547,16 @@ abbrev Subring.commRingTopologicalClosure [T2Space R] (s : Subring R)
 end IsTopologicalSemiring
 
 /-!
-### Lattice of ring topologies
+# Lattice of ring topologies
+
 We define a type class `RingTopology R` which endows a ring `R` with a topology such that all ring
 operations are continuous.
 
 Ring topologies on a fixed ring `R` are ordered, by reverse inclusion. They form a complete lattice,
 with `⊥` the discrete topology and `⊤` the indiscrete topology.
 
-Any function `f : R → S` induces `coinduced f : TopologicalSpace R → RingTopology S`. -/
+Any function `f : R → S` induces `coinduced f : TopologicalSpace R → RingTopology S`.
+-/
 
 
 universe u v

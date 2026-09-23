@@ -10,6 +10,9 @@ public import Mathlib.Data.Finset.Sort
 public import Mathlib.GroupTheory.Perm.Sign
 public import Mathlib.Logic.Equiv.Fin.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Finite sets of an ordered type
 
@@ -20,7 +23,6 @@ the finite sets of that type.
 
 * `ofFinEmbEquiv` is the equivalence between `Fin n ↪o I` and `Set.powersetCard I n` when `I` is
   a linearly ordered type.
-
 -/
 
 @[expose] public noncomputable section

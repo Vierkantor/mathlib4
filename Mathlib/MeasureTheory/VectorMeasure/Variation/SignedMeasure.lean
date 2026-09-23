@@ -7,10 +7,14 @@ module
 
 public import Mathlib.MeasureTheory.VectorMeasure.Decomposition.Jordan
 public import Mathlib.MeasureTheory.VectorMeasure.Variation.Basic
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Equivalence of variation definitions for signed measures
 
 For a `SignedMeasure`, two definitions of variation are available:
+
 * the supremum-based `VectorMeasure.variation`,
 * the Hahn–Jordan-based `SignedMeasure.totalVariation`.
 
@@ -19,7 +23,6 @@ In this file the two notions are shown to coincide.
 ## Main results
 
 * `MeasureTheory.SignedMeasure.totalVariation_eq_variation`: `μ.totalVariation = μ.variation`.
-
 -/
 
 public section

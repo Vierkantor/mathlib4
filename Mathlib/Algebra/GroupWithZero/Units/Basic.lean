@@ -14,6 +14,9 @@ public import Mathlib.Tactic.Spread
 public import Mathlib.Tactic.Convert
 public import Mathlib.Tactic.Nontriviality
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lemmas about units in a `MonoidWithZero` or a `GroupWithZero`.
 

@@ -15,6 +15,9 @@ public import Mathlib.Data.Set.MulAntidiagonal
 public import Mathlib.Algebra.Algebra.Bilinear
 public import Mathlib.GroupTheory.GroupAction.Ring
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Discrete Convolution
 
@@ -27,7 +30,7 @@ supported.
 Uses a bilinear map `L : E →ₗ[S] E' →ₗ[S] F` to combine values, following
 `MeasureTheory.convolution`.
 
-The index monoid `M` can be non-commutative (group algebras R[G] with non-abelian G).
+The index monoid `M` can be non-commutative (group algebras R\[G\] with non-abelian G).
 
 `@[to_additive]` generates multiplicative and additive versions from a single definition.
 The `mul/add` distinction refers to the index monoid `M`: multiplicative sums over
@@ -80,7 +83,9 @@ namespace DiscreteConvolution
 
 variable {M S E E' F F' R : Type*}
 
-/-! ### Multiplication Fiber -/
+/-!
+# Multiplication Fiber
+-/
 
 section Fiber
 
@@ -98,7 +103,9 @@ lemma mulFiber_one_mem : (1, 1) ∈ mulFiber (1 : M) := by simp [mulFiber]
 
 end Fiber
 
-/-! ### Convolution Definition and Existence -/
+/-!
+# Convolution Definition and Existence
+-/
 
 section Definition
 
@@ -229,7 +236,9 @@ lemma ConvolutionExistsAt.convolution_smul {c : S} {f : M → E} {g : M → E'} 
 
 end ExistenceProperties
 
-/-! ### Finite Multiplication Fibers -/
+/-!
+# Finite Multiplication Fibers
+-/
 
 section HasMulAntidiagonal
 
@@ -275,7 +284,9 @@ lemma convolutionExists_of_hasMulAntidiagonal
 
 end HasMulAntidiagonal
 
-/-! ### Commutativity -/
+/-!
+# Commutativity
+-/
 
 section CommMonoid
 
@@ -297,7 +308,9 @@ theorem convolution_comm (L : E →ₗ[S] E →ₗ[S] E) (f g : M → E) (hL : �
 
 end CommMonoid
 
-/-! ### Convolution with Multiplication -/
+/-!
+# Convolution with Multiplication
+-/
 
 section RingConvolution
 

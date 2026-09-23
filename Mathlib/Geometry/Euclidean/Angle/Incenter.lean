@@ -8,11 +8,13 @@ module
 public import Mathlib.Geometry.Euclidean.Angle.Bisector
 public import Mathlib.Geometry.Euclidean.Incenter
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Angles and incenters and excenters.
 
 This file proves lemmas relating incenters and excenters of a simplex to angle bisection.
-
 -/
 
 public section

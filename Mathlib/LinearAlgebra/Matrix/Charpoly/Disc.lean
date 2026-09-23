@@ -9,6 +9,9 @@ public import Mathlib.LinearAlgebra.Matrix.Charpoly.Coeff
 public import Mathlib.RingTheory.Polynomial.Resultant.Basic
 
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The discriminant of a matrix
 -/

@@ -10,6 +10,9 @@ public import Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Basic
 public import Mathlib.Data.Fin.Tuple.Reflection
 public import Mathlib.Tactic.Ring.NamePolyVars
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Weierstrass equations and the nonsingular condition in Jacobian coordinates
 
@@ -18,9 +21,9 @@ equivalence class `[x : y : z]` of triples `(x, y, z) ≠ (0, 0, 0)` of elements
 `(x, y, z) ∼ (x', y', z')` if there is some unit `u` in `Rˣ` with `(x, y, z) = (u²x', u³y', uz')`.
 
 Let `W` be a Weierstrass curve over a commutative ring `R` with coefficients `aᵢ`. A
-*Jacobian point* is a point on the projective plane over `R` with weights `(2, 3, 1)` satisfying the
-*`(2, 3, 1)`-homogeneous Weierstrass equation* `W(X, Y, Z) = 0` in *Jacobian coordinates*, where
-`W(X, Y, Z) := Y² + a₁XYZ + a₃YZ³ - (X³ + a₂X²Z² + a₄XZ⁴ + a₆Z⁶)`. It is *nonsingular* if its
+_Jacobian point_ is a point on the projective plane over `R` with weights `(2, 3, 1)` satisfying the
+_`(2, 3, 1)`-homogeneous Weierstrass equation_ `W(X, Y, Z) = 0` in _Jacobian coordinates_, where
+`W(X, Y, Z) := Y² + a₁XYZ + a₃YZ³ - (X³ + a₂X²Z² + a₄XZ⁴ + a₆Z⁶)`. It is _nonsingular_ if its
 partial derivatives `W_X(x, y, z)`, `W_Y(x, y, z)`, and `W_Z(x, y, z)` do not vanish simultaneously.
 
 This file gives an explicit implementation of equivalence classes of triples up to scaling by
@@ -62,7 +65,7 @@ mirrored in `Mathlib/AlgebraicGeometry/EllipticCurve/Projective/Basic.lean`.
 
 ## References
 
-[J Silverman, *The Arithmetic of Elliptic Curves*][silverman2009]
+‍\[J Silverman, _The Arithmetic of Elliptic Curves_\]\[silverman2009\]
 
 ## Tags
 
@@ -104,7 +107,9 @@ name_poly_vars X, Y, Z over R
 
 namespace WeierstrassCurve
 
-/-! ## Jacobian coordinates -/
+/-!
+# Jacobian coordinates
+-/
 
 variable (R) in
 /-- An abbreviation for a Weierstrass curve in Jacobian coordinates. -/
@@ -231,7 +236,9 @@ lemma Y_eq_iff {P Q : Fin 3 → F} (hPz : P z ≠ 0) (hQz : Q z ≠ 0) :
     P y * Q z ^ 3 = Q y * P z ^ 3 ↔ P y / P z ^ 3 = Q y / Q z ^ 3 :=
   (div_eq_div_iff (pow_ne_zero 3 hPz) (pow_ne_zero 3 hQz)).symm
 
-/-! ## Weierstrass equations in Jacobian coordinates -/
+/-!
+# Weierstrass equations in Jacobian coordinates
+-/
 
 variable (W') in
 /-- The polynomial `W(X, Y, Z) := Y² + a₁XYZ + a₃YZ³ - (X³ + a₂X²Z² + a₄XZ⁴ + a₆Z⁶)` associated to a
@@ -293,7 +300,9 @@ lemma equation_of_Z_ne_zero {P : Fin 3 → F} (hPz : P z ≠ 0) :
     W.Equation P ↔ W.toAffine.Equation (P x / P z ^ 2) (P y / P z ^ 3) :=
   (equation_of_equiv <| equiv_some_of_Z_ne_zero hPz).trans <| equation_some ..
 
-/-! ## The nonsingular condition in Jacobian coordinates -/
+/-!
+# The nonsingular condition in Jacobian coordinates
+-/
 
 variable (W') in
 /-- The partial derivative `W_X(X, Y, Z)` with respect to `X` of the polynomial `W(X, Y, Z)`
@@ -502,7 +511,9 @@ lemma nonsingularLift_some (a b : R) :
     W'.NonsingularLift ⟦![a, b, 1]⟧ ↔ W'.toAffine.Nonsingular a b :=
   nonsingular_some a b
 
-/-! ## Maps and base changes -/
+/-!
+# Maps and base changes
+-/
 
 variable (W') (f : R →+* S)
 

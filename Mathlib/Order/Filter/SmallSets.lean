@@ -8,6 +8,9 @@ module
 public import Mathlib.Order.Filter.Lift
 public import Mathlib.Order.Filter.AtTopBot.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The filter of small sets
 

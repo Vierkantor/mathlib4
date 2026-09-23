@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Algebra.ZMod
 public import Mathlib.RingTheory.Polynomial.Cyclotomic.Roots
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cyclotomic polynomials and `expand`.
 

@@ -10,6 +10,9 @@ public import Mathlib.CategoryTheory.Limits.Shapes.Reflexive
 public import Mathlib.CategoryTheory.Monad.Equalizer
 public import Mathlib.CategoryTheory.Monad.Limits
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Comonadicity theorems
 
@@ -36,7 +39,6 @@ Please try to keep them in sync.
 ## Tags
 
 Beck, comonadicity, descent
-
 -/
 
 @[expose] public section

@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Category.Ring.Constructions
 public import Mathlib.AlgebraicGeometry.Spec
 public import Mathlib.CategoryTheory.Elementwise
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The category of schemes
 
@@ -17,7 +20,6 @@ where there is an isomorphism of presheaves between the restriction to that open
 and the structure sheaf of `Spec R`, for some commutative ring `R`.
 
 A morphism of schemes is just a morphism of the underlying locally ringed spaces.
-
 -/
 
 @[expose] public section
@@ -79,7 +81,9 @@ abbrev Hom.toLRSHom {X Y : Scheme.{u}} (f : X.Hom Y) :
     X.toLocallyRingedSpace ⟶ Y.toLocallyRingedSpace :=
   f.toLRSHom'
 
-/-- See Note [custom simps projection] -/
+/--
+See Note \[custom simps projection\]
+-/
 def Hom.Simps.toLRSHom {X Y : Scheme.{u}} (f : X.Hom Y) :
     X.toLocallyRingedSpace ⟶ Y.toLocallyRingedSpace :=
   f.toLRSHom

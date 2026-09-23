@@ -9,6 +9,9 @@ public import Mathlib.RingTheory.IsPrimary
 public import Mathlib.RingTheory.Ideal.Maps
 public import Mathlib.RingTheory.Ideal.Operations
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Primary ideals
 
@@ -16,12 +19,11 @@ A proper ideal `I` is primary iff `xy ∈ I` implies `x ∈ I` or `y ∈ radical
 
 ## Main definitions
 
-- `Ideal.IsPrimary`
+* `Ideal.IsPrimary`
 
 ## Implementation details
 
 Uses a specialized phrasing of `Submodule.IsPrimary` to have better API-piercing usage.
-
 -/
 
 public section

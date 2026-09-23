@@ -10,6 +10,9 @@ public import Mathlib.Combinatorics.Matroid.Rank.Cardinal
 public import Mathlib.FieldTheory.IntermediateField.Adjoin.Algebra
 public import Mathlib.RingTheory.AlgebraicIndependent.Transcendental
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Transcendence basis
 
@@ -28,8 +31,8 @@ This file defines the transcendence basis as a maximal algebraically independent
 * [Stacks: Transcendence](https://stacks.math.columbia.edu/tag/030D)
 
 ## Tags
-transcendence basis, transcendence degree, transcendence
 
+transcendence basis, transcendence degree, transcendence
 -/
 
 @[expose] public section

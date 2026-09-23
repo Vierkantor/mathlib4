@@ -10,6 +10,9 @@ public import Mathlib.Topology.Category.TopCat.Basic
 public import Mathlib.Topology.Sets.Opens
 public import Mathlib.Data.Set.Subsingleton
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Projective spectrum of a graded ring
 
@@ -18,15 +21,16 @@ are prime and do not contain the irrelevant ideal.
 It is naturally endowed with a topology: the Zariski topology.
 
 ## Notation
-- `A` is a commutative ring
-- `σ` is a class of additive submonoids of `A`
-- `𝒜 : ℕ → σ` is the grading of `A`;
+
+* `A` is a commutative ring
+* `σ` is a class of additive submonoids of `A`
+* `𝒜 : ℕ → σ` is the grading of `A`;
 
 ## Main definitions
 
 * `ProjectiveSpectrum 𝒜`: The projective spectrum of a graded ring `A`, or equivalently, the set of
   all homogeneous ideals of `A` that is both prime and relevant i.e. not containing irrelevant
-  ideal. Henceforth, we call elements of projective spectrum *relevant homogeneous prime ideals*.
+  ideal. Henceforth, we call elements of projective spectrum _relevant homogeneous prime ideals_.
 * `ProjectiveSpectrum.zeroLocus 𝒜 s`: The zero locus of a subset `s` of `A`
   is the subset of `ProjectiveSpectrum 𝒜` consisting of all relevant homogeneous prime ideals that
   contain `s`.
@@ -406,7 +410,7 @@ end BasicOpen
 section Order
 
 /-!
-## The specialization order
+# The specialization order
 
 We endow `ProjectiveSpectrum 𝒜` with a partial order,
 where `x ≤ y` if and only if `y ∈ closure {x}`.

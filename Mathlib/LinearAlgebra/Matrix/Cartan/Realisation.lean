@@ -12,13 +12,16 @@ public import Mathlib.LinearAlgebra.RootSystem.Irreducible
 public import Mathlib.LinearAlgebra.RootSystem.IsValuedIn
 public import Mathlib.LinearAlgebra.RootSystem.Reduced
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Realisations of Cartan Matrices
 
 Let `R` be an integral domain of characteristic zero, and let `M` and `N` be `R`-modules in perfect
 pairing. Then, given vectors `r₁, r₂, …, rₗ` in `M` and `c₁, c₂, …, cₗ` in `N`, the following two
 propositions are equivalent:
+
 1. The vectors `rᵢ`, `cᵢ` are the simple roots and coroots of a finite, reduced, crystrallographic
    root pairing (i.e., a reduced root datum except we do not require `R = ℤ`).
 2. The matrix `Aᵢⱼ = ⟨cⱼ, rᵢ⟩` is a finite-type Cartan matrix.
@@ -27,13 +30,13 @@ The definition `RootPairing` formalises item 1 above. Here we introduce `CartanM
 to formalise item 2.
 
 ## Main definitions / results:
- * `CartanMatrix.Realisation`: the definition of a realisation of a Cartan matrix.
- * `CartanMatrix.Realisation.toRootPairing`: the root pairing defined by a realisation of a Cartan
-   matrix.
- * `Matrix.IsFiniteCartan.toRealisation`: a realisation associated to an invertible Cartan matrix.
- * `Matrix.IsFiniteCartan.toRootPairing`: a reduced, irreducible, crystallographic root system
-   assocated to a Cartan matrix, with coefficients in any field of characteristic zero.
 
+* `CartanMatrix.Realisation`: the definition of a realisation of a Cartan matrix.
+* `CartanMatrix.Realisation.toRootPairing`: the root pairing defined by a realisation of a Cartan
+  matrix.
+* `Matrix.IsFiniteCartan.toRealisation`: a realisation associated to an invertible Cartan matrix.
+* `Matrix.IsFiniteCartan.toRootPairing`: a reduced, irreducible, crystallographic root system
+  assocated to a Cartan matrix, with coefficients in any field of characteristic zero.
 -/
 
 public noncomputable section

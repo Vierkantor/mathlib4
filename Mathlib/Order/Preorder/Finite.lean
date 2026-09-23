@@ -9,6 +9,9 @@ public import Mathlib.Data.Set.Finite.Basic
 public import Mathlib.Order.Hom.Set
 public import Mathlib.Order.Minimal
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Finite preorders and finite sets in a preorder
 

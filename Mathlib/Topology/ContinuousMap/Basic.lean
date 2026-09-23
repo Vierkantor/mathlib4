@@ -10,6 +10,9 @@ public import Mathlib.Topology.ContinuousMap.Defs
 public import Mathlib.Topology.Homeomorph.Defs
 public import Mathlib.Topology.Separation.Hausdorff
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Continuous bundled maps
 
@@ -37,7 +40,9 @@ theorem map_continuousWithinAt (f : F) (s : Set α) (a : α) : ContinuousWithinA
 
 end ContinuousMapClass
 
-/-! ### Continuous maps -/
+/-!
+# Continuous maps
+-/
 
 
 namespace ContinuousMap

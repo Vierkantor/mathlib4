@@ -13,6 +13,9 @@ public import Mathlib.Topology.Bornology.Basic
 public import Mathlib.Topology.Algebra.IsUniformGroup.Basic
 public import Mathlib.Topology.UniformSpace.Cauchy
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Von Neumann Boundedness
 
@@ -37,8 +40,7 @@ This file defines natural or von Neumann bounded sets and proves elementary prop
 
 ## References
 
-* [Bourbaki, *Topological Vector Spaces*][bourbaki1987]
-
+* ‍\[Bourbaki, _Topological Vector Spaces_\]\[bourbaki1987\]
 -/
 
 @[expose] public section
@@ -548,7 +550,9 @@ variable {𝕜 : Type*} {E : Type*} [Zero E] [UniformSpace E] [SeminormedRing �
 instance [CompleteSpace E] : QuasiCompleteSpace 𝕜 E where
   quasiComplete _ _ := IsClosed.isComplete
 
-/-- [Bourbaki, *Topological Vector Spaces*, III §1.6][bourbaki1987] -/
+/--
+‍\[Bourbaki, _Topological Vector Spaces_, III §1.6\]\[bourbaki1987\]
+-/
 theorem isCompact_closure_of_totallyBounded_quasiComplete {E : Type*} {𝕜 : Type*} [NormedField 𝕜]
     [AddCommGroup E] [Module 𝕜 E] [UniformSpace E] [IsUniformAddGroup E] [ContinuousSMul 𝕜 E]
     [QuasiCompleteSpace 𝕜 E] {s : Set E} (hs : TotallyBounded s) : IsCompact (closure s) :=

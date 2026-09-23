@@ -8,6 +8,9 @@ module
 public import Mathlib.Geometry.Manifold.ContMDiffMap
 public import Mathlib.Geometry.Manifold.MFDeriv.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `C^n` monoid
 
@@ -110,10 +113,14 @@ theorem contMDiff_mul [ContMDiffMul I n G] : CMDiff n fun p : G × G ↦ p.1 * p
   ContMDiffMul.contMDiff_mul
 
 include I n in
-/-- If the multiplication is `C^n`, then it is continuous. This is not an instance for technical
-reasons, see note [Design choices about smooth algebraic structures]. -/
-@[to_additive /-- If the addition is `C^n`, then it is continuous. This is not an instance for
-technical reasons, see note [Design choices about smooth algebraic structures]. -/]
+/--
+If the multiplication is `C^n`, then it is continuous. This is not an instance for technical
+reasons, see note \[Design choices about smooth algebraic structures\].
+-/
+@[to_additive /--
+              If the addition is `C^n`, then it is continuous. This is not an instance for
+technical reasons, see note \[Design choices about smooth algebraic structures\].
+              -/]
 theorem continuousMul_of_contMDiffMul [ContMDiffMul I n G] : ContinuousMul G :=
   ⟨(contMDiff_mul I n).continuous⟩
 
@@ -307,10 +314,12 @@ instance : ContinuousMapClass (ContMDiffMonoidMorphism I I' n G G') G G' where
 
 end Monoid
 
-/-! ### Differentiability of finite point-wise sums and products, and powers
+/-!
+# Differentiability of finite point-wise sums and products, and powers
 
-  Finite point-wise products (resp. sums), and powers, of `C^n` functions `M → G` (at `x`/on `s`)
-  into a commutative monoid `G` are `C^n` at `x`/on `s`. -/
+Finite point-wise products (resp. sums), and powers, of `C^n` functions `M → G` (at `x`/on `s`)
+into a commutative monoid `G` are `C^n` at `x`/on `s`.
+-/
 section CommMonoid
 
 open Function

@@ -9,6 +9,9 @@ public import Mathlib.NumberTheory.Real.Irrational
 public import Mathlib.Topology.Instances.AddCircle.Defs
 public import Mathlib.Topology.Algebra.Order.Archimedean
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Irrational rotation is minimal
 

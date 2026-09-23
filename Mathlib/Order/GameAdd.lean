@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.Sym.Sym2
 public import Mathlib.Logic.Relation
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Game addition relation
 
@@ -20,12 +23,11 @@ We also define `Sym2.GameAdd`, which is the unordered pair analog of `Prod.GameA
 
 ## Main definitions and results
 
-- `Prod.GameAdd`: the game addition relation on ordered pairs.
-- `WellFounded.prod_gameAdd`: formalizes induction on ordered pairs, where exactly one entry
+* `Prod.GameAdd`: the game addition relation on ordered pairs.
+* `WellFounded.prod_gameAdd`: formalizes induction on ordered pairs, where exactly one entry
   decreases at a time.
-
-- `Sym2.GameAdd`: the game addition relation on unordered pairs.
-- `WellFounded.sym2_gameAdd`: formalizes induction on unordered pairs, where exactly one entry
+* `Sym2.GameAdd`: the game addition relation on unordered pairs.
+* `WellFounded.sym2_gameAdd`: formalizes induction on unordered pairs, where exactly one entry
   decreases at a time.
 -/
 
@@ -33,7 +35,9 @@ We also define `Sym2.GameAdd`, which is the unordered pair analog of `Prod.GameA
 
 variable {α β : Type*} {rα : α → α → Prop} {rβ : β → β → Prop} {a : α} {b : β}
 
-/-! ### `Prod.GameAdd` -/
+/-!
+# `Prod.GameAdd`
+-/
 
 namespace Prod
 
@@ -135,7 +139,9 @@ theorem GameAdd.induction {C : α → β → Prop} :
 
 end Prod
 
-/-! ### `Sym2.GameAdd` -/
+/-!
+# `Sym2.GameAdd`
+-/
 
 namespace Sym2
 

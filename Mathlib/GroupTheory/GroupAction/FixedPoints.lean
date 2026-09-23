@@ -11,6 +11,9 @@ public import Mathlib.Dynamics.PeriodicPts.Defs
 public import Mathlib.GroupTheory.GroupAction.Defs
 public import Mathlib.GroupTheory.GroupAction.Hom
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Properties of `fixedPoints` and `fixedBy`
 
@@ -132,7 +135,7 @@ end FixedPoints
 section Pointwise
 
 /-!
-### `fixedBy` sets of the pointwise group action
+# `fixedBy` sets of the pointwise group action
 
 The theorems below need the `Pointwise` scoped to be opened (using `open Pointwise`)
 to be used effectively.
@@ -200,7 +203,7 @@ end Pointwise
 section Commute
 
 /-!
-## Pointwise image of the `fixedBy` set by a commuting group element
+# Pointwise image of the `fixedBy` set by a commuting group element
 
 If two group elements `g` and `h` commute, then `g` fixes `h • x` (resp. `h +ᵥ x`)
 if and only if `g` fixes `x`.

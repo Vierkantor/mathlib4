@@ -8,6 +8,9 @@ module
 public import Mathlib.LinearAlgebra.Contraction
 public import Mathlib.Algebra.Group.Equiv.TypeTags
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Monoid representations
 
@@ -16,13 +19,13 @@ representations.
 
 ## Main definitions
 
-  * `Representation`
-  * `Representation.directSum`
-  * `Representation.prod`
-  * `Representation.tprod`
-  * `Representation.linHom`
-  * `Representation.dual`
-  * `Representation.free`
+* `Representation`
+* `Representation.directSum`
+* `Representation.prod`
+* `Representation.tprod`
+* `Representation.linHom`
+* `Representation.dual`
+* `Representation.free`
 
 ## Implementation notes
 
@@ -206,7 +209,7 @@ noncomputable def ofModule : Representation k G (RestrictScalars k k[G] M) :=
   (MonoidAlgebra.lift k _ G).symm (RestrictScalars.lsmul k k[G] M)
 
 /-!
-## `ofModule` and `asModule` are inverses.
+# `ofModule` and `asModule` are inverses.
 
 This requires a little care in both directions:
 this is a categorical equivalence, not an isomorphism.
@@ -680,11 +683,13 @@ def dual : Representation k G (Module.Dual k V) where
 theorem dual_apply (g : G) : (dual ρV) g = Module.Dual.transpose (R := k) (ρV g⁻¹) :=
   rfl
 
-/-- Given $k$-modules $V, W$, there is a homomorphism $φ : V^* ⊗ W → Hom_k(V, W)$
+/--
+Given $`k`-modules $`V, W`, there is a homomorphism $`φ : V^* ⊗ W → Hom_k(V, W)`
 (implemented by `dualTensorHom` in `Mathlib/LinearAlgebra/Contraction.lean`).
-Given representations of $G$ on $V$ and $W$,there are representations of $G$ on $V^* ⊗ W$ and on
-$Hom_k(V, W)$.
-This lemma says that $φ$ is $G$-linear.
+Given representations of $`G` on $`V` and $`W`,there are representations of $`G` on $`V^* ⊗ W` and
+on
+$`Hom_k(V, W)`.
+This lemma says that $`φ` is $`G`-linear.
 -/
 theorem dualTensorHom_comm (g : G) :
     dualTensorHom k V W ∘ₗ TensorProduct.map (ρV.dual g) (ρW g) =

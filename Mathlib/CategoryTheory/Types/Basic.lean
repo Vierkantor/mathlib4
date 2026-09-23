@@ -10,6 +10,9 @@ public import Mathlib.CategoryTheory.EpiMono
 public import Mathlib.Tactic.PPWithUniv
 public import Mathlib.Tactic.ToAdditive
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The category `Type`.
 
@@ -28,7 +31,7 @@ morphisms in `Type` to functions), and the outer nesting `TypeCat.Hom` gives a l
 between morphisms and `FC`, as is done for all concrete categories in mathlib.
 
 To promote a function to a morphism in this category, we provide the abbreviation `↾f`,
-as well as a corresponding notation `↾f`. (Entered as `\upr `.)
+as well as a corresponding notation `↾f`. (Entered as `\upr  `.)
 
 ## Main definitions
 
@@ -36,7 +39,8 @@ We define `uliftFunctor`, from `Type u` to `Type (max u v)`, and show that it is
 (but not, of course, essentially surjective).
 
 We prove some basic facts about the category `Type`:
-*  epimorphisms are surjections and monomorphisms are injections,
+
+* epimorphisms are surjections and monomorphisms are injections,
 * `Iso` is both `Iso` and `Equiv` to `Equiv` (at least within a fixed universe),
 * every type level `IsLawfulFunctor` gives a categorical functor `Type ⥤ Type`
   (the corresponding fact about monads is in `Mathlib/CategoryTheory/Monad/Types.lean`).

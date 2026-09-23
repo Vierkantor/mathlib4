@@ -12,6 +12,9 @@ public import Mathlib.Logic.Function.Basic
 public import Mathlib.Tactic.Simps
 public import Mathlib.Tactic.SplitIfs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Typeclass for a type `F` with an injective map to `A → B`
 
@@ -22,6 +25,7 @@ There is the "D"ependent version `DFunLike` and the non-dependent version `FunLi
 ## Basic usage of `DFunLike` and `FunLike`
 
 A typical type of morphisms should be declared as:
+
 ```
 structure MyHom (A B : Type*) [MyClass A] [MyClass B] where
   (toFun : A → B)
@@ -113,6 +117,7 @@ instance : CoolerHomClass (CoolerHom A B) A B where
 
 Then any declaration taking a specific type of morphisms as parameter can instead take the
 class you just defined:
+
 ```
 -- Compare with: lemma do_something (f : MyHom A B) : sorry := sorry
 lemma do_something {F : Type*} [FunLike F A B] [MyHomClass F A B] (f : F) : sorry :=
@@ -125,11 +130,12 @@ instead of linearly increasing the work per `MyHom`-related declaration.
 
 ## Design rationale
 
-The current form of FunLike was set up in pull request https://github.com/leanprover-community/mathlib4/pull/8386:
+The current form of FunLike was set up in pull request
+https://github.com/leanprover-community/mathlib4/pull/8386:
 https://github.com/leanprover-community/mathlib4/pull/8386
-We made `FunLike` *unbundled*: child classes don't extend `FunLike`, they take a `[FunLike F A B]`
+We made `FunLike` _unbundled_: child classes don't extend `FunLike`, they take a `[FunLike F A B]`
 parameter instead. This suits the instance synthesis algorithm better: it's easy to verify a type
-does **not** have a `FunLike` instance by checking the discrimination tree once instead of searching
+does *not* have a `FunLike` instance by checking the discrimination tree once instead of searching
 the entire `extends` hierarchy.
 -/
 
@@ -162,7 +168,9 @@ initialize_simps_projections DFunLike
 
 section Dependent
 
-/-! ### `DFunLike F α β` where `β` depends on `a : α` -/
+/-!
+# `DFunLike F α β` where `β` depends on `a : α`
+-/
 
 variable (F α : Sort*) (β : α → Sort*)
 
@@ -222,7 +230,9 @@ end Dependent
 
 section NonDependent
 
-/-! ### `FunLike F α β` where `β` does not depend on `a : α` -/
+/-!
+# `FunLike F α β` where `β` does not depend on `a : α`
+-/
 
 variable {F α β : Sort*} [i : FunLike F α β]
 

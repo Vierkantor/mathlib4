@@ -9,6 +9,9 @@ public import Mathlib.Data.Finset.Grade
 public import Mathlib.Data.Finset.Sups
 public import Mathlib.Logic.Function.Iterate
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Shadows
 
@@ -27,6 +30,7 @@ to projecting each finset down once in all available directions.
 ## Notation
 
 We define notation in scope `FinsetFamily`:
+
 * `∂ 𝒜`: Shadow of `𝒜`.
 * `∂⁺ 𝒜`: Upper shadow of `𝒜`.
 

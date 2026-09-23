@@ -13,6 +13,10 @@ public import Mathlib.Algebra.Group.TypeTags.Basic
 public import Mathlib.Algebra.Group.ULift
 public import Mathlib.Data.DFinsupp.Defs
 
+set_option doc.verso true
+set_option doc.verso.module false
+set_option doc.verso.suggestions false
+
 /-!
 # Unique products and related notions
 
@@ -373,10 +377,12 @@ open MulOpposite in
     · rw [mul_assoc b1, ← mul_assoc a, he, mul_assoc a1, ← mul_assoc b1]
     exact ⟨mul_left_cancel hu.1, mul_right_cancel hu.2⟩
 
-/-- If a group has `UniqueProds`, then it actually has `TwoUniqueProds`.
-  For an example of a semigroup `G` embeddable into a group that has `UniqueProds`
-  but not `TwoUniqueProds`, see Example 10.13 in
-  [J. Okniński, *Semigroup Algebras*][Okninski1991]. -/
+/--
+If a group has `UniqueProds`, then it actually has `TwoUniqueProds`.
+For an example of a semigroup `G` embeddable into a group that has `UniqueProds`
+but not `TwoUniqueProds`, see Example 10.13 in
+‍\[J. Okniński, _Semigroup Algebras_\]\[Okninski1991\].
+-/
 @[to_additive] theorem toTwoUniqueProds_of_group {G}
     [Group G] [UniqueProds G] : TwoUniqueProds G where
   uniqueMul_of_one_lt_card {A B} hc := by

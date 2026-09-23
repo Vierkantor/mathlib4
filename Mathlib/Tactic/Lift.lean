@@ -10,6 +10,9 @@ public meta import Batteries.Lean.Meta.UnusedNames
 public meta import Lean.Elab.Tactic.RCases
 public import Mathlib.Tactic.TypeStar
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # lift tactic
 

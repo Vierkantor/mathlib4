@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.ConcreteCategory.EpiMono
 public import Mathlib.Topology.Algebra.Category.ProfiniteGrp.Basic
 public import Mathlib.Topology.Algebra.ClopenNhdofOne
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # A profinite group is the projective limit of finite groups
 
@@ -19,10 +22,8 @@ its quotients by open normal subgroups.
 
 * `toFiniteQuotientFunctor` : The functor from `OpenNormalSubgroup P` to `FiniteGrp`
   sending an open normal subgroup `U` to `P ⧸ U`, where `P : ProfiniteGrp`.
-
 * `toLimit` : The continuous homomorphism from a profinite group `P` to
   the projective limit of its quotients by open normal subgroups ordered by inclusion.
-
 * `ContinuousMulEquivLimittoFiniteQuotientFunctor` : The `toLimit` is a
   `ContinuousMulEquiv`
 
@@ -30,7 +31,6 @@ its quotients by open normal subgroups.
 
 * `OpenNormalSubgroupSubClopenNhdsOfOne` : For any open neighborhood of `1` there is an
   open normal subgroup contained in it.
-
 -/
 
 @[expose] public section

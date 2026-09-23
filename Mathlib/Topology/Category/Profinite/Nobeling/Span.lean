@@ -10,6 +10,9 @@ public import Mathlib.Tactic.NoncommRing
 public import Mathlib.Topology.Category.Profinite.CofilteredLimit
 public import Mathlib.Topology.Category.Profinite.Nobeling.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The good products span
 
@@ -27,7 +30,7 @@ For the overall proof outline see `Mathlib/Topology/Category/Profinite/Nobeling/
 
 ## References
 
-- [scholze2019condensed], Theorem 5.4.
+* ‍\[scholze2019condensed\], Theorem 5.4.
 -/
 
 @[expose] public section

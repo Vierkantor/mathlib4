@@ -10,6 +10,9 @@ public import Mathlib.Order.Filter.SmallSets
 public import Mathlib.Topology.ContinuousOn
 public import Mathlib.Topology.UniformSpace.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Basic results on uniform spaces
 
@@ -31,8 +34,8 @@ and `○` for composition of relations, seen as terms with type `Set (X × X)`.
 
 The formalization uses the books:
 
-* [N. Bourbaki, *General Topology*][bourbaki1966]
-* [I. M. James, *Topologies and Uniformities*][james1999]
+* ‍\[N. Bourbaki, _General Topology_\]\[bourbaki1966\]
+* ‍\[I. M. James, _Topologies and Uniformities_\]\[james1999\]
 
 But it makes a more systematic use of the filter library.
 -/
@@ -46,7 +49,7 @@ open scoped Topology SetRel Uniformity
 universe u v ua ub uc ud
 
 /-!
-### Relations, seen as `SetRel α α`
+# Relations, seen as `SetRel α α`
 -/
 
 variable {α : Type ua} {β : Type ub} {γ : Type uc} {δ : Type ud} {ι : Sort*}
@@ -110,7 +113,7 @@ theorem eventually_uniformity_comp_subset {s : SetRel α α} (hs : s ∈ 𝓤 α
   eventually_uniformity_iterate_comp_subset hs 1
 
 /-!
-### Balls in uniform spaces
+# Balls in uniform spaces
 -/
 
 namespace UniformSpace
@@ -124,7 +127,7 @@ lemma isClosed_ball (x : α) {V : SetRel α α} (hV : IsClosed V) : IsClosed (ba
   hV.preimage <| .prodMk_right _
 
 /-!
-### Neighborhoods in uniform spaces
+# Neighborhoods in uniform spaces
 -/
 
 theorem hasBasis_nhds_prod (x y : α) :
@@ -195,7 +198,7 @@ theorem UniformSpace.has_seq_basis [IsCountablyGenerated <| 𝓤 α] :
 end
 
 /-!
-### Closure and interior in uniform spaces
+# Closure and interior in uniform spaces
 -/
 
 theorem closure_eq_uniformity (s : Set <| α × α) :
@@ -286,7 +289,7 @@ lemma DenseRange.iUnion_uniformity_ball {ι : Type*} {xs : ι → α}
   exact Dense.biUnion_uniformity_ball xs_dense hU
 
 /-!
-### Uniformity bases
+# Uniformity bases
 -/
 
 /-- Open elements of `𝓤 α` form a basis of `𝓤 α`. -/
@@ -403,9 +406,11 @@ instance [Subsingleton α] : Unique (UniformSpace α) where
   uniq u := bot_unique <| le_principal_iff.2 <| by
     rw [SetRel.id, ← diagonal, diagonal_eq_univ]; exact univ_mem
 
-/-- Given `f : α → β` and a uniformity `u` on `β`, the inverse image of `u` under `f`
-  is the inverse image in the filter sense of the induced function `α × α → β × β`.
-  See note [reducible non-instances]. -/
+/--
+Given `f : α → β` and a uniformity `u` on `β`, the inverse image of `u` under `f`
+is the inverse image in the filter sense of the induced function `α × α → β × β`.
+See note \[reducible non-instances\].
+-/
 abbrev UniformSpace.comap (f : α → β) (u : UniformSpace β) : UniformSpace α where
   uniformity := 𝓤[u].comap fun p : α × α => (f p.1, f p.2)
   symm := by
@@ -1009,7 +1014,7 @@ end Sum
 end Constructions
 
 /-!
-### Expressing continuity properties in uniform spaces
+# Expressing continuity properties in uniform spaces
 
 We reformulate the various continuity properties of functions taking values in a uniform space
 in terms of the uniformity in the target. Since the same lemmas (essentially with the same names)

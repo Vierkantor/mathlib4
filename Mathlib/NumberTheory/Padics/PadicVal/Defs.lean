@@ -9,6 +9,9 @@ public import Mathlib.Data.Nat.PadicValNat
 public import Mathlib.RingTheory.Multiplicity
 public import Mathlib.Data.Nat.Factors
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `p`-adic Valuation
 

@@ -12,6 +12,9 @@ public import Mathlib.MeasureTheory.Function.SpecialFunctions.Basic
 
 import Mathlib.Analysis.SpecialFunctions.Pow.Continuity
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Basic theorems about ℒp space
 -/

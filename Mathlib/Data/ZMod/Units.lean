@@ -9,6 +9,9 @@ public import Mathlib.Algebra.BigOperators.Associated
 public import Mathlib.Data.ZMod.Basic
 public import Mathlib.RingTheory.Coprime.Lemmas
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lemmas about units in `ZMod`.
 -/

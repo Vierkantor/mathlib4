@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.Finsupp.Notation
 public import Mathlib.RingTheory.MvPolynomial.Homogeneous
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Homogenize a univariate polynomial
 

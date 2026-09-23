@@ -10,6 +10,9 @@ public import Mathlib.Analysis.Normed.Group.AddTorsor
 public import Mathlib.Geometry.Euclidean.Angle.Unoriented.Basic
 public import Mathlib.Analysis.Normed.Affine.Isometry
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Angles between points
 

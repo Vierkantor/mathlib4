@@ -9,7 +9,12 @@ public import Mathlib.Algebra.Order.Group.Synonym
 public import Mathlib.Algebra.Order.Monoid.Unbundled.OrderDual
 public import Mathlib.Algebra.Order.Monoid.Defs
 
-/-! # Ordered monoid structures on the order dual. -/
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Ordered monoid structures on the order dual.
+-/
 
 public section
 

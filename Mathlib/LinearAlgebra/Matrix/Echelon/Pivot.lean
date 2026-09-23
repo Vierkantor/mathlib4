@@ -9,6 +9,9 @@ public import Mathlib.LinearAlgebra.Matrix.Echelon.Basic
 public import Mathlib.LinearAlgebra.Matrix.Rank
 public import Mathlib.Order.WithBot
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Pivots of a matrix
 
@@ -17,14 +20,14 @@ public import Mathlib.Order.WithBot
 
 ## Main definitions
 
-- `Matrix.IsPivotedBy`: `l i : WithTop n` is the pivot column of each row `i` of `A`.
+* `Matrix.IsPivotedBy`: `l i : WithTop n` is the pivot column of each row `i` of `A`.
 
 ## Main results
 
-- `Matrix.IsPivotedBy.rank_eq`: the rank of a matrix is its number of pivots.
-- `Matrix.IsPivotedBy.unique`: the pivot of a matrix is unique if the column indices have a
+* `Matrix.IsPivotedBy.rank_eq`: the rank of a matrix is its number of pivots.
+* `Matrix.IsPivotedBy.unique`: the pivot of a matrix is unique if the column indices have a
   linear order.
-- `Matrix.isPivotedBy_iff`: the map-structural characterisation of pivots.
+* `Matrix.isPivotedBy_iff`: the map-structural characterisation of pivots.
 
 ## Tags
 
@@ -163,7 +166,9 @@ end IsPivotedBy
 
 end Rank
 
-/-! ## Decidability -/
+/-!
+# Decidability
+-/
 
 section Decidability
 

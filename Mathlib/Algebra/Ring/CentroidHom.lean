@@ -12,15 +12,16 @@ public import Mathlib.GroupTheory.GroupAction.Ring
 public import Mathlib.RingTheory.NonUnitalSubsemiring.Basic
 public import Mathlib.Algebra.Ring.Subsemiring.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Centroid homomorphisms
 
 Let `A` be a (nonunital, non-associative) algebra. The centroid of `A` is the set of linear maps
 `T` on `A` such that `T` commutes with left and right multiplication, that is to say, for all `a`
 and `b` in `A`,
-$$
-T(ab) = (Ta)b, T(ab) = a(Tb).
-$$
+$$`  T(ab) = (Ta)b, T(ab) = a(Tb).  `
 In mathlib we call elements of the centroid "centroid homomorphisms" (`CentroidHom`) in keeping
 with `AddMonoidHom` etc.
 
@@ -37,8 +38,8 @@ be satisfied by itself and all stricter types.
 
 ## References
 
-* [Jacobson, Structure of Rings][Jacobson1956]
-* [McCrimmon, A taste of Jordan algebras][mccrimmon2004]
+* ‍\[Jacobson, Structure of Rings\]\[Jacobson1956\]
+* ‍\[McCrimmon, A taste of Jordan algebras\]\[mccrimmon2004\]
 
 ## Tags
 
@@ -83,7 +84,9 @@ instance [NonUnitalNonAssocSemiring α] [FunLike F α α] [CentroidHomClass F α
       map_mul_left' := map_mul_left f
       map_mul_right' := map_mul_right f }⟩
 
-/-! ### Centroid homomorphisms -/
+/-!
+# Centroid homomorphisms
+-/
 
 namespace CentroidHom
 

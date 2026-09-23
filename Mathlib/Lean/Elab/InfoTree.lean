@@ -13,6 +13,9 @@ public import Lean.Meta.TryThis
 import Mathlib.Tactic.Linter.Header  -- shake: keep
 import Lean.Elab.Term.TermElabM
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Additions to `Lean.Elab.InfoTree.Main`
 -/

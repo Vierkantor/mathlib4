@@ -8,6 +8,9 @@ module
 public import Mathlib.CategoryTheory.Abelian.GrothendieckCategory.ModuleEmbedding.Opposite
 public import Mathlib.CategoryTheory.Abelian.GrothendieckAxioms.Indization
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The Freyd-Mitchell embedding theorem
 
@@ -72,7 +75,7 @@ small category, then this does not change anything.
 ## References
 
 * https://stacks.math.columbia.edu/tag/05PL
-* [M. Kashiwara, P. Schapira, *Categories and Sheaves*][Kashiwara2006], Section 9.6
+* ‍\[M. Kashiwara, P. Schapira, _Categories and Sheaves_\]\[Kashiwara2006\], Section 9.6
 -/
 
 @[expose] public section

@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.InnerProductSpace.Projection.Reflection
 public import Mathlib.LinearAlgebra.AffineSpace.FiniteDimensional
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Orthogonal projection in affine spaces
 
@@ -18,10 +21,8 @@ and reflection of a point in an affine subspace.
 
 * `EuclideanGeometry.orthogonalProjection` is the orthogonal
   projection of a point onto an affine subspace.
-
 * `EuclideanGeometry.reflection` is the reflection of a point in an
   affine subspace.
-
 -/
 
 @[expose] public section

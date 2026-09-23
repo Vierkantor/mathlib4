@@ -11,7 +11,11 @@ public import Mathlib.Tactic.Ring
 public import Mathlib.Util.AtomM
 public meta import Mathlib.Algebra.Algebra.Defs
 
-/-! # A tactic for normalization over modules
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# A tactic for normalization over modules
 
 This file provides the two tactics `match_scalars` and `module`.  Given a goal which is an equality
 in a type `M` (with `M` an `AddCommMonoid`), the `match_scalars` tactic parses the LHS and RHS of
@@ -39,7 +43,8 @@ namespace Mathlib.Tactic.Module
 
 @[expose] section
 
-/-! ### Theory of lists of pairs (scalar, vector)
+/-!
+# Theory of lists of pairs (scalar, vector)
 
 This section contains the lemmas which are orchestrated by the `match_scalars` and `module` tactics
 to prove goals in modules.  The basic object which these lemmas concern is `NF R M`, a type synonym
@@ -241,7 +246,9 @@ end
 meta section
 variable {u v : Level}
 
-/-! ### Lists of expressions representing scalars and vectors, and operations on such lists -/
+/-!
+# Lists of expressions representing scalars and vectors, and operations on such lists
+-/
 
 /-- Basic meta-code "normal form" object of the `match_scalars` and `module` tactics: a type synonym
 for a list of ordered triples comprising expressions representing terms of two types `R` and `M`
@@ -370,7 +377,8 @@ variable {iM : Q(AddCommMonoid $M)}
   {u₁ : Level} {R₁ : Q(Type u₁)} {iR₁ : Q(Semiring $R₁)} (iRM₁ : Q(@Module $R₁ $M $iR₁ $iM))
   {u₂ : Level} {R₂ : Q(Type u₂)} (iR₂ : Q(Semiring $R₂)) (iRM₂ : Q(@Module $R₂ $M $iR₂ $iM))
 
-/-- Given an expression `M` representing a type which is an `AddCommMonoid` and a module over *two*
+/--
+Given an expression `M` representing a type which is an `AddCommMonoid` and a module over _two_
 semirings `R₁` and `R₂`, find the "bigger" of the two semirings.  That is, we assume that it will
 turn out to be the case that either (1) `R₁` is an `R₂`-algebra and the `R₂` scalar action on `M` is
 induced from `R₁`'s scalar action on `M`, or (2) vice versa; we return the semiring `R₁` in the
@@ -378,7 +386,8 @@ first case and `R₂` in the second case.
 
 Moreover, given expressions representing particular scalar multiplications of `R₁` and/or `R₂` on
 `M` (a `List (R₁ × M)`, a `List (R₂ × M)`, a pair `(r, x) : R₂ × M`), bump these up to the "big"
-ring by applying the algebra-map where needed. -/
+ring by applying the algebra-map where needed.
+-/
 def matchRings (l₁ : qNF R₁ M) (l₂ : qNF R₂ M) (r : Q($R₂)) (x : Q($M)) :
     MetaM <| Σ u : Level, Σ R : Q(Type u), Σ iR : Q(Semiring $R), Σ _ : Q(@Module $R $M $iR $iM),
       (Σ l₁' : qNF R M, Q(NF.eval $(l₁'.toNF) = NF.eval $(l₁.toNF)))
@@ -413,12 +422,15 @@ def matchRings (l₁ : qNF R₁ M) (l₂ : qNF R₂ M) (r : Q($R₂)) (x : Q($M)
 
 end qNF
 
-/-! ### Core of the `module` tactic -/
+/-!
+# Core of the `module` tactic
+-/
 
 variable {M : Q(Type v)}
 
-/-- The main algorithm behind the `match_scalars` and `module` tactics: partially-normalizing an
-expression in an additive commutative monoid `M` into the form c1 • x1 + c2 • x2 + ... c_k • x_k,
+/--
+The main algorithm behind the `match_scalars` and `module` tactics: partially-normalizing an
+expression in an additive commutative monoid `M` into the form c1 • x1 + c2 • x2 + ... c\_k • x\_k,
 where x1, x2, ... are distinct atoms in `M`, and c1, c2, ... are scalars. The scalar type of the
 expression is not pre-determined: instead it starts as `ℕ` (when each atom is initially given a
 scalar `(1:ℕ)`) and gets bumped up into bigger semirings when such semirings are encountered.
@@ -427,13 +439,15 @@ It is assumed that there is a "linear order" on all the semirings which appear i
 for any two semirings `R` and `S` which occur, we have either `Algebra R S` or `Algebra S R`.
 
 TODO: implement a variant in which a semiring `R` is provided by the user, and the assumption is
-instead that for any semiring `S` which occurs, we have `Algebra S R`. The PR https://github.com/leanprover-community/mathlib4/pull/16984 provides a
+instead that for any semiring `S` which occurs, we have `Algebra S R`. The PR
+https://github.com/leanprover-community/mathlib4/pull/16984 provides a
 proof-of-concept implementation of this variant, but it would need some polishing before joining
 Mathlib.
 
 Possible TODO, if poor performance on large problems is witnessed: switch the implementation from
 `AtomM` to `CanonM`, per the discussion
-https://github.com/leanprover-community/mathlib4/pull/16593/files#r1749623191 -/
+https://github.com/leanprover-community/mathlib4/pull/16593/files#r1749623191
+-/
 partial def parse (iM : Q(AddCommMonoid $M)) (x : Q($M)) :
     AtomM (Σ u : Level, Σ R : Q(Type u), Σ iR : Q(Semiring $R), Σ _ : Q(@Module $R $M $iR $iM),
       Σ l : qNF R M, Q($x = NF.eval $(l.toNF))) := do

@@ -10,6 +10,9 @@ public import Mathlib.CategoryTheory.Subobject.Limits
 public import Mathlib.CategoryTheory.GradedObject
 public import Mathlib.Algebra.Homology.ShortComplex.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Homological complexes.
 

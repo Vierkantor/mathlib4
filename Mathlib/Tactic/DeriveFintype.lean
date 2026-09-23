@@ -11,6 +11,9 @@ public meta import Mathlib.Tactic.ToAdditive
 public meta import Mathlib.Tactic.ToDual
 public meta import Lean.Elab.Deriving.Util
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The `Fintype` derive handler
 
@@ -18,6 +21,7 @@ This file defines a derive handler to automatically generate `Fintype` instances
 for structures and inductive types.
 
 The following is a prototypical example of what this can handle:
+
 ```
 inductive MyOption (α : Type*)
   | none
@@ -43,7 +47,7 @@ There are two kinds of `Fintype` instances that we generate, depending on the in
 
 If it is an enum (an inductive type with only 0-ary constructors), then we generate the
 complete `List` of all constructors; see `Mathlib.Deriving.Fintype.mkFintypeEnum` for more
-details. The proof has $O(n)$ complexity in the number of constructors.
+details. The proof has $`O(n)` complexity in the number of constructors.
 
 Otherwise, the strategy we take is to generate a "proxy type", define an equivalence between
 our type and the proxy type (see `proxy_equiv%`), and then use `Fintype.ofEquiv` to pull a

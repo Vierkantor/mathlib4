@@ -12,6 +12,9 @@ public import Mathlib.Analysis.RCLike.Basic
 public import Mathlib.Analysis.Normed.Ring.Units
 public import Mathlib.Topology.Algebra.Module.Spaces.CharacterSpace
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Ideals of continuous functions
 

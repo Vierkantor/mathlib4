@@ -8,12 +8,16 @@ module
 public import Mathlib.CategoryTheory.Limits.Shapes.Opposites.Pullbacks
 
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Pullback and pushout squares
 
 We provide another API for pullbacks and pushouts.
 
 `IsPullback fst snd f g` is the proposition that
+
 ```
   P --fst--> X
   |          |
@@ -23,6 +27,7 @@ We provide another API for pullbacks and pushouts.
   Y ---g---> Z
 
 ```
+
 is a pullback square.
 
 (And similarly for `IsPushout`.)

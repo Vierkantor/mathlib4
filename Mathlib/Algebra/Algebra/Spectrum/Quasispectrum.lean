@@ -9,12 +9,15 @@ public import Mathlib.Algebra.Algebra.Spectrum.Basic
 public import Mathlib.Algebra.Algebra.Tower
 public import Mathlib.Algebra.Algebra.Unitization
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Quasiregularity and quasispectrum
 
-For a non-unital ring `R`, an element `r : R` is *quasiregular* if it is invertible in the monoid
+For a non-unital ring `R`, an element `r : R` is _quasiregular_ if it is invertible in the monoid
 `(R, ∘)` where `x ∘ y := y + x + x * y` with identity `0 : R`. We implement this both as a type
-synonym `PreQuasiregular` which has an associated `Monoid` instance (note: *not* an `AddMonoid`
+synonym `PreQuasiregular` which has an associated `Monoid` instance (note: _not_ an `AddMonoid`
 instance despite the fact that `0 : R` is the identity in this monoid) so that one may access
 the quasiregular elements of `R` as `(PreQuasiregular R)ˣ`, but also as a predicate
 `IsQuasiregular`.
@@ -27,37 +30,37 @@ with multiplicative invertibility, that we choose a `Monoid` (as opposed to an `
 structure on `PreQuasiregular`.  In addition, in unital rings, we even have
 `IsQuasiregular x ↔ IsUnit (1 + x)`.
 
-The *quasispectrum* of `a : A` (with respect to `R`) is defined in terms of quasiregularity, and
+The _quasispectrum_ of `a : A` (with respect to `R`) is defined in terms of quasiregularity, and
 this is the natural analogue of the `spectrum` for non-unital rings. Indeed, it is true that
 `quasispectrum R a = spectrum R a ∪ {0}` when `A` is unital.
 
 In Mathlib, the quasispectrum is the domain of the continuous functions associated to the
-*non-unital* continuous functional calculus.
+_non-unital_ continuous functional calculus.
 
 ## Main definitions
 
-+ `PreQuasiregular R`: a structure wrapping `R` that inherits a distinct `Monoid` instance when `R`
+* `PreQuasiregular R`: a structure wrapping `R` that inherits a distinct `Monoid` instance when `R`
   is a non-unital semiring.
-+ `Unitization.unitsFstOne`: the subgroup with carrier `{ x : (Unitization R A)ˣ | x.fst = 1 }`.
-+ `unitsFstOne_mulEquiv_quasiregular`: the group isomorphism between
+* `Unitization.unitsFstOne`: the subgroup with carrier `{ x : (Unitization R A)ˣ | x.fst = 1 }`.
+* `unitsFstOne_mulEquiv_quasiregular`: the group isomorphism between
   `Unitization.unitsFstOne` and the units of `PreQuasiregular` (i.e., the quasiregular elements)
   which sends `(1, x) ↦ x`.
-+ `IsQuasiregular x`: the proposition that `x : R` is a unit with respect to the monoid structure on
+* `IsQuasiregular x`: the proposition that `x : R` is a unit with respect to the monoid structure on
   `PreQuasiregular R`, i.e., there is some `u : (PreQuasiregular R)ˣ` such that `u.val` is
   identified with `x` (via the natural equivalence between `R` and `PreQuasiregular R`).
-+ `quasispectrum R a`: in an algebra over the semifield `R`, this is the set
+* `quasispectrum R a`: in an algebra over the semifield `R`, this is the set
   `{r : R | (hr : IsUnit r) → ¬ IsQuasiregular (-(hr.unit⁻¹ • a))}`, which should be thought of
   as a version of the `spectrum` which is applicable in non-unital algebras.
 
 ## Main theorems
 
-+ `isQuasiregular_iff_isUnit`: in a unital ring, `x` is quasiregular if and only if `1 + x` is
+* `isQuasiregular_iff_isUnit`: in a unital ring, `x` is quasiregular if and only if `1 + x` is
   a unit.
-+ `quasispectrum_eq_spectrum_union_zero`: in a unital algebra `A` over a semifield `R`, the
+* `quasispectrum_eq_spectrum_union_zero`: in a unital algebra `A` over a semifield `R`, the
   quasispectrum of `a : A` is the `spectrum` with zero added.
-+ `Unitization.isQuasiregular_inr_iff`: `a : A` is quasiregular if and only if it is quasiregular
+* `Unitization.isQuasiregular_inr_iff`: `a : A` is quasiregular if and only if it is quasiregular
   in `Unitization R A` (via the coercion `Unitization.inr`).
-+ `Unitization.quasispectrum_eq_spectrum_inr`: the quasispectrum of `a` in a non-unital `R`-algebra
+* `Unitization.quasispectrum_eq_spectrum_inr`: the quasispectrum of `a` in a non-unital `R`-algebra
   `A` is precisely the spectrum of `a` in `Unitization R A` (via the coercion `Unitization.inr`).
 -/
 
@@ -284,10 +287,12 @@ theorem quasispectrum.of_subsingleton {R A : Type*} [Semifield R] [NonUnitalRing
     quasispectrum R a = {0} := by
   rw [Subsingleton.elim a 0, zero_eq]
 
-/-- A version of `NonUnitalAlgHom.quasispectrum_apply_subset` which allows for `quasispectrum R`,
-where `R` is a *semi*ring, but `φ` must still function over a scalar ring `S`. In this case, we
+/--
+A version of `NonUnitalAlgHom.quasispectrum_apply_subset` which allows for `quasispectrum R`,
+where `R` is a _semi_ring, but `φ` must still function over a scalar ring `S`. In this case, we
 need `S` to be explicit. The primary use case is, for instance, `R := ℝ≥0` and `S := ℝ` or
-`S := ℂ`. -/
+`S := ℂ`.
+-/
 lemma NonUnitalAlgHom.quasispectrum_apply_subset' {F R : Type*} (S : Type*) {A B : Type*}
     [CommSemiring R] [Semiring S] [NonUnitalRing A] [NonUnitalRing B] [Module R S]
     [Module S A] [Module R A] [Module S B] [Module R B] [IsScalarTower R S A] [IsScalarTower R S B]
@@ -450,7 +455,9 @@ lemma spectrum_nonneg_of_nonneg {𝕜 A : Type*} [CommSemiring 𝕜] [PartialOrd
 
 grind_pattern spectrum_nonneg_of_nonneg => x ∈ spectrum 𝕜 a
 
-/-! ### Restriction of the spectrum -/
+/-!
+# Restriction of the spectrum
+-/
 
 /-- Given an element `a : A` of an `S`-algebra, where `S` is itself an `R`-algebra, we say that
 the spectrum of `a` restricts via a function `f : S → R` if `f` is a left inverse of

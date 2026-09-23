@@ -10,6 +10,9 @@ public import Mathlib.CategoryTheory.Enriched.Ordinary.Basic
 public import Mathlib.CategoryTheory.Functor.Category
 public import Mathlib.CategoryTheory.Limits.Shapes.End
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Functor categories are enriched
 
@@ -25,7 +28,6 @@ is defined by sending `j : J` to the previously defined `enrichedHom`
 for the "restriction" of `F₁` and `F₂` to the category `Under j`.
 The definition `isLimitConeFunctorEnrichedHom` shows that
 `enriched V F₁ F₂` is the limit of the functor `functorEnrichedHom V F₁ F₂`.
-
 -/
 
 set_option backward.defeqAttrib.useBackward true

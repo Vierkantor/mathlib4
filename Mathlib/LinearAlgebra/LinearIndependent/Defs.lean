@@ -9,8 +9,10 @@ public import Mathlib.Algebra.Order.Sub.Basic
 public import Mathlib.LinearAlgebra.Finsupp.LinearCombination
 public meta import Mathlib.Lean.Expr.ExtraRecognizers
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Linear independence
 
 This file defines linear independence in a module or vector space.
@@ -26,18 +28,16 @@ statements are equivalent to this one, including `ker (Finsupp.linearCombination
 some versions with explicitly written linear combinations.
 
 ## Main definitions
+
 All definitions are given for families of vectors, i.e. `v : ι → M` where `M` is the module or
 vector space and `ι : Type*` is an arbitrary indexing type.
 
 * `LinearIndependent R v` states that the elements of the family `v` are linearly independent.
-
 * `LinearIndepOn R v s` states that the elements of the family `v` indexed by the members
   of the set `s : Set ι` are linearly independent.
-
 * `LinearIndependent.repr hv x` returns the linear combination representing `x : span R (range v)`
   on the linearly independent vectors `v`, given `hv : LinearIndependent R v`
   (using classical choice). `LinearIndependent.repr hv` is provided as a linear map.
-
 * `LinearIndependent.Maximal` states that there exists no linear independent family that strictly
   includes the given one.
 
@@ -71,7 +71,6 @@ Rework proofs to hold in semirings, by avoiding the path through
 ## Tags
 
 linearly dependent, linear dependence, linearly independent, linear independence
-
 -/
 
 @[expose] public section
@@ -577,7 +576,7 @@ theorem LinearIndependent.maximal_iff {ι : Type w} {R : Type u} [Semiring R] [N
 end Maximal
 
 /-!
-### Properties which require `LinearOrder R` and `CanonicallyOrderedAdd R`
+# Properties which require `LinearOrder R` and `CanonicallyOrderedAdd R`
 
 If the semiring `R` is linearly and canonically ordered (e.g. `R = ℕ`), `LinearIndependent` can be
 proved from linear combination over two disjoint sets.
@@ -698,7 +697,9 @@ end LinearlyCanonicallyOrdered
 
 end Semiring
 
-/-! ### Properties which require `Ring R` -/
+/-!
+# Properties which require `Ring R`
+-/
 
 section Module
 
@@ -897,7 +898,7 @@ lemma LinearIndepOn.singleton (hi : v i ≠ 0) : LinearIndepOn R v {i} := by sim
 end Module
 
 /-!
-### Properties which require `DivisionRing K`
+# Properties which require `DivisionRing K`
 
 These can be considered generalizations of properties of linear independence in vector spaces.
 -/

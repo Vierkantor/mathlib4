@@ -7,6 +7,9 @@ module
 
 public import Mathlib.RingTheory.Ideal.Prime
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Prime spectrum of a commutative (semi)ring as a type
 
@@ -40,7 +43,7 @@ attribute [instance] PrimeSpectrum.isPrime
 namespace PrimeSpectrum
 
 /-!
-## The specialization order
+# The specialization order
 
 We endow `PrimeSpectrum R` with a partial order induced from the ideal lattice.
 This is exactly the specialization order.

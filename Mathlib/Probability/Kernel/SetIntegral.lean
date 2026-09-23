@@ -8,10 +8,13 @@ module
 public import Mathlib.MeasureTheory.Integral.Bochner.Set
 public import Mathlib.Probability.Kernel.Integral
 
-/-! # Integral against a kernel over a set
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Integral against a kernel over a set
 
 This file contains lemmas about the integral against a kernel and over a set.
-
 -/
 
 public section

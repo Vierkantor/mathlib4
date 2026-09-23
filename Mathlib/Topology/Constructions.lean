@@ -15,6 +15,9 @@ public import Mathlib.Topology.Constructions.SumProd
 public import Mathlib.Topology.NhdsSet
 import Mathlib.Topology.WithTopology
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Constructions of new topological spaces from old ones
 
@@ -36,7 +39,6 @@ neighborhood filters and so on.
 ## Tags
 
 product, subspace, quotient space
-
 -/
 
 @[expose] public section
@@ -71,7 +73,7 @@ instance ULift.topologicalSpace [t : TopologicalSpace X] : TopologicalSpace (ULi
   t.induced ULift.down
 
 /-!
-### `Additive`, `Multiplicative`
+# `Additive`, `Multiplicative`
 
 The topology on those type synonyms is inherited without change.
 -/
@@ -137,7 +139,7 @@ theorem nhds_toAdd (x : Multiplicative X) : 𝓝 x.toAdd = map toAdd (𝓝 x) :=
 end
 
 /-!
-### Order dual
+# Order dual
 
 The topology on this type synonym is inherited without change.
 -/

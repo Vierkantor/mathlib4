@@ -13,16 +13,20 @@ public import Mathlib.Data.Rat.Floor
 public import Mathlib.RingTheory.Nakayama
 public import Mathlib.Tactic.Continuity
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Ramification index
 
 Given `P : Ideal S` lying over `p : Ideal R` for the ring extension `f : R →+* S`
 (assuming `P` and `p` are prime or maximal where needed),
-the **ramification index** `Ideal.ramificationIdx' p P` is the multiplicity of `P` in `map f p`.
+the *ramification index* `Ideal.ramificationIdx' p P` is the multiplicity of `P` in `map f p`.
 
 ## Implementation notes
 
 Often the above theory is set up in the case where:
+
 * `R` is the ring of integers of a number field `K`,
 * `L` is a finite separable extension of `K`,
 * `S` is the integral closure of `R` in `L`,
@@ -34,7 +38,6 @@ We will try to relax the above hypotheses as much as possible.
 ## Notation
 
 In this file, `e` stands for the ramification index of `P` over `p`, leaving `p` and `P` implicit.
-
 -/
 
 @[expose] public section

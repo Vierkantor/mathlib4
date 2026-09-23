@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Order.Field.Power
 public import Mathlib.Analysis.Calculus.FDeriv.Congr
 public import Mathlib.Topology.OpenPartialHomeomorph.Continuity
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Inverse function theorem
 
@@ -29,7 +32,6 @@ and prove two versions of the inverse function theorem:
 * `HasStrictFDerivAt.to_localInverse`: if `f` has an invertible derivative `f'` at `a` in the
   strict sense (`hf`), then `hf.localInverse f f' a` has derivative `f'.symm` at `f a` in the
   strict sense;
-
 * `HasStrictFDerivAt.to_local_left_inverse`: if `f` has an invertible derivative `f'` at `a` in
   the strict sense and `g` is locally left inverse to `f` near `a`, then `g` has derivative
   `f'.symm` at `f a` in the strict sense.
@@ -61,13 +63,14 @@ open ContinuousLinearMap (id)
 
 
 /-!
-### Inverse function theorem
+# Inverse function theorem
 
 Let `f : E → F` be a map defined on a complete vector
 space `E`. Assume that `f` has an invertible derivative `f' : E ≃L[𝕜] F` at `a : E` in the strict
 sense. Then `f` approximates `f'` in the sense of `ApproximatesLinearOn` on an open neighborhood
 of `a`, and we can apply `ApproximatesLinearOn.toOpenPartialHomeomorph` to construct the inverse
-function. -/
+function.
+-/
 
 namespace HasStrictFDerivAt
 

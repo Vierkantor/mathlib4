@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Algebra.Basic
 public import Mathlib.Algebra.Order.Ring.Abs
 public import Mathlib.Algebra.Polynomial.EraseLead
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Denominators of evaluation of polynomials at ratios
 

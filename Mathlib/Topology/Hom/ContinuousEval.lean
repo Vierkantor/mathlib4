@@ -8,6 +8,9 @@ module
 public import Mathlib.Topology.Hom.ContinuousEvalConst
 public import Mathlib.Topology.ContinuousMap.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Bundled maps with evaluation continuous in both variables
 

@@ -12,6 +12,9 @@ public import Mathlib.Analysis.Normed.Group.Pointwise
 public import Mathlib.Topology.Algebra.Order.UpperLower
 public import Mathlib.Topology.MetricSpace.Sequences
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Upper/lower/order-connected sets in normed groups
 
@@ -74,7 +77,9 @@ protected theorem IsLowerSet.cthickening' (hs : IsLowerSet s) (ε : ℝ) :
 
 end NormedOrderedGroup
 
-/-! ### `ℝⁿ` -/
+/-!
+# `ℝⁿ`
+-/
 
 
 section Finite
@@ -189,7 +194,7 @@ section Finite
 variable [Finite ι] {s : Set (ι → ℝ)}
 
 /-!
-#### Note
+# Note
 
 The closure and frontier of an antichain might not be antichains. Take for example the union
 of the open segments from `(0, 2)` to `(1, 1)` and from `(2, 1)` to `(3, 0)`. `(1, 1)` and `(2, 1)`

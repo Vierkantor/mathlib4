@@ -13,6 +13,9 @@ public import Mathlib.RingTheory.Finiteness.Prod
 public import Mathlib.RingTheory.PicardGroup
 public import Mathlib.RingTheory.Spectrum.Prime.FreeLocus
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Invertible finite stably free modules are free
 

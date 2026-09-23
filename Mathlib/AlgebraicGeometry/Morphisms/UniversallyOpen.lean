@@ -10,6 +10,9 @@ public import Mathlib.AlgebraicGeometry.Morphisms.Flat
 public import Mathlib.AlgebraicGeometry.Morphisms.UnderlyingMap
 public import Mathlib.RingTheory.Spectrum.Prime.Chevalley
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Universally open morphism
 
@@ -18,7 +21,6 @@ for all base change `Y' ⟶ Y`.
 
 We show that being universally open is local at the target, and is stable under compositions and
 base changes.
-
 -/
 
 public section

@@ -10,6 +10,9 @@ public import Mathlib.MeasureTheory.Measure.Lebesgue.Complex
 public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv
 public import Mathlib.Topology.OpenPartialHomeomorph.Composition
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Polar coordinates
 
@@ -18,7 +21,6 @@ We define polar coordinates, as an open partial homeomorphism in `ℝ^2` between
 
 It satisfies the following change of variables formula (see `integral_comp_polarCoord_symm`):
 `∫ p in polarCoord.target, p.1 • f (polarCoord.symm p) = ∫ p, f p`
-
 -/
 
 @[expose] public section

@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Ring.Defs
 public import Mathlib.Algebra.Group.Pointwise.Set.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Pointwise operations of sets in a ring
 

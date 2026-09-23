@@ -11,11 +11,14 @@ public import Mathlib.CategoryTheory.Limits.Opposites
 public import Mathlib.CategoryTheory.Limits.Shapes.Diagonal
 public import Mathlib.CategoryTheory.Monoidal.Cartesian.Over
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Fibred products of schemes
 
 In this file we construct the fibred product of schemes via gluing.
-We roughly follow [har77] Theorem 3.3.
+We roughly follow \[har77\] Theorem 3.3.
 
 In particular, the main construction is to show that for an open cover `{ Uᵢ }` of `X`, if there
 exist fibred products `Uᵢ ×[Z] Y` for each `i`, then there exists a fibred product `X ×[Z] Y`.
@@ -23,7 +26,6 @@ exist fibred products `Uᵢ ×[Z] Y` for each `i`, then there exists a fibred pr
 Then, for constructing the fibred product for arbitrary schemes `X, Y, Z`, we can use the
 construction to reduce to the case where `X, Y, Z` are all affine, where fibred products are
 constructed via tensor products.
-
 -/
 
 @[expose] public section
@@ -42,7 +44,9 @@ namespace Pullback
 variable {X Y Z : Scheme.{u}} (𝒰 : OpenCover.{u} X) (f : X ⟶ Z) (g : Y ⟶ Z)
 variable [∀ i, HasPullback (𝒰.f i ≫ f) g]
 
-/-- The intersection of `Uᵢ ×[Z] Y` and `Uⱼ ×[Z] Y` is given by (Uᵢ ×[Z] Y) ×[X] Uⱼ -/
+/--
+The intersection of `Uᵢ ×[Z] Y` and `Uⱼ ×[Z] Y` is given by (Uᵢ ×\[Z\] Y) ×\[X\] Uⱼ
+-/
 @[instance_reducible]
 def v (i j : 𝒰.I₀) : Scheme :=
   pullback ((pullback.fst (𝒰.f i ≫ f) g) ≫ 𝒰.f i) (𝒰.f j)

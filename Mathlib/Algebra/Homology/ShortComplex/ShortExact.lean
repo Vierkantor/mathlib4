@@ -8,12 +8,14 @@ module
 public import Mathlib.Algebra.Homology.ShortComplex.Exact
 public import Mathlib.CategoryTheory.Preadditive.Injective.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Short exact short complexes
 
 A short complex `S : ShortComplex C` is short exact (`S.ShortExact`) when it is exact,
 `S.f` is a mono and `S.g` is an epi.
-
 -/
 
 @[expose] public section

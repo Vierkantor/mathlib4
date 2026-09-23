@@ -14,6 +14,9 @@ public import Mathlib.AlgebraicTopology.ModelCategory.Basic
 public import Mathlib.AlgebraicTopology.ModelCategory.IsCofibrant
 public import Mathlib.CategoryTheory.Abelian.Exact
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The model category structure on bounded below complexes
 
@@ -27,8 +30,8 @@ The `ModelCategory` instance is scoped in the namespace
 `CochainComplex.Plus.modelCategoryQuillen`.
 
 ## References
-* [Daniel G. Quillen, Homotopical algebra, §I.1, Example B][Quillen1967]
 
+* ‍\[Daniel G. Quillen, Homotopical algebra, §I.1, Example B\]\[Quillen1967\]
 -/
 
 public section

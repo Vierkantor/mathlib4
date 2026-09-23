@@ -14,6 +14,9 @@ public import Mathlib.CategoryTheory.Limits.FunctorCategory.Shapes.Kernels
 public import Mathlib.CategoryTheory.Limits.MonoCoprod
 public import Mathlib.CategoryTheory.Limits.Preserves.SigmaConst
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Relative simplicial homology
 
@@ -25,7 +28,6 @@ this is the relative homology of the pair, which is related to the homology
 of simplicial sets `P.left` and `P.right` via a long homology sequence
 (see the lemmas `SSetPair.homology_exact₁`, `SSetPair.homology_exact₂` and
 `SSetPair.homology_exact₃`),
-
 -/
 
 @[expose] public section
@@ -108,7 +110,7 @@ instance : HasCokernel (chainComplexFunctorLeftToRight.{w} C) :=
   hasCokernel_of_hasCokernel_app _
 
 /--
-The relative chain complex associated to a *pair* of simplicial sets, with
+The relative chain complex associated to a _pair_ of simplicial sets, with
 coefficients in `R : C`, as a bifunctor `C ⥤ SSetPair.{w} ⥤ ChainComplex C ℕ`.
 It computes the simplicial homology of a pair of simplicial sets with coefficients
 in `R`. One can recover the ordinary relative simplicial chain complex when `C := Ab`

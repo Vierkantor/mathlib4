@@ -8,6 +8,9 @@ module
 public import Mathlib.CategoryTheory.Comma.Arrow
 public import Mathlib.CategoryTheory.CommSq
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The category of commutative squares
 
@@ -17,6 +20,7 @@ objects in a category `Square C`.
 
 The four objects in a commutative square are
 numbered as follows:
+
 ```
 X₁ --> X₂
 |      |
@@ -30,7 +34,6 @@ we consider a commutative square as a horizontal
 morphism between two vertical maps (`arrowArrowEquivalence`)
 or a vertical morphism between two horizontal
 maps (`arrowArrowEquivalence'`).
-
 -/
 
 @[expose] public section

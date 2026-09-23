@@ -13,10 +13,13 @@ public import Mathlib.Data.Sym.Sym2
 public import Mathlib.Tactic.ContinuousFunctionalCalculus
 public import Mathlib.Tactic.NormNum.GCD
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Complemented subspaces of Banach spaces
 
-A submodule `p` of a topological module `E` over `R` is called *complemented*
+A submodule `p` of a topological module `E` over `R` is called _complemented_
 (`Submodule.ClosedComplemented`) if there exists a continuous linear projection `f : E →ₗ[R] p`,
 `∀ x : p, f x = x`.
 

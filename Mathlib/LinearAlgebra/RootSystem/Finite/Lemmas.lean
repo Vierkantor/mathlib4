@@ -10,6 +10,9 @@ public import Mathlib.LinearAlgebra.RootSystem.Reduced
 public import Mathlib.LinearAlgebra.RootSystem.Irreducible
 public import Mathlib.Algebra.Ring.Torsion
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Structural lemmas about finite crystallographic root pairings
 
@@ -26,7 +29,6 @@ root pairings.
 * `RootPairing.root_add_root_mem_of_pairingIn_neg`: if `α ≠ -β` are both roots of a finite
   crystallographic root pairing, and the pairing of `α` with `β` is negative, then `α + β` is also
   a root.
-
 -/
 
 public section

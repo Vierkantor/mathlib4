@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Algebra.Group.Commute.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Units (i.e., invertible elements) of a monoid
 
@@ -24,7 +27,7 @@ See also `Prime`, `Associated`, and `Irreducible` in
 ## Notation
 
 We provide `Mˣ` as notation for `Units M`,
-resembling the notation $R^{\times}$ for the units of a ring, which is common in mathematics.
+resembling the notation $`R^{\times}` for the units of a ring, which is common in mathematics.
 
 ## TODO
 
@@ -95,9 +98,13 @@ instance instInv : Inv αˣ :=
   ⟨fun u => ⟨u.2, u.1, u.4, u.3⟩⟩
 attribute [instance] AddUnits.instNeg
 
-/-- See Note [custom simps projection] -/
+/--
+See Note \[custom simps projection\]
+-/
 @[to_additive
-/-- See Note [custom simps projection] -/]
+/--
+See Note \[custom simps projection\]
+-/]
 def Simps.val_inv (u : αˣ) : α := ↑(u⁻¹)
 
 initialize_simps_projections Units (as_prefix val, val_inv → null, inv → val_inv, as_prefix val_inv)
@@ -348,7 +355,7 @@ theorem val_div_eq_divp (u₁ u₂ : αˣ) : ↑(u₁ / u₂) = ↑u₁ /ₚ u�
 end Monoid
 
 /-!
-### `IsUnit` predicate
+# `IsUnit` predicate
 -/
 
 section IsUnit

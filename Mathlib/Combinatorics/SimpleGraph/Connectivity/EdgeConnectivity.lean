@@ -8,6 +8,9 @@ module
 public import Mathlib.Combinatorics.SimpleGraph.Connectivity.Connected
 public import Mathlib.Data.Set.Card
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Edge Connectivity
 
@@ -169,7 +172,7 @@ lemma exists_adj_isEdgeReachable_two (hne : u ≠ v) (h : G.IsEdgeReachable 2 u 
     exact Set.encard_le_one_iff_subsingleton.mp (Order.le_of_lt_succ hs)
 
 /-!
-### 2-reachability
+# 2-reachability
 
 In this section, we prove results about 2-connected components of a graph, but without naming them.
 -/

@@ -13,6 +13,9 @@ public import Mathlib.CategoryTheory.Limits.Shapes.Kernels
 public import Mathlib.Algebra.BigOperators.Group.Finset.Defs
 public import Mathlib.Algebra.Module.NatInt
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Preadditive categories
 
@@ -39,7 +42,7 @@ is simplified to `f ≫ g`.
 
 ## References
 
-* [F. Borceux, *Handbook of Categorical Algebra 2*][borceux-vol2]
+* ‍\[F. Borceux, _Handbook of Categorical Algebra 2_\]\[borceux-vol2\]
 
 ## Tags
 

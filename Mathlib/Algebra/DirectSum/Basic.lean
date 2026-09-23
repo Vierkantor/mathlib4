@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Group.Submonoid.Operations
 public import Mathlib.Data.DFinsupp.Sigma
 public import Mathlib.Data.DFinsupp.Submonoid
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Direct sum
 
@@ -21,7 +24,7 @@ This notation is in the `DirectSum` locale, accessible after `open DirectSum`.
 
 ## References
 
-* https://en.wikipedia.org/wiki/Direct_sum
+* https://en.wikipedia.org/wiki/Direct\_sum
 -/
 
 @[expose] public section
@@ -199,10 +202,12 @@ theorem addHom_ext {γ : Type*} [AddZeroClass γ] ⦃f g : (⨁ i, β i) →+ γ
     (H : ∀ (i : ι) (y : β i), f (of _ i y) = g (of _ i y)) : f = g :=
   DFinsupp.addHom_ext H
 
-/-- If two additive homomorphisms from `⨁ i, β i` are equal on each `of β i y`,
+/--
+If two additive homomorphisms from `⨁ i, β i` are equal on each `of β i y`,
 then they are equal.
 
-See note [partially-applied ext lemmas]. -/
+See note \[partially-applied ext lemmas\].
+-/
 @[ext high]
 theorem addHom_ext' {γ : Type*} [AddZeroClass γ] ⦃f g : (⨁ i, β i) →+ γ⦄
     (H : ∀ i : ι, f.comp (of _ i) = g.comp (of _ i)) : f = g :=

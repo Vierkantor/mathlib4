@@ -9,6 +9,9 @@ public import Mathlib.Algebra.QuadraticAlgebra.Basic
 public import Mathlib.LinearAlgebra.Unimodular
 public import Mathlib.RingTheory.Trace.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Quadratic algebras and quadratic extensions
 

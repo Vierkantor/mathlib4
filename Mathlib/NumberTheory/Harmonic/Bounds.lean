@@ -9,10 +9,11 @@ public import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 public import Mathlib.Analysis.SumIntegralComparisons
 public import Mathlib.NumberTheory.Harmonic.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
-
-This file proves $\log(n + 1) \le H_n \le 1 + \log(n)$ for all natural numbers $n$.
-
+This file proves $`\log(n + 1) \le H_n \le 1 + \log(n)` for all natural numbers $`n`.
 -/
 
 public section

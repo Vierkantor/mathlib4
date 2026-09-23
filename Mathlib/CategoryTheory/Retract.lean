@@ -8,11 +8,13 @@ module
 public import Mathlib.CategoryTheory.Comma.Arrow
 public import Mathlib.CategoryTheory.EpiMono
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Retracts
 
 Defines retracts of objects and morphisms.
-
 -/
 
 @[expose] public section

@@ -12,6 +12,9 @@ public import Mathlib.Topology.DiscreteSubset
 public import Mathlib.Tactic.CrossRefAttribute
 import Mathlib.Topology.WithTopology
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Irreducibility in topological spaces
 
@@ -30,8 +33,7 @@ In other words, the only difference is whether the empty space counts as irreduc
 There are good reasons to consider the empty space to be “too simple to be simple”
 See also https://ncatlab.org/nlab/show/too+simple+to+be+simple,
 and in particular
-https://ncatlab.org/nlab/show/too+simple+to+be+simple#relationship_to_biased_definitions.
-
+https://ncatlab.org/nlab/show/too+simple+to+be+simple#relationship\_to\_biased\_definitions.
 -/
 
 @[expose] public section

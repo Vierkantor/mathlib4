@@ -11,6 +11,9 @@ public import Mathlib.Tactic.FieldSimp
 public import Mathlib.Tactic.Ring
 public meta import Mathlib.Algebra.Order.Round
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Floor Function for Rational Numbers
 
@@ -282,7 +285,7 @@ meta def evalIntFract : NormNumExt where eval {u α} e := do
   | _, _, _ => failure
 
 /-!
-### `norm_num` extension for `round`
+# `norm_num` extension for `round`
 -/
 
 theorem isNat_round {R : Type*} [Ring R] [LinearOrder R] [IsStrictOrderedRing R] [FloorRing R]

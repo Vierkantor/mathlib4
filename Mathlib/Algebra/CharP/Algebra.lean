@@ -10,6 +10,9 @@ public import Mathlib.Algebra.FreeAlgebra
 public import Mathlib.RingTheory.Localization.FractionRing
 public import Mathlib.RingTheory.SimpleRing.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Characteristics of algebras
 
@@ -18,16 +21,15 @@ In this file we describe the characteristic of `R`-algebras.
 In particular we are interested in the characteristic of free algebras over `R`
 and the fraction field `FractionRing R`.
 
-
 ## Main results
 
-- `charP_of_injective_algebraMap` If `R →+* A` is an injective algebra map
+* `charP_of_injective_algebraMap` If `R →+* A` is an injective algebra map
   then `A` has the same characteristic as `R`.
 
 Instances constructed from this result:
-- Any `FreeAlgebra R X` has the same characteristic as `R`.
-- The `FractionRing R` of an integral domain `R` has the same characteristic as `R`.
 
+* Any `FreeAlgebra R X` has the same characteristic as `R`.
+* The `FractionRing R` of an integral domain `R` has the same characteristic as `R`.
 -/
 
 public section

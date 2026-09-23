@@ -7,6 +7,9 @@ module
 
 public import Mathlib.CategoryTheory.Limits.Shapes.Equalizers
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Split Equalizers
 
@@ -26,7 +29,6 @@ These definitions and constructions are useful in particular for the comonadicit
 
 This file was adapted from `Mathlib/CategoryTheory/Limits/Shapes/SplitCoequalizer.lean`. Please try
 to keep them in sync.
-
 -/
 
 @[expose] public section

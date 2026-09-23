@@ -8,6 +8,9 @@ module
 public import Mathlib.Control.ULiftable
 public import Mathlib.Order.Fin.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Rand Monad and Random Class
 
@@ -19,15 +22,16 @@ defining objects that can be created randomly.
 * `RandT` and `RandGT` monad transformers for computations guided by randomness;
 * `Rand` and `RandG` monads as special cases of the above
 * `Random` class for objects that can be generated randomly;
+
   * `random` to generate one object;
 * `BoundedRandom` class for objects that can be generated randomly inside a range;
+
   * `randomR` to generate one object inside a range;
 * `IO.runRand` to run a randomized computation inside any monad that has access to `stdGenRef`.
 
 ## References
 
 * Similar library in Haskell: https://hackage.haskell.org/package/MonadRandom
-
 -/
 
 @[expose] public section

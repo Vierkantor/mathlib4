@@ -7,12 +7,14 @@ module
 
 public import Mathlib.CategoryTheory.Category.Basic  -- shake: keep (tactic output dependency)
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The `slice` tactic
 
 Applies a tactic to an interval of terms from a term obtained by repeated application
 of `Category.comp`.
-
 -/
 
 public meta section

@@ -9,6 +9,9 @@ public import Mathlib.Analysis.Calculus.Deriv.Slope
 public import Mathlib.MeasureTheory.Covering.OneDim
 public import Mathlib.Order.Monotone.Extension
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Differentiability of monotone functions
 

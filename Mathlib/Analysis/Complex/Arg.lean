@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.InnerProductSpace.Convex
 public import Mathlib.Analysis.SpecialFunctions.Complex.Arg
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Rays in the complex numbers
 
@@ -20,7 +23,6 @@ the usual way this is considered.
   have the same argument.
 * `Complex.abs_add_eq/Complex.abs_sub_eq`: If two nonzero complex numbers have the same argument,
   then the triangle inequality is an equality.
-
 -/
 
 public section

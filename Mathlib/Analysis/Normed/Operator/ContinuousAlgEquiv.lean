@@ -12,6 +12,9 @@ public import Mathlib.Analysis.Normed.Operator.Banach
 public import Mathlib.Topology.Algebra.Algebra.Equiv
 
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Continuous (star-)algebra equivalences between continuous endomorphisms are (isometrically) inner
 
@@ -20,8 +23,9 @@ This file shows that continuous (star-)algebra equivalences between continuous e
 See `Mathlib/LinearAlgebra/GeneralLinearGroup/AlgEquiv.lean` for the non-continuous version.
 The proof follows the same idea as the non-continuous version.
 
-### TODO:
-- when `V = W`, we can state that the group homomorphism
+## TODO:
+
+* when `V = W`, we can state that the group homomorphism
   `(V →L[𝕜] V)ˣ →* ((V →L[𝕜] V) ≃A[𝕜] (V →L[𝕜] V))` is surjective,
   see `Module.End.mulSemiringActionToAlgEquiv_conjAct_surjective` for the non-continuous
   version of this.

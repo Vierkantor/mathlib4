@@ -9,11 +9,14 @@ public import Mathlib.Data.Nat.ModEq
 public import Mathlib.Data.Nat.Prime.Basic
 public import Mathlib.NumberTheory.Zsqrtd.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Pell's equation and Matiyasevic's theorem
 
 This file solves Pell's equation, i.e. integer solutions to `x ^ 2 - d * y ^ 2 = 1`
-*in the special case that `d = a ^ 2 - 1`*.
+_in the special case that `d = a ^ 2 - 1`_.
 This is then applied to prove Matiyasevic's theorem that the power
 function is Diophantine, which is the last key ingredient in the solution to Hilbert's tenth
 problem. For the definition of Diophantine function, see `NumberTheory.Dioph`.
@@ -41,13 +44,12 @@ numbers but instead Davis' variant of using solutions to Pell's equation.
 
 ## References
 
-* [M. Carneiro, _A Lean formalization of Matiyasevič's theorem_][carneiro2018matiyasevic]
-* [M. Davis, _Hilbert's tenth problem is unsolvable_][MR317916]
+* ‍\[M. Carneiro, _A Lean formalization of Matiyasevič's theorem_\]\[carneiro2018matiyasevic\]
+* ‍\[M. Davis, _Hilbert's tenth problem is unsolvable_\]\[MR317916\]
 
 ## Tags
 
 Pell's equation, Matiyasevic's theorem, Hilbert's tenth problem
-
 -/
 
 @[expose] public section

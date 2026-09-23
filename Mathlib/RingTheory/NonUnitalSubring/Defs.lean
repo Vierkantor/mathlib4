@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Group.Subgroup.Defs
 public import Mathlib.RingTheory.NonUnitalSubsemiring.Defs
 public import Mathlib.Tactic.FastInstance
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `NonUnitalSubring`s
 
@@ -34,6 +37,7 @@ Lattice inclusion (e.g. `≤` and `⊓`) is used rather than set notation (`⊆`
 `∈` is defined as membership of a non-unital subring's underlying set.
 
 ## Tags
+
 non-unital subring
 -/
 
@@ -325,7 +329,9 @@ instance toNonUnitalCommRing {R} [NonUnitalCommRing R] (s : NonUnitalSubring R) 
     NonUnitalCommRing s :=
   NonUnitalSubringClass.toNonUnitalCommRing s
 
-/-! ## Partial order -/
+/-!
+# Partial order
+-/
 
 
 theorem mem_toSubsemigroup {s : NonUnitalSubring R} {x : R} : x ∈ s.toSubsemigroup ↔ x ∈ s :=

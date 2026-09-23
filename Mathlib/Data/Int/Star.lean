@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Order.Ring.Basic
 public import Mathlib.Algebra.Order.Ring.Int
 public import Mathlib.Algebra.Order.Star.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Star ordered ring structure on `ℤ`
 

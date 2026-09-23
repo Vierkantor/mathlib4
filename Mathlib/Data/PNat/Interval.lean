@@ -8,6 +8,9 @@ module
 public import Mathlib.Order.Interval.Finset.Nat
 public import Mathlib.Data.PNat.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Finite intervals of positive naturals
 

@@ -12,6 +12,9 @@ public import Mathlib.Combinatorics.Enumerative.DoubleCounting
 public import Mathlib.Combinatorics.SetFamily.Shadow
 public import Mathlib.Data.Nat.Cast.Order.Ring
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lubell-Yamamoto-Meshalkin inequality and Sperner's theorem
 
@@ -56,7 +59,9 @@ variable {𝕜 α : Type*} [Semifield 𝕜] [LinearOrder 𝕜] [IsStrictOrderedR
 
 namespace Finset
 
-/-! ### Local LYM inequality -/
+/-!
+# Local LYM inequality
+-/
 
 section LocalLYM
 variable [DecidableEq α] [Fintype α] {𝒜 : Finset (Finset α)} {r : ℕ}
@@ -114,7 +119,9 @@ alias card_div_choose_le_card_shadow_div_choose := local_lubell_yamamoto_meshalk
 
 end LocalLYM
 
-/-! ### LYM inequality -/
+/-!
+# LYM inequality
+-/
 
 section LYM
 
@@ -227,7 +234,9 @@ theorem lubell_yamamoto_meshalkin_inequality_sum_inv_choose
       simp [slice, div_eq_mul_inv]
     _ ≤ 1 := lubell_yamamoto_meshalkin_inequality_sum_card_div_choose h𝒜
 
-/-! ### Sperner's theorem -/
+/-!
+# Sperner's theorem
+-/
 
 /-- **Sperner's theorem**. The size of an antichain in `Finset α` is bounded by the size of the
 maximal layer in `Finset α`. This precisely means that `Finset α` is a Sperner order. -/

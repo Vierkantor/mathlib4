@@ -8,10 +8,14 @@ module
 public import Mathlib.RingTheory.UniqueFactorizationDomain.FactorSet
 public import Mathlib.Algebra.GCDMonoid.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Building GCD out of unique factorization
 
 ## Main results
+
 * `UniqueFactorizationMonoid.toGCDMonoid`: choose a GCD monoid structure given unique factorization.
 -/
 

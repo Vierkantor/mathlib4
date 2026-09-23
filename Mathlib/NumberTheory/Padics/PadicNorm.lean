@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Order.AbsoluteValue.Basic
 public import Mathlib.NumberTheory.Padics.PadicVal.Basic
 import Mathlib.Algebra.Order.Ring.IsNonarchimedean
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # p-adic norm
 
@@ -28,9 +31,9 @@ by taking `[Fact p.Prime]` as a type class argument.
 
 ## References
 
-* [F. Q. Gouvêa, *p-adic numbers*][gouvea1997]
-* [R. Y. Lewis, *A formal proof of Hensel's lemma over the p-adic integers*][lewis2019]
-* <https://en.wikipedia.org/wiki/P-adic_number>
+* ‍\[F. Q. Gouvêa, _p-adic numbers_\]\[gouvea1997\]
+* ‍\[R. Y. Lewis, _A formal proof of Hensel's lemma over the p-adic integers_\]\[lewis2019\]
+* [https://en.wikipedia.org/wiki/P-adic\_number](https://en.wikipedia.org/wiki/P-adic_number)
 
 ## Tags
 

@@ -10,24 +10,27 @@ public import Mathlib.AlgebraicGeometry.Morphisms.Proper
 public import Mathlib.RingTheory.RingHom.Injective
 public import Mathlib.RingTheory.Valuation.LocalSubring
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Valuative criterion
 
 ## Main results
 
-- `AlgebraicGeometry.UniversallyClosed.eq_valuativeCriterion`:
+* `AlgebraicGeometry.UniversallyClosed.eq_valuativeCriterion`:
   A morphism is universally closed if and only if
   it is quasi-compact and satisfies the existence part of the valuative criterion.
-- `AlgebraicGeometry.IsSeparated.eq_valuativeCriterion`:
+* `AlgebraicGeometry.IsSeparated.eq_valuativeCriterion`:
   A morphism is separated if and only if
   it is quasi-separated and satisfies the uniqueness part of the valuative criterion.
-- `AlgebraicGeometry.IsProper.eq_valuativeCriterion`:
+* `AlgebraicGeometry.IsProper.eq_valuativeCriterion`:
   A morphism is proper if and only if
   it is qcqs and of finite type and satisfies the valuative criterion.
 
 ## Future projects
-Show that it suffices to check discrete valuation rings when the base is Noetherian.
 
+Show that it suffices to check discrete valuation rings when the base is Noetherian.
 -/
 
 @[expose] public section

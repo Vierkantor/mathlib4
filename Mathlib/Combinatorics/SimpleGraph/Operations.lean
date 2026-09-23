@@ -9,6 +9,9 @@ public import Mathlib.Combinatorics.SimpleGraph.Finite
 public import Mathlib.Combinatorics.SimpleGraph.Maps
 public import Mathlib.Combinatorics.SimpleGraph.Subgraph
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Local graph operations
 

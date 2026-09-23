@@ -7,11 +7,13 @@ module
 
 public import Mathlib.RingTheory.GradedAlgebra.Homogeneous.Ideal
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 This file contains a proof that the radical of any homogeneous ideal is a homogeneous ideal
 
-## Main statements
+# Main statements
 
 * `Ideal.IsHomogeneous.isPrime_iff`: for any `I : Ideal A`, if `I` is homogeneous, then
   `I` is prime if and only if `I` is homogeneously prime, i.e. `I ≠ ⊤` and if `x, y` are
@@ -23,14 +25,14 @@ This file contains a proof that the radical of any homogeneous ideal is a homoge
 * `HomogeneousIdeal.radical`: for any `I : HomogeneousIdeal 𝒜`, `I.radical` is the
   radical of `I` as a `HomogeneousIdeal 𝒜`.
 
-## Implementation details
+# Implementation details
 
 Throughout this file, the indexing type `ι` of grading is assumed to be a
 linearly ordered cancellative monoid. This might be stronger than necessary but cancelling
 property is strictly necessary; for a counterexample of how `Ideal.IsHomogeneous.isPrime_iff`
 fails for a non-cancellative set see `Counterexamples/HomogeneousPrimeNotPrime.lean`.
 
-## Tags
+# Tags
 
 homogeneous, radical
 -/

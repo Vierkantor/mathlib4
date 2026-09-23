@@ -13,6 +13,9 @@ public import Mathlib.Analysis.SpecialFunctions.Pow.NNReal
 public import Mathlib.FieldTheory.Perfect
 public import Mathlib.RingTheory.Valuation.Integers
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Ring Perfection and Tilt
 
@@ -22,7 +25,6 @@ given a valuation to `ℝ≥0`.
 ## TODO
 
 Define the valuation on the tilt, and define a characteristic predicate for the tilt.
-
 -/
 
 @[expose] public section
@@ -820,9 +822,11 @@ theorem isDomain : IsDomain (PreTilt O p) := by
 
 end PreTilt
 
-/-- The tilt of a field, as defined in Perfectoid Spaces by Peter Scholze, as in
-[scholze2011perfectoid]. Given a field `K` with valuation `K → ℝ≥0` and ring of integers `O`,
-this is implemented as the fraction field of the perfection of `O/(p)`. -/
+/--
+The tilt of a field, as defined in Perfectoid Spaces by Peter Scholze, as in
+‍\[scholze2011perfectoid\]. Given a field `K` with valuation `K → ℝ≥0` and ring of integers `O`,
+this is implemented as the fraction field of the perfection of `O/(p)`.
+-/
 def Tilt [Fact p.Prime] [hvp : Fact (v p ≠ 1)] :=
   have _ := Fact.mk <| mt hv.one_of_isUnit <| (map_natCast (algebraMap O K) p).symm ▸ hvp.1
   FractionRing (PreTilt O p)

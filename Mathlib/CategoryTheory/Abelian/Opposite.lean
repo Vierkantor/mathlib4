@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Abelian.Basic
 public import Mathlib.CategoryTheory.Preadditive.Opposite
 public import Mathlib.CategoryTheory.Limits.Opposites
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The opposite of an abelian category is abelian.
 -/

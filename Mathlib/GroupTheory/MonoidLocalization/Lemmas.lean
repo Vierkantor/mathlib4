@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Group.Pi.Units
 public import Mathlib.Data.Fintype.Basic
 public import Mathlib.GroupTheory.MonoidLocalization.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lemmas about localizations of commutative monoids
 

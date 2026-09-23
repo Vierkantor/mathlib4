@@ -10,10 +10,13 @@ public import Mathlib.Data.Setoid.Basic
 public import Mathlib.Dynamics.FixedPoints.Topology
 public import Mathlib.Topology.MetricSpace.Lipschitz
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Contracting maps
 
-A Lipschitz continuous self-map with Lipschitz constant `K < 1` is called a *contracting map*.
+A Lipschitz continuous self-map with Lipschitz constant `K < 1` is called a _contracting map_.
 In this file we prove the Banach fixed point theorem, some explicit estimates on the rate
 of convergence, and some properties of the map sending a contracting map to its fixed point.
 

@@ -9,10 +9,13 @@ public import Mathlib.Topology.UniformSpace.CompactConvergence
 public import Mathlib.Topology.UniformSpace.Equicontinuity
 public import Mathlib.Topology.UniformSpace.Equiv
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Ascoli Theorem
 
-In this file, we prove the general **Arzela-Ascoli theorem**, and various related statements about
+In this file, we prove the general *Arzela-Ascoli theorem*, and various related statements about
 the topology of equicontinuous subsets of `X →ᵤ[𝔖] α`, where `X` is a topological space, `𝔖` is
 a family of compact subsets of `X`, and `α` is a uniform space.
 
@@ -21,18 +24,20 @@ a family of compact subsets of `X`, and `α` is a uniform space.
 * If `X` is a compact space, then the uniform structures of uniform convergence and pointwise
   convergence coincide on equicontinuous subsets. This is the key fact that makes equicontinuity
   important in functional analysis. We state various versions of it:
-  - as an equality of `UniformSpace`s: `Equicontinuous.comap_uniformFun_eq`
-  - in terms of `IsUniformInducing`: `Equicontinuous.isUniformInducing_uniformFun_iff_pi`
-  - in terms of `IsInducing`: `Equicontinuous.inducing_uniformFun_iff_pi`
-  - in terms of convergence along a filter: `Equicontinuous.tendsto_uniformFun_iff_pi`
+
+  * as an equality of `UniformSpace`s: `Equicontinuous.comap_uniformFun_eq`
+  * in terms of `IsUniformInducing`: `Equicontinuous.isUniformInducing_uniformFun_iff_pi`
+  * in terms of `IsInducing`: `Equicontinuous.inducing_uniformFun_iff_pi`
+  * in terms of convergence along a filter: `Equicontinuous.tendsto_uniformFun_iff_pi`
 * As a consequence, if `𝔖` is a family of compact subsets of `X`, then the uniform structures of
   uniform convergence on `𝔖` and pointwise convergence on `⋃₀ 𝔖` coincide on equicontinuous
   subsets. Again, we prove multiple variations:
-  - as an equality of `UniformSpace`s: `EquicontinuousOn.comap_uniformOnFun_eq`
-  - in terms of `IsUniformInducing`: `EquicontinuousOn.isUniformInducing_uniformOnFun_iff_pi'`
-  - in terms of `IsInducing`: `EquicontinuousOn.inducing_uniformOnFun_iff_pi'`
-  - in terms of convergence along a filter: `EquicontinuousOn.tendsto_uniformOnFun_iff_pi'`
-* The **Arzela-Ascoli theorem** follows from the previous fact and Tykhonov's theorem.
+
+  * as an equality of `UniformSpace`s: `EquicontinuousOn.comap_uniformOnFun_eq`
+  * in terms of `IsUniformInducing`: `EquicontinuousOn.isUniformInducing_uniformOnFun_iff_pi'`
+  * in terms of `IsInducing`: `EquicontinuousOn.inducing_uniformOnFun_iff_pi'`
+  * in terms of convergence along a filter: `EquicontinuousOn.tendsto_uniformOnFun_iff_pi'`
+* The *Arzela-Ascoli theorem* follows from the previous fact and Tykhonov's theorem.
   All of its variations can be found under the `ArzelaAscoli` namespace.
 
 ## Implementation details
@@ -42,11 +47,9 @@ a family of compact subsets of `X`, and `α` is a uniform space.
   one would rarely work with `X →ᵤ[𝔖] α` directly, so we need to provide API for bringing back the
   statements to various other types, such as `C(X, Y)` or `E →L[𝕜] F`. To counteract this, all
   statements (as well as most proofs!) are documented quite thoroughly.
-
 * A lot of statements assume `∀ K ∈ 𝔖, EquicontinuousOn F K` instead of the more natural
   `EquicontinuousOn F (⋃₀ 𝔖)`. This is in order to keep the most generality, as the first statement
   is strictly weaker.
-
 * In Bourbaki, the usual Arzela-Ascoli compactness theorem follows from a similar total boundedness
   result. Here we go directly for the compactness result, which is the most useful in practice, but
   this will be an easy addition/refactor if we ever need it.
@@ -55,15 +58,13 @@ a family of compact subsets of `X`, and `α` is a uniform space.
 
 * Prove that, on an equicontinuous family, pointwise convergence and pointwise convergence on a
   dense subset coincide, and deduce metrizability criteria for equicontinuous subsets.
-
 * Prove the total boundedness version of the theorem
-
 * Prove the converse statement: if a subset of `X →ᵤ[𝔖] α` is compact, then it is equicontinuous
   on each `K ∈ 𝔖`.
 
 ## References
 
-* [N. Bourbaki, *General Topology, Chapter X*][bourbaki1966]
+* ‍\[N. Bourbaki, _General Topology, Chapter X_\]\[bourbaki1966\]
 
 ## Tags
 
@@ -162,9 +163,11 @@ lemma Equicontinuous.inducing_uniformFun_iff_pi [TopologicalSpace ι] [CompactSp
          (_ = (Pi.uniformSpace _ |>.comap F |>.toTopologicalSpace))
   rw [F_eqcont.comap_uniformFun_eq]
 
-/-- Let `X` be a compact topological space, `α` a uniform space, `F : ι → (X → α)` an
-equicontinuous family, and `ℱ` a filter on `ι`. Then, `F` tends *uniformly* to `f : X → α` along
-`ℱ` iff it tends to `f` *pointwise* along `ℱ`. -/
+/--
+Let `X` be a compact topological space, `α` a uniform space, `F : ι → (X → α)` an
+equicontinuous family, and `ℱ` a filter on `ι`. Then, `F` tends _uniformly_ to `f : X → α` along
+`ℱ` iff it tends to `f` _pointwise_ along `ℱ`.
+-/
 theorem Equicontinuous.tendsto_uniformFun_iff_pi [CompactSpace X]
     (F_eqcont : Equicontinuous F) (ℱ : Filter ι) (f : X → α) :
     Tendsto (UniformFun.ofFun ∘ F) ℱ (𝓝 <| UniformFun.ofFun f) ↔
@@ -327,10 +330,12 @@ lemma EquicontinuousOn.isInducing_uniformOnFun_iff_pi [TopologicalSpace ι]
 
 -- TODO: find a way to factor common elements of this proof and the proof of
 -- `EquicontinuousOn.comap_uniformOnFun_eq`
-/-- Let `X` be a topological space, `𝔖` a family of compact subsets of `X`,
+/--
+Let `X` be a topological space, `𝔖` a family of compact subsets of `X`,
 `α` a uniform space, `F : ι → (X → α)` a family equicontinuous on each `K ∈ 𝔖`, and `ℱ` a filter
-on `ι`. Then, `F` tends to `f : X → α` along `ℱ` *uniformly on each `K ∈ 𝔖`* iff it tends to `f`
-*pointwise on `⋃₀ 𝔖`* along `ℱ`. -/
+on `ι`. Then, `F` tends to `f : X → α` along `ℱ` _uniformly on each `K ∈ 𝔖`_ iff it tends to `f`
+_pointwise on `⋃₀ 𝔖`_ along `ℱ`.
+-/
 theorem EquicontinuousOn.tendsto_uniformOnFun_iff_pi'
     {𝔖 : Set (Set X)} (𝔖_compact : ∀ K ∈ 𝔖, IsCompact K)
     (F_eqcont : ∀ K ∈ 𝔖, EquicontinuousOn F K) (ℱ : Filter ι) (f : X → α) :
@@ -352,13 +357,15 @@ theorem EquicontinuousOn.tendsto_uniformOnFun_iff_pi'
   rw [← (equicontinuous_restrict_iff _ |>.mpr <| F_eqcont K hK).tendsto_uniformFun_iff_pi]
   rfl
 
-/-- Let `X` be a topological space, `𝔖` a covering of `X` by compact subsets,
+/--
+Let `X` be a topological space, `𝔖` a covering of `X` by compact subsets,
 `α` a uniform space, `F : ι → (X → α)` a family equicontinuous on each `K ∈ 𝔖`, and `ℱ` a filter
-on `ι`. Then, `F` tends to `f : X → α` along `ℱ` *uniformly on each `K ∈ 𝔖`* iff it tends to `f`
-*pointwise* along `ℱ`.
+on `ι`. Then, `F` tends to `f : X → α` along `ℱ` _uniformly on each `K ∈ 𝔖`_ iff it tends to `f`
+_pointwise_ along `ℱ`.
 
 This is a specialization of `EquicontinuousOn.tendsto_uniformOnFun_iff_pi'` to the case
-where `𝔖` covers `X`. -/
+where `𝔖` covers `X`.
+-/
 theorem EquicontinuousOn.tendsto_uniformOnFun_iff_pi
     {𝔖 : Set (Set X)} (𝔖_compact : ∀ K ∈ 𝔖, IsCompact K) (𝔖_covers : ⋃₀ 𝔖 = univ)
     (F_eqcont : ∀ K ∈ 𝔖, EquicontinuousOn F K) (ℱ : Filter ι) (f : X → α) :

@@ -12,6 +12,9 @@ public import Mathlib.CategoryTheory.Preadditive.Injective.Preserves
 public import Mathlib.CategoryTheory.Preadditive.LiftToFinset
 public import Mathlib.CategoryTheory.Preadditive.Yoneda.Limits
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The Gabriel-Popescu theorem
 
@@ -30,7 +33,7 @@ The theorem as stated here implies that `C` is a Serre quotient of `ModuleCat (E
 
 ## References
 
-* [Barry Mitchell, *A quick proof of the Gabriel-Popesco theorem*][mitchell1981]
+* ‍\[Barry Mitchell, _A quick proof of the Gabriel-Popesco theorem_\]\[mitchell1981\]
 -/
 
 @[expose] public section
@@ -75,7 +78,9 @@ theorem ι_d {G A : C} {M : ModuleCat (End G)ᵐᵒᵖ} (g : M ⟶ ModuleCat.of 
 set_option backward.isDefEq.respectTransparency.types false in
 set_option backward.defeqAttrib.useBackward true in
 attribute [local instance] IsFiltered.isConnected in
-/-- This is the "Lemma" in [mitchell1981]. -/
+/--
+This is the "Lemma" in \[mitchell1981\].
+-/
 theorem kernel_ι_d_comp_d {G : C} (hG : IsSeparator G) {A B : C} {M : ModuleCat (End G)ᵐᵒᵖ}
     (g : M ⟶ ModuleCat.of (End G)ᵐᵒᵖ (G ⟶ A)) (hg : Mono g)
     (f : M ⟶ ModuleCat.of (End G)ᵐᵒᵖ (G ⟶ B)) :

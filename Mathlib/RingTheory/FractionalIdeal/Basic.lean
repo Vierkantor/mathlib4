@@ -8,13 +8,18 @@ module
 public import Mathlib.RingTheory.Localization.Integer
 public import Mathlib.RingTheory.Localization.Submodule
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Fractional ideals
 
 This file defines fractional ideals of an integral domain and proves basic facts about them.
 
 ## Main definitions
+
 Let `S` be a submonoid of an integral domain `R` and `P` the localization of `R` at `S`.
+
 * `IsFractional` defines which `R`-submodules of `P` are fractional ideals
 * `FractionalIdeal S P` is the type of fractional ideals in `P`
 * a coercion `coeIdeal : Ideal R → FractionalIdeal S P`
@@ -24,8 +29,8 @@ Let `S` be a submonoid of an integral domain `R` and `P` the localization of `R`
 
 ## Main statements
 
-  * the `MulLeftMono` and `MulRightMono` instances state that ideal multiplication is monotone
-  * `mul_div_self_cancel_iff` states that `1 / I` is the inverse of `I` if one exists
+* the `MulLeftMono` and `MulRightMono` instances state that ideal multiplication is monotone
+* `mul_div_self_cancel_iff` states that `1 / I` is the inverse of `I` if one exists
 
 ## Implementation notes
 
@@ -48,7 +53,7 @@ making the localization a field.
 
 ## References
 
-  * https://en.wikipedia.org/wiki/Fractional_ideal
+* https://en.wikipedia.org/wiki/Fractional\_ideal
 
 ## Tags
 
@@ -407,7 +412,7 @@ theorem coe_one : (↑(1 : FractionalIdeal S P) : Submodule R P) = 1 := by
 section Lattice
 
 /-!
-### `Lattice` section
+# `Lattice` section
 
 Defines the order on fractional ideals as inclusion of their underlying sets,
 and ports the lattice structure on submodules to fractional ideals.

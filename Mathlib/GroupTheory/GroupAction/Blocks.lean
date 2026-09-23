@@ -12,41 +12,38 @@ public import Mathlib.GroupTheory.GroupAction.SubMulAction
 public import Mathlib.GroupTheory.Index
 public import Mathlib.Tactic.IntervalCases
 
-/-! # Blocks
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Blocks
 
 Given `SMul G X`, an action of a type `G` on a type `X`, we define
 
-- the predicate `MulAction.IsBlock G B` states that `B : Set X` is a block,
+* the predicate `MulAction.IsBlock G B` states that `B : Set X` is a block,
   which means that the sets `g • B`, for `g ∈ G`, are equal or disjoint.
   Under `Group G` and `MulAction G X`, this is equivalent to the classical
   definition `MulAction.IsBlock.def_one`
-
-- a bunch of lemmas that give examples of “trivial” blocks : ⊥, ⊤, singletons,
+* a bunch of lemmas that give examples of “trivial” blocks : ⊥, ⊤, singletons,
   and non-trivial blocks: orbit of the group, orbit of a normal subgroup…
 
 The non-existence of nontrivial blocks is the definition of primitive actions.
 
 ## Results for actions on finite sets
 
-- `MulAction.IsBlock.ncard_block_mul_ncard_orbit_eq` : The cardinality of a block
+* `MulAction.IsBlock.ncard_block_mul_ncard_orbit_eq` : The cardinality of a block
   multiplied by the number of its translates is the cardinal of the ambient type
-
-- `MulAction.IsBlock.eq_univ_of_card_lt` : a too large block is equal to `Set.univ`
-
-- `MulAction.IsBlock.subsingleton_of_card_lt` : a too small block is a subsingleton
-
-- `MulAction.IsBlock.of_subset` : the intersections of the translates of a finite subset
+* `MulAction.IsBlock.eq_univ_of_card_lt` : a too large block is equal to `Set.univ`
+* `MulAction.IsBlock.subsingleton_of_card_lt` : a too small block is a subsingleton
+* `MulAction.IsBlock.of_subset` : the intersections of the translates of a finite subset
   that contain a given point is a block
-
-- `MulAction.BlockMem` : the type of blocks containing a given element
-
-- `MulAction.BlockMem.instBoundedOrder` :
+* `MulAction.BlockMem` : the type of blocks containing a given element
+* `MulAction.BlockMem.instBoundedOrder` :
   the type of blocks containing a given element is a bounded order.
 
 ## References
 
-We follow [Wielandt-1964].
-
+We follow \[Wielandt-1964\].
 -/
 
 @[expose] public section
@@ -699,11 +696,15 @@ theorem subsingleton_of_card_lt [Finite X] (hB : IsBlock G B)
   For G = ℤ acting on itself, a = 0 and B = ℕ, the translates `k • B` of the statement
   are just `k + ℕ`, for `k ≤ 0`, and the corresponding intersection is `ℕ`, which is not a block.
   (Remark by Thomas Browning) -/
-/-- The intersection of the translates of a *finite* subset which contain a given point
-is a block (Wielandt, th. 7.3). -/
+/--
+The intersection of the translates of a _finite_ subset which contain a given point
+is a block (Wielandt, th. 7.3).
+-/
 @[to_additive
-  /-- The intersection of the translates of a *finite* subset which contain a given point
-  is a block (Wielandt, th. 7.3). -/]
+  /--
+  The intersection of the translates of a _finite_ subset which contain a given point
+is a block (Wielandt, th. 7.3).
+  -/]
 theorem of_subset (a : X) (hfB : B.Finite) :
     IsBlock G (⋂ (k : G) (_ : a ∈ k • B), k • B) := by
   let B' := ⋂ (k : G) (_ : a ∈ k • B), k • B

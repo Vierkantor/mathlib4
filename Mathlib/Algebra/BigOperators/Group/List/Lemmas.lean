@@ -17,6 +17,9 @@ public import Mathlib.Data.List.Rotate
 public import Mathlib.Data.List.ProdSigma
 public import Mathlib.Algebra.Group.Opposite
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Sums and products from lists
 

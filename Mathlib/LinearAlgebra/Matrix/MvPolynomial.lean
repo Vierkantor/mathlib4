@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.MvPolynomial.Eval
 public import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Matrices of multivariate polynomials
 

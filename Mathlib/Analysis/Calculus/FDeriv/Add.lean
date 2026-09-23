@@ -9,6 +9,9 @@ public import Mathlib.Analysis.Calculus.FDeriv.Linear
 public import Mathlib.Analysis.Calculus.FDeriv.Comp
 public import Mathlib.Analysis.Calculus.FDeriv.Const
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Additive operations on derivatives
 
@@ -46,7 +49,9 @@ section ConstSMul
 variable {R : Type*} [Monoid R] [DistribMulAction R F] [SMulCommClass 𝕜 R F]
   [ContinuousConstSMul R F]
 
-/-! ### Derivative of a function multiplied by a constant -/
+/-!
+# Derivative of a function multiplied by a constant
+-/
 
 @[to_fun]
 theorem HasFDerivAtFilter.const_smul (h : HasFDerivAtFilter f f' L) (c : R) :
@@ -181,7 +186,9 @@ end ConstSMulDivisionRing
 
 section Add
 
-/-! ### Derivative of the sum of two functions -/
+/-!
+# Derivative of the sum of two functions
+-/
 
 @[to_fun]
 theorem HasFDerivAtFilter.add (hf : HasFDerivAtFilter f f' L)
@@ -388,7 +395,9 @@ end Add
 
 section Sum
 
-/-! ### Derivative of a finite sum of functions -/
+/-!
+# Derivative of a finite sum of functions
+-/
 
 
 variable {ι : Type*} {u : Finset ι} {A : ι → E → F} {A' : ι → E →L[𝕜] F}
@@ -498,7 +507,9 @@ end Sum
 
 section Neg
 
-/-! ### Derivative of the negative of a function -/
+/-!
+# Derivative of the negative of a function
+-/
 
 
 @[to_fun]
@@ -600,7 +611,9 @@ end Neg
 
 section Sub
 
-/-! ### Derivative of the difference of two functions -/
+/-!
+# Derivative of the difference of two functions
+-/
 
 
 @[to_fun]
@@ -843,7 +856,9 @@ end Sub
 
 section CompAdd
 
-/-! ### Derivative of the composition with a translation -/
+/-!
+# Derivative of the composition with a translation
+-/
 
 open scoped Pointwise Topology
 

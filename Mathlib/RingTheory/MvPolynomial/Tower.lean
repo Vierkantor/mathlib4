@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Algebra.Subalgebra.Tower
 public import Mathlib.Algebra.MvPolynomial.Eval
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Algebra towers for multivariate polynomial
 

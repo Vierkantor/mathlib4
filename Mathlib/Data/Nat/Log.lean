@@ -12,12 +12,16 @@ public import Mathlib.Tactic.Bound.Attribute
 public import Mathlib.Tactic.Contrapose
 public import Mathlib.Tactic.Monotonicity.Attr
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Natural number logarithms
 
 This file defines two `ℕ`-valued analogs of the logarithm of `n` with base `b`:
-* `log b n`: Lower logarithm, or floor **log**. Greatest `k` such that `b^k ≤ n`.
-* `clog b n`: Upper logarithm, or **c**eil **log**. Least `k` such that `n ≤ b^k`.
+
+* `log b n`: Lower logarithm, or floor *log*. Greatest `k` such that `b^k ≤ n`.
+* `clog b n`: Upper logarithm, or *c*eil *log*. Least `k` such that `n ≤ b^k`.
 
 These are interesting because, for `1 < b`, `Nat.log b` and `Nat.clog b` are respectively right and
 left adjoints of `(b ^ ·)`. See `le_log_iff_pow_le` and `clog_le_iff_le_pow`.
@@ -29,9 +33,11 @@ In order to compute, e.g., `Nat.log b n`, we compute `e = Nat.log (b * b) n` fir
 then figure out whether the answer is `2 * e` or `2 * e + 1`.
 The actual implementations use fuel recursion so that `(by decide : Nat.log 2 20 = 4)` works.
 
-Adapted from https://downloads.haskell.org/~ghc/9.0.1/docs/html/libraries/ghc-bignum-1.0/GHC-Num-BigNat.html#v:bigNatLogBase-35-
+Adapted from
+https://downloads.haskell.org/~ghc/9.0.1/docs/html/libraries/ghc-bignum-1.0/GHC-Num-BigNat.html#v:bigNatLogBase-35-
 
 Note a tail-recursive version of `Nat.log` is also possible:
+
 ```
 def logTR (b n : ℕ) : ℕ :=
   let rec go : ℕ → ℕ → ℕ | n, acc => if h : b ≤ n ∧ 1 < b then go (n / b) (acc + 1) else acc
@@ -40,7 +46,9 @@ def logTR (b n : ℕ) : ℕ :=
     decreasing_trivial
   go n 0
 ```
+
 but performs worse for large numbers than `Nat.log`:
+
 ```
 #eval Nat.logTR 2 (2 ^ 1000000)
 #eval Nat.log 2 (2 ^ 1000000)
@@ -53,7 +61,9 @@ assert_not_exists OrderTop
 
 namespace Nat
 
-/-! ### Floor logarithm -/
+/-!
+# Floor logarithm
+-/
 
 
 /-- `log b n`, is the logarithm of natural number `n` in base `b`. It returns the largest `k : ℕ`
@@ -326,7 +336,9 @@ lemma log_pow_left (b k n : ℕ) : log (b ^ k) n = log b n / k := by
       · rw [log_of_left_le_one hb, Nat.zero_div, log_of_left_le_one]
         rwa [Nat.pow_le_one_iff (Nat.ne_of_gt hk)]
 
-/-! ### Ceil logarithm -/
+/-!
+# Ceil logarithm
+-/
 
 
 /-- `clog b n`, is the upper logarithm of natural number `n` in base `b`. It returns the smallest

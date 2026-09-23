@@ -8,7 +8,11 @@ module
 public import Mathlib.RingTheory.TensorProduct.Maps
 public import Mathlib.Algebra.Algebra.Opposite
 
-/-! # `MulOpposite` distributes over `⊗`
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# `MulOpposite` distributes over `⊗`
 
 The main result in this file is:
 

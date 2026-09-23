@@ -11,12 +11,13 @@ public import Mathlib.RingTheory.LocalRing.ResidueField.Defs
 public import Mathlib.RingTheory.LocalRing.RingHom.Basic
 public import Mathlib.RingTheory.Ideal.Over
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Residue Field of local rings
 
 We prove basic properties of the residue field of a local ring.
-
 -/
 
 @[expose] public section

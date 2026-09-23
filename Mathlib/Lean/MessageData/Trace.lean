@@ -8,6 +8,9 @@ module
 import Mathlib.Init
 public import Lean.Message
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Utilities for analyzing `MessageData`
 
@@ -15,9 +18,10 @@ Utility functions for working with trace messages.
 
 `withTraceNode` (in `Lean.Util.Trace`) stores a `TraceResult` in `TraceData.result?`
 and prepends emoji to the rendered header:
-- `✅️` (`checkEmoji`) for success
-- `❌️` (`crossEmoji`) for failure
-- `💥️` (`bombEmoji`) for exceptions
+
+* `✅️` (`checkEmoji`) for success
+* `❌️` (`crossEmoji`) for failure
+* `💥️` (`bombEmoji`) for exceptions
 
 The `traceResultOf` function provides backward-compatible parsing of rendered headers.
 -/

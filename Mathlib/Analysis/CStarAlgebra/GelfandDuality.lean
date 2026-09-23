@@ -16,6 +16,9 @@ public import Mathlib.Topology.Algebra.Algebra
 public import Mathlib.Topology.ContinuousMap.Ideals
 public import Mathlib.Topology.ContinuousMap.StoneWeierstrass
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Gelfand Duality
 
@@ -32,7 +35,7 @@ C⋆algebras `F : Cpct → CommCStarAlg := X ↦ C(X, ℂ)` and
 
 Then `η₁ : id → F ∘ G := gelfandStarTransform` and
 `η₂ : id → G ∘ F := WeakDual.CharacterSpace.homeoEval` are the natural isomorphisms implementing
-**Gelfand Duality**, i.e., the (contravariant) equivalence of these categories.
+*Gelfand Duality*, i.e., the (contravariant) equivalence of these categories.
 
 ## Main definitions
 
@@ -55,7 +58,7 @@ Then `η₁ : id → F ∘ G := gelfandStarTransform` and
 ## TODO
 
 * After defining the category of commutative unital C⋆-algebras, bundle the existing unbundled
-  **Gelfand duality** into an actual equivalence (duality) of categories associated to the
+  *Gelfand duality* into an actual equivalence (duality) of categories associated to the
   functors `C(·, ℂ)` and `characterSpace ℂ ·` and the natural isomorphisms `gelfandStarTransform`
   and `WeakDual.CharacterSpace.homeoEval`.
 

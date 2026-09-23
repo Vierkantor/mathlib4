@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.Finset.Empty
 public import Mathlib.Data.Multiset.Filter
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Filtering a finite set
 
@@ -19,7 +22,6 @@ public import Mathlib.Data.Multiset.Filter
 ## Tags
 
 finite sets, finset
-
 -/
 
 @[expose] public section
@@ -39,7 +41,9 @@ namespace Finset
 -- TODO: these should be global attributes, but this will require fixing other files
 attribute [local trans] Subset.trans Superset.trans
 
-/-! ### filter -/
+/-!
+# filter
+-/
 
 section Filter
 

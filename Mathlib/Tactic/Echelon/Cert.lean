@@ -10,6 +10,9 @@ public import Mathlib.Tactic.Echelon.Core
 public import Mathlib.Util.Qq
 public meta import Mathlib.Tactic.Echelon.Core
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Certificate construction for the Bareiss decomposition
 
@@ -21,9 +24,9 @@ constructor that is parametric on a leaf normaliser.
 
 ## Main definitions
 
-- `mkCertificate`: build the `Echelon.Decomposition` certificate of a matrix literal.
-- `checkKernelDecide`: check that equality in a ring reduces in the kernel.
-- `mkPerm`, `mkPivotLit`, `mkMatrixLit`: elaborate the row permutation, the pivot
+* `mkCertificate`: build the `Echelon.Decomposition` certificate of a matrix literal.
+* `checkKernelDecide`: check that equality in a ring reduces in the kernel.
+* `mkPerm`, `mkPivotLit`, `mkMatrixLit`: elaborate the row permutation, the pivot
   function, and a matrix literal.
 
 ## Implementation notes

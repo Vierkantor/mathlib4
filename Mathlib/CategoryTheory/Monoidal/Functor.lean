@@ -8,11 +8,15 @@ module
 public import Mathlib.CategoryTheory.Monoidal.Category
 public import Mathlib.CategoryTheory.Adjunction.FullyFaithful
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # (Lax) monoidal functors
 
 A lax monoidal functor `F` between monoidal categories `C` and `D`
 is a functor between the underlying categories equipped with morphisms
+
 * `ε : 𝟙_ D ⟶ F.obj (𝟙_ C)` (called the unit morphism)
 * `μ X Y : (F.obj X) ⊗ (F.obj Y) ⟶ F.obj (X ⊗ Y)` (called the tensorator, or strength).
 
@@ -35,7 +39,7 @@ to monoid objects.
 
 ## References
 
-See <https://stacks.math.columbia.edu/tag/0FFL>.
+See [https://stacks.math.columbia.edu/tag/0FFL](https://stacks.math.columbia.edu/tag/0FFL).
 -/
 
 @[expose] public section

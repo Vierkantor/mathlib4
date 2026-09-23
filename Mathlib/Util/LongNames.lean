@@ -10,6 +10,9 @@ public meta import Mathlib.Lean.Expr.Basic
 public meta import Lean.Elab.Command
 public import Mathlib.Init
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Commands `#long_names` and `#long_instances`
 

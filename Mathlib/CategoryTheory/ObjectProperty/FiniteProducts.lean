@@ -11,6 +11,9 @@ public import Mathlib.CategoryTheory.ObjectProperty.ColimitsClosure
 public import Mathlib.CategoryTheory.ObjectProperty.ContainsZero
 public import Mathlib.Data.Fintype.Shrink
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Properties of objects that are stable under finite products
 
@@ -21,7 +24,6 @@ We introduce a constructor for `P.IsClosedUnderFiniteProducts`
 assuming `P.IsClosedUnderBinaryProducts`,
 `P.IsClosedUnderLimitsOfShape (Discrete.{0} PEmpty)` and that `C`
 has finite products.
-
 -/
 
 universe w

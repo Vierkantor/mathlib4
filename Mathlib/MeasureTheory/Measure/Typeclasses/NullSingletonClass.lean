@@ -9,6 +9,9 @@ public import Mathlib.MeasureTheory.Measure.Interval
 public import Mathlib.MeasureTheory.Measure.Restrict
 public import Mathlib.Topology.DiscreteSubset
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Measures having value zero on singletons
 

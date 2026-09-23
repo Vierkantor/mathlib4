@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Module.Pi
 public import Mathlib.Algebra.Module.Torsion.Pi
 public import Mathlib.GroupTheory.GroupAction.DomAct.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Further results on (semi)linear maps
 -/

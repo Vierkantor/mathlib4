@@ -11,7 +11,11 @@ public import Mathlib.RingTheory.PowerSeries.Evaluation
 public import Mathlib.Data.Finsupp.Weight
 public import Mathlib.Tactic.Ring.NamePowerVars
 
-/-! # Substitutions in power series
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Substitutions in power series
 
 A (possibly multivariate) power series can be substituted into
 a (univariate) power series if and only if its constant coefficient is nilpotent.
@@ -21,7 +25,6 @@ to the case of univariate power series.
 
 Because of the special API for `PowerSeries`, some results for `MvPowerSeries`
 do not immediately apply and a “primed” version is provided here.
-
 -/
 
 @[expose] public section

@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Module.Basic
 public import Mathlib.LinearAlgebra.AffineSpace.AffineEquiv
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Midpoint of a segment
 

@@ -10,11 +10,15 @@ public import Mathlib.AlgebraicGeometry.Morphisms.LocalFlatDescent
 public import Mathlib.AlgebraicGeometry.Geometrically.Reduced
 public import Mathlib.CategoryTheory.Monoidal.Grp
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Smoothness of group schemes
 
 ## Main results
-- `AlgebraicGeometry.smooth_of_grpObj`:
+
+* `AlgebraicGeometry.smooth_of_grpObj`:
   If `G` is a group scheme over a field `k` that is geometrically reduced and locally
   of finite type, then `G` is smooth over `k`.
 -/

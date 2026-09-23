@@ -9,19 +9,20 @@ public import Mathlib.AlgebraicGeometry.Morphisms.Etale
 public import Mathlib.AlgebraicGeometry.Morphisms.FlatDescent
 public import Mathlib.RingTheory.Etale.Descent
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Local properties satisfying fpqc descent
 
 In this file we provide instances that show that the following local properties satisfy fpqc
 descent:
 
-- locally of finite type
-- locally of finite presentation
-- smooth
-- formally unramified
-- étale
-
+* locally of finite type
+* locally of finite presentation
+* smooth
+* formally unramified
+* étale
 -/
 
 public section

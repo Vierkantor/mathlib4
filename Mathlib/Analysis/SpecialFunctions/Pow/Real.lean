@@ -10,7 +10,11 @@ public import Mathlib.Analysis.SpecialFunctions.Pow.Complex
 public meta import Mathlib.Data.Nat.NthRoot.Defs
 public import Qq
 
-/-! # Power function on `ℝ`
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Power function on `ℝ`
 
 We construct the power functions `x ^ y`, where `x` and `y` are real numbers.
 -/
@@ -274,7 +278,7 @@ protected theorem _root_.HasCompactSupport.rpow_const {α : Type*} [TopologicalS
 end Real
 
 /-!
-## Comparing real and complex powers
+# Comparing real and complex powers
 -/
 
 
@@ -368,7 +372,9 @@ theorem cpow_mul_ofReal_nonneg {x : ℝ} (hx : 0 ≤ x) (y : ℝ) (z : ℂ) :
 
 end Complex
 
-/-! ### Positivity extension -/
+/-!
+# Positivity extension
+-/
 
 namespace Mathlib.Meta.Positivity
 open Lean Qq
@@ -404,7 +410,7 @@ meta def evalRpow : PositivityExt where eval {u α} _zα pα? e :=
 end Mathlib.Meta.Positivity
 
 /-!
-## Further algebraic properties of `rpow`
+# Further algebraic properties of `rpow`
 -/
 
 
@@ -530,7 +536,7 @@ lemma rpow_mul_intCast (hx : 0 ≤ x) (y : ℝ) (n : ℤ) : x ^ (y * n) = (x ^ y
 in `Mathlib/Analysis/SpecialFunctions/Pow/NNReal.lean` instead. -/
 
 /-!
-## Order and monotonicity
+# Order and monotonicity
 -/
 
 
@@ -977,7 +983,7 @@ end Complex
 
 
 /-!
-## Square roots of reals
+# Square roots of reals
 -/
 
 
@@ -1044,7 +1050,7 @@ end Complex
 section Tactics
 
 /-!
-## Tactic extensions for real powers
+# Tactic extensions for real powers
 -/
 namespace Mathlib.Meta.NormNum
 

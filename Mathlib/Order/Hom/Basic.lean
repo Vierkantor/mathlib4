@@ -10,6 +10,9 @@ public import Mathlib.Order.RelIso.Basic
 public import Mathlib.Tactic.Monotonicity.Attr
 public import Mathlib.Tactic.PPWithUniv
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Order homomorphisms
 
@@ -19,6 +22,7 @@ homomorphism `f : α →o β` is a function `α → β` along with a proof that 
 ## Main definitions
 
 In this file we define the following bundled monotone maps:
+
 * `OrderHom α β` a.k.a. `α →o β`: Preorder homomorphism.
   An `OrderHom α β` is a function `f : α → β` such that `a₁ ≤ a₂ → f a₁ ≤ f a₂`
 * `OrderEmbedding α β` a.k.a. `α ↪o β`: Relation embedding.
@@ -241,8 +245,10 @@ protected theorem monotone (f : α →o β) : Monotone f :=
 protected theorem mono (f : α →o β) : Monotone f :=
   f.monotone
 
-/-- See Note [custom simps projection]. We give this manually so that we use `toFun` as the
-projection directly instead. -/
+/--
+See Note \[custom simps projection\]. We give this manually so that we use `toFun` as the
+projection directly instead.
+-/
 def Simps.coe (f : α →o β) : α → β := f
 
 /- TODO: all other DFunLike classes use `apply` instead of `coe`

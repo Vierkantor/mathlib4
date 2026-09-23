@@ -8,6 +8,9 @@ module
 public import Mathlib.Order.Category.Frm
 public import Mathlib.Topology.Category.CompHaus.Frm
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The category of locales
 

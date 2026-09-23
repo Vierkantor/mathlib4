@@ -8,6 +8,9 @@ module
 public import Mathlib.Topology.ContinuousMap.Defs
 public import Mathlib.Topology.Maps.OpenQuotient
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Homeomorphisms
 
@@ -19,7 +22,6 @@ directions continuous. We denote homeomorphisms with the notation `≃ₜ`.
 * `Homeomorph X Y`: The type of homeomorphisms from `X` to `Y`.
   This type can be denoted using the following notation: `X ≃ₜ Y`.
 * `HomeomorphClass`: `HomeomorphClass F A B` states that `F` is a type of homeomorphisms.
-
 * `Homeomorph.symm`: the inverse of a homeomorphism
 * `Homeomorph.trans`: composing two homeomorphisms
 * Homeomorphisms are open and closed embeddings, inducing, quotient maps etc.
@@ -28,9 +30,7 @@ directions continuous. We denote homeomorphisms with the notation `≃ₜ`.
 * `Homeomorph.homeomorphOfUnique`: if both `X` and `Y` have a unique element, then `X ≃ₜ Y`.
 * `Equiv.toHomeomorph`: an equivalence between topological spaces respecting openness
   is a homeomorphism.
-
 * `IsHomeomorph`: the predicate that a function is a homeomorphism
-
 -/
 
 @[expose] public section
@@ -86,7 +86,9 @@ protected def symm (h : X ≃ₜ Y) : Y ≃ₜ X where
 theorem symm_bijective : Function.Bijective (Homeomorph.symm : (X ≃ₜ Y) → Y ≃ₜ X) :=
   Function.bijective_iff_has_inverse.mpr ⟨_, symm_symm, symm_symm⟩
 
-/-- See Note [custom simps projection] -/
+/--
+See Note \[custom simps projection\]
+-/
 def Simps.symm_apply (h : X ≃ₜ Y) : Y → X :=
   h.symm
 

@@ -11,6 +11,9 @@ public import Mathlib.Data.Set.Piecewise
 public import Mathlib.Order.Interval.Set.Basic
 public import Mathlib.Order.Interval.Set.UnorderedInterval
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Intervals in `pi`-space
 

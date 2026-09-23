@@ -11,6 +11,9 @@ public import Mathlib.CategoryTheory.Limits.Shapes.WidePullbacks
 public import Mathlib.CategoryTheory.Limits.Shapes.Pullback.HasPullback  -- shake: keep (`example`)
 public import Mathlib.Data.Fintype.Option
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Categories with finite limits.
 

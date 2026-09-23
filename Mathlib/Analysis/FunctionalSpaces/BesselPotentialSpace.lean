@@ -7,13 +7,17 @@ module
 
 public import Mathlib.Analysis.Distribution.Sobolev
 
-/-! # Bessel potential spaces
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Bessel potential spaces
 
 We define the Bessel potential space or Fourier-theoretic Sobolev space, with smoothness parameter
 `s` and integrability parameter `p`. Informally, this space is given as the set of all tempered
 distributions `u` such that `𝓕⁻ (1 + ‖ξ‖ ^ 2) ^ (s / 2) 𝓕 u` is an `Lp` function.
 
-### Implementation notes
+## Implementation notes
 
 In `Mathlib.Analysis.Distribution.Sobolev` the unbundled version `TemperedDistribution.MemSobolev`
 is defined as `∃ v : Lp, besselPotential E F s u = v`. While it would be possible to define

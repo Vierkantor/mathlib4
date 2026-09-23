@@ -9,20 +9,21 @@ public import Mathlib.Data.Finsupp.WellFounded
 public import Mathlib.RingTheory.MvPowerSeries.LexOrder
 public import Mathlib.RingTheory.MvPowerSeries.Order
 
-/-! # ZeroDivisors in a MvPowerSeries ring
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
-- `mem_nonZeroDivisors_of_constantCoeff` proves that
+/-!
+# ZeroDivisors in a MvPowerSeries ring
+
+* `mem_nonZeroDivisors_of_constantCoeff` proves that
   a multivariate power series whose constant coefficient is not a zero divisor
   is itself not a zero divisor
-
-
-- `MvPowerSeries.order_mul` : multiplicativity of `MvPowerSeries.order`
+* `MvPowerSeries.order_mul` : multiplicativity of `MvPowerSeries.order`
   if the semiring `R` has no zero divisors
 
 ## Instance
 
 If `R` has `NoZeroDivisors`, then so does `MvPowerSeries σ R`.
-
 
 ## TODO
 
@@ -32,7 +33,7 @@ If `R` has `NoZeroDivisors`, then so does `MvPowerSeries σ R`.
 
 The analogue of `Polynomial.notMem_nonZeroDivisors_iff`
 (McCoy theorem) holds for power series over a Noetherian ring,
-but not in general. See [Fields1971]
+but not in general. See \[Fields1971\]
 -/
 
 public section

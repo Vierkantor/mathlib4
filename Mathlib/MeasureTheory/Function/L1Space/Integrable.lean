@@ -10,6 +10,9 @@ public import Mathlib.MeasureTheory.Function.LpOrder
 public import Mathlib.MeasureTheory.Function.StronglyMeasurable.Lemmas
 public import Mathlib.Tactic.CrossRefAttribute
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Integrable functions
 
@@ -33,7 +36,6 @@ To prove something for an arbitrary integrable function, a useful theorem is
 ## Tags
 
 integrable
-
 -/
 
 @[expose] public section
@@ -51,7 +53,9 @@ variable [NormedAddCommGroup β] [NormedAddCommGroup γ]
 
 namespace MeasureTheory
 
-/-! ### The predicate `Integrable` -/
+/-!
+# The predicate `Integrable`
+-/
 
 /-- `Integrable f μ` means that `f` is measurable and that the integral `∫⁻ a, ‖f a‖ ∂μ` is finite.
   `Integrable f` means `Integrable f volume`. -/
@@ -942,7 +946,9 @@ end ENNReal
 
 section PosPart
 
-/-! ### Lemmas used for defining the positive part of an `L¹` function -/
+/-!
+# Lemmas used for defining the positive part of an `L¹` function
+-/
 
 
 @[fun_prop]

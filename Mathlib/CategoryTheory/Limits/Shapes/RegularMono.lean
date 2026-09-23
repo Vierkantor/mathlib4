@@ -10,24 +10,30 @@ public import Mathlib.CategoryTheory.Limits.Shapes.Opposites.Equalizers
 public import Mathlib.CategoryTheory.MorphismProperty.Composition
 public import Mathlib.CategoryTheory.Limits.Shapes.Pullback.IsPullback.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Definitions and basic properties of regular monomorphisms and epimorphisms.
 
 A regular monomorphism is a morphism that is the equalizer of some parallel pair.
 
 In this file, we give the following definitions.
+
 * `RegularMono f`, which is a structure carrying the data that exhibits `f` as a regular
   monomorphism. That is, it carries a fork and data specifying `f` as the equalizer of that fork.
 * `IsRegularMono f`, which is a `Prop`-valued class stating that `f` is a regular monomorphism. In
   particular, this doesn't carry any data.
 
 and constructions
+
 * `IsSplitMono f → RegularMono f` and
 * `RegularMono f → Mono f`
 
 as well as the dual definitions/constructions for regular epimorphisms.
 
 Additionally, we give the constructions
+
 * `RegularEpi f → EffectiveEpi f`, from which it can be deduced that regular epimorphisms are
   strong.
 * `regularEpiOfEffectiveEpi`: constructs a `RegularEpi f` instance from `EffectiveEpi f` and
@@ -36,7 +42,6 @@ Additionally, we give the constructions
 We also define classes `IsRegularMonoCategory` and `IsRegularEpiCategory` for categories in which
 every monomorphism or epimorphism is regular, and deduce that these categories are
 `StrongMonoCategory`s resp. `StrongEpiCategory`s.
-
 -/
 
 @[expose] public section

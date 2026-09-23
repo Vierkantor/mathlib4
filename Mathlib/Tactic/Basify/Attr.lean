@@ -9,6 +9,9 @@ public import Mathlib.Init
 public meta import Lean.Meta.Tactic.ElimInfo
 public meta import Lean.Meta.Tactic.Simp.RegisterCommand
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Attributes for the `basify` tactic
 
@@ -28,7 +31,9 @@ register_simp_attr basify_simp
 
 namespace Mathlib.Tactic.Basify
 
-/-! ### The registries -/
+/-!
+# The registries
+-/
 
 /-- Information about an eliminator registered with `@[basify_elim]`. -/
 structure ElimEntry where

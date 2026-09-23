@@ -9,6 +9,9 @@ public import Mathlib.GroupTheory.Commutator.Basic
 public import Mathlib.Tactic.Group
 public import Mathlib.Topology.Algebra.Group.Subgroup
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The topological abelianization of a group.
 
@@ -20,12 +23,13 @@ This file defines the topological abelianization of a topological group.
   of `G` by the topological closure of its commutator subgroup..
 
 ## Main results
-- `instNormalCommutatorClosure` : the topological closure of the commutator of a topological group
+
+* `instNormalCommutatorClosure` : the topological closure of the commutator of a topological group
   `G` is a normal subgroup.
 
 ## Tags
-group, topological abelianization
 
+group, topological abelianization
 -/
 
 public section

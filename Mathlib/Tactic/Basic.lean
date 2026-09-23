@@ -11,15 +11,19 @@ public import Mathlib.Tactic.ExtendDoc
 public import Mathlib.Tactic.Linter.OldObtain
 public import Batteries.Util.LibraryNote -- For `library_note` command.
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Basic tactics and utilities for tactic writing
 
 This file defines some basic utilities for tactic writing, and also
-- a dummy `variables` macro (which warns that the Lean 4 name is `variable`)
-- the `introv` tactic, which allows the user to automatically introduce the variables of a theorem
+
+* a dummy `variables` macro (which warns that the Lean 4 name is `variable`)
+* the `introv` tactic, which allows the user to automatically introduce the variables of a theorem
   and explicitly name the non-dependent hypotheses,
-- an `assumption` macro, calling the `assumption` tactic on all goals
-- the tactics `match_target` and `clear_aux_decl` (clearing all auxiliary declarations from the
+* an `assumption` macro, calling the `assumption` tactic on all goals
+* the tactics `match_target` and `clear_aux_decl` (clearing all auxiliary declarations from the
   context).
 -/
 

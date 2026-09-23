@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Order.Ring.IsNonarchimedean
 public import Mathlib.Analysis.Normed.Field.Lemmas
 public import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Seminorms and norms on rings
 
@@ -18,6 +21,7 @@ consider multiple (semi)norms on a given ring.
 ## Main declarations
 
 For a ring `R`:
+
 * `RingSeminorm`: A seminorm on a ring `R` is a function `f : R → ℝ` that preserves zero, takes
   nonnegative values, is subadditive and submultiplicative and such that `f (-x) = f x` for all
   `x ∈ R`.
@@ -35,10 +39,11 @@ absolute values; see `Mathlib/Algebra/Order/AbsoluteValue/Basic.lean` for the bu
 
 ## References
 
-* [S. Bosch, U. Güntzer, R. Remmert, *Non-Archimedean Analysis*][bosch-guntzer-remmert]
+* ‍\[S. Bosch, U. Güntzer, R. Remmert, _Non-Archimedean Analysis_\]\[bosch-guntzer-remmert\]
 
 ## Tags
-ring_seminorm, ring_norm
+
+ring\_seminorm, ring\_norm
 -/
 
 @[expose] public section

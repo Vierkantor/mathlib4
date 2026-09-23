@@ -9,10 +9,14 @@ public import Mathlib.Algebra.Lie.InvariantForm
 public import Mathlib.Algebra.Lie.Semisimple.Basic
 public import Mathlib.Algebra.Lie.TraceForm
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lie algebras with non-degenerate Killing forms.
 
 In characteristic zero, the following three conditions are equivalent:
+
 1. The solvable radical of a Lie algebra is trivial
 2. A Lie algebra is a direct sum of its simple ideals
 3. A Lie algebra has non-degenerate Killing form
@@ -35,7 +39,6 @@ This file contains basic definitions and results for such Lie algebras.
   has non-singular Killing form then it has trivial radical.
 * `LieIdeal.isCompl_killingCompl`: if a Lie algebra has non-singular Killing form then for all
   ideals, an ideal and its Killing orthogonal complement are complements.
-
 -/
 
 public section

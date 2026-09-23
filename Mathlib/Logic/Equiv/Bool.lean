@@ -8,6 +8,9 @@ module
 public import Mathlib.Logic.Equiv.Basic
 public import Mathlib.Logic.Function.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Equivalences involving `Bool`
 

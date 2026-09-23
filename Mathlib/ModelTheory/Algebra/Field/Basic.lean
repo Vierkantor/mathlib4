@@ -11,6 +11,9 @@ public import Mathlib.ModelTheory.Algebra.Ring.Basic
 public import Mathlib.Algebra.Field.MinimalAxioms
 public import Mathlib.Data.Nat.Cast.Order.Ring
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The First-Order Theory of Fields
 
@@ -18,10 +21,10 @@ This file defines the first-order theory of fields as a theory over the language
 
 ## Main definitions
 
-- `FirstOrder.Language.Theory.field` : the theory of fields
-- `FirstOrder.Model.fieldOfModelField` : a model of the theory of fields on a type `K` that
+* `FirstOrder.Language.Theory.field` : the theory of fields
+* `FirstOrder.Model.fieldOfModelField` : a model of the theory of fields on a type `K` that
   already has ring operations.
-- `FirstOrder.Model.compatibleRingOfModelField` : shows that the ring operations on `K` given
+* `FirstOrder.Model.compatibleRingOfModelField` : shows that the ring operations on `K` given
   by `fieldOfModelField` are compatible with the ring operations on `K` given by the
   `Language.ring.Structure` instance.
 -/
@@ -36,9 +39,10 @@ namespace Field
 
 open Language FirstOrder.Ring Structure BoundedFormula
 
-/-- An indexing type to name each of the field axioms. The theory
-of fields is defined as the range of a function `FieldAxiom ->
-Language.ring.Sentence` -/
+/--
+An indexing type to name each of the field axioms. The theory
+of fields is defined as the range of a function `FieldAxiom -> Language.ring.Sentence`
+-/
 inductive FieldAxiom : Type
   | addAssoc : FieldAxiom
   | zeroAdd : FieldAxiom

@@ -7,7 +7,12 @@ module
 
 public import Mathlib.Init
 
-/-! # The `ofNat()` macro -/
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# The `ofNat()` macro
+-/
 
 public meta section
 

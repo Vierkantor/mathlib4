@@ -8,6 +8,9 @@ module
 public import Mathlib.Init
 public meta import Lean.MetavarContext
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Miscellaneous helper functions for tactics.
 

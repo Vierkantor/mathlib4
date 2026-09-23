@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.ConcreteCategory.Basic
 public import Mathlib.Topology.Bornology.Hom
 public import Mathlib.CategoryTheory.ConcreteCategory.Notation
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The category of bornologies
 

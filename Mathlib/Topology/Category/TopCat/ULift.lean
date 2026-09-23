@@ -9,12 +9,14 @@ public import Mathlib.Topology.Category.TopCat.Limits.Basic
 public import Mathlib.Topology.Homeomorph.Lemmas
 public import Mathlib.CategoryTheory.Limits.Preserves.Ulift
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lifting topological spaces to a higher universe
 
 In this file, we construct the functor `uliftFunctor.{v, u} : TopCat.{u} ⥤ TopCat.{max u v}`
 which sends a topological space `X : Type u` to a homeomorphic space in `Type (max u v)`.
-
 -/
 
 @[expose] public section

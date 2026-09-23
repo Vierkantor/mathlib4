@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Lie.Basic
 public import Mathlib.RingTheory.Artinian.Module
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lie subalgebras
 
@@ -16,13 +19,13 @@ results.
 
 ## Main definitions
 
-  * `LieSubalgebra`
-  * `LieSubalgebra.incl`
-  * `LieSubalgebra.map`
-  * `LieHom.range`
-  * `LieEquiv.ofInjective`
-  * `LieEquiv.ofEq`
-  * `LieEquiv.ofSubalgebras`
+* `LieSubalgebra`
+* `LieSubalgebra.incl`
+* `LieSubalgebra.map`
+* `LieHom.range`
+* `LieEquiv.ofInjective`
+* `LieEquiv.ofEq`
+* `LieEquiv.ofSubalgebras`
 
 ## Tags
 

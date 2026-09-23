@@ -8,6 +8,9 @@ module
 
 public import Mathlib.Data.Set.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Coercing sets to types.
 
@@ -16,7 +19,7 @@ More advanced theorems about these definitions are located in other files in `Ma
 
 ## Main definitions
 
-- `Set.Elem`: coercion of a set to a type; it is reducibly equal to `{x // x ∈ s}`;
+* `Set.Elem`: coercion of a set to a type; it is reducibly equal to `{x // x ∈ s}`;
 -/
 
 @[expose] public section

@@ -9,6 +9,9 @@ public import Mathlib.Dynamics.Newton
 public import Mathlib.LinearAlgebra.Semisimple
 public import Mathlib.LinearAlgebra.FreeModule.Finite.Matrix
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Jordan-Chevalley-Dunford decomposition
 
@@ -31,7 +34,6 @@ The proof given here uses Newton's method and is taken from Chambert-Loir's note
 * `Module.End.isNilpotent_isSemisimple_unique`: the Jordan-Chevalley-Dunford decomposition is
   unique: if `n₁ + s₁ = n₂ + s₂` with `nᵢ` nilpotent, `sᵢ` semisimple, and `nᵢ`, `sᵢ` commuting,
   then `n₁ = n₂` and `s₁ = s₂`.
-
 -/
 
 public section

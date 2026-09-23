@@ -15,12 +15,14 @@ public import Mathlib.Data.Fintype.Pigeonhole
 public import Mathlib.Data.Fintype.Sigma
 public import Mathlib.Order.OrderIsoNat
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Series of a relation
 
 If `r` is a relation on `α` then a relation series of length `n` is a series
 `a_0, a_1, ..., a_n` such that `r a_i a_{i+1}` for all `i < n`
-
 -/
 
 @[expose] public section

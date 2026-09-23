@@ -11,6 +11,9 @@ public import Mathlib.Topology.Algebra.InfiniteSum.NatInt
 public import Mathlib.Topology.Algebra.Order.Field
 public import Mathlib.Topology.Order.MonotoneConvergence
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Infinite sum or product in an order
 

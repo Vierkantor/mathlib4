@@ -13,6 +13,9 @@ public import Mathlib.Topology.Algebra.ConstMulAction
 public import Mathlib.Topology.Algebra.Group.Defs
 public import Mathlib.Topology.Connected.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Continuous monoid action
 

@@ -7,8 +7,11 @@ module
 
 public import Mathlib.Tactic.Inclusion.Extension.IntervalDyadicReal.BinarySplit
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
-# Basic inclusion extensions for interval_dyadic_real
+# Basic inclusion extensions for interval\_dyadic\_real
 
 This file defines basic operations for the `interval_dyadic_real` inclusion family.
 -/

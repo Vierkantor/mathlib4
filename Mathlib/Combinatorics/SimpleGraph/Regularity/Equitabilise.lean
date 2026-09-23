@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Order.Ring.Canonical
 public import Mathlib.Order.Partition.Equipartition
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Equitabilising a partition
 
@@ -25,7 +28,7 @@ This file allows to blow partitions up into parts of controlled size. Given a pa
 
 ## References
 
-[Yaël Dillies, Bhavik Mehta, *Formalising Szemerédi’s Regularity Lemma in Lean*][srl_itp]
+‍\[Yaël Dillies, Bhavik Mehta, _Formalising Szemerédi’s Regularity Lemma in Lean_\]\[srl\_itp\]
 -/
 
 @[expose] public section

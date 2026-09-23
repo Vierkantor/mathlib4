@@ -8,6 +8,9 @@ module
 public import Mathlib.SetTheory.Cardinal.ToNat
 public import Mathlib.LinearAlgebra.Dimension.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Finite dimension of vector spaces
 

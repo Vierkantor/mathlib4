@@ -12,8 +12,11 @@ public import Mathlib.LinearAlgebra.Matrix.ToLin
 public import Mathlib.LinearAlgebra.Matrix.Transvection
 public import Mathlib.RingTheory.RootsOfUnity.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
-# The Special Linear group $SL(n, R)$
+# The Special Linear group $`SL(n, R)`
 
 This file defines the elements of the Special Linear group `SpecialLinearGroup n R`, consisting
 of all square `R`-matrices with determinant `1` on the fintype `n` by `n`.  In addition, we define
@@ -32,6 +35,7 @@ For `m : ℕ`, we introduce the notation `SL(m,R)` for the special linear group 
 `n = Fin m`, in the scope `MatrixGroups`.
 
 ## Implementation notes
+
 The inverse operation in the `SpecialLinearGroup` is defined to be the adjugate
 matrix, so that `SpecialLinearGroup n R` has a group structure for all `CommRing R`.
 
@@ -45,7 +49,7 @@ of a regular `↑` coercion.
 
 ## References
 
-* https://en.wikipedia.org/wiki/Special_linear_group
+* https://en.wikipedia.org/wiki/Special\_linear\_group
 
 ## Tags
 

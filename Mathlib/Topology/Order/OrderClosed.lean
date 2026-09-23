@@ -8,16 +8,19 @@ module
 public import Mathlib.Topology.Order.LeftRight
 public import Mathlib.Topology.Separation.Hausdorff
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Order-closed topologies
 
 In this file we introduce 3 typeclass mixins that relate topology and order structures:
 
-- `ClosedIicTopology` says that all the intervals $(-∞, a]$ (formally, `Set.Iic a`)
+* `ClosedIicTopology` says that all the intervals $`(-∞, a]` (formally, `Set.Iic a`)
   are closed sets;
-- `ClosedIciTopology` says that all the intervals $[a, +∞)$ (formally, `Set.Ici a`)
+* `ClosedIciTopology` says that all the intervals $`[a, +∞)` (formally, `Set.Ici a`)
   are closed sets;
-- `OrderClosedTopology` says that the set of points `(x, y)` such that `x ≤ y`
+* `OrderClosedTopology` says that the set of points `(x, y)` such that `x ≤ y`
   is closed in the product topology.
 
 The last predicate implies the first two.
@@ -266,7 +269,7 @@ theorem Dense.exists_ge' {s : Set α} (hs : Dense s) (htop : ∀ x, IsTop x → 
     exact ⟨y, hys, hy.le⟩
 
 /-!
-### Left neighborhoods on a `ClosedIicTopology`
+# Left neighborhoods on a `ClosedIicTopology`
 
 Limits to the left of real functions are defined in terms of neighborhoods to the left, either open
 or closed, i.e., members of `𝓝[<] a` and `𝓝[≤] a`. Here we prove that all left-neighborhoods of a
@@ -275,7 +278,7 @@ point are equal, and we prove other useful characterizations which require the s
 -/
 
 /-!
-#### Point excluded
+# Point excluded
 -/
 
 @[to_dual]
@@ -343,7 +346,7 @@ theorem continuousWithinAt_Ioo_iff_Iio (h : a < b) :
   simp only [ContinuousWithinAt, nhdsWithin_Ioo_eq_nhdsLT h]
 
 /-!
-#### Point included
+# Point included
 -/
 
 @[to_dual]

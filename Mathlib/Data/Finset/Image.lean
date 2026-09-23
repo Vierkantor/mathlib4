@@ -15,7 +15,11 @@ public import Mathlib.Data.Finset.Lattice.Lemmas
 public import Mathlib.Data.Finset.SDiff
 public import Mathlib.Data.Fintype.Defs
 
-/-! # Image and map operations on finite sets
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Image and map operations on finite sets
 
 This file provides the finite analog of `Set.image`, along with some other similar functions.
 
@@ -45,7 +49,9 @@ open Function
 
 namespace Finset
 
-/-! ### map -/
+/-!
+# map
+-/
 
 
 section Map
@@ -268,7 +274,9 @@ theorem range_add_one' (n : ℕ) :
     range (n + 1) = insert 0 ((range n).map ⟨fun i => i + 1, fun i j => by simp⟩) := by
   ext (⟨⟩ | ⟨n⟩) <;> simp [Nat.zero_lt_succ n]
 
-/-! ### image -/
+/-!
+# image
+-/
 
 
 section Image
@@ -580,7 +588,9 @@ theorem iterate_image [DecidableEq α] (f : α → α) (n : ℕ) :
 
 end Image
 
-/-! ### filterMap -/
+/-!
+# filterMap
+-/
 
 section FilterMap
 
@@ -626,7 +636,9 @@ theorem _root_.List.toFinset_filterMap [DecidableEq α] [DecidableEq β]
 
 end FilterMap
 
-/-! ### Subtype -/
+/-!
+# Subtype
+-/
 
 
 section Subtype

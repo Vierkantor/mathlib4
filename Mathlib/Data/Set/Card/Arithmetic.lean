@@ -11,6 +11,9 @@ public import Mathlib.SetTheory.Cardinal.Arithmetic
 public import Mathlib.Algebra.Order.BigOperators.Group.Finset
 public import Mathlib.Data.Set.Finite.Lattice
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Results using cardinal arithmetic
 
@@ -19,9 +22,9 @@ It has been separated out to not burden `Mathlib/Data/Set/Card.lean` with extra 
 
 ## Main results
 
-- `exists_union_disjoint_ncard_eq_of_even`: Given a set `s` with an even cardinality, there exist
+* `exists_union_disjoint_ncard_eq_of_even`: Given a set `s` with an even cardinality, there exist
   disjoint sets `t` and `u` such that `t ∪ u = s` and `t.ncard = u.ncard`.
-- `exists_union_disjoint_cardinal_eq_iff` is the same, except using cardinal notation.
+* `exists_union_disjoint_cardinal_eq_iff` is the same, except using cardinal notation.
 -/
 
 public section

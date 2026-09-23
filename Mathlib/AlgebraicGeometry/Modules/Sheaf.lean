@@ -13,12 +13,14 @@ public import Mathlib.CategoryTheory.Bicategory.Adjunction.Cat
 public import Mathlib.CategoryTheory.Bicategory.Functor.LocallyDiscrete
 public import Mathlib.Topology.Sheaves.Module
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The category of sheaves of modules over a scheme
 
 In this file, we define the abelian category of sheaves of modules
 `X.Modules` over a scheme `X`, and study its basic functoriality.
-
 -/
 
 @[expose] public section
@@ -345,7 +347,9 @@ def restrictFunctor : Y.Modules ⥤ X.Modules :=
 abbrev restrict (M : Y.Modules) (f : X ⟶ Y) [IsOpenImmersion f] : X.Modules :=
   (restrictFunctor f).obj M
 
-/-- The sections of the restriction of `M` over `U` are isomorphic to `Γ(M, f ''ᵁ U). -/
+/--
+The sections of the restriction of `M` over `U` are isomorphic to \`Γ(M, f ''ᵁ U).
+-/
 def restrictAppIso (M : Y.Modules) (U : X.Opens) : Γ(M.restrict f, U) ≅ Γ(M, f ''ᵁ U) :=
   Iso.refl _
 

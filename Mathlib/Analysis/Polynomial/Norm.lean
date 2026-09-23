@@ -10,6 +10,9 @@ public import Mathlib.Analysis.Normed.Unbundled.RingSeminorm
 public import Mathlib.Algebra.Order.Hom.Basic
 
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Sup Norm of Polynomials
 
@@ -22,7 +25,7 @@ The sup norm is related to the Mahler measure of the polynomial. See
 
 ## Main definitions
 
-- `Polynomial.supNorm p`: the sup norm of the coefficients of the polynomial, equal to the
+* `Polynomial.supNorm p`: the sup norm of the coefficients of the polynomial, equal to the
   maximum of the norm of its coefficients (or zero for the zero polynomial)
 
 ## A Note on Naming

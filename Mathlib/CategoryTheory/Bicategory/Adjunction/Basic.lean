@@ -10,6 +10,9 @@ public import Mathlib.CategoryTheory.Bicategory.Functor.StrictPseudofunctor
 public import Mathlib.Tactic.CategoryTheory.Bicategory.Basic
 public import Mathlib.Tactic.CategoryTheory.BicategoricalComp
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Adjunctions in bicategories
 

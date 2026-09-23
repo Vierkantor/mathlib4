@@ -8,6 +8,9 @@ module
 public import Mathlib.Tactic.Eqns
 public import Mathlib.Util.TermReduce
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Irreducible definitions
 
@@ -26,7 +29,6 @@ irreducible_def frobnicate (a b : Nat) :=
 example : frobnicate a 0 = a := by
   simp [frobnicate_def]
 ```
-
 -/
 
 public meta section
@@ -45,7 +47,9 @@ local elab "eta_helper " t:term : term => do
     let lhs := (mkAppN lhs xs).headBeta
     mkForallFVars xs <|← mkEq lhs rhs
 
-/-- `val_proj x` elabs to the *primitive projection* `@x.val`. -/
+/--
+`val_proj x` elabs to the _primitive projection_ `@x.val`.
+-/
 local elab "val_proj " e:term : term => do
   let e ← elabTerm (← `(($e : Subtype _))) none
   return mkProj ``Subtype 0 e

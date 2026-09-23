@@ -11,6 +11,9 @@ public import Mathlib.Data.List.Forall2
 public import Mathlib.Data.List.InsertIdx
 public import Mathlib.Logic.OpClass
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # List Permutations
 

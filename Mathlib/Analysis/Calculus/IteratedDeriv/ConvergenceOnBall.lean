@@ -10,6 +10,9 @@ public import Mathlib.Analysis.Calculus.IteratedDeriv.Defs
 public import Mathlib.Analysis.Normed.Module.Connected
 public import Mathlib.Analysis.RCLike.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Taylor series converges to function on whole ball
 

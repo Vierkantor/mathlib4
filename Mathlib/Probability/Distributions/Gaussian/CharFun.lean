@@ -11,6 +11,9 @@ public import Mathlib.Probability.Moments.CovarianceBilin
 import Mathlib.Probability.Distributions.Gaussian.Fernique
 public import Mathlib.Analysis.CStarAlgebra.Classes
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Facts about Gaussian characteristic function
 

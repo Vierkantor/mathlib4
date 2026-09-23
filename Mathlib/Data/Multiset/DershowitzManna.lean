@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Order.Sub.Unbundled.Basic
 public import Mathlib.Data.Multiset.OrderedMonoid
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Dershowitz-Manna ordering
 
@@ -20,18 +23,17 @@ the Dershowitz-Manna ordering defined over multisets is also well-founded.
 
 ## Main results
 
-- `Multiset.IsDershowitzMannaLT` : the standard definition of the `Dershowitz-Manna ordering`.
-- `Multiset.wellFounded_isDershowitzMannaLT` : the main theorem about the
+* `Multiset.IsDershowitzMannaLT` : the standard definition of the `Dershowitz-Manna ordering`.
+* `Multiset.wellFounded_isDershowitzMannaLT` : the main theorem about the
   `Dershowitz-Manna ordering` being well-founded.
 
 ## References
 
-* [Wikipedia, Dershowitz–Manna ordering](https://en.wikipedia.org/wiki/Dershowitz%E2%80%93Manna_ordering)
-
+* [Wikipedia, Dershowitz–Manna
+  ordering](https://en.wikipedia.org/wiki/Dershowitz%E2%80%93Manna_ordering)
 * [CoLoR](https://github.com/fblanqui/color), a Coq library on rewriting theory and termination.
   Our code here is inspired by their formalization and the theorem is called `mOrd_wf` in the file
   [MultisetList.v](https://github.com/fblanqui/color/blob/1.8.5/Util/Multiset/MultisetOrder.v).
-
 -/
 
 @[expose] public section

@@ -9,6 +9,9 @@ public import Mathlib.Analysis.Complex.CauchyIntegral
 public import Mathlib.Analysis.Calculus.FDeriv.Analytic
 public import Mathlib.Analysis.Normed.Module.Completion
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Liouville's theorem
 

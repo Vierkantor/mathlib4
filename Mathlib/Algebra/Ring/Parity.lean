@@ -11,6 +11,9 @@ public import Mathlib.Data.Nat.Cast.Commute
 public import Mathlib.Data.Set.Operations
 public import Mathlib.Logic.Function.Iterate
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Even and odd elements in rings
 

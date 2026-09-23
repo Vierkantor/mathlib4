@@ -9,6 +9,9 @@ public import Mathlib.Data.Fintype.Basic
 public import Mathlib.Data.Fintype.Powerset
 public import Mathlib.Data.Set.Finite.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Hall's Marriage Theorem for finite index types
 
@@ -22,7 +25,7 @@ The modules are split like this since the generalized statement
 depends on the topology and category theory libraries, but the finite
 case in this module has few dependencies.
 
-A description of this formalization is in [Gusakov2021].
+A description of this formalization is in \[Gusakov2021\].
 
 ## Main statements
 

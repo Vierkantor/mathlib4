@@ -8,15 +8,16 @@ module
 public import Mathlib.Algebra.Group.Int.Even
 public import Mathlib.Data.Nat.Fib.Basic
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Fibonacci numbers extended onto the integers
 
 This file defines the Fibonacci sequence on the integers.
 
 Definition of the sequence: `F₀ = 0`, `F₁ = 1`, and `Fₙ₊₂ = Fₙ₊₁ + Fₙ`
 (same as the natural number version `Nat.fib`, but here `n` is an integer).
-
 -/
 
 @[expose] public section

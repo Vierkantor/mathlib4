@@ -9,6 +9,9 @@ public import Mathlib.Order.Concept
 
 import Mathlib.Order.UpperLower.CompleteLattice
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Dedekind-MacNeille completion
 
@@ -22,11 +25,10 @@ lattice factors through it.
 
 ## Todo
 
-- Build the order isomorphism `DedekindCut ℚ ≃o EReal`.
-
-- Make the `to_dual` tactic work so that some lemmas are created automatically, eg
+* Build the order isomorphism `DedekindCut ℚ ≃o EReal`.
+* Make the `to_dual` tactic work so that some lemmas are created automatically, eg
   `DedekindCut.le_principal_iff` from `DedekindCut.principal_le_iff`.
-  See [https://github.com/leanprover-community/mathlib4/pull/37939#discussion_r3328958630]
+  See \[https://github.com/leanprover-community/mathlib4/pull/37939#discussion\_r3328958630\]
 
 ## Tags
 

@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Group.Subgroup.Defs
 public import Mathlib.Analysis.Normed.Group.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Subgroups of normed (semi)groups
 
@@ -20,7 +23,9 @@ normed group
 
 public section
 
-/-! ### Subgroups of normed groups -/
+/-!
+# Subgroups of normed groups
+-/
 
 variable {E : Type*}
 
@@ -71,7 +76,9 @@ instance normedCommGroup [NormedCommGroup E] {s : Subgroup E} : NormedCommGroup 
 
 end Subgroup
 
-/-! ### Subgroup classes of normed groups -/
+/-!
+# Subgroup classes of normed groups
+-/
 
 
 namespace SubgroupClass

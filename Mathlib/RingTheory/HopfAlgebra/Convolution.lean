@@ -8,11 +8,15 @@ module
 public import Mathlib.RingTheory.Bialgebra.Convolution
 public import Mathlib.RingTheory.HopfAlgebra.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Convolution product on Hopf algebra maps
 
 This file constructs the ring structure on bialgebra homs `C → A` where `C` and `A` are Hopf
 algebras and multiplication is given by
+
 ```
          |
          μ
@@ -22,6 +26,7 @@ f * g = f g
          δ
          |
 ```
+
 diagrammatically, where `μ` stands for multiplication and `δ` for comultiplication.
 -/
 

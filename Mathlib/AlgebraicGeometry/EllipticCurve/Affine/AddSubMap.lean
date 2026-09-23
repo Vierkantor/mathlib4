@@ -10,6 +10,9 @@ public import Mathlib.RingTheory.MvPolynomial.Homogeneous
 public import Mathlib.Tactic.Ring.NamePolyVars
 public import Mathlib.Algebra.MvPolynomial.CommRing
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The addition-and-subtraction map on x-coordinates
 
@@ -32,7 +35,7 @@ public section
 namespace WeierstrassCurve
 
 /-!
-### The addition-and-subtraction map on x-coordinates
+# The addition-and-subtraction map on x-coordinates
 -/
 
 variable {R : Type*} [CommRing R] (W : WeierstrassCurve R)
@@ -130,7 +133,7 @@ lemma addSubMap_ne_zero [IsReduced R] {x : Fin 3 → R} (hx : x ≠ 0) :
 end WeierstrassCurve
 
 /-!
-### The symmetric square of the x-coordinate map
+# The symmetric square of the x-coordinate map
 
 We define `Weierstrass.Affine.Point.sym2x`, which sends a pair `P`, `Q` of nonsingular points in
 affine coordinates on a Weierstrass curve to a triple projectively equal to

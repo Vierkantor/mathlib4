@@ -9,6 +9,9 @@ public import Mathlib.LinearAlgebra.CliffordAlgebra.Basic
 public import Mathlib.LinearAlgebra.Alternating.Curry
 public import Mathlib.Order.Hom.PowersetCard
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Exterior Algebras
 
@@ -34,6 +37,7 @@ The canonical linear map `M → ExteriorAlgebra R M` is denoted `ExteriorAlgebra
 
 The main theorems proved ensure that `ExteriorAlgebra R M` satisfies the universal property
 of the exterior algebra.
+
 1. `ι_comp_lift` is the fact that the composition of `ι R` with `lift R f cond` agrees with `f`.
 2. `lift_unique` ensures the uniqueness of `lift R f cond` with respect to 1.
 
@@ -131,7 +135,9 @@ theorem lift_comp_ι (g : ExteriorAlgebra R M →ₐ[R] A) :
     lift R ⟨g.toLinearMap.comp (ι R), comp_ι_sq_zero _⟩ = g :=
   CliffordAlgebra.lift_comp_ι g
 
-/-- See note [partially-applied ext lemmas]. -/
+/--
+See note \[partially-applied ext lemmas\].
+-/
 @[ext]
 theorem hom_ext {f g : ExteriorAlgebra R M →ₐ[R] A}
     (h : f.toLinearMap.comp (ι R) = g.toLinearMap.comp (ι R)) : f = g :=

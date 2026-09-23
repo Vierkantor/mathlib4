@@ -11,6 +11,9 @@ public import Mathlib.Topology.Algebra.InfiniteSum.Module
 public import Mathlib.Algebra.Order.Field.Power
 public import Mathlib.NumberTheory.Padics.MahlerBasis
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The Amice transform
 
@@ -35,8 +38,7 @@ some theory of _bounded_ power series over normed rings.
 
 ## References
 
-* [P. Colmez, *Fonctions d'une variable p-adique*][colmez2010], section II.2
-
+* ‍\[P. Colmez, _Fonctions d'une variable p-adique_\]\[colmez2010\], section II.2
 -/
 
 public noncomputable section

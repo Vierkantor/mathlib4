@@ -12,6 +12,9 @@ public import Mathlib.MeasureTheory.Integral.Bochner.VitaliCaratheodory
 public import Mathlib.MeasureTheory.Integral.DominatedConvergence
 public import Mathlib.Analysis.Calculus.TangentCone.Prod
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Fundamental Theorem of Calculus
 
@@ -76,16 +79,14 @@ Let `(la, la')` be an `intervalIntegral.FTCFilter` pair of filters around `a` (i
 `intervalIntegral.FTCFilter a la la'`) and let `(lb, lb')` be an `intervalIntegral.FTCFilter` pair
 of filters around `b`. If `f` has finite limits `ca` and `cb` almost surely at `la'` and `lb'`,
 respectively, then
-$$
-  \int_{va}^{vb} f ∂μ - \int_{ua}^{ub} f ∂μ =
-  \int_{ub}^{vb} cb ∂μ - \int_{ua}^{va} ca ∂μ + o(‖∫_{ua}^{va} 1 ∂μ‖ + ‖∫_{ub}^{vb} (1:ℝ) ∂μ‖)
-$$
+$$`  \int_{va}^{vb} f ∂μ - \int_{ua}^{ub} f ∂μ = \int_{ub}^{vb} cb ∂μ - \int_{ua}^{va} ca ∂μ + o(‖∫_{ua}^{va} 1 ∂μ‖ + ‖∫_{ub}^{vb} (1:ℝ) ∂μ‖)  `
 as `ua` and `va` tend to `la` while `ub` and `vb` tend to `lb`.
 
 ### FTC-2 and corollaries
 
 We use FTC-1 to prove several versions of FTC-2 for the Lebesgue measure, using a similar naming
 scheme as for the versions of FTC-1. They include:
+
 * `intervalIntegral.integral_eq_sub_of_hasDeriv_right_of_le` - most general version, for functions
   with a right derivative
 * `intervalIntegral.integral_eq_sub_of_hasDerivAt` - version for functions with a derivative on
@@ -113,10 +114,10 @@ As explained above, many theorems in this file rely on the typeclass
 `intervalIntegral.FTCFilter (a : ℝ) (l l' : Filter ℝ)` to avoid code duplication. This typeclass
 combines four assumptions:
 
-- `pure a ≤ l`;
-- `l' ≤ 𝓝 a`;
-- `l'` has a basis of measurable sets;
-- if `u n` and `v n` tend to `l`, then for any `s ∈ l'`, `Ioc (u n) (v n)` is eventually included
+* `pure a ≤ l`;
+* `l' ≤ 𝓝 a`;
+* `l'` has a basis of measurable sets;
+* if `u n` and `v n` tend to `l`, then for any `s ∈ l'`, `Ioc (u n) (v n)` is eventually included
   in `s`.
 
 This typeclass has the following “real” instances: `(a, pure a, ⊥)`, `(a, 𝓝[≥] a, 𝓝[>] a)`,
@@ -158,7 +159,7 @@ namespace intervalIntegral
 section FTC1
 
 /-!
-### Fundamental theorem of calculus, part 1, for any measure
+# Fundamental theorem of calculus, part 1, for any measure
 
 In this section we prove a few lemmas that can be seen as versions of FTC-1 for interval integrals
 w.r.t. any measure. Many theorems are formulated for one or two pairs of filters related by
@@ -180,8 +181,7 @@ Namely, let `f` be a measurable function integrable on `a..b`. Let `(la, la')` b
 `intervalIntegral.FTCFilter`s around `a`; let `(lb, lb')` be a pair of `intervalIntegral.FTCFilter`s
 around `b`. Suppose that `f` has finite limits `ca` and `cb` at `la' ⊓ ae μ` and `lb' ⊓ ae μ`,
 respectively.  Then
-`∫ x in va..vb, f x ∂μ - ∫ x in ua..ub, f x ∂μ = ∫ x in ub..vb, cb ∂μ - ∫ x in ua..va, ca ∂μ +
-  o(‖∫ x in ua..va, (1:ℝ) ∂μ‖ + ‖∫ x in ub..vb, (1:ℝ) ∂μ‖)`
+`∫ x in va..vb, f x ∂μ - ∫ x in ua..ub, f x ∂μ = ∫ x in ub..vb, cb ∂μ - ∫ x in ua..va, ca ∂μ + o(‖∫ x in ua..va, (1:ℝ) ∂μ‖ + ‖∫ x in ub..vb, (1:ℝ) ∂μ‖)`
 as `ua` and `va` tend to `la` while `ub` and `vb` tend to `lb`.
 
 This theorem is formulated with integral of constants instead of measures in the right-hand sides
@@ -190,7 +190,8 @@ possible to write better `simp` lemmas for these integrals, see `integral_const`
 `integral_const_of_cdf`.
 
 In the next subsection we apply this theorem to prove various theorems about differentiability
-of the integral w.r.t. Lebesgue measure. -/
+of the integral w.r.t. Lebesgue measure.
+-/
 
 /-- An auxiliary typeclass for the Fundamental theorem of calculus, part 1. It is used to formulate
 theorems that work simultaneously for left and right one-sided derivatives of `∫ x in u..v, f x`. -/
@@ -377,16 +378,16 @@ theorem measure_integral_sub_linear_isLittleO_of_tendsto_ae_of_ge
   measure_integral_sub_linear_isLittleO_of_tendsto_ae_of_ge' hfm hf (FTCFilter.finiteAt_inner l) hu
     hv huv
 
-/-- **Fundamental theorem of calculus-1**, strict derivative in both limits for a locally finite
+/--
+*Fundamental theorem of calculus-1*, strict derivative in both limits for a locally finite
 measure.
 
 Let `f` be a measurable function integrable on `a..b`. Let `(la, la')` be a pair of
 `intervalIntegral.FTCFilter`s around `a`; let `(lb, lb')` be a pair of `intervalIntegral.FTCFilter`s
 around `b`. Suppose that `f` has finite limits `ca` and `cb` at `la' ⊓ ae μ` and `lb' ⊓ ae μ`,
 respectively.
-Then `∫ x in va..vb, f x ∂μ - ∫ x in ua..ub, f x ∂μ =
-  ∫ x in ub..vb, cb ∂μ - ∫ x in ua..va, ca ∂μ +
-    o(‖∫ x in ua..va, (1:ℝ) ∂μ‖ + ‖∫ x in ub..vb, (1:ℝ) ∂μ‖)`
+Then
+`∫ x in va..vb, f x ∂μ - ∫ x in ua..ub, f x ∂μ = ∫ x in ub..vb, cb ∂μ - ∫ x in ua..va, ca ∂μ + o(‖∫ x in ua..va, (1:ℝ) ∂μ‖ + ‖∫ x in ub..vb, (1:ℝ) ∂μ‖)`
 as `ua` and `va` tend to `la` while `ub` and `vb` tend to `lb`.
 -/
 theorem measure_integral_sub_integral_sub_linear_isLittleO_of_tendsto_ae
@@ -461,7 +462,7 @@ end IsLocallyFiniteMeasure
 end
 
 /-!
-### Fundamental theorem of calculus-1 for Lebesgue measure
+# Fundamental theorem of calculus-1 for Lebesgue measure
 
 In this section we restate theorems from the previous section for Lebesgue measure.
 In particular, we prove that `∫ x in u..v, f x` is strictly differentiable in `(u, v)`
@@ -474,7 +475,7 @@ variable [CompleteSpace E]
   {u v ua ub va vb : ι → ℝ} [FTCFilter a la la'] [FTCFilter b lb lb']
 
 /-!
-#### Auxiliary `Asymptotics.IsLittleO` statements
+# Auxiliary `Asymptotics.IsLittleO` statements
 
 In this section we prove several lemmas that can be interpreted as strict differentiability of
 `(u, v) ↦ ∫ x in u..v, f x ∂μ` in `u` and/or `v` at a filter. The statements use
@@ -493,16 +494,18 @@ theorem integral_sub_linear_isLittleO_of_tendsto_ae [FTCFilter a l l']
     (fun t => (∫ x in u t..v t, f x) - (v t - u t) • c) =o[lt] (v - u) := by
   simpa [integral_const] using! measure_integral_sub_linear_isLittleO_of_tendsto_ae hfm hf hu hv
 
-/-- **Fundamental theorem of calculus-1**, strict differentiability at filter in both endpoints.
+/--
+*Fundamental theorem of calculus-1*, strict differentiability at filter in both endpoints.
 
 If `f` is a measurable function integrable on `a..b`, `(la, la')` is an `intervalIntegral.FTCFilter`
 pair around `a`, and `(lb, lb')` is an `intervalIntegral.FTCFilter` pair around `b`, and `f` has
 finite limits `ca` and `cb` almost surely at `la'` and `lb'`, respectively, then
-`(∫ x in va..vb, f x) - ∫ x in ua..ub, f x = (vb - ub) • cb - (va - ua) • ca +
-  o(‖va - ua‖ + ‖vb - ub‖)` as `ua` and `va` tend to `la` while `ub` and `vb` tend to `lb`.
+`(∫ x in va..vb, f x) - ∫ x in ua..ub, f x = (vb - ub) • cb - (va - ua) • ca + o(‖va - ua‖ + ‖vb - ub‖)`
+as `ua` and `va` tend to `la` while `ub` and `vb` tend to `lb`.
 
 This lemma could've been formulated using `HasStrictFDerivAtFilter` if we had this
-definition. -/
+definition.
+-/
 theorem integral_sub_integral_sub_linear_isLittleO_of_tendsto_ae
     (hab : IntervalIntegrable f volume a b) (hmeas_a : StronglyMeasurableAtFilter f la')
     (hmeas_b : StronglyMeasurableAtFilter f lb') (ha_lim : Tendsto f (la' ⊓ ae volume) (𝓝 ca))
@@ -547,7 +550,7 @@ theorem integral_sub_integral_sub_linear_isLittleO_of_tendsto_ae_left
 open ContinuousLinearMap (fst snd smulRight sub_apply smulRight_apply coe_fst' coe_snd' map_sub)
 
 /-!
-#### Strict differentiability
+# Strict differentiability
 
 In this section we prove that for a measurable function `f` integrable on `a..b`,
 
@@ -555,22 +558,17 @@ In this section we prove that for a measurable function `f` integrable on `a..b`
   derivative `(u, v) ↦ v • cb - u • ca` at `(a, b)` in the sense of strict differentiability
   provided that `f` tends to `ca` and `cb` almost surely as `x` tends to `a` and `b`,
   respectively;
-
 * `integral_hasStrictFDerivAt`: the function `(u, v) ↦ ∫ x in u..v, f x` has
   derivative `(u, v) ↦ v • f b - u • f a` at `(a, b)` in the sense of strict differentiability
   provided that `f` is continuous at `a` and `b`;
-
 * `integral_hasStrictDerivAt_of_tendsto_ae_right`: the function `u ↦ ∫ x in a..u, f x` has
   derivative `c` at `b` in the sense of strict differentiability provided that `f` tends to `c`
   almost surely as `x` tends to `b`;
-
 * `integral_hasStrictDerivAt_right`: the function `u ↦ ∫ x in a..u, f x` has derivative `f b` at
   `b` in the sense of strict differentiability provided that `f` is continuous at `b`;
-
 * `integral_hasStrictDerivAt_of_tendsto_ae_left`: the function `u ↦ ∫ x in u..b, f x` has
   derivative `-c` at `a` in the sense of strict differentiability provided that `f` tends to `c`
   almost surely as `x` tends to `a`;
-
 * `integral_hasStrictDerivAt_left`: the function `u ↦ ∫ x in u..b, f x` has derivative `-f a` at
   `a` in the sense of strict differentiability provided that `f` is continuous at `a`.
 -/
@@ -666,7 +664,7 @@ theorem _root_.Continuous.deriv_integral (f : ℝ → E) (hf : Continuous f) (a 
   (hf.integral_hasStrictDerivAt a b).hasDerivAt.deriv
 
 /-!
-#### Fréchet differentiability
+# Fréchet differentiability
 
 In this subsection we restate results from the previous subsection in terms of `HasFDerivAt`,
 `HasDerivAt`, `fderiv`, and `deriv`.
@@ -683,9 +681,11 @@ theorem integral_hasFDerivAt_of_tendsto_ae (hf : IntervalIntegrable f volume a b
       ((snd ℝ ℝ ℝ).smulRight cb - (fst ℝ ℝ ℝ).smulRight ca) (a, b) :=
   (integral_hasStrictFDerivAt_of_tendsto_ae hf hmeas_a hmeas_b ha hb).hasFDerivAt
 
-/-- **Fundamental theorem of calculus-1**: if `f : ℝ → E` is integrable on `a..b` and `f` is
-continuous at `a` and `b`, then `(u, v) ↦ ∫ x in u..v, f x` has derivative `(u, v) ↦ v • cb - u •
-ca` at `(a, b)`. -/
+/--
+*Fundamental theorem of calculus-1*: if `f : ℝ → E` is integrable on `a..b` and `f` is
+continuous at `a` and `b`, then `(u, v) ↦ ∫ x in u..v, f x` has derivative
+`(u, v) ↦ v • cb - u • ca` at `(a, b)`.
+-/
 theorem integral_hasFDerivAt (hf : IntervalIntegrable f volume a b)
     (hmeas_a : StronglyMeasurableAtFilter f (𝓝 a)) (hmeas_b : StronglyMeasurableAtFilter f (𝓝 b))
     (ha : ContinuousAt f a) (hb : ContinuousAt f b) :
@@ -770,7 +770,7 @@ theorem deriv_integral_left (hf : IntervalIntegrable f volume a b)
   (integral_hasDerivAt_left hf hmeas hb).deriv
 
 /-!
-#### One-sided derivatives
+# One-sided derivatives
 -/
 
 
@@ -941,14 +941,14 @@ theorem differentiableOn_integral_of_continuous {s : Set ℝ} (hcont : Continuou
 end FTC1
 
 /-!
-### Fundamental theorem of calculus, part 2
+# Fundamental theorem of calculus, part 2
 
 This section contains theorems pertaining to FTC-2 for interval integrals, i.e., the assertion
 that `∫ x in a..b, f' x = f b - f a` under suitable assumptions.
 
 The most classical version of this theorem assumes that `f'` is continuous. However, this is
 unnecessarily strong: the result holds if `f'` is just integrable. We prove the strong version,
-following [Rudin, *Real and Complex Analysis* (Theorem 7.21)][rudin2006real]. The proof is first
+following \[Rudin, _Real and Complex Analysis_ (Theorem 7.21)\]\[rudin2006real\]. The proof is first
 given for real-valued functions, and then deduced for functions with a general target space. For
 a real-valued function `g`, it suffices to show that `g b - g a ≤ (∫ x in a..b, g' x) + ε` for all
 positive `ε`. To prove this, choose a lower-semicontinuous function `G'` with `g' < G'` and with
@@ -1214,7 +1214,7 @@ lemma integral_unitInterval_deriv_eq_sub [RCLike 𝕜] [NormedSpace 𝕜 E] [IsS
   · simp only [γ, Function.comp_apply, one_smul, zero_smul, add_zero]
 
 /-!
-### Automatic integrability for nonnegative derivatives
+# Automatic integrability for nonnegative derivatives
 -/
 
 /-- When the right derivative of a function is nonnegative, then it is automatically integrable. -/

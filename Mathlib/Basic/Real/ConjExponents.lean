@@ -8,12 +8,15 @@ module
 public import Mathlib.Basic.ENNReal.Holder
 public import Mathlib.Tactic.LinearCombination
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Real conjugate exponents
 
 This file defines Hölder triple and Hölder conjugate exponents in `ℝ` and `ℝ≥0`. Real numbers `p`,
-`q` and `r` form a *Hölder triple* if `0 < p` and `0 < q` and `p⁻¹ + q⁻¹ = r⁻¹` (which of course
-implies `0 < r`). We say `p` and `q` are *Hölder conjugate* if `p`, `q` and `1` are a Hölder triple.
+`q` and `r` form a _Hölder triple_ if `0 < p` and `0 < q` and `p⁻¹ + q⁻¹ = r⁻¹` (which of course
+implies `0 < r`). We say `p` and `q` are _Hölder conjugate_ if `p`, `q` and `1` are a Hölder triple.
 In this case, `1 < p` and `1 < q`. This property shows up often in analysis, especially when dealing
 with `L^p` spaces.
 

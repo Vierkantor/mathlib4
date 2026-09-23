@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.LawfulXor.Basic
 public import Mathlib.Algebra.Group.End
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # LawfulXor equivalences
 -/

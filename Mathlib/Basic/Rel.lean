@@ -9,13 +9,16 @@ public import Mathlib.Data.Set.Prod
 public import Mathlib.Order.RelIso.Basic
 public import Mathlib.Order.SetNotation
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Relations as sets of pairs
 
 This file provides API to regard relations between `α` and `β` as sets of pairs `Set (α × β)`.
 
 This is in particular useful in the study of uniform spaces, which are topological spaces equipped
-with a *uniformity*, namely a filter of pairs `α × α` whose elements can be viewed as "proximity"
+with a _uniformity_, namely a filter of pairs `α × α` whose elements can be viewed as "proximity"
 relations.
 
 ## Main declarations
@@ -47,6 +50,7 @@ The function representation is lightweight and has native support from core Lean
 good fit when a relation is primarily applied to two arguments. The set-of-pairs representation is
 useful when the relation itself is manipulated as a mathematical object, as `R` is in the examples
 below, because the standard `Set` API applies directly. For example:
+
 * the inverse relation is the preimage `Prod.swap ⁻¹' R`;
 * transporting a relation along `f : α → γ` and `g : β → δ` is the image
   `(Prod.map f g) '' R`;
@@ -58,15 +62,19 @@ additional expressive power. `SetRel` also provides dedicated relational operati
 notation `○` for composition. (Note that `○` is _not_ function composition `∘`.)
 
 Previously, `SetRel` suffered from the leakage of its definition as
+
 ```
 def SetRel (α β : Type*) := α → β → Prop
 ```
+
 The fact that `SetRel` wasn't an `abbrev` confuses automation.
 But simply making it an `abbrev` would have killed the point of having a separate less see-through
 type to perform relation operations on. So we instead redefined it as
+
 ```
 abbrev SetRel (α β : Type*) := Set (α × β)
 ```
+
 This extra level of indirection guides automation correctly and prevents (some kinds of) leakage.
 
 Simultaneously, uniform spaces need a theory of relations on a type `α` as elements of
@@ -94,7 +102,9 @@ be considered an implementation detail. -/
 scoped notation:50 a:50 " ~[" R "] " b:50 => (a, b) ∈ R
 
 variable (R) in
-/-- The inverse relation : `R.inv x y ↔ R y x`. Note that this is *not* a groupoid inverse. -/
+/--
+The inverse relation : `R.inv x y ↔ R y x`. Note that this is _not_ a groupoid inverse.
+-/
 def inv (R : SetRel α β) : SetRel β α := Prod.swap ⁻¹' R
 
 @[simp, grind =] lemma mem_inv : b ~[R.inv] a ↔ a ~[R] b := .rfl
@@ -320,8 +330,10 @@ lemma image_eq_biUnion : R.image s = ⋃ x ∈ s, {y | x ~[R] y} := by grind [Se
 lemma preimage_eq_biUnion : R.preimage t = ⋃ y ∈ t, {x | x ~[R] y} := by grind [Set.mem_iUnion]
 
 variable (R t) in
-/-- Core of a set `S : Set β` w.R.t `R : SetRel α β` is the set of `x : α` that are related *only*
-to elements of `S`. Other generalization of `Function.preimage`. -/
+/--
+Core of a set `S : Set β` w.R.t `R : SetRel α β` is the set of `x : α` that are related _only_
+to elements of `S`. Other generalization of `Function.preimage`.
+-/
 def core : Set α := {a | ∀ ⦃b⦄, a ~[R] b → b ∈ t}
 
 @[simp, grind =] lemma mem_core : a ∈ R.core t ↔ ∀ ⦃b⦄, a ~[R] b → b ∈ t := .rfl
@@ -354,7 +366,9 @@ def restrictDomain : SetRel s β := {(a, b) | ↑a ~[R] b}
 
 variable {R R₁ R₂ : SetRel α α} {S : SetRel β β} {a b c : α}
 
-/-! ### Reflexive relations -/
+/-!
+# Reflexive relations
+-/
 
 variable (R) in
 /-- A relation `R` is reflexive if `a ~[R] a`. -/
@@ -418,7 +432,9 @@ lemma exists_eq_singleton_of_prod_subset_id {s t : Set α} (hs : s.Nonempty) (ht
   simp only [Set.eq_singleton_iff_unique_mem, and_assoc]
   exact ⟨a, ha, (hst · · _ hb), hb, (hst _ ha · · |>.symm)⟩
 
-/-! ### Symmetric relations -/
+/-!
+# Symmetric relations
+-/
 
 variable (R) in
 /-- A relation `R` is symmetric if `a ~[R] b ↔ b ~[R] a`. -/
@@ -493,7 +509,9 @@ lemma subset_symmetrize {S : SetRel α α} : S ⊆ R.symmetrize ↔ S ⊆ R ∧ 
 lemma symmetrize_mono (h : R₁ ⊆ R₂) : R₁.symmetrize ⊆ R₂.symmetrize :=
   Set.inter_subset_inter h <| Set.preimage_mono h
 
-/-! ### Transitive relations -/
+/-!
+# Transitive relations
+-/
 
 variable (R) in
 /-- A relation `R` is transitive if `a ~[R] b` and `b ~[R] c` together imply `a ~[R] c`. -/

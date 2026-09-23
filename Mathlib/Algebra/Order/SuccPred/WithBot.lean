@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Order.Monoid.Unbundled.WithTop
 public import Mathlib.Algebra.Order.SuccPred
 public import Mathlib.Order.SuccPred.WithBot
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Algebraic properties of the successor function on `WithBot`
 -/

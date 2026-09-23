@@ -11,6 +11,9 @@ public import Mathlib.Data.EReal.Inv
 public import Mathlib.Tactic.ContinuousFunctionalCalculus
 public import Mathlib.Topology.Algebra.Module.Spaces.ContinuousLinearMap
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Topologies on spaces of measures
 

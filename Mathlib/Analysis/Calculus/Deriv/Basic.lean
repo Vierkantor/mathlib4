@@ -10,6 +10,10 @@ public import Mathlib.Analysis.Calculus.TangentCone.DimOne
 public import Mathlib.Analysis.Calculus.TangentCone.Real
 public import Mathlib.Analysis.Normed.Operator.Bilinear
 
+set_option doc.verso true
+set_option doc.verso.module false
+set_option doc.verso.suggestions false
+
 /-!
 
 # One-dimensional derivatives

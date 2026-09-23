@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Lie.Weights.Linear
 public import Mathlib.LinearAlgebra.RootSystem.GeckConstruction.Basic
 public import Mathlib.RingTheory.Finiteness.Nilpotent
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Geck's construction of a Lie algebra associated to a root system yields semisimple algebras
 
@@ -25,7 +28,6 @@ algebras.
   construction is irreducible.
 * `RootPairing.GeckConstruction.instHasTrivialRadical`: the Geck construction yields semisimple
   Lie algebras.
-
 -/
 
 public section

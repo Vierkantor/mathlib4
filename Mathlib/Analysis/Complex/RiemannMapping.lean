@@ -18,6 +18,9 @@ public import Mathlib.CategoryTheory.Category.Init
 public import Mathlib.Data.EReal.Inv
 public import Mathlib.Tactic.ContinuousFunctionalCalculus
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Riemann mapping theorem
 

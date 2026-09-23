@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Analysis.InnerProductSpace.Orthonormal
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Subspaces of inner product spaces
 
@@ -30,7 +33,9 @@ section Submodule
 
 variable [SeminormedAddCommGroup E] [InnerProductSpace 𝕜 E]
 
-/-! ### Inner product space structure on subspaces -/
+/-!
+# Inner product space structure on subspaces
+-/
 
 /-- Induced inner product on a submodule. -/
 instance Submodule.innerProductSpace (W : Submodule 𝕜 E) : InnerProductSpace 𝕜 W :=
@@ -68,7 +73,9 @@ theorem ClosedSubmodule.coe_inner (W : Submodule 𝕜 E) (x y : W) : ⟪x, y⟫_
 
 end ClosedSubmodule
 
-/-! ### Families of mutually-orthogonal subspaces of an inner product space -/
+/-!
+# Families of mutually-orthogonal subspaces of an inner product space
+-/
 
 section OrthogonalFamily_Seminormed
 

@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Order.Group.Int
 public import Mathlib.Order.Filter.AtTopBot.Group
 public import Mathlib.Topology.Algebra.Group.Subgroup
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Topological closure of the submonoid closure
 

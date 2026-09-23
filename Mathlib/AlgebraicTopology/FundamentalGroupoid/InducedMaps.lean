@@ -9,16 +9,18 @@ public import Mathlib.Topology.Homotopy.Equiv
 public import Mathlib.CategoryTheory.Equivalence
 public import Mathlib.AlgebraicTopology.FundamentalGroupoid.Product
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Homotopic maps induce naturally isomorphic functors
 
 ## Main definitions
 
-- `FundamentalGroupoidFunctor.homotopicMapsNatIso H` The natural isomorphism
+* `FundamentalGroupoidFunctor.homotopicMapsNatIso H` The natural isomorphism
   between the induced functors `f : π(X) ⥤ π(Y)` and `g : π(X) ⥤ π(Y)`, given a homotopy
   `H : f ∼ g`
-
-- `FundamentalGroupoidFunctor.equivOfHomotopyEquiv hequiv` The equivalence of the categories
+* `FundamentalGroupoidFunctor.equivOfHomotopyEquiv hequiv` The equivalence of the categories
   `π(X)` and `π(Y)` given a homotopy equivalence `hequiv : X ≃ₕ Y` between them.
 -/
 
@@ -92,15 +94,15 @@ def equivOfHomotopyEquiv {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
 end FundamentalGroupoidFunctor
 
 /-!
-### Old proof
+# Old proof
 
 The rest of the file contains definitions and theorems required to write the same proof
 in a slightly different manner.
 
 The proof was rewritten in 2025 for two reasons:
 
-- the new proof is much more straightforward;
-- the new proof is fully universe polymorphic.
+* the new proof is much more straightforward;
+* the new proof is fully universe polymorphic.
 
 TODO: review which of these definitions and theorems are useful for other reasons,
 then deprecate the rest of them.

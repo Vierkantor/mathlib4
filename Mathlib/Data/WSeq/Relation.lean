@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.WSeq.Basic
 public import Mathlib.Logic.Relation
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Relations between and equivalence of weak sequences
 

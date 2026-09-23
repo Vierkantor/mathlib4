@@ -14,6 +14,9 @@ public import Mathlib.Data.Nat.Choose.Sum
 public import Mathlib.Tactic.NormNum.BigOperators
 public import Mathlib.Tactic.NormNum.NatFactorial
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Exponential Function
 
@@ -22,9 +25,7 @@ This file contains the definitions of the real and complex exponential function.
 ## Main definitions
 
 * `Complex.exp`: The complex exponential function, defined via its Taylor series
-
 * `Real.exp`: The real exponential function, defined as the real part of the complex exponential
-
 -/
 
 @[expose] public section

@@ -10,6 +10,9 @@ public import Mathlib.NumberTheory.NumberField.Basic
 public import Mathlib.FieldTheory.SeparableClosure
 public import Mathlib.FieldTheory.Galois.Abelian
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cyclotomic extensions
 
@@ -57,7 +60,6 @@ Note that some results, for example `IsCyclotomicExtension.trans`,
 `IsCyclotomicExtension.finiteDimensional`, `IsCyclotomicExtension.isGalois` and
 `CyclotomicField.algebraBase` are lemmas, but they can be made local instances. Some of them are
 included in the `Cyclotomic` locale.
-
 -/
 
 @[expose] public section

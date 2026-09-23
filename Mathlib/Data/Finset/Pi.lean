@@ -10,6 +10,9 @@ public import Mathlib.Data.Finset.Union
 public import Mathlib.Data.Multiset.Pi
 public import Mathlib.Logic.Function.DependsOn
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The Cartesian product of finsets
 
@@ -26,7 +29,9 @@ namespace Finset
 
 open Multiset
 
-/-! ### pi -/
+/-!
+# pi
+-/
 
 
 section Pi
@@ -139,7 +144,9 @@ theorem pi_disjoint_of_disjoint {δ : α → Type*} {s : Finset α} (t₁ t₂ :
 
 end
 
-/-! ### Diagonal -/
+/-!
+# Diagonal
+-/
 
 variable {ι : Type*} [DecidableEq (ι → α)] {s : Finset α} {f : ι → α}
 
@@ -152,7 +159,9 @@ def piDiag (s : Finset α) (ι : Type*) [DecidableEq (ι → α)] : Finset (ι �
 @[simp] lemma card_piDiag (s : Finset α) (ι : Type*) [DecidableEq (ι → α)] [Nonempty ι] :
     (s.piDiag ι).card = s.card := by rw [piDiag, card_image_of_injective _ const_injective]
 
-/-! ### Restriction -/
+/-!
+# Restriction
+-/
 
 variable {π : ι → Type*}
 

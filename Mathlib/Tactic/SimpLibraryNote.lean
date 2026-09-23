@@ -9,10 +9,13 @@ module
 public import Batteries.Util.LibraryNote
 public import Mathlib.Init
 
-/-! # Simp Lemmas With Weak Keys Library Note
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Simp Lemmas With Weak Keys Library Note
 
 This file contains a library note explaining how to handle `simp` lemmas that have "weak keys".
-
 -/
 
 @[expose] public section

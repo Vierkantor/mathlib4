@@ -11,6 +11,9 @@ public import Mathlib.Data.Fintype.BigOperators
 public import Mathlib.Data.Fintype.Fin
 public import Mathlib.Logic.Equiv.Fin.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Big operators and `Fin`
 
@@ -190,7 +193,7 @@ theorem mul_prod_removeNth i (f : Fin (n + 1) → M) : f i * ∏ j, removeNth i 
   rw [← prod_insertNth, insertNth_self_removeNth]
 
 /-!
-### Products over intervals: `Fin.cast`
+# Products over intervals: `Fin.cast`
 -/
 
 section cast
@@ -245,7 +248,7 @@ theorem prod_Iio_cast (h : n = m) (f : Fin m → M) (a : Fin n) :
 end cast
 
 /-!
-### Products over intervals: `Fin.castLE`
+# Products over intervals: `Fin.castLE`
 -/
 
 section castLE
@@ -290,7 +293,7 @@ theorem prod_Iio_castLE (h : n ≤ m) (f : Fin m → M) (a : Fin n) :
 end castLE
 
 /-!
-### Products over intervals: `Fin.castAdd`
+# Products over intervals: `Fin.castAdd`
 -/
 
 section castAdd
@@ -333,7 +336,7 @@ theorem prod_Iio_castAdd (m : ℕ) (f : Fin (n + m) → M) (a : Fin n) :
 end castAdd
 
 /-!
-### Products over intervals: `Fin.castSucc`
+# Products over intervals: `Fin.castSucc`
 -/
 
 section castSucc
@@ -376,7 +379,7 @@ theorem prod_Iio_castSucc (f : Fin (n + 1) → M) (a : Fin n) :
 end castSucc
 
 /-!
-### Products over intervals: `Fin.succ`
+# Products over intervals: `Fin.succ`
 -/
 
 section succ

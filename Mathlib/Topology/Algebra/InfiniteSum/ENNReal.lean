@@ -10,6 +10,9 @@ public import Mathlib.Data.Set.Card
 public import Mathlib.Tactic.Bound
 public import Mathlib.Topology.Instances.ENNReal.Lemmas
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Infinite sums in extended nonnegative reals
 
@@ -20,8 +23,8 @@ these sums.
 
 ## TODO
 
-+ Once we have a topology on `ENat`, provide an `ENat`-valued version
-+ Provide versions which sum over the whole type.
+* Once we have a topology on `ENat`, provide an `ENat`-valued version
+* Provide versions which sum over the whole type.
 -/
 
 public section

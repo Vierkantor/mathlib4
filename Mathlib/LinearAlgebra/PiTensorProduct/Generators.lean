@@ -12,6 +12,9 @@ public import Mathlib.LinearAlgebra.Quotient.Basic
 public import Mathlib.LinearAlgebra.TensorProduct.Map
 public import Mathlib.SetTheory.Cardinal.Finite
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Generators of multiple tensor products
 
@@ -21,7 +24,6 @@ of these elements generate `⨂[R] i, M i`.
 
 In `LinearAlgebra.PiTensorProduct.Finite`, we deduce that if the modules `M i`
 are finitely generated, then so is `⨂[R] i, M i`.
-
 -/
 
 @[expose] public section

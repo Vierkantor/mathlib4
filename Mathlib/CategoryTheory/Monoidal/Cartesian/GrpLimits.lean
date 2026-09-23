@@ -10,6 +10,9 @@ public import Mathlib.CategoryTheory.Limits.Preserves.FunctorCategory
 public import Mathlib.CategoryTheory.Monoidal.Cartesian.ShrinkYoneda
 public import Mathlib.CategoryTheory.Monoidal.Internal.Limits
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Limits in `Grp C`
 

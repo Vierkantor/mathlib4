@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Algebra.Tower
 public import Mathlib.LinearAlgebra.Basis.Basic
 public import Mathlib.Data.Set.Card
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Dimension of modules and vector spaces
 
@@ -249,11 +252,13 @@ theorem rank_eq_of_equiv_equiv (i : R → R') (j : M ≃+ M₁)
 end
 end Semiring
 
-/-- TODO: prove that nontrivial commutative semirings satisfy the strong rank condition,
-following *Free sets and free subsemimodules in a semimodule* by Yi-Jia Tan, Theorem 3.2.
+/--
+TODO: prove that nontrivial commutative semirings satisfy the strong rank condition,
+following _Free sets and free subsemimodules in a semimodule_ by Yi-Jia Tan, Theorem 3.2.
 
 Rings `R` that fail the strong rank condition but satisfy `rank R R = 1` are expected to exist, see
-https://mathoverflow.net/questions/317422/rings-that-fail-to-satisfy-the-strong-rank-condition. -/
+https://mathoverflow.net/questions/317422/rings-that-fail-to-satisfy-the-strong-rank-condition.
+-/
 theorem CommSemiring.rank_self (R) [CommSemiring R] : Module.rank R R = 1 := by
   nontriviality R
   rw [le_antisymm_iff, ← not_lt, ← two_le_iff_one_lt, ← Nat.cast_two,

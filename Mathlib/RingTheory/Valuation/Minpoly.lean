@@ -9,6 +9,9 @@ public import Mathlib.FieldTheory.Minpoly.Field
 public import Mathlib.FieldTheory.Minpoly.Finite
 public import Mathlib.RingTheory.Valuation.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Minimal polynomials.
 

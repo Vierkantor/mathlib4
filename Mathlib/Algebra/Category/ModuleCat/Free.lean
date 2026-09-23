@@ -8,6 +8,9 @@ module
 public import Mathlib.LinearAlgebra.Dimension.Free
 public import Mathlib.Algebra.Homology.ShortComplex.ModuleCat
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Exact sequences with free modules
 
@@ -24,8 +27,8 @@ This file proves results about linear independence and span in exact sequences o
   short exact sequence `0 ⟶ X₁ ⟶ X₂ ⟶ X₃ ⟶ 0` where `X₁` and `X₃` are free, `X₂` is free as well.
 
 ## Tags
-linear algebra, module, free
 
+linear algebra, module, free
 -/
 
 @[expose] public section

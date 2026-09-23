@@ -8,6 +8,9 @@ module
 public import Mathlib.LinearAlgebra.QuadraticForm.Basic
 public import Mathlib.LinearAlgebra.QuadraticForm.Isometry
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Isometric equivalences with respect to quadratic forms
 

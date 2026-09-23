@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Algebra.Basic
 public import Mathlib.Topology.Algebra.FilterBasis
 public import Mathlib.Topology.Algebra.Nonarchimedean.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Neighborhood bases for non-archimedean rings and modules
 

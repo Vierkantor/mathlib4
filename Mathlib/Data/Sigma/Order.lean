@@ -12,10 +12,14 @@ public import Mathlib.Order.BoundedOrder.Basic
 public import Mathlib.Order.Lattice
 public import Mathlib.Order.Lex
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Orders on a sigma type
 
 This file defines two orders on a sigma type:
+
 * The disjoint sum of orders. `a` is less `b` iff `a` and `b` are in the same summand and `a` is
   less than `b` there.
 * The lexicographical order. `a` is less than `b` if its summand is strictly less than the summand
@@ -32,6 +36,7 @@ type synonym.
 ## See also
 
 Related files are:
+
 * `Data.Finset.CoLex`: Colexicographic order on finite sets.
 * `Data.List.Lex`: Lexicographic order on lists.
 * `Data.Pi.Lex`: Lexicographic order on `Πₗ i, α i`.
@@ -51,7 +56,9 @@ namespace Sigma
 
 variable {ι : Type*} {α : ι → Type*}
 
-/-! ### Disjoint sum of orders on `Sigma` -/
+/-!
+# Disjoint sum of orders on `Sigma`
+-/
 
 /-- Disjoint sum of orders. `⟨i, a⟩ ≤ ⟨j, b⟩` iff `i = j` and `a ≤ b`. -/
 protected inductive LE [∀ i, LE (α i)] : ∀ _a _b : Σ i, α i, Prop
@@ -118,7 +125,9 @@ instance [∀ i, Preorder (α i)] [∀ i, DenselyOrdered (α i)] : DenselyOrdere
     obtain ⟨c, ha, hb⟩ := exists_between h
     exact ⟨⟨i, c⟩, LT.fiber i a c ha, LT.fiber i c b hb⟩
 
-/-! ### Lexicographical order on `Sigma` -/
+/-!
+# Lexicographical order on `Sigma`
+-/
 
 
 namespace Lex

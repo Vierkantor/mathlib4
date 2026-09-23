@@ -9,7 +9,11 @@ public import Mathlib.Algebra.Group.Action.Faithful
 public import Mathlib.Algebra.Group.Basic
 public import Mathlib.Algebra.Group.Units.Defs
 
-/-! # Group actions on and by `Mˣ`
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Group actions on and by `Mˣ`
 
 This file provides the action of a unit on a type `α`, `SMul Mˣ α`, in the presence of
 `SMul M α`, with the obvious definition stated in `Units.smul_def`. This definition preserves
@@ -65,7 +69,9 @@ instance smulCommClass_right [Monoid N] [SMul M α] [SMul N α] [SMulCommClass M
 instance [Monoid M] [SMul M N] [SMul M α] [SMul N α] [IsScalarTower M N α] :
     IsScalarTower Mˣ N α where smul_assoc m n := smul_assoc (m : M) n
 
-/-! ### Action of a group `G` on units of `M` -/
+/-!
+# Action of a group `G` on units of `M`
+-/
 
 /-- If an action `G` associates and commutes with multiplication on `M`, then it lifts to an
 action on `Mˣ`. Notably, this provides `MulAction Mˣ Nˣ` under suitable conditions. -/

@@ -10,6 +10,9 @@ public import Mathlib.Combinatorics.SimpleGraph.Dart
 public import Mathlib.Combinatorics.SimpleGraph.Finite
 public import Mathlib.Data.ZMod.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Degree-sum formula and handshaking lemma
 
@@ -19,11 +22,11 @@ a corollary, is that the number of odd-degree vertices is even.
 
 ## Main definitions
 
-- `SimpleGraph.sum_degrees_eq_twice_card_edges` is the degree-sum formula.
-- `SimpleGraph.even_card_odd_degree_vertices` is the handshaking lemma.
-- `SimpleGraph.odd_card_odd_degree_vertices_ne` is that the number of odd-degree
+* `SimpleGraph.sum_degrees_eq_twice_card_edges` is the degree-sum formula.
+* `SimpleGraph.even_card_odd_degree_vertices` is the handshaking lemma.
+* `SimpleGraph.odd_card_odd_degree_vertices_ne` is that the number of odd-degree
   vertices different from a given odd-degree vertex is odd.
-- `SimpleGraph.exists_ne_odd_degree_of_exists_odd_degree` is that the existence of an
+* `SimpleGraph.exists_ne_odd_degree_of_exists_odd_degree` is that the existence of an
   odd-degree vertex implies the existence of another one.
 
 ## Implementation notes

@@ -11,8 +11,10 @@ public import Mathlib.RingTheory.Localization.Away.AdjoinRoot
 public import Mathlib.RingTheory.Smooth.Kaehler
 public import Mathlib.RingTheory.Unramified.Basic
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Smooth morphisms
 
 An `R`-algebra `A` is formally smooth if `Ω[A⁄R]` is `A`-projective and `H¹(L_{A/R}) = 0`.
@@ -28,22 +30,23 @@ We show that smooth is stable under algebra isomorphisms, composition and
 localization at an element.
 
 ## Main results
-- `Algebra.FormallySmooth`: The class of formally smooth algebras.
-- `Algebra.formallySmooth_iff` :
+
+* `Algebra.FormallySmooth`: The class of formally smooth algebras.
+* `Algebra.formallySmooth_iff` :
   Formally smooth iff `Ω[A⁄R]` is `A`-projective and `H¹(L_{A/R}) = 0`.
-- `Algebra.FormallySmooth.lift`: If `A` is formally smooth and `I` is nilpotent,
+* `Algebra.FormallySmooth.lift`: If `A` is formally smooth and `I` is nilpotent,
   any map `A →ₐ[R] B ⧸ I` lifts to `A →ₐ[R] B`.
-- `Algebra.FormallySmooth.iff_comp_surjective`: `A` is formally smooth iff
+* `Algebra.FormallySmooth.iff_comp_surjective`: `A` is formally smooth iff
   any map `A →ₐ[R] B ⧸ I` lifts to `A →ₐ[R] B` for any square zero `I`.
 
 Suppose `P` is a formally smooth `R` algebra that surjects onto `A` with kernel `I`, then
-- `Algebra.FormallySmooth.iff_split_surjection`: `A` is formally smooth iff
-  the algebra map `P ⧸ I² →ₐ[R] A` has an `R`-algebra section.
-- `Algebra.Extension.equivH1CotangentOfFormallySmooth`:
-  `H¹(L_{A/R})` is isomorphic to `ker(I/I² → A ⊗[P] Ω[P⁄R])`.
-- `Algebra.FormallySmooth.iff_split_injection`: `A` is formally smooth iff
-  the `P`-linear map `I/I² → A ⊗[P] Ω[P⁄R]` is split injective.
 
+* `Algebra.FormallySmooth.iff_split_surjection`: `A` is formally smooth iff
+  the algebra map `P ⧸ I² →ₐ[R] A` has an `R`-algebra section.
+* `Algebra.Extension.equivH1CotangentOfFormallySmooth`:
+  `H¹(L_{A/R})` is isomorphic to `ker(I/I² → A ⊗[P] Ω[P⁄R])`.
+* `Algebra.FormallySmooth.iff_split_injection`: `A` is formally smooth iff
+  the `P`-linear map `I/I² → A ⊗[P] Ω[P⁄R]` is split injective.
 -/
 
 @[expose] public section

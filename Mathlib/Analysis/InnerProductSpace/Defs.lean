@@ -10,6 +10,9 @@ public import Mathlib.Analysis.LocallyConvex.WithSeminorms
 public import Mathlib.Analysis.RCLike.Basic
 public import Mathlib.Basic.Complex.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Inner product spaces
 
@@ -38,7 +41,7 @@ structure on `n → 𝕜` for `𝕜 = ℝ` or `ℂ`, see `EuclideanSpace` in
 
 ## Main results
 
-- We define the class `InnerProductSpace 𝕜 E` extending `NormedSpace 𝕜 E` with a number of basic
+* We define the class `InnerProductSpace 𝕜 E` extending `NormedSpace 𝕜 E` with a number of basic
   properties, most notably the Cauchy-Schwarz inequality. Here `𝕜` is understood to be either `ℝ`
   or `ℂ`, through the `RCLike` typeclass.
 
@@ -58,10 +61,12 @@ in the second.
 inner product space, Hilbert space, norm
 
 ## References
-* [Clément & Martin, *The Lax-Milgram Theorem. A detailed proof to be formalized in Coq*]
-* [Clément & Martin, *A Coq formal proof of the Lax–Milgram theorem*]
 
-The Coq code is available at the following address: <http://www.lri.fr/~sboldo/elfic/index.html>
+* ‍\[Clément & Martin, _The Lax-Milgram Theorem. A detailed proof to be formalized in Coq_\]
+* ‍\[Clément & Martin, _A Coq formal proof of the Lax–Milgram theorem_\]
+
+The Coq code is available at the following address: [
+http://www.lri.fr/~sboldo/elfic/index.html](http://www.lri.fr/~sboldo/elfic/index.html)
 -/
 
 @[expose] public section
@@ -110,7 +115,9 @@ class InnerProductSpace (𝕜 : Type*) (E : Type*) [RCLike 𝕜] [SeminormedAddC
     NormedSpace 𝕜 E, Inner 𝕜 E where
   /-- The inner product induces the norm. -/
   norm_sq_eq_re_inner : ∀ x : E, ‖x‖ ^ 2 = re (inner x x)
-  /-- The inner product is *Hermitian*, taking the `conj` swaps the arguments. -/
+  /--
+  The inner product is _Hermitian_, taking the `conj` swaps the arguments.
+  -/
   conj_inner_symm : ∀ x y, conj (inner y x) = inner x y
   /-- The inner product is additive in the first coordinate. -/
   add_left : ∀ x y z, inner (x + y) z = inner x z + inner y z
@@ -118,7 +125,7 @@ class InnerProductSpace (𝕜 : Type*) (E : Type*) [RCLike 𝕜] [SeminormedAddC
   smul_left : ∀ x y r, inner (r • x) y = conj r * inner x y
 
 /-!
-### Constructing a normed space structure from an inner product
+# Constructing a normed space structure from an inner product
 
 In the definition of an inner product space, we require the existence of a norm, which is equal
 (but maybe not defeq) to the square root of the scalar product. This makes it possible to put
@@ -138,7 +145,9 @@ instance defined on it, otherwise this will create a second non-defeq norm insta
 /-- A structure requiring that a scalar product is positive semidefinite and symmetric. -/
 structure PreInnerProductSpace.Core (𝕜 : Type*) (F : Type*) [RCLike 𝕜] [AddCommGroup F]
     [Module 𝕜 F] extends Inner 𝕜 F where
-  /-- The inner product is *Hermitian*, taking the `conj` swaps the arguments. -/
+  /--
+  The inner product is _Hermitian_, taking the `conj` swaps the arguments.
+  -/
   conj_inner_symm x y : conj (inner y x) = inner x y
   /-- The inner product is positive (semi)definite. -/
   re_inner_nonneg x : 0 ≤ re (inner x x)

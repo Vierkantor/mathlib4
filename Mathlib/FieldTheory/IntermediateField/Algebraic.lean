@@ -11,6 +11,9 @@ public import Mathlib.FieldTheory.Tower
 public import Mathlib.LinearAlgebra.FreeModule.StrongRankCondition
 public import Mathlib.RingTheory.Algebraic.Integral
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Results on finite dimensionality and algebraicity of intermediate fields.
 -/

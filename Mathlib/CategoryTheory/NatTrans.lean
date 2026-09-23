@@ -8,6 +8,9 @@ module
 public import Mathlib.Tactic.CategoryTheory.Map
 public import Mathlib.Tactic.CategoryTheory.Reassoc
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Natural transformations
 
@@ -24,12 +27,12 @@ See also `CategoryTheory.FunctorCat`, where we provide the category structure on
 functors and natural transformations.
 
 Introduces notations
+
 * `τ.app X` for the components of natural transformations,
 * `F ⟶ G` for the type of natural transformations between functors `F` and `G`
   (this and the next require `CategoryTheory.FunctorCat`),
 * `σ ≫ τ` for vertical compositions, and
 * `σ ◫ τ` for horizontal compositions.
-
 -/
 
 @[expose] public section

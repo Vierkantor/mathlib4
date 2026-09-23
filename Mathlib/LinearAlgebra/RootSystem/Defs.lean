@@ -9,6 +9,9 @@ public import Mathlib.LinearAlgebra.PerfectPairing.Basic
 public import Mathlib.LinearAlgebra.Reflection
 public import Mathlib.Tactic.CrossRefAttribute
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Root data and root systems
 
@@ -57,7 +60,6 @@ and coroots. This is necessary when working with infinite root systems, where th
 uniquely determined by the roots, because without it, the reflection permutations on roots and
 coroots may not correspond. For this purpose, we define a map from `ι` to permutations on `ι`, and
 require that it is compatible with reflections and coreflections.
-
 -/
 
 @[expose] public section

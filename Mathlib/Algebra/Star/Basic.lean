@@ -15,6 +15,9 @@ public import Mathlib.Algebra.Ring.Opposite
 public import Mathlib.Data.Int.Cast.Lemmas
 public import Mathlib.Data.SetLike.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Star monoids, rings, and modules
 
@@ -210,9 +213,10 @@ theorem star_zpow [Group R] [StarMul R] (x : R) (z : ℤ) : star (x ^ z) = star 
 theorem star_div [CommGroup R] [StarMul R] (x y : R) : star (x / y) = star x / star y :=
   map_div (starMulAut : R ≃* R) _ _
 
-/-- Any commutative monoid admits the trivial \*-structure.
+/--
+Any commutative monoid admits the trivial \*-structure.
 
-See note [reducible non-instances].
+See note \[reducible non-instances\].
 -/
 abbrev starMulOfComm {R : Type*} [CommMonoid R] : StarMul R where
   star x := x
@@ -393,9 +397,10 @@ theorem star_div₀ [CommGroupWithZero R] [StarMul R] (x y : R) : star (x / y) =
   apply op_injective
   rw [division_def, op_div, mul_comm, star_mul, star_inv₀, op_mul, op_inv]
 
-/-- Any commutative semiring admits the trivial \*-structure.
+/--
+Any commutative semiring admits the trivial \*-structure.
 
-See note [reducible non-instances].
+See note \[reducible non-instances\].
 -/
 abbrev starRingOfComm {R : Type*} [CommSemiring R] : StarRing R :=
   { starMulOfComm with
@@ -455,7 +460,9 @@ export StarHomClass (map_star)
 
 end
 
-/-! ### Instances -/
+/-!
+# Instances
+-/
 
 
 namespace Units
@@ -546,38 +553,48 @@ namespace Function.Injective
 
 variable {S : Type v} (f : R → S)
 
-/-- Given a type endowed with `star`, that `star` is involutive if it admits an injective map that
-preserves `star` to a type with whose `star` is involutive. See note [reducible non-instances]. -/
+/--
+Given a type endowed with `star`, that `star` is involutive if it admits an injective map that
+preserves `star` to a type with whose `star` is involutive. See note \[reducible non-instances\].
+-/
 protected abbrev involutiveStar [Star R] [InvolutiveStar S] (hf : Injective f)
     (star : ∀ x, f (star x) = star (f x)) : InvolutiveStar R where
   star_involutive r := hf <| by rw [star, star, star_star]
 
-/-- A type endowed with `star` and `*` is a star magma if it admits an injective map that
-preserves `star` and `*` to star magma.  See note [reducible non-instances]. -/
+/--
+A type endowed with `star` and `*` is a star magma if it admits an injective map that
+preserves `star` and `*` to star magma.  See note \[reducible non-instances\].
+-/
 protected abbrev starMul [Star R] [Mul R] [Mul S] [StarMul S] (hf : Injective f)
     (star : ∀ x, f (star x) = star (f x)) (mul : ∀ x y, f (x * y) = f x * f y) :
     StarMul R where
   toInvolutiveStar := hf.involutiveStar _ star
   star_mul x y := hf <| by rw [star, mul, star_mul, mul, star, star]
 
-/-- A additive monoid endowed with `star` is an additive star monoid if it admits an injective map
-that preserves `star` and `+` to an additive star monoid.  See note [reducible non-instances]. -/
+/--
+A additive monoid endowed with `star` is an additive star monoid if it admits an injective map
+that preserves `star` and `+` to an additive star monoid.  See note \[reducible non-instances\].
+-/
 protected abbrev starAddMonoid [Star R] [AddMonoid R] [AddMonoid S] [StarAddMonoid S]
     (hf : Injective f) (star : ∀ x, f (star x) = star (f x)) (add : ∀ x y, f (x + y) = f x + f y) :
     StarAddMonoid R where
   toInvolutiveStar := hf.involutiveStar f star
   star_add x y := hf <| by rw [star, add, star_add, add, star, star]
 
-/-- A non-unital non-associative ring endowed with `star` is a star ring if it admits an injective
-map that preserves `star`, `*` and `+` to a star ring. See note [reducible non-instances]. -/
+/--
+A non-unital non-associative ring endowed with `star` is a star ring if it admits an injective
+map that preserves `star`, `*` and `+` to a star ring. See note \[reducible non-instances\].
+-/
 protected abbrev starRing [Star R] [NonUnitalNonAssocSemiring R] [NonUnitalNonAssocSemiring S]
     [StarRing S] (hf : Injective f) (star : ∀ x, f (star x) = star (f x))
     (add : ∀ x y, f (x + y) = f x + f y) (mul : ∀ x y, f (x * y) = f x * f y) :
     StarRing R :=
   { hf.starMul f star mul, hf.starAddMonoid f star add with }
 
-/-- A type endowed with `star` is a star module over some other type with `star` if it admits an
-injective map that preserves `star` and `•` to a star module. See note [reducible non-instances]. -/
+/--
+A type endowed with `star` is a star module over some other type with `star` if it admits an
+injective map that preserves `star` and `•` to a star module. See note \[reducible non-instances\].
+-/
 protected lemma starModule (𝕜 : Type*) [Star 𝕜] [SMul 𝕜 R]
     [Star R] [SMul 𝕜 S] [Star S] [StarModule 𝕜 S] (hf : Injective f)
     (star : ∀ x, f (star x) = star (f x)) (smul : ∀ (r : 𝕜) x, f (r • x) = r • f x) :

@@ -9,12 +9,14 @@ public import Mathlib.Algebra.BigOperators.Finsupp.Basic
 public import Mathlib.Algebra.Group.Submonoid.Membership
 public import Mathlib.Algebra.GroupWithZero.Associated
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Products of associated, prime, and irreducible elements.
 
 This file contains some theorems relating definitions in `Algebra.Associated`
 and products of multisets, finsets, and finsupps.
-
 -/
 
 public section
@@ -82,8 +84,10 @@ theorem exists_associated_mem_of_dvd_prod [CommMonoidWithZero M₀] [IsCancelMul
       exact ⟨q, Multiset.mem_cons.2 (Or.inr hq₁), hq₂⟩
 
 open Submonoid in
-/-- Let x, y ∈ M₀. If x * y can be written as a product of units and prime elements, then x can be
-written as a product of units and prime elements. -/
+/--
+Let x, y ∈ M₀. If x \* y can be written as a product of units and prime elements, then x can be
+written as a product of units and prime elements.
+-/
 theorem divisor_closure_eq_closure [CommMonoidWithZero M₀] [IsCancelMulZero M₀]
     (x y : M₀) (hxy : x * y ∈ closure { r : M₀ | IsUnit r ∨ Prime r}) :
     x ∈ closure { r : M₀ | IsUnit r ∨ Prime r} := by

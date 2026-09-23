@@ -7,6 +7,9 @@ module
 
 public import Mathlib.MeasureTheory.Function.StronglyMeasurable.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Egorov theorem
 
@@ -19,7 +22,6 @@ convergence in measure.
 
 * `MeasureTheory.tendstoUniformlyOn_of_ae_tendsto`: Egorov's theorem which shows that a sequence of
   almost everywhere convergent functions converges uniformly except on an arbitrarily small set.
-
 -/
 
 @[expose] public section

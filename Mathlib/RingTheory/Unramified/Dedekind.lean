@@ -9,6 +9,9 @@ public import Mathlib.RingTheory.DedekindDomain.Dvr
 public import Mathlib.RingTheory.Finiteness.Quotient
 public import Mathlib.RingTheory.Unramified.Field
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Unramified algebras over Dedekind domains
 

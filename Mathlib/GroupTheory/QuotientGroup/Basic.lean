@@ -12,6 +12,9 @@ public import Mathlib.GroupTheory.Coset.Basic
 public import Mathlib.GroupTheory.QuotientGroup.Defs
 public import Mathlib.Algebra.BigOperators.Group.Finset.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Quotients of groups by normal subgroups
 

@@ -7,6 +7,9 @@ module
 
 public import Mathlib.SetTheory.Cardinal.Aleph
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cardinal arithmetic
 
@@ -37,7 +40,9 @@ universe u v w
 
 namespace Cardinal
 
-/-! ### Properties of `mul` -/
+/-!
+# Properties of `mul`
+-/
 section mul
 
 set_option backward.isDefEq.respectTransparency false in
@@ -220,7 +225,9 @@ theorem mul_eq_left_iff {a b : Cardinal} : a * b = a ↔ max ℵ₀ b ≤ a ∧ 
 
 end mul
 
-/-! ### Properties of `add` -/
+/-!
+# Properties of `add`
+-/
 section add
 
 /-- If `α` is an infinite type, then `α ⊕ α` and `α` have the same cardinality. -/
@@ -368,7 +375,9 @@ theorem exists_rel_mk_fibers_lt (α : Type*) [Infinite α] :
   refine ⟨LT.lt, fun x ↦ ?_, fun y ↦ mk_Iio_lt _ hα⟩
   simpa using! mk_Iic_lt _ hα (aleph0_le_mk _)
 
-/-! ### Properties of `ciSup` -/
+/-!
+# Properties of `ciSup`
+-/
 section ciSup
 
 variable {ι : Type u} {ι' : Type w} (f : ι → Cardinal.{v})
@@ -445,7 +454,9 @@ theorem sum_eq_iSup_of_mk_le_iSup {f : ι → Cardinal.{u}} (hι : ℵ₀ ≤ #�
 
 end ciSup
 
-/-! ### Properties of `aleph` -/
+/-!
+# Properties of `aleph`
+-/
 section aleph
 
 @[simp]
@@ -541,7 +552,9 @@ lemma mul_natCast_lt_mul_natCast (hn : n ≠ 0) : a * n < b * n ↔ a < b :=
 
 end mul_strictMono
 
-/-! ### Properties about `power` -/
+/-!
+# Properties about `power`
+-/
 section power
 
 set_option backward.isDefEq.respectTransparency false in
@@ -611,7 +624,9 @@ theorem powerlt_aleph0_le (c : Cardinal) : c ^< ℵ₀ ≤ max c ℵ₀ := by
 
 end power
 
-/-! ### Computing cardinality of various types -/
+/-!
+# Computing cardinality of various types
+-/
 section computing
 
 section Function
@@ -820,7 +835,9 @@ theorem mk_bounded_subset_le {α : Type u} (s : Set α) (c : Cardinal.{u}) :
 
 end computing
 
-/-! ### Properties of `sdiff` -/
+/-!
+# Properties of `sdiff`
+-/
 section sdiff
 variable {α : Type*} {s t : Set α}
 
@@ -846,7 +863,9 @@ lemma mk_sdiff_eq_left_of_finite (hs : s.Infinite) (ht : t.Finite) : #(s \ t : S
 
 end sdiff
 
-/-! ### Properties of `compl` -/
+/-!
+# Properties of `compl`
+-/
 section compl
 
 theorem mk_compl_of_infinite {α : Type*} [Infinite α] (s : Set α) (h2 : #s < #α) :
@@ -887,7 +906,9 @@ theorem mk_compl_eq_mk_compl_finite_same {α : Type u} [Finite α] {s t : Set α
 
 end compl
 
-/-! ### Extending an injection to an equiv -/
+/-!
+# Extending an injection to an equiv
+-/
 section extend
 
 theorem extend_function {α β : Type*} {s : Set α} (f : s ↪ β)

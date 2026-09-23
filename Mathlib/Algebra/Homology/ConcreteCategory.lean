@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Homology.HomologySequence
 public import Mathlib.Algebra.Homology.ShortComplex.ConcreteCategory
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Homology of complexes in concrete categories
 
@@ -17,7 +20,6 @@ we introduce specific definitions and lemmas for the homology
 of homological complexes in concrete categories. In particular,
 we give a computation of the connecting homomorphism of
 the homology sequence in terms of (co)cycles.
-
 -/
 
 @[expose] public section

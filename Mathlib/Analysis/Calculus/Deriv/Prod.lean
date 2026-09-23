@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.Calculus.Deriv.Basic
 public import Mathlib.Analysis.Calculus.FDeriv.Prod
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Derivatives of functions taking values in product types
 
@@ -34,7 +37,9 @@ variable {f₁ : 𝕜 → F} {f₁' : F} {x : 𝕜} {s : Set 𝕜} {L : Filter (
 
 section CartesianProduct
 
-/-! ### Derivative of the Cartesian product of two functions -/
+/-!
+# Derivative of the Cartesian product of two functions
+-/
 
 
 variable {G : Type w} [NormedAddCommGroup G] [NormedSpace 𝕜 G]
@@ -60,7 +65,9 @@ end CartesianProduct
 
 section Pi
 
-/-! ### Derivatives of functions `f : 𝕜 → Π i, E i` -/
+/-!
+# Derivatives of functions `f : 𝕜 → Π i, E i`
+-/
 
 variable {ι : Type*} {E' : ι → Type*} [∀ i, NormedAddCommGroup (E' i)]
   [∀ i, NormedSpace 𝕜 (E' i)] {φ : 𝕜 → ∀ i, E' i} {φ' : ∀ i, E' i}
@@ -102,7 +109,7 @@ end Pi
 
 
 /-!
-### Derivatives of tuples `f : 𝕜 → Π i : Fin n.succ, F' i`
+# Derivatives of tuples `f : 𝕜 → Π i : Fin n.succ, F' i`
 
 These can be used to prove results about functions of the form `fun x ↦ ![f x, g x, h x]`,
 as `Matrix.vecCons` is defeq to `Fin.cons`.

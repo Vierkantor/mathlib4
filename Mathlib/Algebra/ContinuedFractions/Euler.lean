@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Algebra.ContinuedFractions.Determinant
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Euler continued fraction
 
@@ -31,9 +34,8 @@ fraction obtained by an explicit transformation of its coefficient stream.
 
 ## References
 
-* https://en.wikipedia.org/wiki/Euler%27s_continued_fraction_formula
-* [Wall, H.S., *Analytic Theory of Continued Fractions*][wall2018analytic]
-
+* https://en.wikipedia.org/wiki/Euler%27s\_continued\_fraction\_formula
+* ‍\[Wall, H.S., _Analytic Theory of Continued Fractions_\]\[wall2018analytic\]
 -/
 
 public section
@@ -44,14 +46,10 @@ variable {K : Type*} [Field K]
 
 variable {n : ℕ} {h : K} {ρ : Stream'.Seq K} {g : GenContFract K}
 
-/-- An *Euler continued fraction* is a generalized continued fraction of the form
-$$
-  h + \cfrac{\rho_0}
-            {1 - \cfrac{\rho_1}
-                       {1 + \rho_1 - \cfrac{\rho_2}
-                                           {1 + \rho_2 - \cfrac{\rho_3}
-                                                               {1 + \rho_3 - \dots}}}}
-$$ -/
+/--
+An _Euler continued fraction_ is a generalized continued fraction of the form
+$$`  h + \cfrac{\rho_0} {1 - \cfrac{\rho_1} {1 + \rho_1 - \cfrac{\rho_2} {1 + \rho_2 - \cfrac{\rho_3} {1 + \rho_3 - \dots}}}}  `
+-/
 def IsEuler (g : GenContFract K) : Prop :=
   ∀ (n : ℕ) (aₙ bₙ : K), g.s.get? n = some ⟨aₙ, bₙ⟩ -> if n = 0 then bₙ = 1 else aₙ + bₙ = 1
 
@@ -216,26 +214,27 @@ private theorem nums_euler_aux : (euler h ρ).nums (n + 1) - (euler h ρ).nums n
   congr; ext n'
   rcases ρ.get? (n' + 1) with _ | _ <;> simp
 
-/-- The numerators of an Euler continued fraction are given by the formula
-$$
-  A_n = h + \sum_{i = 0}^{n - 1} \prod_{j = 0}^i \rho_j
-$$ -/
+/--
+The numerators of an Euler continued fraction are given by the formula
+$$`  A_n = h + \sum_{i = 0}^{n - 1} \prod_{j = 0}^i \rho_j  `
+-/
 theorem nums_euler :
     (euler h ρ).nums n =
       h + ∑ i ∈ Finset.range n, ∏ j ∈ Finset.range (i + 1), (ρ.get? j).getD 0 := by
   simp only [← nums_euler_aux (h := h)]
   erw [Finset.sum_range_sub, zeroth_num_eq_h, euler_h, add_sub_cancel]
 
-/-- **Euler's continued fraction formula**: the convergents of an Euler continued fraction
+/--
+*Euler's continued fraction formula*: the convergents of an Euler continued fraction
 are given by the formula
-$$
-  \dfrac{A_n}{B_n} = h + \sum_{i = 0}^{n - 1} \prod_{j = 0}^i \rho_j
-$$
+$$`  \dfrac{A_n}{B_n} = h + \sum_{i = 0}^{n - 1} \prod_{j = 0}^i \rho_j  `
 for example:
-- `A₀ / B₀ = h`
-- `A₁ / B₁ = h + ρ₀`
-- `A₂ / B₂ = h + ρ₀ + ρ₀ * ρ₁`
-- `Aₙ / Bₙ = h + ρ₀ + ρ₀ * ρ₁ + ρ₀ * ρ₁ * ρ₂ + ... + ρ₀ * ρ₁ * ρ₂ * ... * ρₙ₋₁` -/
+
+* `A₀ / B₀ = h`
+* `A₁ / B₁ = h + ρ₀`
+* `A₂ / B₂ = h + ρ₀ + ρ₀ * ρ₁`
+* `Aₙ / Bₙ = h + ρ₀ + ρ₀ * ρ₁ + ρ₀ * ρ₁ * ρ₂ + ... + ρ₀ * ρ₁ * ρ₂ * ... * ρₙ₋₁`
+-/
 @[wikidata Q5361532]
 theorem convs_euler :
     (euler h ρ).convs n =

@@ -12,6 +12,9 @@ public import Mathlib.Algebra.Group.Pi.Basic
 public import Mathlib.Algebra.Notation.Prod
 public import Mathlib.Algebra.Group.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Dependent functions with finite support
 
@@ -792,8 +795,10 @@ theorem mk_sub [∀ i, AddGroup (β i)] {s : Finset ι} {x y : ∀ i : (↑s : S
     mk s (x - y) = mk s x - mk s y :=
   ext fun i => by simp only [sub_apply, mk_apply]; split_ifs <;> [rfl; rw [sub_zero]]
 
-/-- If `s` is a subset of `ι` then `mk_addGroupHom s` is the canonical additive
-group homomorphism from $\prod_{i\in s}\beta_i$ to $\prod_{\mathtt{i : \iota}}\beta_i$. -/
+/--
+If `s` is a subset of `ι` then `mk_addGroupHom s` is the canonical additive
+group homomorphism from $`\prod_{i\in s}\beta_i` to $`\prod_{\mathtt{i : \iota}}\beta_i`.
+-/
 def mkAddGroupHom [∀ i, AddGroup (β i)] (s : Finset ι) :
     (∀ i : (s : Set ι), β ↑i) →+ Π₀ i : ι, β i where
   toFun := mk s
@@ -1193,7 +1198,8 @@ theorem equivProdDFinsupp_add [∀ i, AddZeroClass (α i)] (f g : Π₀ i, α i)
 
 end Equiv
 
-/-! ### Bundled versions of `DFinsupp.mapRange`
+/-!
+# Bundled versions of `DFinsupp.mapRange`
 
 The names should match the equivalent bundled `Finsupp.mapRange` definitions.
 -/

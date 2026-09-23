@@ -12,6 +12,9 @@ public import Mathlib.FieldTheory.Finite.GaloisField
 public import Mathlib.RingTheory.Localization.Cardinality
 public import Mathlib.SetTheory.Cardinal.Divisibility
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cardinality of Fields
 
@@ -24,7 +27,6 @@ a field structure, and so can all types with prime power cardinalities, and this
   prime power.
 * `Infinite.nonempty_field` : Any infinite type can be endowed a field structure.
 * `Field.nonempty_iff` : There is a field structure on type iff its cardinality is a prime power.
-
 -/
 
 public section

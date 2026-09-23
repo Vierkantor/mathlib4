@@ -8,6 +8,9 @@ module
 public import Mathlib.LinearAlgebra.Matrix.SpecialLinearGroup
 public import Mathlib.Data.Int.Interval
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Matrices with fixed determinant
 

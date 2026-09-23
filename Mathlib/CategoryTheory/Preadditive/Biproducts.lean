@@ -13,6 +13,9 @@ public import Mathlib.CategoryTheory.Limits.Preserves.Shapes.Products
 public import Mathlib.CategoryTheory.Preadditive.Basic
 public import Mathlib.Tactic.Abel
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Basic facts about biproducts in preadditive categories.
 
@@ -21,28 +24,21 @@ In (or between) preadditive categories,
 * Any biproduct satisfies the equality
   `total : ∑ j : J, biproduct.π f j ≫ biproduct.ι f j = 𝟙 (⨁ f)`,
   or, in the binary case, `total : fst ≫ inl + snd ≫ inr = 𝟙 X`.
-
 * Any (binary) `product` or (binary) `coproduct` is a (binary) `biproduct`.
-
 * In any category (with zero morphisms), if `biprod.map f g` is an isomorphism,
   then both `f` and `g` are isomorphisms.
-
 * If `f` is a morphism `X₁ ⊞ X₂ ⟶ Y₁ ⊞ Y₂` whose `X₁ ⟶ Y₁` entry is an isomorphism,
   then we can construct isomorphisms `L : X₁ ⊞ X₂ ≅ X₁ ⊞ X₂` and `R : Y₁ ⊞ Y₂ ≅ Y₁ ⊞ Y₂`
   so that `L.hom ≫ g ≫ R.hom` is diagonal (with `X₁ ⟶ Y₁` component still `f`),
   via Gaussian elimination.
-
 * As a corollary of the previous two facts,
   if we have an isomorphism `X₁ ⊞ X₂ ≅ Y₁ ⊞ Y₂` whose `X₁ ⟶ Y₁` entry is an isomorphism,
   we can construct an isomorphism `X₂ ≅ Y₂`.
-
 * If `f : W ⊞ X ⟶ Y ⊞ Z` is an isomorphism, either `𝟙 W = 0`,
   or at least one of the component maps `W ⟶ Y` and `W ⟶ Z` is nonzero.
-
 * If `f : ⨁ S ⟶ ⨁ T` is an isomorphism,
   then every column (corresponding to a nonzero summand in the domain)
   has some nonzero matrix entry.
-
 * A functor preserves a biproduct if and only if it preserves
   the corresponding product if and only if it preserves the corresponding coproduct.
 
@@ -51,7 +47,6 @@ matrices over a ring, in particular the Schur complement (see
 `Mathlib/LinearAlgebra/Matrix/SchurComplement.lean`). In particular, the declarations
 `CategoryTheory.Biprod.isoElim`, `CategoryTheory.Biprod.gaussian`
 and `Matrix.invertibleOfFromBlocks₁₁Invertible` are all closely related.
-
 -/
 
 @[expose] public section

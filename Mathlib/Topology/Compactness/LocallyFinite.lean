@@ -8,6 +8,9 @@ module
 public import Mathlib.Topology.LocallyFinite
 public import Mathlib.Topology.Compactness.Compact
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Compact sets and compact spaces and locally finite functions
 -/

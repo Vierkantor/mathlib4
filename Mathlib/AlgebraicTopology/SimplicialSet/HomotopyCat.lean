@@ -14,8 +14,10 @@ public import Mathlib.Combinatorics.Quiver.ReflQuiver
 public import Mathlib.AlgebraicTopology.SimplicialSet.Monoidal
 public import Mathlib.CategoryTheory.Category.Cat.Terminal
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # The homotopy category of a simplicial set
 
 The homotopy category of a simplicial set is defined as a quotient of the free category on its

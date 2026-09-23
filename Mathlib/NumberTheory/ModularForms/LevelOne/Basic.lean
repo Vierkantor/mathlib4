@@ -9,6 +9,9 @@ public import Mathlib.Analysis.Complex.AbsMax
 public import Mathlib.LinearAlgebra.Matrix.FixedDetMatrices
 public import Mathlib.NumberTheory.Modular
 public import Mathlib.NumberTheory.ModularForms.QExpansion
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Level one modular forms
 

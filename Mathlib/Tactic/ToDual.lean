@@ -9,8 +9,11 @@ import all Init.Core  -- TODO: for accessing proofs
 public import Mathlib.Tactic.Translate.ToDual
 
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
-## `@[to_dual]` attributes for basic types
+# `@[to_dual]` attributes for basic types
 -/
 
 public meta section

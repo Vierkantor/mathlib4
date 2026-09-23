@@ -9,6 +9,9 @@ public import Mathlib.Algebra.DirectSum.Algebra
 public import Mathlib.Algebra.MonoidAlgebra.Basic
 public import Mathlib.Data.Finsupp.ToDFinsupp
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Conversion between `AddMonoidAlgebra` and homogeneous `DirectSum`
 
@@ -23,6 +26,7 @@ Note that since `DirectSum.instMul` combines indices additively, there is no equ
 * `AddMonoidAlgebra.toDirectSum : AddMonoidAlgebra M ι → (⨁ i : ι, M)`
 * `DirectSum.toAddMonoidAlgebra : (⨁ i : ι, M) → AddMonoidAlgebra M ι`
 * Bundled equiv versions of the above:
+
   * `addMonoidAlgebraEquivDirectSum : AddMonoidAlgebra M ι ≃ (⨁ i : ι, M)`
   * `addMonoidAlgebraAddEquivDirectSum : AddMonoidAlgebra M ι ≃+ (⨁ i : ι, M)`
   * `addMonoidAlgebraRingEquivDirectSum R : AddMonoidAlgebra M ι ≃+* (⨁ i : ι, M)`
@@ -60,7 +64,9 @@ variable {ι : Type*} {R : Type*} {M : Type*} {A : Type*}
 
 open DirectSum
 
-/-! ### Basic definitions and lemmas -/
+/-!
+# Basic definitions and lemmas
+-/
 
 
 section Defs
@@ -100,7 +106,9 @@ end
 
 end Defs
 
-/-! ### Lemmas about arithmetic operations -/
+/-!
+# Lemmas about arithmetic operations
+-/
 
 
 section Lemmas
@@ -218,7 +226,9 @@ end DirectSum
 
 end Lemmas
 
-/-! ### Bundled `Equiv`s -/
+/-!
+# Bundled `Equiv`s
+-/
 
 
 section Equivs

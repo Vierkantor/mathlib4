@@ -9,6 +9,9 @@ module
 public import Mathlib.Analysis.Complex.ValueDistribution.Proximity.IntegralPresentation
 public import Mathlib.Analysis.Complex.ValueDistribution.CharacteristicFunction
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cartan's Formula
 
@@ -16,8 +19,8 @@ This file establishes Cartan's classic formula,
 `ValueDistribution.characteristic_top_eq_circleAverage_add_circleAverage`, describing the
 characteristic function `characteristic f ⊤ r` as a sum of two circle averages,
 
-- `circleAverage (logCounting f · r) 0 1` and
-- `circleAverage (fun a ↦ log ‖meromorphicTrailingCoeffAt (f · - a) 0‖) 0 1`.
+* `circleAverage (logCounting f · r) 0 1` and
+* `circleAverage (fun a ↦ log ‖meromorphicTrailingCoeffAt (f · - a) 0‖) 0 1`.
 
 As a corollary, Cartan's formula implies the (surprisingly non-trivial) fact that the
 characteristic function is monotone; this is stated in
@@ -28,7 +31,7 @@ This file also establishes circle integrability of the function
 
 ## References
 
-See Section VI.2 of [Lang, *Introduction to Complex Hyperbolic Spaces*][MR886677] for a detailed
+See Section VI.2 of \[Lang, _Introduction to Complex Hyperbolic Spaces_\]\[MR886677\] for a detailed
 discussion.
 -/
 
@@ -41,7 +44,7 @@ variable {f : ℂ → ℂ} {R : ℝ}
 namespace ValueDistribution
 
 /-!
-## Terms in Cartan's formula
+# Terms in Cartan's formula
 -/
 
 private lemma log_trailingCoeff_eq_zero_on_unitSphere {a : ℂ} (h : 0 < meromorphicOrderAt f 0)
@@ -158,7 +161,7 @@ theorem circleIntegrable_logCounting (h : Meromorphic f) :
     (logCounting_add_log_trailingCoeff_eq_circleAverage_add_logCounting_top h hR _)
 
 /-!
-## Cartan's formula
+# Cartan's formula
 -/
 
 /--
@@ -205,7 +208,7 @@ theorem characteristic_top_eq_circleAverage_add_const (h : Meromorphic f) :
     fun _ hr ↦ characteristic_top_eq_circleAverage_add_circleAverage h hr⟩
 
 /-!
-## Application: Monotonicity of the Characteristic Function
+# Application: Monotonicity of the Characteristic Function
 -/
 
 /--

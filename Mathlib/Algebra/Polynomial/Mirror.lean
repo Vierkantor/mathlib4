@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.BigOperators.NatAntidiagonal
 public import Mathlib.Algebra.Polynomial.Reverse
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # "Mirror" of a univariate polynomial
 
@@ -17,13 +20,12 @@ divisible by `X`.
 
 ## Main definitions
 
-- `Polynomial.mirror`
+* `Polynomial.mirror`
 
 ## Main results
 
-- `Polynomial.mirror_mul_of_domain`: `mirror` preserves multiplication.
-- `Polynomial.irreducible_of_mirror`: an irreducibility criterion involving `mirror`
-
+* `Polynomial.mirror_mul_of_domain`: `mirror` preserves multiplication.
+* `Polynomial.irreducible_of_mirror`: an irreducibility criterion involving `mirror`
 -/
 
 @[expose] public section

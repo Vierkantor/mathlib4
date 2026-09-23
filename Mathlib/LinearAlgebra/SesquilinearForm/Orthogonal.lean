@@ -9,6 +9,9 @@ public import Mathlib.LinearAlgebra.SesquilinearForm.Basic
 
 import Mathlib.Algebra.Module.Torsion.Field
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Orthogonal complement
 
@@ -27,7 +30,9 @@ variable {R R₁ R₂ M M₁ M₂ : Type*}
 
 namespace Submodule
 
-/-! ### The orthogonal complement -/
+/-!
+# The orthogonal complement
+-/
 
 variable [CommSemiring R] [CommSemiring R₁] [CommSemiring R₂]
 variable [AddCommMonoid M] [Module R M]

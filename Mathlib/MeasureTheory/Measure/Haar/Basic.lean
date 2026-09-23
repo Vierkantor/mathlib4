@@ -9,15 +9,18 @@ public import Mathlib.MeasureTheory.Measure.Content
 public import Mathlib.MeasureTheory.Group.Prod
 public import Mathlib.Topology.Algebra.Group.Compact
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Haar measure
 
 In this file we prove the existence of Haar measure for a locally compact Hausdorff topological
 group.
 
-We follow the write-up by Jonathan Gleason, *Existence and Uniqueness of Haar Measure*.
+We follow the write-up by Jonathan Gleason, _Existence and Uniqueness of Haar Measure_.
 This is essentially the same argument as in
-https://en.wikipedia.org/wiki/Haar_measure#A_construction_using_compact_subsets.
+https://en.wikipedia.org/wiki/Haar\_measure#A\_construction\_using\_compact\_subsets.
 
 We construct the Haar measure first on compact sets. For this we define `(K : U)` as the (smallest)
 number of left-translates of `U` that are needed to cover `K` (`index` in the formalization).
@@ -31,7 +34,8 @@ This function `h` forms a content, which we can extend to an outer measure and t
 We normalize the Haar measure so that the measure of `K₀` is `1`.
 
 Note that `μ` need not coincide with `h` on compact sets, according to
-[halmos1950measure, ch. X, §53 p.233]. However, we know that `h(K)` lies between `μ(Kᵒ)` and `μ(K)`,
+‍\[halmos1950measure, ch. X, §53 p.233\]. However, we know that `h(K)` lies between `μ(Kᵒ)` and
+`μ(K)`,
 where `ᵒ` denotes the interior.
 
 We also give a form of uniqueness of Haar measure, for σ-finite measures on second-countable
@@ -54,12 +58,14 @@ the file `Mathlib/MeasureTheory/Measure/Haar/Unique.lean`.
   Hausdorff group is a scalar multiple of the Haar measure.
 
 ## References
+
 * Paul Halmos (1950), Measure Theory, §53
 * Jonathan Gleason, Existence and Uniqueness of Haar Measure
-  - Note: step 9, page 8 contains a mistake: the last defined `μ` does not extend the `μ` on compact
+
+  * Note: step 9, page 8 contains a mistake: the last defined `μ` does not extend the `μ` on compact
     sets, see Halmos (1950) p. 233, bottom of the page. This makes some other steps (like step 11)
     invalid.
-* https://en.wikipedia.org/wiki/Haar_measure
+* https://en.wikipedia.org/wiki/Haar\_measure
 -/
 
 @[expose] public section
@@ -139,7 +145,7 @@ def clPrehaar (K₀ : Set G) (V : OpenNhdsOf (1 : G)) : Set (Compacts G → ℝ)
 variable [IsTopologicalGroup G]
 
 /-!
-### Lemmas about `index`
+# Lemmas about `index`
 -/
 
 
@@ -258,7 +264,7 @@ theorem is_left_invariant_index {K : Set G} (hK : IsCompact K) (g : G) {V : Set 
   simp
 
 /-!
-### Lemmas about `prehaar`
+# Lemmas about `prehaar`
 -/
 
 
@@ -313,7 +319,7 @@ theorem is_left_invariant_prehaar {K₀ : PositiveCompacts G} {U : Set G} (hU : 
   simp only [prehaar, Compacts.coe_map, is_left_invariant_index K.isCompact _ hU]
 
 /-!
-### Lemmas about `haarProduct`
+# Lemmas about `haarProduct`
 -/
 
 @[to_additive]
@@ -338,7 +344,7 @@ theorem nonempty_iInter_clPrehaar (K₀ : PositiveCompacts G) :
     exact ⟨Subset.trans (iInter_subset _ ⟨V, hV⟩) (iInter_subset _ h2V), h1V₀, h2V₀⟩
 
 /-!
-### Lemmas about `chaar`
+# Lemmas about `chaar`
 -/
 
 /-- This is the "limit" of `prehaar K₀ U K` as `U` becomes a smaller and smaller open
@@ -509,7 +515,7 @@ end haar
 open haar
 
 /-!
-### The Haar measure
+# The Haar measure
 -/
 
 variable [TopologicalSpace G] [IsTopologicalGroup G] [MeasurableSpace G] [BorelSpace G]

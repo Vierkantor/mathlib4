@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Group.TransferInstance
 public import Mathlib.Algebra.Group.InjSurj
 public import Mathlib.Data.Fintype.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Transfer algebraic structures across `Equiv`s
 

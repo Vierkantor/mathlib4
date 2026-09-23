@@ -11,6 +11,9 @@ public import Mathlib.CategoryTheory.Preadditive.Yoneda.Limits
 public import Mathlib.CategoryTheory.Preadditive.Yoneda.Injective
 public import Mathlib.Algebra.Homology.ShortComplex.ExactFunctor
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Injective objects in abelian categories
 

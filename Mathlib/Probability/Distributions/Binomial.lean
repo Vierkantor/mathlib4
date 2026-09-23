@@ -11,6 +11,9 @@ public import Mathlib.Probability.Distributions.SetBernoulli
 import Mathlib.MeasureTheory.MeasurableSpace.NCard
 import Mathlib.Order.Interval.Set.Nat
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Binomial random variables
 
@@ -176,7 +179,9 @@ lemma integral_map_cast_binomial [MeasurableSingletonClass R] (f : R → E) :
 
 end Integral
 
-/-! ### Binomial random variables -/
+/-!
+# Binomial random variables
+-/
 
 variable {X : Ω → ℝ}
 

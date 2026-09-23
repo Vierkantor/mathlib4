@@ -8,6 +8,9 @@ module
 public meta import Mathlib.Lean.Elab.Tactic.Basic
 public import Mathlib.Init
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The `setm` tactic
 
@@ -92,6 +95,8 @@ def defeqOrError (goal : MVarId) (p e : Expr) : MetaM Unit :=
       return m!"Pattern{indentExpr p}\nis not definitionally equal \
         to the target{indentExpr tgt}"
 
+
+set_option doc.verso false
 /-- `setm patt` matches `patt`, a term containing named holes (like `?a`) to the goal, and creates
 named local declarations for the matched holes with their assigned expressions as values. Moreover,
 it will replace the matches with their new names. This tactic can be used to give a name to a
@@ -139,6 +144,8 @@ example (h₁ : 1 + 2 = 3) (h₂ : 2 + 2 = 4) : ∃ n, n = 2 := by
 -/
 syntax (name := setM) "setm " term (" using " ident)? (Parser.Tactic.location)? : tactic
 
+
+set_option doc.verso true
 elab_rules : tactic
 | `(tactic| setm $origPat:term $[using $usingArg]? $[$loc:location]?) =>
   /- We don't use `withNewMCtxDepth` because it also resets the whole metavariable context and this

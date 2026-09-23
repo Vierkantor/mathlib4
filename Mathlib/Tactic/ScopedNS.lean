@@ -7,7 +7,11 @@ module
 
 public import Mathlib.Util.WithWeakNamespace
 
-/-! # `scoped[NS]` syntax
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# `scoped[NS]` syntax
 
 This is a replacement for the `localized` command in mathlib. It is similar to `scoped`,
 but it scopes the syntax in the specified namespace instead of the current namespace.

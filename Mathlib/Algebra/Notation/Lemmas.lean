@@ -8,7 +8,12 @@ module
 public import Batteries.Tactic.Init
 public import Mathlib.Tactic.ToAdditive
 
-/-! # Lemmas about inequalities with `1`. -/
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Lemmas about inequalities with `1`.
+-/
 
 public section
 

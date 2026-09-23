@@ -8,10 +8,14 @@ module
 public import Mathlib.CategoryTheory.Limits.Shapes.WideEqualizers
 public import Mathlib.CategoryTheory.Limits.Shapes.Products
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Constructions related to weakly initial objects
 
 This file gives constructions related to weakly initial objects, namely:
+
 * If a category has small products and a small weakly initial set of objects, then it has a weakly
   initial object.
 * If a category has wide equalizers and a weakly initial object, then it has an initial object.

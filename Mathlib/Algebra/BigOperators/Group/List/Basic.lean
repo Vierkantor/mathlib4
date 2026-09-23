@@ -18,6 +18,9 @@ public import Mathlib.Algebra.Group.Int.Defs
 public import Mathlib.Order.Basic
 public import Mathlib.Data.List.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Sums and products from lists
 

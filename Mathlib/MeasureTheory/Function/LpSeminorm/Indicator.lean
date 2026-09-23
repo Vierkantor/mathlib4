@@ -9,6 +9,9 @@ public import Mathlib.MeasureTheory.Function.LpSeminorm.Basic
 public import Mathlib.Analysis.Normed.Group.Indicator
 public import Mathlib.MeasureTheory.Integral.Lebesgue.Sub
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # ℒp seminorms and indicator functions
 -/

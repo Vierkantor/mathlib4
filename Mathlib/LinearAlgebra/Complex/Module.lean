@@ -15,10 +15,14 @@ public import Mathlib.LinearAlgebra.Matrix.ToLin
 import Mathlib.Algebra.Module.Torsion.Field
 import Mathlib.Algebra.Order.Monoid.Submonoid
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Complex number as a vector space over `ℝ`
 
 This file contains the following instances:
+
 * Any `•`-structure (`SMul`, `MulAction`, `DistribMulAction`, `Module`, `Algebra`) on
   `ℝ` imbues a corresponding structure on `ℂ`. This includes the statement that `ℂ` is an `ℝ`
   algebra.

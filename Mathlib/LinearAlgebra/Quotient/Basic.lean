@@ -11,6 +11,9 @@ public import Mathlib.LinearAlgebra.Pi
 public import Mathlib.LinearAlgebra.Quotient.Defs
 public import Mathlib.LinearAlgebra.Span.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Quotients by submodules
 
@@ -24,7 +27,6 @@ public import Mathlib.LinearAlgebra.Span.Basic
 * `Submodule.liftQ`: lift a map `M → M₂` to a map `M ⧸ p → M₂` if the kernel is contained in `p`
 * `Submodule.mapQ`: lift a map `M → M₂` to a map `M ⧸ p → M₂ ⧸ q` if the image of `p` is contained
   in `q`
-
 -/
 
 @[expose] public section
@@ -435,8 +437,10 @@ variable {R M M₂ : Type*} {x y : M} [CommRing R] [AddCommGroup M] [Module R M]
 
 namespace Submodule
 
-/-- Given modules `M`, `M₂` over a commutative ring, together with submodules `p ⊆ M`, `q ⊆ M₂`,
-the natural map $\{f ∈ Hom(M, M₂) | f(p) ⊆ q \} \to Hom(M/p, M₂/q)$ is linear. -/
+/--
+Given modules `M`, `M₂` over a commutative ring, together with submodules `p ⊆ M`, `q ⊆ M₂`,
+the natural map $`\{f ∈ Hom(M, M₂) | f(p) ⊆ q \} \to Hom(M/p, M₂/q)` is linear.
+-/
 def mapQLinear : compatibleMaps p q →ₗ[R] M ⧸ p →ₗ[R] M₂ ⧸ q where
   toFun f := mapQ _ _ f.val f.property
   map_add' x y := by

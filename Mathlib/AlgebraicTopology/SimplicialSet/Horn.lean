@@ -9,11 +9,13 @@ public import Mathlib.AlgebraicTopology.SimplicialSet.StdSimplex
 public import Mathlib.AlgebraicTopology.SimplicialSet.SubcomplexOp
 public import Mathlib.CategoryTheory.Subfunctor.Equalizer
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Horns
 
 This file introduces horns `Λ[n, i]`.
-
 -/
 
 @[expose] public section

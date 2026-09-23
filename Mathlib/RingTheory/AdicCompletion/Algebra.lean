@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Algebra.Pi
 public import Mathlib.Algebra.Module.Torsion.Basic
 public import Mathlib.RingTheory.AdicCompletion.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Algebra instance on adic completion
 
@@ -17,9 +20,8 @@ completion of any module is a module over the adic completion of the ring.
 
 ## Main definitions
 
-- `evalₐ`: the canonical algebra map from the adic completion to `R ⧸ I ^ n`.
-
-- `AdicCompletion.liftRingHom`: given a compatible family of ring maps
+* `evalₐ`: the canonical algebra map from the adic completion to `R ⧸ I ^ n`.
+* `AdicCompletion.liftRingHom`: given a compatible family of ring maps
   `R →+* S ⧸ I ^ n`, the lift ring map `R →+* AdicCompletion I S`.
 
 ## Implementation details
@@ -28,7 +30,6 @@ We do not make a separate adic completion type in algebra case, to not duplicate
 module-theoretic results on adic completions. This choice does cause some trouble though,
 since `I ^ n • ⊤` is not defeq to `I ^ n`. We try to work around most of the trouble by
 providing as much API as possible.
-
 -/
 
 @[expose] public section

@@ -11,10 +11,13 @@ public import Mathlib.LinearAlgebra.Basis.VectorSpace
 public import Mathlib.RingTheory.SimpleModule.Basic
 public import Mathlib.RepresentationTheory.Semisimple
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Maschke's theorem
 
-We prove **Maschke's theorem** for finite groups,
+We prove *Maschke's theorem* for finite groups,
 in the formulation that every submodule of a `k[G]` module has a complement,
 when `k` is a field with `Fintype.card G` invertible in `k`.
 
@@ -30,6 +33,7 @@ taking the average over `G` of the conjugates of `π`.
   familiar `¬(ringChar k ∣ Fintype.card G)`.
 
 ## Future work
+
 It's not so far to give the usual statement, that every finite-dimensional representation
 of a finite group is semisimple (i.e. a direct sum of irreducibles).
 -/
@@ -51,7 +55,7 @@ just as a `k`-linear map.
 
 We now construct a retraction of the inclusion as a `k[G]`-linear map,
 by the formula
-$$ \frac{1}{|G|} \sum_{g \in G} g⁻¹ • π(g • -). $$
+$$`  \frac{1}{|G|} \sum_{g \in G} g⁻¹ • π(g • -).  `
 -/
 
 namespace LinearMap
@@ -109,8 +113,9 @@ theorem sumOfConjugatesEquivariant_apply (v : W) :
 
 section
 
-/-- We construct our `k[G]`-linear retraction of `i` as
-$$ \frac{1}{|G|} \sum_{g \in G} g⁻¹ • π(g • -). $$
+/--
+We construct our `k[G]`-linear retraction of `i` as
+$$`  \frac{1}{|G|} \sum_{g \in G} g⁻¹ • π(g • -).  `
 -/
 def equivariantProjection : W →ₗ[k[G]] V :=
   (Fintype.card G : k)⁻¹ʳ • π.sumOfConjugatesEquivariant G

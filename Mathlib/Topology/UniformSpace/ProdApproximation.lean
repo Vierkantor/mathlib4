@@ -10,6 +10,9 @@ public import Mathlib.Topology.Algebra.Indicator
 public import Mathlib.Topology.ContinuousMap.Algebra
 public import Mathlib.Topology.Separation.DisjointCover
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Uniform approximation by products
 

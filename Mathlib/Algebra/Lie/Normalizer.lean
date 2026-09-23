@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Lie.Abelian
 public import Mathlib.Algebra.Lie.IdealOperations
 public import Mathlib.Algebra.Lie.Quotient
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The normalizer of Lie submodules and subalgebras.
 
@@ -25,9 +28,9 @@ consider the normalizer. This turns out to be a Lie subalgebra.
 
 ## Main definitions
 
-  * `LieSubmodule.normalizer`
-  * `LieSubalgebra.normalizer`
-  * `LieSubmodule.gc_top_lie_normalizer`
+* `LieSubmodule.normalizer`
+* `LieSubalgebra.normalizer`
+* `LieSubmodule.gc_top_lie_normalizer`
 
 ## Tags
 

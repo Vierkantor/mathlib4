@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.ObjectProperty.CompleteLattice
 public import Mathlib.CategoryTheory.ObjectProperty.Shift
 public import Mathlib.CategoryTheory.Triangulated.Pretriangulated
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # t-structures on triangulated categories
 
@@ -32,8 +35,8 @@ use depending on the context.
 * show that the heart of `t` is an abelian category
 
 ## References
-* [Beilinson, Bernstein, Deligne, Gabber, *Faisceaux pervers*][bbd-1982]
 
+* ‍\[Beilinson, Bernstein, Deligne, Gabber, _Faisceaux pervers_\]\[bbd-1982\]
 -/
 
 @[expose] public section

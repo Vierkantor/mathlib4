@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.Set.SymmDiff  -- shake: keep (Qq dependency)
 public meta import Mathlib.Tactic.ToDual
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The `tauto_set` tactic
 -/
@@ -28,6 +31,8 @@ elab (name := specialize_all) "specialize_all" x:term : tactic => withMainContex
     evalTactic (← `(tactic|specialize $(mkIdent h.userName) $x)) <|> pure ()
 
 
+
+set_option doc.verso false
 /--
 `tauto_set` proves tautologies involving hypotheses and goals of the form `X ⊆ Y`
 or `X = Y`, where `X`, `Y` are expressions built using `∪`, `∩`, `\`, and `ᶜ` from finitely many
@@ -57,4 +62,6 @@ macro "tauto_set" : tactic => `(tactic|
 )
 
 
+
+set_option doc.verso true
 end Mathlib.Tactic.TautoSet

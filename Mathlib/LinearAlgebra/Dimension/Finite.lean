@@ -11,11 +11,13 @@ public import Mathlib.LinearAlgebra.Dimension.Subsingleton
 public import Mathlib.LinearAlgebra.FreeModule.Finite.Basic
 public import Mathlib.SetTheory.Cardinal.Cofinality.Ordinal
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Conditions for rank to be finite
 
 Also contains characterization for when rank equals zero or rank equals one.
-
 -/
 
 @[expose] public section

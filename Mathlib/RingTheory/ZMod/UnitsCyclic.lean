@@ -11,14 +11,19 @@ public import Mathlib.Data.Nat.Choose.Dvd
 public import Mathlib.Data.ZMod.Units
 public import Mathlib.FieldTheory.Finite.Basic
 
-/-! # Cyclicity of the units of `ZMod n`
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Cyclicity of the units of `ZMod n`
 
 `ZMod.isCyclic_units_iff` : `(ZMod n)ˣ` is cyclic iff
 one of the following mutually exclusive cases happens:
-  - `n = 0` (then `ZMod 0 ≃+* ℤ` and the group of units is cyclic of order 2);
-  - `n = 1`, `2` or `4`
-  - `n` is a power `p ^ e` of an odd prime number, or twice such a power
-    (with `1 ≤ e`).
+
+* `n = 0` (then `ZMod 0 ≃+* ℤ` and the group of units is cyclic of order 2);
+* `n = 1`, `2` or `4`
+* `n` is a power `p ^ e` of an odd prime number, or twice such a power
+  (with `1 ≤ e`).
 
 The individual cases are proved by `inferInstance` and are
 also directly provided by :
@@ -31,22 +36,16 @@ also directly provided by :
 The case of prime numbers is also an instance:
 
 * `ZMod.isCyclic_units_prime`
-
 * `ZMod.not_isCyclic_units_eight`: `(ZMod 8)ˣ` is not cyclic
-
 * `ZMod.orderOf_one_add_mul_prime`: the order of `1 + a * p`
   modulo `p ^ (n + 1)` is `p ^ n` when `p` does not divide `a`.
-
 * `ZMod.orderOf_five` : the order of `5` modulo `2 ^ (n + 3)` is `2 ^ (n + 1)`.
-
 * `ZMod.isCyclic_units_of_prime_pow` : the case of odd prime powers
-
 * `ZMod.isCyclic_units_two_pow_iff` : `(ZMod (2 ^ n))ˣ` is cyclic iff `n ≤ 2`.
 
-The proofs mostly follow [Ireland and Rosen,
-  *A classical introduction to modern number theory*, chapter 4]
-  [IrelandRosen1990].
-
+The proofs mostly follow \[Ireland and Rosen,
+_A classical introduction to modern number theory_, chapter 4\]
+‍\[IrelandRosen1990\].
 -/
 
 public section

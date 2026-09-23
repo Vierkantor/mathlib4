@@ -8,9 +8,11 @@ module
 public import Mathlib.Order.CompleteLatticeIntervals
 public import Mathlib.Order.LatticeIntervals
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lattice structures on the type of nonnegative elements
-
 -/
 
 @[expose] public section

@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Lie.CartanSubalgebra
 public import Mathlib.Algebra.Lie.Weights.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Weights and roots of Lie modules and Lie algebras with respect to Cartan subalgebras
 
@@ -20,12 +23,11 @@ Basic definitions and properties of the above ideas are provided in this file.
 
 ## Main definitions
 
-  * `LieAlgebra.rootSpace`
-  * `LieAlgebra.corootSpace`
-  * `LieAlgebra.rootSpaceWeightSpaceProduct`
-  * `LieAlgebra.rootSpaceProduct`
-  * `LieAlgebra.zeroRootSubalgebra_eq_iff_is_cartan`
-
+* `LieAlgebra.rootSpace`
+* `LieAlgebra.corootSpace`
+* `LieAlgebra.rootSpaceWeightSpaceProduct`
+* `LieAlgebra.rootSpaceProduct`
+* `LieAlgebra.zeroRootSubalgebra_eq_iff_is_cartan`
 -/
 
 @[expose] public section

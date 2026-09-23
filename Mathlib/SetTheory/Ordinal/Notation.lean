@@ -11,6 +11,9 @@ public import Mathlib.Data.PNat.Basic
 public import Mathlib.SetTheory.Ordinal.Principal
 public import Mathlib.Tactic.NormNum
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Ordinal notation
 

@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Sites.SheafOfTypes
 public import Mathlib.Order.Closure
 public import Mathlib.CategoryTheory.Subfunctor.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Closed sieves
 
@@ -37,14 +40,13 @@ that natural closure operators are in bijection with Grothendieck topologies.
   set of sieves on every object which commutes with pullback additionally induces a Grothendieck
   topology, giving a bijection with `CategoryTheory.GrothendieckTopology.closureOperator`.
 
-
 ## Tags
 
 closed sieve, closure, Grothendieck topology
 
 ## References
 
-* [S. MacLane, I. Moerdijk, *Sheaves in Geometry and Logic*][MM92]
+* ‍\[S. MacLane, I. Moerdijk, _Sheaves in Geometry and Logic_\]\[MM92\]
 -/
 
 @[expose] public section
@@ -167,8 +169,9 @@ def Functor.closedSieves : Subfunctor (Functor.sieves C) where
 
 set_option backward.defeqAttrib.useBackward true in
 set_option backward.isDefEq.respectTransparency false in
-/-- The presheaf of `J`-closed sieves is a `J`-sheaf.
-The proof of this is adapted from [MM92], Chapter III, Section 7, Lemma 1.
+/--
+The presheaf of `J`-closed sieves is a `J`-sheaf.
+The proof of this is adapted from \[MM92\], Chapter III, Section 7, Lemma 1.
 -/
 theorem classifier_isSheaf : Presieve.IsSheaf J₁ (Functor.closedSieves J₁).toFunctor := by
   intro X S hS

@@ -9,8 +9,10 @@ public import Mathlib.Data.Fin.Fin2
 public import Mathlib.Logic.Function.Basic
 public import Mathlib.Tactic.Common
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Tuples of types, and their categorical structure.
 
 ## Features

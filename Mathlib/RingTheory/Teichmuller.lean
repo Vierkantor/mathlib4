@@ -10,14 +10,17 @@ public import Mathlib.LinearAlgebra.SModEq.Pow
 public import Mathlib.RingTheory.AdicCompletion.Basic
 public import Mathlib.RingTheory.Perfection
 
-/-! # Teichmüller map
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Teichmüller map
 
 Let `R` be an `I`-adically complete ring, and `p` be a prime number with `p ∈ I`.
 
 Then there is a canonical map `Perfection (R ⧸ I) p →*₀ R` that we shall call
 `Perfection.teichmuller`, such that it composed with the quotient map `R →+* R ⧸ I` is the
 "0-th coefficient" map `Perfection (R ⧸ I) p →+* R ⧸ I`.
-
 -/
 
 @[expose] public section

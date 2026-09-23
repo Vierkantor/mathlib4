@@ -13,6 +13,9 @@ public import Mathlib.Topology.Algebra.InfiniteSum.NatInt
 public import Mathlib.Topology.Algebra.GroupWithZero
 public import Mathlib.Topology.Algebra.Ring.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Infinite sum in a ring
 
@@ -148,7 +151,7 @@ theorem summable_const_div_iff (h : a ≠ 0) :
 end DivisionSemiring
 
 /-!
-### Multiplying two infinite sums
+# Multiplying two infinite sums
 
 In this section, we prove various results about `(∑' x : ι, f x) * (∑' y : κ, g y)`. Note that we
 always assume that the family `fun x : ι × κ ↦ f x.1 * g x.2` is summable, since there is no way to
@@ -159,7 +162,7 @@ space, you may want to use the analogous lemmas in `Analysis.Normed.Module.Basic
 We first establish results about arbitrary index types, `ι` and `κ`, and then we specialize to
 `ι = κ = ℕ` to prove the Cauchy product formula (see `tsum_mul_tsum_eq_tsum_sum_antidiagonal`).
 
-#### Arbitrary index types
+## Arbitrary index types
 -/
 
 
@@ -191,7 +194,7 @@ protected theorem Summable.tsum_mul_tsum (hf : Summable f) (hg : Summable g)
 end tsum_mul_tsum
 
 /-!
-#### `ℕ`-indexed families (Cauchy product)
+# `ℕ`-indexed families (Cauchy product)
 
 We prove two versions of the Cauchy product formula. The first one is
 `tsum_mul_tsum_eq_tsum_sum_range`, where the `n`-th term is a sum over `Finset.range (n+1)`
@@ -268,7 +271,7 @@ end CauchyProduct
 section GeomSeries
 
 /-!
-### Geometric series `∑' n : ℕ, x ^ n`
+# Geometric series `∑' n : ℕ, x ^ n`
 
 This section gives a general result about geometric series without assuming additional structure on
 the topological ring. For normed ring, see also `geom_series_mul_neg` and friends.
@@ -291,7 +294,7 @@ end GeomSeries
 section ProdOneSum
 
 /-!
-### Infinite product of `1 + f i`
+# Infinite product of `1 + f i`
 
 This section extends `Finset.prod_one_add` to the infinite product
 `∏' i : ι, (1 + f i) = ∑' s : Finset ι, ∏ i ∈ s, f i`.

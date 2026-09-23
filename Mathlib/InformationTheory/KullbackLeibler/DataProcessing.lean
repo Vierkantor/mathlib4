@@ -16,6 +16,9 @@ import Mathlib.MeasureTheory.Function.ConditionalExpectation.CondJensen
 import Mathlib.MeasureTheory.Function.ConditionalExpectation.RadonNikodym
 public import Mathlib.Probability.Notation
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Data processing inequality for the Kullback-Leibler divergence
 
@@ -32,7 +35,6 @@ Let `μ, ν` be finite measures on `𝓧`, with sigma-algebra `m𝓧`.
 * `klDiv_trim_le`: `klDiv (μ.trim hm) (ν.trim hm) ≤ klDiv μ ν` for a sub-sigma-algebra `m` of `m𝓧`
   (with `hm : m ≤ m𝓧`).
 * `klDiv_comp_right_le`: `klDiv (κ ∘ₘ μ) (κ ∘ₘ ν) ≤ klDiv μ ν` for a Markov kernel `κ`.
-
 -/
 
 public section

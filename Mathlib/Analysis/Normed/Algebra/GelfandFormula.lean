@@ -11,11 +11,14 @@ public import Mathlib.Analysis.Normed.Operator.Mul
 import Mathlib.Analysis.Complex.Polynomial.Basic
 import Mathlib.Analysis.Analytic.RadiusLiminf
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Gelfand's formula and other results on the spectrum in complex Banach algebras
 
 This file contains results on the spectrum of elements in a complex Banach algebra, including
-**Gelfand's formula** and the **Gelfand-Mazur theorem** and the fact that every element in a
+*Gelfand's formula* and the *Gelfand-Mazur theorem* and the fact that every element in a
 complex Banach algebra has nonempty spectrum.
 
 ## Main results
@@ -25,7 +28,7 @@ complex Banach algebra has nonempty spectrum.
 * `spectrum.pow_nnnorm_pow_one_div_tendsto_nhds_spectralRadius`: Gelfand's formula for the
   spectral radius in Banach algebras over `ℂ`.
 * `spectrum.nonempty`: the spectrum of any element in a complex Banach algebra is nonempty.
-* `NormedRing.algEquivComplexOfComplete`: **Gelfand-Mazur theorem** For a complex
+* `NormedRing.algEquivComplexOfComplete`: *Gelfand-Mazur theorem* For a complex
   Banach division algebra, the natural `algebraMap ℂ A` is an algebra isomorphism whose inverse
   is given by selecting the (unique) element of `spectrum ℂ a`
 
@@ -34,7 +37,6 @@ complex Banach algebra has nonempty spectrum.
 Note that it is important here that the complex analysis files are privately imported, since the
 material proven here gets used in contexts that have nothing to do with complex analysis
 (i.e. C⋆-algebras, etc).
-
 -/
 
 @[expose] public section

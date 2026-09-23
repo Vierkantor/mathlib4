@@ -11,6 +11,9 @@ public import Mathlib.Order.Directed
 public import Mathlib.Order.BoundedOrder.Monotone
 public import Mathlib.Order.Interval.Set.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Upper / lower bounds
 
@@ -198,7 +201,7 @@ theorem directedOn_or_directedOn_of_union'
     · exact .inr ⟨h, ht⟩
 
 /-!
-### Monotonicity
+# Monotonicity
 -/
 
 
@@ -264,7 +267,7 @@ theorem Set.Nonempty.bddAbove_lowerBounds (hs : s.Nonempty) : BddAbove (lowerBou
   hs.mono (subset_upperBounds_lowerBounds s)
 
 /-!
-### Conversions
+# Conversions
 -/
 
 
@@ -320,7 +323,7 @@ theorem IsLeast.nonempty (h : IsLeast s a) : s.Nonempty :=
   ⟨a, h.1⟩
 
 /-!
-### Union and intersection
+# Union and intersection
 -/
 
 @[to_dual (attr := simp)]
@@ -434,9 +437,9 @@ theorem BddAbove.exists_ge [SemilatticeSup γ] {s : Set γ} (hs : BddAbove s) (x
   (bddAbove_iff_exists_ge x₀).mp hs
 
 /-!
-### Specific sets
+# Specific sets
 
-#### Unbounded intervals
+## Unbounded intervals
 -/
 
 
@@ -497,7 +500,7 @@ theorem upperBounds_Iio {a : γ} : upperBounds (Iio a) = Ici a :=
 end
 
 /-!
-#### Singleton
+# Singleton
 -/
 
 
@@ -517,7 +520,7 @@ theorem upperBounds_singleton : upperBounds {a} = Ici a :=
   isLUB_singleton.upperBounds_eq
 
 /-!
-#### Bounded intervals
+# Bounded intervals
 -/
 
 
@@ -592,7 +595,7 @@ theorem bddBelow_bddAbove_iff_subset_Icc : BddBelow s ∧ BddAbove s ↔ ∃ a b
     bddAbove_iff_subset_Iic, exists_and_left, exists_and_right]
 
 /-!
-#### Univ
+# Univ
 -/
 
 @[to_dual (attr := simp)]
@@ -627,7 +630,7 @@ theorem NoTopOrder.upperBounds_univ [NoTopOrder α] : upperBounds (univ : Set α
 theorem not_bddAbove_univ [NoTopOrder α] : ¬BddAbove (univ : Set α) := by simp [BddAbove]
 
 /-!
-#### Empty set
+# Empty set
 -/
 
 
@@ -656,7 +659,7 @@ theorem nonempty_of_not_bddAbove [ha : Nonempty α] (h : ¬BddAbove s) : s.Nonem
   (Nonempty.elim ha) fun x => (not_bddAbove_iff'.1 h x).imp fun _ ha => ha.1
 
 /-!
-#### insert
+# insert
 -/
 
 
@@ -703,7 +706,7 @@ macro "bddDefault" : tactic =>
     | apply OrderBot.bddBelow)
 
 /-!
-#### Pair
+# Pair
 -/
 
 
@@ -716,7 +719,7 @@ theorem isGreatest_pair [LinearOrder γ] {a b : γ} : IsGreatest {a, b} (max a b
   isGreatest_singleton.insert _
 
 /-!
-#### Lower/upper bounds
+# Lower/upper bounds
 -/
 
 
@@ -749,7 +752,7 @@ theorem minimal_iff_isLeast [LinearOrder α] {s : Set α} {a : α} :
   (Std.Total.directedOn s).minimal_iff_isLeast
 
 /-!
-### (In)equalities with the least upper bound and the greatest lower bound
+# (In)equalities with the least upper bound and the greatest lower bound
 -/
 
 

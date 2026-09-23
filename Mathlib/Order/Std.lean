@@ -7,6 +7,10 @@ module
 
 public import Mathlib.Order.Defs.LinearOrder
 
+set_option doc.verso true
+set_option doc.verso.module false
+set_option doc.verso.suggestions false
+
 /-!
 # Converting Std order typeclasses into Mathlib ones
 

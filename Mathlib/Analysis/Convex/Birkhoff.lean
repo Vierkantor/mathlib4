@@ -12,6 +12,9 @@ public import Mathlib.Analysis.Normed.Module.Convex
 public import Mathlib.Combinatorics.Hall.Basic
 public import Mathlib.Analysis.Convex.DoublyStochasticMatrix
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Birkhoff's theorem
 

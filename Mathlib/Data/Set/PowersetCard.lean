@@ -9,17 +9,19 @@ public import Mathlib.Data.ENat.Lattice
 public import Mathlib.Data.Set.Card
 public import Mathlib.SetTheory.Cardinal.NatCard
 
-/-! # Combinations
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Combinations
 
 Combinations in a type are finite subsets of given cardinality.
 
 * `Set.powersetCard α n` is the set of all `Finset α` with cardinality `n`.
   The name is chosen in relation with `Finset.powersetCard` which corresponds to
   the analogous structure for subsets of given cardinality of a given `Finset`, as a `Finset`.
-
 * `Set.powersetCard.card` proves that the `Nat.card`-cardinality
   of this set is equal to `(Nat.card α).choose n`.
-
 -/
 
 @[expose] public section

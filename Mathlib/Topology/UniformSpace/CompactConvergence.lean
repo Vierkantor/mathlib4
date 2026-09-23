@@ -11,6 +11,9 @@ public import Mathlib.Topology.Maps.Proper.Basic
 public import Mathlib.Topology.UniformSpace.Compact
 public import Mathlib.Topology.UniformSpace.UniformConvergenceTopology
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Compact convergence (uniform convergence on compact sets)
 
@@ -21,12 +24,11 @@ and also prove its basic properties.
 
 ## Main definitions
 
-- `ContinuousMap.toUniformOnFunIsCompact`:
+* `ContinuousMap.toUniformOnFunIsCompact`:
   natural embedding of `C(α, β)`
   into the space `α →ᵤ[{K | IsCompact K}] β` of all maps `α → β`
   with the uniform space structure of uniform convergence on compacts.
-
-- `ContinuousMap.compactConvergenceUniformSpace`:
+* `ContinuousMap.compactConvergenceUniformSpace`:
   the `UniformSpace` structure on `C(α, β)` induced by the map above.
 
 ## Main results
@@ -38,43 +40,36 @@ and also prove its basic properties.
   Given `K : Set α` and `V : Set (β × β)`,
   let `E(K, V) : Set (C(α, β) × C(α, β))` be the set of pairs of continuous functions `α → β`
   which are `V`-close on `K`:
-  $$
-    E(K, V) = \{ (f, g) | ∀ (x ∈ K), (f x, g x) ∈ V \}.
-  $$
+  $$`  E(K, V) = \{ (f, g) | ∀ (x ∈ K), (f x, g x) ∈ V \}.  `
   Then the sets `E(K, V)` for all compact sets `K` and all entourages `V`
   form a basis of entourages of `C(α, β)`.
 
   As usual, this basis of entourages provides a basis of neighbourhoods
   by fixing `f`, see `nhds_basis_uniformity'`.
-
 * `Filter.HasBasis.compactConvergenceUniformity`:
   a similar statement that uses a basis of entourages of `β` instead of all entourages.
   It is useful, e.g., if `β` is a metric space.
-
 * `ContinuousMap.tendsto_iff_forall_isCompact_tendstoUniformlyOn`:
   a sequence of functions `Fₙ` in `C(α, β)` converges in the compact-open topology to some `f`
   iff `Fₙ` converges to `f` uniformly on each compact subset `K` of `α`.
-
 * Topology induced by the uniformity described above agrees with the compact-open topology.
   This is essentially the same as `ContinuousMap.tendsto_iff_forall_isCompact_tendstoUniformlyOn`.
 
   This fact is not available as a separate theorem.
   Instead, we override the projection of `ContinuousMap.compactConvergenceUniformity`
   to `TopologicalSpace` to be `ContinuousMap.compactOpen` and prove that they agree,
-  see Note [forgetful inheritance] and implementation notes below.
-
+  see Note \[forgetful inheritance\] and implementation notes below.
 * `ContinuousMap.tendsto_iff_tendstoLocallyUniformly`:
   on a weakly locally compact space,
   a sequence of functions `Fₙ` in `C(α, β)` converges to some `f`
   iff `Fₙ` converges to `f` locally uniformly.
-
 * `ContinuousMap.tendsto_iff_tendstoUniformly`:
   on a compact space, a sequence of functions `Fₙ` in `C(α, β)` converges to some `f`
   iff `Fₙ` converges to `f` uniformly.
 
 ## Implementation details
 
-For technical reasons (see Note [forgetful inheritance]),
+For technical reasons (see Note \[forgetful inheritance\]),
 instead of defining a `UniformSpace C(α, β)` structure
 and proving in a theorem that it agrees with the compact-open topology,
 we override the projection right in the definition,
@@ -158,14 +153,16 @@ theorem range_toUniformOnFunIsCompact :
   Set.ext fun f ↦ ⟨fun g ↦ g.choose_spec ▸ g.choose.2, fun hf ↦ ⟨⟨f, hf⟩, rfl⟩⟩
 
 open UniformSpace in
-/-- Uniform space structure on `C(α, β)`.
+/--
+Uniform space structure on `C(α, β)`.
 
 The uniformity comes from `α →ᵤ[{K | IsCompact K}] β` (i.e., `UniformOnFun α β {K | IsCompact K}`)
 which defines topology of uniform convergence on compact sets.
 We use `ContinuousMap.tendsto_iff_forall_isCompact_tendstoUniformlyOn`
 to show that the induced topology agrees with the compact-open topology
 and replace the topology with `compactOpen` to avoid non-defeq diamonds,
-see Note [forgetful inheritance]. -/
+see Note \[forgetful inheritance\].
+-/
 instance compactConvergenceUniformSpace : UniformSpace C(α, β) :=
   .replaceTopology (.comap toUniformOnFunIsCompact inferInstance) <| by
     refine TopologicalSpace.ext_nhds fun f ↦ eq_of_forall_le_iff fun l ↦ ?_

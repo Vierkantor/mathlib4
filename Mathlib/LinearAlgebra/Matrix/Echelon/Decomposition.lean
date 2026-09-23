@@ -7,6 +7,9 @@ module
 
 public import Mathlib.LinearAlgebra.Matrix.Echelon.Pivot
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Echelon decomposition certificates
 
@@ -14,11 +17,11 @@ public import Mathlib.LinearAlgebra.Matrix.Echelon.Pivot
 
 ## Main definitions
 
-- `Echelon.Decomposition`: the certificate structure.
+* `Echelon.Decomposition`: the certificate structure.
 
 ## Main results
 
-- `Echelon.Decomposition.rank_eq`: `A.rank` is the pivot count of any certificate for `A`.
+* `Echelon.Decomposition.rank_eq`: `A.rank` is the pivot count of any certificate for `A`.
 
 ## Tags
 

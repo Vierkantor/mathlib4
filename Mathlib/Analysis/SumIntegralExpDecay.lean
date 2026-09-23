@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.SpecialFunctions.Gamma.Basic
 public import Mathlib.Analysis.SumIntegralComparisons
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Bounds for sums and integrals of `x ^ k * exp (-c * x)`
 

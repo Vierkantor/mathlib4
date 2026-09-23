@@ -7,6 +7,9 @@ module
 
 public import Mathlib.MeasureTheory.Integral.Average
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Bergelson's intersectivity lemma
 
@@ -18,8 +21,8 @@ This is in some sense a finitary version of the second Borel-Cantelli lemma.
 
 ## References
 
-[Bergelson, *Sets of recurrence of `ℤᵐ`-actions and properties of sets of differences in
-`ℤᵐ`*][bergelson1985]
+‍\[Bergelson, _Sets of recurrence of `ℤᵐ`-actions and properties of sets of differences in
+`ℤᵐ`_\]\[bergelson1985\]
 
 ## TODO
 

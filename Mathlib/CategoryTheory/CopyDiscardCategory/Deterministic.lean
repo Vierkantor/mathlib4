@@ -7,6 +7,9 @@ module
 
 public import Mathlib.CategoryTheory.CopyDiscardCategory.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Deterministic Morphisms in Copy-Discard Categories
 

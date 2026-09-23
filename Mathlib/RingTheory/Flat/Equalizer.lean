@@ -8,12 +8,14 @@ module
 public import Mathlib.RingTheory.Flat.Basic
 public import Mathlib.Algebra.Module.SnakeLemma
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Base change along flat modules preserves equalizers
 
 We show that base change along flat modules (resp. algebras)
 preserves kernels and equalizers.
-
 -/
 
 @[expose] public section

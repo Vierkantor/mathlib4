@@ -9,6 +9,9 @@ module
 public import Mathlib.Algebra.Module.Submodule.Ker
 public import Mathlib.Data.Set.Finite.Range
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Range of linear maps
 
@@ -25,6 +28,7 @@ Note that this also means that dot notation (i.e. `f.range` for a linear map `f`
   (resp. linear) maps from `M` to `M₂` over the ring homomorphism `σ` (resp. over the ring `R`).
 
 ## Tags
+
 linear algebra, vector space, module, range
 -/
 
@@ -52,8 +56,10 @@ variable [RingHomCompTriple τ₁₂ τ₂₃ τ₁₃]
 
 section
 
-/-- The range of a linear map `f : M → M₂` is a submodule of `M₂`.
-See Note [range copy pattern]. -/
+/--
+The range of a linear map `f : M → M₂` is a submodule of `M₂`.
+See Note \[range copy pattern\].
+-/
 def range [RingHomSurjective τ₁₂] (f : M →ₛₗ[τ₁₂] M₂) : Submodule R₂ M₂ :=
   (map f ⊤).copy (Set.range f) Set.image_univ.symm
 

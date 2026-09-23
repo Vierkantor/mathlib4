@@ -12,13 +12,16 @@ public import Mathlib.CategoryTheory.Localization.HasLocalization
 public import Mathlib.CategoryTheory.Localization.Pi
 public import Mathlib.CategoryTheory.MorphismProperty.Limits
 
-/-! # The localized category has finite products
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# The localized category has finite products
 
 In this file, it is shown that if `L : C ⥤ D` is
 a localization functor for `W : MorphismProperty C` and that
 `W` is stable under finite products, then `D` has finite
 products, and `L` preserves finite products.
-
 -/
 
 @[expose] public section

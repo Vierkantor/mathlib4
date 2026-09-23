@@ -9,6 +9,9 @@ public import Mathlib.Logic.Equiv.Defs
 public import Mathlib.Tactic.MkIffOfInductiveProp
 public import Mathlib.Tactic.PPWithUniv
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Small types
 

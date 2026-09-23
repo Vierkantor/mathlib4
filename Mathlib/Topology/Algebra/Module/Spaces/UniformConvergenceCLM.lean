@@ -15,6 +15,9 @@ import Mathlib.Topology.Algebra.SeparationQuotient.Section
 import Mathlib.Topology.Algebra.Module.UniformConvergence
 public import Mathlib.Topology.Algebra.Module.Equiv
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Topologies of uniform convergence on the space of continuous linear maps
 
@@ -28,14 +31,15 @@ vector space topology if the continuous linear image of any element of `𝔖` is
 of `Bornology.IsVonNBounded`).
 
 The most important examples for such topologies are:
-- the topology of bounded convergence (also called the "strong topology" on the dual space),
+
+* the topology of bounded convergence (also called the "strong topology" on the dual space),
   when `𝔖` is the set of `IsVonNBounded` subsets.
   This coincides with the operator norm topology in the case of `NormedSpace`s,
   and is declared as an instance on `E →L[𝕜] F`
-- the topology of pointwise convergence (also called "weak-\* topology"
+* the topology of pointwise convergence (also called "weak-\* topology"
   or "strong-operator topology" depending on the context), when `𝔖` is the set of finite
   sets or the set of singletons. This is declared as an instance on `PointwiseConvergenceCLM`.
-- the topology of compact convergence, when `𝔖` is the set of compact
+* the topology of compact convergence, when `𝔖` is the set of compact
   sets. This is declared as an instance on `CompactConvergenceCLM`.
 
 ## Main definitions
@@ -57,7 +61,7 @@ The most important examples for such topologies are:
 
 ## References
 
-* [N. Bourbaki, *Topological Vector Spaces*][bourbaki1987]
+* ‍\[N. Bourbaki, _Topological Vector Spaces_\]\[bourbaki1987\]
 
 ## Tags
 
@@ -69,7 +73,9 @@ uniform convergence, bounded convergence
 open Bornology Filter Function Set Topology
 open scoped UniformConvergence Uniformity
 
-/-! ### 𝔖-Topologies -/
+/-!
+# 𝔖-Topologies
+-/
 
 variable {𝕜₁ 𝕜₂ : Type*} [NormedField 𝕜₁] [NormedField 𝕜₂] (σ : 𝕜₁ →+* 𝕜₂)
   {E F G : Type*}
@@ -490,8 +496,10 @@ variable (𝔖 : Set (Set E)) (𝔗 : Set (Set F))
 
 set_option backward.isDefEq.respectTransparency false in
 variable (G) in
-/-- Pre-composition by a *fixed* continuous linear map as a continuous linear map for the uniform
-convergence topology. -/
+/--
+Pre-composition by a _fixed_ continuous linear map as a continuous linear map for the uniform
+convergence topology.
+-/
 @[simps]
 def precompUniformConvergenceCLM [IsTopologicalAddGroup G] [ContinuousConstSMul 𝕜₃ G]
     (L : E →SL[σ] F) (hL : MapsTo (L '' ·) 𝔖 𝔗) :
@@ -507,8 +515,10 @@ def precompUniformConvergenceCLM [IsTopologicalAddGroup G] [ContinuousConstSMul 
         (UniformConvergenceCLM.isEmbedding_coeFn _ _ _).continuous
 
 set_option backward.isDefEq.respectTransparency false in
-/-- Post-composition by a *fixed* continuous linear map as a continuous linear map for the uniform
-convergence topology. -/
+/--
+Post-composition by a _fixed_ continuous linear map as a continuous linear map for the uniform
+convergence topology.
+-/
 @[simps]
 def postcompUniformConvergenceCLM [IsTopologicalAddGroup F] [IsTopologicalAddGroup G]
     [ContinuousConstSMul 𝕜₃ G] [ContinuousConstSMul 𝕜₂ F] (L : F →SL[τ] G) :
@@ -528,7 +538,9 @@ def postcompUniformConvergenceCLM [IsTopologicalAddGroup F] [IsTopologicalAddGro
 
 end ContinuousLinearMap
 
-/-! ### Continuous linear equivalences -/
+/-!
+# Continuous linear equivalences
+-/
 
 section Pi
 

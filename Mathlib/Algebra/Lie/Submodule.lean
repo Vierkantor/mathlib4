@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Lie.Subalgebra
 public import Mathlib.LinearAlgebra.Finsupp.Span
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lie submodules of a Lie algebra
 
@@ -16,11 +19,11 @@ use it to define various important operations, notably the Lie span of a subset 
 
 ## Main definitions
 
-  * `LieSubmodule`
-  * `LieSubmodule.wellFounded_of_noetherian`
-  * `LieSubmodule.lieSpan`
-  * `LieSubmodule.map`
-  * `LieSubmodule.comap`
+* `LieSubmodule`
+* `LieSubmodule.wellFounded_of_noetherian`
+* `LieSubmodule.lieSpan`
+* `LieSubmodule.map`
+* `LieSubmodule.comap`
 
 ## Tags
 
@@ -895,8 +898,10 @@ theorem le_ker_iff_map (M' : LieSubmodule R L M) : M' ≤ f.ker ↔ LieSubmodule
 
 variable (f)
 
-/-- The range of a morphism of Lie modules `f : M → N` is a Lie submodule of `N`.
-See Note [range copy pattern]. -/
+/--
+The range of a morphism of Lie modules `f : M → N` is a Lie submodule of `N`.
+See Note \[range copy pattern\].
+-/
 def range : LieSubmodule R L N :=
   (LieSubmodule.map f ⊤).copy (Set.range f) Set.image_univ.symm
 

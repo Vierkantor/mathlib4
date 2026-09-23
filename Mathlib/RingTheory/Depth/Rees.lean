@@ -12,8 +12,10 @@ public import Mathlib.RingTheory.Regular.LinearMap
 public import Mathlib.RingTheory.Regular.RegularSequence
 public import Mathlib.RingTheory.Spectrum.Prime.Topology
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # The Rees theorem
 
 In this file we prove the Rees theorem for depth, which relates the vanishing of
@@ -27,13 +29,12 @@ certain `Ext` groups and the length of a maximal regular sequence in a certain i
   · for any `N : ModuleCat R` finitely generated such that `Supp N ⊆ V(I)`, `∀ i < n, Ext N M i = 0`
   · `∀ i < n, Ext (R ⧸ I) M i = 0`
   · there exists a `N : ModuleCat R` finitely generated and nontrivial with `Supp N = V(I)`
-    such that `∀ i < n, Ext N M i = 0`
+  such that `∀ i < n, Ext N M i = 0`
   · there exists a `M`-regular sequence of length `n` with every element in `I`
 
 ## References
 
-* [Commutative Algebra, Theorem 28][matsumuraCommAlg]
-
+* ‍\[Commutative Algebra, Theorem 28\]\[matsumuraCommAlg\]
 -/
 
 public section

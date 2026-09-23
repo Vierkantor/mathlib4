@@ -7,7 +7,11 @@ module
 
 public import Mathlib.CategoryTheory.CatCommSq
 
-/-! # Morphisms of categorical cospans.
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Morphisms of categorical cospans.
 
 Given `F : A ⥤ B`, `G : C ⥤ B`, `F' : A' ⥤ B'` and `G' : C' ⥤ B'`,
 this file defines `CatCospanTransform F G F' G'`, the category of

@@ -9,7 +9,11 @@ public import Mathlib.GroupTheory.GroupAction.SubMulAction
 public import Mathlib.GroupTheory.Perm.MaximalSubgroups
 public import Mathlib.GroupTheory.SpecificGroups.Alternating
 
-/-! # Maximal subgroups of the alternating group
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Maximal subgroups of the alternating group
 
 * `alternatingGroup.isCoatom_stabilizer`: if neither `s : Set α` nor its complement is empty,
   and if, moreover, `Nat.card α ≠ 2 * s.ncard`,
@@ -22,18 +26,16 @@ Compare with `Equiv.Perm.isCoatom_stabilizer` for the case of the permutation gr
 
 ## TODO
 
-  * Application to primitivity of the action
-    of `alternatingGroup α` on finite combinations of `α`.
-
-  * Formalize the other cases of the classification.
-    The next one should be the *imprimitive case*.
+* Application to primitivity of the action
+  of `alternatingGroup α` on finite combinations of `α`.
+* Formalize the other cases of the classification.
+  The next one should be the _imprimitive case_.
 
 ## References
 
-The argument is taken from [M. Liebeck, C. Praeger, J. Saxl,
-*A classification of the maximal subgroups of the finite
-alternating and symmetric groups*, 1987][LiebeckPraegerSaxl-1987].
-
+The argument is taken from \[M. Liebeck, C. Praeger, J. Saxl,
+_A classification of the maximal subgroups of the finite
+alternating and symmetric groups_, 1987\]\[LiebeckPraegerSaxl-1987\].
 -/
 
 public section

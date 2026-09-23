@@ -9,6 +9,9 @@ public import Mathlib.Basic.Finite.Prod
 public import Mathlib.Data.Fintype.Basic
 public import Mathlib.Data.FunLike.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Finiteness of `DFunLike` types
 

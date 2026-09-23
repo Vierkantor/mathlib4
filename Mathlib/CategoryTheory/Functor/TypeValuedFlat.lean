@@ -10,6 +10,9 @@ public import Mathlib.CategoryTheory.Limits.Preserves.Shapes.Equalizers
 public import Mathlib.CategoryTheory.Limits.Types.Equalizers
 public import Mathlib.CategoryTheory.Subfunctor.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Type-valued flat functors
 
@@ -17,12 +20,11 @@ A functor `F : C ⥤ Type w` is a flat Type-valued functor if the category
 `F.Elements` is cofiltered. (This is not equivalent to saying that `F`
 is representably flat in the sense of the typeclass `RepresentablyFlat`
 defined in the file `Mathlib/CategoryTheory/Functor/Flat.lean`, see also
-https://golem.ph.utexas.edu/category/2011/06/flat_functors_and_morphisms_of.html
+https://golem.ph.utexas.edu/category/2011/06/flat\_functors\_and\_morphisms\_of.html
 for a clarification about the differences between these notions.)
 
 In this file, we show that if finite limits exist in `C` and are preserved by `F`,
 then `F.Elements` is cofiltered.
-
 -/
 
 public section

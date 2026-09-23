@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Monad.Adjunction
 public import Mathlib.CategoryTheory.Adjunction.Limits
 public import Mathlib.CategoryTheory.Limits.Shapes.IsTerminal
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Limits and colimits in the category of (co)algebras
 

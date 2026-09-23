@@ -9,6 +9,9 @@ public import Mathlib.Analysis.LocallyConvex.Bounded
 public import Mathlib.Tactic.CrossRefAttribute
 public import Mathlib.Topology.Algebra.Module.Spaces.ContinuousLinearMap
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Compact operators
 
@@ -49,7 +52,7 @@ coercing from continuous linear maps to linear maps often needs type ascriptions
 
 ## References
 
-* [N. Bourbaki, *Théories Spectrales*, Chapitre 3][bourbaki2023]
+* ‍\[N. Bourbaki, _Théories Spectrales_, Chapitre 3\]\[bourbaki2023\]
 
 ## Tags
 

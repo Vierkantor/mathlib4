@@ -14,6 +14,9 @@ public import Mathlib.Algebra.Polynomial.Eval.Algebra
 public import Mathlib.Algebra.Polynomial.Eval.Degree
 public import Mathlib.Algebra.Polynomial.Monomial
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Theory of univariate polynomials
 
@@ -22,12 +25,10 @@ We promote `eval₂` to an algebra hom in `aeval`.
 
 ## Main definitions
 
-- `Polynomial.aeval`: given a valuation `x` of the variable in an `R`-algebra `A`, `aeval R A x` is
+* `Polynomial.aeval`: given a valuation `x` of the variable in an `R`-algebra `A`, `aeval R A x` is
   the unique `R`-algebra homomorphism from `R[X]` to `A` sending `X` to `x`.
-
-- `Polynomial.mapAlgHom` : given `φ : S →ₐ[R] S'`, `mapAlgHom φ` applies `φ` on the
+* `Polynomial.mapAlgHom` : given `φ : S →ₐ[R] S'`, `mapAlgHom φ` applies `φ` on the
   coefficients of a polynomial in `S[X]`.
-
 -/
 
 @[expose] public section
@@ -757,8 +758,10 @@ termination_by Q.natDegree
 
 open nonZeroDivisors
 
-/-- *McCoy theorem*: a polynomial `P : R[X]` is a zerodivisor if and only if there is `a : R`
-such that `a ≠ 0` and `a • P = 0`. -/
+/--
+_McCoy theorem_: a polynomial `P : R[X]` is a zerodivisor if and only if there is `a : R`
+such that `a ≠ 0` and `a • P = 0`.
+-/
 theorem notMem_nonZeroDivisors_iff {P : R[X]} : P ∉ R[X]⁰ ↔ ∃ a : R, a ≠ 0 ∧ a • P = 0 := by
   refine ⟨fun hP ↦ ?_, fun ⟨a, ha, h⟩ h1 ↦ ha <| C_eq_zero.1 <| (h1.2 _) <| smul_eq_C_mul a ▸ h⟩
   by_contra! h

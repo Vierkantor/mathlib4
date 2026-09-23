@@ -13,7 +13,11 @@ public import Mathlib.Tactic.Peel
 public import Mathlib.Tactic.Rify
 public import Mathlib.Tactic.Qify
 
-/-! # Niven's Theorem
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Niven's Theorem
 
 This file proves Niven's theorem, stating that the only rational angles _in degrees_ which
 also have rational cosines, are 0, 30 degrees, and 90 degrees - up to reflection and shifts

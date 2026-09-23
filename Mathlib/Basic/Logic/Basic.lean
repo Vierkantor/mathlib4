@@ -10,6 +10,9 @@ public import Batteries.Logic
 public import Batteries.Util.LibraryNote
 public import Mathlib.Tactic.Attr.Register
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Basic logic properties
 
@@ -191,19 +194,23 @@ abbrev Function.swap₂ {ι₁ ι₂ : Sort*} {κ₁ : ι₁ → Sort*} {κ₂ :
 end Miscellany
 
 /-!
-### Declarations about propositional connectives
+# Declarations about propositional connectives
 -/
 
 section Propositional
 
-/-! ### Declarations about `implies` -/
+/-!
+# Declarations about `implies`
+-/
 
 alias Iff.imp := imp_congr
 
 /-- Provide modus tollens (`mt`) as dot notation for implications. -/
 protected theorem Function.mt {a b : Prop} : (a → b) → ¬b → ¬a := mt
 
-/-! ### Declarations about `not` -/
+/-!
+# Declarations about `not`
+-/
 
 alias dec_em := Decidable.em
 
@@ -293,7 +300,9 @@ lemma Iff.ne_left {α β : Sort*} {a b : α} {c d : β} : (a = b ↔ c ≠ d) �
 lemma Iff.ne_right {α β : Sort*} {a b : α} {c d : β} : (a ≠ b ↔ c = d) → (a = b ↔ c ≠ d) :=
   Iff.not_right
 
-/-! ### Declarations about `Xor` -/
+/-!
+# Declarations about `Xor`
+-/
 
 /-- `Xor a b` is the exclusive-or of propositions. -/
 def Xor (a b : Prop) := (a ∧ ¬b) ∨ (b ∧ ¬a)
@@ -331,7 +340,9 @@ protected theorem Xor.or (h : Xor a b) : a ∨ b := by grind
 @[deprecated (since := "2026-04-27")]
 protected alias Xor'.or := Xor.or
 
-/-! ### Declarations about `and` -/
+/-!
+# Declarations about `and`
+-/
 
 alias Iff.and := and_congr
 alias ⟨And.rotate, _⟩ := and_rotate
@@ -342,7 +353,9 @@ instance : Std.Symm And where
 theorem and_symm_right {α : Sort*} (a b : α) (p : Prop) : p ∧ a = b ↔ p ∧ b = a := by simp [eq_comm]
 theorem and_symm_left {α : Sort*} (a b : α) (p : Prop) : a = b ∧ p ↔ b = a ∧ p := by simp [eq_comm]
 
-/-! ### Declarations about `or` -/
+/-!
+# Declarations about `or`
+-/
 
 alias Iff.or := or_congr
 alias ⟨Or.rotate, _⟩ := or_rotate
@@ -383,7 +396,9 @@ theorem or_congr_left' {c a b : Prop} (h : ¬c → (a ↔ b)) : a ∨ c ↔ b �
 theorem or_congr_right' {c : Prop} (h : ¬a → (b ↔ c)) : a ∨ b ↔ a ∨ c :=
   open scoped Classical in Decidable.or_congr_right' h
 
-/-! ### Declarations about `iff` -/
+/-!
+# Declarations about `iff`
+-/
 
 alias Iff.iff := iff_congr
 
@@ -415,7 +430,9 @@ theorem iff_iff_not_or_and_or_not : (a ↔ b) ↔ (¬a ∨ b) ∧ (a ∨ ¬b) :=
 theorem not_and_not_right : ¬(a ∧ ¬b) ↔ a → b :=
   open scoped Classical in Decidable.not_and_not_right
 
-/-! ### De Morgan's laws -/
+/-!
+# De Morgan's laws
+-/
 
 /-- One of **de Morgan's laws**: the negation of a conjunction is logically equivalent to the
 disjunction of the negations. -/
@@ -442,7 +459,9 @@ theorem xor_iff_or_and_not_and (a b : Prop) : Xor a b ↔ (a ∨ b) ∧ (¬(a �
 
 end Propositional
 
-/-! ### Declarations about equality -/
+/-!
+# Declarations about equality
+-/
 
 section Equality
 
@@ -515,7 +534,9 @@ lemma heq_iff_exists_cast_eq :
 
 end Equality
 
-/-! ### Declarations about quantifiers -/
+/-!
+# Declarations about quantifiers
+-/
 section Quantifiers
 section Dependent
 
@@ -761,7 +782,9 @@ lemma Subsingleton.forall₂_iff {ι : Sort*} [Subsingleton ι] (P : ι → ι �
 
 end Quantifiers
 
-/-! ### Classical lemmas -/
+/-!
+# Classical lemmas
+-/
 
 namespace Classical
 
@@ -820,7 +843,9 @@ noncomputable def Exists.classicalRecOn {α : Sort*} {p : α → Prop} (h : ∃ 
     {C : Sort*} (H : ∀ a, p a → C) : C :=
   H (Classical.choose h) (Classical.choose_spec h)
 
-/-! ### Declarations about bounded quantifiers -/
+/-!
+# Declarations about bounded quantifiers
+-/
 section BoundedQuantifiers
 
 variable {α : Sort*} {r p q : α → Prop} {P Q : ∀ x, p x → Prop}
@@ -1036,7 +1061,9 @@ theorem Function.Injective.ite {α β : Sort*} {p : β → Prop} [DecidablePred 
 
 end ite
 
-/-! ### Membership -/
+/-!
+# Membership
+-/
 
 alias Membership.mem.ne_of_notMem := ne_of_mem_of_not_mem
 alias Membership.mem.ne_of_notMem' := ne_of_mem_of_not_mem'

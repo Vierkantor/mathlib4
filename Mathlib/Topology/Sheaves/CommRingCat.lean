@@ -12,19 +12,24 @@ public import Mathlib.Topology.Category.TopCommRingCat
 public import Mathlib.Topology.ContinuousMap.Algebra
 public import Mathlib.Topology.Sheaves.Stalks
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Sheaves of (commutative) rings.
 
 Results specific to sheaves of commutative rings including sheaves of continuous functions
 `TopCat.continuousFunctions` with natural operations of  `pullback` and `map` and
 sub, quotient, and localization operations on sheaves of rings with
-- `SubmonoidPresheaf` : A subpresheaf with a submonoid structure on each of the components.
-- `LocalizationPresheaf` : The localization of a presheaf of commrings at a `SubmonoidPresheaf`.
-- `TotalQuotientPresheaf` : The presheaf of total quotient rings.
+
+* `SubmonoidPresheaf` : A subpresheaf with a submonoid structure on each of the components.
+* `LocalizationPresheaf` : The localization of a presheaf of commrings at a `SubmonoidPresheaf`.
+* `TotalQuotientPresheaf` : The presheaf of total quotient rings.
 
 As more results accumulate, please consider splitting this file.
 
 ## References
+
 * https://stacks.math.columbia.edu/tag/0073
 -/
 

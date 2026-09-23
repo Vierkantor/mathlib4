@@ -11,11 +11,15 @@ public meta import Mathlib.Tactic.ToAdditive
 public meta import Mathlib.Tactic.ToDual
 
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `zify` tactic
 
 The `zify` tactic is used to shift propositions from `Nat` to `Int`.
 This is often useful since `Int` has well-behaved subtraction.
+
 ```
 example (a b c x y z : Nat) (h : ¬ x*y*z < 0) : c < a + 3*b := by
   zify

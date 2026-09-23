@@ -8,22 +8,28 @@ module
 public import Mathlib.Tactic.NormNum.Inv
 public import Mathlib.Tactic.NormNum.Pow
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `ring`-like tactics
 
 The core normalization procedure for ring-like tactics that solve equations in commutative
 (semi)rings where the exponents can also contain variables.
-Based on <http://www.cs.ru.nl/~freek/courses/tt-2014/read/10.1.1.61.3041.pdf> .
+Based on [
+http://www.cs.ru.nl/~freek/courses/tt-2014/read/10.1.1.61.3041.pdf](http://www.cs.ru.nl/~freek/courses/tt-2014/read/10.1.1.61.3041.pdf)
+.
 
 More precisely, expressions of the following form are supported:
-- constants (non-negative integers)
-- variables
-- coefficients (living in `BaseType`; for `ring` this is a rational embedded into the semiring)
-- addition of expressions
-- multiplication of expressions (`a * b`)
-- scalar multiplication of expressions (`r • a`)
-- exponentiation of expressions (the exponent must have type `ℕ`)
-- subtraction and negation of expressions (if the base is a full ring)
+
+* constants (non-negative integers)
+* variables
+* coefficients (living in `BaseType`; for `ring` this is a rational embedded into the semiring)
+* addition of expressions
+* multiplication of expressions (`a * b`)
+* scalar multiplication of expressions (`r • a`)
+* exponentiation of expressions (the exponent must have type `ℕ`)
+* subtraction and negation of expressions (if the base is a full ring)
 
 The extension to exponents means that something like `2 * 2^n * b = b * 2^(n+1)` can be proved,
 even though it is not strictly speaking an equation in the language of commutative rings.
@@ -36,21 +42,23 @@ together with a proof (at the base level) that the original value is equal to
 the normalised version.
 
 The outline of the file:
-- Define a mutual inductive family of types `ExSum`, `ExProd`, `ExBase`,
+
+* Define a mutual inductive family of types `ExSum`, `ExProd`, `ExBase`,
   which can represent expressions with `+`, `*`, `^` and some parametric `BaseType`.
   The mutual induction ensures that associativity and distributivity are applied,
   by restricting which kinds of subexpressions appear as arguments to the various operators.
-- Represent addition, multiplication and exponentiation in the `ExSum` type,
+* Represent addition, multiplication and exponentiation in the `ExSum` type,
   thus allowing us to map expressions to `ExSum` (the `eval` function drives this).
   We apply associativity and distributivity of the operators here (helped by `Ex*` types)
   and commutativity as well (by sorting the subterms; unfortunately not helped by anything).
   Any expression not of the above formats is treated as an atom (the same as a variable).
 
 There are some details we glossed over which make the plan more complicated:
-- The order on atoms is not initially obvious.
+
+* The order on atoms is not initially obvious.
   We construct a list containing them in order of initial appearance in the expression,
   then use the index into the list as a key to order on.
-- For `pow`, the exponent must be a natural number, while the base can be any semiring `α`.
+* For `pow`, the exponent must be a natural number, while the base can be any semiring `α`.
   We swap out operations for the base ring `α` with those for the exponent ring `ℕ`
   as soon as we deal with exponents. Unfortunately this has to be done with a separate inductive
   type due to universe issues outlined later in this file.
@@ -117,13 +125,14 @@ instance (e : Expr) : Inhabited <| btℕ e := ⟨⟨0, none⟩⟩
 universe u v
 
 /-!
-## The ExNat types
+# The ExNat types
 
 The `Ex{Base,Prod,Sum}Nat` types are equivalent to `Ex{Base,Prod,Sum} btℕ sℕ`. `ExProdNat` is only
 used to represent exponents in `ExProd`s. We cannot use `ExProd btℕ sℕ` in the `mul` constructor
 of `ExProd` because `BaseType` is a parameter and not an index. Making `BaseType` an index
 (i.e. moving it to the right of the colon) would require including it as an argument to each
 constructor, raising the universe level of `ExProd` from `Type` to `Type 1`; that is:
+
 ```
 inductive ExProd : ∀ {u : Lean.Level} {α : Q(Type u)} (BaseType : Q($α) → Type)
     (sα : Q(CommSemiring $α)) (e : Q($α)), Type
@@ -133,6 +142,7 @@ inductive ExProd : ∀ {u : Lean.Level} {α : Q(Type u)} (BaseType : Q($α) → 
     ExBase BaseType sα x → ExProd btℕ sℕ e → ExProd BaseType sα b →
       ExProd BaseType sα q($x ^ $e * $b)
 ```
+
 would fail to compile because `ExProd` lives in `Type 1`.
 
 Lean does not support monadic computation in `Type 1` in its core monad types,
@@ -501,7 +511,9 @@ inductive Overlap (e : Q($α)) : Type where
 
 variable {a a' a₁ a₂ a₃ b b' b₁ b₂ b₃ c c₁ c₂ : R}
 
-/-! ### Addition -/
+/-!
+# Addition
+-/
 
 theorem add_overlap_pf (x : R) (e) (pq_pf : a + b = c) :
     x ^ e * a + x ^ e * b = x ^ e * c := by subst_vars; simp [mul_add]
@@ -589,7 +601,9 @@ partial def evalAdd {a b : Q($α)} (va : ExSum bt sα a) (vb : ExSum bt sα b) :
         let ⟨_c, vc, pc⟩ ← evalAdd va vb₂
         return ⟨_, .add vb₁ vc, q(add_pf_add_gt $b₁ $pc)⟩
 
-/-! ### Multiplication -/
+/-!
+# Multiplication
+-/
 
 theorem one_mul (a : R) : (nat_lit 1).rawCast * a = a := by simp [Nat.rawCast]
 
@@ -692,7 +706,9 @@ def evalMul {a b : Q($α)} (va : ExSum bt sα a) (vb : ExSum bt sα b) :
     let ⟨_, vd, pd⟩ ← evalAdd rc rcℕ vc₁ vc₂
     return ⟨_, vd, q(add_mul $pc₁ $pc₂ $pd)⟩
 
-/-! ### Negation -/
+/-!
+# Negation
+-/
 
 theorem neg_one_mul {R} [CommRing R] {a b : R} (_ : (-1 : R) * a = b) :
     -a = b := by subst_vars; simp
@@ -740,7 +756,9 @@ def evalNeg {a : Q($α)} (rα : Q(CommRing $α)) (va : ExSum bt sα a) :
     let ⟨_, vb₂, pb₂⟩ ← evalNeg rα va₂
     return ⟨_, .add vb₁ vb₂, q(neg_add $pb₁ $pb₂)⟩
 
-/-! ### Subtraction -/
+/-!
+# Subtraction
+-/
 
 theorem sub_pf {R} [CommRing R] {a b c d : R}
     (_ : -b = c) (_ : a + c = d) : a - b = d := by subst_vars; simp [sub_eq_add_neg]
@@ -757,7 +775,9 @@ def evalSub {a b : Q($α)}
   assumeInstancesCommute
   return ⟨d, vd, q(sub_pf $pc $pd)⟩
 
-/-! ### Exponentiation -/
+/-!
+# Exponentiation
+-/
 
 theorem pow_prod_atom (a : R) (b) {e : R} (h : (a + 0) ^ b * (nat_lit 1).rawCast = e) :
     a ^ b = e := by

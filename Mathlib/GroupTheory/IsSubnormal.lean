@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Group.Subgroup.Pointwise
 public import Mathlib.GroupTheory.QuotientGroup.Defs
 public import Mathlib.GroupTheory.Subgroup.Simple
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Subnormal subgroups
 
@@ -21,6 +24,7 @@ These should cover most of the results needed in this case.
 ## Main Definition
 
 `IsSubnormal H`: A subgroup `H` of a group `G` satisfies `IsSubnormal` if
+
 * either `H = ⊤`;
 * or there is a subgroup `K` of `G` containing `H` and such that `H` is normal in `K` and
   `K` satisfies `IsSubnormal`.

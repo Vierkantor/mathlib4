@@ -12,8 +12,10 @@ public import Mathlib.CategoryTheory.Functor.OfSequence
 public import Mathlib.CategoryTheory.EpiMono
 public import Mathlib.Order.RelClasses
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Injectivity of light profinite spaces
 
 This file establishes that non-empty light profinite sets are injective in the
@@ -32,9 +34,10 @@ category `LightProfinite`. The proof uses an inductive extension argument along 
 
 ## References
 
-* <https://kskedlaya.org/condensed/sec_profinite_set.html#sec_profinite_set-5>
-* <https://www.youtube.com/watch?v=_4G582SIo28&t=3187s>
-
+* [
+  https://kskedlaya.org/condensed/sec\_profinite\_set.html#sec\_profinite\_set-5](https://kskedlaya.org/condensed/sec_profinite_set.html#sec_profinite_set-5)
+* [
+  https://www.youtube.com/watch?v=\_4G582SIo28&t=3187s](https://www.youtube.com/watch?v=_4G582SIo28&t=3187s)
 -/
 
 public section

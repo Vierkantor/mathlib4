@@ -9,6 +9,9 @@ public import Mathlib.SetTheory.Cardinal.Arithmetic
 public import Mathlib.Order.Filter.Finite
 public import Mathlib.Order.Filter.Map
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cardinality of a set with a countable cover
 

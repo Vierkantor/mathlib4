@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Order.Ring.Cast
 public import Mathlib.Data.Int.Cast.Lemmas
 public import Mathlib.Data.Num.Lemmas
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Properties of the `ZNum` representation of integers
 
@@ -361,6 +364,8 @@ theorem cast_inj [Ring α] [PartialOrder α] [IsStrictOrderedRing α] {m n : ZNu
     (m : α) = n ↔ m = n := by
   rw [← cast_to_int m, ← cast_to_int n, Int.cast_inj (α := α), to_int_inj]
 
+
+set_option doc.verso false
 /-- This tactic tries to turn an (in)equality about `ZNum`s to one about `Int`s by rewriting.
 ```lean
 example (n : ZNum) (m : ZNum) : n ≤ n + m * m := by
@@ -372,6 +377,10 @@ scoped macro (name := transfer_rw) "transfer_rw" : tactic => `(tactic|
     (repeat first | rw [← to_int_inj] | rw [← lt_to_int] | rw [← le_to_int]
      repeat first | rw [cast_add] | rw [mul_to_int] | rw [cast_one] | rw [cast_zero]))
 
+
+set_option doc.verso true
+
+set_option doc.verso false
 /--
 This tactic tries to prove (in)equalities about `ZNum`s by transferring them to the `Int` world and
 then trying to call `simp`.
@@ -384,6 +393,8 @@ example (n : ZNum) (m : ZNum) : n ≤ n + m * m := by
 scoped macro (name := transfer) "transfer" : tactic => `(tactic|
     (intros; transfer_rw; try simp [add_comm, add_left_comm, mul_comm, mul_left_comm]))
 
+
+set_option doc.verso true
 instance linearOrder : LinearOrder ZNum where
   lt_iff_le_not_ge := by
     intro a b

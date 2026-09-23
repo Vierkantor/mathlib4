@@ -12,6 +12,9 @@ public import Mathlib.Algebra.Homology.SingleHomology
 public import Mathlib.CategoryTheory.Category.Factorisation
 public import Mathlib.CategoryTheory.Functor.OfSequence
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Factorization lemma
 
@@ -45,7 +48,6 @@ a projective system `ℕᵒᵖ ⥤ CochainComplex C ℤ`
 Degreewise, this projective system is essentially constant, which allows
 to take its limit, which shall be the intermediate object in the
 lemma `cm5a_cof`.
-
 -/
 
 

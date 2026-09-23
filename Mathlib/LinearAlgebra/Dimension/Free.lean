@@ -10,15 +10,18 @@ public import Mathlib.LinearAlgebra.FreeModule.Finite.Basic
 public import Mathlib.RingTheory.AlgebraTower
 public import Mathlib.SetTheory.Cardinal.Finsupp
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Rank of free modules
 
 ## Main result
-- `Module.nonempty_linearEquiv_iff_lift_rank_eq`:
-  Two free modules are isomorphic iff they have the same dimension.
-- `Module.finBasis`:
-  An arbitrary basis of a finite free module indexed by `Fin n` given `finrank R M = n`.
 
+* `Module.nonempty_linearEquiv_iff_lift_rank_eq`:
+  Two free modules are isomorphic iff they have the same dimension.
+* `Module.finBasis`:
+  An arbitrary basis of a finite free module indexed by `Fin n` given `finrank R M = n`.
 -/
 
 @[expose] public section
@@ -37,10 +40,12 @@ variable [Semiring F] [Semiring K] [AddCommMonoid A]
 variable [Module F K] [Module K A] [Module F A] [IsScalarTower F K A]
 variable [StrongRankCondition F] [StrongRankCondition K] [Module.Free F K] [Module.Free K A]
 
-/-- Tower law: if `A` is a `K`-module and `K` is an extension of `F` then
-$\operatorname{rank}_F(A) = \operatorname{rank}_F(K) * \operatorname{rank}_K(A)$.
+/--
+Tower law: if `A` is a `K`-module and `K` is an extension of `F` then
+$`\operatorname{rank}_F(A) = \operatorname{rank}_F(K) * \operatorname{rank}_K(A)`.
 
-The universe polymorphic version of `rank_mul_rank` below. -/
+The universe polymorphic version of `rank_mul_rank` below.
+-/
 theorem lift_rank_mul_lift_rank :
     Cardinal.lift.{w} (Module.rank F K) * Cardinal.lift.{v} (Module.rank K A) =
       Cardinal.lift.{v} (Module.rank F A) := by
@@ -50,21 +55,25 @@ theorem lift_rank_mul_lift_rank :
     ← lift_umax.{w, v}, ← (b.smulTower c).mk_eq_rank, mk_prod, lift_mul, lift_lift, lift_lift,
     lift_lift, lift_lift, lift_umax.{v, w}]
 
-/-- Tower law: if `A` is a `K`-module and `K` is an extension of `F` then
-$\operatorname{rank}_F(A) = \operatorname{rank}_F(K) * \operatorname{rank}_K(A)$.
+/--
+Tower law: if `A` is a `K`-module and `K` is an extension of `F` then
+$`\operatorname{rank}_F(A) = \operatorname{rank}_F(K) * \operatorname{rank}_K(A)`.
 
-This is a simpler version of `lift_rank_mul_lift_rank` with `K` and `A` in the same universe. -/
+This is a simpler version of `lift_rank_mul_lift_rank` with `K` and `A` in the same universe.
+-/
 @[stacks 09G9]
 theorem rank_mul_rank (A : Type v) [AddCommMonoid A]
     [Module K A] [Module F A] [IsScalarTower F K A] [Module.Free K A] :
     Module.rank F K * Module.rank K A = Module.rank F A := by
   convert! lift_rank_mul_lift_rank F K A <;> rw [lift_id]
 
-/-- Tower law: if `A` is a `K`-module and `K` is an extension of `F` then
-$\operatorname{rank}_F(A) = \operatorname{rank}_F(K) * \operatorname{rank}_K(A)$.
+/--
+Tower law: if `A` is a `K`-module and `K` is an extension of `F` then
+$`\operatorname{rank}_F(A) = \operatorname{rank}_F(K) * \operatorname{rank}_K(A)`.
 
 See `Module.finrank_mul_finrank'` for a variant over a tower of domains that assumes the rings are
-module-finite rather than the modules being free. -/
+module-finite rather than the modules being free.
+-/
 theorem Module.finrank_mul_finrank : finrank F K * finrank K A = finrank F A := by
   simp_rw [finrank]
   rw [← toNat_lift.{w} (Module.rank F K), ← toNat_lift.{v} (Module.rank K A), ← toNat_mul,

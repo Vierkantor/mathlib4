@@ -8,6 +8,9 @@ module
 public import Mathlib.Computability.Partrec
 public import Mathlib.Data.Option.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Gödel Numbering for Partial Recursive Functions.
 
@@ -30,7 +33,7 @@ of some code.
 
 * `Nat.Partrec.Code.primrec_recOn`: Recursion on `Nat.Partrec.Code` is primitive recursive.
 * `Nat.Partrec.Code.computable_recOn`: Recursion on `Nat.Partrec.Code` is computable.
-* `Nat.Partrec.Code.smn`: The $S_n^m$ theorem.
+* `Nat.Partrec.Code.smn`: The $`S_n^m` theorem.
 * `Nat.Partrec.Code.exists_code`: Partial recursiveness is equivalent to being the eval of a code.
 * `Nat.Partrec.Code.primrec_evaln`: `evaln` is primitive recursive.
 * `Nat.Partrec.Code.fixed_point`: Roger's fixed point theorem.
@@ -38,8 +41,8 @@ of some code.
 
 ## References
 
-* [Mario Carneiro, *Formalizing computability theory via partial recursive functions*][carneiro2019]
-
+* ‍\[Mario Carneiro, _Formalizing computability theory via partial recursive
+  functions_\]\[carneiro2019\]
 -/
 
 @[expose] public section
@@ -519,7 +522,7 @@ theorem curry_inj {c₁ c₂ n₁ n₂} (h : curry c₁ n₁ = curry c₂ n₂) 
     exact const_inj h₃⟩
 
 /--
-The $S_n^m$ theorem: There is a computable function, namely `Nat.Partrec.Code.curry`, that takes a
+The $`S_n^m` theorem: There is a computable function, namely `Nat.Partrec.Code.curry`, that takes a
 program and a ℕ `n`, and returns a new program using `n` as the first argument.
 -/
 theorem smn :

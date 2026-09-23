@@ -8,11 +8,14 @@ module
 public import Mathlib.Topology.Covering.Basic
 public import Mathlib.Topology.Sheaves.Stalks
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Etale space of a presheaf
 
 Given a presheaf `F` on a topological space `X`,
-its *etale space* is the space of pairs `(base, germ)`,
+its _etale space_ is the space of pairs `(base, germ)`,
 where `base` is a point of `X`, and `germ` is an element of the stalk of `F` at `base`.
 
 This space is equipped with the following topology.
@@ -21,11 +24,10 @@ the set of germs of `s` at points `x ∈ U` is an open set in the etale space.
 
 ## Main results
 
-- `TopCat.Presheaf.EtaleSpace.eventually_nhds`. If `s` is a section of `F` over `U`
+* `TopCat.Presheaf.EtaleSpace.eventually_nhds`. If `s` is a section of `F` over `U`
   with germ at `g.base` equal to `g.germ`,
   then a neighborhood of `g` consists of germs of `s` at points `x ∈ U`.
-
-- `TopCat.Presheaf.EtaleSpace.isCoveringMap_base`.
+* `TopCat.Presheaf.EtaleSpace.isCoveringMap_base`.
   Let `F` be a presheaf with the following property.
 
   For each `x`, there exists an open neighborhood `U ∋ x` such that for each `y ∈ U`,

@@ -9,6 +9,9 @@ public import Mathlib.AlgebraicGeometry.Morphisms.AffineAnd
 public import Mathlib.AlgebraicGeometry.Morphisms.LocalIso
 public import Mathlib.CategoryTheory.MorphismProperty.Descent
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Descent of morphism properties
 
@@ -17,17 +20,16 @@ that `P` descends along `P'` from a codescent property of ring homomorphisms.
 
 ## Main results
 
-- `HasRingHomProperty.descendsAlong`: if `P` is a local property induced by `Q`, `P'` implies
+* `HasRingHomProperty.descendsAlong`: if `P` is a local property induced by `Q`, `P'` implies
   `Q'` on global sections of affines and `Q` codescends along `Q'`, then `P` descends along `P'`.
-- `HasAffineProperty.descendsAlong_of_affineAnd`: if `P` is given by `affineAnd Q`, `P'` implies
+* `HasAffineProperty.descendsAlong_of_affineAnd`: if `P` is given by `affineAnd Q`, `P'` implies
   `Q'` on global sections of affines and `Q` codescends along `Q'`, then `P` descends along `P'`
   (see TODOs).
 
 ## TODO
 
-- Show that affine morphisms descend along faithfully-flat morphisms. This will make
+* Show that affine morphisms descend along faithfully-flat morphisms. This will make
   `HasAffineProperty.descendsAlong_of_affineAnd` useful.
-
 -/
 
 public section

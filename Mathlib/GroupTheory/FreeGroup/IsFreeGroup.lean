@@ -7,6 +7,9 @@ module
 
 public import Mathlib.GroupTheory.FreeGroup.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Free groups structures on arbitrary types
 
@@ -22,7 +25,6 @@ For the explicit construction of free groups, see `GroupTheory/FreeGroup`.
 
 * `FreeGroupBasis ι G` : a function from `ι` to `G` such that `G` is free over its image.
   Equivalently, an isomorphism between `G` and `FreeGroup ι`.
-
 * `IsFreeGroup G` : a typeclass to indicate that `G` is free over some generators
 * `Generators G` : given a group satisfying `IsFreeGroup G`, some indexing type over
   which `G` is free.
@@ -36,7 +38,6 @@ For the explicit construction of free groups, see `GroupTheory/FreeGroup`.
 * `IsFreeGroup.unique_lift`: the universal property of a free group.
 * `FreeGroupBasis.ofUniqueLift`: a group satisfying the universal property of a free group admits
   a free group basis.
-
 -/
 
 @[expose] public section

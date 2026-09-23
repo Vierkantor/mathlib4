@@ -8,6 +8,9 @@ module
 public import Mathlib.MeasureTheory.Function.Egorov
 public import Mathlib.MeasureTheory.Function.LpSpace.Complete
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Convergence in measure
 

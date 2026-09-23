@@ -10,6 +10,9 @@ public import Mathlib.NumberTheory.ArithmeticFunction.Carmichael
 public import Mathlib.NumberTheory.FermatPsp
 public import Mathlib.Tactic.Simproc.Factors
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Carmichael numbers
 
@@ -31,8 +34,7 @@ This file defines Carmichael numbers and proves Korselt's criterion about them.
 
 ## References
 
-https://en.wikipedia.org/wiki/Carmichael_number
-
+https://en.wikipedia.org/wiki/Carmichael\_number
 -/
 
 public section

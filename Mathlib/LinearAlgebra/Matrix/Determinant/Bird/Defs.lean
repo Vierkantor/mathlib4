@@ -12,8 +12,10 @@ public import Mathlib.LinearAlgebra.Matrix.Defs
 public import Mathlib.Logic.Function.Iterate
 public import Mathlib.Algebra.BigOperators.Group.Finset.Defs
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # A division-free determinant algorithm
 
 This file defines `birdDet`and `Spec.birdDet`, implementations of an
@@ -21,20 +23,19 @@ division-free algorithm for computing determinants. The algorithm runs in O(n^4)
 for an n-by-n matrix.
 
 This determinant algorithm comes from
-[Richard S. Bird, *A simple division-free algorithm for computing determinants*][bird2011].
+‍\[Richard S. Bird, _A simple division-free algorithm for computing determinants_\]\[bird2011\].
 
 ## Main definitions
 
-- `BirdDet.birdDet`: The entrypoint for the determinant calculation.
-- `BirdDet.get`: matrix entry lookup.
-- `BirdDet.sumFrom`: The sum `f lo + ... + f (n - 1)`.
-- `BirdDet.stepEntry`: One scalar recurrence step.
-- `BirdDet.Spec.birdDet`: An implementation of Bird's algorithm using `Matrix`.
+* `BirdDet.birdDet`: The entrypoint for the determinant calculation.
+* `BirdDet.get`: matrix entry lookup.
+* `BirdDet.sumFrom`: The sum `f lo + ... + f (n - 1)`.
+* `BirdDet.stepEntry`: One scalar recurrence step.
+* `BirdDet.Spec.birdDet`: An implementation of Bird's algorithm using `Matrix`.
 
 ## Main lemmas
 
 The lemmas in this file are unfolding equations.
-
 -/
 
 public section

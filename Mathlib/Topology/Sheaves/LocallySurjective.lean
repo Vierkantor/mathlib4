@@ -11,8 +11,10 @@ public import Mathlib.CategoryTheory.Limits.Preserves.Filtered
 public import Mathlib.CategoryTheory.Sites.LocallySurjective
 public import Mathlib.CategoryTheory.Sites.EpiMono
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Locally surjective maps of presheaves.
 
 Let `X` be a topological space, `ℱ` and `𝒢` presheaves on `X`, `T : ℱ ⟶ 𝒢` a map.
@@ -20,13 +22,11 @@ Let `X` be a topological space, `ℱ` and `𝒢` presheaves on `X`, `T : ℱ ⟶
 In this file we formulate two notions for what it means for
 `T` to be locally surjective:
 
-  1. For each open set `U`, each section `t : 𝒢(U)` is in the image of `T`
-     after passing to some open cover of `U`.
-
-  2. For each `x : X`, the map of *stalks* `Tₓ : ℱₓ ⟶ 𝒢ₓ` is surjective.
+1. For each open set `U`, each section `t : 𝒢(U)` is in the image of `T`
+   after passing to some open cover of `U`.
+2. For each `x : X`, the map of _stalks_ `Tₓ : ℱₓ ⟶ 𝒢ₓ` is surjective.
 
 We prove that these are equivalent.
-
 -/
 
 @[expose] public section

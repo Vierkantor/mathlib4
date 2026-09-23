@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Group.Action.Defs
 public import Mathlib.Data.ENat.SuccOrder
 public import Mathlib.Order.Lattice.Nat
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Extended natural numbers form a complete linear order
 
@@ -16,7 +19,6 @@ This instance is not in `Data.ENat.Basic` to avoid dependency on `Finset`s.
 
 We also restate some lemmas about `WithTop` for `ENat` to have versions that use `Nat.cast` instead
 of `WithTop.some`.
-
 -/
 
 public section

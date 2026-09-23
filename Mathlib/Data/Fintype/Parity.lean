@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.Fintype.Card
 public import Mathlib.Algebra.Group.Even
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The cardinality of `Fin 2` is even.
 -/

@@ -11,7 +11,12 @@ public import Mathlib.RingTheory.IntegralClosure.IsIntegralClosure.Basic
 
 import Mathlib.RingTheory.Finiteness.Quotient
 
-/-! # Instances on residue fields -/
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Instances on residue fields
+-/
 
 public section
 

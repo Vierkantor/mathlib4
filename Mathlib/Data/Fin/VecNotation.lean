@@ -9,6 +9,9 @@ public import Mathlib.Data.Fin.Tuple.Basic
 
 import Mathlib.Data.Set.Image
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Matrix and vector notation
 
@@ -316,7 +319,9 @@ protected meta instance _root_.PiFin.toExpr [ToLevel.{u}] [ToExpr α] (n : ℕ) 
   let toTypeExpr := q(Fin $n → $eα)
   { toTypeExpr, toExpr v := PiFin.mkLiteralQ fun i => show Q($eα) from toExpr (v i) }
 
-/-! ### `bit0` and `bit1` indices
+/-!
+# `bit0` and `bit1` indices
+
 The following definitions and `simp` lemmas are used to allow
 numeral-indexed element of a vector given with matrix notation to
 be extracted by `simp` in Lean 3 (even when the numeral is larger than the
@@ -467,7 +472,7 @@ lemma const_fin1_eq (x : α) : (fun _ : Fin 1 => x) = ![x] :=
   (cons_fin_one x _).symm
 
 /-!
-### Interaction between cons and Equiv.swap
+# Interaction between cons and Equiv.swap
 -/
 
 section swap

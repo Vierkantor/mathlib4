@@ -7,6 +7,9 @@ module
 
 public import Mathlib.RingTheory.Noetherian.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Finiteness of `IsScalarTower`
 
@@ -21,7 +24,6 @@ The formulas for the dimensions are given elsewhere by `Module.finrank_mul_finra
 ## Tags
 
 tower law
-
 -/
 
 public section

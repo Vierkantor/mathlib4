@@ -16,6 +16,9 @@ public import Mathlib.Tactic.Finiteness.Attr
 public import Mathlib.Data.Int.Order.Basic
 public import Mathlib.Order.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Permutations of a list
 
@@ -37,16 +40,17 @@ TODO. In the meantime, you can try decrypting the docstrings.
 The list of partitions is built by recursion. The permutations of `[]` are `[[]]`. Then, the
 permutations of `a :: l` are obtained by taking all permutations of `l` in order and adding `a` in
 all positions. Hence, to build `[0, 1, 2, 3].permutations'`, it does
+
 * `[[]]`
 * `[[3]]`
 * `[[2, 3], [3, 2]]]`
 * `[[1, 2, 3], [2, 1, 3], [2, 3, 1], [1, 3, 2], [3, 1, 2], [3, 2, 1]]`
 * `[[0, 1, 2, 3], [1, 0, 2, 3], [1, 2, 0, 3], [1, 2, 3, 0],`
-   `[0, 2, 1, 3], [2, 0, 1, 3], [2, 1, 0, 3], [2, 1, 3, 0],`
-   `[0, 2, 3, 1], [2, 0, 3, 1], [2, 3, 0, 1], [2, 3, 1, 0],`
-   `[0, 1, 3, 2], [1, 0, 3, 2], [1, 3, 0, 2], [1, 3, 2, 0],`
-   `[0, 3, 1, 2], [3, 0, 1, 2], [3, 1, 0, 2], [3, 1, 2, 0],`
-   `[0, 3, 2, 1], [3, 0, 2, 1], [3, 2, 0, 1], [3, 2, 1, 0]]`
+  `[0, 2, 1, 3], [2, 0, 1, 3], [2, 1, 0, 3], [2, 1, 3, 0],`
+  `[0, 2, 3, 1], [2, 0, 3, 1], [2, 3, 0, 1], [2, 3, 1, 0],`
+  `[0, 1, 3, 2], [1, 0, 3, 2], [1, 3, 0, 2], [1, 3, 2, 0],`
+  `[0, 3, 1, 2], [3, 0, 1, 2], [3, 1, 0, 2], [3, 1, 2, 0],`
+  `[0, 3, 2, 1], [3, 0, 2, 1], [3, 2, 0, 1], [3, 2, 1, 0]]`
 -/
 
 public section
@@ -109,6 +113,8 @@ theorem map_permutationsAux2 (t : α) (ts : List α) (ys : List α) (f : List α
   · rfl
   simp
 
+
+set_option doc.verso false
 /-- An expository lemma to show how all of `ts`, `r`, and `f` can be eliminated from
 `permutationsAux2`.
 
@@ -124,6 +130,8 @@ theorem permutationsAux2_snd_eq (t : α) (ts : List α) (r : List β) (ys : List
       ((permutationsAux2 t [] [] ys id).2.map fun x => f (x ++ ts)) ++ r := by
   rw [← permutationsAux2_append, map_permutationsAux2, permutationsAux2_comp_append]
 
+
+set_option doc.verso true
 theorem map_map_permutationsAux2 {α'} (g : α → α') (t : α) (ts ys : List α) :
     map (map g) (permutationsAux2 t ts [] ys id).2 =
       (permutationsAux2 (g t) (map g ts) [] (map g ys) id).2 :=

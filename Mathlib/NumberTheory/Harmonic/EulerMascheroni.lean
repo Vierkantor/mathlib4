@@ -10,6 +10,9 @@ public import Mathlib.Analysis.Normed.Order.Lattice
 public import Mathlib.Analysis.SpecialFunctions.Pow.Real
 public import Mathlib.NumberTheory.Harmonic.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The Euler-Mascheroni constant `γ`
 

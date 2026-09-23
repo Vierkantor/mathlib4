@@ -9,14 +9,19 @@ public import Mathlib.RingTheory.Ideal.Maps
 public import Mathlib.RingTheory.Polynomial.Content
 public import Mathlib.RingTheory.Ideal.Quotient.Operations
 
-/-! # The Eisenstein criterion
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
-- `Polynomial.generalizedEisenstein` :
+/-!
+# The Eisenstein criterion
+
+* `Polynomial.generalizedEisenstein` :
   Let `R` be an integral domain
   and let `K` an `R`-algebra which is a field
   Let `q : R[X]` be a monic polynomial which is prime in `K[X]`.
   Let `f : R[X]` be a polynomial of strictly positive degree
   satisfying the following properties:
+
   * the image of `f` in `K[X]` is a power of `q`.
   * the leading coefficient of `f` is not zero in `K`
   * the polynomial `f` is primitive.
@@ -47,11 +52,9 @@ There are two obstructions, though :
 * Usually, one will only obtain irreducibility in `F[X]`, where `F` is the field
   of fractions of `R`. (If `R` is a UFD, this will be close to what is wanted,
   but not in general.)
-
 * The mod `P ^ 2` hypothesis will have to be rephrased to a condition
   in the second symbolic power of `P`. When `P` is a maximal ideal,
   that symbolic power coincides with `P ^ 2`, but not in general.
-
 -/
 
 public section

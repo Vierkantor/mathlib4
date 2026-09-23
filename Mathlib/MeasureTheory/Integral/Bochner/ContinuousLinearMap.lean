@@ -9,6 +9,9 @@ public import Mathlib.Analysis.Normed.Operator.CompleteCodomain
 public import Mathlib.MeasureTheory.Integral.Bochner.Set
 public import Mathlib.Topology.ContinuousMap.ContinuousMapZero
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Continuous linear maps composed with integration
 

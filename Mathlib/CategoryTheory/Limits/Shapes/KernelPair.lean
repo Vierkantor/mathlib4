@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Limits.Shapes.Equalizers
 public import Mathlib.CategoryTheory.Limits.Shapes.RegularMono
 public import Mathlib.CategoryTheory.Limits.Shapes.Pullback.IsPullback.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Kernel pairs
 
@@ -27,9 +30,8 @@ is developed here.
 
 ## TODO
 
-- Internal equivalence relations (or congruences) and the fact that every kernel pair induces one,
+* Internal equivalence relations (or congruences) and the fact that every kernel pair induces one,
   and the converse in an effective regular category (WIP by b-mehta).
-
 -/
 
 @[expose] public section

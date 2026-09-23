@@ -8,6 +8,9 @@ module
 public import Mathlib.MeasureTheory.PiSystem
 public import Mathlib.Topology.Separation.Hausdorff
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Compact systems
 

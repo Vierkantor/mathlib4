@@ -8,6 +8,9 @@ module
 public import Mathlib.MeasureTheory.OuterMeasure.Basic
 public import Mathlib.Tactic.CrossRefAttribute
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The “almost everywhere” filter of co-null sets.
 
@@ -18,10 +21,10 @@ In this file we define the filter and prove some basic theorems about it.
 
 ## Notation
 
-- `∀ᵐ x ∂μ, p x`: the predicate `p` holds for `μ`-a.e. all `x`;
-- `∃ᶠ x ∂μ, p x`: the predicate `p` holds on a set of nonzero measure;
-- `f =ᵐ[μ] g`: `f x = g x` for `μ`-a.e. all `x`;
-- `f ≤ᵐ[μ] g`: `f x ≤ g x` for `μ`-a.e. all `x`.
+* `∀ᵐ x ∂μ, p x`: the predicate `p` holds for `μ`-a.e. all `x`;
+* `∃ᶠ x ∂μ, p x`: the predicate `p` holds on a set of nonzero measure;
+* `f =ᵐ[μ] g`: `f x = g x` for `μ`-a.e. all `x`;
+* `f ≤ᵐ[μ] g`: `f x ≤ g x` for `μ`-a.e. all `x`.
 
 ## Implementation details
 

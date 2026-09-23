@@ -9,6 +9,9 @@ public import Mathlib.Analysis.Distribution.SchwartzSpace.Deriv
 public import Mathlib.Analysis.Fourier.FourierTransformDeriv
 public import Mathlib.Analysis.Fourier.Inversion
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Fourier transform on Schwartz functions
 
@@ -17,13 +20,13 @@ functions, in `fourierTransformCLM`. It is also given as a continuous linear equ
 `fourierTransformCLE`.
 
 ## Main statements
+
 * `SchwartzMap.fderivCLM_fourier_eq`: The derivative of the Fourier transform is given by the
   Fourier transform of the multiplication with `-(2 * π * Complex.I) • innerSL ℝ`.
 * `SchwartzMap.lineDerivOp_fourier_eq`: The line derivative of the Fourier transform is given by the
   Fourier transform of the multiplication with `-(2 * π * Complex.I) • (inner ℝ · m)`.
 * `SchwartzMap.integral_bilin_fourier_eq`: The Fourier transform is self-adjoint.
 * `SchwartzMap.integral_inner_fourier_fourier`: Plancherel's theorem for Schwartz functions.
-
 -/
 
 @[expose] public section

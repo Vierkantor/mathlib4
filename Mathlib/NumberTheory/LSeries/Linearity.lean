@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.BigOperators.Field
 public import Mathlib.NumberTheory.LSeries.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Linearity of the L-series of `f` as a function of `f`
 
@@ -18,7 +21,7 @@ of both L-series when adding two functions).
 public section
 
 /-!
-### Addition
+# Addition
 -/
 
 open LSeries
@@ -47,7 +50,7 @@ lemma LSeries_add {f g : ℕ → ℂ} {s : ℂ} (hf : LSeriesSummable f s) (hg :
   simpa [LSeries, term_add] using hf.tsum_add hg
 
 /-!
-### Negation
+# Negation
 -/
 
 lemma LSeries.term_neg (f : ℕ → ℂ) (s : ℂ) : term (-f) s = -term f s := by
@@ -75,7 +78,7 @@ lemma LSeries_neg (f : ℕ → ℂ) (s : ℂ) : LSeries (-f) s = -LSeries f s :=
   simp [LSeries, term_neg_apply, tsum_neg]
 
 /-!
-### Subtraction
+# Subtraction
 -/
 
 lemma LSeries.term_sub (f g : ℕ → ℂ) (s : ℂ) : term (f - g) s = term f s - term g s := by
@@ -101,7 +104,7 @@ lemma LSeries_sub {f g : ℕ → ℂ} {s : ℂ} (hf : LSeriesSummable f s) (hg :
   simpa [LSeries, term_sub] using hf.tsum_sub hg
 
 /-!
-### Scalar multiplication
+# Scalar multiplication
 -/
 
 lemma LSeries.term_smul (f : ℕ → ℂ) (c s : ℂ) : term (c • f) s = c • term f s := by
@@ -133,7 +136,7 @@ lemma LSeries_smul (f : ℕ → ℂ) (c s : ℂ) : LSeries (c • f) s = c * LSe
   simp [LSeries, term_smul_apply, tsum_mul_left]
 
 /-!
-### Sums
+# Sums
 -/
 
 section sum

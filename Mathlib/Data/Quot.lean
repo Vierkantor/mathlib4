@@ -9,6 +9,9 @@ public import Mathlib.Basic.Unique
 public import Mathlib.Logic.Relation
 public import Mathlib.Util.Notation3
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Quotient types
 
@@ -446,7 +449,9 @@ end Pi
 theorem nonempty_quotient_iff (s : Setoid α) : Nonempty (Quotient s) ↔ Nonempty α :=
   ⟨fun ⟨a⟩ ↦ Quotient.inductionOn a Nonempty.intro, fun ⟨a⟩ ↦ ⟨⟦a⟧⟩⟩
 
-/-! ### Truncation -/
+/-!
+# Truncation
+-/
 
 
 theorem true_equivalence : @Equivalence α fun _ _ ↦ True :=
@@ -565,7 +570,9 @@ protected theorem nonempty (q : Trunc α) : Nonempty α :=
 
 end Trunc
 
-/-! ### `Quotient` with implicit `Setoid` -/
+/-!
+# `Quotient` with implicit `Setoid`
+-/
 
 
 namespace Quotient

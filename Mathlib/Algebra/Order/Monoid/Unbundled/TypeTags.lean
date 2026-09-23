@@ -9,7 +9,12 @@ public import Mathlib.Algebra.Order.Monoid.Unbundled.ExistsOfLE
 public import Mathlib.Algebra.Group.TypeTags.Basic
 public import Mathlib.Order.BoundedOrder.Basic
 
-/-! # Ordered monoid structures on `Multiplicative α` and `Additive α`. -/
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Ordered monoid structures on `Multiplicative α` and `Additive α`.
+-/
 
 public section
 

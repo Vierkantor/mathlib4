@@ -7,12 +7,14 @@ module
 
 public import Mathlib.CategoryTheory.Triangulated.Pretriangulated
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Triangulated Categories
 
 This file contains the definition of triangulated categories, which are
 pretriangulated categories which satisfy the octahedron axiom.
-
 -/
 
 @[expose] public section

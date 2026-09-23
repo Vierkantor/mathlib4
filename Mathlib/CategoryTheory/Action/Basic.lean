@@ -14,6 +14,9 @@ public import Mathlib.CategoryTheory.Limits.Preserves.Basic
 public import Mathlib.CategoryTheory.SingleObj
 public import Mathlib.Tactic.ApplyFun
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `Action V G`, the category of actions of a monoid `G` inside some category `V`.
 

@@ -8,6 +8,9 @@ module
 public import Mathlib.Order.Filter.Cofinite
 public import Mathlib.Data.Finsupp.Weight
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Functions tending to the cofinite filter
 
@@ -31,7 +34,6 @@ are precisely the valid index transformations for renaming variables in multivar
 * Basic instances of `TendstoCofinite`.
 * `Finsupp.mapDomain_tendstoCofinite`: Pushing forward finitely supported functions along
   a `TendstoCofinite` function preserves the `TendstoCofinite` property.
-
 -/
 
 @[expose] public section

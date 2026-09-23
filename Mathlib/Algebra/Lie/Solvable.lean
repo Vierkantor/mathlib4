@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Lie.IdealOperations
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.RingTheory.Flat.FaithfullyFlat.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Solvable Lie algebras
 
@@ -20,15 +23,15 @@ prove that it is solvable when the Lie algebra is Noetherian.
 
 ## Main definitions
 
-  * `LieAlgebra.derivedSeriesOfIdeal`
-  * `LieAlgebra.derivedSeries`
-  * `LieAlgebra.IsSolvable`
-  * `LieAlgebra.isSolvableAdd`
-  * `LieAlgebra.radical`
-  * `LieAlgebra.radicalIsSolvable`
-  * `LieAlgebra.derivedLengthOfIdeal`
-  * `LieAlgebra.derivedLength`
-  * `LieAlgebra.derivedAbelianOfIdeal`
+* `LieAlgebra.derivedSeriesOfIdeal`
+* `LieAlgebra.derivedSeries`
+* `LieAlgebra.IsSolvable`
+* `LieAlgebra.isSolvableAdd`
+* `LieAlgebra.radical`
+* `LieAlgebra.radicalIsSolvable`
+* `LieAlgebra.derivedLengthOfIdeal`
+* `LieAlgebra.derivedLength`
+* `LieAlgebra.derivedAbelianOfIdeal`
 
 ## Tags
 

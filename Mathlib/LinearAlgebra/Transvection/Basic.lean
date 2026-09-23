@@ -11,23 +11,21 @@ public import Mathlib.LinearAlgebra.Dual.BaseChange
 public import Mathlib.LinearAlgebra.Dual.Lemmas
 public import Mathlib.LinearAlgebra.FixedSubmodule
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Transvections in a module
 
 * When `f : Module.Dual R V` and `v : V`,
   `LinearMap.transvection f v` is the linear map given by `x ↦ x + f x • v`,
-
 * `LinearMap.transvection.det` shows that the determinant of
   `LinearMap.transvection f v` is equal to `1 + f v`.
-
 * If, moreover, `f v = 0`, then `LinearEquiv.transvection` shows that it is
   a linear equivalence.
-
 * `LinearMap.transvections R V`: the set of transvections.
-
 * `LinearEquiv.dilatransvections R V`: the set of linear equivalences
   whose associated linear map is of the form `LinearMap.transvection f v`.
-
 * `LinearEquiv.transvection.det` shows that it has determinant `1`.
 
 ## Note on terminology
@@ -38,7 +36,6 @@ called “dilations” (especially if `f v ≠ -1`).
 
 The definition is almost the same as that of `Module.preReflection f v`,
 up to a sign change, which are interesting when `f v = 2`, because they give “reflections”.
-
 -/
 
 @[expose] public section

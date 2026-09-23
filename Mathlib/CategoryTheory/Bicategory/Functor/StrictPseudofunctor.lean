@@ -7,6 +7,9 @@ module
 
 public import Mathlib.CategoryTheory.Bicategory.Functor.StrictlyUnitary
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Strict pseudofunctors
 
@@ -20,7 +23,6 @@ underlying categories, see `StrictPseudofunctor.toFunctor`.
 
 Once the deprecated `Mathlib/CategoryTheory/Bicategory/Functor/Strict.lean` is removed we should
 rename this file to `Mathlib/CategoryTheory/Bicategory/Functor/Strict.lean`.
-
 -/
 
 @[expose] public section

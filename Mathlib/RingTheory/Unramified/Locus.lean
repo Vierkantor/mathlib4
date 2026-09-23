@@ -11,16 +11,20 @@ public import Mathlib.RingTheory.Support
 
 import Mathlib.RingTheory.Localization.InvSubmonoid
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Unramified locus of an algebra
 
 ## Main results
-- `Algebra.unramifiedLocus` : The set of primes that is unramified over the base.
-- `Algebra.basicOpen_subset_unramifiedLocus_iff` :
+
+* `Algebra.unramifiedLocus` : The set of primes that is unramified over the base.
+* `Algebra.basicOpen_subset_unramifiedLocus_iff` :
   `D(f)` is contained in the unramified locus if and only if `A_f` is unramified over `R`.
-- `Algebra.unramifiedLocus_eq_univ_iff` :
+* `Algebra.unramifiedLocus_eq_univ_iff` :
   The unramified locus is the whole spectrum if and only if `A` is unramified over `R`.
-- `Algebra.isOpen_unramifiedLocus` :
+* `Algebra.isOpen_unramifiedLocus` :
   If `A` is (essentially) of finite type over `R`, then the unramified locus is open.
 -/
 

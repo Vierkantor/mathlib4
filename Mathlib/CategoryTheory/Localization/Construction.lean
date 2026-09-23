@@ -9,8 +9,10 @@ public import Mathlib.CategoryTheory.MorphismProperty.Composition
 public import Mathlib.CategoryTheory.MorphismProperty.IsInvertedBy
 public import Mathlib.CategoryTheory.Category.Quiv
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Construction of the localized category
 
 This file constructs the localized category, obtained by formally inverting
@@ -33,8 +35,7 @@ uniqueness is expressed by `uniq`.
 
 ## References
 
-* [P. Gabriel, M. Zisman, *Calculus of fractions and homotopy theory*][gabriel-zisman-1967]
-
+* ‍\[P. Gabriel, M. Zisman, _Calculus of fractions and homotopy theory_\]\[gabriel-zisman-1967\]
 -/
 
 set_option backward.defeqAttrib.useBackward true

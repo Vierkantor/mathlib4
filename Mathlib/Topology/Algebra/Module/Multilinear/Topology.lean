@@ -13,6 +13,9 @@ public import Mathlib.Topology.Algebra.SeparationQuotient.Section
 public import Mathlib.Topology.Hom.ContinuousEvalConst
 public import Mathlib.Topology.Algebra.InfiniteSum.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Topology on continuous multilinear maps
 

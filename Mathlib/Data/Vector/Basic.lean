@@ -13,6 +13,9 @@ public import Mathlib.Algebra.BigOperators.Group.List.Basic
 public import Batteries.Data.Fin.Lemmas
 public import Mathlib.Data.Fin.SuccPred
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Additional theorems and definitions about the `Vector` type
 

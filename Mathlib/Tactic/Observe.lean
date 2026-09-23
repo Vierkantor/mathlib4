@@ -10,6 +10,9 @@ public meta import Lean.Meta.Tactic.TryThis
 public meta import Lean.Elab.Tactic.ElabTerm
 public meta import Lean.Meta.Tactic.LibrarySearch
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The `observe` tactic.
 

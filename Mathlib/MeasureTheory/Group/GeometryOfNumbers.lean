@@ -9,6 +9,9 @@ public import Mathlib.Analysis.Convex.Body
 public import Mathlib.Analysis.Convex.Measure
 public import Mathlib.MeasureTheory.Group.FundamentalDomain
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Geometry of numbers
 
@@ -27,12 +30,13 @@ Hermann Minkowski.
 
 * Calculate the volume of the fundamental domain of a finite index subgroup
 * Voronoi diagrams
-* See [Pete L. Clark, *Abstract Geometry of Numbers: Linear Forms* (arXiv)](https://arxiv.org/abs/1405.2119)
+* See [Pete L. Clark, _Abstract Geometry of Numbers: Linear Forms_
+  (arXiv)](https://arxiv.org/abs/1405.2119)
   for some more ideas.
 
 ## References
 
-* [Pete L. Clark, *Geometry of Numbers with Applications to Number Theory*][clark_gon] p.28
+* ‍\[Pete L. Clark, _Geometry of Numbers with Applications to Number Theory_\]\[clark\_gon\] p.28
 -/
 
 public section

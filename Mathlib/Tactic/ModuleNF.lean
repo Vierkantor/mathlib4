@@ -8,7 +8,11 @@ module
 public import Mathlib.Tactic.Algebra.Basic
 public import Mathlib.Tactic.Module
 
-/-! # `module_nf` - a normalization tactic for module expressions.
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# `module_nf` - a normalization tactic for module expressions.
 
 `module_nf` rewrites every linear combination `a • x + ... + b • y` appearing at the targeted
 locations into a normal form, collecting the scalars of common terms and normalizing them with
@@ -22,6 +26,7 @@ scalar ring encountered, and subtraction requires a ring (see `match_scalars` fo
 on scalar types).
 
 Examples:
+
 ```
 example [AddCommMonoid M] [CommSemiring R] [Module R M] (a b : R) (x : M) :
     a • x + b • x = (a + b) • x := by
@@ -170,6 +175,8 @@ def moduleNFCore (s : IO.Ref AtomM.State) (base : Σ u : Level, Q(Type u)) (e : 
   AtomM.recurse s { red := .instances } (wellBehavedDischarge := true) (evalExpr base postCtx)
     (cleanup cleanCtx) e
 
+
+set_option doc.verso false
 /-- `module_nf` normalizes the goal, by rewriting every linear combination `a • x + ... + b • y`
 into a normal form, collecting the scalars of common terms and normalizing them with `ring_nf`. If
 the goal is an equality and the two sides have the same normal form, `module_nf` closes the goal.
@@ -203,6 +210,8 @@ example [AddCommGroup M] (x : M) (P : M → Prop) (h : P ((2 : ℤ) • x)) :
 -/
 syntax (name := moduleNF) "module_nf" (" with " term)? (location)? : tactic
 
+
+set_option doc.verso true
 elab_rules : tactic
   | `(tactic| module_nf $[with $R:term]? $[$loc:location]?) => withMainContext do
     let loc := expandOptLocation (mkOptionalNode loc)

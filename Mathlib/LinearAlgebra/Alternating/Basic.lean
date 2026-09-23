@@ -10,6 +10,9 @@ public import Mathlib.LinearAlgebra.LinearIndependent.Defs
 public import Mathlib.LinearAlgebra.Multilinear.Basis
 
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Alternating Maps
 
@@ -17,6 +20,7 @@ We construct the bundled function `AlternatingMap`, which extends `MultilinearMa
 arguments of the same type.
 
 ## Main definitions
+
 * `AlternatingMap R M N ι` is the space of `R`-linear alternating maps from `ι → M` to `N`.
 * `f.map_eq_zero_of_eq` expresses that `f` is zero when two inputs are equal.
 * `f.map_swap` expresses that `f` is negated when two inputs are swapped.
@@ -29,6 +33,7 @@ arguments of the same type.
   by `Fin n.succ`.
 
 ## Implementation notes
+
 `AlternatingMap` is defined in terms of `map_eq_zero_of_eq`, as this is easier to work with than
 using `map_swap` as a definition, and does not require `Neg N`.
 
@@ -148,7 +153,7 @@ theorem coe_multilinearMap_mk (f : (ι → M) → N) (h₁ h₂ h₃) :
 end Coercions
 
 /-!
-### Simp-normal forms of the structure fields
+# Simp-normal forms of the structure fields
 
 These are expressed in terms of `⇑f` instead of `f.toFun`.
 -/
@@ -196,7 +201,7 @@ theorem map_eq_zero_of_not_injective (v : ι → M) (hv : ¬Function.Injective v
   exact f.map_eq_zero_of_eq v heq hne
 
 /-!
-### Algebraic structure inherited from `MultilinearMap`
+# Algebraic structure inherited from `MultilinearMap`
 
 `AlternatingMap` carries the same `AddCommMonoid`, `AddCommGroup`, and `Module` structure
 as `MultilinearMap`
@@ -410,7 +415,7 @@ def codRestrict (f : M [⋀^ι]→ₗ[R] N) (p : Submodule R N) (h : ∀ v, f v 
 end AlternatingMap
 
 /-!
-### Composition with linear maps
+# Composition with linear maps
 -/
 
 
@@ -616,7 +621,7 @@ variable (v : ι → M) (v' : ι → M')
 open Function
 
 /-!
-### Other lemmas from `MultilinearMap`
+# Other lemmas from `MultilinearMap`
 -/
 
 
@@ -639,7 +644,7 @@ theorem map_smul_univ {R : Type*} [CommSemiring R] {M : Type*} [AddCommMonoid M]
 end
 
 /-!
-### Theorems specific to alternating maps
+# Theorems specific to alternating maps
 
 Various properties of reordered and repeated inputs which follow from
 `AlternatingMap.map_eq_zero_of_eq`.

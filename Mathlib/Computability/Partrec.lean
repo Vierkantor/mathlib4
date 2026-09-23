@@ -9,6 +9,9 @@ public import Mathlib.Computability.Primrec.List
 public import Mathlib.Data.Nat.PSub
 public import Mathlib.Data.PFun
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The partial recursive functions
 
@@ -20,13 +23,14 @@ least natural number `n` for which `f n = 0`, or diverges if such `n` doesn't ex
 
 ## Main definitions
 
-- `Nat.Partrec f`: `f` is partial recursive, for functions `f : ℕ →. ℕ`
-- `Partrec f`: `f` is partial recursive, for partial functions between `Primcodable` types
-- `Computable f`: `f` is partial recursive, for total functions between `Primcodable` types
+* `Nat.Partrec f`: `f` is partial recursive, for functions `f : ℕ →. ℕ`
+* `Partrec f`: `f` is partial recursive, for partial functions between `Primcodable` types
+* `Computable f`: `f` is partial recursive, for total functions between `Primcodable` types
 
 ## References
 
-* [Mario Carneiro, *Formalizing computability theory via partial recursive functions*][carneiro2019]
+* ‍\[Mario Carneiro, _Formalizing computability theory via partial recursive
+  functions_\]\[carneiro2019\]
 -/
 
 public section

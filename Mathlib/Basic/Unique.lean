@@ -9,6 +9,9 @@ public import Mathlib.Basic.IsEmpty.Defs
 public import Mathlib.Logic.Function.Basic
 public import Mathlib.Tactic.Inhabit
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Types with a unique term
 
@@ -24,13 +27,10 @@ In other words, a type that is `Inhabited` and a `Subsingleton`.
 
 * `Unique.mk'`: an inhabited subsingleton type is `Unique`. This cannot be an instance because it
   would lead to loops in typeclass inference.
-
 * `Function.Surjective.unique`: if the domain of a surjective function is `Unique`, then its
   codomain is `Unique` as well.
-
 * `Function.Injective.subsingleton`: if the codomain of an injective function is `Subsingleton`,
   then its domain is `Subsingleton` as well.
-
 * `Function.Injective.unique`: if the codomain of an injective function is `Subsingleton` and its
   domain is `Inhabited`, then its domain is `Unique`.
 
@@ -69,12 +69,14 @@ theorem unique_subtype_iff_existsUnique {α} (p : α → Prop) :
       congr
       exact he b hb⟩⟩⟩
 
-/-- Given an explicit `a : α` with `Subsingleton α`, we can construct
+/--
+Given an explicit `a : α` with `Subsingleton α`, we can construct
 a `Unique α` instance. This is a def because the typeclass search cannot
 arbitrarily invent the `a : α` term. Nevertheless, these instances are all
 equivalent by `Unique.Subsingleton.unique`.
 
-See note [reducible non-instances]. -/
+See note \[reducible non-instances\].
+-/
 abbrev uniqueOfSubsingleton {α : Sort*} [Subsingleton α] (a : α) : Unique α where
   default := a
   uniq _ := Subsingleton.elim _ _

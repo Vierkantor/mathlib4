@@ -9,11 +9,13 @@ public import Mathlib.CategoryTheory.Limits.Shapes.Products
 public import Mathlib.CategoryTheory.Limits.Shapes.Equalizers
 public import Mathlib.CategoryTheory.Limits.ConeCategory
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Multi-(co)equalizers
 
-A *multiequalizer* is an equalizer of two morphisms between two products.
+A _multiequalizer_ is an equalizer of two morphisms between two products.
 Since both products and equalizers are limits, such an object is again a limit.
 This file provides the diagram whose limit is indeed such an object.
 In fact, it is well-known that any limit can be obtained as a multiequalizer.
@@ -25,7 +27,6 @@ Prove that a multiequalizer can be identified with
 an equalizer between products (and analogously for multicoequalizers).
 
 Prove that the limit of any diagram is a multiequalizer (and similarly for colimits).
-
 -/
 
 @[expose] public section

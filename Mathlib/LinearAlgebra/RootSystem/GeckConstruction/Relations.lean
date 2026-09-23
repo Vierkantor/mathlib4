@@ -9,6 +9,9 @@ public import Mathlib.LinearAlgebra.RootSystem.GeckConstruction.Basic
 public import Mathlib.LinearAlgebra.RootSystem.GeckConstruction.Lemmas
 public import Mathlib.Algebra.Lie.Sl2
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Relations in Geck's construction of a Lie algebra associated to a root system
 
@@ -16,13 +19,13 @@ This file contains proofs that `RootPairing.GeckConstruction.lieAlgebra` contain
 satisfying relations associated to the Cartan matrix of the input root system.
 
 ## Main definitions:
+
 * `RootPairing.GeckConstruction.isSl2Triple`: a distinguished family of `sl₂` triples contained in
   the Geck construction.
 * `RootPairing.GeckConstruction.lie_h_e`: an interaction relation between different `sl₂` triples.
 * `RootPairing.GeckConstruction.lie_h_f`: an interaction relation between different `sl₂` triples.
 * `RootPairing.GeckConstruction.lie_e_f_ne`: an interaction relation between different `sl₂`
   triples.
-
 -/
 
 public section

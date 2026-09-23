@@ -10,6 +10,9 @@ import Mathlib.Init
 public import Lean.Message
 public import Lean.Meta.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Tools for extracting `Expr`s from `MessageData` nodes
 

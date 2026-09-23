@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.Set.Piecewise
 public import Mathlib.Order.Filter.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Definition of `Filter.atTop` and `Filter.atBot` filters
 

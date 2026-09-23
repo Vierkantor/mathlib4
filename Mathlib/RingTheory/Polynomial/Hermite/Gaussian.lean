@@ -11,6 +11,9 @@ public import Mathlib.Analysis.Calculus.Deriv.Polynomial
 public import Mathlib.Analysis.SpecialFunctions.Exp
 public import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Hermite polynomials and Gaussians
 
@@ -26,7 +29,6 @@ polynomial factor occurring in the `n`th derivative of a Gaussian.
 ## References
 
 * [Hermite Polynomials](https://en.wikipedia.org/wiki/Hermite_polynomials)
-
 -/
 
 public section

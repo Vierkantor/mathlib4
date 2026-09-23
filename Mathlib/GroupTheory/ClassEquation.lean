@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Group.Subgroup.Finite
 public import Mathlib.Data.Set.Card
 public import Mathlib.GroupTheory.Subgroup.Center
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Class Equation
 
@@ -18,10 +21,9 @@ This file establishes the class equation for finite groups.
 
 ## Main statements
 
-* `Group.card_center_add_sum_card_noncenter_eq_card`: The **class equation** for finite groups.
+* `Group.card_center_add_sum_card_noncenter_eq_card`: The *class equation* for finite groups.
   The cardinality of a group is equal to the size of its center plus the sum of the size of all its
   nontrivial conjugacy classes. Also `Group.nat_card_center_add_sum_card_noncenter_eq_card`.
-
 -/
 
 public section

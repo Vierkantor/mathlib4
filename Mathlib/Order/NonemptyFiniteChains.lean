@@ -9,6 +9,9 @@ public import Mathlib.Order.Category.PartOrd
 public import Mathlib.Data.Finset.Empty
 public import Mathlib.Data.Finset.Image
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Nonempty finite chains in a partially ordered type
 
@@ -16,7 +19,6 @@ Given a partially ordered type `X`, we introduce the type
 `NonemptyFiniteChains` of nonempty finite chains in `X`, i.e.
 nonempty finite subsets `A` of `X` such that all the elements
 in `A` are comparable.
-
 -/
 
 @[expose] public section

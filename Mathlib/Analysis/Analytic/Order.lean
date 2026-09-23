@@ -11,6 +11,9 @@ public import Mathlib.Analysis.Calculus.Deriv.Pow
 public import Mathlib.Analysis.Calculus.InverseFunctionTheorem.Analytic
 public import Mathlib.Analysis.Calculus.IteratedDeriv.Lemmas
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Vanishing Order of Analytic Functions
 
@@ -30,7 +33,7 @@ open scoped Topology
 variable {𝕜 E : Type*} [NontriviallyNormedField 𝕜] [NormedAddCommGroup E] [NormedSpace 𝕜 E]
 
 /-!
-## Vanishing Order at a Point: Definition and Characterization
+# Vanishing Order at a Point: Definition and Characterization
 -/
 
 section NormedSpace
@@ -109,8 +112,9 @@ lemma AnalyticAt.analyticOrderNatAt_eq_iff (hf : AnalyticAt 𝕜 f z₀) (hf' : 
       ∃ (g : 𝕜 → E), AnalyticAt 𝕜 g z₀ ∧ g z₀ ≠ 0 ∧ ∀ᶠ z in 𝓝 z₀, f z = (z - z₀) ^ n • g z := by
   simp [← Nat.cast_inj (R := ℕ∞), Nat.cast_analyticOrderNatAt hf', hf.analyticOrderAt_eq_natCast]
 
-/-- The order of an analytic function `f` at `z₀` is finite iff `f` can locally be written as `f z =
-  (z - z₀) ^ analyticOrderNatAt f z₀ • g z`, where `g` is analytic and does not vanish at `z₀`.
+/--
+The order of an analytic function `f` at `z₀` is finite iff `f` can locally be written as
+`f z = (z - z₀) ^ analyticOrderNatAt f z₀ • g z`, where `g` is analytic and does not vanish at `z₀`.
 
 See `MeromorphicNFAt.order_eq_zero_iff` for an analogous statement about meromorphic functions in
 normal form.
@@ -488,7 +492,7 @@ lemma analyticOrderAt_eq_nat_iff_iteratedDeriv_eq_zero {n : ℕ} :
 end NormedSpace
 
 /-!
-## Vanishing Order at a Point: Elementary Computations
+# Vanishing Order at a Point: Elementary Computations
 -/
 
 /-- Simplifier lemma for the order of a centered monomial -/
@@ -546,7 +550,7 @@ end NontriviallyNormedField
 section comp
 
 /-!
-## Vanishing Order at a Point: Composition
+# Vanishing Order at a Point: Composition
 -/
 variable {f : 𝕜 → E} {g : 𝕜 → 𝕜} {z₀ : 𝕜}
 
@@ -595,7 +599,7 @@ lemma analyticOrderAt_comp_of_deriv_ne_zero (hg : AnalyticAt 𝕜 g z₀) (hg' :
 end comp
 
 /-!
-## Level Sets of the Order Function
+# Level Sets of the Order Function
 -/
 
 namespace AnalyticOnNhd

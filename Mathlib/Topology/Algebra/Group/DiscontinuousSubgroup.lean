@@ -10,6 +10,9 @@ public import Mathlib.GroupTheory.Commensurable
 public import Mathlib.GroupTheory.Complement
 public import Mathlib.Topology.Algebra.ConstMulAction
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Properly discontinuous actions of subgroups
 -/

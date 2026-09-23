@@ -8,6 +8,9 @@ module
 public import Mathlib.Init
 public import Batteries.Util.LibraryNote
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Documentation concerning the continuous functional calculus
 
@@ -18,6 +21,8 @@ as the organizational structure within Mathlib.
 public section
 
 
+
+set_option doc.verso false
 library_note «continuous functional calculus» /--
 # The continuous functional calculus
 
@@ -178,3 +183,5 @@ then the appropriate location is `Mathlib/Analysis/CStarAlgebra/SpecialFunctions
 If, as is often the case, some results need the import and others do not, there should be two files,
 one in each location.
 -/
+
+set_option doc.verso true

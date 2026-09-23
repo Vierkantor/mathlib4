@@ -7,8 +7,10 @@ module
 
 public import Mathlib.Topology.Homotopy.Basic
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Homotopy equivalences between topological spaces
 
 In this file, we define homotopy equivalences between topological spaces `X` and `Y` as a pair of
@@ -17,13 +19,12 @@ to `ContinuousMap.id`.
 
 ## Main definitions
 
-- `ContinuousMap.HomotopyEquiv` is the type of homotopy equivalences between topological spaces.
+* `ContinuousMap.HomotopyEquiv` is the type of homotopy equivalences between topological spaces.
 
 ## Notation
 
 We introduce the notation `X ≃ₕ Y` for `ContinuousMap.HomotopyEquiv X Y` in the `ContinuousMap`
 locale.
-
 -/
 
 @[expose] public section
@@ -100,13 +101,17 @@ def symm (h : X ≃ₕ Y) : Y ≃ₕ X where
 theorem coe_invFun (h : HomotopyEquiv X Y) : (⇑h.invFun : Y → X) = ⇑h.symm :=
   rfl
 
-/-- See Note [custom simps projection]. We need to specify this projection explicitly in this case,
-because it is a composition of multiple projections. -/
+/--
+See Note \[custom simps projection\]. We need to specify this projection explicitly in this case,
+because it is a composition of multiple projections.
+-/
 def Simps.apply (h : X ≃ₕ Y) : X → Y :=
   h
 
-/-- See Note [custom simps projection]. We need to specify this projection explicitly in this case,
-because it is a composition of multiple projections. -/
+/--
+See Note \[custom simps projection\]. We need to specify this projection explicitly in this case,
+because it is a composition of multiple projections.
+-/
 def Simps.symm_apply (h : X ≃ₕ Y) : Y → X :=
   h.symm
 

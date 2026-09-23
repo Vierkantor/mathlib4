@@ -7,7 +7,12 @@ module
 public import Mathlib.Topology.VectorBundle.Basic
 public import Mathlib.LinearAlgebra.FiniteDimensional.Defs
 
-/-! # Finite-rank vector bundles -/
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Finite-rank vector bundles
+-/
 
 public section
 

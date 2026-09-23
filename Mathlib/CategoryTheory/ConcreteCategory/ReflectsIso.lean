@@ -8,6 +8,9 @@ module
 public import Mathlib.CategoryTheory.ConcreteCategory.Forget
 public import Mathlib.CategoryTheory.Functor.ReflectsIso.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Forgetful functors that reflect isomorphisms
 

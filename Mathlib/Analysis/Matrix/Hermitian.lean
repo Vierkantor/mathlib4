@@ -9,6 +9,9 @@ public import Mathlib.Analysis.InnerProductSpace.PiL2
 public import Mathlib.LinearAlgebra.Matrix.Hermitian
 import Mathlib.Analysis.InnerProductSpace.Adjoint
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Hermitian matrices over ℝ and ℂ
 

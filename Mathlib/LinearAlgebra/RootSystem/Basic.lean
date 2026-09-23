@@ -8,6 +8,9 @@ module
 public import Mathlib.LinearAlgebra.RootSystem.Defs
 public import Mathlib.LinearAlgebra.RootSystem.Finite.Nondegenerate
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Root data and root systems
 
@@ -25,7 +28,6 @@ This file contains basic results for root systems and root data.
 * `RootSystem.mk'`: In characteristic zero over an integral domain, to check that a finite family of
   roots form a root system, we do not need to check that the coroots are stable under reflections
   since this follows from the corresponding property for the roots.
-
 -/
 
 @[expose] public section

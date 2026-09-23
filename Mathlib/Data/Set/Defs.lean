@@ -11,6 +11,9 @@ public import Mathlib.Tactic.SetNotationForOrder
 
 public import Mathlib.Tactic.ToDual
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Sets
 
@@ -31,7 +34,6 @@ Given a type `X` and a predicate `p : X → Prop`:
 
 As in Lean 3, `Set X := X → Prop`
 This file is a port of the core Lean 3 file `lib/lean/library/init/data/set.lean`.
-
 -/
 
 @[expose] public section

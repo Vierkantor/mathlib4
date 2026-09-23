@@ -9,6 +9,9 @@ public import Mathlib.Order.Filter.AtTopBot.Tendsto
 public import Mathlib.Order.ConditionallyCompleteLattice.Basic
 public import Mathlib.Order.ConditionallyCompletePartialOrder.Indexed
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `Filter.atTop` and `Filter.atBot` in (conditionally) complete lattices
 -/

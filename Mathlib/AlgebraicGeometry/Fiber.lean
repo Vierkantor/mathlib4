@@ -11,15 +11,18 @@ public import Mathlib.RingTheory.Spectrum.Prime.Jacobson
 public import Mathlib.AlgebraicGeometry.Morphisms.Affine
 public import Mathlib.AlgebraicGeometry.Morphisms.FiniteType
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Scheme-theoretic fiber
 
 ## Main result
-- `AlgebraicGeometry.Scheme.Hom.fiber`: `f.fiber y` is the scheme-theoretic fiber of `f` at `y`.
-- `AlgebraicGeometry.Scheme.Hom.fiberHomeo`: `f.fiber y` is homeomorphic to `f ⁻¹' {y}`.
-- `AlgebraicGeometry.Scheme.Hom.finite_preimage`: Finite morphisms have finite fibers.
-- `AlgebraicGeometry.Scheme.Hom.discrete_fiber`: Finite morphisms have discrete fibers.
 
+* `AlgebraicGeometry.Scheme.Hom.fiber`: `f.fiber y` is the scheme-theoretic fiber of `f` at `y`.
+* `AlgebraicGeometry.Scheme.Hom.fiberHomeo`: `f.fiber y` is homeomorphic to `f ⁻¹' {y}`.
+* `AlgebraicGeometry.Scheme.Hom.finite_preimage`: Finite morphisms have finite fibers.
+* `AlgebraicGeometry.Scheme.Hom.discrete_fiber`: Finite morphisms have discrete fibers.
 -/
 
 @[expose] public section

@@ -14,6 +14,9 @@ public import Mathlib.CategoryTheory.Monoidal.Braided.PushoutObjObj
 public import Mathlib.CategoryTheory.Monoidal.Closed.Braided
 public import Mathlib.CategoryTheory.Monoidal.Closed.FunctorToTypes
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Anodyne extensions and pushout-products, fibrations and pullbacks
 
@@ -29,16 +32,16 @@ and `X` is a Kan complex, then the internal hom `A ⟶[SSet] X` is also a Kan co
 
 Besides abstract arguments involving parametrized adjunctions and lifting properties,
 the proof relies on two facts:
-* the case `i : ∂Δ[n] ⟶ Δ[n]` and `j : Λ[m, k] ⟶ Δ[m]` which was obtained
-in the file `Mathlib/AlgebraicTopology/SimplicialSet/AnodyneExtensions/UnionProd.lean`
-* the fact that a morphism has the right lifting property with respect to
-all monomorphisms iff it has the right lifting property with respect
-to morphisms of the form `∂Δ[n] ⟶ Δ[n]` (see `SSet.rlp_monomorphisms`
-in the file `Mathlib/AlgebraicTopology/SimplicialSet/CategoryWithFibrations.lean`),
-which follows from the fact that any monomorphism is a relative cell complex with
-basic cells of the form `∂Δ[n] ⟶ Δ[n]`, see
-the file `Mathlib/AlgebraicTopology/SimplicialSet/Skeleton.lean`).
 
+* the case `i : ∂Δ[n] ⟶ Δ[n]` and `j : Λ[m, k] ⟶ Δ[m]` which was obtained
+  in the file `Mathlib/AlgebraicTopology/SimplicialSet/AnodyneExtensions/UnionProd.lean`
+* the fact that a morphism has the right lifting property with respect to
+  all monomorphisms iff it has the right lifting property with respect
+  to morphisms of the form `∂Δ[n] ⟶ Δ[n]` (see `SSet.rlp_monomorphisms`
+  in the file `Mathlib/AlgebraicTopology/SimplicialSet/CategoryWithFibrations.lean`),
+  which follows from the fact that any monomorphism is a relative cell complex with
+  basic cells of the form `∂Δ[n] ⟶ Δ[n]`, see
+  the file `Mathlib/AlgebraicTopology/SimplicialSet/Skeleton.lean`).
 -/
 
 public section

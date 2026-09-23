@@ -11,6 +11,9 @@ public import Mathlib.Topology.Order.IntermediateValue
 public import Mathlib.Topology.Order.LocalExtr
 public import Mathlib.Topology.Maps.Proper.CompactlyGenerated
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Proper spaces
 

@@ -16,11 +16,13 @@ public import Mathlib.RingTheory.TensorProduct.MvPolynomial
 
 import Mathlib.RingTheory.Polynomial.Subring
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # # Integral closure as a characteristic predicate
 
 We prove basic properties of `IsIntegralClosure`.
-
 -/
 
 @[expose] public section

@@ -8,7 +8,11 @@ module
 
 public import Mathlib.Analysis.SpecialFunctions.Complex.Log
 
-/-! # Power function on `ℂ`
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Power function on `ℂ`
 
 We construct the power functions `x ^ y`, where `x` and `y` are complex numbers.
 -/

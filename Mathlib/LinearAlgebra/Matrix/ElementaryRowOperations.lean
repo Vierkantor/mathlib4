@@ -8,6 +8,9 @@ module
 public import Mathlib.LinearAlgebra.Matrix.Swap
 public import Mathlib.LinearAlgebra.Matrix.Transvection
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Elementary row operations
 

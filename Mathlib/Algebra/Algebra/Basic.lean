@@ -17,6 +17,9 @@ public import Mathlib.Data.Int.CharZero
 
 import Mathlib.Algebra.Ring.Hom.InjSurj
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Further basic results about `Algebra`.
 
@@ -164,8 +167,10 @@ end CommSemiring
 
 section Ring
 
-/-- A `Semiring` that is an `Algebra` over a commutative ring carries a natural `Ring` structure.
-See note [reducible non-instances]. -/
+/--
+A `Semiring` that is an `Algebra` over a commutative ring carries a natural `Ring` structure.
+See note \[reducible non-instances\].
+-/
 abbrev semiringToRing (R : Type*) [CommRing R] [Semiring A] [Algebra R A] : Ring A :=
   { __ := (inferInstance : Semiring A)
     __ := Module.addCommMonoidToAddCommGroup R

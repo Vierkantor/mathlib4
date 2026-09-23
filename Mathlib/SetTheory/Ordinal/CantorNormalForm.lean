@@ -12,6 +12,9 @@ public import Mathlib.SetTheory.Ordinal.Family
 import Mathlib.Data.Finset.Sort
 import Mathlib.Data.Finsupp.AList
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cantor Normal Form
 
@@ -25,12 +28,12 @@ We implement `Ordinal.CNF` as an association list, where keys are exponents and 
 coefficients. This is because this structure intrinsically reflects two key properties of the Cantor
 normal form:
 
-- It is ordered.
-- It has finitely many entries.
+* It is ordered.
+* It has finitely many entries.
 
 ## Todo
 
-- Prove the basic results relating the CNF to the arithmetic operations on ordinals.
+* Prove the basic results relating the CNF to the arithmetic operations on ordinals.
 -/
 
 public noncomputable section
@@ -41,7 +44,9 @@ open List
 
 namespace Ordinal.CNF
 
-/-! ### Cantor normal form as a list -/
+/-!
+# Cantor normal form as a list
+-/
 
 /-- Inducts on the base `b` expansion of an ordinal. -/
 @[elab_as_elim]
@@ -160,7 +165,9 @@ private theorem nodupKeys (b o : Ordinal) : (map Prod.toSigma (CNF b o)).NodupKe
   rw [NodupKeys, List.keys, map_map, Prod.fst_comp_toSigma]
   exact (CNF.sortedGT ..).nodup
 
-/-! ### Cantor normal form as a finsupp -/
+/-!
+# Cantor normal form as a finsupp
+-/
 
 open AList Finsupp
 
@@ -250,7 +257,9 @@ theorem coeff_opow_mul_add {b e x y : Ordinal}
       rw [CNF.opow_mul_add hb hx hxb hy]
       simp_all
 
-/-! ### Evaluate a Cantor normal form -/
+/-!
+# Evaluate a Cantor normal form
+-/
 
 /-- `CNF.eval f` evaluates a Finsupp `f : Ordinal →₀ Ordinal`, interpreted as a
 base `b` expansion on ordinals. -/

@@ -8,6 +8,9 @@ module
 public meta import Lean.Elab.DocString
 public meta import Batteries.Util.LibraryNote
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Verso docstring roles for migration
 
@@ -124,6 +127,8 @@ def cite (key : StrLit) (xs : TSyntaxArray `inline) : DocM (Inline ElabInline) :
     (.custom (.mk (Mathlib.Migration.Citation.mk k)))
     rendered
 
+
+set_option doc.verso false
 /--
 A verbatim code listing in the language named by the positional argument, as in
 `` ```code python ``.
@@ -136,4 +141,6 @@ def code (language : Ident) (content : StrLit) : DocM (Block ElabInline ElabBloc
     (.custom (.mk (Mathlib.Migration.CodeWithLanguage.mk language.getId.toString)))
     #[.code content.getString]
 
+
+set_option doc.verso true
 end

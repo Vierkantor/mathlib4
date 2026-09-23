@@ -10,6 +10,9 @@ public import Mathlib.Algebra.GroupWithZero.Units.Basic
 public import Mathlib.Algebra.Ring.Defs
 public import Mathlib.Order.Lattice.Nat
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Definition of nilpotent elements
 
@@ -19,10 +22,9 @@ and `Mathlib/RingTheory/Nilpotent/Lemmas.lean`.
 
 ## Main definitions
 
-  * `Commute.isNilpotent_mul_left`
-  * `Commute.isNilpotent_mul_right`
-  * `nilpotencyClass`
-
+* `Commute.isNilpotent_mul_left`
+* `Commute.isNilpotent_mul_right`
+* `nilpotencyClass`
 -/
 
 @[expose] public section

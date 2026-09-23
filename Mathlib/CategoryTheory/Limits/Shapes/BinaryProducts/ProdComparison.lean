@@ -7,12 +7,16 @@ module
 
 public import Mathlib.CategoryTheory.Limits.Shapes.BinaryProducts.BinaryProducts
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Product comparison morphisms
 
 Naturality of the product and coproduct constructions with respect to functors.
 
 ## References
+
 * [Stacks: Products of pairs](https://stacks.math.columbia.edu/tag/001R)
 * [Stacks: coproducts of pairs](https://stacks.math.columbia.edu/tag/04AN)
 -/

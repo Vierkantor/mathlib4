@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Group.Even
 public import Mathlib.Algebra.Group.Irreducible.Defs
 public import Mathlib.Algebra.Group.Units.Equiv
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # More lemmas about irreducible elements
 -/

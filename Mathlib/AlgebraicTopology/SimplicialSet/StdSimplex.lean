@@ -15,6 +15,9 @@ public import Mathlib.Order.Fin.SuccAboveOrderIso
 public import Mathlib.CategoryTheory.Limits.Shapes.FiniteProducts
 import Mathlib.Order.Preorder.Finite
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The standard simplex
 
@@ -22,7 +25,6 @@ We define the standard simplices `Δ[n]` as simplicial sets.
 See files `SimplicialSet.Boundary` and `SimplicialSet.Horn`
 for their boundaries `∂Δ[n]` and horns `Λ[n, i]`.
 (The notations are available via `open Simplicial`.)
-
 -/
 
 @[expose] public section

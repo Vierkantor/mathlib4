@@ -12,6 +12,9 @@ public import Mathlib.AlgebraicTopology.SimplicialSet.Dimension
 public import Mathlib.AlgebraicTopology.DoldKan.SplitSimplicialObject
 public import Mathlib.CategoryTheory.Limits.Preserves.SigmaConst
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Computing homology using nondegenerate simplices
 
@@ -21,7 +24,6 @@ preadditive category `C` with coproducts). The `n`-chains of this complex
 identify to the coproduct of copies of `R` indexed by the nondegenerate
 `n`-simplices of `X`. In particular, we deduce that the homology is zero in degree `≥ d`
 when `X` has dimension `< d`.
-
 -/
 
 @[expose] public section

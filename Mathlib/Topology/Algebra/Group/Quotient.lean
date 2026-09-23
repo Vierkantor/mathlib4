@@ -10,6 +10,9 @@ public import Mathlib.GroupTheory.QuotientGroup.Defs
 public import Mathlib.Topology.Algebra.Group.Pointwise
 public import Mathlib.Topology.Maps.OpenQuotient
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Topology on the quotient group
 

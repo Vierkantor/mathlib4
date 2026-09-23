@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Notation.Prod
 public import Mathlib.Algebra.Regular.SMul
 public import Mathlib.Algebra.Ring.Action.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Equivariant homomorphisms
 
@@ -28,6 +31,7 @@ public import Mathlib.Algebra.Ring.Action.Basic
   `M` acting on the ring `R` and `N` acting on the ring `S`.
 
 The above types have corresponding classes:
+
 * `MulActionHomClass F φ X Y` states that `F` is a type of bundled `X → Y` homs
   which are `φ`-equivariant;
   `AddActionHomClass F φ X Y` is its additive version.
@@ -39,12 +43,14 @@ The above types have corresponding classes:
 ## Notation
 
 We introduce the following notation to code equivariant maps
-(the subscript index `ₑ` is for *equivariant*) :
+(the subscript index `ₑ` is for _equivariant_) :
+
 * `X →ₑ[φ] Y` is `MulActionHom φ X Y` and `AddActionHom φ X Y`
 * `A →ₑ+[φ] B` is `DistribMulActionHom φ A B`.
 * `R →ₑ+*[φ] S` is `MulSemiringActionHom φ R S`.
 
 When `M = N` and `φ = MonoidHom.id M`, we provide the backward compatible notation :
+
 * `X →[M] Y` is `MulActionHom (@id M) X Y` and `AddActionHom (@id M) X Y`
 * `A →+[M] B` is `DistribMulActionHom (MonoidHom.id M) A B`
 * `R →+*[M] S` is `MulSemiringActionHom (MonoidHom.id M) R S`
@@ -52,7 +58,6 @@ When `M = N` and `φ = MonoidHom.id M`, we provide the backward compatible notat
 The notation for `MulActionHom` and `AddActionHom` is the same, because it is unlikely
 that it could lead to confusion — unless one needs types `M` and `X` with simultaneous
 instances of `Mul M`, `Add M`, `SMul M X` and `VAdd M X`…
-
 -/
 
 @[expose] public section

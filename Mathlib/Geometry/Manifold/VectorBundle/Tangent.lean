@@ -8,7 +8,11 @@ module
 public import Mathlib.Geometry.Manifold.VectorBundle.Basic
 import Mathlib.Geometry.Manifold.Notation
 
-/-! # Tangent bundles
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Tangent bundles
 
 This file defines the tangent bundle as a `C^n` vector bundle.
 
@@ -20,17 +24,18 @@ In this file, when `M` is `C^1`, we construct a vector bundle structure
 on `TangentBundle I M` using the `VectorBundleCore` construction indexed by the charts of `M`
 with fibers `E`. Given two charts `i, j : OpenPartialHomeomorph M H`, the coordinate change
 between `i` and `j` at a point `x : M` is the derivative of the composite
+
 ```
   I.symm   i.symm    j     I
 E -----> H -----> M --> H --> E
 ```
+
 within the set `range I ⊆ E` at `I (i x) : E`.
 This defines a vector bundle `TangentBundle` with fibers `TangentSpace`.
 
 ## Main definitions and results
 
 * `tangentBundleCore I M` is the vector bundle core for the tangent bundle over `M`.
-
 * When `M` is a `C^{n+1}` manifold, `TangentBundle I M` has a `C^n` vector bundle
   structure over `M`. In particular, it is a topological space, a vector bundle, a fiber bundle,
   and a `C^n` manifold.
@@ -344,7 +349,9 @@ instance [h : IsManifold I 2 M] :
 
 end TangentBundleInstances
 
-/-! ## The tangent bundle to the model space -/
+/-!
+# The tangent bundle to the model space
+-/
 
 set_option backward.isDefEq.respectTransparency false in
 @[simp, mfld_simps]

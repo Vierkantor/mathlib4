@@ -7,16 +7,18 @@ module
 
 public import Mathlib.RingTheory.WittVector.FrobeniusFractionField
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
-## F-isocrystals over a perfect field
+/-!
+# F-isocrystals over a perfect field
 
 When `k` is an integral domain, so is `𝕎 k`, and we can consider its field of fractions `K(p, k)`.
 The endomorphism `WittVector.frobenius` lifts to `φ : K(p, k) → K(p, k)`; if `k` is perfect, `φ` is
 an automorphism.
 
 Let `k` be a perfect integral domain. Let `V` be a vector space over `K(p,k)`.
-An *isocrystal* is a bijective map `V → V` that is `φ`-semilinear.
+An _isocrystal_ is a bijective map `V → V` that is `φ`-semilinear.
 A theorem of Dieudonné and Manin classifies the finite-dimensional isocrystals over algebraically
 closed fields. In the one-dimensional case, this classification states that the isocrystal
 structures are parametrized by their "slope" `m : ℤ`.
@@ -24,18 +26,19 @@ Any one-dimensional isocrystal is isomorphic to `φ(p^m • x) : K(p,k) → K(p,
 
 This file proves this one-dimensional case of the classification theorem.
 The construction is described in Dupuis, Lewis, and Macbeth,
-[Formalized functional analysis via semilinear maps][dupuis-lewis-macbeth2022].
+‍\[Formalized functional analysis via semilinear maps\]\[dupuis-lewis-macbeth2022\].
 
-## Main declarations
+# Main declarations
 
 * `WittVector.Isocrystal`: a vector space over the field `K(p, k)` additionally equipped with a
   Frobenius-linear automorphism.
 * `WittVector.isocrystal_classification`: a one-dimensional isocrystal admits an isomorphism to one
   of the standard one-dimensional isocrystals.
 
-## Notation
+# Notation
 
 This file introduces notation in the scope `Isocrystal`.
+
 * `K(p, k)`: `FractionRing (WittVector p k)`
 * `φ(p, k)`: `WittVector.FractionRing.frobeniusRingHom p k`
 * `M →ᶠˡ[p, k] M₂`: `LinearMap (WittVector.FractionRing.frobeniusRingHom p k) M M₂`
@@ -44,12 +47,12 @@ This file introduces notation in the scope `Isocrystal`.
 * `M →ᶠⁱ[p, k] M₂`: `WittVector.IsocrystalHom p k M M₂`
 * `M ≃ᶠⁱ[p, k] M₂`: `WittVector.IsocrystalEquiv p k M M₂`
 
-## References
+# References
 
-* [Formalized functional analysis via semilinear maps][dupuis-lewis-macbeth2022]
-* [Theory of commutative formal groups over fields of finite characteristic][manin1963]
-* <https://www.math.ias.edu/~lurie/205notes/Lecture26-Isocrystals.pdf>
-
+* ‍\[Formalized functional analysis via semilinear maps\]\[dupuis-lewis-macbeth2022\]
+* ‍\[Theory of commutative formal groups over fields of finite characteristic\]\[manin1963\]
+* [
+  https://www.math.ias.edu/~lurie/205notes/Lecture26-Isocrystals.pdf](https://www.math.ias.edu/~lurie/205notes/Lecture26-Isocrystals.pdf)
 -/
 
 @[expose] public section
@@ -72,7 +75,9 @@ section PerfectRing
 
 variable [IsDomain k] [CharP k p] [PerfectRing k p]
 
-/-! ### Frobenius-linear maps -/
+/-!
+# Frobenius-linear maps
+-/
 
 
 /-- The Frobenius automorphism of `k` induces an automorphism of `K`. -/
@@ -104,7 +109,9 @@ scoped[Isocrystal]
   notation3:50 M " ≃ᶠˡ[" p ", " k "] " M₂ =>
     LinearEquiv (WittVector.FractionRing.frobeniusRingHom p k) M M₂
 
-/-! ### Isocrystals -/
+/-!
+# Isocrystals
+-/
 
 
 /-- An isocrystal is a vector space over the field `K(p, k)` additionally equipped with a
@@ -148,7 +155,9 @@ end PerfectRing
 
 open scoped Isocrystal
 
-/-! ### Classification of isocrystals in dimension 1 -/
+/-!
+# Classification of isocrystals in dimension 1
+-/
 
 /-- Type synonym for `K(p, k)` to carry the standard 1-dimensional isocrystal structure
 of slope `m : ℤ`.

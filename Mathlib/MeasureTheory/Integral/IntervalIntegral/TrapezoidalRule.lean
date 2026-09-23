@@ -14,6 +14,9 @@ public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Arctan
 public import Mathlib.MeasureTheory.Covering.Besicovitch
 public import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The trapezoidal rule
 
@@ -21,10 +24,12 @@ This file contains a definition of integration on `[[a, b]]` via the trapezoidal
 an error bound in terms of a bound on the second derivative of the integrand.
 
 ## Main results
-- `trapezoidal_error_le`: the convergence theorem for the trapezoidal rule.
+
+* `trapezoidal_error_le`: the convergence theorem for the trapezoidal rule.
 
 ## References
-We follow the proof on (Wikipedia)[https://en.wikipedia.org/wiki/Trapezoidal_rule] for the error
+
+We follow the proof on (Wikipedia)\[https://en.wikipedia.org/wiki/Trapezoidal\_rule\] for the error
 bound.
 -/
 

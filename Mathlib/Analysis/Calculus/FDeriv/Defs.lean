@@ -7,22 +7,25 @@ module
 
 public import Mathlib.Analysis.Asymptotics.TVS
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The Fréchet derivative: definition
 
 Let `E` and `F` be normed spaces, `f : E → F`, and `f' : E →L[𝕜] F` a
 continuous 𝕜-linear map, where `𝕜` is a non-discrete normed field. Then
 
-  `HasFDerivWithinAt f f' s x`
+`HasFDerivWithinAt f f' s x`
 
 says that `f` has derivative `f'` at `x`, where the domain of interest
 is restricted to `s`. We also have
 
-  `HasFDerivAt f f' x := HasFDerivWithinAt f f' x univ`
+`HasFDerivAt f f' x := HasFDerivWithinAt f f' x univ`
 
 Finally,
 
-  `HasStrictFDerivAt f f' x`
+`HasStrictFDerivAt f f' x`
 
 means that `f : E → F` has derivative `f' : E →L[𝕜] F` in the sense of strict differentiability,
 i.e., `f y - f z - f'(y - z) = o(y - z)` as `y, z → x`. This notion is used in the inverse
@@ -35,6 +38,7 @@ supporting lemmas; a much wider range of elementary properties are proved in the
 
 Other files in the folder `Analysis/Calculus/FDeriv/` contain the usual formulas
 (and existence assertions) for the derivative of
+
 * constants (`Const.lean`)
 * the identity
 * bounded linear maps (`Linear.lean`)
@@ -77,7 +81,6 @@ Generalize more results to topological vector spaces.
 ## Tags
 
 derivative, differentiable, Fréchet, calculus
-
 -/
 
 @[expose] public section
@@ -90,7 +93,7 @@ variable {𝕜 : Type*} [NontriviallyNormedField 𝕜]
 
 noncomputable section TVS
 /-!
-## Definitions valid in an arbitrary topological vector space
+# Definitions valid in an arbitrary topological vector space
 -/
 
 variable {E : Type*} [AddCommGroup E] [Module 𝕜 E] [TopologicalSpace E]
@@ -123,10 +126,12 @@ def HasFDerivWithinAt (f : E → F) (f' : E →L[𝕜] F) (s : Set E) (x : E) :=
 def HasFDerivAt (f : E → F) (f' : E →L[𝕜] F) (x : E) :=
   HasFDerivAtFilter f f' (𝓝 x ×ˢ pure x)
 
-/-- A function `f` has derivative `f'` at `a` in the sense of *strict differentiability*
+/--
+A function `f` has derivative `f'` at `a` in the sense of _strict differentiability_
 if `f x - f y - f' (x - y) = o(x - y)` as `x, y → a`. This form of differentiability is required,
 e.g., by the inverse function theorem. Any `C^1` function on a vector space over `ℝ` is strictly
-differentiable but this definition works, e.g., for vector spaces over `p`-adic numbers. -/
+differentiable but this definition works, e.g., for vector spaces over `p`-adic numbers.
+-/
 @[fun_prop]
 def HasStrictFDerivAt (f : E → F) (f' : E →L[𝕜] F) (x : E) :=
   HasFDerivAtFilter f f' (𝓝 (x, x))
@@ -209,7 +214,7 @@ end TVS
 
 section Normed
 /-!
-## Reformulations for seminormed spaces
+# Reformulations for seminormed spaces
 -/
 
 variable {E : Type*} [SeminormedAddCommGroup E] [NormedSpace 𝕜 E]

@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Lie.Subalgebra
 public import Mathlib.Algebra.Lie.Submodule
 public import Mathlib.Algebra.Algebra.Subalgebra.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lie algebras of associative algebras
 
@@ -69,16 +72,19 @@ section AssociativeModule
 
 variable {M : Type w} [AddCommGroup M] [Module A M]
 
-/-- We can regard a module over an associative ring `A` as a Lie ring module over `A` with Lie
+/--
+We can regard a module over an associative ring `A` as a Lie ring module over `A` with Lie
 bracket equal to its ring commutator.
 
 Note that this cannot be a global instance because it would create a diamond when `M = A`,
 specifically we can build two mathematically-different `bracket A A`s:
+
 1. `@Ring.bracket A _` which says `⁅a, b⁆ = a * b - b * a`
 2. `(@LieRingModule.ofAssociativeModule A _ A _ _).toBracket` which says `⁅a, b⁆ = a • b`
-  (and thus `⁅a, b⁆ = a * b`)
+   (and thus `⁅a, b⁆ = a * b`)
 
-See note [reducible non-instances] -/
+See note \[reducible non-instances\]
+-/
 abbrev LieRingModule.ofAssociativeModule : LieRingModule A M where
   bracket := (· • ·)
   add_lie := add_smul
@@ -222,7 +228,9 @@ open Function
 
 namespace LieModule
 
-/-- A Lie module is *faithful* if the associated map `L → End M` is injective. -/
+/--
+A Lie module is _faithful_ if the associated map `L → End M` is injective.
+-/
 @[mk_iff]
 class IsFaithful : Prop where
   injective_toEnd : Injective <| toEnd R L M

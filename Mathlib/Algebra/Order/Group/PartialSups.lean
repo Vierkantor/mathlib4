@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.Order.Group.OrderIso
 public import Mathlib.Order.PartialSups
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Results about `partialSups` of functions taking values in a `Group`
 -/

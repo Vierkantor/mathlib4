@@ -12,6 +12,9 @@ public import Mathlib.LinearAlgebra.CliffordAlgebra.Star
 public import Mathlib.LinearAlgebra.Complex.Module
 public import Mathlib.LinearAlgebra.QuadraticForm.Prod
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Other constructions isomorphic to Clifford Algebras
 
@@ -56,7 +59,6 @@ and vice-versa:
 
 * `CliffordAlgebraDualNumber.equiv`: `R[ε]` is equivalent as an `R`-algebra to a clifford
   algebra over `R` where `Q = 0`.
-
 -/
 
 @[expose] public section
@@ -64,7 +66,9 @@ and vice-versa:
 
 open CliffordAlgebra
 
-/-! ### The clifford algebra isomorphic to a ring -/
+/-!
+# The clifford algebra isomorphic to a ring
+-/
 
 
 namespace CliffordAlgebraRing
@@ -113,7 +117,9 @@ protected def equiv : CliffordAlgebra (0 : QuadraticForm R Unit) ≃ₐ[R] R :=
 
 end CliffordAlgebraRing
 
-/-! ### The clifford algebra isomorphic to the complex numbers -/
+/-!
+# The clifford algebra isomorphic to the complex numbers
+-/
 
 
 namespace CliffordAlgebraComplex
@@ -217,7 +223,9 @@ theorem ofComplex_conj (c : ℂ) : ofComplex (conj c) = involute (ofComplex c) :
 
 end CliffordAlgebraComplex
 
-/-! ### The clifford algebra isomorphic to the quaternions -/
+/-!
+# The clifford algebra isomorphic to the quaternions
+-/
 
 
 namespace CliffordAlgebraQuaternion
@@ -328,7 +336,9 @@ theorem ofQuaternion_star (q : ℍ[R,c₁,0,c₂]) : ofQuaternion (star q) = sta
 
 end CliffordAlgebraQuaternion
 
-/-! ### The clifford algebra isomorphic to the dual numbers -/
+/-!
+# The clifford algebra isomorphic to the dual numbers
+-/
 
 
 namespace CliffordAlgebraDualNumber

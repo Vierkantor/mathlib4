@@ -12,6 +12,9 @@ public import Mathlib.CategoryTheory.Abelian.Opposite
 public import Mathlib.CategoryTheory.Preadditive.AdditiveFunctor
 public import Mathlib.CategoryTheory.Preadditive.Injective.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Exact short complexes
 
@@ -23,7 +26,6 @@ to the assertion `IsZero S.homology`.
 
 Almost by construction, this notion of exactness is self dual,
 see `Exact.op` and `Exact.unop`.
-
 -/
 
 @[expose] public section

@@ -10,6 +10,9 @@ public import Mathlib.Topology.Bases
 public import Mathlib.Topology.Inseparable
 public import Mathlib.Topology.Compactness.NhdsKer
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Alexandrov-discrete topological spaces
 
@@ -17,7 +20,7 @@ This file defines Alexandrov-discrete spaces, aka finitely generated spaces.
 
 A space is Alexandrov-discrete if the (arbitrary) intersection of open sets is open. As such,
 the intersection of all neighborhoods of a set is a neighborhood itself. Hence every set has a
-minimal neighborhood, which we call the *neighborhoods kernel* of the set.
+minimal neighborhood, which we call the _neighborhoods kernel_ of the set.
 
 ## Main declarations
 

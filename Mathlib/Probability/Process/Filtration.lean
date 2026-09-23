@@ -9,6 +9,9 @@ public import Mathlib.MeasureTheory.Constructions.Cylinders
 public import Mathlib.MeasureTheory.Function.ConditionalExpectation.Real
 public import Mathlib.MeasureTheory.MeasurableSpace.PreorderRestrict
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Filtrations
 
@@ -33,7 +36,6 @@ This file defines filtrations of a measurable space and σ-finite filtrations.
 ## Tags
 
 filtration, stochastic process
-
 -/
 
 @[expose] public section
@@ -246,6 +248,8 @@ namespace Filtration
 
 section IsRightContinuous
 
+
+set_option doc.verso false
 open scoped Classical in
 /-- Given a filtration `𝓕`, its **right continuation** is the filtration `𝓕₊` defined as follows:
 - If `i` is isolated on the right, then `𝓕₊ i := 𝓕 i`;
@@ -284,6 +288,8 @@ noncomputable irreducible_def rightCont [PartialOrder ι] (𝓕 : Filtration ι 
         exact iInf₂_le_of_le j hj (𝓕.le j)
       · exact 𝓕.le i }
 
+
+set_option doc.verso true
 @[inherit_doc] scoped postfix:max "₊" => rightCont
 
 open scoped Classical in
@@ -483,7 +489,9 @@ end Limit
 
 section piLE
 
-/-! ### Filtration of the first events -/
+/-!
+# Filtration of the first events
+-/
 
 open MeasurableSpace Preorder
 

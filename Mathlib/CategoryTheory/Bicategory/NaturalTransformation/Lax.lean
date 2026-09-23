@@ -8,6 +8,9 @@ module
 public import Mathlib.CategoryTheory.Bicategory.Functor.Lax
 public import Mathlib.Tactic.CategoryTheory.Bicategory.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Transformations between lax functors
 
@@ -15,6 +18,7 @@ Just as there are natural transformations between functors, there are transforma
 between lax functors. The equality in the naturality condition of a natural transformation gets
 replaced by a specified 2-morphism. Now, there are three possible types of transformations (between
 lax functors):
+
 * lax natural transformations;
 * oplax natural transformations;
 * strong natural transformations.
@@ -40,15 +44,16 @@ Using these, we define three (scoped) `CategoryStruct` instances on `B ⥤ᴸ C`
 transformations respectively.
 
 We also provide API for going between lax transformations and strong transformations:
+
 * `LaxTrans.StrongCore η`: a structure on a lax transformation between lax functors that
   promotes it to a strong transformation.
 * `StrongTrans.mkOfLax η η'`: given a lax transformation `η` such that each component
   2-morphism is an isomorphism, `mkOfLax` gives the corresponding strong transformation.
 
 ## References
-* [Niles Johnson, Donald Yau, *2-Dimensional Categories*](https://arxiv.org/abs/2002.06055),
-  section 4.2.
 
+* [Niles Johnson, Donald Yau, _2-Dimensional Categories_](https://arxiv.org/abs/2002.06055),
+  section 4.2.
 -/
 
 @[expose] public section

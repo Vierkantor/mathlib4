@@ -12,6 +12,9 @@ public import Mathlib.Analysis.Normed.Group.Basic
 public import Mathlib.Data.EReal.Operations
 public import Mathlib.Topology.MetricSpace.Bounded
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Transfer topological algebraic structures across `AddEquiv`s or `ContinuousLinearEquiv`s
 

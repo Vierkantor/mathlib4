@@ -13,6 +13,9 @@ public import Mathlib.Data.Set.Operations
 public import Mathlib.Order.Bounds.Defs
 public import Mathlib.Order.GaloisConnection.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Nonnegative rationals
 
@@ -320,7 +323,9 @@ def Rat.nnabs (x : ℚ) : ℚ≥0 :=
 @[norm_cast, simp]
 theorem Rat.coe_nnabs (x : ℚ) : (Rat.nnabs x : ℚ) = abs x := rfl
 
-/-! ### Numerator and denominator -/
+/-!
+# Numerator and denominator
+-/
 
 
 namespace NNRat

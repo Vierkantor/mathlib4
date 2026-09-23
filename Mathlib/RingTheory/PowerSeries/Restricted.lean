@@ -9,12 +9,14 @@ public import Mathlib.RingTheory.MvPowerSeries.Restricted
 public import Mathlib.RingTheory.PowerSeries.Basic
 public import Mathlib.Order.Filter.Cofinite
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Univariate restricted power series
 
 `IsRestricted` : We say a univariate power series over a normed ring `R` is restricted for a
 real number `c` if `‖coeff t f‖ * c i ^ t i → 0` under the cofinite filter.
-
 -/
 
 @[expose] public section

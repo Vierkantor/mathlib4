@@ -10,6 +10,9 @@ public import Mathlib.RingTheory.Finiteness.Basic
 public import Mathlib.RingTheory.Ideal.Maps
 public import Mathlib.RingTheory.Ideal.Quotient.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Jacobson radical of modules and rings
 
@@ -23,7 +26,9 @@ an `R`-module, which is equal to the intersection of all maximal left ideals of 
 it is in fact a two-sided ideal, and equals the intersection of all maximal right ideals of `R`.
 
 ## Reference
-* [F. Lorenz, *Algebra: Volume II: Fields with Structure, Algebras and Advanced Topics*][Lorenz2008]
+
+* ‍\[F. Lorenz, _Algebra: Volume II: Fields with Structure, Algebras and Advanced
+  Topics_\]\[Lorenz2008\]
 -/
 
 @[expose] public section

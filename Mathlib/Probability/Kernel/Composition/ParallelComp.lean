@@ -9,8 +9,10 @@ public import Mathlib.MeasureTheory.Measure.Prod
 public import Mathlib.Probability.Kernel.Composition.MapComap
 public import Mathlib.Probability.Kernel.MeasurableLIntegral
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Parallel composition of kernels
 
 Two kernels `κ : Kernel α β` and `η : Kernel γ δ` can be applied in parallel to give a kernel
@@ -25,7 +27,6 @@ Two kernels `κ : Kernel α β` and `η : Kernel γ δ` can be applied in parall
 ## Notation
 
 * `κ ∥ₖ η = ProbabilityTheory.Kernel.parallelComp κ η`
-
 -/
 
 @[expose] public section

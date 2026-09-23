@@ -16,6 +16,9 @@ public import Mathlib.Tactic.Choose
 public import Mathlib.Tactic.Contrapose
 public import Mathlib.Tactic.ByCases
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Monotonicity
 
@@ -60,7 +63,8 @@ universe u v
 
 variable {α : Type u} {β : Type v}
 
-/-! ### Monotonicity on the dual order
+/-!
+# Monotonicity on the dual order
 
 Strictly, many of the `*On.dual` lemmas in this section should use `ofDual ⁻¹' s` instead of `s`,
 but right now this is not possible as `Set.preimage` is not defined yet, and importing it creates
@@ -233,7 +237,9 @@ theorem StrictAnti.wellFoundedLT [WellFoundedGT β] (hf : StrictAnti f) : WellFo
 
 end WellFounded
 
-/-! ### Miscellaneous monotonicity results -/
+/-!
+# Miscellaneous monotonicity results
+-/
 
 section PreorderPartialOrder
 
@@ -325,7 +331,9 @@ end Fold
 
 end List
 
-/-! ### Monotonicity in linear orders  -/
+/-!
+# Monotonicity in linear orders
+-/
 
 
 section LinearOrder
@@ -480,7 +488,7 @@ lemma not_monotone_not_antitone_iff_exists_lt_lt :
   (rintro rfl; simp at h)
 
 /-!
-### Strictly monotone functions and `cmp`
+# Strictly monotone functions and `cmp`
 -/
 
 
@@ -500,7 +508,9 @@ theorem StrictAnti.cmp_map_eq (hf : StrictAnti f) (x y : α) : cmp (f x) (f y) =
 
 end LinearOrder
 
-/-! ### Monotonicity in `ℕ` and `ℤ` -/
+/-!
+# Monotonicity in `ℕ` and `ℤ`
+-/
 
 
 section Preorder

@@ -8,8 +8,10 @@ module
 public import Mathlib.AlgebraicGeometry.SpreadingOut
 public import Mathlib.AlgebraicGeometry.FunctionField
 public import Mathlib.AlgebraicGeometry.Morphisms.Separated
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Rational maps between schemes
 
 ## Main definitions

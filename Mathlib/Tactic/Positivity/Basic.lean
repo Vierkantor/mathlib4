@@ -15,8 +15,11 @@ public import Mathlib.Algebra.Order.Hom.Basic
 public import Mathlib.Data.NNRat.Defs
 public import Mathlib.Tactic.Positivity.Core
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
-## `positivity` core extensions
+# `positivity` core extensions
 
 This file sets up the basic `positivity` extensions tagged with the `@[positivity]` attribute.
 -/

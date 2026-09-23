@@ -7,7 +7,11 @@ module
 
 public import Mathlib.Logic.Function.FromTypes
 
-/-! # Function types of a given arity
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Function types of a given arity
 
 This provides `Function.OfArity`, such that `OfArity α β 2 = α → α → β`.
 Note that it is often preferable to use `(Fin n → α) → β` in place of `OfArity n α β`.

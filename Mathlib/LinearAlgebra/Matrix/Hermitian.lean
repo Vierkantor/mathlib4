@@ -9,7 +9,11 @@ public import Mathlib.Algebra.Star.Pi
 public import Mathlib.LinearAlgebra.Matrix.Hadamard
 public import Mathlib.LinearAlgebra.Matrix.ZPow
 
-/-! # Hermitian matrices
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Hermitian matrices
 
 This file defines Hermitian matrices and some basic results about them.
 
@@ -22,7 +26,6 @@ See also `IsSelfAdjoint`, which generalizes this definition to other star rings.
 ## Tags
 
 self-adjoint matrix, hermitian matrix
-
 -/
 
 @[expose] public section

@@ -8,6 +8,9 @@ module
 public import Mathlib.MeasureTheory.Function.L1Space.AEEqFun
 public import Mathlib.MeasureTheory.Function.LpSpace.Indicator
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Density of simple functions
 
@@ -59,7 +62,9 @@ local infixr:25 " →ₛ " => SimpleFunc
 
 namespace SimpleFunc
 
-/-! ### Lp approximation by simple functions -/
+/-!
+# Lp approximation by simple functions
+-/
 
 section Lp
 
@@ -220,7 +225,9 @@ theorem _root_.MeasureTheory.MemLp.exists_simpleFunc_eLpNorm_sub_lt {E : Type*}
 
 end Lp
 
-/-! ### L1 approximation by simple functions -/
+/-!
+# L1 approximation by simple functions
+-/
 
 
 section Integrable
@@ -266,11 +273,12 @@ variable [NormedAddCommGroup E] [NormedAddCommGroup F]
 variable {μ : Measure α} {p : ℝ≥0∞}
 
 /-!
-### Properties of simple functions in `Lp` spaces
+# Properties of simple functions in `Lp` spaces
 
 A simple function `f : α →ₛ E` into a normed group `E` verifies, for a measure `μ`:
-- `MemLp f 0 μ` and `MemLp f ∞ μ`, since `f` is a.e.-measurable and bounded,
-- for `0 < p < ∞`,
+
+* `MemLp f 0 μ` and `MemLp f ∞ μ`, since `f` is a.e.-measurable and bounded,
+* for `0 < p < ∞`,
   `MemLp f p μ ↔ Integrable f μ ↔ f.FinMeasSupp μ ↔ ∀ y, y ≠ 0 → μ (f ⁻¹' {y}) < ∞`.
 -/
 

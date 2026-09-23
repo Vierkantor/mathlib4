@@ -10,11 +10,13 @@ public import Mathlib.CategoryTheory.Monoidal.Cartesian.Basic
 public import Mathlib.CategoryTheory.Monoidal.Types.Basic
 public import Mathlib.CategoryTheory.Monoidal.FunctorCategory
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Functor categories have chosen finite products
 
 If `C` is a category with chosen finite products, then so is `J ⥤ C`.
-
 -/
 
 @[expose] public section

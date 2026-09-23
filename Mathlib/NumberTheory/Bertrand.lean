@@ -11,6 +11,9 @@ public import Mathlib.Analysis.Convex.SpecificFunctions.Basic
 public import Mathlib.Analysis.Convex.SpecificFunctions.Deriv
 public import Mathlib.Tactic.NormNum.Prime
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Bertrand's Postulate
 
@@ -30,9 +33,11 @@ binomial coefficient given in `Nat.four_pow_lt_mul_centralBinom`.
 
 ## References
 
-* [M. Aigner and G. M. Ziegler _Proofs from THE BOOK_][aigner1999proofs]
-* [S. Tochiori, _Considering the Proof of “There is a Prime between n and 2n”_][tochiori_bertrand]
-* [M. Carneiro, _Arithmetic in Metamath, Case Study: Bertrand's Postulate_][carneiro2015arithmetic]
+* ‍\[M. Aigner and G. M. Ziegler _Proofs from THE BOOK_\]\[aigner1999proofs\]
+* ‍\[S. Tochiori, _Considering the Proof of “There is a Prime between n and
+  2n”_\]\[tochiori\_bertrand\]
+* ‍\[M. Carneiro, _Arithmetic in Metamath, Case Study: Bertrand's
+  Postulate_\]\[carneiro2015arithmetic\]
 
 ## Tags
 

@@ -9,6 +9,9 @@ public import Mathlib.LinearAlgebra.SymmetricAlgebra.Basic
 public import Mathlib.LinearAlgebra.Dimension.Basic
 public import Mathlib.RingTheory.MvPolynomial
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # A basis for `SymmetricAlgebra R M`
 

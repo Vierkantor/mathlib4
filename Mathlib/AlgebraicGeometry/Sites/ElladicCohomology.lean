@@ -14,8 +14,10 @@ public import Mathlib.CategoryTheory.Abelian.GrothendieckCategory.HasExt
 public import Mathlib.CategoryTheory.Sites.SheafCohomology.Basic
 public import Mathlib.NumberTheory.Padics.PadicIntegers
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # `ℓ`-adic cohomology of a scheme
 
 Let `X` be a scheme and `ℓ` be a prime number. In this file we define the sheaf
@@ -24,8 +26,8 @@ Its cohomology groups are the `ℓ`-adic cohomology groups of `X`.
 
 ## Main declarations
 
-- `AlgebraicGeometry.Scheme.ellAdicSheaf`: The sheaf `U ↦ C(U, ℤ_[ℓ])`.
-- `AlgebraicGeometry.Scheme.EllAdicCohomology`: The pro-étale cohomology groups `Hⁱ(X, ℤ_[ℓ])`.
+* `AlgebraicGeometry.Scheme.ellAdicSheaf`: The sheaf `U ↦ C(U, ℤ_[ℓ])`.
+* `AlgebraicGeometry.Scheme.EllAdicCohomology`: The pro-étale cohomology groups `Hⁱ(X, ℤ_[ℓ])`.
 
 ## Notes
 
@@ -36,8 +38,7 @@ definition using étale cohomology. This will show that the groups defined here 
 
 ## References
 
-- [Bhatt, Bhargav and Scholze, Peter, The pro-étale topology for schemes][proetale2015]
-
+* ‍\[Bhatt, Bhargav and Scholze, Peter, The pro-étale topology for schemes\]\[proetale2015\]
 -/
 
 @[expose] public section
@@ -58,7 +59,7 @@ instance : IsGrothendieckAbelian.{u + 1} (Sheaf (ProEt.topology X) Ab.{u + 1}) :
 /--
 The sheaf of continuous maps `U ↦ C(U, ℤ_[ℓ])` on the pro-étale site. This the coefficient
 sheaf for `ℓ`-adic cohomology.
-[Definition 6.8.1.][proetale2015]
+‍\[Definition 6.8.1.\]\[proetale2015\]
 -/
 noncomputable def ellAdicSheaf (ℓ : ℕ) [Fact ℓ.Prime] :
     Sheaf (ProEt.topology X) Ab.{u} :=

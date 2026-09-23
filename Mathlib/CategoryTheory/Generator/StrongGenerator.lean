@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.ExtremalEpi
 public import Mathlib.CategoryTheory.Generator.Basic
 public import Mathlib.CategoryTheory.Limits.Presentation
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Strong generators
 
@@ -27,8 +30,9 @@ We also show that if any object in `C` is a colimit of objects in `S`,
 then `S` is a strong generator.
 
 ## References
-* [Adámek, J. and Rosický, J., *Locally presentable and accessible categories*][Adamek_Rosicky_1994]
 
+* ‍\[Adámek, J. and Rosický, J., _Locally presentable and accessible
+  categories_\]\[Adamek\_Rosicky\_1994\]
 -/
 
 @[expose] public section

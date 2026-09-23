@@ -12,6 +12,9 @@ public import Batteries.Linter.UnreachableTactic
 public import Mathlib.Tactic.Basic
 public meta import Qq.MatchImpl
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The `says` tactic combinator.
 
@@ -21,6 +24,7 @@ Once you've clicked to replace `X says` with `X says Y`,
 afterwards `X says Y` will only run `Y`.
 
 The typical usage case is:
+
 ```
 simp? [X] says simp only [X, Y, Z]
 ```

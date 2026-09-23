@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.Meromorphic.Order
 public import Mathlib.Analysis.RCLike.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Meromorphic Functions over the Real and Complex Numbers
 

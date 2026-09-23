@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Order.Floor.Semiring
 public import Mathlib.Algebra.Order.Ring.NNRat
 public import Mathlib.Data.Rat.Floor
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Floor Function for Non-negative Rational Numbers
 
@@ -101,7 +104,7 @@ namespace Mathlib.Meta.NormNum
 open Qq
 
 /-!
-### `norm_num` extension for `Nat.ceil`
+# `norm_num` extension for `Nat.ceil`
 -/
 
 theorem IsNat.natCeil {R : Type*} [Semiring R] [LinearOrder R] [IsStrictOrderedRing R]

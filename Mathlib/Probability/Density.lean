@@ -9,6 +9,9 @@ public import Mathlib.MeasureTheory.Measure.Decomposition.RadonNikodym
 public import Mathlib.MeasureTheory.Measure.Haar.OfBasis
 public import Mathlib.Probability.Independence.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Probability density function
 

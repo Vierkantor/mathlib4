@@ -12,12 +12,14 @@ public import Mathlib.Algebra.Group.Submonoid.Defs
 public import Mathlib.CategoryTheory.Limits.Creates
 public import Mathlib.CategoryTheory.Limits.Types.Limits
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The category of (commutative) (additive) monoids has all limits
 
 Further, these limits are preserved by the forgetful functor --- that is,
 the underlying types are just the limits in the category of types.
-
 -/
 
 @[expose] public section

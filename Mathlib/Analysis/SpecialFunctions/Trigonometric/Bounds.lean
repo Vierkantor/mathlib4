@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.Convex.SpecificFunctions.Deriv
 public import Mathlib.Analysis.SpecialFunctions.Trigonometric.ArctanDeriv
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Polynomial bounds for trigonometric functions
 

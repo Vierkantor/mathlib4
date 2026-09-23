@@ -11,6 +11,9 @@ public import Mathlib.CategoryTheory.Limits.Shapes.Images
 public import Mathlib.CategoryTheory.IsomorphismClasses
 public import Mathlib.CategoryTheory.Limits.Shapes.ZeroObjects
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Zero morphisms and zero objects
 
@@ -23,8 +26,8 @@ zero object provides zero morphisms, as the unique morphisms factoring through t
 
 ## References
 
-* https://en.wikipedia.org/wiki/Zero_morphism
-* [F. Borceux, *Handbook of Categorical Algebra 2*][borceux-vol2]
+* https://en.wikipedia.org/wiki/Zero\_morphism
+* ‍\[F. Borceux, _Handbook of Categorical Algebra 2_\]\[borceux-vol2\]
 -/
 
 @[expose] public section

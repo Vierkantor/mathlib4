@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Ring.Opposite
 public import Mathlib.GroupTheory.GroupAction.SubMulAction
 public import Mathlib.RingTheory.Congruence.Opposite
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Two Sided Ideals
 
@@ -22,7 +25,6 @@ In this file, for any `Ring R`, we reinterpret `I : RingCon R` as a two-sided-id
 * `TwoSidedIdeal.setLike`: Every `I : TwoSidedIdeal R` can be interpreted as a set of `R` where
   `x ∈ I` if and only if `I.ringCon x 0`.
 * `TwoSidedIdeal.addCommGroup`: Every `I : TwoSidedIdeal R` is an abelian group.
-
 -/
 
 @[expose] public section

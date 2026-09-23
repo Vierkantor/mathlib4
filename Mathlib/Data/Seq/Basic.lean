@@ -10,6 +10,9 @@ public import Mathlib.Data.ENat.Basic
 public import Mathlib.Tactic.ENatToNat
 public import Mathlib.Tactic.ApplyFun
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Basic properties of sequences (possibly infinite lists)
 

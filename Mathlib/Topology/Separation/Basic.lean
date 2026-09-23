@@ -13,6 +13,9 @@ public import Mathlib.Topology.Compactness.LocallyCompact
 public import Mathlib.Topology.Bases
 public import Mathlib.Tactic.CrossRefAttribute
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Separation properties of topological spaces
 
@@ -28,7 +31,7 @@ conditions, see the file `Mathlib/Topology/Separation/Hausdorff.lean`.
   `hasSeparatingCovers_iff_separatedNhds` to witness when two `Set`s have `SeparatedNhds`.
 * `T0Space`: A T₀/Kolmogorov space is a space where, for every two points `x ≠ y`,
   there is an open set that contains one, but not the other.
-* `R0Space`: An R₀ space (sometimes called a *symmetric space*) is a topological space
+* `R0Space`: An R₀ space (sometimes called a _symmetric space_) is a topological space
   such that the `Specializes` relation is symmetric.
 * `T1Space`: A T₁/Fréchet space is a space where every singleton set is closed.
   This is equivalent to, for every pair `x ≠ y`, there existing an open set containing `x`
@@ -56,8 +59,8 @@ occasionally the literature swaps definitions for e.g. T₃ and regular.
 
 ## References
 
-* <https://en.wikipedia.org/wiki/Separation_axiom>
-* [Willard's *General Topology*][zbMATH02107988]
+* [https://en.wikipedia.org/wiki/Separation\_axiom](https://en.wikipedia.org/wiki/Separation_axiom)
+* ‍\[Willard's _General Topology_\]\[zbMATH02107988\]
 -/
 
 @[expose] public section
@@ -798,8 +801,10 @@ theorem ContinuousWithinAt.eqOn_const_closure [TopologicalSpace Y] [T1Space Y]
   intro x hx
   apply ContinuousWithinAt.eq_const_of_mem_closure (h x hx) hx ht
 
-/-- To prove a function to a `T1Space` is continuous at some point `x`, it suffices to prove that
-`f` admits *some* limit at `x`. -/
+/--
+To prove a function to a `T1Space` is continuous at some point `x`, it suffices to prove that
+`f` admits _some_ limit at `x`.
+-/
 theorem continuousAt_of_tendsto_nhds [TopologicalSpace Y] [T1Space Y] {f : X → Y} {x : X} {y : Y}
     (h : Tendsto f (𝓝 x) (𝓝 y)) : ContinuousAt f x := by
   rwa [ContinuousAt, eq_of_tendsto_nhds h]
@@ -929,12 +934,16 @@ lemma Function.update_eventuallyEq_nhdsNE
     Function.update f a b =ᶠ[𝓝[≠] a'] f :=
   (Function.update_eventuallyEq_cofinite f a b).filter_mono (nhdsNE_le_cofinite a')
 
-/-! ### R₁ (preregular) spaces -/
+/-!
+# R₁ (preregular) spaces
+-/
 
 section R1Space
 
-/-- A topological space is called a *preregular* (a.k.a. R₁) space,
-if any two topologically distinguishable points have disjoint neighbourhoods. -/
+/--
+A topological space is called a _preregular_ (a.k.a. R₁) space,
+if any two topologically distinguishable points have disjoint neighbourhoods.
+-/
 @[mk_iff r1Space_iff_specializes_or_disjoint_nhds]
 class R1Space (X : Type*) [TopologicalSpace X] : Prop where
   specializes_or_disjoint_nhds (x y : X) : Specializes x y ∨ Disjoint (𝓝 x) (𝓝 y)
@@ -1175,7 +1184,7 @@ theorem Bornology.relativelyCompact_eq_inCompact :
   Bornology.ext _ _ Filter.coclosedCompact_eq_cocompact
 
 /-!
-### Lemmas about a weakly locally compact R₁ space
+# Lemmas about a weakly locally compact R₁ space
 
 In fact, a space with these properties is locally compact and regular.
 Some lemmas are formulated using the latter assumptions below.

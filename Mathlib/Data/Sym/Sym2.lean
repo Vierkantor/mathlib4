@@ -11,6 +11,9 @@ public import Mathlib.Data.SetLike.Basic
 public import Mathlib.Data.Sym.Basic
 public import Mathlib.Data.Sym.Sym2.Init
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The symmetric square
 
@@ -296,7 +299,9 @@ lemma lift_map_apply {g : γ → α} (f : {f : α → α → β // ∀ a₁ a₂
 section Membership
 variable {x : α}
 
-/-! ### Membership and set coercion -/
+/-!
+# Membership and set coercion
+-/
 
 
 /-- This is a predicate that determines whether a given term is a member of a term of the
@@ -491,7 +496,9 @@ lemma attachWith_map_subtypeVal {s : Sym2 α} {P : α → Prop} (h : ∀ a ∈ s
     (s.attachWith h).map Subtype.val = s := by
   cases s; rfl
 
-/-! ### Diagonal -/
+/-!
+# Diagonal
+-/
 
 variable {z : Sym2 α} {f : α → β}
 
@@ -576,7 +583,9 @@ theorem other_ne {a : α} {z : Sym2 α} (hd : ¬IsDiag z) (h : a ∈ z) : Mem.ot
 
 section Relations
 
-/-! ### Declarations about symmetric relations -/
+/-!
+# Declarations about symmetric relations
+-/
 
 
 variable {r r₁ r₂ : α → α → Prop}
@@ -825,7 +834,9 @@ end ToFinset
 
 section SymEquiv
 
-/-! ### Equivalence to the second symmetric power -/
+/-!
+# Equivalence to the second symmetric power
+-/
 
 
 attribute [local instance] List.Vector.Perm.isSetoid
@@ -918,7 +929,9 @@ end
 instance [DecidableEq α] : DecidableEq (Sym2 α) :=
   inferInstanceAs <| DecidableEq (Quotient (Sym2.Rel.setoid α))
 
-/-! ### The other element of an element of the symmetric square -/
+/-!
+# The other element of an element of the symmetric square
+-/
 
 /-- Get the other element of the unordered pair using the decidable equality.
 This is the computable version of `Mem.other`. -/

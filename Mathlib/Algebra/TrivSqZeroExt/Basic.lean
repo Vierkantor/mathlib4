@@ -11,6 +11,9 @@ public import Mathlib.LinearAlgebra.Prod
 public import Mathlib.Algebra.Algebra.Subalgebra.Lattice
 public import Mathlib.Algebra.Order.Group.Nat
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Trivial Square-Zero Extension
 
@@ -22,15 +25,19 @@ It is a square-zero extension because `M^2 = 0`.
 
 Note that expressing this requires bimodules; we write these in general for a
 not-necessarily-commutative `R` as:
+
 ```lean
 variable {R M : Type*} [Semiring R] [AddCommMonoid M]
 variable [Module R M] [Module Rᵐᵒᵖ M] [SMulCommClass R Rᵐᵒᵖ M]
 ```
+
 If we instead work with a commutative `R'` acting symmetrically on `M`, we write
+
 ```lean
 variable {R' M : Type*} [CommSemiring R'] [AddCommMonoid M]
 variable [Module R' M] [Module R'ᵐᵒᵖ M] [IsCentralScalar R' M]
 ```
+
 noting that in this context `IsCentralScalar R' M` implies `SMulCommClass R' R'ᵐᵒᵖ M`.
 
 Many of the later results in this file are only stated for the commutative `R'` for simplicity.
@@ -45,13 +52,13 @@ Many of the later results in this file are only stated for the commutative `R'` 
 * `TrivSqZeroExt.lift`: the universal property of the trivial square-zero extension; algebra
   morphisms `TrivSqZeroExt R M →ₐ[S] A` are uniquely defined by an algebra morphism `f : R →ₐ[S] A`
   on `R` and a linear map `g : M →ₗ[S] A` on `M` such that:
+
   * `g x * g y = 0`: the elements of `M` continue to square to zero.
   * `g (r •> x) = f r * g x` and `g (x <• r) = g x * f r`: left and right actions are preserved by
     `g`.
 * `TrivSqZeroExt.lift`: the universal property of the trivial square-zero extension; algebra
   morphisms `TrivSqZeroExt R M →ₐ[R] A` are uniquely defined by linear maps `M →ₗ[R] A` for
   which the product of any two elements in the range is zero.
-
 -/
 
 @[expose] public section
@@ -167,9 +174,11 @@ theorem inr_injective [Zero R] : Function.Injective (inr : M → tsze R M) :=
 
 end Basic
 
-/-! ### Structures inherited from `Prod`
+/-!
+# Structures inherited from `Prod`
 
-Additive operators and scalar multiplication operate elementwise. -/
+Additive operators and scalar multiplication operate elementwise.
+-/
 
 
 section Additive
@@ -396,7 +405,9 @@ def sndHom [Semiring R] [AddCommMonoid M] [Module R M] : tsze R M →ₗ[R] M :=
 
 end Additive
 
-/-! ### Multiplicative structure -/
+/-!
+# Multiplicative structure
+-/
 
 
 section Mul
@@ -545,14 +556,12 @@ instance nonAssocSemiring [Semiring R] [AddCommMonoid M] [Module R M] [Module R�
 instance nonAssocRing [Ring R] [AddCommGroup M] [Module R M] [Module Rᵐᵒᵖ M] :
     NonAssocRing (tsze R M) where
 
-/-- In the general non-commutative case, the power operator is
+/--
+In the general non-commutative case, the power operator is
 
-$$\begin{align}
-(r + m)^n &= r^n + r^{n-1}m + r^{n-2}mr + \cdots + rmr^{n-2} + mr^{n-1} \\
-          & =r^n + \sum_{i = 0}^{n - 1} r^{(n - 1) - i} m r^{i}
-\end{align}$$
+$$`\begin{align} (r + m)^n &= r^n + r^{n-1}m + r^{n-2}mr + \cdots + rmr^{n-2} + mr^{n-1} \\ & =r^n + \sum_{i = 0}^{n - 1} r^{(n - 1) - i} m r^{i} \end{align}`
 
-In the commutative case this becomes the simpler $(r + m)^n = r^n + nr^{n-1}m$.
+In the commutative case this becomes the simpler $`(r + m)^n = r^n + nr^{n-1}m`.
 -/
 instance [Monoid R] [AddMonoid M] [DistribMulAction R M] [DistribMulAction Rᵐᵒᵖ M] :
     Pow (tsze R M) ℕ :=
@@ -631,8 +640,10 @@ theorem fst_list_prod [Monoid R] [AddMonoid M] [DistribMulAction R M] [DistribMu
 instance semiring [Semiring R] [AddCommMonoid M]
     [Module R M] [Module Rᵐᵒᵖ M] [SMulCommClass R Rᵐᵒᵖ M] : Semiring (tsze R M) where
 
-/-- The second element of a product $\prod_{i=0}^n (r_i + m_i)$ is a sum of terms of the form
-$r_0\cdots r_{i-1}m_ir_{i+1}\cdots r_n$. -/
+/--
+The second element of a product $`\prod_{i=0}^n (r_i + m_i)` is a sum of terms of the form
+$`r_0\cdots r_{i-1}m_ir_{i+1}\cdots r_n`.
+-/
 theorem snd_list_prod [Monoid R] [AddCommMonoid M] [DistribMulAction R M] [DistribMulAction Rᵐᵒᵖ M]
     [SMulCommClass R Rᵐᵒᵖ M] (l : List (tsze R M)) :
     l.prod.snd =
@@ -682,9 +693,11 @@ section Inv
 variable {R : Type u} {M : Type v}
 variable [Neg M] [Inv R] [SMul Rᵐᵒᵖ M] [SMul R M]
 
-/-- Inversion of the trivial-square-zero extension, sending $r + m$ to $r^{-1} - r^{-1}mr^{-1}$.
+/--
+Inversion of the trivial-square-zero extension, sending $`r + m` to $`r^{-1} - r^{-1}mr^{-1}`.
 
-Strictly this is only a _two_-sided inverse when the left and right actions associate. -/
+Strictly this is only a _two_-sided inverse when the left and right actions associate.
+-/
 instance instInv : Inv (tsze R M) :=
   ⟨fun b => (b.1⁻¹, -(b.1⁻¹ •> b.2 <• b.1⁻¹))⟩
 

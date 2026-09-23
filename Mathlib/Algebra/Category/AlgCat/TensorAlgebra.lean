@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Category.ModuleCat.ChangeOfRings
 public import Mathlib.Algebra.Ring.Shrink
 public import Mathlib.LinearAlgebra.TensorAlgebra.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `TensorAlgebra` as a functor `ModuleCat R ⥤ AlgCat R`
 

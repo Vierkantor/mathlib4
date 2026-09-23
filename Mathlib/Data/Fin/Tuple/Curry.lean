@@ -9,6 +9,9 @@ public import Mathlib.Data.Fin.Tuple.Basic
 public import Mathlib.Logic.Equiv.Fin.Basic
 public import Mathlib.Logic.Function.OfArity
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Currying and uncurrying of n-ary functions
 
@@ -24,7 +27,6 @@ n-ary generalizations of the binary `curry` and `uncurry`.
   function from `(i : Fin n) → p i`.
 * `Function.FromTypes.curry`: convert a function from `(i : Fin n) → p i` to a
   `p`-ary heterogeneous function.
-
 -/
 
 @[expose] public section

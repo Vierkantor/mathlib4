@@ -10,14 +10,17 @@ public import Mathlib.AlgebraicTopology.DoldKan.SplitSimplicialObject
 public import Mathlib.CategoryTheory.Idempotents.HomologicalComplex
 public import Mathlib.Tactic.SuppressCompilation
 
-/-! # The counit isomorphism of the Dold-Kan equivalence
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# The counit isomorphism of the Dold-Kan equivalence
 
 The purpose of this file is to construct natural isomorphisms
 `N₁Γ₀ : Γ₀ ⋙ N₁ ≅ toKaroubi (ChainComplex C ℕ)`
 and `N₂Γ₂ : Γ₂ ⋙ N₂ ≅ 𝟭 (Karoubi (ChainComplex C ℕ))`.
 
 (See `Equivalence.lean` for the general strategy of proof of the Dold-Kan equivalence.)
-
 -/
 
 @[expose] public section

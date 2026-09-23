@@ -11,6 +11,9 @@ public import Mathlib.CategoryTheory.Limits.Shapes.BinaryBiproducts
 public import Mathlib.CategoryTheory.Linear.LinearFunctor
 public import Mathlib.CategoryTheory.Shift.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Triangles
 

@@ -9,32 +9,30 @@ public import Mathlib.GroupTheory.GroupAction.MultipleTransitivity
 public import Mathlib.GroupTheory.GroupAction.SubMulAction.OfFixingSubgroup
 public import Mathlib.Data.ENat.Lattice
 
-/-! # Multiply preprimitive actions
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Multiply preprimitive actions
 
 Let `G` be a group acting on a type `α`.
 
 * `MulAction.IsMultiplyPreprimitive` :
-  The action is said to be `n`-primitive if, for every subset `s :
-  Set α` with `n` elements, the actions f `stabilizer G s` on the
+  The action is said to be `n`-primitive if, for every subset `s : Set α` with `n` elements, the
+  actions f `stabilizer G s` on the
   complement of `s` is primitive.
-
 * `MulAction.is_zero_preprimitive` : any action is 0-primitive
-
 * `MulAction.is_one_preprimitive_iff` : an action is 1-primitive if and only if it is primitive
-
 * `MulAction.isMultiplyPreprimitive_ofStabilizer`: if an action is `n + 1`-primitive,
   then the action of `stabilizer G a` on the complement of `{a}` is `n`-primitive.
-
 * `MulAction.isMultiplyPreprimitive_succ_iff_ofStabilizer` :
   for `1 ≤ n`, an action is `n + 1`-primitive, then the action
   of `stabilizer G a` on the complement of `{a}` is `n`-primitive.
   ofFixingSubgroup.isMultiplyPreprimitive
-
 * `MulAction.ofFixingSubgroup.isMultiplyPreprimitive`:
   If an action is `s.ncard + m`-primitive, then
   the action of `FixingSubgroup G s` on the complement of `s`
   is `m`-primitive.
-
 -/
 
 public section

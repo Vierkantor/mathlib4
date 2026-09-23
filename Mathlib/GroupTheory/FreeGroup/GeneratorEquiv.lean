@@ -9,9 +9,11 @@ public import Mathlib.Algebra.FreeAbelianGroup.Finsupp
 public import Mathlib.GroupTheory.FreeGroup.IsFreeGroup
 public import Mathlib.LinearAlgebra.Dimension.StrongRankCondition
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Isomorphisms between free groups imply equivalences of their generators
-
 -/
 
 @[expose] public section

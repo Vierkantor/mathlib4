@@ -9,6 +9,9 @@ public import Mathlib.Analysis.Calculus.LocalExtr.Rolle
 public import Mathlib.Analysis.Calculus.Deriv.Polynomial
 public import Mathlib.Topology.Algebra.Polynomial
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Rolle's Theorem for polynomials
 

@@ -8,6 +8,9 @@ module
 public import Mathlib.NumberTheory.ModularForms.Derivative
 public import Mathlib.NumberTheory.ModularForms.LevelOne.DimensionFormula
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Ramanujan's formulas for derivatives of Eisenstein series
 
@@ -15,12 +18,12 @@ We prove Ramanujan's formulas for derivatives of the normalised Eisenstein serie
 `E₆`, in terms of the Serre derivative `∂ₖ = D - (k / 12) E₂` and the normalized derivative
 `D = (2πi)⁻¹ d/dz`:
 
-- `Derivative.serreDerivative_E₂` : `∂₁ E₂ = -E₄ / 12`
-- `Derivative.serreDerivative_E₄` : `∂₄ E₄ = -E₆ / 3`
-- `Derivative.serreDerivative_E₆` : `∂₆ E₆ = -E₄² / 2`
-- `Derivative.normalizedDerivOfComplex_E₂` : `D E₂ = (E₂² - E₄) / 12`
-- `Derivative.normalizedDerivOfComplex_E₄` : `D E₄ = (E₂ E₄ - E₆) / 3`
-- `Derivative.normalizedDerivOfComplex_E₆` : `D E₆ = (E₂ E₆ - E₄²) / 2`
+* `Derivative.serreDerivative_E₂` : `∂₁ E₂ = -E₄ / 12`
+* `Derivative.serreDerivative_E₄` : `∂₄ E₄ = -E₆ / 3`
+* `Derivative.serreDerivative_E₆` : `∂₆ E₆ = -E₄² / 2`
+* `Derivative.normalizedDerivOfComplex_E₂` : `D E₂ = (E₂² - E₄) / 12`
+* `Derivative.normalizedDerivOfComplex_E₄` : `D E₄ = (E₂ E₄ - E₆) / 3`
+* `Derivative.normalizedDerivOfComplex_E₆` : `D E₆ = (E₂ E₆ - E₄²) / 2`
 
 ## Proof Strategy
 
@@ -55,12 +58,16 @@ private lemma serreDerivative_eq_smul {k' : ℤ} {k l L : ℂ} {g F : ModularFor
       ((tendsto_E2_atImInfty.const_mul (k * 12⁻¹)).mul hl)
   rw [hfg, hL, ← tendsto_nhds_unique (hg1.const_mul c) hlim, mul_one]
 
-/-- **Ramanujan's formula for `E₄`**: `∂₄ E₄ = -E₆ / 3`. -/
+/--
+*Ramanujan's formula for `E₄`*: `∂₄ E₄ = -E₆ / 3`.
+-/
 theorem serreDerivative_E₄ : serreDerivative 4 E₄ = (-3⁻¹ : ℂ) • E₆ :=
   serreDerivative_eq_smul (F := serreDerivativeMF 4 E₄) rfl levelOne_weight_six_rank_one
     E₄.holo' tendsto_E_atImInfty tendsto_E_atImInfty (by norm_num)
 
-/-- **Ramanujan's formula for `E₆`**: `∂₆ E₆ = -E₄² / 2`. -/
+/--
+*Ramanujan's formula for `E₆`*: `∂₆ E₆ = -E₄² / 2`.
+-/
 theorem serreDerivative_E₆ : serreDerivative 6 E₆ = (-2⁻¹ : ℂ) • E₄ ^ 2 :=
   have hlim : Tendsto (fun z ↦ E₄ z ^ 2) atImInfty (𝓝 1) := by
     simpa using (tendsto_E_atImInfty).pow 2
@@ -120,22 +127,32 @@ private def serreDerivativeOneE2 : ModularForm 𝒮ℒ 4 where
     (serreDerivativeOne_E2_slash γ).symm ▸
       isBoundedAtImInfty_serreDerivative 1 E2_mdifferentiable isBoundedAtImInfty_E2
 
-/-- **Ramanujan's formula for `E₂`**: `∂₁ E₂ = -E₄ / 12`. -/
+/--
+*Ramanujan's formula for `E₂`*: `∂₁ E₂ = -E₄ / 12`.
+-/
 theorem serreDerivative_E₂ : serreDerivative 1 E2 = (-12⁻¹ : ℂ) • E₄ :=
   serreDerivative_eq_smul (F := serreDerivativeOneE2) rfl levelOne_weight_four_rank_one
     E2_mdifferentiable tendsto_E2_atImInfty tendsto_E_atImInfty (by norm_num)
 
-/-! ### Ramanujan's formulas in terms of `D` -/
+/-!
+# Ramanujan's formulas in terms of `D`
+-/
 
-/-- **Ramanujan's formula for `E₂`**: `D E₂ = (E₂² - E₄) / 12`. -/
+/--
+*Ramanujan's formula for `E₂`*: `D E₂ = (E₂² - E₄) / 12`.
+-/
 theorem normalizedDerivOfComplex_E₂ : D E2 = (12⁻¹ : ℂ) • (E2 ^ 2 - E₄) := by
   linear_combination (norm := (funext z; simp; ring1)) serreDerivative_E₂
 
-/-- **Ramanujan's formula for `E₄`**: `D E₄ = (E₂ E₄ - E₆) / 3`. -/
+/--
+*Ramanujan's formula for `E₄`*: `D E₄ = (E₂ E₄ - E₆) / 3`.
+-/
 theorem normalizedDerivOfComplex_E₄ : D E₄ = (3⁻¹ : ℂ) • (E2 * E₄ - E₆) := by
   linear_combination (norm := (funext z; simp; ring1)) serreDerivative_E₄
 
-/-- **Ramanujan's formula for `E₆`**: `D E₆ = (E₂ E₆ - E₄²) / 2`. -/
+/--
+*Ramanujan's formula for `E₆`*: `D E₆ = (E₂ E₆ - E₄²) / 2`.
+-/
 theorem normalizedDerivOfComplex_E₆ : D E₆ = (2⁻¹ : ℂ) • (E2 * E₆ - E₄ ^ 2) := by
   linear_combination (norm := (funext z; simp; ring1)) serreDerivative_E₆
 

@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Algebra.TransferInstance
 public import Mathlib.Algebra.Star.Module
 public import Mathlib.Analysis.Analytic.OfScalars
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The logarithm in a topological algebra
 

@@ -10,6 +10,9 @@ public import Mathlib.Data.Nat.Factorization.Basic
 public import Mathlib.Data.Nat.Prime.Pow
 public import Mathlib.NumberTheory.Divisors
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Prime powers and factorizations
 

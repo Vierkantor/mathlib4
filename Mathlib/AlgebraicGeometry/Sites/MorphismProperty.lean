@@ -10,14 +10,15 @@ public import Mathlib.CategoryTheory.MorphismProperty.Limits
 public import Mathlib.CategoryTheory.Sites.JointlySurjective
 public import Mathlib.CategoryTheory.Sites.MorphismProperty
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Site defined by a morphism property
 
 Given a multiplicative morphism property `P` that is stable under base change, we define the
 associated precoverage on the category of schemes, where coverings are given
 by jointly surjective families of morphisms satisfying `P`.
-
 -/
 
 @[expose] public section

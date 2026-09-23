@@ -13,6 +13,9 @@ public import Mathlib.Order.RelClasses
 public import Mathlib.Tactic.Monotonicity.Attr
 public import Mathlib.Util.CompileInductive
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Multisets
 
@@ -26,12 +29,10 @@ importing `Multiset.Defs`.
 ## Main definitions
 
 * `Multiset`: the type of finite sets with duplicates allowed.
-
 * `Coe (List α) (Multiset α)`: turn a list into a multiset by forgetting the order.
 * `Multiset.pmap`: map a partial function defined on a superset of the multiset's elements.
 * `Multiset.attach`: add a proof of membership to the elements of the multiset.
 * `Multiset.card`: number of elements of a multiset (counted with repetition).
-
 * `Membership α (Multiset α)` instance: `x ∈ s` if `x` has multiplicity at least one in `s`.
 * `Subset (Multiset α)` instance: `s ⊆ t` if every `x ∈ s` also enjoys `x ∈ t`.
 * `PartialOrder (Multiset α)` instance: `s ≤ t` if all `x` have multiplicity in
@@ -131,7 +132,9 @@ instance decidableMem [DecidableEq α] (a : α) (s : Multiset α) : Decidable (a
 
 end Mem
 
-/-! ### `Multiset.Subset` -/
+/-!
+# `Multiset.Subset`
+-/
 
 
 section Subset
@@ -171,7 +174,9 @@ theorem mem_of_subset {s t : Multiset α} {a : α} (h : s ⊆ t) : a ∈ s → a
 
 end Subset
 
-/-! ### Partial order on `Multiset`s -/
+/-!
+# Partial order on `Multiset`s
+-/
 
 
 /-- `s ≤ t` means that `s` is a sublist of `t` (up to permutation).
@@ -215,7 +220,9 @@ theorem leInductionOn {C : Multiset α → Multiset α → Prop} {s t : Multiset
 
 end
 
-/-! ### Cardinality -/
+/-!
+# Cardinality
+-/
 
 
 /-- The cardinality of a multiset is the sum of the multiplicities
@@ -249,7 +256,9 @@ instance instWellFoundedLT : WellFoundedLT (Multiset α) :=
 theorem coe_reverse (l : List α) : (reverse l : Multiset α) = l :=
   Quot.sound <| reverse_perm _
 
-/-! ### Map for partial functions -/
+/-!
+# Map for partial functions
+-/
 
 /-- Lift of the list `pmap` operation. Map a partial function `f` over a multiset
   `s` whose elements are all in the domain of `f`. -/

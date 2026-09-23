@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Limits.Shapes.RegularMono
 public import Mathlib.CategoryTheory.Shift.Opposite
 public import Mathlib.CategoryTheory.Shift.Pullback
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The shift on the opposite category of a pretriangulated category
 
@@ -30,8 +33,8 @@ the equivalence of categories `opShiftFunctorEquivalence C n : Cᵒᵖ ≌ Cᵒ�
 functor is `shiftFunctor Cᵒᵖ n` and whose inverse functor is `(shiftFunctor C n).op`.
 
 ## References
-* [Jean-Louis Verdier, *Des catégories dérivées des catégories abéliennes*][verdier1996]
 
+* ‍\[Jean-Louis Verdier, _Des catégories dérivées des catégories abéliennes_\]\[verdier1996\]
 -/
 
 @[expose] public section

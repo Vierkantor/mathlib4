@@ -10,10 +10,13 @@ public import Mathlib.Dynamics.Minimal
 public import Mathlib.MeasureTheory.Measure.Regular
 public import Mathlib.MeasureTheory.Group.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Measures invariant under group actions
 
-A measure `μ : Measure α` is said to be *invariant* under an action of a group `G` if scalar
+A measure `μ : Measure α` is said to be _invariant_ under an action of a group `G` if scalar
 multiplication by `c : G` is a measure-preserving map for all `c`. In this file we define a
 typeclass for measures invariant under action of an (additive or multiplicative) group and prove
 some basic properties of such measures.

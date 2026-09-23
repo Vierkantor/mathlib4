@@ -11,9 +11,11 @@ public import Mathlib.Logic.Embedding.Basic
 public import Mathlib.Logic.Pairwise
 public import Mathlib.Data.Set.Image
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Interactions between embeddings and sets.
-
 -/
 
 @[expose] public section

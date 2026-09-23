@@ -12,6 +12,9 @@ public import Mathlib.Topology.ShrinkingLemma
 public import Mathlib.Topology.UrysohnsLemma
 public import Mathlib.Topology.ContinuousMap.Ordered
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Continuous partition of unity
 
@@ -47,7 +50,7 @@ Note that `g i x = ∏ᶠ j < i, (1 - f j x) - ∏ᶠ j ≤ i, (1 - f j x)`, so 
 `∑ᶠ i, g i x` cancel, and we get `∑ᶠ i, g i x = 1 - ∏ᶠ i, (1 - f i x)`, and the latter product
 equals zero because one of `f i x` is equal to one.
 
-We say that a partition of unity or a bump function covering `f` is *subordinate* to a family of
+We say that a partition of unity or a bump function covering `f` is _subordinate_ to a family of
 sets `U i`, `i : ι`, if the closure of the support of each `f i` is included in `U i`. We use
 Urysohn's Lemma to prove that a locally finite open covering of a normal topological space admits a
 subordinate bump function covering (hence, a subordinate partition of unity), see

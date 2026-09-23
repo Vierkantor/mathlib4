@@ -10,6 +10,9 @@ public meta import Lean.Parser.Term
 public meta import Lean.Parser.Do
 public meta import Lean.Elab.Command
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The `unset_option` command
 

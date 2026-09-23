@@ -10,6 +10,9 @@ public import Mathlib.RingTheory.Ideal.IdempotentFG
 public import Mathlib.RingTheory.RingHom.Unramified
 public import Mathlib.RingTheory.Unramified.LocalRing
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Formally unramified morphisms
 
@@ -17,7 +20,6 @@ A morphism of schemes `f : X ⟶ Y` is formally unramified if for each affine `U
 `V ⊆ f ⁻¹' U`, the induced map `Γ(Y, U) ⟶ Γ(X, V)` is formally unramified.
 
 We show that these properties are local, and are stable under compositions and base change.
-
 -/
 
 public section

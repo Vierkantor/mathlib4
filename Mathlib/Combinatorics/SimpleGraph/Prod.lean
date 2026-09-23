@@ -9,6 +9,9 @@ public import Mathlib.Combinatorics.SimpleGraph.Metric
 public import Mathlib.Combinatorics.SimpleGraph.Paths
 public import Mathlib.Combinatorics.SimpleGraph.Sum
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Graph products
 

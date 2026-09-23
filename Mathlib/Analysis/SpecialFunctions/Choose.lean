@@ -10,6 +10,9 @@ public import Mathlib.Analysis.Asymptotics.AsymptoticEquivalent
 public import Mathlib.Data.Nat.Cast.Field
 import Mathlib.Analysis.Asymptotics.Theta
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Binomial coefficients and factorial variants
 

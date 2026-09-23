@@ -9,6 +9,9 @@ public import Mathlib.MeasureTheory.Measure.MutuallySingular
 public import Mathlib.MeasureTheory.VectorMeasure.Decomposition.Hahn
 public import Mathlib.MeasureTheory.VectorMeasure.Relations
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Jordan decomposition
 

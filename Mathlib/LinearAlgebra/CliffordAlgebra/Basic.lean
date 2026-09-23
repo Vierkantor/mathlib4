@@ -11,6 +11,9 @@ public import Mathlib.LinearAlgebra.QuadraticForm.Isometry
 public import Mathlib.LinearAlgebra.QuadraticForm.IsometryEquiv
 public import Mathlib.Tactic.CrossRefAttribute
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Clifford Algebras
 
@@ -32,12 +35,14 @@ The canonical linear map `M → CliffordAlgebra Q` is denoted `CliffordAlgebra.�
 
 The main theorems proved ensure that `CliffordAlgebra Q` satisfies the universal property
 of the Clifford algebra.
+
 1. `ι_comp_lift` is the fact that the composition of `ι Q` with `lift Q f cond` agrees with `f`.
 2. `lift_unique` ensures the uniqueness of `lift Q f cond` with respect to 1.
 
 ## Implementation details
 
 The Clifford algebra of `M` is constructed as a quotient of the tensor algebra, as follows.
+
 1. We define a relation `CliffordAlgebra.Rel Q` on `TensorAlgebra R M`.
    This is the smallest relation which identifies squares of elements of `M` with `Q m`.
 2. The Clifford algebra is the quotient of the tensor algebra by this relation.
@@ -180,7 +185,9 @@ theorem lift_comp_ι (g : CliffordAlgebra Q →ₐ[R] A) :
     lift Q ⟨g.toLinearMap.comp (ι Q), comp_ι_sq_scalar _⟩ = g := by
   exact (lift Q : _ ≃ (CliffordAlgebra Q →ₐ[R] A)).apply_symm_apply g
 
-/-- See note [partially-applied ext lemmas]. -/
+/--
+See note \[partially-applied ext lemmas\].
+-/
 @[ext high]
 theorem hom_ext {A : Type*} [Semiring A] [Algebra R A] {f g : CliffordAlgebra Q →ₐ[R] A} :
     f.toLinearMap.comp (ι Q) = g.toLinearMap.comp (ι Q) → f = g := by
@@ -304,7 +311,9 @@ theorem mul_ι_mul_ι_mul_comm_of_isOrtho
 
 end isOrtho
 
-/-- $aba$ is a vector. -/
+/--
+$`aba` is a vector.
+-/
 theorem ι_mul_ι_mul_ι (a b : M) :
     ι Q a * ι Q b * ι Q a = ι Q (QuadraticMap.polar Q a b • a - Q a • b) := by
   rw [ι_mul_ι_comm, sub_mul, mul_assoc, ι_sq_scalar, ← Algebra.smul_def, ← Algebra.commutes, ←

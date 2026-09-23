@@ -12,8 +12,10 @@ public import Mathlib.Data.Setoid.Basic
 public import Mathlib.GroupTheory.GroupAction.Defs
 public import Mathlib.GroupTheory.GroupAction.Hom
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Sets invariant to a `MulAction`
 
 In this file we define `SubMulAction R M`; a subset of a `MulAction R M` which is closed with
@@ -225,10 +227,14 @@ theorem mem_carrier {p : SubMulAction R M} {x : M} : x ∈ p.carrier ↔ x ∈ (
 theorem ext {p q : SubMulAction R M} (h : ∀ x, x ∈ p ↔ x ∈ q) : p = q :=
   SetLike.ext h
 
-/-- Copy of a sub_mul_action with a new `carrier` equal to the old one. Useful to fix definitional
-equalities. -/
-@[to_additive /-- Copy of a sub_mul_action with a new `carrier` equal to the old one.
-  Useful to fix definitional equalities. -/]
+/--
+Copy of a sub\_mul\_action with a new `carrier` equal to the old one. Useful to fix definitional
+equalities.
+-/
+@[to_additive /--
+              Copy of a sub\_mul\_action with a new `carrier` equal to the old one.
+Useful to fix definitional equalities.
+              -/]
 protected def copy (p : SubMulAction R M) (s : Set M) (hs : s = ↑p) : SubMulAction R M where
   carrier := s
   smul_mem' := hs.symm ▸ p.smul_mem'

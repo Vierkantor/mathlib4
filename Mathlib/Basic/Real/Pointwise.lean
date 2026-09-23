@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Order.Archimedean.Real.Basic
 public import Mathlib.Algebra.Order.Module.Pointwise
 public import Mathlib.Order.ConditionallyCompleteLattice.Indexed
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Pointwise operations on sets of reals
 
@@ -102,7 +105,9 @@ theorem Real.smul_iInf_of_nonpos (ha : a ≤ 0) (f : ι → ℝ) : (a • ⨅ i,
 
 end Module
 
-/-! ## Special cases for real multiplication -/
+/-!
+# Special cases for real multiplication
+-/
 
 
 section Mul

@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Order.Hom.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Bounded order homomorphisms
 
@@ -161,7 +164,9 @@ instance [Preorder α] [Preorder β] [BoundedOrder α] [BoundedOrder β] [Bounde
     CoeTC F (BoundedOrderHom α β) :=
   ⟨BoundedOrderHomClass.toBoundedOrderHom⟩
 
-/-! ### Top and bot homomorphisms -/
+/-!
+# Top and bot homomorphisms
+-/
 
 
 namespace TopHom
@@ -354,7 +359,9 @@ instance [DistribLattice β] [OrderTop β] : DistribLattice (TopHom α β) :=
 
 end TopHom
 
-/-! ### Bounded order homomorphisms -/
+/-!
+# Bounded order homomorphisms
+-/
 
 -- TODO: remove this configuration and use the default configuration.
 initialize_simps_projections BoundedOrderHom (+toOrderHom, -toFun)
@@ -466,7 +473,9 @@ theorem cancel_left {g : BoundedOrderHom β γ} {f₁ f₂ : BoundedOrderHom α 
 
 end BoundedOrderHom
 
-/-! ### Dual homs -/
+/-!
+# Dual homs
+-/
 
 
 namespace TopHom

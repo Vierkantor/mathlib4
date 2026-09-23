@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Group.Fin.Tuple
 public import Mathlib.Data.Finset.NatAntidiagonal
 public import Mathlib.Order.Fin.Tuple
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Collections of tuples of naturals with the same sum
 
@@ -44,7 +47,9 @@ support finitely-supported functions, as in `Finset.finsuppAntidiag` from
 @[expose] public section
 
 
-/-! ### Lists -/
+/-!
+# Lists
+-/
 
 
 namespace List.Nat
@@ -160,7 +165,9 @@ theorem antidiagonalTuple_pairwise_pi_lex :
 
 end List.Nat
 
-/-! ### Multisets -/
+/-!
+# Multisets
+-/
 
 
 namespace Multiset.Nat
@@ -197,7 +204,9 @@ theorem antidiagonalTuple_two (n : ℕ) :
 
 end Multiset.Nat
 
-/-! ### Finsets -/
+/-!
+# Finsets
+-/
 
 
 namespace Finset.Nat

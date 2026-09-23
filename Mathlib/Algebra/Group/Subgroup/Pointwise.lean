@@ -12,7 +12,11 @@ public import Mathlib.Algebra.Group.Submonoid.Pointwise
 public import Mathlib.GroupTheory.GroupAction.ConjAct
 public import Mathlib.Algebra.Group.Pointwise.Set.Lattice
 
-/-! # Pointwise instances on `Subgroup` and `AddSubgroup`s
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Pointwise instances on `Subgroup` and `AddSubgroup`s
 
 This file provides the actions
 
@@ -412,7 +416,9 @@ theorem smul_opposite_image_mul_preimage {H : Subgroup G} (g : G) (h : H.op) (s 
     (fun y => h • y) '' (g * ·) ⁻¹' s = (g * ·) ⁻¹' (fun y => h • y) '' s :=
   smul_opposite_image_mul_preimage' g h s
 
-/-! ### Pointwise action -/
+/-!
+# Pointwise action
+-/
 
 
 section Monoid

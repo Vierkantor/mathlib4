@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Init
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Parameterized computation core for the Bareiss elimination
 
@@ -17,10 +20,10 @@ tactic selects a model through the `bareiss_ext` extension registry.
 
 ## Main definitions
 
-- `RingOps`: the arithmetic of a model's value type.
-- `bareissDecomp`: fraction-free Gaussian elimination over a model's values.
-- `mkProducer`: assemble a producer from a model's parts.
-- `bareiss_ext`: the attribute registering a `BareissExt` computation model.
+* `RingOps`: the arithmetic of a model's value type.
+* `bareissDecomp`: fraction-free Gaussian elimination over a model's values.
+* `mkProducer`: assemble a producer from a model's parts.
+* `bareiss_ext`: the attribute registering a `BareissExt` computation model.
 
 ## Implementation notes
 
@@ -30,14 +33,14 @@ so far and `W` is the working matrix. When the pivot search swaps the rows at po
 `r < p`, the invariant must be restored against the new `A_σ' = S * A_σ`, where `S` is
 the permutation matrix of the transposition `τ = (r, p)`:
 
-  `S * W = S * L * (S⁻¹ * S) * A_σ = (S * L * S⁻¹) * A_σ'`
+`S * W = S * L * (S⁻¹ * S) * A_σ = (S * L * S⁻¹) * A_σ'`
 
 so `L` is conjugated by the matrix of `τ`, as in LU factorisation with partial pivoting.
 
 ## References
 
-* [Bareiss, *Sylvester's identity and multistep integer-preserving Gaussian
-  elimination*][bareiss1968]
+* ‍\[Bareiss, _Sylvester's identity and multistep integer-preserving Gaussian
+  elimination_\]\[bareiss1968\]
 -/
 
 public meta section

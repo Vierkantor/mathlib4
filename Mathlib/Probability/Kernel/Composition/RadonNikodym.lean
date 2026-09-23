@@ -11,6 +11,9 @@ public import Mathlib.Probability.Kernel.RadonNikodym
 import Mathlib.Probability.Kernel.Composition.WithDensity
 import Mathlib.Probability.Kernel.Composition.AbsolutelyContinuous
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Radon-Nikodym derivative of a composition product
 
@@ -31,7 +34,6 @@ If `α` is countable or `β` is countably generated, the kernels have a Radon-Ni
   product of `∂μ/∂ν` and `∂κ/∂η`.
 * `rnDeriv_measure_compProd_right`: the Radon-Nikodym derivative `∂(μ ⊗ₘ κ)/∂(μ ⊗ₘ η)`
   (with the same measure) equals `∂κ/∂η`.
-
 -/
 
 

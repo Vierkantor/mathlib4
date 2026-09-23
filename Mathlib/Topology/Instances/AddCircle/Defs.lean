@@ -17,6 +17,9 @@ import Mathlib.Algebra.GroupWithZero.Action.Regular
 import Mathlib.Algebra.Order.Interval.Set.Group
 import Mathlib.GroupTheory.QuotientGroup.ModEq
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The additive circle
 
@@ -50,7 +53,6 @@ the rational circle `AddCircle (1 : ℚ)`, and so we set things up more generall
 * Link with periodicity
 * Lie group structure
 * Exponential equivalence to `Circle`
-
 -/
 
 @[expose] public section

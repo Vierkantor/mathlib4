@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.Complex.CauchyIntegral
 public import Mathlib.Analysis.Complex.Convex
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Primitives of Holomorphic Functions
 
@@ -22,7 +25,7 @@ segment in the disk), and compute its derivative.
 
 ## Main results
 
-* `Complex.IsConservativeOn.isExactOn_ball`: **Morera's Theorem**: On a disk, a continuous function
+* `Complex.IsConservativeOn.isExactOn_ball`: *Morera's Theorem*: On a disk, a continuous function
   whose integrals on rectangles vanish, has primitives.
 * `DifferentiableOn.isExactOn_ball`: On a disk, a holomorphic function has primitives.
 

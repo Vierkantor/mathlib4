@@ -14,6 +14,9 @@ public import Mathlib.Data.Finsupp.SMul
 public import Mathlib.RingTheory.HahnSeries.Basic
 public import Mathlib.Tactic.FastInstance
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Additive properties of Hahn series
 
@@ -23,10 +26,12 @@ further structure on `R⟦Γ⟧`.  When `R` has an addition operation, `R⟦Γ�
 coefficients.
 
 ## Main Definitions
+
 * If `R` is a (commutative) additive monoid or group, then so is `R⟦Γ⟧`.
 
 ## References
-- [J. van der Hoeven, *Operators on Generalized Power Series*][van_der_hoeven]
+
+* ‍\[J. van der Hoeven, _Operators on Generalized Power Series_\]\[van\_der\_hoeven\]
 -/
 
 @[expose] public section

@@ -9,6 +9,10 @@ public import Mathlib.LinearAlgebra.Matrix.Hadamard
 public import Mathlib.LinearAlgebra.Matrix.Kronecker
 public import Mathlib.LinearAlgebra.Matrix.Trace
 
+set_option doc.verso true
+set_option doc.verso.module false
+set_option doc.verso.suggestions false
+
 /-! # Vectorization of matrices
 
 This file defines `Matrix.vec A`, the vectorization of a matrix `A`,

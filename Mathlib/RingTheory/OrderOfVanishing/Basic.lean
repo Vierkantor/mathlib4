@@ -11,6 +11,9 @@ public import Mathlib.RingTheory.HopkinsLevitzki
 public import Mathlib.Algebra.Ring.Hom.InjSurj
 public import Mathlib.RingTheory.Ideal.Quotient.Noetherian
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Order of vanishing
 

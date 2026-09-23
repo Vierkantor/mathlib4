@@ -7,6 +7,9 @@ module
 
 public import Mathlib.RingTheory.Polynomial.Nilpotent
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Newton-Raphson method
 
@@ -26,7 +29,6 @@ as Hensel's lemma and the Jordan-Chevalley decomposition.
   sense that `P(x)` is nilpotent (and `P'(x)` is a unit) then we may write `x` as a sum
   `x = n + r` where `n` is nilpotent and `r` is a root of `P`. This can be used to prove the
   Jordan-Chevalley decomposition of linear endomorphisms.
-
 -/
 
 @[expose] public section

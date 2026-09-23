@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Polynomial.Degree.Defs
 public import Mathlib.Algebra.Polynomial.EraseLead
 public import Mathlib.Data.List.Range
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # A list of coefficients of a polynomial
 

@@ -9,6 +9,9 @@ public import Mathlib.LinearAlgebra.Alternating.Curry
 public import Mathlib.GroupTheory.Perm.Fin
 public import Mathlib.Data.Fin.Parity
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Uncurrying alternating maps
 
@@ -17,6 +20,7 @@ and is alternating form in the other `n` arguments,
 this file defines an alternating form `AlternatingMap.alternatizeUncurryFin f` in `n + 1` arguments.
 
 This function is given by
+
 ```
 AlternatingMap.alternatizeUncurryFin f v =
   ∑ i : Fin (n + 1), (-1) ^ (i : ℕ) • f (v i) (removeNth i v)
@@ -32,10 +36,9 @@ not only a field of characteristic zero.
 
 ## Main results
 
-- `AlternatingMap.alternatizeUncurryFin_curryLeft`:
+* `AlternatingMap.alternatizeUncurryFin_curryLeft`:
   the round-trip formula for currying/uncurrying, see above.
-
-- `AlternatingMap.alternatizeUncurryFin_alternatizeUncurryFinLM_comp_of_symmetric`:
+* `AlternatingMap.alternatizeUncurryFin_alternatizeUncurryFinLM_comp_of_symmetric`:
   If `f` is a symmetric bilinear map taking values in the space of alternating maps,
   then the twice uncurried `f` is zero.
 
@@ -144,17 +147,15 @@ def alternatizeUncurryFinLM : (M →ₗ[R] M [⋀^Fin n]→ₗ[R] N) →ₗ[R] M
   map_add' := alternatizeUncurryFin_add
   map_smul' := alternatizeUncurryFin_smul
 
-/-- If `f` is a bilinear map taking values in the space of alternating maps,
+/--
+If `f` is a bilinear map taking values in the space of alternating maps,
 then evaluation of the twice uncurried `f` on a tuple of vectors `v`
 can be represented as a sum of
 
-$$
-f(v_i, v_j; v_0, \dots, \hat{v_i}, \dots, \hat{v_j}-) -
-f(v_j, v_i; v_0, \dots, \hat{v_i}, \dots, \hat{v_j}-)
-$$
+$$`  f(v_i, v_j; v_0, \dots, \hat{v_i}, \dots, \hat{v_j}-) - f(v_j, v_i; v_0, \dots, \hat{v_i}, \dots, \hat{v_j}-)  `
 
 over all `(i j : Fin (n + 2))`, `i < j`, taken with appropriate signs.
-Here $\hat{v_i}$ and $\hat{v_j}$ mean that these vectors are removed from the tuple.
+Here $`\hat{v_i}` and $`\hat{v_j}` mean that these vectors are removed from the tuple.
 
 We use pairs of `i j : Fin (n + 1)`, `i ≤ j`,
 to encode pairs `(i.castSucc : Fin (n + 2), j.succ : Fin (n + 2))`,

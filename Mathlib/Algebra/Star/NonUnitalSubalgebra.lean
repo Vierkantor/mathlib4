@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Star.Center
 public import Mathlib.Algebra.Star.SelfAdjoint
 public import Mathlib.Algebra.Star.Prod
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Non-unital Star Subalgebras
 
@@ -552,7 +555,9 @@ theorem ofInjective'_apply (f : A →⋆ₙₐ[R] B) (hf : Function.Injective f)
 
 end StarAlgEquiv
 
-/-! ### The star closure of a subalgebra -/
+/-!
+# The star closure of a subalgebra
+-/
 
 namespace NonUnitalSubalgebra
 
@@ -1285,10 +1290,12 @@ instance isMulCommutative_adjoin_singleton (a : A) [IsStarNormal a] :
 
 open scoped IsMulCommutative in
 variable (R) in
-/-- If all elements of `s : Set A` are normal, commute pairwise, and commute pairwise with the
+/--
+If all elements of `s : Set A` are normal, commute pairwise, and commute pairwise with the
 `star` of elements in this set, then `adjoin R s` is a non-unital commutative semiring.
 
-See note [reducible non-instances]. -/
+See note \[reducible non-instances\].
+-/
 @[deprecated isMulCommutative_adjoin +typeChanged (since := "2026-03-11")]
 abbrev adjoinNonUnitalCommSemiringOfComm {s : Set A} (hnormal : ∀ x ∈ s, IsStarNormal x)
     (hcomm : s.Pairwise Commute) (hcomm_star : s.Pairwise (Commute · <| star ·)) :
@@ -1304,10 +1311,12 @@ instance instIsMulCommutative_adjoin {S : Type*} [SetLike S A] [MulMemClass S A]
     (fun _ h₁ _ h₂ _ => setLike_mul_comm h₁ (star_mem h₂))
 
 open scoped IsMulCommutative in
-/-- If all elements of `s : Set A` are normal, commute pairwise, and commute pairwise with the
+/--
+If all elements of `s : Set A` are normal, commute pairwise, and commute pairwise with the
 `star` of elements in this set, then `adjoin R s` is a non-unital commutative ring.
 
-See note [reducible non-instances]. -/
+See note \[reducible non-instances\].
+-/
 @[deprecated isMulCommutative_adjoin +typeChanged (since := "2026-03-11")]
 abbrev adjoinNonUnitalCommRingOfComm (R : Type*) {A : Type*} [CommRing R] [StarRing R]
     [NonUnitalRing A] [StarRing A] [Module R A] [IsScalarTower R A A] [SMulCommClass R A A]

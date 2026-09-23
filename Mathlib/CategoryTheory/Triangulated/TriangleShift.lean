@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Linear.LinearFunctor
 public import Mathlib.CategoryTheory.Triangulated.Rotate
 public import Mathlib.Algebra.Ring.NegOnePow
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The shift on the category of triangles
 
@@ -19,7 +22,6 @@ identifies with the shift by `1`.
 
 The shift on the category of triangles was also obtained by Adam Topaz,
 Johan Commelin and Andrew Yang during the Liquid Tensor Experiment.
-
 -/
 
 @[expose] public section

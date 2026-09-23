@@ -9,6 +9,9 @@ public import Mathlib.ModelTheory.Syntax
 public import Mathlib.ModelTheory.Semantics
 public import Mathlib.Algebra.Ring.Equiv
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # First-Order Language of Rings
 
@@ -17,11 +20,11 @@ etc. on terms in the language.
 
 ## Main Definitions
 
-- `FirstOrder.Language.ring` : the language of rings, with function symbols `+`, `*`, `-`, `0`, `1`
-- `FirstOrder.Ring.CompatibleRing` : A class stating that a type is a `Language.ring.Structure`, and
+* `FirstOrder.Language.ring` : the language of rings, with function symbols `+`, `*`, `-`, `0`, `1`
+* `FirstOrder.Ring.CompatibleRing` : A class stating that a type is a `Language.ring.Structure`, and
   that this structure is the same as the structure given by the classes `Add`, `Mul`, etc. already
   on `R`.
-- `FirstOrder.Ring.compatibleRingOfRing` : Given a type `R` with instances for each of the `Ring`
+* `FirstOrder.Ring.compatibleRingOfRing` : Given a type `R` with instances for each of the `Ring`
   operations, make a `compatibleRing` instance.
 
 ## Implementation Notes

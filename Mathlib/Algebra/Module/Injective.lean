@@ -14,6 +14,9 @@ public import Mathlib.LinearAlgebra.BilinearMap
 public import Mathlib.RingTheory.Ideal.Defs
 public import Mathlib.Tactic.NormNum
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Injective modules
 
@@ -22,6 +25,7 @@ public import Mathlib.Tactic.NormNum
 * `Module.Injective`: an `R`-module `Q` is injective if and only if every injective `R`-linear
   map descends to a linear map to `Q`, i.e. in the following diagram, if `f` is injective then there
   is an `R`-linear map `h : Y ⟶ Q` such that `g = h ∘ f`
+
   ```
   X --- f ---> Y
   |
@@ -35,7 +39,6 @@ public import Mathlib.Tactic.NormNum
 ## Main statements
 
 * `Module.Baer.injective`: an `R`-module is injective if it is Baer.
-
 -/
 
 @[expose] public section

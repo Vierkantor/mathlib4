@@ -11,6 +11,9 @@ public meta import Lean.Compiler.CSimpAttr
 public meta import Lean.Util.FoldConsts
 public meta import Lean.Data.AssocList
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Define the `compile_inductive%` command.
 

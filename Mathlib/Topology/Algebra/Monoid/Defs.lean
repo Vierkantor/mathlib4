@@ -8,14 +8,17 @@ module
 public import Mathlib.Topology.Constructions.SumProd
 public import Mathlib.Algebra.Group.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Topological monoids - definitions
 
 In this file we define three mixin typeclasses:
 
-- `ContinuousMul M` says that the multiplication on `M` is continuous as a function on `M × M`;
-- `ContinuousAdd M` says that the addition on `M` is continuous as a function on `M × M`.
-- `SeparatelyContinuousMul M` says that the multiplication on `M` is continuous in each argument
+* `ContinuousMul M` says that the multiplication on `M` is continuous as a function on `M × M`;
+* `ContinuousAdd M` says that the addition on `M` is continuous as a function on `M × M`.
+* `SeparatelyContinuousMul M` says that the multiplication on `M` is continuous in each argument
   separately. This is strictly weaker than `ContinuousMul M`, but arises frequently in practice in
   functional analysis where one often considers topologies weaker than the norm topology. In these
   topologies it is frequently the case that the multiplication is not jointly continuous, but is

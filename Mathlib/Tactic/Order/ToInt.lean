@@ -12,6 +12,9 @@ public meta import Mathlib.Util.AtomM
 public meta import Mathlib.Util.Qq
 public meta import Std.Data.HashMap.AdditionalOperations
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Translating linear orders to ℤ
 

@@ -16,6 +16,9 @@ import Mathlib.Data.Fintype.Order
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Linarith
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Descent Theorem
 
@@ -26,6 +29,7 @@ subgroup of `G` into itself (e.g., `f = fun g ↦ g ^ n` when `G` is commutative
 
 If there is a finite subset `s : Set G` and there exists a "height" function `h : G → ℝ`
 and constants `a, b, c : ℝ` such that
+
 * `s` surjects onto the quotient `G ⧸ f(G)`,
 * for all `g ∈ s` and `x : G`, `h x ≤ a * h (g * x) + c`,
 * for all `x : G`, `h (f x) ≥ b * h x - c`,
@@ -42,12 +46,12 @@ See `CommGroup.fg_of_descent` / `AddCommGroup.fg_of_descent` and
 `CommGroup.fg_of_descent'` / `AddCommGroup.fg_of_descent'`.
 
 This last version is one of the main ingredients of the standard proof of the
-**Mordell-Weil Theorem**. It allows to reduce the statement to showing that `G / 2 • G` is finite
+*Mordell-Weil Theorem*. It allows to reduce the statement to showing that `G / 2 • G` is finite
 (where `G` is the Mordell-Weil group).
 
 We also provide versions that prove that the torsion subgroup is finite under weaker assumptions.
 
-### Implementation note
+## Implementation note
 
 Replacing `ℝ` by an ordered field (`{R : Type*} [LinearOrder R] [Field R] [IsOrderedRing R]`)
 works, but makes the type check quite slow (and `to_additive` needs some  help...).

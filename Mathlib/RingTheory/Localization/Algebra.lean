@@ -12,6 +12,9 @@ public import Mathlib.RingTheory.Localization.Basic
 public import Mathlib.RingTheory.Localization.Ideal
 public import Mathlib.RingTheory.PolynomialAlgebra
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Localization of algebra maps
 
@@ -22,7 +25,6 @@ localization commutes with taking kernels for ring homomorphisms.
 
 The proof that localization commutes with taking kernels does not use the result for linear maps,
 as the translation is currently tedious and can be unified easily after the localization refactor.
-
 -/
 
 @[expose] public section

@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Order.Hom.Basic
 public import Mathlib.Data.Fintype.Order
 public import Mathlib.Order.ConditionallyCompleteLattice.Indexed
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Results on order homomorphism classes and lattice operations
 -/

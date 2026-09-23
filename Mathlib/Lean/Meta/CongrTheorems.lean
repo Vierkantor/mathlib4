@@ -11,6 +11,9 @@ public import Mathlib.Basic.IsEmpty.Defs
 public import Lean.Meta.CongrTheorems
 public meta import Mathlib.Basic.IsEmpty.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Additions to `Lean.Meta.CongrTheorems`
 -/
@@ -40,14 +43,14 @@ where
   /--
   Process the congruence theorem by trying to pre-prove arguments using `prove`.
 
-  - `cthm` is the original `CongrTheorem`, modified only after visiting every argument.
-  - `type` is type of the congruence theorem, after all the parameters so far have been applied.
-  - `argKinds` is the list of `CongrArgKind`s, which this function recurses on.
-  - `argKinds'` is the accumulated array of `CongrArgKind`s, which is the original array but
-    with some kinds replaced by `.subsingletonInst`.
-  - `params` is the *new* list of parameters, as fvars that need to be abstracted at the end.
-  - `args` is the list of arguments (fvars) to supply to `cthm.proof` before abstracting `params`.
-  - `letArgs` records `(fvar, expr)` assignments for each `fvar` that was solved for by `prove`.
+  * `cthm` is the original `CongrTheorem`, modified only after visiting every argument.
+* `type` is type of the congruence theorem, after all the parameters so far have been applied.
+* `argKinds` is the list of `CongrArgKind`s, which this function recurses on.
+* `argKinds'` is the accumulated array of `CongrArgKind`s, which is the original array but
+  with some kinds replaced by `.subsingletonInst`.
+* `params` is the _new_ list of parameters, as fvars that need to be abstracted at the end.
+* `args` is the list of arguments (fvars) to supply to `cthm.proof` before abstracting `params`.
+* `letArgs` records `(fvar, expr)` assignments for each `fvar` that was solved for by `prove`.
   -/
   process (cthm : CongrTheorem) (type : Expr) (argKinds : List CongrArgKind)
       (argKinds' : Array CongrArgKind) (params args : Array Expr)

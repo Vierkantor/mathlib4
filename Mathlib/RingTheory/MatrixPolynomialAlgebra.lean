@@ -10,14 +10,20 @@ public import Mathlib.Data.Matrix.Composition
 public import Mathlib.RingTheory.MatrixAlgebra
 public import Mathlib.RingTheory.PolynomialAlgebra
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Algebra isomorphism between matrices of polynomials and polynomials of matrices
 
 We obtain the algebra isomorphism
+
 ```
 def matPolyEquiv : Matrix n n R[X] ≃ₐ[R] (Matrix n n R)[X]
 ```
+
 which is characterized by
+
 ```
 coeff (matPolyEquiv m) k i j = coeff (m i j) k
 ```

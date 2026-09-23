@@ -9,6 +9,9 @@ public import Mathlib.Analysis.SpecialFunctions.Pow.NNReal
 public import Mathlib.MeasureTheory.Function.EssSup
 public import Mathlib.MeasureTheory.Function.StronglyMeasurable.AEStronglyMeasurable
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # ℒp space
 
@@ -29,7 +32,6 @@ and is almost everywhere strongly measurable.
 * `MemLp f p μ` : property that the function `f` is almost everywhere strongly measurable and has
   finite `p`-seminorm for the measure `μ` (`eLpNorm f p μ < ∞`)
 * `inhmgELpNorm`: An inhomogeneous version of `eLpNorm`, defined differently for `p < 1`.
-
 -/
 
 @[expose] public section
@@ -46,7 +48,7 @@ namespace MeasureTheory
 section Lp
 
 /-!
-### ℒp seminorm
+# ℒp seminorm
 
 We define the ℒp seminorm, denoted by `eLpNorm f p μ`. For real `p`, it is given by an integral
 formula (for which we use the notation `eLpNorm' f p μ`), and for `p = ∞` it is the essential

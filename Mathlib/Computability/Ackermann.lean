@@ -9,6 +9,9 @@ public import Mathlib.Computability.PartrecCode
 public import Mathlib.Tactic.Ring
 public import Mathlib.Tactic.NormNum
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Ackermann function
 
@@ -17,10 +20,10 @@ definition, we show that this isn't a primitive recursive function.
 
 ## Main results
 
-- `exists_lt_ack_of_nat_primrec`: any primitive recursive function is pointwise bounded above by
+* `exists_lt_ack_of_nat_primrec`: any primitive recursive function is pointwise bounded above by
   `ack m` for some `m`.
-- `not_primrec₂_ack`: the two-argument Ackermann function is not primitive recursive.
-- `computable₂_ack`: the two-argument Ackermann function is computable.
+* `not_primrec₂_ack`: the two-argument Ackermann function is not primitive recursive.
+* `computable₂_ack`: the two-argument Ackermann function is computable.
 
 ## Proof approach
 
@@ -34,15 +37,13 @@ differs from their approach of using multivariate functions.
 The important bounds we show during the main inductive proof (`exists_lt_ack_of_nat_primrec`)
 are the following. Assuming `∀ n, f n < ack a n` and `∀ n, g n < ack b n`, we have:
 
-- `∀ n, pair (f n) (g n) < ack (max a b + 3) n`.
-- `∀ n, g (f n) < ack (max a b + 2) n`.
-- `∀ n, Nat.rec (f n.unpair.1) (fun (y IH : ℕ) => g (pair n.unpair.1 (pair y IH)))
-  n.unpair.2 < ack (max a b + 9) n`.
+* `∀ n, pair (f n) (g n) < ack (max a b + 3) n`.
+* `∀ n, g (f n) < ack (max a b + 2) n`.
+* `∀ n, Nat.rec (f n.unpair.1) (fun (y IH : ℕ) => g (pair n.unpair.1 (pair y IH))) n.unpair.2 < ack (max a b + 9) n`.
 
 The last one is evidently the hardest. Using `unpair_add_le`, we reduce it to the more manageable
 
-- `∀ m n, rec (f m) (fun (y IH : ℕ) => g (pair m (pair y IH))) n <
-  ack (max a b + 9) (m + n)`.
+* `∀ m n, rec (f m) (fun (y IH : ℕ) => g (pair m (pair y IH))) n < ack (max a b + 9) (m + n)`.
 
 We then prove this by induction on `n`. Our proof crucially depends on `ack_pair_lt`, which is
 applied twice, giving us a constant of `4 + 4`. The rest of the proof consists of simpler bounds

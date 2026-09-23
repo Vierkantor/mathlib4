@@ -13,6 +13,9 @@ public import Mathlib.Order.Filter.Pointwise
 public import Mathlib.Topology.Algebra.Constructions
 public import Mathlib.Topology.Algebra.Support
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Monoid actions continuous in the second variable
 
@@ -42,7 +45,6 @@ In this file we define class `ContinuousConstSMul`. We say `ContinuousConstSMul 
 ## Tags
 
 Hausdorff, discrete group, properly discontinuous, quotient space
-
 -/
 
 @[expose] public section

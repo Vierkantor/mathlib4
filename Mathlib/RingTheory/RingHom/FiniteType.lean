@@ -10,8 +10,10 @@ public import Mathlib.RingTheory.Finiteness.FiniteTypeLocal
 public import Mathlib.RingTheory.Localization.InvSubmonoid
 public import Mathlib.RingTheory.LocalProperties.Basic
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # The meta properties of finite-type ring homomorphisms.
 
 ## Main results
@@ -23,7 +25,6 @@ Let `R` be a commutative ring, `S` is an `R`-algebra, `M` be a submonoid of `R`.
 * `finiteType_ofLocalizationSpan` : `S` is a finite type `R`-algebra if there exists
   a set `{ r }` that spans `R` such that `Sᵣ` is a finite type `Rᵣ`-algebra.
 * `RingHom.finiteType_isLocal`: `RingHom.FiniteType` is a local property.
-
 -/
 
 public section

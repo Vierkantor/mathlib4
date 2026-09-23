@@ -9,6 +9,9 @@ public import Mathlib.Analysis.Complex.Liouville
 public import Mathlib.Analysis.Complex.Harmonic.Analytic
 public import Mathlib.Analysis.Normed.Module.HahnBanach
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Liouville's Theorem for Harmonic Functions on the Complex Plane
 

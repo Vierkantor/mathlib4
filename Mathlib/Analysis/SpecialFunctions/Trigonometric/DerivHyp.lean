@@ -11,6 +11,9 @@ public import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 public import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Differentiability of hyperbolic trigonometric functions
 
@@ -131,11 +134,15 @@ end Complex
 
 section
 
-/-! ### Simp lemmas for derivatives of `fun x => Complex.cos (f x)` etc., `f : ℂ → ℂ` -/
+/-!
+# Simp lemmas for derivatives of `fun x => Complex.cos (f x)` etc., `f : ℂ → ℂ`
+-/
 
 variable {f : ℂ → ℂ} {f' x : ℂ} {s : Set ℂ}
 
-/-! #### `Complex.cosh` -/
+/-!
+# `Complex.cosh`
+-/
 
 theorem HasStrictDerivAt.ccosh (hf : HasStrictDerivAt f f' x) :
     HasStrictDerivAt (fun x => Complex.cosh (f x)) (Complex.sinh (f x) * f') x :=
@@ -158,7 +165,9 @@ theorem deriv_ccosh (hc : DifferentiableAt ℂ f x) :
     deriv (fun x => Complex.cosh (f x)) x = Complex.sinh (f x) * deriv f x :=
   hc.hasDerivAt.ccosh.deriv
 
-/-! #### `Complex.sinh` -/
+/-!
+# `Complex.sinh`
+-/
 
 theorem HasStrictDerivAt.csinh (hf : HasStrictDerivAt f f' x) :
     HasStrictDerivAt (fun x => Complex.sinh (f x)) (Complex.cosh (f x) * f') x :=
@@ -185,12 +194,16 @@ end
 
 section
 
-/-! ### Simp lemmas for derivatives of `fun x => Complex.cos (f x)` etc., `f : E → ℂ` -/
+/-!
+# Simp lemmas for derivatives of `fun x => Complex.cos (f x)` etc., `f : E → ℂ`
+-/
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E] {f : E → ℂ} {f' : StrongDual ℂ E}
   {x : E} {s : Set E}
 
-/-! #### `Complex.cosh` -/
+/-!
+# `Complex.cosh`
+-/
 
 theorem HasStrictFDerivAt.ccosh (hf : HasStrictFDerivAt f f' x) :
     HasStrictFDerivAt (fun x => Complex.cosh (f x)) (Complex.sinh (f x) • f') x :=
@@ -244,7 +257,9 @@ theorem ContDiffWithinAt.ccosh {n} (hf : ContDiffWithinAt ℂ n f s x) :
     ContDiffWithinAt ℂ n (fun x => Complex.cosh (f x)) s x :=
   Complex.contDiff_cosh.contDiffAt.comp_contDiffWithinAt x hf
 
-/-! #### `Complex.sinh` -/
+/-!
+# `Complex.sinh`
+-/
 
 theorem HasStrictFDerivAt.csinh (hf : HasStrictFDerivAt f f' x) :
     HasStrictFDerivAt (fun x => Complex.sinh (f x)) (Complex.cosh (f x) • f') x :=
@@ -475,7 +490,9 @@ end Real
 
 section iteratedDeriv
 
-/-! ### Simp lemmas for iterated derivatives of `sinh` and `cosh`. -/
+/-!
+# Simp lemmas for iterated derivatives of `sinh` and `cosh`.
+-/
 
 namespace Complex
 
@@ -609,11 +626,15 @@ end iteratedDeriv
 
 section
 
-/-! ### Simp lemmas for derivatives of `fun x => Real.cos (f x)` etc., `f : ℝ → ℝ` -/
+/-!
+# Simp lemmas for derivatives of `fun x => Real.cos (f x)` etc., `f : ℝ → ℝ`
+-/
 
 variable {f : ℝ → ℝ} {f' x : ℝ} {s : Set ℝ}
 
-/-! #### `Real.cosh` -/
+/-!
+# `Real.cosh`
+-/
 
 theorem HasStrictDerivAt.cosh (hf : HasStrictDerivAt f f' x) :
     HasStrictDerivAt (fun x => Real.cosh (f x)) (Real.sinh (f x) * f') x :=
@@ -636,7 +657,9 @@ theorem deriv_cosh (hc : DifferentiableAt ℝ f x) :
     deriv (fun x => Real.cosh (f x)) x = Real.sinh (f x) * deriv f x :=
   hc.hasDerivAt.cosh.deriv
 
-/-! #### `Real.sinh` -/
+/-!
+# `Real.sinh`
+-/
 
 theorem HasStrictDerivAt.sinh (hf : HasStrictDerivAt f f' x) :
     HasStrictDerivAt (fun x => Real.sinh (f x)) (Real.cosh (f x) * f') x :=
@@ -663,12 +686,16 @@ end
 
 section
 
-/-! ### Simp lemmas for derivatives of `fun x => Real.cos (f x)` etc., `f : E → ℝ` -/
+/-!
+# Simp lemmas for derivatives of `fun x => Real.cos (f x)` etc., `f : E → ℝ`
+-/
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {f : E → ℝ} {f' : StrongDual ℝ E}
   {x : E} {s : Set E}
 
-/-! #### `Real.cosh` -/
+/-!
+# `Real.cosh`
+-/
 
 theorem HasStrictFDerivAt.cosh (hf : HasStrictFDerivAt f f' x) :
     HasStrictFDerivAt (fun x => Real.cosh (f x)) (Real.sinh (f x) • f') x :=
@@ -722,7 +749,9 @@ theorem ContDiffWithinAt.cosh {n} (hf : ContDiffWithinAt ℝ n f s x) :
     ContDiffWithinAt ℝ n (fun x => Real.cosh (f x)) s x :=
   Real.contDiff_cosh.contDiffAt.comp_contDiffWithinAt x hf
 
-/-! #### `Real.sinh` -/
+/-!
+# `Real.sinh`
+-/
 
 theorem HasStrictFDerivAt.sinh (hf : HasStrictFDerivAt f f' x) :
     HasStrictFDerivAt (fun x => Real.sinh (f x)) (Real.cosh (f x) • f') x :=

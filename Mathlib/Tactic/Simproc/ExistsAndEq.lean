@@ -10,6 +10,9 @@ public meta import Qq
 public import Qq
 public import Qq.Typ
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Simproc for `∃ a', ... ∧ a' = a ∧ ...`
 
@@ -142,12 +145,14 @@ def Path.forResult (path : Path) : Path :=
   let (quantifiers, conjunctions) := path.partition (· == .existsBody)
   quantifiers ++ conjunctions
 
-/-- Destructs `h : P` following `path`, as the chain of `refine h.elim fun … ↦ ?_` in the docstring
+/--
+Destructs `h : P` following `path`, as the chain of `refine h.elim fun … ↦ ?_` in the docstring
 of `mkBeforeToAfter` does: at an `existsBody` step the quantifier is unpacked with `Exists.elim`,
 using the next variable of `exs` as the bound variable; at an `andLeft`/`andRight` step the
-conjunction is split with `And.elim`, and the part outside the path becomes a *leaf*. The
+conjunction is split with `And.elim`, and the part outside the path becomes a _leaf_. The
 continuation `k` receives the leaves (in path order, after those in `acc`) and the hypothesis at
-the end of the path, i.e. the equation. All of them are local hypotheses. -/
+the end of the path, i.e. the equation. All of them are local hypotheses.
+-/
 partial def destruct {P goal : Q(Prop)} (h : Q($P)) (exs : List VarQ) (path : Path)
     (acc : List HypQ) (k : List HypQ → HypQ → MetaM Q($goal)) : MetaM Q($goal) := do
   match path with

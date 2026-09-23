@@ -9,6 +9,9 @@ public import Mathlib.Analysis.Asymptotics.AsymptoticEquivalent
 public import Mathlib.Analysis.SpecialFunctions.Pow.NNReal
 public import Mathlib.Tactic.ComputeAsymptotics.Multiseries.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Well-formed bases
 
@@ -17,7 +20,6 @@ public import Mathlib.Tactic.ComputeAsymptotics.Multiseries.Defs
 * `WellFormedBasis basis`: a predicate meaning that all functions from `basis` tend to `atTop`,
   and `basis` is sorted such that if
   `g` goes after `f` in `basis`, then `log f =o[atTop] log g`.
-
 -/
 
 @[expose] public section
@@ -187,7 +189,9 @@ theorem tail_pow_majorized_head {hd f : ℝ → ℝ} {tl : Basis}
 
 end WellFormedBasis
 
-/-! ### Basis extensions -/
+/-!
+# Basis extensions
+-/
 
 /-- The type of extensions of a given basis, defined as an inductive type.
 Given a `basis : Basis` and `ex : BasisExtension basis` of it, one can use `getBasis` to produce a

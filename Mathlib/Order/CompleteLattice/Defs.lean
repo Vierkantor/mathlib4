@@ -8,6 +8,9 @@ module
 public import Mathlib.Order.Bounds.Basic
 public import Mathlib.Order.SetNotation
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Definition of complete lattices
 
@@ -25,6 +28,7 @@ This file contains the definition of complete lattices with suprema/infima of ar
 ## Naming conventions
 
 In lemma names,
+
 * `sSup` is called `sSup`
 * `sInf` is called `sInf`
 * `⨆ i, s i` is called `iSup`

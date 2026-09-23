@@ -13,6 +13,9 @@ public import Mathlib.Analysis.Complex.Trigonometric
 public import Mathlib.Data.EReal.Inv
 public import Mathlib.Tactic.Positivity
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Discrete Grönwall inequality
 
@@ -27,8 +30,8 @@ inequalities `u (n+1) ≤ c n * u n + b n` and `u (n+1) ≤ (1 + c n) * u n + b 
 
 ## References
 
-* [T. H. Grönwall, *Note on the derivatives with respect to a parameter of the solutions of a
-  system of differential equations*][Gronwall_1919]
+* ‍\[T. H. Grönwall, _Note on the derivatives with respect to a parameter of the solutions of a
+  system of differential equations_\]\[Gronwall\_1919\]
 
 ## See also
 
@@ -41,7 +44,9 @@ open Real Finset
 
 section General
 
-/-! ### Generalized product form -/
+/-!
+# Generalized product form
+-/
 
 variable {R : Type*} [CommSemiring R] [PartialOrder R] [IsOrderedRing R] {u b c : ℕ → R}
 
@@ -70,7 +75,9 @@ theorem discrete_gronwall_prod_general {n₀ : ℕ} (hu : ∀ n ≥ n₀, u (n +
 
 end General
 
-/-! ### Real-valued exponential form -/
+/-!
+# Real-valued exponential form
+-/
 
 variable {u b c : ℕ → ℝ}
 

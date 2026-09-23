@@ -10,6 +10,9 @@ public import Mathlib.CategoryTheory.Monoidal.Opposite
 public import Mathlib.CategoryTheory.CommSq
 public import Mathlib.Tactic.CategoryTheory.Monoidal.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Braided and symmetric monoidal categories
 
@@ -28,8 +31,7 @@ The rationale is that we are not carrying any additional data, just requiring a 
 
 ## References
 
-* [Pavel Etingof, Shlomo Gelaki, Dmitri Nikshych, Victor Ostrik, *Tensor categories*][egno15]
-
+* ‍\[Pavel Etingof, Shlomo Gelaki, Dmitri Nikshych, Victor Ostrik, _Tensor categories_\]\[egno15\]
 -/
 
 @[expose] public section

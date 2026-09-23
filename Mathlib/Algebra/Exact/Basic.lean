@@ -9,20 +9,20 @@ public import Mathlib.Algebra.Module.Submodule.Range
 public import Mathlib.LinearAlgebra.Prod
 public import Mathlib.LinearAlgebra.Quotient.Basic
 
-/-! # Exactness of a pair
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Exactness of a pair
 
 * For two maps `f : M → N` and `g : N → P`, with `Zero P`,
   `Function.Exact f g` says that `Set.range f = Set.preimage g {0}`
-
 * For two maps `f : M → N` and `g : N → P`, with `One P`,
   `Function.MulExact f g` says that `Set.range f = Set.preimage g {1}`
-
 * For additive maps `f : M →+ N`  and `g : N →+ P`,
   `Exact f g` says that `range f = ker g`
-
 * For multiplicative maps `f : M →* N`  and `g : N →* P`,
   `MulExact f g` says that `range f = ker g`
-
 * For linear maps `f : M →ₗ[R] N`  and `g : N →ₗ[R] P`,
   `Exact f g` says that `range f = ker g`
 

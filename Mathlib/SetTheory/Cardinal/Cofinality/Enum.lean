@@ -9,6 +9,9 @@ public import Mathlib.SetTheory.Cardinal.Cofinality.Basic
 public import Mathlib.SetTheory.Ordinal.Family
 public import Mathlib.SetTheory.Ordinal.Univ
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Enumerating a cofinal set
 
@@ -23,13 +26,13 @@ function of the set. Note that if `α = ℕ`, then this definition matches `Nat.
 
 ## Main results
 
-- `Order.enum_eq_iff`: `Order.enum s _` is the unique strictly monotonic function with range `s`.
-- `Order.isNormal_enum_iff_dirSupClosed`: club sets correspond one to one with normal functions.
+* `Order.enum_eq_iff`: `Order.enum s _` is the unique strictly monotonic function with range `s`.
+* `Order.isNormal_enum_iff_dirSupClosed`: club sets correspond one to one with normal functions.
 
 ## TODO
 
-- Deprecate `Ordinal.enumOrd` in favor of `Order.enum`.
-- Prove that `Order.enum` on the naturals coincides with `Nat.nth`.
+* Deprecate `Ordinal.enumOrd` in favor of `Order.enum`.
+* Prove that `Order.enum` on the naturals coincides with `Nat.nth`.
 -/
 
 public section

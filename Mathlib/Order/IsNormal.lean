@@ -10,6 +10,9 @@ public import Mathlib.Order.DirSupClosed
 public import Mathlib.Order.SuccPred.CompleteLinearOrder
 public import Mathlib.Order.SuccPred.InitialSeg
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Normal functions
 

@@ -9,6 +9,9 @@ public import Mathlib.Dynamics.Ergodic.Action.Regular
 public import Mathlib.MeasureTheory.Measure.ContinuousPreimage
 public import Mathlib.MeasureTheory.Measure.Haar.Unique
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Ergodicity from minimality
 

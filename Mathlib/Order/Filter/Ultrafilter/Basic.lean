@@ -9,6 +9,9 @@ public import Mathlib.Order.Filter.Ultrafilter.Defs
 public import Mathlib.Order.Filter.Cofinite
 public import Mathlib.Order.ZornAtoms
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Ultrafilters
 

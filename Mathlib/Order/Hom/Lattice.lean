@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Order.Hom.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Unbounded lattice homomorphisms
 
@@ -156,7 +159,9 @@ instance [Lattice α] [Lattice β] [LatticeHomClass F α β] : CoeTC F (LatticeH
       map_sup' := map_sup f
       map_inf' := map_inf f }⟩
 
-/-! ### Supremum homomorphisms -/
+/-!
+# Supremum homomorphisms
+-/
 
 namespace SupHom
 
@@ -359,7 +364,9 @@ lemma subtypeVal_coe {P : β → Prop}
 
 end SupHom
 
-/-! ### Lattice homomorphisms -/
+/-!
+# Lattice homomorphisms
+-/
 
 
 namespace LatticeHom
@@ -516,7 +523,9 @@ theorem to_lattice_hom_apply (f : F) (a : α) : toLatticeHom α β f a = f a :=
 
 end OrderHomClass
 
-/-! ### Dual homs -/
+/-!
+# Dual homs
+-/
 
 namespace SupHom
 
@@ -579,7 +588,9 @@ theorem symm_dual_comp (g : LatticeHom βᵒᵈ γᵒᵈ) (f : LatticeHom αᵒ�
 
 end LatticeHom
 
-/-! ### Prod -/
+/-!
+# Prod
+-/
 
 namespace LatticeHom
 variable [Lattice α] [Lattice β]
@@ -603,7 +614,9 @@ lemma snd_apply (x : α × β) : snd x = x.snd := rfl
 
 end LatticeHom
 
-/-! ### Pi -/
+/-!
+# Pi
+-/
 
 namespace Pi
 variable {ι : Type*} {α : ι → Type*} [∀ i, Lattice (α i)]

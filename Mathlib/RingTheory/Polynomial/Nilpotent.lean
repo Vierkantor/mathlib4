@@ -12,15 +12,18 @@ public import Mathlib.RingTheory.Ideal.Quotient.Operations
 public import Mathlib.RingTheory.Nilpotent.Basic
 public import Mathlib.RingTheory.Nilpotent.Lemmas
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Nilpotency in polynomial rings.
 
 This file is a place for results related to nilpotency in (single-variable) polynomial rings.
 
 ## Main results:
+
 * `Polynomial.isNilpotent_iff`
 * `Polynomial.isUnit_iff_coeff_isUnit_isNilpotent`
-
 -/
 
 public section

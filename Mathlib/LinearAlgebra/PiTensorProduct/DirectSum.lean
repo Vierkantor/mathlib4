@@ -9,6 +9,9 @@ public import Mathlib.LinearAlgebra.PiTensorProduct.Basic
 public import Mathlib.LinearAlgebra.PiTensorProduct.DFinsupp
 public import Mathlib.Algebra.DirectSum.Module
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Tensor products of direct sums
 

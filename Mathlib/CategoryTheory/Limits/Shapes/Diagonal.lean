@@ -9,12 +9,14 @@ public import Mathlib.CategoryTheory.Comma.Over.Pullback
 public import Mathlib.CategoryTheory.Limits.Shapes.KernelPair
 public import Mathlib.CategoryTheory.Limits.Shapes.Pullback.Assoc
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The diagonal object of a morphism.
 
 We provide various API and isomorphisms considering the diagonal object `Δ_{Y/X} := pullback f f`
 of a morphism `f : X ⟶ Y`.
-
 -/
 
 @[expose] public section

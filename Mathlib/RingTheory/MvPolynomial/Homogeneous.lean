@@ -11,6 +11,9 @@ public import Mathlib.RingTheory.MvPolynomial.WeightedHomogeneous
 public import Mathlib.SetTheory.Cardinal.Basic
 public import Mathlib.RingTheory.Ideal.Span
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Homogeneous polynomials
 

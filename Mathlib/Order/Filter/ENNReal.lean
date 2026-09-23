@@ -8,6 +8,9 @@ module
 public import Mathlib.Topology.Order.LiminfLimsup
 public import Mathlib.Topology.Metrizable.Real
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Limsup and liminf of reals
 

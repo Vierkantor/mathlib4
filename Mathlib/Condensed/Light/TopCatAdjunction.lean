@@ -8,8 +8,10 @@ module
 public import Mathlib.Condensed.Light.TopComparison
 public import Mathlib.Topology.Category.Sequential
 public import Mathlib.Topology.Category.LightProfinite.Sequence
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # The adjunction between light condensed sets and topological spaces
 
 This file defines the functor `lightCondSetToTopCat : LightCondSet.{u} ⥤ TopCat.{u}` which is

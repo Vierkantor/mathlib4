@@ -8,6 +8,9 @@ module
 public import Mathlib.Topology.ExtremallyDisconnected
 public import Mathlib.Topology.Category.CompHaus.Projective
 public import Mathlib.Topology.Category.Profinite.Basic
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Extremally disconnected sets
 
@@ -37,7 +40,6 @@ can be lifted along epimorphisms).
 
 The category `Stonean` is defined using the structure `CompHausLike`. See the file
 `CompHausLike.Basic` for more information.
-
 -/
 
 @[expose] public section

@@ -8,6 +8,9 @@ module
 public import Mathlib.CategoryTheory.Comma.StructuredArrow.Basic
 public import Mathlib.CategoryTheory.Grothendieck
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Structured Arrow Categories as strict functor to Cat
 

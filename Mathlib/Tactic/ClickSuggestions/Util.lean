@@ -16,6 +16,9 @@ public meta import Mathlib.Data.String.Defs
 public meta import Lean.PrettyPrinter.Delaborator.Builtins
 public import Lean.Server.Utils
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Various utilities used in `#click_suggestions`
 -/

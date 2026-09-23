@@ -9,6 +9,9 @@ public import Mathlib.Init
 public meta import Lean.Util.CollectAxioms
 public meta import Lean.Elab.Command
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Defines the `assert_no_sorry` command.
 

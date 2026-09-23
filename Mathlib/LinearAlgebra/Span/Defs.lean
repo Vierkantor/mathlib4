@@ -9,6 +9,9 @@ module
 public import Mathlib.Algebra.Module.Submodule.Lattice
 public import Mathlib.Algebra.Group.Pointwise.Set.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The span of a set of vectors, as a submodule
 
@@ -18,7 +21,6 @@ public import Mathlib.Algebra.Group.Pointwise.Set.Basic
 
 * We introduce the notation `R ∙ v` for the span of a singleton, `Submodule.span R {v}`.  This is
   `\span`, not the same as the scalar multiplication `•`/`\bub`.
-
 -/
 
 @[expose] public section

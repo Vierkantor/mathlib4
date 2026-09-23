@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Order.BoundedOrder.Lattice
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Disjointness and complements
 
@@ -19,7 +22,6 @@ This file defines `Disjoint`, `Codisjoint`, and the `IsCompl` predicate.
 * `IsCompl x y`: In a bounded lattice, predicate for "`x` is a complement of `y`". Note that in a
   non-distributive lattice, an element can have several complements.
 * `ComplementedLattice α`: Typeclass stating that any element of a lattice has a complement.
-
 -/
 
 @[expose] public section
@@ -492,7 +494,9 @@ section Lattice
 
 variable [Lattice α] [BoundedOrder α]
 
-/-- An element is *complemented* if it has a complement. -/
+/--
+An element is _complemented_ if it has a complement.
+-/
 def IsComplemented (a : α) : Prop :=
   ∃ b, IsCompl a b
 

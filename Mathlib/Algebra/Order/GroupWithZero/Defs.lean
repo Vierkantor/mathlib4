@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Order.Monoid.Unbundled.Defs
 public import Mathlib.Tactic.MkIffOfInductiveProp
 public import Mathlib.Util.Notation3
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # (Strict) monotonicity of multiplication by nonnegative (positive) elements
 
@@ -16,12 +19,14 @@ This file defines eight typeclasses expressing monotonicity (strict monotonicity
 of multiplication on the left or right by nonnegative (positive) elements in a preorder.
 
 For left multiplication (`a ↦ b * a`) we define the following typeclasses:
+
 * `PosMulMono`: If `b ≥ 0`, then `a₁ ≤ a₂ → b * a₁ ≤ b * a₂`.
 * `PosMulStrictMono`: If `b > 0`, then `a₁ < a₂ → b * a₁ < b * a₂`.
 * `PosMulReflectLT`: If `b ≥ 0`, then `b * a₁ < b * a₂ → a₁ < a₂`.
 * `PosMulReflectLE`: If `b > 0`, then `b * a₁ ≤ b * a₂ → a₁ ≤ a₂`.
 
 For right multiplication (`a ↦ a * b`) we define the following typeclasses:
+
 * `MulPosMono`: If `b ≥ 0`, then `a₁ ≤ a₂ → a₁ * b ≤ a₂ * b`.
 * `MulPosStrictMono`: If `b > 0`, then `a₁ < a₂ → a₁ * b < a₂ * b`.
 * `MulPosReflectLT`: If `b ≥ 0`, then `a₁ * b < a₂ * b → a₁ < a₂`.
@@ -38,21 +43,26 @@ most purposes, and the system is set up so that they imply the correct granular 
 
 As the underlying type `α` gets more structured, some of the above typeclasses become equivalent.
 The commonly used implications are:
+
 * When `α` is a partial order (in `Mathlib/Algebra/Order/GroupWithZero/Unbundled/Basic.lean`):
+
   * `PosMulStrictMono.toPosMulMono`
   * `MulPosStrictMono.toMulPosMono`
   * `PosMulReflectLE.toPosMulReflectLT`
   * `MulPosReflectLE.toMulPosReflectLT`
 * When `α` is a linear order:
+
   * `PosMulStrictMono.toPosMulReflectLE`
   * `MulPosStrictMono.toMulPosReflectLE`
 * When multiplication on `α` is commutative:
+
   * `posMulMono_iff_mulPosMono`
   * `posMulStrictMono_iff_mulPosStrictMono`
   * `posMulReflectLE_iff_mulPosReflectLE`
   * `posMulReflectLT_iff_mulPosReflectLT`
 
 Furthermore, the bundled non-granular typeclasses imply the granular ones like so:
+
 * `IsOrderedRing → PosMulMono`
 * `IsOrderedRing → MulPosMono`
 * `IsStrictOrderedRing → PosMulStrictMono`
@@ -65,10 +75,12 @@ by the current implications, please bring it up on Zulip!
 ## Notation
 
 The following is local notation in this file:
+
 * `α≥0`: `{x : α // 0 ≤ x}`
 * `α>0`: `{x : α // 0 < x}`
 
-See https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/notation.20for.20positive.20elements
+See
+https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/notation.20for.20positive.20elements
 for a discussion about this notation, and whether to enable it globally (note that the notation is
 currently global but broken, hence actually only works locally).
 -/

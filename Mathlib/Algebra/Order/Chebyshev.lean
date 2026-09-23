@@ -14,6 +14,9 @@ public import Mathlib.Tactic.Positivity
 import Mathlib.Algebra.BigOperators.Module
 import Mathlib.Data.Multiset.Fintype
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Chebyshev's sum inequality and Abel's inequality
 
@@ -32,7 +35,7 @@ sequence `g` in terms of the partial sums of `f`.
 * `sq_sum_le_card_mul_sum_sq`: Special case of Chebyshev's inequality when `f = g`.
 * `Finset.sum_mul_le_sum_mul_of_sum_range_le`, `Finset.sum_mul_le_mul_of_sum_range_le`,
   `Finset.mul_le_sum_mul_of_le_sum_range`, `Finset.abs_sum_mul_le_mul_of_abs_sum_range_le`:
-  **Abel's inequality** and its one-sided and absolute-value forms.
+  *Abel's inequality* and its one-sided and absolute-value forms.
 
 ## Implementation notes
 
@@ -53,7 +56,9 @@ open Equiv Equiv.Perm Finset Function OrderDual
 
 variable {ι α β : Type*}
 
-/-! ### Scalar multiplication versions -/
+/-!
+# Scalar multiplication versions
+-/
 
 
 section SMul
@@ -97,7 +102,7 @@ theorem Antivary.card_smul_sum_le_sum_smul_sum (hfg : Antivary f g) :
 end SMul
 
 /-!
-### Multiplication versions
+# Multiplication versions
 
 Special cases of the above when scalar multiplication is actually multiplication.
 -/

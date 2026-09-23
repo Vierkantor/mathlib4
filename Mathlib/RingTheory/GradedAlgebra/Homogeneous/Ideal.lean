@@ -12,6 +12,9 @@ public import Mathlib.RingTheory.Ideal.BigOperators
 public import Mathlib.RingTheory.Ideal.Maps
 public import Mathlib.RingTheory.GradedAlgebra.Homogeneous.Submodule
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Homogeneous ideals of a graded algebra
 
@@ -21,6 +24,7 @@ operations on them.
 ## Main definitions
 
 For any `I : Ideal A`:
+
 * `Ideal.IsHomogeneous 𝒜 I`: The property that an ideal is closed under `GradedRing.proj`.
 * `HomogeneousIdeal 𝒜`: The structure extending ideals which satisfy `Ideal.IsHomogeneous`.
 * `Ideal.homogeneousCore I 𝒜`: The largest homogeneous ideal smaller than `I`.
@@ -215,10 +219,12 @@ theorem Ideal.IsHomogeneous.iff_exists :
 
 end IsHomogeneousIdealDefs
 
-/-! ### Operations
+/-!
+# Operations
 
 In this section, we show that `Ideal.IsHomogeneous` is preserved by various notations, then use
-these results to provide these notation typeclasses for `HomogeneousIdeal`. -/
+these results to provide these notation typeclasses for `HomogeneousIdeal`.
+-/
 
 
 section Operations
@@ -417,10 +423,12 @@ end CommSemiring
 
 end Operations
 
-/-! ### Homogeneous core
+/-!
+# Homogeneous core
 
 Note that many results about the homogeneous core came earlier in this file, as they are helpful
-for building the lattice structure. -/
+for building the lattice structure.
+-/
 
 
 section homogeneousCore
@@ -462,7 +470,9 @@ theorem Ideal.homogeneousCore'_eq_sSup :
 
 end homogeneousCore
 
-/-! ### Homogeneous hulls -/
+/-!
+# Homogeneous hulls
+-/
 
 
 section HomogeneousHull

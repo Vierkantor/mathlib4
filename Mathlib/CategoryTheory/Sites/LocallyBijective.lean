@@ -8,6 +8,9 @@ module
 public import Mathlib.CategoryTheory.Sites.LocallySurjective
 public import Mathlib.CategoryTheory.Sites.Localization
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Locally bijective morphisms of presheaves
 
@@ -19,7 +22,6 @@ after sheafification) is the class of morphisms that are both locally injective
 and locally surjective (i.e. locally bijective). We prove that this holds iff
 for any presheaf `P : Cᵒᵖ ⥤ A`, the sheafification map `toSheafify J P` is locally bijective.
 We show that this holds under certain universe assumptions.
-
 -/
 
 public section

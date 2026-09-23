@@ -12,6 +12,9 @@ public import Mathlib.Topology.Separation.Profinite
 public import Mathlib.Topology.Sets.Closeds
 public import Mathlib.Topology.Sets.OpenCover
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Disjoint covers of profinite spaces
 
@@ -19,7 +22,6 @@ We prove various results about covering profinite spaces by disjoint clopens, in
 
 * `TopologicalSpace.IsOpenCover.exists_finite_nonempty_disjoint_clopen_cover`: any open cover of a
   profinite space can be refined to a finite cover by pairwise disjoint nonempty clopens.
-
 * `ContinuousMap.exists_finite_approximation_of_mem_nhds_diagonal`: if `f : X → V` is continuous
   with `X` profinite, and `S` is a neighbourhood of the diagonal in `V × V`, then `f` can be
   `S`-approximated by a function factoring through `Fin n` for some `n`.

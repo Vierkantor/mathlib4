@@ -9,6 +9,9 @@ public import Mathlib.RingTheory.AlgebraicIndependent.TranscendenceBasis
 public import Mathlib.FieldTheory.IntermediateField.Adjoin.Algebra
 public import Mathlib.FieldTheory.IntermediateField.Adjoin.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Extensions with Finite Transcendence Degree
 

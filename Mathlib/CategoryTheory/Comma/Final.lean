@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Limits.IsConnected
 public import Mathlib.CategoryTheory.Filtered.Final
 public import Mathlib.CategoryTheory.Comma.StructuredArrow.CommaMap
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Finality of Projections in Comma Categories
 
@@ -24,7 +27,7 @@ and `A` and `B` are filtered.
 
 ## References
 
-* [M. Kashiwara, P. Schapira, *Categories and Sheaves*][Kashiwara2006], Lemma 3.4.3 -- 3.4.5
+* ‍\[M. Kashiwara, P. Schapira, _Categories and Sheaves_\]\[Kashiwara2006\], Lemma 3.4.3 -- 3.4.5
 -/
 
 public section

@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.List.Nodup
 public import Mathlib.Data.Fin.Tuple.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lists of elements of `Fin n`
 

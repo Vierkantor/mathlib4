@@ -14,6 +14,9 @@ public import Mathlib.CategoryTheory.Functor.ReflectsIso.Basic
 public import Mathlib.CategoryTheory.WithTerminal.Cone
 public import Mathlib.CategoryTheory.Limits.Shapes.Pullback.IsPullback.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Monomorphisms over a fixed object
 
@@ -26,6 +29,7 @@ so we can think of it as a preorder. However as it is not skeletal, it is not ye
 `Subobject X` will be defined as the skeletalization of `MonoOver X`.
 
 We provide
+
 * `def pullback [HasPullbacks C] (f : X ⟶ Y) : MonoOver Y ⥤ MonoOver X`
 * `def map (f : X ⟶ Y) [Mono f] : MonoOver X ⥤ MonoOver Y`
 * `def «exists» [HasImages C] (f : X ⟶ Y) : MonoOver X ⥤ MonoOver Y`
@@ -36,7 +40,6 @@ and prove their basic properties and relationships.
 
 This development originally appeared in Bhavik Mehta's "Topos theory for Lean" repository,
 and was ported to mathlib by Kim Morrison.
-
 -/
 
 @[expose] public section

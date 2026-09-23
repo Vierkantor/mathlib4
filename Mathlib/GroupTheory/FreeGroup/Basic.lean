@@ -13,6 +13,9 @@ public import Mathlib.Algebra.Group.Nat.Defs
 public import Mathlib.Tactic.CrossRefAttribute
 public import Mathlib.Algebra.BigOperators.Group.List.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Free groups
 
@@ -46,7 +49,6 @@ over `FreeGroup.Red.Step`.
 
 For the additive version we introduce the same relation under a different name so that we can
 distinguish the quotient types more easily.
-
 
 ## Tags
 
@@ -377,7 +379,9 @@ theorem eqvGen_step_iff_join_red : EqvGen Red.Step L₁ L₂ ↔ Join Red L₁ L
     (join_le_of_equivalence_of_le (Relation.EqvGen.is_equivalence _)
       (reflTransGen_le_of_equivalence_of_le (Relation.EqvGen.is_equivalence _) EqvGen.rel) L₁ L₂)
 
-/-! ### Reduced words -/
+/-!
+# Reduced words
+-/
 
 /-- Predicate asserting that the word `L` admits no reduction steps, i.e., no two neighboring
 elements of the word cancel. -/
@@ -629,11 +633,15 @@ protected lemma induction_on {motive : FreeGroup α → Prop} (z : FreeGroup α)
   Quot.inductionOn z fun L ↦ L.recOn one fun ⟨x, b⟩ _tl ih ↦
     b.recOn (mul _ _ (inv_of _ <| of x) ih) (mul _ _ (of x) ih)
 
-/-- Two homomorphisms out of a free group are equal if they are equal on generators.
+/--
+Two homomorphisms out of a free group are equal if they are equal on generators.
 
-See note [partially-applied ext lemmas]. -/
-@[to_additive (attr := ext) /-- Two homomorphisms out of a free additive group are equal if they are
-  equal on generators. See note [partially-applied ext lemmas]. -/]
+See note \[partially-applied ext lemmas\].
+-/
+@[to_additive (attr := ext) /--
+                            Two homomorphisms out of a free additive group are equal if they are
+equal on generators. See note \[partially-applied ext lemmas\].
+                            -/]
 lemma ext_hom {M : Type*} [Monoid M] (f g : FreeGroup α →* M) (h : ∀ a, f (of a) = g (of a)) :
     f = g := by
   ext x

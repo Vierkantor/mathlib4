@@ -10,13 +10,14 @@ public import Mathlib.RingTheory.Finiteness.Ideal
 public import Mathlib.RingTheory.Ideal.MinimalPrime.Noetherian
 public import Mathlib.RingTheory.Noetherian.Basic
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Minimal primes over a colon ideal
 
 We prove that a minimal prime over an ideal of the form `N.colon {x}` in a Noetherian ring is
 itself an ideal of the form `N.colon {x'}`.
-
 -/
 
 public section

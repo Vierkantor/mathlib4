@@ -9,6 +9,9 @@ public import Mathlib.Data.Finset.BooleanAlgebra
 public import Mathlib.Data.Set.Piecewise
 public import Mathlib.Order.Interval.Set.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Functions defined piecewise on a finset
 

@@ -10,7 +10,11 @@ public meta import Mathlib.Lean.Elab.Tactic.Meta
 -- this file has a valid copyright header and module docstring.
 public import Mathlib.Tactic.Linter.Header  -- shake: keep
 
-/-! # Executing actions using the infotree
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Executing actions using the infotree
 
 This file contains helper functions for running `CoreM`, `MetaM` and tactic actions
 in the context of an infotree node.

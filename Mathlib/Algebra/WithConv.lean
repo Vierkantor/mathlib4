@@ -9,7 +9,11 @@ public import Mathlib.Algebra.BigOperators.Group.Finset.Defs
 public import Mathlib.Algebra.Module.Equiv.Defs
 public import Mathlib.Algebra.Module.TransferInstance
 
-/-! # Type synonym for linear map convolutive ring and intrinsic star
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Type synonym for linear map convolutive ring and intrinsic star
 
 This files provides the type synonym `WithConv` which we will use in later files
 to put the convolutive product on linear maps instance and the intrinsic star instance.

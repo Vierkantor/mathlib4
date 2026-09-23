@@ -12,15 +12,20 @@ import Mathlib.Analysis.CStarAlgebra.Unitization
 import Mathlib.Analysis.Complex.Liouville
 
 
-/-! # The Fuglede–Putnam–Rosenblum theorem
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# The Fuglede–Putnam–Rosenblum theorem
 
 Let `A` be a C⋆-algebra, and let `a b x : A`. The Fuglede–Putnam–Rosenblum theorem states that
 if `a` and `b` are normal and `x` intertwines `a` and `b` (i.e., `SemiconjBy x a b`, that is,
 `x * a = b * x`), then `x` also intertwines `star a` and `star b`. Fuglede's original result
-[fuglede1950] was for `a = b` (i.e., if `x` commutes with `a`, then `x` also commutes with
-`star a`), and Putnam [putnam1951] extended it to intertwining elements.
+‍\[fuglede1950\] was for `a = b` (i.e., if `x` commutes with `a`, then `x` also commutes with
+`star a`), and Putnam \[putnam1951\] extended it to intertwining elements.
 
-Rosenblum [rosenblum1958] later gave the elementary proof formalized here using Liouville's theorem
+Rosenblum \[rosenblum1958\] later gave the elementary proof formalized here using Liouville's
+theorem
 which proceeds as follows. Consider the map `f : ℂ → A` given by
 `z ↦ exp (z • star b) * x * exp (z • star (-a))`.
 When `x` intertwines `a` and `b` (i.e., `SemiconjBy x a b`), then it also intertwines
@@ -33,25 +38,25 @@ Therefore `‖f z‖ = ‖x‖` for all `z`, and since `f` is clearly entire, by
 `exp (z • star b) * x = x * exp (z • star a)`. Differentiating both sides and evaluating at `z = 0`
 proves that `star b * x = x * star a`, as desired.
 
-In a follow-up paper, Cater [cater1961] proved a number of related results using similar techniques.
+In a follow-up paper, Cater \[cater1961\] proved a number of related results using similar
+techniques.
 We include one of these below, `isStarNormal_iff_forall_exp_mul_exp_mem_unitary`,
 but the proof is independent of the Fuglede–Putnam–Rosenblum theorem.
 
 ## Main results
 
-+ `fuglede_putnam_rosenblum`: If `a` and `b` are normal elements in a C⋆-algebra `A` which
+* `fuglede_putnam_rosenblum`: If `a` and `b` are normal elements in a C⋆-algebra `A` which
   are interwined by `x` (i.e., `SemiconjBy x a b`, that is, `x * a = b * x`), then `star a` and
   `star b` are also intertwined by `x`.
-+ `isStarNormal_iff_forall_exp_mul_exp_mem_unitary`: A characterization of normal elements in a
+* `isStarNormal_iff_forall_exp_mul_exp_mem_unitary`: A characterization of normal elements in a
   C⋆-algebra in terms of exponentials.
 
 ## References
 
-+ [fuglede1950] Bent Fuglede, "A commutativity theorem for normal operators"
-+ [putnam1951] C. R. Putnam, "On normal operators in Hilbert space"
-+ [rosenblum1958] M. Rosenblum, "On a theorem of Fuglede and Putnam"
-+ [cater1961] S. Cater, "Observations on a paper by Rosenblum"
-
+* ‍\[fuglede1950\] Bent Fuglede, "A commutativity theorem for normal operators"
+* ‍\[putnam1951\] C. R. Putnam, "On normal operators in Hilbert space"
+* ‍\[rosenblum1958\] M. Rosenblum, "On a theorem of Fuglede and Putnam"
+* ‍\[cater1961\] S. Cater, "Observations on a paper by Rosenblum"
 -/
 
 

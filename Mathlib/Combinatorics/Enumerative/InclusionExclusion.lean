@@ -9,6 +9,9 @@ public import Mathlib.Algebra.BigOperators.Pi
 public import Mathlib.Algebra.BigOperators.Ring.Finset
 public import Mathlib.Algebra.Module.BigOperators
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Inclusion-exclusion principle
 
@@ -28,6 +31,7 @@ the sets.
 ## Main declarations
 
 Per the above explanation, this file contains the following variants of inclusion-exclusion:
+
 * `Finset.inclusion_exclusion_sum_biUnion`: Sum of a function over a finite union of sets
 * `Finset.inclusion_exclusion_card_biUnion`: Cardinality of a finite union of sets
 * `Finset.inclusion_exclusion_sum_inf_compl`: Sum of a function over a finite intersection of

@@ -9,10 +9,13 @@ public import Mathlib.Geometry.Manifold.Instances.Sphere
 public import Mathlib.Topology.Homotopy.Equiv
 public import Mathlib.Util.Superscript
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Statement of the generalized Poincaré conjecture
 
-https://en.wikipedia.org/wiki/Generalized_Poincar%C3%A9_conjecture
+https://en.wikipedia.org/wiki/Generalized\_Poincar%C3%A9\_conjecture
 
 The `proof_wanted` statements of the generalized Poincaré conjecture and related conjectures
 now live in `Wanted/Geometry/Manifold/PoincareConjecture.lean`.

@@ -11,11 +11,15 @@ public import Mathlib.Algebra.Ring.Rat
 public import Mathlib.Data.Int.Cast.Lemmas
 public meta import Mathlib.Tactic.ToAdditive
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `qify` tactic
 
 The `qify` tactic is used to shift propositions from `ℕ` or `ℤ` to `ℚ`.
 This is often useful since `ℚ` has well-behaved division.
+
 ```
 example (a b c x y z : ℕ) (h : ¬ x*y*z < 0) : c < a + 3*b := by
   qify

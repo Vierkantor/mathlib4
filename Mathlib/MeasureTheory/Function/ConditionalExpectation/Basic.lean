@@ -10,7 +10,11 @@ public import Mathlib.Tactic.CrossRefAttribute
 
 import Mathlib.MeasureTheory.Function.LpSpace.InfiniteSum
 
-/-! # Conditional expectation
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Conditional expectation
 
 We build the conditional expectation of an integrable function `f` with value in a Banach space
 with respect to a measure `μ` (defined on a measurable space structure `m₀`) and a measurable space
@@ -19,6 +23,7 @@ function `μ[f | m]` which is integrable and verifies `∫ x in s, μ[f | m] x �
 for all `m`-measurable sets `s`. It is unique as an element of `L¹`.
 
 The construction is done in four steps:
+
 * Define the conditional expectation of an `L²` function, as an element of `L²`. This is the
   orthogonal projection on the subspace of almost everywhere `m`-measurable functions.
 * Show that the conditional expectation of the indicator of a measurable set with finite measure
@@ -59,18 +64,19 @@ Uniqueness of the conditional expectation
 
 For a measure `μ` defined on a measurable space structure `m₀`, another measurable space structure
 `m` with `hm : m ≤ m₀` (a sub-σ-algebra) and a function `f`, we define the notation
+
 * `μ[f | m] = condExp m μ f`.
 
 ## TODO
 
-See https://leanprover.zulipchat.com/#narrow/channel/217875-Is-there-code-for-X.3F/topic/Conditional.20expectation.20of.20product
+See
+https://leanprover.zulipchat.com/#narrow/channel/217875-Is-there-code-for-X.3F/topic/Conditional.20expectation.20of.20product
 for how to prove that we can pull `m`-measurable continuous linear maps out of the `m`-conditional
 expectation. This would generalise `MeasureTheory.condExp_mul_of_stronglyMeasurable_left`.
 
 ## Tags
 
 conditional expectation, conditional expected value
-
 -/
 
 @[expose] public section

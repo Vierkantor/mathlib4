@@ -10,6 +10,9 @@ public import Mathlib.Analysis.Normed.Module.Ball.Action
 public import Mathlib.Algebra.Group.NatPowAssoc
 public import Mathlib.Algebra.Group.PNatPowAssoc
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Poincaré disc
 

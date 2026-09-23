@@ -10,6 +10,9 @@ public meta import Mathlib.Tactic.ClickSuggestions.Util
 
 import all Lean.Meta.Tactic.Apply
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Support for `apply` suggestions in `#click_suggestions`
 -/

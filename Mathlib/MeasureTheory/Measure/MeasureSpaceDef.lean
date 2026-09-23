@@ -8,6 +8,9 @@ module
 public import Mathlib.MeasureTheory.OuterMeasure.Induced
 public import Mathlib.MeasureTheory.OuterMeasure.AE
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Measure spaces
 
@@ -16,6 +19,7 @@ See `MeasureTheory.MeasureSpace` for their properties and for extended documenta
 
 Given a measurable space `α`, a measure on `α` is a function that sends measurable sets to the
 extended nonnegative reals that satisfies the following conditions:
+
 1. `μ ∅ = 0`;
 2. `μ` is countably additive. This means that the measure of a countable union of pairwise disjoint
    sets is equal to the sum of the measures of the individual sets.
@@ -31,7 +35,7 @@ Measures on `α` form a complete lattice, and are closed under scalar multiplica
 
 ## Implementation notes
 
-Given `μ : Measure α`, `μ s` is the value of the *outer measure* applied to `s`.
+Given `μ : Measure α`, `μ s` is the value of the _outer measure_ applied to `s`.
 This conveniently allows us to apply the measure to sets without proving that they are measurable.
 We get countable subadditivity for all sets, but only countable additivity for measurable sets.
 
@@ -45,8 +49,10 @@ This file does not import `MeasureTheory.MeasurableSpace.Basic`, but only `Measu
 
 ## References
 
-* <https://en.wikipedia.org/wiki/Measure_(mathematics)>
-* <https://en.wikipedia.org/wiki/Almost_everywhere>
+* [
+  https://en.wikipedia.org/wiki/Measure\_(mathematics)](https://en.wikipedia.org/wiki/Measure_(mathematics))
+* [
+  https://en.wikipedia.org/wiki/Almost\_everywhere](https://en.wikipedia.org/wiki/Almost_everywhere)
 
 ## Tags
 
@@ -116,7 +122,9 @@ namespace Measure
 theorem trimmed (μ : Measure α) : μ.toOuterMeasure.trim = μ.toOuterMeasure :=
   le_antisymm μ.trim_le μ.1.le_trim
 
-/-! ### General facts about measures -/
+/-!
+# General facts about measures
+-/
 
 /-- Obtain a measure by giving a countably additive function that sends `∅` to `0`. -/
 def ofMeasurable (m : ∀ s : Set α, MeasurableSet s → ℝ≥0∞) (m0 : m ∅ MeasurableSet.empty = 0)
@@ -288,7 +296,9 @@ theorem measure_inter_null_of_null_right (S : Set α) {T : Set α} (h : μ T = 0
 theorem measure_inter_null_of_null_left {S : Set α} (T : Set α) (h : μ S = 0) : μ (S ∩ T) = 0 :=
   measure_mono_null inter_subset_left h
 
-/-! ### The almost everywhere filter -/
+/-!
+# The almost everywhere filter
+-/
 section ae
 
 /-- Given a predicate on `β` and `Set α` where both `α` and `β` are measurable spaces, if the
@@ -391,7 +401,7 @@ section
 open MeasureTheory
 
 /-!
-### Almost everywhere measurable functions
+# Almost everywhere measurable functions
 
 A function is almost everywhere measurable if it coincides almost everywhere with a measurable
 function. We define this property, called `AEMeasurable f μ`. It's properties are discussed in

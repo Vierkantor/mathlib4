@@ -11,6 +11,9 @@ public import Mathlib.Geometry.Manifold.MFDeriv.NormedSpace
 public import Mathlib.Geometry.Manifold.VectorBundle.MDifferentiable
 public import Mathlib.Geometry.Manifold.Notation
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Vector fields in manifolds
 
@@ -87,7 +90,9 @@ namespace VectorField
 
 section Pullback
 
-/-! ### Pullback of vector fields in manifolds -/
+/-!
+# Pullback of vector fields in manifolds
+-/
 
 open ContinuousLinearMap
 
@@ -243,7 +248,8 @@ lemma mpullbackWithin_comp_of_right
     Function.comp_apply]
 
 
-/-! ### Regularity of pullback of vector fields
+/-!
+# Regularity of pullback of vector fields
 
 In this paragraph, we assume that the model space is complete, to ensure that the set of invertible
 linear maps is open and that inversion is a smooth map there. Otherwise, the pullback of vector

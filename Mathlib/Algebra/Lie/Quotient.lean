@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Lie.OfAssociative
 public import Mathlib.LinearAlgebra.Isomorphisms
 public import Mathlib.RingTheory.Noetherian.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Quotients of Lie algebras and Lie modules
 
@@ -22,8 +25,8 @@ is a statement and proof of the universal property of these quotients.
 
 ## Main definitions
 
-  * `LieSubmodule.Quotient.lieQuotientLieModule`
-  * `LieSubmodule.Quotient.lieQuotientLieAlgebra`
+* `LieSubmodule.Quotient.lieQuotientLieModule`
+* `LieSubmodule.Quotient.lieQuotientLieAlgebra`
 
 ## Tags
 
@@ -196,10 +199,12 @@ theorem mk'_ker : (mk' N).ker = N := by ext; simp
 theorem map_mk'_eq_bot_le : map (mk' N) N' = ⊥ ↔ N' ≤ N := by
   rw [← LieModuleHom.le_ker_iff_map, mk'_ker]
 
-/-- Two `LieModuleHom`s from a quotient lie module are equal if their compositions with
+/--
+Two `LieModuleHom`s from a quotient lie module are equal if their compositions with
 `LieSubmodule.Quotient.mk'` are equal.
 
-See note [partially-applied ext lemmas]. -/
+See note \[partially-applied ext lemmas\].
+-/
 @[ext]
 theorem lieModuleHom_ext ⦃f g : M ⧸ N →ₗ⁅R,L⁆ M⦄ (h : f.comp (mk' N) = g.comp (mk' N)) : f = g :=
   LieModuleHom.ext fun x => Quotient.inductionOn' x <| LieModuleHom.congr_fun h

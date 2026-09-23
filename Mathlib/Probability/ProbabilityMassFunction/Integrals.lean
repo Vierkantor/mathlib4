@@ -9,6 +9,9 @@ public import Mathlib.Probability.ProbabilityMassFunction.Basic
 public import Mathlib.Probability.ProbabilityMassFunction.Constructions
 public import Mathlib.MeasureTheory.Integral.Bochner.SumMeasure
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Integrals with a measure derived from probability mass functions.
 

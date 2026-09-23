@@ -10,6 +10,9 @@ public import Mathlib.Topology.Order.DenselyOrdered
 public import Mathlib.Topology.Order.Monotone
 public import Mathlib.Topology.Connected.TotallyDisconnected
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Intermediate Value Theorem
 
@@ -55,7 +58,7 @@ open scoped Topology Filter Interval
 universe u v
 
 /-!
-### Intermediate value theorem on a (pre)connected space
+# Intermediate value theorem on a (pre)connected space
 
 In this section we prove the following theorem (see `IsPreconnected.intermediate_value₂`): if `f`
 and `g` are two functions continuous on a preconnected set `s`, `f a ≤ g a` at some `a ∈ s` and
@@ -183,18 +186,16 @@ theorem mem_range_of_exists_le_of_exists_ge [PreconnectedSpace X] {c : α} {f : 
   let ⟨a, ha⟩ := h₁; let ⟨b, hb⟩ := h₂; intermediate_value_univ a b hf ⟨ha, hb⟩
 
 /-!
-### (Pre)connected sets in a linear order
+# (Pre)connected sets in a linear order
 
 In this section we prove the following results:
 
 * `IsPreconnected.ordConnected`: any preconnected set `s` in a linear order is `OrdConnected`,
   i.e. `a ∈ s` and `b ∈ s` imply `Icc a b ⊆ s`;
-
 * `IsPreconnected.mem_intervals`: any preconnected set `s` in a conditionally complete linear order
   is one of the intervals `Set.Icc`, `Set.Ico`, `Set.Ioc`, `Set.Ioo`, `Set.Ici`, `Set.Iic`,
   `Set.Ioi`, `Set.Iio`; note that this is false for non-complete orders: e.g., in `ℝ \ {0}`, the set
   of positive numbers cannot be represented as `Set.Ioi _`.
-
 -/
 
 
@@ -305,7 +306,7 @@ theorem setOfPred_isPreconnected_subset_of_ordered :
 alias setOf_isPreconnected_subset_of_ordered := setOfPred_isPreconnected_subset_of_ordered
 
 /-!
-### Intervals are connected
+# Intervals are connected
 
 In this section we prove that a closed interval (hence, any `OrdConnected` set) in a dense
 conditionally complete linear order is preconnected.
@@ -571,7 +572,7 @@ lemma isTotallyDisconnected_iff_lt {s : Set α} :
     exact h1z <| hts <| ht.1 hx hy ⟨h2z.1.le, h2z.2.le⟩
 
 /-!
-### Intermediate Value Theorem on an interval
+# Intermediate Value Theorem on an interval
 
 In this section we prove several versions of the Intermediate Value Theorem for a function
 continuous on an interval.
@@ -775,7 +776,7 @@ theorem ContinuousOn.surjOn_of_tendsto' {f : α → δ} {s : Set α} [OrdConnect
   ContinuousOn.surjOn_of_tendsto (δ := δᵒᵈ) hs hf hbot htop
 
 /-!
-### Monotonicity of injective continuous functions
+# Monotonicity of injective continuous functions
 -/
 
 theorem Continuous.strictMono_of_inj_boundedOrder [BoundedOrder α] {f : α → δ}
@@ -889,7 +890,7 @@ theorem ContinuousOn.strictMonoOn_of_injOn_Ioo {a b : α} {f : α → δ} (hab :
   exact this.imp strictMono_domRestrict.mp strictAntiOn_iff_strictAnti.mpr
 
 /-!
-### Images of continuous monotone functions
+# Images of continuous monotone functions
 -/
 
 variable {a b : α} {f : α → δ}
@@ -967,9 +968,9 @@ theorem ContinuousOn.image_Iio_of_strictAntiOn (hf : ContinuousOn f (Iic a))
   subset_antisymm (hmono.image_Iio_subset) (intermediate_value_Iio' hf hbot)
 
 /-!
-### Order-agnostic images under continuous strictly monotone maps
+# Order-agnostic images under continuous strictly monotone maps
 
-If `f` is *globally* continuous and strictly monotone, each interval maps to the interval of its
+If `f` is _globally_ continuous and strictly monotone, each interval maps to the interval of its
 endpoint images with no `a ≤ b` hypothesis: when `a > b`, both sides are empty (since `f a > f b`).
 -/
 

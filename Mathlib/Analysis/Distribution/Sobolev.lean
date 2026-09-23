@@ -8,7 +8,11 @@ module
 public import Mathlib.Analysis.Distribution.FourierMultiplier
 public import Mathlib.Analysis.Fourier.LpSpace
 
-/-! # Sobolev tempered distributions
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Sobolev tempered distributions
 
 In this file we define Sobolev spaces on normed vector spaces via the Fourier transform.
 These spaces are also known as Bessel potential spaces. The Bessel potential operator
@@ -42,11 +46,10 @@ The bundled variant of `TemperedDistribution.MemSobolev` is called `BesselPotent
 * `TemperedDistribution.MemSobolev.laplacian`: If `u` is a Sobolev function of order `s`, then
   `Δ u` is a Sobolev function of order `s - 2`.
 
-
 ## References
-* [M. Taylor, *Partial Differential Equations 1*][taylorPDE1]
-* [W. McLean, *Strongly Elliptic Systems and Boundary Integral Equations*][mclean2000]
 
+* ‍\[M. Taylor, _Partial Differential Equations 1_\]\[taylorPDE1\]
+* ‍\[W. McLean, _Strongly Elliptic Systems and Boundary Integral Equations_\]\[mclean2000\]
 -/
 
 @[expose] public noncomputable section

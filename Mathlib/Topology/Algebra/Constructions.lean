@@ -8,6 +8,9 @@ module
 public import Mathlib.Topology.Separation.Hausdorff
 public import Mathlib.Topology.Homeomorph.Lemmas
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Topological space structure on the opposite monoid and on the units group
 

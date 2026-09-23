@@ -18,19 +18,22 @@ public import Mathlib.LinearAlgebra.RootSystem.Base
 public import Mathlib.LinearAlgebra.RootSystem.Finite.Lemmas
 public import Mathlib.LinearAlgebra.RootSystem.Finite.Nondegenerate
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Cartan matrices for root systems
 
 This file contains definitions and basic results about Cartan matrices of root pairings / systems.
 
 ## Main definitions:
+
 * `RootPairing.Base.cartanMatrix`: the Cartan matrix of a crystallographic root pairing, with
   respect to a base `b`.
 * `RootPairing.Base.cartanMatrix_nondegenerate`: the Cartan matrix is non-degenerate.
 * `RootPairing.Base.induction_on_cartanMatrix`: an induction principle expressing the connectedness
   of the Dynkin diagram of an irreducible root pairing.
 * `RootPairing.Base.equivOfCartanMatrixEq`: a root system is determined by its Cartan matrix.
-
 -/
 
 @[expose] public section

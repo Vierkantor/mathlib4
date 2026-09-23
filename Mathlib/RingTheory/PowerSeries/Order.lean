@@ -10,7 +10,11 @@ public import Mathlib.RingTheory.Multiplicity
 public import Mathlib.RingTheory.PowerSeries.Basic
 public import Mathlib.RingTheory.MvPowerSeries.Order
 
-/-! # Formal power series (in one variable) - Order
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Formal power series (in one variable) - Order
 
 The `PowerSeries.order` of a formal power series `φ` is the multiplicity of the variable `X` in `φ`.
 
@@ -24,7 +28,6 @@ is an integral domain.
 Given a non-zero power series `f`, `divided_by_X_pow_order f` is the power series obtained by
 dividing out the largest power of X that divides `f`, that is its order. This is useful when
 proving that `R⟦X⟧` is a normalization monoid, which is done in `PowerSeries.Inverse`.
-
 -/
 
 @[expose] public section

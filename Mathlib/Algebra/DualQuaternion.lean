@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.DualNumber
 public import Mathlib.Algebra.Quaternion
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Dual quaternions
 
@@ -21,7 +24,7 @@ rigid motions in 3D space can be represented by dual quaternions of unit length.
 
 ## References
 
-* <https://en.wikipedia.org/wiki/Dual_quaternion>
+* [https://en.wikipedia.org/wiki/Dual\_quaternion](https://en.wikipedia.org/wiki/Dual_quaternion)
 -/
 
 @[expose] public section

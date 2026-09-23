@@ -8,12 +8,16 @@ module
 public import Mathlib.Data.Finset.Union
 public import Mathlib.Data.Fintype.EquivFin
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Pigeonhole principles in finite types
 
 ## Main declarations
 
 We provide the following versions of the pigeonholes principle.
+
 * `Fintype.exists_ne_map_eq_of_card_lt` and `isEmpty_of_card_lt`: Finitely many pigeons and
   pigeonholes. Weak formulation.
 * `Finite.exists_ne_map_eq_of_infinite`: Infinitely many pigeons in finitely many pigeonholes.

@@ -16,6 +16,9 @@ import Mathlib.LinearAlgebra.Dimension.Free
 import Mathlib.LinearAlgebra.FreeModule.PID
 public import Mathlib.LinearAlgebra.Dimension.Free
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Affine monoids embed into `ℤⁿ`
 

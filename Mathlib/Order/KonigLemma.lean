@@ -9,6 +9,9 @@ public import Mathlib.Data.Fintype.Pigeonhole
 public import Mathlib.Order.Atoms.Finite
 public import Mathlib.Order.Grade
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Kőnig's infinity lemma
 
@@ -35,20 +38,16 @@ We leave the explicitly graph-theoretic version of the statement as TODO.
 ## Main Results
 
 * `exists_seq_covby_of_forall_covby_finite` : Kőnig's lemma for strongly atomic orders.
-
 * `exists_orderEmbedding_covby_of_forall_covby_finite` : Kőnig's lemma, where the sequence
   is given as an `OrderEmbedding` instead of a function.
-
 * `exists_orderEmbedding_covby_of_forall_covby_finite_of_bot` : Kőnig's lemma where the sequence
   starts at the minimum of an infinite type.
-
 * `exist_seq_forall_proj_of_forall_finite` : Kőnig's lemma for inverse systems,
   proved using the above applied to an order on a sigma-type `(i : ℕ) × α i`.
 
 ## TODO
 
 Formulate the lemma as a statement about graphs.
-
 -/
 
 public section

@@ -8,7 +8,11 @@ module
 public import Mathlib.Data.Nat.Choose.Basic
 public import Mathlib.Data.Sym.Sym2
 
-/-! # Unordered tuples of elements of a list
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Unordered tuples of elements of a list
 
 Defines `List.sym` and the specialized `List.sym2` for computing lists of all unordered n-tuples
 from a given list. These are list versions of `Nat.multichoose`.
@@ -24,7 +28,6 @@ from a given list. These are list versions of `Nat.multichoose`.
 
 * Prove `protected theorem Perm.sym (n : ℕ) {xs ys : List α} (h : xs ~ ys) : xs.sym n ~ ys.sym n`
   and lift the result to `Multiset` and `Finset`.
-
 -/
 
 @[expose] public section

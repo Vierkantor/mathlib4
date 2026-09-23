@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Star.Pi
 public import Mathlib.Analysis.Normed.Module.Basic
 public import Mathlib.MeasureTheory.Function.SimpleFuncDense
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Strongly measurable and finitely strongly measurable functions
 
@@ -36,9 +39,8 @@ We provide a solid API for strongly measurable functions, as a basis for the Boc
 
 ## References
 
-* [Hytönen, Tuomas, Jan Van Neerven, Mark Veraar, and Lutz Weis. Analysis in Banach spaces.
-  Springer, 2016.][Hytonen_VanNeerven_Veraar_Wies_2016]
-
+* ‍\[Hytönen, Tuomas, Jan Van Neerven, Mark Veraar, and Lutz Weis. Analysis in Banach spaces.
+  Springer, 2016.\]\[Hytonen\_VanNeerven\_Veraar\_Wies\_2016\]
 -/
 
 @[expose] public section
@@ -83,7 +85,9 @@ end Definitions
 
 open MeasureTheory
 
-/-! ## Strongly measurable functions -/
+/-!
+# Strongly measurable functions
+-/
 
 section StronglyMeasurable
 variable {_ : MeasurableSpace α} {f : α → β} {g : ℕ → α} {m : ℕ}
@@ -599,7 +603,7 @@ protected theorem leOnePart [Group β] [Lattice β] [ContinuousSup β] [Continuo
 end Order
 
 /-!
-### Big operators: `∏` and `∑`
+# Big operators: `∏` and `∑`
 -/
 
 
@@ -814,11 +818,13 @@ protected theorem piecewise {m : MeasurableSpace α} [TopologicalSpace β] {s : 
   · simpa [@Set.piecewise_eq_of_notMem _ _ _ _ _ (fun _ => Classical.propDecidable _) _ hx,
       hx] using hg.tendsto_approx x
 
-/-- this is slightly different from `StronglyMeasurable.piecewise`. It can be used to show
+/--
+this is slightly different from `StronglyMeasurable.piecewise`. It can be used to show
 `StronglyMeasurable (ite (x=0) 0 1)` by
-`exact StronglyMeasurable.ite (measurableSet_singleton 0) stronglyMeasurable_const
-stronglyMeasurable_const`, but replacing `StronglyMeasurable.ite` by
-`StronglyMeasurable.piecewise` in that example proof does not work. -/
+`exact StronglyMeasurable.ite (measurableSet_singleton 0) stronglyMeasurable_const stronglyMeasurable_const`,
+but replacing `StronglyMeasurable.ite` by
+`StronglyMeasurable.piecewise` in that example proof does not work.
+-/
 protected theorem ite {_ : MeasurableSpace α} [TopologicalSpace β] {p : α → Prop}
     {_ : DecidablePred p} (hp : MeasurableSet { a : α | p a }) (hf : StronglyMeasurable f)
     (hg : StronglyMeasurable g) : StronglyMeasurable fun x => ite (p x) (f x) (g x) :=
@@ -1090,7 +1096,9 @@ theorem exists_spanning_measurableSet_norm_le [SeminormedAddCommGroup β] {m m0 
 
 end StronglyMeasurable
 
-/-! ## Finitely strongly measurable functions -/
+/-!
+# Finitely strongly measurable functions
+-/
 
 
 theorem finStronglyMeasurable_zero {α β} {m : MeasurableSpace α} {μ : Measure α} [Zero β]

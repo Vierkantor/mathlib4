@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Module.Defs
 public import Mathlib.Data.Finsupp.Basic
 public import Mathlib.Data.Finsupp.SMulWithZero
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Monoid algebras
 
@@ -28,6 +31,7 @@ In this file we define `MonoidAlgebra R M` and `AddMonoidAlgebra R M` as one-fie
 `M →₀ R`, and then define the convolution product on these.
 
 When the domain is additive, this is used to define polynomials:
+
 ```
 Polynomial R := AddMonoidAlgebra R ℕ
 MvPolynomial σ R := AddMonoidAlgebra R (σ →₀ ℕ)
@@ -288,7 +292,8 @@ lemma ofCoeff_update (m : M) (r : R) (x : M →₀ R) :
 
 section SMul
 
-/-! ### Basic scalar multiplication instances
+/-!
+# Basic scalar multiplication instances
 
 This section collects instances needed for the algebraic structure of `Polynomial`,
 which is defined in terms of `MonoidAlgebra`.
@@ -697,10 +702,12 @@ lemma ringHom_ext [Semiring S] {f g : R[M] →+* S}
   RingHom.toAddMonoidHom_injective <| addMonoidHom_ext fun m r ↦ by
     simpa [← map_mul] using! congr($(h₁ r) * $(h_of m))
 
-/-- If two ring homomorphisms from `R[M]` are equal on all `single m 1`
+/--
+If two ring homomorphisms from `R[M]` are equal on all `single m 1`
 and `single 1 r`, then they are equal.
 
-See note [partially-applied ext lemmas]. -/
+See note \[partially-applied ext lemmas\].
+-/
 @[ext high]
 lemma ringHom_ext' [Semiring S] {f g : R[M] →+* S}
     (h₁ : f.comp singleOneRingHom = g.comp singleOneRingHom)
@@ -936,7 +943,9 @@ instance commRing [CommMonoid M] : CommRing R[M] where
 end CommRing
 end MonoidAlgebra
 
-/-! ### Additive monoids -/
+/-!
+# Additive monoids
+-/
 
 namespace AddMonoidAlgebra
 variable [Semiring R]
@@ -999,10 +1008,12 @@ theorem induction_on [AddMonoid M] {motive : R[M] → Prop} (x : R[M])
     (fun x y hf hg ↦ add (ofCoeff x) (ofCoeff y) hf hg)
     fun m r ↦ by simpa using! smul r (.of R M m) (of m)
 
-/-- If two ring homomorphisms from `R[M]` are equal on all `single m 1`
+/--
+If two ring homomorphisms from `R[M]` are equal on all `single m 1`
 and `single 0 r`, then they are equal.
 
-See note [partially-applied ext lemmas]. -/
+See note \[partially-applied ext lemmas\].
+-/
 @[ext high]
 theorem ringHom_ext' [Semiring S] [AddMonoid M] {f g : R[M] →+* S}
     (h₁ : f.comp singleZeroRingHom = g.comp singleZeroRingHom)

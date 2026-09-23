@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.Convex.Hull
 public import Mathlib.Tactic.CrossRefAttribute
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Convex cones
 
@@ -34,9 +37,9 @@ While `Convex R` is a predicate on sets, `ConvexCone R M` is a bundled convex co
 
 ## References
 
-* https://en.wikipedia.org/wiki/Convex_cone
-* [Stephen P. Boyd and Lieven Vandenberghe, *Convex Optimization*][boydVandenberghe2004]
-* [Emo Welzl and Bernd Gärtner, *Cone Programming*][welzl_garter]
+* https://en.wikipedia.org/wiki/Convex\_cone
+* ‍\[Stephen P. Boyd and Lieven Vandenberghe, _Convex Optimization_\]\[boydVandenberghe2004\]
+* ‍\[Emo Welzl and Bernd Gärtner, _Cone Programming_\]\[welzl\_garter\]
 -/
 
 @[expose] public section
@@ -47,7 +50,9 @@ open Set LinearMap Pointwise
 
 variable {𝕜 R G M N O : Type*}
 
-/-! ### Definition of `ConvexCone` and basic properties -/
+/-!
+# Definition of `ConvexCone` and basic properties
+-/
 
 section Definitions
 
@@ -263,7 +268,9 @@ theorem smul_mem_iff {c : 𝕜} (hc : 0 < c) {x : M} : c • x ∈ C ↔ x ∈ C
 end MulAction
 end LinearOrderedField
 
-/-! ### Convex cones with extra properties -/
+/-!
+# Convex cones with extra properties
+-/
 
 
 section OrderedSemiring
@@ -564,7 +571,9 @@ end ConvexCone
 
 namespace Submodule
 
-/-! ### Submodules are cones -/
+/-!
+# Submodules are cones
+-/
 
 
 section OrderedSemiring
@@ -604,7 +613,9 @@ end OrderedSemiring
 
 end Submodule
 
-/-! ### Positive cone of an ordered module -/
+/-!
+# Positive cone of an ordered module
+-/
 
 namespace ConvexCone
 
@@ -675,7 +686,9 @@ end StrictlyPositiveCone
 
 end ConvexCone
 
-/-! ### Cone over a convex set -/
+/-!
+# Cone over a convex set
+-/
 
 
 section ConeFromConvex

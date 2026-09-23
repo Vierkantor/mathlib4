@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.LiftingProperties.Basic
 public import Mathlib.CategoryTheory.Adjunction.Parametrized
 public import Mathlib.CategoryTheory.Limits.Shapes.Pullback.PullbackObjObj
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lifting properties and parametrized adjunctions
 
@@ -17,7 +20,6 @@ If we have a parametrized adjunction `adj₂ : F ⊣₂ G`,
 we show that `sq₁₂.ι` has the left lifting property with respect to
 `f₃` if and only if `f₂` has the left lifting property with respect
 to `sq₁₃.π`: this is the lemma `ParametrizedAdjunction.hasLiftingProperty_iff`.
-
 -/
 
 @[expose] public section

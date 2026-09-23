@@ -14,6 +14,9 @@ public import Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs
 public import Mathlib.LinearAlgebra.Matrix.Vec
 public import Mathlib.Analysis.CStarAlgebra.Matrix
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The partial order on matrices
 
@@ -216,8 +219,10 @@ section hadamard
 
 variable {ι : Type*}
 
-/-- [**Schur product theorem**][schur1911] (positive semidefinite version): the Hadamard (entrywise)
-product of positive semidefinite matrices is positive semidefinite. -/
+/--
+‍\[*Schur product theorem*\]\[schur1911\] (positive semidefinite version): the Hadamard (entrywise)
+product of positive semidefinite matrices is positive semidefinite.
+-/
 theorem PosSemidef.hadamard {A B : Matrix ι ι 𝕜}
     (hA : A.PosSemidef) (hB : B.PosSemidef) : (A ⊙ B).PosSemidef := by
   classical

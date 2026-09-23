@@ -8,6 +8,9 @@ module
 
 public import Mathlib.RingTheory.Spectrum.Prime.Topology
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Going up
 
@@ -19,9 +22,9 @@ This file closely mirrors `Mathlib.RingTheory.Ideal.GoingDown`.
 
 ## Main results
 
-- `Algebra.HasGoingUp.iff_specializingMap_primeSpectrumComap`: going up is equivalent
+* `Algebra.HasGoingUp.iff_specializingMap_primeSpectrumComap`: going up is equivalent
   to specializations lifting along `Spec S → Spec R`.
-- `Algebra.HasGoingUp.of_isIntegral`: integral algebras satisfy going up.
+* `Algebra.HasGoingUp.of_isIntegral`: integral algebras satisfy going up.
 -/
 
 public section

@@ -10,10 +10,11 @@ public import Mathlib.RingTheory.Finiteness.Defs
 public import Mathlib.Topology.Algebra.Ring.Basic
 public import Mathlib.RingTheory.Noetherian.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
-
 # Compact submodules
-
 -/
 
 public section

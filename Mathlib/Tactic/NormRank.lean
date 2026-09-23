@@ -9,6 +9,9 @@ public import Mathlib.Tactic.Echelon.Bareiss
 public import Mathlib.Tactic.Echelon.Parsing
 public meta import Mathlib.Tactic.Echelon.Bareiss
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `eval_rank`: rank of matrix literals by Bareiss elimination
 

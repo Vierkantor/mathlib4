@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Group.Subgroup.Ker
 public import Mathlib.Algebra.Group.Subgroup.Lattice
 public import Mathlib.Order.Disjoint
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Canonical homomorphism from a pair of monoids
 

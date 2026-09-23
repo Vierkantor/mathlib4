@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Group.InjSurj
 public import Mathlib.Algebra.Group.Pi.Basic
 public import Mathlib.Tactic.FastInstance
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Instances on spaces of monoid and group morphisms
 
@@ -168,7 +171,7 @@ theorem AddMonoid.End.intCast_apply [AddCommGroup M] (z : ℤ) (m : M) :
 end End
 
 /-!
-### Morphisms of morphisms
+# Morphisms of morphisms
 
 The structures above permit morphisms that themselves produce morphisms, provided the codomain
 is commutative.

@@ -11,6 +11,9 @@ public import Mathlib.Algebra.Group.Torsion
 public import Mathlib.Algebra.Opposites
 public import Mathlib.Tactic.Conv
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Group structures on the multiplicative and additive opposites
 -/
@@ -24,7 +27,7 @@ variable {α : Type*}
 namespace MulOpposite
 
 /-!
-### Additive structures on `αᵐᵒᵖ`
+# Additive structures on `αᵐᵒᵖ`
 -/
 
 instance instAddSemigroup [AddSemigroup α] : AddSemigroup αᵐᵒᵖ :=
@@ -64,7 +67,7 @@ instance instAddCommGroup [AddCommGroup α] : AddCommGroup αᵐᵒᵖ :=
     (fun _ _ => rfl) fun _ _ => rfl
 
 /-!
-### Multiplicative structures on `αᵐᵒᵖ`
+# Multiplicative structures on `αᵐᵒᵖ`
 
 We also generate additive structures on `αᵃᵒᵖ` using `to_additive`
 -/
@@ -252,7 +255,7 @@ instance [Mul α] [IsMulCommutative α] : IsMulCommutative αᵐᵒᵖ :=
 end MulOpposite
 
 /-!
-### Multiplicative structures on `αᵃᵒᵖ`
+# Multiplicative structures on `αᵃᵒᵖ`
 -/
 
 

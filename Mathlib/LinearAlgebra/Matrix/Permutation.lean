@@ -11,6 +11,9 @@ public import Mathlib.Data.Set.Card
 public import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
 public import Mathlib.LinearAlgebra.Matrix.Trace
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Permutation matrices
 
@@ -18,13 +21,12 @@ This file defines the matrix associated with a permutation
 
 ## Main definitions
 
-- `Equiv.Perm.permMatrix`: the permutation matrix associated with an `Equiv.Perm`
+* `Equiv.Perm.permMatrix`: the permutation matrix associated with an `Equiv.Perm`
 
 ## Main results
 
-- `Matrix.det_permutation`: the determinant is the sign of the permutation
-- `Matrix.trace_permutation`: the trace is the number of fixed points of the permutation
-
+* `Matrix.det_permutation`: the determinant is the sign of the permutation
+* `Matrix.trace_permutation`: the trace is the number of fixed points of the permutation
 -/
 
 @[expose] public section

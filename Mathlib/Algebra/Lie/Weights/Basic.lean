@@ -13,6 +13,9 @@ public import Mathlib.RingTheory.Artinian.Module
 public import Mathlib.LinearAlgebra.Trace
 public import Mathlib.LinearAlgebra.FreeModule.PID
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Weight spaces of Lie modules of nilpotent Lie algebras
 
@@ -27,20 +30,20 @@ Basic definitions and properties of the above ideas are provided in this file.
 
 ## Main definitions
 
-  * `LieModule.genWeightSpaceOf`
-  * `LieModule.genWeightSpace`
-  * `LieModule.Weight`
-  * `LieModule.posFittingCompOf`
-  * `LieModule.posFittingComp`
-  * `LieModule.iSup_ucs_eq_genWeightSpace_zero`
-  * `LieModule.iInf_lowerCentralSeries_eq_posFittingComp`
-  * `LieModule.isCompl_genWeightSpace_zero_posFittingComp`
-  * `LieModule.iSupIndep_genWeightSpace`
-  * `LieModule.iSup_genWeightSpace_eq_top`
+* `LieModule.genWeightSpaceOf`
+* `LieModule.genWeightSpace`
+* `LieModule.Weight`
+* `LieModule.posFittingCompOf`
+* `LieModule.posFittingComp`
+* `LieModule.iSup_ucs_eq_genWeightSpace_zero`
+* `LieModule.iInf_lowerCentralSeries_eq_posFittingComp`
+* `LieModule.isCompl_genWeightSpace_zero_posFittingComp`
+* `LieModule.iSupIndep_genWeightSpace`
+* `LieModule.iSup_genWeightSpace_eq_top`
 
 ## References
 
-* [N. Bourbaki, *Lie Groups and Lie Algebras, Chapters 7--9*](bourbaki1975b)
+* [N. Bourbaki, _Lie Groups and Lie Algebras, Chapters 7--9_](bourbaki1975b)
 
 ## Tags
 

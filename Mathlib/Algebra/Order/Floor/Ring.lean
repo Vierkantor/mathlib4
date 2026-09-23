@@ -12,6 +12,9 @@ public import Mathlib.Tactic.Field
 public import Mathlib.Tactic.Linarith
 public import Mathlib.Tactic.Positivity.Core
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lemmas on `Int.floor`, `Int.ceil` and `Int.fract`
 
@@ -108,13 +111,17 @@ end Mathlib.Meta.Positivity
 
 variable {F R S : Type*}
 
-/-! ### Floor rings -/
+/-!
+# Floor rings
+-/
 
 namespace Int
 
 variable [Ring R] [LinearOrder R] [FloorRing R] {z : ℤ} {a b : R}
 
-/-! #### Floor -/
+/-!
+# Floor
+-/
 
 section floor
 
@@ -297,7 +304,9 @@ end LinearOrderedField
 
 end floor
 
-/-! #### Fractional part -/
+/-!
+# Fractional part
+-/
 
 section fract
 
@@ -593,7 +602,9 @@ end LinearOrderedField
 
 end fract
 
-/-! #### Ceil -/
+/-!
+# Ceil
+-/
 
 section ceil
 
@@ -817,7 +828,9 @@ lemma ceil_le_two_mul (ha : 2⁻¹ ≤ a) : ⌈a⌉ ≤ 2 * a :=
 
 end LinearOrderedField
 
-/-! #### Intervals -/
+/-!
+# Intervals
+-/
 
 @[simp]
 theorem preimage_Ioo {a b : R} : ((↑) : ℤ → R) ⁻¹' Set.Ioo a b = Set.Ioo ⌊a⌋ ⌈b⌉ := by
@@ -901,7 +914,9 @@ section FloorRingToSemiring
 
 variable [Ring R] [LinearOrder R] [FloorRing R]
 
-/-! #### A floor ring as a floor semiring -/
+/-!
+# A floor ring as a floor semiring
+-/
 
 variable {a : R}
 

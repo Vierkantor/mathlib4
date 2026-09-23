@@ -11,8 +11,11 @@ public import Lean.Meta.Tactic.Simp
 public import Mathlib.Lean.Meta.RefinedDiscrTree.Basic
 public meta import Mathlib.Tactic.FunProp.FunctionData
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
-## `funProp`
+# `funProp`
 
 this file defines environment extension for `funProp`
 -/

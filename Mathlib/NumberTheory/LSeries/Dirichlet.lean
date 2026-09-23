@@ -13,6 +13,9 @@ public import Mathlib.NumberTheory.LSeries.RiemannZeta
 public import Mathlib.NumberTheory.SumPrimeReciprocals
 public import Mathlib.NumberTheory.ArithmeticFunction.VonMangoldt
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # L-series of Dirichlet characters and arithmetic functions
 
@@ -47,7 +50,7 @@ lemma ArithmeticFunction.one_eq_delta : ↗(1 : ArithmeticFunction ℂ) = δ := 
 section Moebius
 
 /-!
-### The L-series of the Möbius function
+# The L-series of the Möbius function
 
 We show that `L μ s` converges absolutely if and only if `re s > 1`.
 -/
@@ -85,7 +88,7 @@ end Moebius
 
 
 /-!
-### L-series of Dirichlet characters
+# L-series of Dirichlet characters
 -/
 
 open Nat
@@ -221,7 +224,7 @@ lemma LSeries.mul_mu_eq_one {N : ℕ} (χ : DirichletCharacter ℂ N) {s : ℂ}
 
 
 /-!
-### L-series of Dirichlet characters do not vanish on re s > 1
+# L-series of Dirichlet characters do not vanish on re s > 1
 -/
 
 /-- The L-series of a Dirichlet character does not vanish on the right half-plane `re s > 1`. -/
@@ -235,7 +238,7 @@ end DirichletCharacter
 section zeta
 
 /-!
-### The L-series of the constant sequence 1 / the arithmetic function ζ
+# The L-series of the constant sequence 1 / the arithmetic function ζ
 
 Both give the same L-series (since the difference in values at zero has no effect;
 see `ArithmeticFunction.LSeries_zeta_eq`), which agrees with the Riemann zeta function
@@ -355,7 +358,7 @@ end zeta
 section vonMangoldt
 
 /-!
-### The L-series of the von Mangoldt function
+# The L-series of the von Mangoldt function
 -/
 
 open LSeries Nat Complex ArithmeticFunction

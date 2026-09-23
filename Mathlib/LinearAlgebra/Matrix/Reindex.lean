@@ -7,6 +7,9 @@ module
 
 public import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Changing the index type of a matrix
 
@@ -24,7 +27,6 @@ to an `m'` by `n'` matrix, as long as `m ≃ m'` and `n ≃ n'`.
 ## Tags
 
 matrix, reindex
-
 -/
 
 @[expose] public section

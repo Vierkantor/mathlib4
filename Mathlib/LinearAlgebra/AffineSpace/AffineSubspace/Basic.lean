@@ -9,6 +9,9 @@ public import Mathlib.LinearAlgebra.AffineSpace.AffineEquiv
 public import Mathlib.LinearAlgebra.AffineSpace.AffineSubspace.Defs
 public import Mathlib.Algebra.NoZeroSMulDivisors.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Affine spaces
 
@@ -19,7 +22,6 @@ and the affine span of a set of points.
 
 * `AffineSubspace.Parallel`, notation `∥`, gives the property of two affine subspaces being
   parallel (one being a translate of the other).
-
 -/
 
 @[expose] public section

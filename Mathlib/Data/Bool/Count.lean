@@ -11,6 +11,9 @@ public import Mathlib.Data.List.Chain
 public import Mathlib.Algebra.Group.Nat.Even
 public import Mathlib.Algebra.Ring.Nat
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # List of Booleans
 

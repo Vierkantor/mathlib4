@@ -10,6 +10,9 @@ public import Mathlib.MeasureTheory.Function.ConditionalExpectation.Real
 public import Mathlib.MeasureTheory.Integral.Average
 public import Mathlib.Probability.Moments.Variance
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Conditional variance
 

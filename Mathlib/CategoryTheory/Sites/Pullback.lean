@@ -10,6 +10,9 @@ public import Mathlib.CategoryTheory.Functor.Flat
 public import Mathlib.CategoryTheory.Sites.Continuous
 public import Mathlib.CategoryTheory.Sites.LeftExact
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Pullback of sheaves
 
@@ -19,13 +22,11 @@ public import Mathlib.CategoryTheory.Sites.LeftExact
   between sites (for topologies `J` on `C` and `K` on `D`) such that the functor
   `G.sheafPushforwardContinuous A J K : Sheaf K A ⥤ Sheaf J A` has a left adjoint,
   this is the pullback functor defined as a chosen left adjoint.
-
 * `CategoryTheory.Functor.sheafAdjunctionContinuous`: the adjunction
   `G.sheafPullback A J K ⊣ G.sheafPushforwardContinuous A J K` when the functor
   `G` is continuous. In case `G` is representably flat, the pullback functor
   on sheaves commutes with finite limits: this is a morphism of sites in the
   sense of SGA 4 IV 4.9.
-
 -/
 
 @[expose] public section

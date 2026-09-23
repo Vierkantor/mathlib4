@@ -13,6 +13,9 @@ public import Mathlib.Algebra.Regular.SMul
 public import Mathlib.Algebra.BigOperators.Group.Finset.Defs
 import Mathlib.Algebra.GroupWithZero.Action.Regular
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Non-zero divisors and smul-divisors
 
@@ -23,13 +26,13 @@ non-commutative monoids.
 ## Notation
 
 This file declares the notations:
-- `M₀⁰` for the submonoid of non-zero-divisors of `M₀`, in the scope `nonZeroDivisors`.
-- `M₀⁰[M]` for the submonoid of non-zero smul-divisors of `M₀` with respect to `M`, in the locale
+
+* `M₀⁰` for the submonoid of non-zero-divisors of `M₀`, in the scope `nonZeroDivisors`.
+* `M₀⁰[M]` for the submonoid of non-zero smul-divisors of `M₀` with respect to `M`, in the locale
   `nonZeroSMulDivisors`
 
 Use the statement `open scoped nonZeroDivisors nonZeroSMulDivisors` to access this notation in
 your own code.
-
 -/
 
 @[expose] public section

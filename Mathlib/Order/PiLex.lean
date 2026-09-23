@@ -10,6 +10,9 @@ public import Mathlib.Order.WellFounded
 public import Mathlib.Tactic.Common
 public import Mathlib.Tactic.Attr.Core
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Lexicographic order on Pi types
 
@@ -27,6 +30,7 @@ This file defines the lexicographic and colexicographic orders for Pi types.
 ## See also
 
 Related files are:
+
 * `Data.Finset.Colex`: Colexicographic order on finite sets.
 * `Data.List.Lex`: Lexicographic order on lists.
 * `Data.Sigma.Order`: Lexicographic order on `Σₗ i, α i`.

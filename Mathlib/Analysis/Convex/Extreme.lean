@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Order.Star.Basic
 public import Mathlib.Algebra.Star.Pointwise
 public import Mathlib.Analysis.Convex.Hull
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Extreme sets
 
@@ -35,7 +38,7 @@ In practice, `A` is often assumed to be a convex set.
 
 ## References
 
-See chapter 8 of [Barry Simon, *Convexity*][simon2011]
+See chapter 8 of \[Barry Simon, _Convexity_\]\[simon2011\]
 
 ## TODO
 

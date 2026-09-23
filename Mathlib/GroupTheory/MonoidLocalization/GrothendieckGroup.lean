@@ -7,6 +7,9 @@ module
 
 public import Mathlib.GroupTheory.MonoidLocalization.Maps
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Grothendieck group
 
@@ -17,9 +20,10 @@ any commutative group `H`.
 Note that "Grothendieck group" also refers to the analogous construction in an abelian category
 obtained by formally making the last term of each short exact sequence invertible.
 
-### References
+## References
 
-* [*Grothendieck group*, Wikipedia](https://en.wikipedia.org/wiki/Grothendieck_group#Grothendieck_group_of_a_commutative_monoid)
+* [_Grothendieck group_,
+  Wikipedia](https://en.wikipedia.org/wiki/Grothendieck_group#Grothendieck_group_of_a_commutative_monoid)
 -/
 
 @[expose] public section

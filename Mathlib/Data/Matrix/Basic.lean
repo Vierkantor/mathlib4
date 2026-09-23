@@ -13,6 +13,9 @@ public import Mathlib.Data.Matrix.Mul
 public import Mathlib.GroupTheory.DedekindFinite
 public import Mathlib.LinearAlgebra.Pi
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Matrices
 
@@ -365,7 +368,7 @@ end LinearMap
 end Matrix
 
 /-!
-### Bundled versions of `Matrix.map`
+# Bundled versions of `Matrix.map`
 -/
 
 

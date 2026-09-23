@@ -12,6 +12,9 @@ public import Mathlib.Order.Hom.BoundedLattice
 public import Mathlib.Tactic.Abel
 public import Mathlib.Tactic.Ring
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Boolean rings
 
@@ -29,6 +32,7 @@ algebras.
 ## Implementation notes
 
 We provide two ways of turning a Boolean algebra/ring into a Boolean ring/algebra:
+
 * Instances on the same type accessible in locales `BooleanAlgebraOfBooleanRing` and
   `BooleanRingOfBooleanAlgebra`.
 * Type-synonyms `AsBoolAlg` and `AsBoolRing`.
@@ -114,7 +118,9 @@ end BooleanRing
 instance : BooleanRing PUnit :=
   ⟨fun _ => Subsingleton.elim _ _⟩
 
-/-! ### Turning a Boolean ring into a Boolean algebra -/
+/-!
+# Turning a Boolean ring into a Boolean algebra
+-/
 
 
 section RingToAlgebra
@@ -332,7 +338,9 @@ theorem RingHom.asBoolAlg_comp (g : β →+* γ) (f : α →+* β) :
 
 end RingToAlgebra
 
-/-! ### Turning a Boolean algebra into a Boolean ring -/
+/-!
+# Turning a Boolean algebra into a Boolean ring
+-/
 
 
 section AlgebraToRing
@@ -516,7 +524,9 @@ theorem BoundedLatticeHom.asBoolRing_comp (g : BoundedLatticeHom β γ) (f : Bou
 
 end AlgebraToRing
 
-/-! ### Equivalence between Boolean rings and Boolean algebras -/
+/-!
+# Equivalence between Boolean rings and Boolean algebras
+-/
 
 
 /-- Order isomorphism between `α` considered as a Boolean ring considered as a Boolean algebra and

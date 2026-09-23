@@ -7,6 +7,9 @@ module
 
 public import Mathlib.CategoryTheory.FiberedCategory.HomLift
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Co-Cartesian morphisms
 
@@ -32,7 +35,6 @@ intended to be used for constructing instances of this class. To use the univers
 generally recommended to use the lemma `IsStronglyCocartesian.universal_property` instead. The
 difference between the two is that the latter is more flexible with respect to non-definitional
 equalities.
-
 -/
 
 @[expose] public section

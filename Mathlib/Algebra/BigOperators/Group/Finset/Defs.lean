@@ -12,6 +12,9 @@ public import Mathlib.Data.Fintype.Sets
 public import Mathlib.Data.Multiset.Bind
 public meta import Mathlib.Tactic.ToDual
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Big operators
 
@@ -40,7 +43,6 @@ Let `s` be a `Finset ι`, and `f : ι → β` a function.
 The first arguments in all definitions and lemmas is the codomain of the function of the big
 operator. This is necessary for the heuristic in `@[to_additive]`.
 See the documentation of `to_additive.attr` for more information.
-
 -/
 
 @[expose] public section
@@ -79,6 +81,8 @@ theorem prod_val [CommMonoid M] (s : Finset M) : s.1.prod = s.prod id := by
 
 end Finset
 
+
+set_option doc.verso false
 library_note «operator precedence of big operators» /--
 There is no established mathematical convention
 for the operator precedence of big operators like `∏` and `∑`.
@@ -98,6 +102,8 @@ In practice, this means that parentheses should be placed as follows:
 (Example taken from page 490 of Knuth's *Concrete Mathematics*.)
 -/
 
+
+set_option doc.verso true
 namespace BigOperators
 open Batteries.ExtendedBinder Lean Meta
 
@@ -834,7 +840,9 @@ theorem Units.coe_prod [CommMonoid M] (f : α → Mˣ) (s : Finset α) :
   map_prod (Units.coeHom M) _ _
 
 
-/-! ### `Additive`, `Multiplicative` -/
+/-!
+# `Additive`, `Multiplicative`
+-/
 
 
 open Additive Multiplicative

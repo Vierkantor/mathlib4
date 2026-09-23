@@ -18,6 +18,9 @@ public import Mathlib.LinearAlgebra.Matrix.StdBasis
 public import Mathlib.RingTheory.AlgebraTower
 public import Mathlib.RingTheory.Ideal.Span
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Linear maps and matrices
 
@@ -66,7 +69,7 @@ and (presumably) adding `_left` where necessary.
 
 ## Tags
 
-linear_map, matrix, linear_equiv, diagonal, det, trace
+linear\_map, matrix, linear\_equiv, diagonal, det, trace
 -/
 
 @[expose] public section
@@ -76,7 +79,7 @@ noncomputable section
 open LinearMap Matrix Module Set Submodule
 
 /-!
-### Bilinear versions of matrix products
+# Bilinear versions of matrix products
 
 The definitions in this section are stated with two extra rings, to allow for non-commutative rings.
 -/

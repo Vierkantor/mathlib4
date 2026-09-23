@@ -12,7 +12,11 @@ public import ProofWidgets.Component.Basic
 public meta import Lean.PrettyPrinter.Delaborator.Builtins
 public meta import ProofWidgets.Component.Basic
 
-/-! # Conv widget
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# Conv widget
 
 This is a slightly improved version of one of the examples that used to be
 in the ProofWidgets library. It defines a `conv?` tactic that displays a widget panel

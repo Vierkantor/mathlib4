@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Module.Rat
 public import Mathlib.Data.Rat.Cast.Order
 public import Mathlib.Algebra.Order.Module.Defs
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Monotonicity of the action by rational numbers
 -/

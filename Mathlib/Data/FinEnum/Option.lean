@@ -8,6 +8,9 @@ module
 public import Mathlib.Data.FinEnum
 public import Mathlib.Logic.Equiv.Fin.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # FinEnum instance for Option
 
@@ -15,6 +18,7 @@ Provides a recursor for FinEnum types like `Fintype.truncRecEmptyOption`, but ca
 non-truncated data.
 
 ## TODO
+
 * recreate rest of `Mathlib/Data/Fintype/Option.lean`
 -/
 

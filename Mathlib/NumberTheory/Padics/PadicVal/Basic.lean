@@ -11,6 +11,9 @@ public import Mathlib.Data.Nat.MaxPowDiv
 public import Mathlib.Data.Nat.Multiplicity
 public import Mathlib.Data.Nat.Prime.Int
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `p`-adic Valuation
 
@@ -38,24 +41,21 @@ by taking `[Fact p.Prime]` as a type class argument.
   quotients `n / p ^ i`. This sum is expressed over the finset `Ico 1 b` where `b` is any bound
   greater than `log p n`. See `Nat.Prime.multiplicity_factorial` for the same result but stated in
   the language of prime multiplicity.
-
 * `sub_one_mul_padicValNat_factorial`: Legendre's Theorem.  Taking (`p - 1`) times
   the `p`-adic valuation of `n!` equals `n` minus the sum of base `p` digits of `n`.
-
 * `padicValNat_choose`: Kummer's Theorem. The `p`-adic valuation of `n.choose k` is the number
   of carries when `k` and `n - k` are added in base `p`. This sum is expressed over the finset
   `Ico 1 b` where `b` is any bound greater than `log p n`. See `Nat.Prime.multiplicity_choose` for
   the same result but stated in the language of prime multiplicity.
-
 * `sub_one_mul_padicValNat_choose_eq_sub_sum_digits`: Kummer's Theorem. Taking (`p - 1`) times the
   `p`-adic valuation of the binomial `n` over `k` equals the sum of the digits of `k` plus the sum
   of the digits of `n - k` minus the sum of digits of `n`, all base `p`.
 
 ## References
 
-* [F. Q. Gouvêa, *p-adic numbers*][gouvea1997]
-* [R. Y. Lewis, *A formal proof of Hensel's lemma over the p-adic integers*][lewis2019]
-* <https://en.wikipedia.org/wiki/P-adic_number>
+* ‍\[F. Q. Gouvêa, _p-adic numbers_\]\[gouvea1997\]
+* ‍\[R. Y. Lewis, _A formal proof of Hensel's lemma over the p-adic integers_\]\[lewis2019\]
+* [https://en.wikipedia.org/wiki/P-adic\_number](https://en.wikipedia.org/wiki/P-adic_number)
 
 ## Tags
 

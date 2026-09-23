@@ -11,12 +11,14 @@ public import Mathlib.CategoryTheory.Preadditive.Yoneda.Limits
 public import Mathlib.Algebra.Category.ModuleCat.EpiMono
 public import Mathlib.Algebra.Homology.ShortComplex.ExactFunctor
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Projective objects in abelian categories
 
 In an abelian category, an object `P` is projective iff the functor
 `preadditiveCoyonedaObj P` preserves finite colimits.
-
 -/
 
 public section

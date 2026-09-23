@@ -10,6 +10,9 @@ public import Mathlib.Data.Finset.Prod
 public import Mathlib.Data.Fintype.Prod
 public import Mathlib.Algebra.Group.Pointwise.Finset.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Additive energy
 
@@ -24,6 +27,7 @@ additive combinatorics.
 ## Notation
 
 The following notations are defined in the `Combinatorics.Additive` scope:
+
 * `E[s, t]` for `Finset.addEnergy s t`.
 * `Eₘ[s, t]` for `Finset.mulEnergy s t`.
 * `E[s]` for `E[s, s]`.

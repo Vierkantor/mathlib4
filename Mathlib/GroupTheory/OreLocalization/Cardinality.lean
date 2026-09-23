@@ -9,17 +9,18 @@ public import Mathlib.Data.Fintype.Pigeonhole
 public import Mathlib.GroupTheory.OreLocalization.Basic
 public import Mathlib.SetTheory.Cardinal.Arithmetic
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Cardinality of Ore localizations
 
 This file contains some results on cardinality of Ore localizations.
 
 ## TODO
 
-- Prove or disprove `OreLocalization.cardinalMk_le_lift_cardinalMk_of_commute`
+* Prove or disprove `OreLocalization.cardinalMk_le_lift_cardinalMk_of_commute`
   with `Commute` assumption removed.
-
 -/
 
 public section

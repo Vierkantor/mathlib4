@@ -10,8 +10,10 @@ public import Lean.HeadIndex
 public import Lean.Meta.ExprLens
 public import Lean.Meta.Check
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Find the positions of a pattern in an expression
 
 This file defines some tools for dealing with subexpressions and occurrence numbers.
@@ -23,7 +25,6 @@ the subexpression using `kabstract` (which is what `rw` uses to find the positio
 
 `rw` can fail if the motive is not type correct. `kabstractIsTypeCorrect` checks
 whether this is the case.
-
 -/
 
 public section

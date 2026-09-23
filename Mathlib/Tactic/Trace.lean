@@ -9,6 +9,9 @@ public import Mathlib.Init
 public meta import Lean.Elab.Tactic.ElabTerm
 public meta import Lean.Meta.Eval
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Defines the `trace` tactic.
 -/

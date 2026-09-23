@@ -9,6 +9,9 @@ public import Mathlib.Analysis.InnerProductSpace.Subspace
 public import Mathlib.LinearAlgebra.SesquilinearForm.Orthogonal
 public import Mathlib.Topology.Algebra.Module.ClosedSubmodule
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Orthogonal complements of submodules
 
@@ -246,7 +249,7 @@ theorem orthogonalBilin_innerₗ {E} [NormedAddCommGroup E] [InnerProductSpace �
   rfl
 
 /-!
-### Orthogonality of submodules
+# Orthogonality of submodules
 
 In this section we define `Submodule.IsOrtho U V`, denoted as `U ⟂ V`.
 

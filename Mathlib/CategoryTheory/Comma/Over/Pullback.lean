@@ -11,6 +11,9 @@ public import Mathlib.CategoryTheory.Limits.Shapes.Pullback.Iso
 public import Mathlib.CategoryTheory.Limits.Shapes.Pullback.Pasting
 public import Mathlib.CategoryTheory.Monad.Products
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Adjunctions related to the over category
 
@@ -22,12 +25,13 @@ In a category with binary products, for any object `X` the functor
 
 ## Main declarations
 
-- `Over.pullback f : Over Y ⥤ Over X` is the functor induced by a morphism `f : X ⟶ Y`.
-- `Over.mapPullbackAdj` is the adjunction `Over.map f ⊣ Over.pullback f`.
-- `star : C ⥤ Over X` is the functor induced by an object `X`.
-- `forgetAdjStar` is the adjunction  `forget X ⊣ star X`.
+* `Over.pullback f : Over Y ⥤ Over X` is the functor induced by a morphism `f : X ⟶ Y`.
+* `Over.mapPullbackAdj` is the adjunction `Over.map f ⊣ Over.pullback f`.
+* `star : C ⥤ Over X` is the functor induced by an object `X`.
+* `forgetAdjStar` is the adjunction  `forget X ⊣ star X`.
 
 ## TODO
+
 Show `star X` itself has a right adjoint provided `C` is Cartesian closed and has pullbacks.
 -/
 

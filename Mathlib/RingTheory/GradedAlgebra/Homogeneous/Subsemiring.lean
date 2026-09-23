@@ -8,6 +8,9 @@ module
 public import Mathlib.Algebra.DirectSum.Decomposition
 public import Mathlib.RingTheory.GradedAlgebra.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Homogeneous subsemirings of a graded semiring
 

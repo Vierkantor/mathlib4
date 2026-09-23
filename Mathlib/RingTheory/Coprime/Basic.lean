@@ -14,6 +14,9 @@ public import Mathlib.Basic.Logic.Basic
 public import Mathlib.Tactic.CrossRefAttribute
 public import Mathlib.Tactic.Ring
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Coprime elements of a ring or monoid
 

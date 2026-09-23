@@ -7,6 +7,9 @@ module
 
 public import Mathlib.RingTheory.DedekindDomain.AdicValuation
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `S`-integers and `S`-units of fraction fields of Dedekind domains
 
@@ -33,9 +36,9 @@ This file defines the subalgebra of `S`-integers of `K` and the subgroup of `S`-
 
 ## References
 
-* [D Marcus, *Number Fields*][marcus1977number]
-* [J W S Cassels, A Fröhlich, *Algebraic Number Theory*][cassels1967algebraic]
-* [J Neukirch, *Algebraic Number Theory*][Neukirch1992]
+* ‍\[D Marcus, _Number Fields_\]\[marcus1977number\]
+* ‍\[J W S Cassels, A Fröhlich, _Algebraic Number Theory_\]\[cassels1967algebraic\]
+* ‍\[J Neukirch, _Algebraic Number Theory_\]\[Neukirch1992\]
 
 ## Tags
 
@@ -56,7 +59,9 @@ universe u v
 variable {R : Type u} [CommRing R] [IsDedekindDomain R]
   (S : Set <| HeightOneSpectrum R) (K : Type v) [Field K] [Algebra R K] [IsFractionRing R K]
 
-/-! ## `S`-integers -/
+/-!
+# `S`-integers
+-/
 
 namespace Set
 
@@ -99,7 +104,9 @@ just `R` itself, via `Algebra.botEquivOfInjective` and `IsFractionRing.injective
   exact v.valuation_le_one y
 
 end IsDedekindDomain
-/-! ## `S`-units -/
+/-!
+# `S`-units
+-/
 
 namespace Set
 

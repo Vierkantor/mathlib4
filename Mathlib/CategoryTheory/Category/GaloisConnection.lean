@@ -9,12 +9,13 @@ public import Mathlib.CategoryTheory.Category.Preorder
 public import Mathlib.CategoryTheory.Adjunction.Basic
 public import Mathlib.Order.GaloisConnection.Defs
 
-/-!
+set_option doc.verso true
+set_option doc.verso.suggestions false
 
+/-!
 # Galois connections between preorders are adjunctions.
 
 * `GaloisConnection.adjunction` is the adjunction associated to a Galois connection.
-
 -/
 
 @[expose] public section

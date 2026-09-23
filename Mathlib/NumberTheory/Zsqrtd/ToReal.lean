@@ -8,6 +8,9 @@ module
 public import Mathlib.Analysis.Real.Sqrt
 public import Mathlib.NumberTheory.Zsqrtd.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Image of `Zsqrtd` in `ℝ`
 

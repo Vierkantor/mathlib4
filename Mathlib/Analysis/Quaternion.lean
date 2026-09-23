@@ -10,6 +10,9 @@ public import Mathlib.Analysis.InnerProductSpace.Continuous
 public import Mathlib.Analysis.InnerProductSpace.PiL2
 public import Mathlib.Topology.Algebra.Algebra
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Quaternions as a normed algebra
 

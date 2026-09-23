@@ -12,6 +12,9 @@ public import Mathlib.Algebra.Module.End
 public import Mathlib.Algebra.Ring.Opposite
 public import Mathlib.GroupTheory.GroupAction.DomAct.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Bundled Hom instances for module and multiplicative actions
 
@@ -37,7 +40,9 @@ instance instModule [Semiring R] [AddMonoid A] [AddCommMonoid B] [Module R B] :
 
 end ZeroHom
 
-/-! ### Instances for `AddMonoidHom` -/
+/-!
+# Instances for `AddMonoidHom`
+-/
 
 namespace AddMonoidHom
 
@@ -60,7 +65,7 @@ instance instDomMulActModule
 end AddMonoidHom
 
 /-!
-### Instances for `AddMonoid.End`
+# Instances for `AddMonoid.End`
 
 These are direct copies of the instances above.
 -/
@@ -108,7 +113,9 @@ instance applyModule [AddCommMonoid A] : Module (AddMonoid.End A) A where
 
 end AddMonoid.End
 
-/-! ### Miscellaneous morphisms -/
+/-!
+# Miscellaneous morphisms
+-/
 
 namespace AddMonoidHom
 

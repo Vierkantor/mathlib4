@@ -7,6 +7,9 @@ module
 
 public import Mathlib.CategoryTheory.Limits.WeakLimits.WeakEqualizers
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Weak pullbacks
 
@@ -14,7 +17,6 @@ These are weak limits for diagrams of shape `WalkingCospan`.
 
 If a category has binary products and weak equalizers, then it has weak pullbacks
 (see `hasWeakPullbacks_of_hasBinaryProducts_of_hasWeakEqualizers`).
-
 -/
 
 @[expose] public section

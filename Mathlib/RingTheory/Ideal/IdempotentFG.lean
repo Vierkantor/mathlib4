@@ -9,8 +9,11 @@ public import Mathlib.Algebra.Ring.Idempotent
 public import Mathlib.Order.Basic
 public import Mathlib.RingTheory.Finiteness.Nakayama
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
-## Lemmas on idempotent finitely generated ideals
+# Lemmas on idempotent finitely generated ideals
 -/
 
 public section

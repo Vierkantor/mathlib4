@@ -10,9 +10,11 @@ public import Mathlib.AlgebraicGeometry.Scheme
 public import Mathlib.CategoryTheory.MorphismProperty.Limits
 public import Mathlib.CategoryTheory.Limits.Preorder
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Open immersions of schemes
-
 -/
 
 @[expose] public section

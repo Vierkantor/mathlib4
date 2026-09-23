@@ -9,6 +9,9 @@ public import Mathlib.CategoryTheory.Abelian.GrothendieckCategory.Subobject
 public import Mathlib.CategoryTheory.Limits.FunctorCategory.EpiMono
 public import Mathlib.CategoryTheory.MorphismProperty.Limits
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Morphisms to a colimit in a Grothendieck abelian category
 
@@ -25,7 +28,6 @@ then the map from the colimit of the types `X ⟶ Y j` to
 additional assumption that for any map `f : j ⟶ j'` in `J`,
 `Y.map f` is a monomorphism, see
 `IsGrothendieckAbelian.preservesColimit_coyoneda_obj_of_mono`.
-
 -/
 
 @[expose] public section

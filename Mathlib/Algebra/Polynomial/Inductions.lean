@@ -10,6 +10,9 @@ public import Mathlib.Algebra.Polynomial.Degree.Operations
 public import Mathlib.Algebra.Polynomial.EraseLead
 public import Mathlib.Order.Interval.Finset.Nat
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Induction on polynomials
 
@@ -129,7 +132,9 @@ theorem degree_divX_lt (hp0 : p ≠ 0) : (divX p).degree < p.degree := by
         rw [degree_add_eq_left_of_degree_lt this]; exact degree_lt_degree_mul_X hXp0
     _ = degree p := congr_arg _ (divX_mul_X_add _)
 
-/-- An induction principle for polynomials, valued in Sort* instead of Prop. -/
+/--
+An induction principle for polynomials, valued in Sort\* instead of Prop.
+-/
 @[elab_as_elim]
 noncomputable def recOnHorner {M : R[X] → Sort*} (p : R[X]) (M0 : M 0)
     (MC : ∀ p a, coeff p 0 = 0 → a ≠ 0 → M p → M (p + C a))

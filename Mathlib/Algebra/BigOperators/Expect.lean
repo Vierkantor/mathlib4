@@ -16,6 +16,9 @@ public import Mathlib.Algebra.Group.Pointwise.Finset.Basic
 
 import Mathlib.Algebra.BigOperators.Group.Finset.Indicator
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Average over a finset
 
@@ -35,6 +38,7 @@ This file defines `Finset.expect`, the average (aka expectation) of a function o
 
 This definition is a special case of the general convex combination operator in a convex space.
 However:
+
 1. We don't yet have general convex spaces.
 2. The uniform weights case is an overwhelmingly useful special case which should have its own API.
 

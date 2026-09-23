@@ -9,6 +9,9 @@ public import Mathlib.Data.Nat.Cast.WithTop
 public import Mathlib.Order.Nat
 public import Mathlib.Algebra.Ring.Nat
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # `WithBot ℕ`
 

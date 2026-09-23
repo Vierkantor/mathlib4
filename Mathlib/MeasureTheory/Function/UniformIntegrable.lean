@@ -7,6 +7,9 @@ module
 
 public import Mathlib.MeasureTheory.Function.L1Space.Integrable
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Uniform integrability
 
@@ -40,6 +43,7 @@ formulate the martingale convergence theorem.
   and converges in measure.
 
 ## Tags
+
 uniformly integrable, uniformly absolutely continuous integral, Vitali convergence theorem
 -/
 
@@ -104,9 +108,11 @@ end UniformIntegrable
 
 section UnifIntegrable
 
-/-! ### `UnifIntegrable`
+/-!
+# `UnifIntegrable`
 
-This section deals with uniform integrability in the measure theory sense. -/
+This section deals with uniform integrability in the measure theory sense.
+-/
 
 namespace UnifIntegrable
 

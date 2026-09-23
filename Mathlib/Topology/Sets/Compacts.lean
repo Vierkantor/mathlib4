@@ -8,6 +8,9 @@ module
 public import Mathlib.Topology.Sets.Closeds
 public import Mathlib.Topology.QuasiSeparated
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Compact sets
 
@@ -16,6 +19,7 @@ We define a few types of compact sets in a topological space.
 ## Main Definitions
 
 For a topological space `α`,
+
 * `TopologicalSpace.Compacts α`: The type of compact sets.
 * `TopologicalSpace.NonemptyCompacts α`: The type of non-empty compact sets.
 * `TopologicalSpace.PositiveCompacts α`: The type of compact sets with non-empty interior.
@@ -32,7 +36,9 @@ variable {α β γ : Type*} [TopologicalSpace α] [TopologicalSpace β] [Topolog
 
 namespace TopologicalSpace
 
-/-! ### Compact sets -/
+/-!
+# Compact sets
+-/
 
 /-- The type of compact sets of a topological space. -/
 structure Compacts (α : Type*) [TopologicalSpace α] where
@@ -48,7 +54,9 @@ instance : SetLike (Compacts α) α where
 
 instance : PartialOrder (Compacts α) := .ofSetLike (Compacts α)
 
-/-- See Note [custom simps projection]. -/
+/--
+See Note \[custom simps projection\].
+-/
 def Simps.coe (s : Compacts α) : Set α := s
 
 initialize_simps_projections Compacts (carrier → coe, as_prefix coe)
@@ -393,7 +401,9 @@ end Opens
 def Compacts.compactsInsideOfOpenNhds {K : Compacts α} (U : K.openNhds) : (U.val).compactsInside :=
   ⟨K, U.property⟩
 
-/-! ### Nonempty compact sets -/
+/-!
+# Nonempty compact sets
+-/
 
 /-- The type of nonempty compact sets of a topological space. -/
 structure NonemptyCompacts (α : Type*) [TopologicalSpace α] extends Compacts α where
@@ -410,7 +420,9 @@ instance : SetLike (NonemptyCompacts α) α where
 
 instance : PartialOrder (NonemptyCompacts α) := .ofSetLike (NonemptyCompacts α)
 
-/-- See Note [custom simps projection]. -/
+/--
+See Note \[custom simps projection\].
+-/
 def Simps.coe (s : NonemptyCompacts α) : Set α := s
 
 initialize_simps_projections NonemptyCompacts (carrier → coe, as_prefix coe, as_prefix toCompacts)
@@ -641,7 +653,9 @@ theorem coe_toCompactsOrderEmbedding : ⇑(toCompactsOrderEmbedding (α := α)) 
 
 end NonemptyCompacts
 
-/-! ### Positive compact sets -/
+/-!
+# Positive compact sets
+-/
 
 /-- The type of compact sets with nonempty interior of a topological space.
 See also `TopologicalSpace.Compacts` and `TopologicalSpace.NonemptyCompacts`. -/
@@ -659,7 +673,9 @@ instance : SetLike (PositiveCompacts α) α where
 
 instance : PartialOrder (PositiveCompacts α) := .ofSetLike (PositiveCompacts α)
 
-/-- See Note [custom simps projection]. -/
+/--
+See Note \[custom simps projection\].
+-/
 def Simps.coe (s : PositiveCompacts α) : Set α := s
 
 initialize_simps_projections PositiveCompacts (carrier → coe, as_prefix coe, as_prefix toCompacts)
@@ -771,7 +787,9 @@ theorem coe_prod (K : PositiveCompacts α) (L : PositiveCompacts β) :
 
 end PositiveCompacts
 
-/-! ### Compact open sets -/
+/-!
+# Compact open sets
+-/
 
 /-- The type of compact open sets of a topological space. This is useful in non-Hausdorff contexts,
 in particular spectral spaces. -/
@@ -789,7 +807,9 @@ instance : SetLike (CompactOpens α) α where
 
 instance : PartialOrder (CompactOpens α) := .ofSetLike (CompactOpens α)
 
-/-- See Note [custom simps projection]. -/
+/--
+See Note \[custom simps projection\].
+-/
 def Simps.coe (s : CompactOpens α) : Set α := s
 
 initialize_simps_projections CompactOpens (carrier → coe, as_prefix coe, as_prefix toCompacts)

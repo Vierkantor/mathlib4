@@ -15,6 +15,9 @@ public import Mathlib.CategoryTheory.Functor.KanExtension.Adjunction
 public import Mathlib.CategoryTheory.Functor.KanExtension.Preserves
 public import Mathlib.CategoryTheory.Sites.Coverage
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Continuous functors between sites.
 
@@ -38,14 +41,14 @@ category).
 
 ## Main result
 
-- `Functor.isContinuous_of_preservesOneHypercovers`: if the topology on `C` is generated
+* `Functor.isContinuous_of_preservesOneHypercovers`: if the topology on `C` is generated
   by 1-hypercovers of size `w` and that `F : C ⥤ D` preserves 1-hypercovers of size `w`,
   then `F` is continuous (for any auxiliary universe parameter `t`).
   This is an instance for `w = max u₁ v₁` when `C : Type u₁` and `[Category.{v₁} C]`
 
 ## References
-* https://stacks.math.columbia.edu/tag/00WU
 
+* https://stacks.math.columbia.edu/tag/00WU
 -/
 
 @[expose] public section

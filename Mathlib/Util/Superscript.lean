@@ -7,14 +7,19 @@ module
 
 public import Mathlib.Init
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # A parser for superscripts and subscripts
 
 This is intended for use in local notations. Basic usage is:
+
 ```
 local syntax:arg term:max superscript(term) : term
 local macro_rules | `($a:term $b:superscript) => `($a ^ $b)
 ```
+
 where `superscript(term)` indicates that it will parse a superscript, and the `$b:superscript`
 antiquotation binds the `term` argument of the superscript. Given a notation like this,
 the expression `2⁶⁴` parses and expands to `2 ^ 64`.

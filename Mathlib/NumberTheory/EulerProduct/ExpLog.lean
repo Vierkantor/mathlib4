@@ -10,6 +10,9 @@ public import Mathlib.Analysis.SpecialFunctions.Complex.LogDeriv
 public import Mathlib.LinearAlgebra.Complex.FiniteDimensional
 public import Mathlib.NumberTheory.EulerProduct.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Logarithms of Euler Products
 

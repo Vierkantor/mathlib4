@@ -10,6 +10,9 @@ public import Mathlib.RingTheory.TensorProduct.IncludeLeftSubRight
 public import Mathlib.RingTheory.RingHom.FaithfullyFlat
 public import Mathlib.CategoryTheory.Limits.Shapes.RegularMono
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Equalizer of inclusions to pushouts in `CommRingCat`
 

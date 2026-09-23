@@ -11,6 +11,9 @@ public meta import Lean.Elab.PreDefinition.Main
 public import Mathlib.Control.Traversable.Lemmas
 public meta import Mathlib.Tactic.ToAdditive
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Deriving handler for `Traversable` instances
 
@@ -81,6 +84,8 @@ def mapConstructor (c n : Name) (f α β : Expr) (args₀ : List Expr)
       else mapField n g.appFn! f α β y.2)
   mkAppOptM c ((args₀ ++ args').map some).toArray >>= m.assign
 
+
+set_option doc.verso false
 /-- Makes a `match` expression corresponding to the application of `casesOn` like:
 ```lean
 match (motive := motive) indices₁, indices₂, .., (val : type.{univs} params₁ params₂ ..) with
@@ -122,6 +127,8 @@ def mkCasesOnMatch (type : Name) (levels : List Level) (params : List Expr) (mot
         mkLambdaFVars (fields.map Expr.fvar).toArray rhsBody
   return mkAppN mres.matcher (motive :: indices ++ [val] ++ rhss).toArray
 
+
+set_option doc.verso true
 /-- Get `FVarId`s which is not implementation details in the current context. -/
 def getFVarIdsNotImplementationDetails : MetaM (List FVarId) := do
   let lctx ← getLCtx
@@ -368,8 +375,10 @@ def traverseConstructor (c n : Name) (applInst f α β : Expr) (args₀ : List E
       (fun e garg => mkFunUnit garg >>= fun e' => mkAppM ``Seq.seq #[e, e']) constr'
   m.assign r
 where
-  /-- `mkFunCtor ctor [(true, (arg₁ : m type₁)), (false, (arg₂ : type₂)), (true, (arg₃ : m type₃)),
-  (false, (arg₄ : type₄))]` makes `fun (x₁ : type₁) (x₃ : type₃) => ctor x₁ arg₂ x₃ arg₄`. -/
+  /--
+  `mkFunCtor ctor [(true, (arg₁ : m type₁)), (false, (arg₂ : type₂)), (true, (arg₃ : m type₃)), (false, (arg₄ : type₄))]`
+makes `fun (x₁ : type₁) (x₃ : type₃) => ctor x₁ arg₂ x₃ arg₄`.
+  -/
   mkFunCtor (c : Name) (args : List (Bool × Expr)) (fvars : Array Expr := #[])
       (aargs : Array Expr := #[]) : TermElabM Expr := do
     match args with
@@ -451,6 +460,8 @@ def simpFunctorGoal (m : MVarId) (s : Simp.Context) (simprocs : Simp.SimprocsArr
   let s' ← e.getTheorems
   simpGoal m (s.setSimpTheorems (s.simpTheorems.push s')) simprocs discharge? simplifyTarget
     fvarIdsToSimp stats
+
+set_option doc.verso false
 /--
 Run the following tactic:
 ```lean
@@ -472,6 +483,8 @@ def traversableLawStarter (m : MVarId) (n : Name) (s : MetaM Simp.Context)
           if let (some (_, m), _) ← simpFunctorGoal is.mvarId (← s) then
             tac fi is m
 
+
+set_option doc.verso true
 /-- Prove the traversable laws and derive `LawfulTraversable`. -/
 def deriveLawfulTraversable (m : MVarId) : TermElabM Unit := do
   let rules (l₁ : List (Name × Bool)) (l₂ : List (Name)) (b : Bool) : MetaM Simp.Context := do

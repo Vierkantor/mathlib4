@@ -10,11 +10,13 @@ public import Mathlib.CategoryTheory.Limits.HasLimits
 public import Mathlib.CategoryTheory.Limits.Types.ColimitType
 public import Mathlib.CategoryTheory.ConcreteCategory.Elementwise
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Colimits in the category of types
 
 We show that the category of types has all colimits, by providing the usual concrete models.
-
 -/
 
 @[expose] public section

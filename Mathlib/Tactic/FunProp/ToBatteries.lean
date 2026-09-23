@@ -7,8 +7,11 @@ module
 
 public import Mathlib.Init
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
-## `funProp` missing function from standard library
+# `funProp` missing function from standard library
 -/
 
 public meta section

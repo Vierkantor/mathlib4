@@ -13,10 +13,14 @@ public import Mathlib.Data.Set.Basic
 public import Mathlib.Tactic.Common
 public import Mathlib.Tactic.Attr.Register
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Monoids of endomorphisms, groups of automorphisms
 
 This file defines
+
 * the endomorphism monoid structure on `Function.End α := α → α`
 * the endomorphism monoid structure on `Monoid.End M := M →* M` and `AddMonoid.End M := M →+ M`
 * the automorphism group structure on `Equiv.Perm α := α ≃ α`
@@ -39,7 +43,9 @@ assert_not_exists HeytingAlgebra MonoidWithZero MulAction RelIso
 
 variable {A M G α β γ : Type*}
 
-/-! ### Type endomorphisms -/
+/-!
+# Type endomorphisms
+-/
 
 variable (α) in
 /-- The monoid of endomorphisms.
@@ -58,7 +64,9 @@ instance : Monoid (Function.End α) where
 
 instance : Inhabited (Function.End α) := ⟨1⟩
 
-/-! ### Monoid endomorphisms -/
+/-!
+# Monoid endomorphisms
+-/
 
 namespace Equiv.Perm
 

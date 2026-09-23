@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Analysis.Calculus.FDeriv.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The derivative of a composition (chain rule)
 
@@ -38,10 +41,11 @@ variable {f g : E → F} {f' g' : E →L[𝕜] F} {x : E} {s : Set E} {L : Filte
 section Composition
 
 /-!
-### Derivative of the composition of two functions
+# Derivative of the composition of two functions
 
 For composition lemmas, we put `x` explicit to help the elaborator, as otherwise Lean tends to
-get confused since there are too many possibilities for composition. -/
+get confused since there are too many possibilities for composition.
+-/
 
 
 variable (x)

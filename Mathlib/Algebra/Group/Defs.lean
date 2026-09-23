@@ -7,6 +7,9 @@ module
 
 public import Mathlib.Algebra.Group.DivInvMonoid
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Groups
 
@@ -144,11 +147,13 @@ lemma mul_inv_cancel_comm (a b : G) : a * b * a⁻¹ = b := by rw [mul_comm, inv
 end CommGroup
 
 
-/-! We initialize the projections for the group structures for `@[simps]` here.
+/-!
+We initialize the projections for the group structures for `@[simps]` here.
 
-The lemmas generated for the `npow`/`zpow` projections will *not* apply to `x ^ y`, since the
+The lemmas generated for the `npow`/`zpow` projections will _not_ apply to `x ^ y`, since the
 argument order of these projections does not match the argument order of `^`. The `nsmul`/`zsmul`
-lemmas are correct. -/
+lemmas are correct.
+-/
 initialize_simps_projections Group
 initialize_simps_projections AddGroup
 initialize_simps_projections CommGroup

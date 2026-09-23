@@ -10,6 +10,9 @@ public import Mathlib.LinearAlgebra.AffineSpace.Restrict
 public import Mathlib.Topology.Algebra.ContinuousAffineMap
 public import Mathlib.Topology.Algebra.ContinuousAffineEquiv
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Topology of affine subspaces.
 
@@ -19,7 +22,6 @@ affine map.
 ## Main definitions
 
 * `AffineSubspace.subtypeA` is `AffineSubspace.subtype` as a `ContinuousAffineMap`.
-
 -/
 
 @[expose] public section

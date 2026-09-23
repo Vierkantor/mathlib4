@@ -9,6 +9,9 @@ public import Mathlib.Algebra.Group.Submonoid.Operations
 public import Mathlib.Data.Setoid.Basic
 public import Mathlib.GroupTheory.Congruence.Hom
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Congruence relations
 
@@ -223,9 +226,13 @@ noncomputable def quotientKerEquivOfSurjective (f : M →* P) (hf : Surjective f
     (ker f).Quotient ≃* P :=
   quotientKerEquivOfRightInverse _ _ hf.hasRightInverse.choose_spec
 
-/-- If e : M →* N is surjective then (c.comap e).Quotient ≃* c.Quotient with c : Con N -/
-@[to_additive /-- If e : M →* N is surjective then (c.comap e).Quotient ≃* c.Quotient with c :
-AddCon N -/]
+/--
+If e : M →\* N is surjective then (c.comap e).Quotient ≃\* c.Quotient with c : Con N
+-/
+@[to_additive /--
+              If e : M →\* N is surjective then (c.comap e).Quotient ≃\* c.Quotient with c :
+AddCon N
+              -/]
 noncomputable def comapQuotientEquivOfSurj (c : Con M) (f : N →* M) (hf : Function.Surjective f) :
     (Con.comap f f.map_mul c).Quotient ≃* c.Quotient :=
   (Con.congr (.refl _) Con.comap_eq).trans <| Con.quotientKerEquivOfSurjective (c.mk'.comp f) <|

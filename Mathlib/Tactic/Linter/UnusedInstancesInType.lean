@@ -15,6 +15,9 @@ public import Mathlib.Tactic.Linter.Header  -- shake: keep
 public import Batteries.Tactic.Lint.Basic
 public import Batteries.Tactic.Lint.Misc
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Linters for Unused Instances in Types
 
@@ -24,7 +27,7 @@ in the remainder of the type.
 Currently, these linters only handle theorems. (This also includes `lemma`s and `instance`s of
 `Prop` classes.)
 
-- `unusedDecidableInType` linter (currently off by default): suggests replacing type-unused
+* `unusedDecidableInType` linter (currently off by default): suggests replacing type-unused
   `Decidable*` instance hypotheses, and could therefore be replaced by `classical` in the proof.
 
 TODO: log on type signature instead of whole command
@@ -71,6 +74,8 @@ instance : ToMessageData Parameter where
       msg := m!"{msg} (used in type, but only in a proof)"
     return msg
 
+
+set_option doc.verso false
 /--
 Given a (full, resolvable) declaration name `foo` and an array of parameters
 `#[p₁, p₂, ..., pₙ]`, constructs the message:
@@ -94,6 +99,8 @@ def _root_.Lean.Name.unusedInstancesMsg (declName : Name)
   {(unusedInstanceBinders.map (m!"\n  • {·}") |>.foldl (init := .nil) .compose)}"
 
 /- Perf note: could cache visited exprs like `collectFVars` does. -/
+
+set_option doc.verso true
 /-- Collects free variables that do not appear in proofs. Ignores `sorry`s (and their types). -/
 def collectFVarsOutsideOfProofs (e : Expr) : StateRefT FVarIdSet MetaM Unit :=
   Meta.forEachExpr' e fun subExpr =>
@@ -184,7 +191,7 @@ whose types satisfy `p`. (Does not consider the body of the declaration.) Collec
 Since `logOnUnused` will only be run if its argument is nonempty, it is allowed to be expensive.
 
 Note that `p` is non-monadic, and may encounter loose bvars in its argument. This is a performance
-optimization. However, the `Parameter`s are created in a telescope, and their fields will *not*
+optimization. However, the `Parameter`s are created in a telescope, and their fields will _not_
 have loose bound variables.
 -/
 def _root_.Lean.ConstantVal.onUnusedInstancesWhere (decl : ConstantVal)
@@ -208,6 +215,8 @@ def _root_.Lean.ConstantVal.onUnusedInstancesWhere (decl : ConstantVal)
               }
           logOnUnused unusedInstances
 
+
+set_option doc.verso false
 /--
 Finds theorems whose bodies were elaborated in the current infotrees and whose (full)
 declaration names satisfy `nameFilter`. Checks their type to see if it contains instance hypotheses
@@ -260,6 +269,8 @@ def _root_.Lean.Syntax.logUnusedInstancesInTheoremsWhere (_cmd : Syntax)
           -- t.withDeclSigRef cmd thm.name do
           log t thm unusedParams
 
+
+set_option doc.verso true
 section Decidable
 
 /--

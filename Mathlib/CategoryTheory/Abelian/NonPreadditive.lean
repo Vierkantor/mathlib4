@@ -11,6 +11,9 @@ public import Mathlib.CategoryTheory.Limits.Shapes.NormalMono.Equalizers
 public import Mathlib.CategoryTheory.Abelian.Images
 public import Mathlib.CategoryTheory.Preadditive.Basic
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Every NonPreadditiveAbelian category is preadditive
 
@@ -23,6 +26,7 @@ all of the other properties appearing in the definition of an abelian category a
 structure. This is the construction we carry out in this file.
 
 The proof proceeds in roughly five steps:
+
 1. Prove some results (for example that all equalizers exist) that would be trivial if we already
    had the preadditive structure but are a bit of work without it.
 2. Develop images and coimages to show that every monomorphism is the kernel of its cokernel.
@@ -45,8 +49,7 @@ reconstruct any natural preadditive structure the category may have.
 
 ## References
 
-* [F. Borceux, *Handbook of Categorical Algebra 2*][borceux-vol2]
-
+* ‍\[F. Borceux, _Handbook of Categorical Algebra 2_\]\[borceux-vol2\]
 -/
 
 @[expose] public section

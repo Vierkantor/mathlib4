@@ -14,6 +14,9 @@ public import Mathlib.RingTheory.DedekindDomain.AdicValuation
 public import Mathlib.RingTheory.Valuation.Discrete.Basic
 public import Mathlib.RingTheory.Valuation.Discrete.IsDiscreteValuationRing
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Order of vanishing in Noetherian rings.
 

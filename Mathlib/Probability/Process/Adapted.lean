@@ -8,6 +8,9 @@ module
 public import Mathlib.Probability.Process.Filtration
 public import Mathlib.Topology.Instances.Discrete
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # Adapted and progressively measurable processes
 
@@ -23,8 +26,8 @@ basic facts about them.
   to a filtration `f` if at each point in time `i`, `u` restricted to `Set.Iic i × Ω` is strongly
   measurable with respect to the product `MeasurableSpace` structure where the σ-algebra used for
   `Ω` is `f i`.
-We also provide the following variants, which use `MeasureTheory.StronglyMeasurable` instead
-of `Measurable`:
+  We also provide the following variants, which use `MeasureTheory.StronglyMeasurable` instead
+  of `Measurable`:
 * `MeasureTheory.StronglyAdapted`
 * `MeasureTheory.IsStronglyProgressive`
 
@@ -36,7 +39,6 @@ of `Measurable`:
 ## Tags
 
 adapted, progressively measurable
-
 -/
 
 @[expose] public section

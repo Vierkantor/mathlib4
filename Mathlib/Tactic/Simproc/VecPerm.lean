@@ -9,10 +9,13 @@ public import Mathlib.Data.Fin.Tuple.Reflection
 public meta import Mathlib.Util.Qq
 
 
-/-! # The vecPerm simproc
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
+/-!
+# The vecPerm simproc
 
 The `vecPerm` simproc computes the new entries of a vector after applying a permutation to them.
-
 -/
 
 namespace Mathlib.Tactic.FinVec

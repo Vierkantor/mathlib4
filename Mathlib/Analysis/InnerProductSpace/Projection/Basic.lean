@@ -10,6 +10,9 @@ public import Mathlib.Analysis.InnerProductSpace.Symmetric
 public import Mathlib.Analysis.RCLike.Lemmas
 public import Mathlib.Topology.Algebra.Module.Complement
 
+set_option doc.verso true
+set_option doc.verso.suggestions false
+
 /-!
 # The orthogonal projection
 
@@ -27,10 +30,12 @@ Basic API for `orthogonalProjectionOnto` and `starProjection` is developed.
 ## References
 
 The orthogonal projection construction is adapted from
-* [Clément & Martin, *The Lax-Milgram Theorem. A detailed proof to be formalized in Coq*]
-* [Clément & Martin, *A Coq formal proof of the Lax–Milgram theorem*]
 
-The Coq code is available at the following address: <http://www.lri.fr/~sboldo/elfic/index.html>
+* ‍\[Clément & Martin, _The Lax-Milgram Theorem. A detailed proof to be formalized in Coq_\]
+* ‍\[Clément & Martin, _A Coq formal proof of the Lax–Milgram theorem_\]
+
+The Coq code is available at the following address: [
+http://www.lri.fr/~sboldo/elfic/index.html](http://www.lri.fr/~sboldo/elfic/index.html)
 -/
 
 @[expose] public section
